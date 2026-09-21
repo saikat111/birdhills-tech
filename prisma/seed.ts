@@ -54,156 +54,71 @@ async function main() {
     });
   }
 
-  // 3. Services (All 8 services)
+  // 3. Official 9 Services Suite & Sub-Services Tree
   const servicesData = [
     {
       title: "Web Development",
       slug: "web-development",
       category: "Technology",
       icon: "Code2",
-      shortDesc: "Custom websites, web applications and business platforms built for performance.",
-      fullDesc: "Enterprise-grade web development tailored for high-growth businesses in Dubai and the GCC region. We architect fast, scalable, and secure digital platforms utilizing modern web frameworks, strict accessibility compliance, and lightning-fast Core Web Vitals.",
+      shortDesc: "Custom business websites, Next.js web applications, and high-performance digital platforms.",
+      fullDesc: "Enterprise-grade web development engineered for market leaders in Dubai and the GCC. From custom business websites to headless e-commerce, custom web apps, and full redesigns, we build for sub-second page loads, zero technical debt, and maximum conversion.",
       featuresJson: JSON.stringify([
-        "Modern Next.js & React Architectures",
-        "Sub-second Core Web Vitals & Performance",
-        "Custom API, Headless CMS & ERP Integrations",
-        "Robust Security & Zero-Trust Architecture",
-        "Full Mobile Responsiveness & Localization"
+        "Business Websites",
+        "WordPress",
+        "eCommerce",
+        "Landing Pages",
+        "Custom Development",
+        "Website Redesign",
+        "Website Support"
       ]),
       processJson: JSON.stringify([
         { step: "01", title: "Architecture & Wireframing", desc: "Detailed technical scope, database modeling, and interactive prototyping." },
-        { step: "02", title: "Clean Engineering", desc: "Type-safe, component-driven development with strict performance budgets." },
-        { step: "03", title: "Rigorous QA", desc: "Cross-browser testing, automated linting, security audits, and latency profiling." },
-        { step: "04", title: "Launch & CI/CD", desc: "Zero-downtime deployment, SSL hardening, caching, and CDN optimization." }
+        { step: "02", title: "Clean Engineering", desc: "Type-safe Next.js 16 and TypeScript with strict performance budgets." },
+        { step: "03", title: "Rigorous QA", desc: "Cross-device testing, accessibility audits, and latency profiling." },
+        { step: "04", title: "Production Launch", desc: "Zero-downtime deployment, SSL hardening, and continuous SLA support." }
       ]),
       benefitsJson: JSON.stringify([
-        "Higher conversion rates driven by sub-second page loads",
-        "Future-proof scalability without architecture lock-in",
-        "Enterprise-level code quality with full ownership"
+        "Sub-second Core Web Vitals (< 0.8s LCP) driving higher conversions",
+        "Future-proof scalability without proprietary software lock-in",
+        "100% full intellectual property and source code ownership"
       ]),
       seoTitle: "Web Development Company in Dubai | Custom Websites & Platforms | Bird Hills Tech",
-      seoDescription: "Award-caliber web development in Dubai. Bird Hills Tech crafts ultra-fast websites, custom portals, and web platforms built for measurable commercial growth.",
+      seoDescription: "Award-caliber web development in Dubai. Bird Hills Tech crafts ultra-fast business websites, WordPress, custom platforms, and e-commerce.",
       sortOrder: 1,
       published: true,
     },
     {
-      title: "Web Applications",
-      slug: "web-applications",
-      category: "Technology",
-      icon: "Layers",
-      shortDesc: "Bespoke SaaS platforms, internal business software, and interactive customer portals.",
-      fullDesc: "We transform complex business workflows into seamless, intuitive web applications. Whether you need an internal operations hub, customer management portal, or multi-tenant SaaS application, we deliver precision engineering built for reliability.",
+      title: "Domain & Hosting",
+      slug: "domain-hosting",
+      category: "Infrastructure",
+      icon: "Server",
+      shortDesc: "Official .ae accredited registry, NVMe cloud hosting, enterprise email, and zero-downtime migrations.",
+      fullDesc: "Mission-critical cloud infrastructure and domain registry services. We provide high-speed NVMe storage, sub-15ms GCC latency, bank-grade DNSSEC security, branded business email inboxes, and free 24/7 white-glove website migration.",
       featuresJson: JSON.stringify([
-        "Custom SaaS Platform Architecture",
-        "Role-Based Access Control (RBAC)",
-        "Complex Workflow Automation",
-        "Real-Time Data Pipelines & WebSockets",
-        "Enterprise Database Optimization"
+        "Domain Registration",
+        "Domain Transfer & Management",
+        "Web Hosting",
+        "Business Email",
+        "SSL & Website Security",
+        "DNS Management",
+        "Website Migration",
+        "Backup & Maintenance"
       ]),
       processJson: JSON.stringify([
-        { step: "01", title: "Requirements Discovery", desc: "Deep dive into business logic, user journeys, and technical constraints." },
-        { step: "02", title: "System Architecture", desc: "Database schema design, microservices/serverless planning, and API contracts." },
-        { step: "03", title: "Iterative Sprints", desc: "Agile build sprints with bi-weekly demo milestones." },
-        { step: "04", title: "Enterprise Deployment", desc: "Automated test suites, containerization, and monitoring setup." }
+        { step: "01", title: "Infrastructure Audit", desc: "Evaluating traffic volume, CPU/RAM requirements, and security tier." },
+        { step: "02", title: "DNS & Environment Setup", desc: "Configuring Anycast DNS, SSL certificates, and isolated cloud nodes." },
+        { step: "03", title: "White-Glove Migration", desc: "Zero-downtime database and file replication with staging verification." },
+        { step: "04", title: "24/7 Monitoring", desc: "Automated daily off-site backups, DDoS mitigation, and uptime SLAs." }
       ]),
       benefitsJson: JSON.stringify([
-        "Streamlined operations and reduced manual overhead",
-        "Secure cloud infrastructure that scales seamlessly with demand",
-        "Intuitive dashboards that improve staff productivity"
+        "Sub-15ms local latency across the UAE and GCC region",
+        "99.99% network uptime SLA guarantee backed by local Dubai nodes",
+        "Zero-downtime migration guarantee signed by senior cloud engineers"
       ]),
-      seoTitle: "Custom Web Application Development Dubai | SaaS & Portals | Bird Hills Tech",
-      seoDescription: "Bespoke web applications and enterprise software development in Dubai. Scalable SaaS systems, customer portals, and internal business platforms.",
+      seoTitle: "Cloud Web Hosting & .ae Domain Registrar Dubai | Bird Hills Tech",
+      seoDescription: "High-speed NVMe cloud hosting, official .ae domain registration, managed VPS, and enterprise business email in Dubai with zero-downtime migration.",
       sortOrder: 2,
-      published: true,
-    },
-    {
-      title: "E-commerce Solutions",
-      slug: "ecommerce",
-      category: "Technology",
-      icon: "ShoppingBag",
-      shortDesc: "Scalable online stores with strong user experiences and conversion-focused architecture.",
-      fullDesc: "High-converting digital commerce experiences built for the modern Middle Eastern consumer. We engineer lightning-fast checkout funnels, seamless regional payment gateways (Stripe, Tabby, Tamara, Telr), and intelligent inventory synchronization.",
-      featuresJson: JSON.stringify([
-        "Frictionless Multi-Step & One-Page Checkouts",
-        "GCC Payment Gateways (Apple Pay, Tabby, Tamara)",
-        "Multi-Currency & Bilingual (EN/AR) Support",
-        "Real-Time Inventory & ERP Synchronization",
-        "High-Speed Mobile Shopping Experiences"
-      ]),
-      processJson: JSON.stringify([
-        { step: "01", title: "Commerce Strategy", desc: "Product catalog architecture, customer segmentation, and payment gateway selection." },
-        { step: "02", title: "UX/UI Design", desc: "Mobile-first shopping journeys tailored to maximize average order value (AOV)." },
-        { step: "03", title: "Platform Build", desc: "Headless commerce or custom store development with payment integration." },
-        { step: "04", title: "Optimization", desc: "Checkout speed tuning, cart abandonment flows, and analytics tracking." }
-      ]),
-      benefitsJson: JSON.stringify([
-        "Significant reduction in shopping cart abandonment",
-        "Full support for Buy Now Pay Later (BNPL) regional checkouts",
-        "Omnichannel order and inventory management"
-      ]),
-      seoTitle: "E-Commerce Website Development Dubai | High-Converting Online Stores",
-      seoDescription: "Scale your online retail business with Bird Hills Tech. Premium e-commerce development in Dubai with localized GCC payment integrations and rapid checkout.",
-      sortOrder: 3,
-      published: true,
-    },
-    {
-      title: "UI/UX Design",
-      slug: "ui-ux-design",
-      category: "Creative",
-      icon: "Palette",
-      shortDesc: "Human-centered digital interfaces crafted for clarity, elegance, and business conversion.",
-      fullDesc: "We design digital experiences that captivate and convert. Combining deep user behavioral research, editorial aesthetics, and intuitive interaction design, our products feel prestigious and effortless to navigate.",
-      featuresJson: JSON.stringify([
-        "Comprehensive User Journey Mapping",
-        "High-Fidelity Interactive Prototypes",
-        "Design Systems & Component Libraries",
-        "Accessibility (WCAG 2.1 AA) Compliance",
-        "Mobile App & Responsive Web Interfaces"
-      ]),
-      processJson: JSON.stringify([
-        { step: "01", title: "User Research", desc: "Auditing competitive landscape, user pain points, and commercial objectives." },
-        { step: "02", title: "Information Architecture", desc: "Site maps, wireframes, and task flow diagrams." },
-        { step: "03", title: "Visual System", desc: "Typography scale, color psychology, and custom UI components in Figma." },
-        { step: "04", title: "Handoff & Specs", desc: "Pixel-perfect developer handoff with micro-interaction documentation." }
-      ]),
-      benefitsJson: JSON.stringify([
-        "Clarity that reduces user churn and support overhead",
-        "A premium visual standard that commands high market valuation",
-        "Reusable design systems that accelerate future feature releases"
-      ]),
-      seoTitle: "UI/UX Design Agency Dubai | Premium Digital Product Design",
-      seoDescription: "Transform user journeys with Dubai's premier UI/UX design agency. We craft intuitive, high-converting digital interfaces for enterprise and growth companies.",
-      sortOrder: 4,
-      published: true,
-    },
-    {
-      title: "Branding & Design",
-      slug: "branding",
-      category: "Creative",
-      icon: "Sparkles",
-      shortDesc: "Brand identity, UI/UX design, creative direction and digital experiences.",
-      fullDesc: "Crafting distinct, authoritative corporate identities that stand out in the competitive Dubai and international markets. We establish unified visual identities, strategic positioning, and corporate design guidelines that instill lasting trust.",
-      featuresJson: JSON.stringify([
-        "Brand Identity & Corporate Logo Systems",
-        "Brand Strategy & Positioning Statements",
-        "Comprehensive Brand Guidelines Manuals",
-        "Collateral, Stationery & Pitch Deck Design",
-        "Digital & Social Media Design Systems"
-      ]),
-      processJson: JSON.stringify([
-        { step: "01", title: "Brand Archetype", desc: "Clarifying company values, market positioning, and distinctive tone of voice." },
-        { step: "02", title: "Identity Exploration", desc: "Concept sketching, typography pairings, and color harmonies." },
-        { step: "03", title: "System Refinement", desc: "Applying the brand to real-world touchpoints and digital interfaces." },
-        { step: "04", title: "Guidelines Delivery", desc: "Complete vector asset packages and digital brand manual." }
-      ]),
-      benefitsJson: JSON.stringify([
-        "Immediate corporate credibility in the UAE business landscape",
-        "Cohesive multi-channel recognition across physical and digital formats",
-        "Strong emotional resonance that justifies premium pricing"
-      ]),
-      seoTitle: "Corporate Branding Agency Dubai | Logo & Brand Identity Design",
-      seoDescription: "Build an authoritative corporate brand identity with Bird Hills Tech in Dubai. Strategic branding, logo systems, and visual identities crafted for market leaders.",
-      sortOrder: 5,
       published: true,
     },
     {
@@ -211,89 +126,234 @@ async function main() {
       slug: "digital-marketing",
       category: "Growth",
       icon: "TrendingUp",
-      shortDesc: "SEO, paid advertising, social media and data-driven marketing strategies.",
-      fullDesc: "Data-driven multi-channel growth campaigns built for qualified B2B and high-ticket B2C customer acquisition. We focus on measurable commercial returns—generating qualified pipeline rather than meaningless impression metrics.",
+      shortDesc: "Closed-loop B2B lead generation, Google Ads, Meta advertising, and high-ROI multi-channel campaigns.",
+      fullDesc: "Data-driven performance marketing built for qualified customer acquisition. We eliminate ad spend waste through precision commercial keyword bidding, B2B LinkedIn targeting, creative conversion funnels, and revenue attribution.",
       featuresJson: JSON.stringify([
-        "High-Intent Google Ads & Search Marketing",
-        "Targeted B2B LinkedIn Campaign Architecture",
-        "Meta Performance Advertising (Instagram & Facebook)",
-        "End-to-End Analytics & Conversion Attribution",
-        "Landing Page Conversion Rate Optimization (CRO)"
+        "SEO",
+        "Google Ads",
+        "Meta Ads",
+        "Social Media Marketing",
+        "Content Marketing",
+        "Email Marketing",
+        "Remarketing",
+        "Lead Generation"
       ]),
       processJson: JSON.stringify([
-        { step: "01", title: "Audience Profiling", desc: "Pinpointing target decision-makers, search intent, and buyer triggers." },
-        { step: "02", title: "Creative & Copy", desc: "High-converting corporate messaging, ad creatives, and lead funnels." },
-        { step: "03", title: "Launch & Bidding", desc: "Precision bidding strategies targeting high-value commercial keywords." },
-        { step: "04", title: "Attribution & Scale", desc: "Weekly CAC/LTV reporting and budget reallocation toward winning channels." }
+        { step: "01", title: "Audience Profiling", desc: "Pinpointing decision-makers, commercial search intent, and buyer triggers." },
+        { step: "02", title: "Creative Architecture", desc: "High-converting corporate messaging, ad creatives, and lead funnels." },
+        { step: "03", title: "Precision Bidding", desc: "Algorithmic bidding targeting high-value commercial inquiries." },
+        { step: "04", title: "Attribution & Scaling", desc: "Weekly CAC/LTV reporting and budget reallocation toward winning channels." }
       ]),
       benefitsJson: JSON.stringify([
-        "Predictable flow of qualified business inquiries",
-        "Elimination of ad spend waste through strict negative keyword filtering",
-        "Transparent real-time reporting tied to revenue outcomes"
+        "Predictable flow of verified commercial business inquiries",
+        "Elimination of ad budget waste with strict negative keyword filtering",
+        "Transparent real-time reporting tied directly to revenue outcomes"
       ]),
       seoTitle: "Digital Marketing Agency Dubai | Performance Marketing & PPC | Bird Hills Tech",
-      seoDescription: "Scale your revenue with Bird Hills Tech, a premier digital marketing agency in Dubai. Data-driven Google Ads, social marketing, and conversion optimization.",
+      seoDescription: "Scale your revenue with Bird Hills Tech, a premier digital marketing agency in Dubai. High-intent Google Ads, Meta performance, and B2B lead generation.",
+      sortOrder: 3,
+      published: true,
+    },
+    {
+      title: "Google Business Profile & Local SEO",
+      slug: "google-business-profile-local-seo",
+      category: "Local Dominance",
+      icon: "MapPin",
+      shortDesc: "Dominate Google Maps, local Dubai map pack results, and verified multi-location business authority.",
+      fullDesc: "Capture local high-intent customers the moment they search for your services in Dubai, Abu Dhabi, and across the UAE. We manage Google Business Profile verification, keyword optimization, local citation syndication, and review generation strategies.",
+      featuresJson: JSON.stringify([
+        "Google Business Profile Creation",
+        "GBP Verification Assistance",
+        "GBP Profile Optimization",
+        "Google Maps Optimization",
+        "Local SEO",
+        "Local Keyword Optimization",
+        "Review Management Strategy",
+        "Local Citations",
+        "GBP Posts & Content",
+        "Multi-Location Management"
+      ]),
+      processJson: JSON.stringify([
+        { step: "01", title: "GBP Audit & Verification", desc: "Resolving profile verification, category selection, and NAP consistency." },
+        { step: "02", title: "Geo-Grid Analysis", desc: "Mapping ranking radius across key Dubai commercial districts." },
+        { step: "03", title: "Local Citation Building", desc: "Submitting verified listings to authoritative UAE business directories." },
+        { step: "04", title: "Review & Content Sprints", desc: "Systematic review acquisition workflows and geo-targeted weekly updates." }
+      ]),
+      benefitsJson: JSON.stringify([
+        "Top-3 Google Maps ranking across high-density Dubai commercial zones",
+        "Immediate customer phone calls, driving directions, and website clicks",
+        "Authoritative 5-star reputation that builds instant prospect trust"
+      ]),
+      seoTitle: "Google Business Profile Optimization & Local SEO Dubai | Bird Hills Tech",
+      seoDescription: "Dominate Google Maps and local search in Dubai. Expert GBP creation, verification assistance, local citations, and review management strategies.",
+      sortOrder: 4,
+      published: true,
+    },
+    {
+      title: "AI SEO & Search",
+      slug: "ai-seo-search",
+      category: "Next-Gen Search",
+      icon: "Search",
+      shortDesc: "Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO) for AI search dominance.",
+      fullDesc: "Search has evolved beyond ten blue links. We optimize your brand to be recommended by AI answer engines including ChatGPT Search, Perplexity AI, Google AI Overviews, and Gemini. Combine technical SEO with semantic knowledge-graph optimization.",
+      featuresJson: JSON.stringify([
+        "Technical SEO",
+        "On-Page SEO",
+        "AEO — Answer Engine Optimization",
+        "GEO — Generative Engine Optimization",
+        "AI Search Optimization",
+        "Semantic SEO",
+        "Programmatic SEO",
+        "AI Content Strategy",
+        "SEO Automation"
+      ]),
+      processJson: JSON.stringify([
+        { step: "01", title: "Semantic Knowledge Graph", desc: "Mapping entity relationships and industry authorities across web graphs." },
+        { step: "02", title: "AEO / GEO Formatting", desc: "Structuring content for LLM citation, fact extraction, and answer snippets." },
+        { step: "03", title: "Programmatic Scaling", desc: "Automating high-volume landing pages for granular long-tail intent." },
+        { step: "04", title: "AI Citation Tracking", desc: "Monitoring brand recommendation frequency across Perplexity and Gemini." }
+      ]),
+      benefitsJson: JSON.stringify([
+        "Direct citations and recommendations in ChatGPT, Gemini, and Perplexity",
+        "First-mover advantage over competitors still relying solely on legacy SEO",
+        "Long-term compound organic pipeline that scales without ad spend"
+      ]),
+      seoTitle: "AI SEO Agency Dubai | AEO & Generative Engine Optimization | Bird Hills Tech",
+      seoDescription: "Dominate the new era of AI search. Bird Hills Tech specializes in AEO, GEO, semantic SEO, and technical search engine optimization in Dubai.",
+      sortOrder: 5,
+      published: true,
+    },
+    {
+      title: "AI Automation",
+      slug: "ai-automation",
+      category: "Automation",
+      icon: "Bot",
+      shortDesc: "Autonomous AI agents, conversational WhatsApp qualifiers, n8n workflows, and zero-touch business operations.",
+      fullDesc: "Turn repetitive manual tasks into autonomous digital workers. We design custom AI agents, intelligent WhatsApp lead qualifiers, automated customer support bots, and robust n8n workflow pipelines that operate 24/7 without human intervention.",
+      featuresJson: JSON.stringify([
+        "AI Agents",
+        "AI Chatbots",
+        "AI Workflow Automation",
+        "WhatsApp Automation",
+        "AI Sales Automation",
+        "AI Customer Support",
+        "AI Lead Qualification",
+        "AI Content Automation",
+        "Business Process Automation",
+        "n8n Automation"
+      ]),
+      processJson: JSON.stringify([
+        { step: "01", title: "Workflow Friction Audit", desc: "Pinpointing manual bottlenecks where automation yields immediate hours saved." },
+        { step: "02", title: "Architecture & Logic", desc: "Designing multi-step n8n logic, prompt guardrails, and secure API bridges." },
+        { step: "03", title: "WhatsApp & CRM Sync", desc: "Deploying conversational AI with instant CRM lead dispatch." },
+        { step: "04", title: "Testing & SLA Tuning", desc: "Live user testing, response latency optimization, and continuous monitoring." }
+      ]),
+      benefitsJson: JSON.stringify([
+        "Instant sub-10-second response to customer inquiries 24 hours a day",
+        "Elimination of hours spent on manual data entry and repetitive follow-ups",
+        "Seamless integration with WhatsApp Cloud API, CRMs, and email systems"
+      ]),
+      seoTitle: "AI Automation & AI Agents Dubai | n8n & WhatsApp Automation | Bird Hills Tech",
+      seoDescription: "Supercharge your business with AI agents, WhatsApp automation, and n8n workflows in Dubai. Custom conversational bots and autonomous operations.",
       sortOrder: 6,
       published: true,
     },
     {
-      title: "SEO Solutions",
-      slug: "seo",
-      category: "Growth",
-      icon: "Search",
-      shortDesc: "Technical SEO, local Dubai authority, and sustainable organic search dominance.",
-      fullDesc: "Dominate Google search results for commercial intent keywords in Dubai and the GCC. Our systematic organic search methodology tackles technical foundation, site architecture, semantic content authority, and high-trust digital citations.",
+      title: "CRM & Marketing Automation",
+      slug: "crm-marketing-automation",
+      category: "Pipeline & Operations",
+      icon: "Workflow",
+      shortDesc: "Enterprise CRM setup, intelligent lead routing, automated WhatsApp/email cadences, and calendar booking.",
+      fullDesc: "Never let another qualified lead slip through the cracks. We architect unified CRM ecosystems (HubSpot, Zoho, Salesforce, HighLevel) with automated lead distribution, personalized multi-channel follow-ups, and calendar booking pipelines.",
       featuresJson: JSON.stringify([
-        "Technical SEO & Core Web Vitals Optimization",
-        "Local Dubai Map Pack & Business Authority",
-        "Commercial Intent Keyword Mapping",
-        "High-Authority Digital PR & Citation Building",
-        "Semantic Structured Data & Rich Snippets"
+        "CRM Setup",
+        "Lead Management",
+        "Lead Automation",
+        "Lead Routing",
+        "Email Automation",
+        "WhatsApp Automation",
+        "Sales Pipeline Automation",
+        "Appointment Automation",
+        "CRM Integrations"
       ]),
       processJson: JSON.stringify([
-        { step: "01", title: "Technical Audit", desc: "Comprehensive crawl to uncover indexation blockers, redirects, and speed bottlenecks." },
-        { step: "02", title: "Keyword Architecture", desc: "Mapping commercial search terms to dedicated service and landing pages." },
-        { step: "03", title: "On-Page Optimization", desc: "Metadata, semantic HTML, internal linking, and structured schema." },
-        { step: "04", title: "Authority Growth", desc: "Building credible domain trust through editorial backlinks and local citations." }
+        { step: "01", title: "Sales Journey Blueprint", desc: "Mapping customer touchpoints from initial ad click to signed contract." },
+        { step: "02", title: "CRM Architecture", desc: "Custom pipeline stages, deal fields, user permissions, and notifications." },
+        { step: "03", title: "Automated Cadences", desc: "Trigger-based email and WhatsApp workflows based on lead behavior." },
+        { step: "04", title: "Team Enablement", desc: "Hands-on staff training and executive analytics dashboard configuration." }
       ]),
       benefitsJson: JSON.stringify([
-        "Long-term compound acquisition channel with zero cost-per-click",
-        "Top-3 Google visibility for prime Dubai business searches",
-        "High trust signaled to prospects searching for your services"
+        "3x faster lead response times, dramatically increasing close rates",
+        "Zero lost leads with automated fail-safes and instant team notifications",
+        "Clear visibility into rep performance and revenue pipeline health"
       ]),
-      seoTitle: "SEO Agency Dubai | Search Engine Optimization UAE | Bird Hills Tech",
-      seoDescription: "Dominate organic search in Dubai with Bird Hills Tech. Comprehensive technical SEO, local ranking acceleration, and high-impact B2B search strategies.",
+      seoTitle: "CRM & Marketing Automation Services Dubai | Bird Hills Tech",
+      seoDescription: "Transform your sales pipeline with CRM setup and marketing automation in Dubai. Automated lead routing, WhatsApp workflows, and calendar booking.",
       sortOrder: 7,
       published: true,
     },
     {
-      title: "AI Solutions",
-      slug: "ai-solutions",
-      category: "Technology",
-      icon: "Cpu",
-      shortDesc: "AI integrations, automation and intelligent digital experiences.",
-      fullDesc: "Bridge the gap between AI hype and practical business advantage. We build custom conversational AI agents, intelligent workflow automations, and proprietary knowledge assistants that dramatically accelerate client response times and eliminate repetitive manual tasks.",
+      title: "Branding & Creative",
+      slug: "branding-creative",
+      category: "Creative",
+      icon: "Sparkles",
+      shortDesc: "Authoritative corporate brand identities, vector logo design, UI/UX systems, and high-converting creative assets.",
+      fullDesc: "Stand out with undeniable prestige in Dubai's competitive corporate landscape. We craft authoritative brand identities, precision vector logos, comprehensive design systems, high-converting ad creative, and social media systems that command respect.",
       featuresJson: JSON.stringify([
-        "Intelligent Lead Qualification Assistants",
-        "Internal Knowledge Retrieval (RAG) Systems",
-        "Workflow Automation & CRM Auto-Routing",
-        "Multimodal AI Integration (Voice, Text, Vision)",
-        "Secure Private Enterprise Model Deployments"
+        "Brand Identity",
+        "Logo Design",
+        "UI/UX Design",
+        "Ad Creative",
+        "Social Media Design",
+        "Marketing Graphics"
       ]),
       processJson: JSON.stringify([
-        { step: "01", title: "Use-Case Audit", desc: "Identifying high-friction workflows where AI generates immediate ROI." },
-        { step: "02", title: "Data & Security Architecture", desc: "Ensuring company data privacy and selecting the ideal model provider." },
-        { step: "03", title: "Integration & Testing", desc: "Connecting AI agents with existing CRMs, WhatsApp, and databases." },
-        { step: "04", title: "Fine-Tuning & Monitoring", desc: "Ongoing evaluation, guardrail enforcement, and prompt optimization." }
+        { step: "01", title: "Brand Discovery", desc: "Defining market positioning, brand personality, and competitive difference." },
+        { step: "02", title: "Concept Exploration", desc: "Vector logo sketching, typography pairing, and luxury color palettes." },
+        { step: "03", title: "Design System Build", desc: "Creating comprehensive digital brand guidelines and asset libraries." },
+        { step: "04", title: "Collateral Rollout", desc: "Applying the brand across digital ads, social templates, and stationery." }
       ]),
       benefitsJson: JSON.stringify([
-        "24/7 instant client inquiry qualification and scheduling",
-        "Dramatically reduced operational workload for support and sales teams",
-        "Competitive edge in tech-forward Dubai enterprise sectors"
+        "Immediate corporate authority and trust in the Dubai and Gulf business landscape",
+        "Cohesive multi-channel visual system that enhances brand recall",
+        "Premium aesthetic that positions your business to command higher fees"
       ]),
-      seoTitle: "AI Solutions & Automation Dubai | Enterprise AI Integrations | Bird Hills Tech",
-      seoDescription: "Transform your business operations with custom AI solutions in Dubai. Intelligent conversational assistants, automated workflows, and enterprise AI integrations.",
+      seoTitle: "Branding Agency Dubai | Logo & Corporate Identity Design | Bird Hills Tech",
+      seoDescription: "Elevate your business with prestigious corporate branding in Dubai. Logo design, brand guidelines, UI/UX design, and digital marketing graphics.",
       sortOrder: 8,
+      published: true,
+    },
+    {
+      title: "Analytics & CRO",
+      slug: "analytics-cro",
+      category: "Data & Optimization",
+      icon: "BarChart3",
+      shortDesc: "Server-side Meta CAPI, Google Analytics 4, multi-touch attribution, and systematic conversion rate optimization.",
+      fullDesc: "Make data-backed decisions that drive measurable revenue. We deploy server-side tracking, advanced Google Tag Manager containers, Meta Conversions API (CAPI), and continuous A/B conversion testing to turn more visitors into paying customers.",
+      featuresJson: JSON.stringify([
+        "Google Analytics",
+        "Google Tag Manager",
+        "Conversion Tracking",
+        "Meta Pixel & CAPI",
+        "Conversion Optimization",
+        "Lead Attribution",
+        "Marketing Dashboards",
+        "Reporting & Analytics"
+      ]),
+      processJson: JSON.stringify([
+        { step: "01", title: "Tracking Audit", desc: "Diagnosing broken events, duplicate triggers, and attribution gaps." },
+        { step: "02", title: "Server-Side Setup", desc: "Deploying Meta CAPI and GTM Server containers for 100% data fidelity." },
+        { step: "03", title: "CRO Hypotheses", desc: "Analyzing heatmaps, drop-off funnels, and formulating conversion tests." },
+        { step: "04", title: "Executive Dashboards", desc: "Live Looker Studio reports showing exact cost-per-acquisition and ROI." }
+      ]),
+      benefitsJson: JSON.stringify([
+        "100% accurate conversion data bypassing iOS and browser ad-blockers",
+        "Higher ROAS on ad campaigns through algorithmic machine learning feeding",
+        "Systematic lift in website conversion rates through proven A/B testing"
+      ]),
+      seoTitle: "Analytics & Conversion Rate Optimization (CRO) Dubai | Bird Hills Tech",
+      seoDescription: "Maximize your marketing ROI with GA4, Meta CAPI, and CRO in Dubai. Accurate attribution tracking, conversion testing, and executive reporting.",
+      sortOrder: 9,
       published: true,
     },
   ];

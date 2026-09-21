@@ -21,7 +21,7 @@ import {
   ExternalLink,
   Menu,
   X,
-  Shield,
+  Sparkles,
 } from "lucide-react";
 import Logo from "../common/Logo";
 
@@ -33,7 +33,8 @@ const navItems = [
   { name: "Dashboard", href: "/admin/dashboard", icon: LayoutDashboard },
   { name: "Leads CRM", href: "/admin/leads", icon: MessageSquare },
   { name: "Bookings", href: "/admin/bookings", icon: Calendar },
-  { name: "Services", href: "/admin/services", icon: Layers },
+  { name: "SEO & AEO Suite", href: "/admin/seo-tools", icon: Sparkles },
+  { name: "Services (9 Areas)", href: "/admin/services", icon: Layers },
   { name: "Pricing Packages", href: "/admin/pricing", icon: CreditCard },
   { name: "Hosting & Domains", href: "/admin/hosting", icon: Server },
   { name: "Projects", href: "/admin/projects", icon: Briefcase },
@@ -64,9 +65,9 @@ export function AdminSidebar({ adminUser }: AdminSidebarProps) {
   return (
     <>
       {/* Mobile Bar */}
-      <div className="lg:hidden flex items-center justify-between p-4 bg-[#0B1730] text-white sticky top-0 z-30">
+      <div className="lg:hidden flex items-center justify-between p-4 bg-[#070B14] text-white sticky top-0 z-30 border-b border-[#C59B27]/30">
         <Logo variant="white" iconOnly />
-        <span className="text-xs font-bold uppercase tracking-wider text-slate-300">
+        <span className="text-xs font-bold uppercase tracking-wider text-[#D4AF37]">
           Admin Portal
         </span>
         <button
@@ -80,13 +81,13 @@ export function AdminSidebar({ adminUser }: AdminSidebarProps) {
 
       {/* Sidebar Desktop & Mobile Overlay */}
       <aside
-        className={`fixed inset-y-0 left-0 z-40 w-64 bg-[#0B1730] text-white flex flex-col justify-between transition-transform duration-300 lg:translate-x-0 ${
+        className={`fixed inset-y-0 left-0 z-40 w-64 bg-[#070B14] text-white flex flex-col justify-between transition-transform duration-300 lg:translate-x-0 border-r border-[#C59B27]/25 ${
           isMobileOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
         <div className="flex flex-col h-full overflow-hidden">
           {/* Brand header */}
-          <div className="p-6 border-b border-slate-800 flex items-center justify-between">
+          <div className="p-6 border-b border-white/10 flex items-center justify-between">
             <Logo variant="white" />
             <button
               type="button"
@@ -99,7 +100,7 @@ export function AdminSidebar({ adminUser }: AdminSidebarProps) {
 
           {/* Navigation Links */}
           <nav className="flex-1 p-4 space-y-1 overflow-y-auto">
-            <div className="px-3 py-2 text-[10px] font-bold uppercase tracking-wider text-slate-400">
+            <div className="px-3 py-2 text-[10px] font-extrabold uppercase tracking-wider text-[#D4AF37]">
               CMS & OPERATIONS
             </div>
             {navItems.map((item) => {
@@ -112,11 +113,11 @@ export function AdminSidebar({ adminUser }: AdminSidebarProps) {
                   onClick={() => setIsMobileOpen(false)}
                   className={`flex items-center gap-3 px-3 py-2 rounded-xl text-xs font-semibold transition-all ${
                     isActive
-                      ? "bg-[#1D68BD] text-white shadow-sm"
-                      : "text-slate-300 hover:text-white hover:bg-slate-800/60"
+                      ? "bg-gradient-to-r from-[#D4AF37] via-[#C59B27] to-[#B38728] text-white font-bold shadow-sm shadow-[#C59B27]/20"
+                      : "text-slate-300 hover:text-white hover:bg-white/5"
                   }`}
                 >
-                  <Icon size={16} className={isActive ? "text-white" : "text-slate-400"} />
+                  <Icon size={16} className={isActive ? "text-white" : "text-[#D4AF37]/80"} />
                   <span>{item.name}</span>
                 </Link>
               );
@@ -124,22 +125,22 @@ export function AdminSidebar({ adminUser }: AdminSidebarProps) {
           </nav>
 
           {/* User profile & quick links */}
-          <div className="p-4 border-t border-slate-800 space-y-3 bg-[#081022]">
+          <div className="p-4 border-t border-white/10 space-y-3 bg-black/40">
             <Link
               href="/"
               target="_blank"
-              className="flex items-center justify-between text-xs text-slate-400 hover:text-white px-2 py-1.5 rounded-lg hover:bg-slate-800 transition-colors"
+              className="flex items-center justify-between text-xs text-slate-400 hover:text-white px-2 py-1.5 rounded-lg hover:bg-white/5 transition-colors"
             >
               <span className="flex items-center gap-2">
-                <ExternalLink size={13} className="text-[#38BDF8]" />
+                <ExternalLink size={13} className="text-[#D4AF37]" />
                 View Public Site
               </span>
-              <span className="text-[10px] bg-slate-800 px-1.5 py-0.5 rounded text-slate-300">
+              <span className="text-[10px] bg-[#C59B27]/20 text-[#D4AF37] px-1.5 py-0.5 rounded font-bold">
                 Live
               </span>
             </Link>
 
-            <div className="flex items-center justify-between pt-2 border-t border-slate-800/80 px-2">
+            <div className="flex items-center justify-between pt-2 border-t border-white/10 px-2">
               <div className="overflow-hidden">
                 <div className="text-xs font-bold text-white truncate">
                   {adminUser?.name || "Administrator"}
@@ -152,7 +153,7 @@ export function AdminSidebar({ adminUser }: AdminSidebarProps) {
                 type="button"
                 onClick={handleLogout}
                 title="Log Out"
-                className="p-2 rounded-lg text-slate-400 hover:text-rose-400 hover:bg-slate-800 transition-colors"
+                className="p-2 rounded-lg text-slate-400 hover:text-rose-400 hover:bg-white/5 transition-colors"
               >
                 <LogOut size={16} />
               </button>
@@ -165,10 +166,11 @@ export function AdminSidebar({ adminUser }: AdminSidebarProps) {
       {isMobileOpen && (
         <div
           onClick={() => setIsMobileOpen(false)}
-          className="fixed inset-0 bg-black/50 z-30 lg:hidden backdrop-blur-2xs"
+          className="fixed inset-0 bg-black/60 z-30 lg:hidden backdrop-blur-2xs"
         />
       )}
     </>
   );
 }
+
 export default AdminSidebar;

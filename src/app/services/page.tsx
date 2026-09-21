@@ -4,33 +4,30 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   Code2,
-  Layers,
-  ShoppingBag,
-  Cpu,
-  Palette,
-  Sparkles,
+  Globe,
   TrendingUp,
-  Search,
-  ArrowRight,
-  ShieldCheck,
-  CheckCircle2,
+  MapPin,
+  Sparkles,
+  Bot,
+  Workflow,
+  Palette,
+  BarChart3,
   Calendar,
   MessageCircle,
+  CheckCircle2,
+  Server,
   Zap,
   Lock,
   Clock,
   Compass,
-  Server,
-  FileCheck,
   HelpCircle,
-  ChevronRight,
 } from "lucide-react";
 import FinalCtaSection from "@/components/home/FinalCtaSection";
 
 export const metadata: Metadata = {
   title: "Digital Services & Practice Areas | Bird Hills Tech Dubai",
   description:
-    "Explore Bird Hills Tech's comprehensive digital services in Dubai: custom web development, enterprise web applications, e-commerce, UI/UX, branding, SEO, and AI solutions.",
+    "Explore Bird Hills Tech's 9 core digital practices: Web Development, Domain & Hosting, Digital Marketing, Google Business Profile & Local SEO, AI SEO & Search, AI Automation, CRM & Marketing Automation, Branding & Creative, and Analytics & CRO.",
   alternates: {
     canonical: "https://birdhillstech.com/services",
   },
@@ -42,128 +39,183 @@ export default function ServicesHubPage() {
       title: "Web Development",
       slug: "/services/web-development",
       category: "Technology",
-      desc: "Custom corporate websites and digital platforms built on modern Next.js architecture with sub-second page speeds.",
+      desc: "Bespoke corporate websites and mission-critical web applications built on modern Next.js architecture with sub-second page speeds.",
       image:
         "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=85",
       icon: Code2,
       price: "From $4,950",
-      features: [
-        "Modern Next.js & TypeScript Architectures",
-        "Sub-second Core Web Vitals (< 0.8s LCP)",
-        "API, Headless CMS & CRM Integrations",
-        "100% Source Code & IP Ownership",
+      subServices: [
+        "Business Websites",
+        "WordPress",
+        "eCommerce",
+        "Landing Pages",
+        "Custom Development",
+        "Website Redesign",
+        "Website Support",
       ],
     },
     {
-      title: "Web Applications & SaaS",
-      slug: "/services/web-applications",
-      category: "Technology",
-      desc: "Bespoke SaaS platforms, internal business software, and secure client portals that streamline complex business logic.",
+      title: "Domain & Hosting",
+      slug: "/hosting",
+      category: "Infrastructure",
+      desc: "Accredited UAE .ae and global domain registration paired with pure NVMe GCC edge cloud servers and corporate business email.",
       image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=85",
-      icon: Layers,
-      price: "From $9,500",
-      features: [
-        "Complex Relational Data Modeling & PostgreSQL",
-        "Granular Role-Based Access Control (RBAC)",
-        "Real-Time Analytics & Event Pipeline",
-        "DIFC & Regional Compliance Ready",
+        "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=85",
+      icon: Globe,
+      price: "From $9.99/mo",
+      subServices: [
+        "Domain Registration",
+        "Domain Transfer & Management",
+        "Web Hosting",
+        "Business Email",
+        "SSL & Website Security",
+        "DNS Management",
+        "Website Migration",
+        "Backup & Maintenance",
       ],
     },
     {
-      title: "E-commerce Solutions",
-      slug: "/services/ecommerce",
-      category: "Technology",
-      desc: "High-converting online flagships and headless storefronts integrated with regional GCC payment gateways.",
-      image:
-        "https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=800&q=85",
-      icon: ShoppingBag,
-      price: "From $6,800",
-      features: [
-        "Headless Shopify & Custom Cart Architecture",
-        "Stripe, Tabby, Tamara & Network International",
-        "High-Volume Inventory & ERP Synchronization",
-        "Mobile-First Frictionless 1-Click Checkout",
-      ],
-    },
-    {
-      title: "UI/UX Experience Design",
-      slug: "/services/ui-ux-design",
-      category: "Creative",
-      desc: "Deep customer research, wireframing, and interactive design systems built for high retention and seamless usability.",
-      image:
-        "https://images.unsplash.com/photo-1581291518655-9523c932edcf?auto=format&fit=crop&w=800&q=85",
-      icon: Palette,
-      price: "From $3,950",
-      features: [
-        "Interactive High-Fidelity Figma Prototypes",
-        "Enterprise Design System & Token Libraries",
-        "Bilingual English & Arabic UX Hierarchy",
-        "Quantitative User Testing & Usability Auditing",
-      ],
-    },
-    {
-      title: "Branding & Corporate Identity",
-      slug: "/services/branding",
-      category: "Creative",
-      desc: "Prestigious brand identities, typography guidelines, and visual positioning engineered for Dubai leadership.",
-      image:
-        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=85",
-      icon: Sparkles,
-      price: "From $3,500",
-      features: [
-        "Corporate Vector Logo & Brand Guidelines",
-        "Editorial Typography & High-End Color Theory",
-        "Executive Pitch Decks & Digital Collateral",
-        "Bilingual Middle East Cultural Nuance",
-      ],
-    },
-    {
-      title: "Performance Digital Marketing",
+      title: "Digital Marketing",
       slug: "/services/digital-marketing",
       category: "Growth",
-      desc: "Data-driven performance campaigns on Google and LinkedIn focused on generating verified commercial pipeline.",
+      desc: "Data-driven commercial campaigns across Google Ads, Meta, and LinkedIn targeting verified decision-makers across the UAE and GCC.",
       image:
         "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=85",
       icon: TrendingUp,
       price: "From $1,950/mo",
-      features: [
-        "High-Intent Commercial Google Search Ads",
-        "Precision B2B LinkedIn Decision-Maker Targeting",
-        "Closed-Loop Revenue Attribution & CAC Profiling",
-        "A/B Landing Page Conversion Rate Optimization",
+      subServices: [
+        "SEO",
+        "Google Ads",
+        "Meta Ads",
+        "Social Media Marketing",
+        "Content Marketing",
+        "Email Marketing",
+        "Remarketing",
+        "Lead Generation",
       ],
     },
     {
-      title: "SEO & Search Dominance",
-      slug: "/services/seo",
-      category: "Growth",
-      desc: "Technical SEO, site architecture, and content authority strategies designed to dominate Dubai business search results.",
+      title: "Google Business Profile & Local SEO",
+      slug: "/services/google-business-profile-local-seo",
+      category: "Local Dominance",
+      desc: "Rank in Dubai Google Maps 3-Pack, verify your Google Business Profile, capture high-intent localized calls, and scale customer reviews.",
+      image:
+        "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800&q=85",
+      icon: MapPin,
+      price: "From $850/mo",
+      subServices: [
+        "GBP Creation",
+        "GBP Verification Assistance",
+        "GBP Profile Optimization",
+        "Google Maps Optimization",
+        "Local SEO",
+        "Local Keyword Optimization",
+        "Review Management Strategy",
+        "Local Citations",
+        "GBP Posts & Content",
+        "Multi-Location Management",
+      ],
+    },
+    {
+      title: "AI SEO & Search",
+      slug: "/services/ai-seo-search",
+      category: "Future Search",
+      desc: "AEO and GEO optimization engineered so Perplexity AI, ChatGPT Search, and Google AI Overviews cite and recommend your brand.",
       image:
         "https://images.unsplash.com/photo-1571786256017-aee7a0c009b6?auto=format&fit=crop&w=800&q=85",
-      icon: Search,
+      icon: Sparkles,
       price: "From $1,650/mo",
-      features: [
-        "Local Dubai Map Pack & Entity Authority",
-        "High-Value Commercial Keyword Dominance",
-        "Core Web Vitals & Crawl Budget Hardening",
-        "Authoritative Regional Digital PR Backlinks",
+      subServices: [
+        "Technical SEO",
+        "On-Page SEO",
+        "AEO (Answer Engine Optimization)",
+        "GEO (Generative Engine Optimization)",
+        "AI Search Optimization",
+        "Semantic SEO",
+        "Programmatic SEO",
+        "AI Content Strategy",
+        "SEO Automation",
       ],
     },
     {
-      title: "Autonomous AI Solutions",
-      slug: "/services/ai-solutions",
-      category: "Technology",
-      desc: "Pragmatic generative AI, intelligent conversational lead qualifiers, and internal knowledge automation.",
+      title: "AI Automation",
+      slug: "/services/ai-automation",
+      category: "Automation",
+      desc: "Deploy autonomous conversational agents, 24/7 WhatsApp customer service bots, and n8n workflow pipelines that eradicate manual tasks.",
       image:
         "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=85",
-      icon: Cpu,
-      price: "From $4,200",
-      features: [
-        "24/7 Autonomous Conversational Qualifiers",
-        "Private Retrieval-Augmented Generation (RAG)",
-        "Automatic CRM Dispatch & Lead Scoring",
-        "Multi-Lingual Arabic & English Intent NLP",
+      icon: Bot,
+      price: "From $3,200",
+      subServices: [
+        "AI Agents",
+        "AI Chatbots",
+        "AI Workflow Automation",
+        "WhatsApp Automation",
+        "AI Sales Automation",
+        "AI Customer Support",
+        "AI Lead Qualification",
+        "AI Content Automation",
+        "Business Process Automation",
+        "n8n Automation",
+      ],
+    },
+    {
+      title: "CRM & Marketing Automation",
+      slug: "/services/crm-marketing-automation",
+      category: "Operations",
+      desc: "Centralize your sales pipeline with HubSpot, Zoho, automated lead routing, instant WhatsApp lead follow-ups, and calendar bookings.",
+      image:
+        "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=85",
+      icon: Workflow,
+      price: "From $2,800",
+      subServices: [
+        "CRM Setup",
+        "Lead Management",
+        "Lead Automation",
+        "Lead Routing",
+        "Email Automation",
+        "WhatsApp Automation",
+        "Sales Pipeline Automation",
+        "Appointment Automation",
+        "CRM Integrations",
+      ],
+    },
+    {
+      title: "Branding & Creative",
+      slug: "/services/branding-creative",
+      category: "Creative",
+      desc: "Prestigious corporate identity design, bilingual English & Arabic typography, interactive UI/UX systems, and high-conversion ad creatives.",
+      image:
+        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=85",
+      icon: Palette,
+      price: "From $3,500",
+      subServices: [
+        "Brand Identity",
+        "Logo Design",
+        "UI/UX Design",
+        "Ad Creative",
+        "Social Media Design",
+        "Marketing Graphics",
+      ],
+    },
+    {
+      title: "Analytics & CRO",
+      slug: "/services/analytics-cro",
+      category: "Data & Insights",
+      desc: "Fix tracking blindspots with server-side GTM, Meta CAPI, GA4 ecommerce tracking, executive Looker dashboards, and conversion funnels.",
+      image:
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=85",
+      icon: BarChart3,
+      price: "From $1,450/mo",
+      subServices: [
+        "Google Analytics",
+        "Google Tag Manager",
+        "Conversion Tracking",
+        "Meta Pixel & CAPI",
+        "Conversion Optimization",
+        "Lead Attribution",
+        "Marketing Dashboards",
+        "Reporting & Analytics",
       ],
     },
   ];
@@ -171,79 +223,79 @@ export default function ServicesHubPage() {
   const deliveryPhases = [
     {
       step: "01",
-      title: "Discovery & Strategic Alignment",
-      desc: "We analyze your business model, target audience in the UAE, competitive landscape, and technical constraints to define clear ROI goals.",
+      title: "Technical Audit & Commercial Alignment",
+      desc: "We analyze your UAE market presence, audience intent, technical bottlenecks, and commercial goals to define measurable milestones.",
       timeframe: "Week 1",
     },
     {
       step: "02",
       title: "Architecture & System Specification",
-      desc: "Our senior architects design the database schemas, API integrations, security protocols, and user flows before writing a single line of code.",
+      desc: "Our senior architects map data pipelines, security protocols, user flows, and tech stacks before code is written.",
       timeframe: "Week 2",
     },
     {
       step: "03",
-      title: "High-Fidelity UI/UX Prototyping",
-      desc: "We create interactive Figma prototypes reflecting your corporate prestige, verified against real user interactions and device form-factors.",
+      title: "High-Fidelity Prototyping & Design",
+      desc: "Interactive Figma prototypes reflecting Dubai corporate prestige, verified against real users and mobile form factors.",
       timeframe: "Weeks 2 - 3",
     },
     {
       step: "04",
-      title: "Rapid Agile Development & Testing",
-      desc: "Next.js 16 and TypeScript engineering in rapid two-week sprints. Zero code bloat, clean git workflows, and weekly live staging demos.",
+      title: "Agile Development & Integrations",
+      desc: "Clean Next.js 16, TypeScript, n8n automations, and CRM synchronization built in rapid two-week testable sprints.",
       timeframe: "Weeks 3 - 6",
     },
     {
       step: "05",
-      title: "Production Launch & Continuous SLA",
-      desc: "Zero-downtime deployment to global edge infrastructure, Google indexing, security audit, and 30-90 days of guaranteed SLA warranty.",
+      title: "Launch, Tracking & Continuous SLA",
+      desc: "Zero-downtime deployment, GA4/CAPI verification, Google indexing, and ongoing technical maintenance guarantees.",
       timeframe: "Week 6+",
     },
   ];
 
   const techStackGroups = [
     {
-      category: "Frontend Engineering",
+      category: "Frontend & Web Apps",
       tools: ["Next.js 16 (App Router)", "React 19", "TypeScript", "Tailwind CSS v4", "Framer Motion", "Turbopack"],
     },
     {
-      category: "Backend & Database",
+      category: "Backend & Data Layers",
       tools: ["Node.js / Bun", "Prisma ORM", "PostgreSQL", "SQLite / Cloudflare D1", "Redis Cache", "REST / GraphQL"],
     },
     {
-      category: "Cloud Infrastructure",
-      tools: ["Vercel Edge Network", "AWS (ECS / S3)", "Cloudflare Enterprise", "Docker Containers", "GitHub CI/CD"],
+      category: "Cloud, Hosting & Domains",
+      tools: ["Pure NVMe Edge Nodes", "AWS & Cloudflare Enterprise", ".ae UAE Accredited Registry", "Docker Containers", "DIFC Compliance"],
     },
     {
-      category: "AI & Growth Marketing",
-      tools: ["Google Gemini & OpenAI APIs", "GA4 & Meta CAPI", "LinkedIn Insight Tag", "Technical Schema.org", "Stripe & Tabby"],
+      category: "AI, Automation & CRM",
+      tools: ["Google Gemini & OpenAI APIs", "n8n Automation Pipelines", "WhatsApp Cloud API", "HubSpot & Zoho CRM", "Meta CAPI & GA4"],
     },
   ];
 
   const serviceFaqs = [
     {
-      q: "Do we get full ownership of the source code and design files?",
-      a: "Yes, 100%. Unlike agencies that lock clients into proprietary systems or monthly platform rent, Bird Hills Tech transfers complete intellectual property (IP), GitHub repositories, and Figma source files upon project completion.",
+      q: "Do we get full ownership of the source code, design assets, and configurations?",
+      a: "Yes, 100%. Upon project completion and final handover, Bird Hills Tech transfers full intellectual property (IP), GitHub repositories, Figma source files, and database setups directly to your company.",
     },
     {
-      q: "How long does a typical corporate website or application take?",
-      a: "Standard corporate web platforms are delivered in 2 to 4 weeks. Complex bespoke web applications and SaaS portals typically require 6 to 10 weeks depending on database modeling and third-party integrations.",
+      q: "How are projects priced and invoiced?",
+      a: "All projects are priced transparently in USD ($) and AED (fixed milestone or monthly retainer). We accept bank wire transfers in the UAE, corporate credit cards, and regional payment arrangements with structured milestone deliverables.",
     },
     {
-      q: "Can we manage the content in-house after launch?",
-      a: "Absolutely. Every platform comes integrated with a tailored, modern CMS (Headless or Custom Admin Panel) that allows your marketing team to edit text, upload media, publish articles, and manage leads without needing a developer.",
+      q: "Can you manage our domain, hosting, email, and website under one roof?",
+      a: "Yes. As a licensed Dubai technology provider, we offer accredited .ae domain registration, pure NVMe cloud hosting, branded corporate email, SSL security, and ongoing technical maintenance as an all-in-one partner.",
     },
     {
-      q: "Do you offer post-launch maintenance and technical SLA support?",
-      a: "Yes. Every project includes a 30 to 90-day comprehensive technical warranty. We also offer monthly technology and growth retainers covering security updates, server monitoring, speed optimization, and ongoing feature rollouts.",
+      q: "What kind of post-launch warranty and SLA support do you provide?",
+      a: "Every project includes 30 to 90 days of comprehensive warranty covering bug resolution, performance monitoring, and security patching. We also offer dedicated monthly SLA retainers with guaranteed response times.",
     },
   ];
 
   return (
     <div className="flex flex-col min-h-screen pt-24">
-      {/* 1. VIBRANT HIGH-VISIBILITY HERO SECTION */}
-      <section className="relative py-24 md:py-32 bg-[#070D1B] text-white overflow-hidden">
-        {/* Full-Bleed High-Res Corporate Photography Backdrop */}
+      {/* 1. LUXURY DUBAI HERO SECTION */}
+      <section className="relative py-24 md:py-32 bg-[#070B14] text-white overflow-hidden">
+        {/* Full-Bleed Corporate Photography Backdrop */}
         <div className="absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2000&q=90"
@@ -253,32 +305,32 @@ export default function ServicesHubPage() {
             sizes="100vw"
             className="object-cover object-center scale-105"
           />
-          {/* Luminous multi-layer gradient allowing clear visuality of the Dubai skyline while ensuring crisp typography */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#070D1B]/95 via-[#070D1B]/75 to-[#070D1B]/40" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#070D1B]/90 via-transparent to-[#070D1B]" />
+          {/* Luminous Gold & Obsidian Gradient */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#070B14]/95 via-[#070B14]/85 to-[#070B14]/50" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#070B14]/90 via-transparent to-[#070B14]" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Content */}
             <div className="lg:col-span-8 space-y-6">
-              <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-widest text-[#38BDF8] uppercase bg-white/10 border border-white/15 backdrop-blur-md">
-                <Sparkles size={13} className="text-[#38BDF8]" />
-                COMPREHENSIVE CAPABILITIES · DUBAI, UAE
+              <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-widest text-[#D4AF37] uppercase bg-[#C59B27]/15 border border-[#C59B27]/30 backdrop-blur-md">
+                <Sparkles size={13} className="text-[#D4AF37]" />
+                9 CORE PRACTICE DISCIPLINES · DUBAI, UAE
               </span>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.12]">
-                Precision engineering, creative mastery & commercial growth.
+                Precision technology, bold creative & verified commercial growth.
               </h1>
               <p className="text-lg sm:text-xl text-slate-200 leading-relaxed font-normal max-w-2xl drop-shadow-sm">
-                We combine web development, bespoke software, brand systems, and performance marketing to build market-dominating digital operations in Dubai and the GCC.
+                From custom software and domain hosting to AI search, automated pipelines, and performance marketing—we build market-dominating operations in Dubai and the GCC.
               </p>
               <div className="flex flex-wrap items-center gap-4 pt-2">
                 <Link
                   href="/book-a-meeting"
-                  className="inline-flex items-center gap-2 px-7 py-4 rounded-xl bg-[#1D68BD] text-white text-xs font-bold shadow-lg shadow-[#1D68BD]/30 hover:bg-[#155196] transition-all"
+                  className="inline-flex items-center gap-2 px-7 py-4 rounded-xl bg-gradient-to-r from-[#D4AF37] via-[#C59B27] to-[#B38728] text-white text-xs font-bold shadow-lg shadow-[#C59B27]/30 hover:brightness-105 transition-all"
                 >
                   <Calendar size={15} />
-                  Schedule Technical Consultation
+                  <span>Book Technical Consultation</span>
                 </Link>
                 <a
                   href="https://wa.me/971524405785?text=Hello%20Bird%20Hills%20Tech%2C%20I%20would%20like%20to%20inquire%20about%20your%20services."
@@ -287,31 +339,32 @@ export default function ServicesHubPage() {
                   className="inline-flex items-center gap-2 px-6 py-4 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white text-xs font-bold backdrop-blur-md transition-colors"
                 >
                   <MessageCircle size={15} className="text-[#25D366]" />
-                  Direct WhatsApp Chat
+                  <span>Direct WhatsApp Chat</span>
                 </a>
               </div>
             </div>
 
-            {/* Right Card: Quick Practice Summary */}
-            <div className="lg:col-span-4 bg-white/10 backdrop-blur-xl border border-white/20 p-6 rounded-3xl shadow-2xl space-y-4">
-              <div className="text-xs font-bold uppercase tracking-wider text-[#38BDF8]">
-                At a Glance
+            {/* Right Card: Practice Summary */}
+            <div className="lg:col-span-4 bg-[#0B0F19]/90 backdrop-blur-xl border border-[#C59B27]/30 p-7 rounded-3xl shadow-2xl space-y-4">
+              <div className="text-xs font-extrabold uppercase tracking-wider text-[#D4AF37] flex items-center justify-between">
+                <span>Agency Credentials</span>
+                <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse" />
               </div>
               <div className="space-y-3">
                 <div className="flex items-center justify-between pb-2 border-b border-white/10 text-xs">
-                  <span className="text-slate-300">Core Disciplines</span>
-                  <span className="font-bold text-white">8 Practice Areas</span>
+                  <span className="text-slate-300">Total Practice Areas</span>
+                  <span className="font-bold text-white">9 Specialized Disciplines</span>
                 </div>
                 <div className="flex items-center justify-between pb-2 border-b border-white/10 text-xs">
-                  <span className="text-slate-300">LCP Speed Guarantee</span>
-                  <span className="font-bold text-[#25D366]">&lt; 0.8s Core Web Vitals</span>
+                  <span className="text-slate-300">LCP Speed SLA</span>
+                  <span className="font-bold text-[#D4AF37]">&lt; 0.8s Core Web Vitals</span>
                 </div>
                 <div className="flex items-center justify-between pb-2 border-b border-white/10 text-xs">
-                  <span className="text-slate-300">Source Code Ownership</span>
-                  <span className="font-bold text-white">100% Client IP</span>
+                  <span className="text-slate-300">Intellectual Property</span>
+                  <span className="font-bold text-white">100% Client Ownership</span>
                 </div>
                 <div className="flex items-center justify-between text-xs">
-                  <span className="text-slate-300">Location</span>
+                  <span className="text-slate-300">Dubai HQ</span>
                   <span className="font-bold text-white">Deira, Dubai, UAE</span>
                 </div>
               </div>
@@ -321,19 +374,19 @@ export default function ServicesHubPage() {
       </section>
 
       {/* 2. SERVICES CATALOG (ATTRACTIVE CARDS WITH DIRECT WHATSAPP & BOOKING CTAS) */}
-      <section className="py-24 bg-[#F7F9FC]" id="all-services">
+      <section className="py-24 bg-[#FAF8F5]" id="all-services">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
             <div>
-              <span className="text-xs font-bold tracking-wider uppercase text-[#1D68BD]">
-                OUR PRACTICE AREAS
+              <span className="text-xs font-extrabold tracking-wider uppercase text-[#C59B27]">
+                FULL-SERVICE DIGITAL AGENCY
               </span>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B1730] tracking-tight mt-2">
-                All 8 Core Service Disciplines
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B0F19] tracking-tight mt-2">
+                All 9 Core Service Disciplines
               </h2>
             </div>
             <p className="text-xs sm:text-sm text-[#667085] max-w-md">
-              Every service is delivered with dedicated technical leads, transparent milestones, and direct director oversight.
+              Every discipline is executed by specialized senior engineers, creatives, and growth strategists under direct director oversight.
             </p>
           </div>
 
@@ -348,7 +401,7 @@ export default function ServicesHubPage() {
               return (
                 <div
                   key={service.title}
-                  className="bg-white rounded-3xl border border-[#E4E7EC] hover:border-[#1D68BD]/40 hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col justify-between group"
+                  className="bg-white rounded-3xl border border-[#E4E7EC] hover:border-[#C59B27]/50 hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col justify-between group"
                 >
                   <div>
                     {/* Top Visual Imagery */}
@@ -360,42 +413,47 @@ export default function ServicesHubPage() {
                         sizes="(max-width: 768px) 100vw, 33vw"
                         className="object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#0B1730]/90 via-[#0B1730]/30 to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#070B14]/95 via-[#070B14]/40 to-transparent" />
 
                       {/* Overlaid Badges */}
                       <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
-                        <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-white/95 backdrop-blur-md text-[#0B1730] shadow-sm flex items-center gap-1.5">
-                          <Icon size={12} className="text-[#1D68BD]" />
+                        <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-white/95 backdrop-blur-md text-[#0B0F19] shadow-sm flex items-center gap-1.5">
+                          <Icon size={12} className="text-[#C59B27]" />
                           {service.category}
                         </span>
-                        <span className="px-3 py-1 rounded-full text-[10px] font-bold bg-[#1D68BD] text-white shadow-sm">
+                        <span className="px-3 py-1 rounded-full text-[10px] font-extrabold bg-[#070B14] text-[#D4AF37] border border-[#C59B27]/40 shadow-sm">
                           {service.price}
                         </span>
                       </div>
 
                       <div className="absolute bottom-4 left-4 right-4">
-                        <h3 className="text-xl font-bold text-white group-hover:text-sky-300 transition-colors">
+                        <h3 className="text-xl font-bold text-white group-hover:text-[#D4AF37] transition-colors">
                           {service.title}
                         </h3>
                       </div>
                     </div>
 
-                    {/* Content & Features */}
+                    {/* Content & Sub-Services List */}
                     <div className="p-6 sm:p-7 space-y-4">
                       <p className="text-xs sm:text-sm text-[#667085] leading-relaxed">
                         {service.desc}
                       </p>
 
-                      <div className="space-y-2 pt-2 border-t border-slate-100">
-                        {service.features.map((f) => (
-                          <div
-                            key={f}
-                            className="flex items-center gap-2 text-xs font-semibold text-[#0B1730]"
-                          >
-                            <CheckCircle2 size={13} className="text-[#1D68BD] shrink-0" />
-                            <span>{f}</span>
-                          </div>
-                        ))}
+                      {/* Sub-Services Tags */}
+                      <div className="pt-2 border-t border-slate-100">
+                        <div className="text-[10px] font-extrabold uppercase tracking-wider text-[#C59B27] mb-2">
+                          Capabilities & Sub-Services:
+                        </div>
+                        <div className="flex flex-wrap gap-1.5">
+                          {service.subServices.map((sub) => (
+                            <span
+                              key={sub}
+                              className="text-[10px] font-semibold px-2 py-0.5 rounded-md bg-[#FAF8F5] text-slate-700 border border-slate-200 group-hover:border-[#C59B27]/30 transition-colors"
+                            >
+                              {sub}
+                            </span>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -405,9 +463,9 @@ export default function ServicesHubPage() {
                     <div className="grid grid-cols-2 gap-2.5">
                       <Link
                         href={`/book-a-meeting?service=${encodeURIComponent(service.title)}`}
-                        className="inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-[#1D68BD] text-white text-xs font-semibold hover:bg-[#155196] shadow-xs transition-colors"
+                        className="inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-[#070B14] hover:bg-[#1A2234] text-white text-xs font-bold transition-colors border border-slate-800"
                       >
-                        <Calendar size={13} />
+                        <Calendar size={13} className="text-[#D4AF37]" />
                         <span>Book Meeting</span>
                       </Link>
 
@@ -424,9 +482,9 @@ export default function ServicesHubPage() {
 
                     <Link
                       href={service.slug}
-                      className="w-full text-center block text-xs font-bold text-[#0B1730] group-hover:text-[#1D68BD] py-1 transition-colors"
+                      className="w-full text-center block text-xs font-bold text-[#0B0F19] group-hover:text-[#C59B27] py-1 transition-colors"
                     >
-                      Deep-Dive Methodology & Case Studies →
+                      Deep-Dive Methodology & Deliverables →
                     </Link>
                   </div>
                 </div>
@@ -436,18 +494,18 @@ export default function ServicesHubPage() {
         </div>
       </section>
 
-      {/* 3. NEW SECTION: 5-PHASE COMMERCIAL DELIVERY BLUEPRINT */}
+      {/* 3. 5-PHASE COMMERCIAL DELIVERY BLUEPRINT */}
       <section className="py-24 bg-white border-t border-[#E4E7EC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-16">
-            <span className="text-xs font-bold tracking-wider uppercase text-[#1D68BD]">
-              EXECUTION EXCELLENCE
+            <span className="text-xs font-extrabold tracking-wider uppercase text-[#C59B27]">
+              STRUCTURED EXECUTION
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B1730] tracking-tight mt-2">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B0F19] tracking-tight mt-2">
               Our 5-Stage Delivery Blueprint
             </h2>
             <p className="text-sm text-[#667085] mt-2">
-              From the initial technical audit to post-launch SLA support, our structured workflow eliminates ambiguity.
+              From technical discovery to global edge deployment, every engagement follows strict milestone sign-offs with zero ambiguity.
             </p>
           </div>
 
@@ -455,25 +513,25 @@ export default function ServicesHubPage() {
             {deliveryPhases.map((phase) => (
               <div
                 key={phase.step}
-                className="relative p-6 rounded-2xl bg-[#F7F9FC] border border-[#E4E7EC] flex flex-col justify-between space-y-4 hover:border-[#1D68BD]/40 hover:shadow-lg transition-all"
+                className="relative p-6 rounded-2xl bg-[#FAF8F5] border border-[#E4E7EC] flex flex-col justify-between space-y-4 hover:border-[#C59B27]/40 hover:shadow-lg transition-all"
               >
                 <div>
                   <div className="flex items-center justify-between mb-3">
-                    <span className="text-2xl font-extrabold text-[#1D68BD] font-mono">
+                    <span className="text-2xl font-extrabold text-[#C59B27] font-mono">
                       {phase.step}
                     </span>
                     <span className="text-[10px] font-bold uppercase tracking-wider text-[#667085] bg-white px-2 py-0.5 rounded-full border border-slate-200">
                       {phase.timeframe}
                     </span>
                   </div>
-                  <h3 className="text-sm font-bold text-[#0B1730] leading-snug">
+                  <h3 className="text-sm font-bold text-[#0B0F19] leading-snug">
                     {phase.title}
                   </h3>
                   <p className="text-xs text-[#667085] mt-2 leading-relaxed">
                     {phase.desc}
                   </p>
                 </div>
-                <div className="pt-2 border-t border-slate-200/60 flex items-center gap-1 text-[11px] font-semibold text-[#1D68BD]">
+                <div className="pt-2 border-t border-slate-200/60 flex items-center gap-1 text-[11px] font-semibold text-[#C59B27]">
                   <CheckCircle2 size={12} />
                   <span>Deliverable Sign-Off</span>
                 </div>
@@ -483,18 +541,18 @@ export default function ServicesHubPage() {
         </div>
       </section>
 
-      {/* 4. NEW SECTION: MODERN TECH STACK BY PRACTICE AREA */}
-      <section className="py-24 bg-[#F7F9FC] border-t border-[#E4E7EC]">
+      {/* 4. MODERN TECH STACK BY PRACTICE AREA */}
+      <section className="py-24 bg-[#FAF8F5] border-t border-[#E4E7EC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-16">
-            <span className="text-xs font-bold tracking-wider uppercase text-[#1D68BD]">
-              ENTERPRISE STANDARDS
+            <span className="text-xs font-extrabold tracking-wider uppercase text-[#C59B27]">
+              DUBAI ENTERPRISE STANDARDS
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B1730] tracking-tight mt-2">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B0F19] tracking-tight mt-2">
               Technology Stack by Discipline
             </h2>
             <p className="text-sm text-[#667085] mt-2">
-              We do not use bloated page-builders or obsolete stacks. Every system is built on modern, battle-tested technologies.
+              We engineer with cutting-edge, battle-tested modern technology stacks. No obsolete themes or sluggish plugins.
             </p>
           </div>
 
@@ -502,11 +560,11 @@ export default function ServicesHubPage() {
             {techStackGroups.map((group) => (
               <div
                 key={group.category}
-                className="p-7 rounded-2xl bg-white border border-[#E4E7EC] space-y-4 shadow-2xs hover:shadow-md transition-shadow"
+                className="p-7 rounded-2xl bg-white border border-[#E4E7EC] space-y-4 shadow-2xs hover:shadow-md hover:border-[#C59B27]/30 transition-all"
               >
                 <div className="flex items-center gap-2">
-                  <Server size={18} className="text-[#1D68BD]" />
-                  <h3 className="text-sm font-bold text-[#0B1730]">{group.category}</h3>
+                  <Server size={18} className="text-[#C59B27]" />
+                  <h3 className="text-sm font-bold text-[#0B0F19]">{group.category}</h3>
                 </div>
                 <div className="space-y-2">
                   {group.tools.map((tool) => (
@@ -514,7 +572,7 @@ export default function ServicesHubPage() {
                       key={tool}
                       className="flex items-center gap-2 text-xs font-medium text-[#475467] py-1 border-b border-slate-100 last:border-0"
                     >
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#1D68BD]" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#C59B27]" />
                       <span>{tool}</span>
                     </div>
                   ))}
@@ -525,54 +583,54 @@ export default function ServicesHubPage() {
         </div>
       </section>
 
-      {/* 5. ENGINEERING COMMITMENTS & SLA STANDARDS SECTION */}
+      {/* 5. ENGINEERING COMMITMENTS & SLA STANDARDS */}
       <section className="py-24 bg-white border-t border-[#E4E7EC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-16">
-            <span className="text-xs font-bold tracking-wider uppercase text-[#1D68BD]">
+            <span className="text-xs font-extrabold tracking-wider uppercase text-[#C59B27]">
               THE BIRD HILLS DIFFERENCE
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B1730] tracking-tight mt-2">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B0F19] tracking-tight mt-2">
               Our 4 Engineering Commitments
             </h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="p-7 rounded-2xl bg-[#F7F9FC] border border-[#E4E7EC] space-y-3">
-              <div className="w-12 h-12 rounded-xl bg-[#EBF3FE] text-[#1D68BD] flex items-center justify-center">
+            <div className="p-7 rounded-2xl bg-[#FAF8F5] border border-[#E4E7EC] space-y-3">
+              <div className="w-12 h-12 rounded-xl bg-[#C59B27]/10 text-[#C59B27] flex items-center justify-center">
                 <Zap size={22} />
               </div>
-              <h3 className="text-base font-bold text-[#0B1730]">Sub-Second Speed</h3>
+              <h3 className="text-base font-bold text-[#0B0F19]">Sub-Second Speed</h3>
               <p className="text-xs text-[#667085] leading-relaxed">
-                Core Web Vitals guaranteed. Sub-0.8s Largest Contentful Paint ensures high conversions and organic search dominance.
+                Core Web Vitals guaranteed. Sub-0.8s Largest Contentful Paint ensures high conversions and organic search authority.
               </p>
             </div>
 
-            <div className="p-7 rounded-2xl bg-[#F7F9FC] border border-[#E4E7EC] space-y-3">
-              <div className="w-12 h-12 rounded-xl bg-[#EBF3FE] text-[#1D68BD] flex items-center justify-center">
+            <div className="p-7 rounded-2xl bg-[#FAF8F5] border border-[#E4E7EC] space-y-3">
+              <div className="w-12 h-12 rounded-xl bg-[#C59B27]/10 text-[#C59B27] flex items-center justify-center">
                 <Lock size={22} />
               </div>
-              <h3 className="text-base font-bold text-[#0B1730]">Zero-Trust Security</h3>
+              <h3 className="text-base font-bold text-[#0B0F19]">Zero-Trust Security</h3>
               <p className="text-xs text-[#667085] leading-relaxed">
-                HTTPS, parameterized queries, CSRF defenses, and DIFC data sovereignty compliant architecture from day one.
+                HTTPS, parameterized queries, CSRF defenses, and regional DIFC data sovereignty compliant architecture from day one.
               </p>
             </div>
 
-            <div className="p-7 rounded-2xl bg-[#F7F9FC] border border-[#E4E7EC] space-y-3">
-              <div className="w-12 h-12 rounded-xl bg-[#EBF3FE] text-[#1D68BD] flex items-center justify-center">
+            <div className="p-7 rounded-2xl bg-[#FAF8F5] border border-[#E4E7EC] space-y-3">
+              <div className="w-12 h-12 rounded-xl bg-[#C59B27]/10 text-[#C59B27] flex items-center justify-center">
                 <Clock size={22} />
               </div>
-              <h3 className="text-base font-bold text-[#0B1730]">Guaranteed SLAs</h3>
+              <h3 className="text-base font-bold text-[#0B0F19]">Guaranteed SLAs</h3>
               <p className="text-xs text-[#667085] leading-relaxed">
                 Clear contractual milestone dates, weekly staging reviews, and responsive post-launch bug resolution guarantees.
               </p>
             </div>
 
-            <div className="p-7 rounded-2xl bg-[#F7F9FC] border border-[#E4E7EC] space-y-3">
-              <div className="w-12 h-12 rounded-xl bg-[#EBF3FE] text-[#1D68BD] flex items-center justify-center">
+            <div className="p-7 rounded-2xl bg-[#FAF8F5] border border-[#E4E7EC] space-y-3">
+              <div className="w-12 h-12 rounded-xl bg-[#C59B27]/10 text-[#C59B27] flex items-center justify-center">
                 <Compass size={22} />
               </div>
-              <h3 className="text-base font-bold text-[#0B1730]">Full IP Ownership</h3>
+              <h3 className="text-base font-bold text-[#0B0F19]">Full IP Ownership</h3>
               <p className="text-xs text-[#667085] leading-relaxed">
                 100% of the source code, design systems, and database configurations belong to you upon final handover.
               </p>
@@ -581,14 +639,14 @@ export default function ServicesHubPage() {
         </div>
       </section>
 
-      {/* 6. NEW SECTION: COMPREHENSIVE SERVICES FAQ ACCORDION */}
-      <section className="py-24 bg-[#F7F9FC] border-t border-[#E4E7EC]">
+      {/* 6. COMPREHENSIVE SERVICES FAQ */}
+      <section className="py-24 bg-[#FAF8F5] border-t border-[#E4E7EC]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-xs font-bold tracking-wider uppercase text-[#1D68BD]">
+            <span className="text-xs font-extrabold tracking-wider uppercase text-[#C59B27]">
               FREQUENTLY ASKED QUESTIONS
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B1730] tracking-tight mt-2">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B0F19] tracking-tight mt-2">
               Everything You Need to Know
             </h2>
           </div>
@@ -599,8 +657,8 @@ export default function ServicesHubPage() {
                 key={idx}
                 className="p-6 sm:p-8 rounded-2xl bg-white border border-[#E4E7EC] shadow-2xs space-y-2"
               >
-                <h3 className="text-base font-bold text-[#0B1730] flex items-start gap-3">
-                  <HelpCircle size={18} className="text-[#1D68BD] shrink-0 mt-0.5" />
+                <h3 className="text-base font-bold text-[#0B0F19] flex items-start gap-3">
+                  <HelpCircle size={18} className="text-[#C59B27] shrink-0 mt-0.5" />
                   <span>{faq.q}</span>
                 </h3>
                 <p className="text-xs sm:text-sm text-[#667085] leading-relaxed pl-7">

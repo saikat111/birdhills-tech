@@ -10,11 +10,11 @@ import {
   FileText,
   Mail,
   ArrowUpRight,
-  TrendingUp,
+  Sparkles,
   Clock,
-  CheckCircle2,
-  AlertCircle,
-  ExternalLink,
+  Layers,
+  Server,
+  Settings,
 } from "lucide-react";
 
 export const revalidate = 0;
@@ -32,17 +32,17 @@ export default async function AdminDashboardPage() {
     totalBookings,
     totalProjects,
     totalPosts,
+    totalServices,
     unreadMessages,
     recentLeads,
     recentBookings,
-    recentProjects,
-    recentPosts,
   ] = await Promise.all([
     prisma.lead.count(),
     prisma.lead.count({ where: { status: "New" } }),
     prisma.booking.count(),
     prisma.project.count(),
     prisma.blogPost.count(),
+    prisma.service.count(),
     prisma.contactMessage.count({ where: { read: false } }),
     prisma.lead.findMany({
       orderBy: { createdAt: "desc" },
@@ -51,15 +51,6 @@ export default async function AdminDashboardPage() {
     prisma.booking.findMany({
       orderBy: { createdAt: "desc" },
       take: 5,
-    }),
-    prisma.project.findMany({
-      orderBy: { createdAt: "desc" },
-      take: 4,
-    }),
-    prisma.blogPost.findMany({
-      orderBy: { createdAt: "desc" },
-      include: { category: true },
-      take: 4,
     }),
   ]);
 
@@ -76,20 +67,17 @@ export default async function AdminDashboardPage() {
       title: "Client Bookings",
       value: totalBookings,
       badge: "Consultations",
-      badgeColor: "bg-[#EBF3FE] text-[#1D68BD] border-[#BFDBFE]",
+      badgeColor: "bg-[#C59B27]/10 text-[#C59B27] border-[#C59B27]/30",
       icon: Calendar,
       href: "/admin/bookings",
     },
     {
-      title: "Unread Messages",
-      value: unreadMessages,
-      badge: unreadMessages > 0 ? "Requires Action" : "All Caught Up",
-      badgeColor:
-        unreadMessages > 0
-          ? "bg-amber-50 text-amber-700 border-amber-200"
-          : "bg-slate-100 text-slate-600 border-slate-200",
-      icon: Mail,
-      href: "/admin/leads",
+      title: "Core Services",
+      value: totalServices,
+      badge: "Active Disciplines",
+      badgeColor: "bg-[#070B14] text-[#D4AF37] border-[#C59B27]/30",
+      icon: Layers,
+      href: "/admin/services",
     },
     {
       title: "Active Projects",
@@ -100,9 +88,9 @@ export default async function AdminDashboardPage() {
       href: "/admin/projects",
     },
     {
-      title: "Blog Articles",
+      title: "Blog & Thought Leadership",
       value: totalPosts,
-      badge: "Insights",
+      badge: "Published Insights",
       badgeColor: "bg-slate-100 text-slate-600 border-slate-200",
       icon: FileText,
       href: "/admin/blog",
@@ -114,20 +102,30 @@ export default async function AdminDashboardPage() {
       {/* Top Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-[#E4E7EC]">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-[#0B1730]">
-            Executive Dashboard
+          <div className="flex items-center gap-2">
+            <span className="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase tracking-wider bg-[#C59B27]/15 text-[#C59B27] border border-[#C59B27]/30">
+              Dubai Management Center
+            </span>
+            <span className="text-xs text-[#667085]">Welcome back, {session.name}</span>
+          </div>
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-[#0B0F19] mt-1">
+            Executive Operations Dashboard
           </h1>
-          <p className="text-xs sm:text-sm text-[#667085] mt-1">
-            Bird Hills Tech Dubai Management Center · Welcome back, {session.name}
-          </p>
         </div>
         <div className="flex items-center gap-3">
           <Link
+            href="/admin/seo-tools"
+            className="px-3.5 py-2 bg-white border border-[#C59B27]/40 text-[#C59B27] hover:bg-[#FAF8F5] text-xs font-bold rounded-xl transition-colors inline-flex items-center gap-1.5"
+          >
+            <Sparkles size={14} />
+            <span>SEO & AEO Suite</span>
+          </Link>
+          <Link
             href="/admin/leads"
-            className="px-4 py-2 bg-[#1D68BD] hover:bg-[#155196] text-white text-xs font-semibold rounded-xl shadow-xs transition-colors inline-flex items-center gap-1.5"
+            className="px-4 py-2 bg-gradient-to-r from-[#D4AF37] via-[#C59B27] to-[#B38728] hover:brightness-105 text-white text-xs font-bold rounded-xl shadow-md shadow-[#C59B27]/20 transition-all inline-flex items-center gap-1.5"
           >
             <Users size={14} />
-            Manage Leads ({newLeads})
+            <span>Manage Leads ({newLeads})</span>
           </Link>
         </div>
       </div>
@@ -140,16 +138,16 @@ export default async function AdminDashboardPage() {
             <Link
               key={kpi.title}
               href={kpi.href}
-              className="bg-white p-5 rounded-2xl border border-[#E4E7EC] shadow-2xs hover:shadow-md hover:border-[#1D68BD]/40 transition-all flex flex-col justify-between group"
+              className="bg-white p-5 rounded-2xl border border-[#E4E7EC] shadow-2xs hover:shadow-md hover:border-[#C59B27]/40 transition-all flex flex-col justify-between group"
             >
               <div className="flex items-center justify-between mb-4">
                 <span className="text-xs font-bold text-[#667085]">{kpi.title}</span>
-                <div className="w-8 h-8 rounded-lg bg-[#F7F9FC] text-[#1D68BD] flex items-center justify-center group-hover:bg-[#1D68BD] group-hover:text-white transition-colors">
+                <div className="w-8 h-8 rounded-lg bg-[#FAF8F5] text-[#C59B27] flex items-center justify-center group-hover:bg-[#C59B27] group-hover:text-white transition-colors">
                   <Icon size={16} />
                 </div>
               </div>
               <div>
-                <div className="text-2xl font-extrabold text-[#0B1730] mb-2">{kpi.value}</div>
+                <div className="text-2xl font-extrabold text-[#0B0F19] mb-2">{kpi.value}</div>
                 <span
                   className={`text-[10px] font-bold px-2 py-0.5 rounded border uppercase tracking-wider ${kpi.badgeColor}`}
                 >
@@ -166,13 +164,13 @@ export default async function AdminDashboardPage() {
         {/* Left Column: Recent Leads & Inquiries */}
         <div className="lg:col-span-6 space-y-4">
           <div className="flex items-center justify-between">
-            <h2 className="text-base font-bold text-[#0B1730] flex items-center gap-2">
-              <Users size={18} className="text-[#1D68BD]" />
-              Latest Inquiries & Qualified Leads
+            <h2 className="text-base font-bold text-[#0B0F19] flex items-center gap-2">
+              <Users size={18} className="text-[#C59B27]" />
+              <span>Latest Inquiries & Qualified Leads</span>
             </h2>
             <Link
               href="/admin/leads"
-              className="text-xs font-semibold text-[#1D68BD] hover:underline inline-flex items-center gap-1"
+              className="text-xs font-bold text-[#C59B27] hover:underline inline-flex items-center gap-1"
             >
               View All <ArrowUpRight size={13} />
             </Link>
@@ -180,10 +178,10 @@ export default async function AdminDashboardPage() {
 
           <div className="bg-white rounded-2xl border border-[#E4E7EC] shadow-2xs divide-y divide-slate-100 overflow-hidden">
             {recentLeads.map((lead) => (
-              <div key={lead.id} className="p-4 hover:bg-[#F7F9FC] transition-colors flex items-center justify-between gap-4">
+              <div key={lead.id} className="p-4 hover:bg-[#FAF8F5] transition-colors flex items-center justify-between gap-4">
                 <div className="min-w-0">
                   <div className="flex items-center gap-2">
-                    <span className="text-xs font-bold text-[#0B1730] truncate">{lead.name}</span>
+                    <span className="text-xs font-bold text-[#0B0F19] truncate">{lead.name}</span>
                     <span
                       className={`text-[10px] font-semibold px-2 py-0.2 rounded-full ${
                         lead.status === "New"
@@ -198,7 +196,7 @@ export default async function AdminDashboardPage() {
                     {lead.company ? `${lead.company} · ` : ""}
                     {lead.email}
                   </div>
-                  <div className="text-[10px] text-[#1D68BD] font-medium mt-1">
+                  <div className="text-[10px] text-[#C59B27] font-semibold mt-1">
                     {lead.service || "General Inquiry"} · Source: {lead.source}
                   </div>
                 </div>
@@ -219,13 +217,13 @@ export default async function AdminDashboardPage() {
         {/* Right Column: Recent Bookings */}
         <div className="lg:col-span-6 space-y-4">
           <div className="flex items-center justify-between">
-            <h2 className="text-base font-bold text-[#0B1730] flex items-center gap-2">
-              <Calendar size={18} className="text-[#1D68BD]" />
-              Recent Meeting Bookings
+            <h2 className="text-base font-bold text-[#0B0F19] flex items-center gap-2">
+              <Calendar size={18} className="text-[#C59B27]" />
+              <span>Recent Meeting Bookings</span>
             </h2>
             <Link
               href="/admin/bookings"
-              className="text-xs font-semibold text-[#1D68BD] hover:underline inline-flex items-center gap-1"
+              className="text-xs font-bold text-[#C59B27] hover:underline inline-flex items-center gap-1"
             >
               View All <ArrowUpRight size={13} />
             </Link>
@@ -233,11 +231,11 @@ export default async function AdminDashboardPage() {
 
           <div className="bg-white rounded-2xl border border-[#E4E7EC] shadow-2xs divide-y divide-slate-100 overflow-hidden">
             {recentBookings.map((b) => (
-              <div key={b.id} className="p-4 hover:bg-[#F7F9FC] transition-colors flex items-center justify-between gap-4">
+              <div key={b.id} className="p-4 hover:bg-[#FAF8F5] transition-colors flex items-center justify-between gap-4">
                 <div className="min-w-0">
                   <div className="flex items-center gap-2">
-                    <span className="text-xs font-bold text-[#0B1730] truncate">{b.name}</span>
-                    <span className="text-[10px] font-semibold px-2 py-0.2 rounded-full bg-[#EBF3FE] text-[#1D68BD] border border-[#BFDBFE]">
+                    <span className="text-xs font-bold text-[#0B0F19] truncate">{b.name}</span>
+                    <span className="text-[10px] font-semibold px-2 py-0.2 rounded-full bg-[#C59B27]/10 text-[#C59B27] border border-[#C59B27]/30">
                       {b.status}
                     </span>
                   </div>
@@ -246,7 +244,7 @@ export default async function AdminDashboardPage() {
                     {b.phone}
                   </div>
                   <div className="text-[10px] font-medium text-slate-500 mt-1 flex items-center gap-1.5">
-                    <Clock size={11} className="text-[#1D68BD]" />
+                    <Clock size={11} className="text-[#C59B27]" />
                     <span>{b.date} · {b.timeSlot}</span>
                   </div>
                 </div>
@@ -265,40 +263,87 @@ export default async function AdminDashboardPage() {
         </div>
       </div>
 
-      {/* Quick CMS Jump Links */}
-      <div className="p-6 rounded-3xl bg-white border border-[#E4E7EC] shadow-2xs">
-        <h3 className="text-sm font-bold text-[#0B1730] uppercase tracking-wider mb-4">
-          Quick CMS Actions
-        </h3>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs font-semibold">
-          <Link
-            href="/admin/services"
-            className="p-3 rounded-xl bg-[#F7F9FC] hover:bg-[#EBF3FE] hover:text-[#1D68BD] border border-[#E4E7EC] transition-colors flex items-center justify-between"
-          >
-            <span>Edit Services</span>
-            <ArrowUpRight size={14} />
-          </Link>
-          <Link
-            href="/admin/projects"
-            className="p-3 rounded-xl bg-[#F7F9FC] hover:bg-[#EBF3FE] hover:text-[#1D68BD] border border-[#E4E7EC] transition-colors flex items-center justify-between"
-          >
-            <span>Manage Case Studies</span>
-            <ArrowUpRight size={14} />
-          </Link>
-          <Link
-            href="/admin/blog"
-            className="p-3 rounded-xl bg-[#F7F9FC] hover:bg-[#EBF3FE] hover:text-[#1D68BD] border border-[#E4E7EC] transition-colors flex items-center justify-between"
-          >
-            <span>Publish Article</span>
-            <ArrowUpRight size={14} />
-          </Link>
-          <Link
-            href="/admin/settings"
-            className="p-3 rounded-xl bg-[#F7F9FC] hover:bg-[#EBF3FE] hover:text-[#1D68BD] border border-[#E4E7EC] transition-colors flex items-center justify-between"
-          >
-            <span>Site Settings</span>
-            <ArrowUpRight size={14} />
-          </Link>
+      {/* SEO Suite Callout & Quick CMS Jump Links */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        {/* Featured SEO Suite Promo Card */}
+        <div className="lg:col-span-5 rounded-3xl bg-[#070B14] p-6 text-white flex flex-col justify-between border border-[#C59B27]/30 shadow-md">
+          <div>
+            <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-[#C59B27]/20 text-[#D4AF37] border border-[#C59B27]/40 mb-3">
+              DUBAI SEO & AEO STUDIO
+            </span>
+            <h3 className="text-lg font-bold text-white mb-2">
+              Optimize for Google Maps & AI Engines
+            </h3>
+            <p className="text-xs text-slate-300 leading-relaxed">
+              Test metadata pixel width, audit Answer Engine (AEO) citations for Perplexity & ChatGPT, and generate verified Dubai LocalBusiness JSON-LD schema.
+            </p>
+          </div>
+          <div className="pt-4 mt-4 border-t border-white/10">
+            <Link
+              href="/admin/seo-tools"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#D4AF37] via-[#C59B27] to-[#B38728] text-white text-xs font-bold shadow-md hover:brightness-105 transition-all"
+            >
+              <Sparkles size={14} />
+              <span>Launch SEO & AEO Suite</span>
+            </Link>
+          </div>
+        </div>
+
+        {/* Quick CMS Jump Actions */}
+        <div className="lg:col-span-7 p-6 rounded-3xl bg-white border border-[#E4E7EC] shadow-2xs flex flex-col justify-between">
+          <div>
+            <h3 className="text-sm font-bold text-[#0B0F19] uppercase tracking-wider mb-4">
+              Quick CMS Navigation
+            </h3>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs font-semibold">
+              <Link
+                href="/admin/services"
+                className="p-3 rounded-xl bg-[#FAF8F5] hover:bg-[#C59B27]/10 hover:text-[#C59B27] border border-[#E4E7EC] transition-colors flex items-center justify-between"
+              >
+                <span>Edit 9 Services</span>
+                <ArrowUpRight size={14} />
+              </Link>
+              <Link
+                href="/admin/blog"
+                className="p-3 rounded-xl bg-[#FAF8F5] hover:bg-[#C59B27]/10 hover:text-[#C59B27] border border-[#E4E7EC] transition-colors flex items-center justify-between"
+              >
+                <span>Write Article</span>
+                <ArrowUpRight size={14} />
+              </Link>
+              <Link
+                href="/admin/hosting"
+                className="p-3 rounded-xl bg-[#FAF8F5] hover:bg-[#C59B27]/10 hover:text-[#C59B27] border border-[#E4E7EC] transition-colors flex items-center justify-between"
+              >
+                <span>Hosting & Plans</span>
+                <ArrowUpRight size={14} />
+              </Link>
+              <Link
+                href="/admin/projects"
+                className="p-3 rounded-xl bg-[#FAF8F5] hover:bg-[#C59B27]/10 hover:text-[#C59B27] border border-[#E4E7EC] transition-colors flex items-center justify-between"
+              >
+                <span>Case Studies</span>
+                <ArrowUpRight size={14} />
+              </Link>
+              <Link
+                href="/admin/pricing"
+                className="p-3 rounded-xl bg-[#FAF8F5] hover:bg-[#C59B27]/10 hover:text-[#C59B27] border border-[#E4E7EC] transition-colors flex items-center justify-between"
+              >
+                <span>Pricing Packages</span>
+                <ArrowUpRight size={14} />
+              </Link>
+              <Link
+                href="/admin/settings"
+                className="p-3 rounded-xl bg-[#FAF8F5] hover:bg-[#C59B27]/10 hover:text-[#C59B27] border border-[#E4E7EC] transition-colors flex items-center justify-between"
+              >
+                <span>Site Settings</span>
+                <ArrowUpRight size={14} />
+              </Link>
+            </div>
+          </div>
+          <div className="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between text-xs text-[#667085]">
+            <span>Bird Hills Tech Dubai CMS</span>
+            <span className="font-mono text-[11px] text-[#C59B27]">v2.4 Production</span>
+          </div>
         </div>
       </div>
     </div>

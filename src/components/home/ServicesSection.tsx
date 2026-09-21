@@ -2,11 +2,14 @@ import React from "react";
 import Link from "next/link";
 import {
   Code2,
+  Globe,
   TrendingUp,
+  MapPin,
   Sparkles,
-  ShoppingBag,
-  Cpu,
-  Compass,
+  Bot,
+  Workflow,
+  Palette,
+  BarChart3,
   ArrowRight,
   Calendar,
   MessageCircle,
@@ -17,56 +20,92 @@ export function ServicesSection() {
     {
       num: "01",
       title: "Web Development",
-      desc: "Custom websites, web applications and enterprise platforms built on modern Next.js architecture.",
+      desc: "Custom corporate websites, Next.js 16 platforms, and enterprise portals with sub-second page loads.",
       href: "/services/web-development",
       icon: Code2,
       tag: "Technology",
       startingPrice: "From $4,950",
+      subItems: ["Business Websites", "WordPress", "eCommerce", "Custom Dev"],
     },
     {
       num: "02",
-      title: "Custom Web Applications",
-      desc: "Scalable SaaS platforms, private investor portals, and internal business logic automation.",
-      href: "/services/web-applications",
-      icon: Cpu,
-      tag: "Technology",
-      startingPrice: "From $9,500",
+      title: "Domain & Hosting",
+      desc: "Accredited UAE .ae domain registry, NVMe cloud edge servers, and high-deliverability business email.",
+      href: "/hosting",
+      icon: Globe,
+      tag: "Infrastructure",
+      startingPrice: "From $9.99/mo",
+      subItems: [".ae Domains", "Cloud Hosting", "Business Email", "SSL & Security"],
     },
     {
       num: "03",
-      title: "Branding & Creative Design",
-      desc: "Corporate brand identity, design systems, UI/UX prototyping, and executive visual assets.",
-      href: "/services/branding",
-      icon: Sparkles,
-      tag: "Creative",
-      startingPrice: "From $3,500",
-    },
-    {
-      num: "04",
-      title: "E-commerce Solutions",
-      desc: "Conversion-optimized stores with seamless regional GCC payment gateways (Apple Pay, Tamara).",
-      href: "/services/ecommerce",
-      icon: ShoppingBag,
-      tag: "Technology",
-      startingPrice: "From $6,800",
-    },
-    {
-      num: "05",
-      title: "Digital Marketing & PPC",
-      desc: "Closed-loop B2B lead generation across Google, LinkedIn, and Meta tracking real deal revenue.",
+      title: "Digital Marketing",
+      desc: "Closed-loop commercial lead acquisition across Google Ads, LinkedIn B2B, and Meta campaigns.",
       href: "/services/digital-marketing",
       icon: TrendingUp,
       tag: "Growth",
       startingPrice: "From $1,950/mo",
+      subItems: ["Google Ads", "Meta Ads", "Social Media", "Lead Gen"],
+    },
+    {
+      num: "04",
+      title: "Google Business Profile & Local SEO",
+      desc: "Dominate Dubai Google Maps 3-Pack, resolve GBP verification roadblocks, and capture local calls.",
+      href: "/services/google-business-profile-local-seo",
+      icon: MapPin,
+      tag: "Local SEO",
+      startingPrice: "From $850/mo",
+      subItems: ["GBP Verification", "Maps Ranking", "Review Strategy", "Local Citations"],
+    },
+    {
+      num: "05",
+      title: "AI SEO & Search",
+      desc: "AEO & GEO search optimization engineered so Perplexity AI, ChatGPT & Gemini quote your firm.",
+      href: "/services/ai-seo-search",
+      icon: Sparkles,
+      tag: "AEO & GEO",
+      startingPrice: "From $1,650/mo",
+      subItems: ["AEO & GEO", "Technical SEO", "Semantic Search", "Schema Markup"],
     },
     {
       num: "06",
-      title: "AI Integrations & Automation",
-      desc: "Autonomous conversational agents, customer qualification pipelines, and internal AI search.",
-      href: "/services/ai-solutions",
-      icon: Compass,
-      tag: "Strategy",
-      startingPrice: "From $4,200",
+      title: "AI Automation",
+      desc: "Deploy autonomous AI agents, 24/7 WhatsApp customer service bots, and n8n workflow pipelines.",
+      href: "/services/ai-automation",
+      icon: Bot,
+      tag: "Automation",
+      startingPrice: "From $3,200",
+      subItems: ["AI Agents", "WhatsApp Bots", "Workflow Automation", "n8n Pipelines"],
+    },
+    {
+      num: "07",
+      title: "CRM & Marketing Automation",
+      desc: "Centralize your sales pipeline with HubSpot, Zoho, automated lead routing, and WhatsApp alerts.",
+      href: "/services/crm-marketing-automation",
+      icon: Workflow,
+      tag: "Operations",
+      startingPrice: "From $2,800",
+      subItems: ["CRM Setup", "Lead Routing", "WhatsApp Automation", "Sales Pipeline"],
+    },
+    {
+      num: "08",
+      title: "Branding & Creative",
+      desc: "Authoritative corporate identity, bilingual English & Arabic typography, UI/UX systems, and ad creatives.",
+      href: "/services/branding-creative",
+      icon: Palette,
+      tag: "Creative",
+      startingPrice: "From $3,500",
+      subItems: ["Brand Identity", "Logo Design", "UI/UX Design", "Ad Creatives"],
+    },
+    {
+      num: "09",
+      title: "Analytics & CRO",
+      desc: "Eliminate tracking blindspots with server-side GTM, Meta CAPI, GA4, and executive Looker dashboards.",
+      href: "/services/analytics-cro",
+      icon: BarChart3,
+      tag: "Data & CRO",
+      startingPrice: "From $1,450/mo",
+      subItems: ["GA4 & GTM", "Meta CAPI", "Conversion Audits", "Marketing Dashboards"],
     },
   ];
 
@@ -76,26 +115,28 @@ export function ServicesSection() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="max-w-3xl">
-            <div className="text-xs font-bold tracking-widest text-[#1D68BD] uppercase mb-3">
-              OUR CAPABILITIES & SERVICES
+            <div className="text-xs font-extrabold tracking-widest text-[#C59B27] uppercase mb-3 flex items-center gap-1.5">
+              <Sparkles size={13} className="text-[#C59B27]" />
+              <span>9 CORE PRACTICE DISCIPLINES</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0B1730] tracking-tight leading-tight mb-4">
-              Everything you need to build, launch, and dominate.
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0B0F19] tracking-tight leading-tight mb-4">
+              Technology, Creative & Commercial Growth.
             </h2>
             <p className="text-base sm:text-lg text-[#667085] leading-relaxed">
-              From engineering to customer acquisition, we deliver connected digital solutions tailored to high-growth Dubai enterprises.
+              From bespoke web engineering and domain hosting to AI search, autonomous automation, and performance marketing—we power Dubai&apos;s leading digital operations.
             </p>
           </div>
 
           <Link
             href="/services"
-            className="inline-flex items-center gap-2 text-xs font-bold text-[#1D68BD] hover:underline shrink-0"
+            className="inline-flex items-center gap-2 text-xs font-bold text-[#C59B27] hover:text-[#B38728] hover:underline shrink-0"
           >
-            Explore All 8 Practice Areas <ArrowRight size={14} />
+            <span>Explore All 9 Practice Areas</span>
+            <ArrowRight size={14} />
           </Link>
         </div>
 
-        {/* 6 Premium Service Blocks with Direct Action CTAs */}
+        {/* 9 Service Blocks Grid with Direct Action CTAs */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {services.map((service) => {
             const Icon = service.icon;
@@ -106,16 +147,16 @@ export function ServicesSection() {
             return (
               <div
                 key={service.title}
-                className="group relative bg-[#F7F9FC] hover:bg-white rounded-3xl p-7 sm:p-8 border border-[#E4E7EC] hover:border-[#1D68BD]/40 hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+                className="group relative bg-[#FAF8F5] hover:bg-white rounded-3xl p-7 sm:p-8 border border-[#E4E7EC] hover:border-[#C59B27]/50 hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
                   {/* Top Bar: Icon + Number + Tag */}
                   <div className="flex items-center justify-between mb-6">
-                    <div className="w-12 h-12 rounded-xl bg-white group-hover:bg-[#EBF3FE] border border-[#E4E7EC] group-hover:border-[#BFDBFE] flex items-center justify-center text-[#0B1730] group-hover:text-[#1D68BD] transition-colors shadow-2xs">
+                    <div className="w-12 h-12 rounded-xl bg-white group-hover:bg-[#C59B27]/10 border border-[#E4E7EC] group-hover:border-[#C59B27]/30 flex items-center justify-center text-[#0B0F19] group-hover:text-[#C59B27] transition-colors shadow-2xs">
                       <Icon size={22} />
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="text-[10px] font-bold tracking-wider uppercase text-[#1D68BD] bg-[#EBF3FE] px-2.5 py-1 rounded-full border border-[#BFDBFE]/60">
+                      <span className="text-[10px] font-extrabold tracking-wider uppercase text-[#C59B27] bg-white px-2.5 py-1 rounded-full border border-[#C59B27]/30 shadow-2xs">
                         {service.tag}
                       </span>
                       <span className="text-xs font-bold font-mono text-slate-400">
@@ -125,35 +166,46 @@ export function ServicesSection() {
                   </div>
 
                   {/* Title & Description */}
-                  <h3 className="text-xl font-bold text-[#0B1730] mb-2 group-hover:text-[#1D68BD] transition-colors">
+                  <h3 className="text-xl font-bold text-[#0B0F19] mb-2 group-hover:text-[#C59B27] transition-colors">
                     {service.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-[#667085] leading-relaxed mb-4">
                     {service.desc}
                   </p>
 
+                  {/* Sub-services pills */}
+                  <div className="flex flex-wrap gap-1.5 mb-5">
+                    {service.subItems.map((item) => (
+                      <span
+                        key={item}
+                        className="text-[10px] font-semibold px-2 py-0.5 rounded bg-white text-slate-700 border border-slate-200 group-hover:border-[#C59B27]/30 transition-colors"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+
                   <div className="text-[11px] font-bold text-slate-700 mb-6 flex items-center gap-1.5">
                     <span className="text-slate-400 font-normal">Pricing Guidance:</span>
-                    <span className="text-[#1D68BD]">{service.startingPrice}</span>
+                    <span className="text-[#C59B27] font-extrabold">{service.startingPrice}</span>
                   </div>
                 </div>
 
-                {/* Dual Action Buttons (Book a Meeting & WhatsApp) */}
-                <div className="pt-4 border-t border-slate-200/80 space-y-2.5">
+                {/* Direct Action Buttons */}
+                <div className="space-y-2 pt-4 border-t border-slate-200/80">
                   <div className="grid grid-cols-2 gap-2">
                     <Link
                       href={`/book-a-meeting?service=${encodeURIComponent(service.title)}`}
-                      className="inline-flex items-center justify-center gap-1 px-3 py-2.5 rounded-xl bg-[#1D68BD] text-white text-xs font-semibold hover:bg-[#155196] shadow-xs transition-colors"
+                      className="inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl bg-[#070B14] hover:bg-[#1A2234] text-white text-xs font-bold transition-colors"
                     >
-                      <Calendar size={13} />
+                      <Calendar size={13} className="text-[#D4AF37]" />
                       <span>Book Meeting</span>
                     </Link>
-
                     <a
                       href={waUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-1 px-3 py-2.5 rounded-xl bg-white border border-[#25D366]/40 text-[#128C7E] hover:bg-[#25D366]/10 text-xs font-semibold transition-colors"
+                      className="inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl bg-white border border-[#25D366] text-[#128C7E] hover:bg-[#25D366]/10 text-xs font-bold transition-colors"
                     >
                       <MessageCircle size={13} className="text-[#25D366]" />
                       <span>WhatsApp</span>
@@ -162,9 +214,9 @@ export function ServicesSection() {
 
                   <Link
                     href={service.href}
-                    className="w-full text-center block text-[11px] font-bold text-slate-500 hover:text-[#1D68BD] pt-1 transition-colors"
+                    className="w-full text-center block text-xs font-bold text-[#0B0F19] group-hover:text-[#C59B27] pt-1 transition-colors"
                   >
-                    View Detailed Service Scope & Case Studies →
+                    View Practice Deliverables →
                   </Link>
                 </div>
               </div>
@@ -175,4 +227,5 @@ export function ServicesSection() {
     </section>
   );
 }
+
 export default ServicesSection;

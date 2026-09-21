@@ -1,132 +1,155 @@
 import React from "react";
 import Link from "next/link";
-import { Phone, MessageSquare, MapPin, Mail, ArrowUpRight } from "lucide-react";
+import { Phone, MessageCircle, MapPin, Mail, ArrowUpRight } from "lucide-react";
 import Logo from "./Logo";
 
 export function Footer() {
   return (
-    <footer className="bg-[#0B1730] text-slate-300 border-t border-slate-800">
+    <footer className="bg-[#070B14] text-slate-300 border-t border-[#C59B27]/25">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-slate-800/80">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-white/10">
           {/* Brand Col */}
           <div className="lg:col-span-4 space-y-4">
             <Logo variant="white" />
             <p className="text-sm text-slate-400 max-w-sm leading-relaxed">
-              Bird Hills Tech combines technology, creative strategy and digital marketing to build
-              powerful digital experiences and measurable business growth for ambitious enterprises.
+              Bird Hills Tech combines modern technology, creative strategy and commercial performance marketing to build powerful digital operations and measurable growth for ambitious UAE enterprises.
             </p>
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-slate-800/80 border border-slate-700/60 text-xs text-slate-300">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-[#0F172A] border border-[#C59B27]/30 text-xs text-slate-300">
+              <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse" />
               <span>Dubai · UAE · Available for Strategic Engagements</span>
             </div>
           </div>
 
           {/* Quick Links */}
           <div className="lg:col-span-2 space-y-4">
-            <h3 className="text-xs font-bold tracking-wider text-white uppercase">
+            <h3 className="text-xs font-extrabold tracking-wider text-[#D4AF37] uppercase">
               Navigation
             </h3>
-            <ul className="space-y-2.5 text-sm">
+            <ul className="space-y-2.5 text-xs sm:text-sm">
               <li>
-                <Link href="/" className="hover:text-white transition-colors">
+                <Link href="/" className="hover:text-[#D4AF37] transition-colors">
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="hover:text-white transition-colors">
+                <Link href="/about" className="hover:text-[#D4AF37] transition-colors">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="hover:text-white transition-colors">
-                  Services Hub
+                <Link href="/services" className="hover:text-[#D4AF37] transition-colors">
+                  All 9 Services
                 </Link>
               </li>
               <li>
-                <Link href="/work" className="hover:text-white transition-colors">
+                <Link href="/work" className="hover:text-[#D4AF37] transition-colors">
                   Selected Work
                 </Link>
               </li>
               <li>
-                <Link href="/pricing" className="hover:text-white transition-colors">
-                  Pricing & Plans
+                <Link href="/pricing" className="hover:text-[#D4AF37] transition-colors">
+                  Pricing Packages (USD)
                 </Link>
               </li>
               <li>
-                <Link href="/hosting" className="hover:text-white transition-colors">
+                <Link href="/hosting" className="hover:text-[#D4AF37] transition-colors">
                   Cloud Hosting & VPS
                 </Link>
               </li>
               <li>
-                <Link href="/domains" className="hover:text-white transition-colors">
-                  Domain Registration
+                <Link href="/domains" className="hover:text-[#D4AF37] transition-colors">
+                  .ae Domain Search
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="hover:text-white transition-colors">
-                  Blog & Articles
+                <Link href="/blog" className="hover:text-[#D4AF37] transition-colors">
+                  Blog & Insights
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-white transition-colors">
-                  Contact
+                <Link href="/contact" className="hover:text-[#D4AF37] transition-colors">
+                  Contact Us
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Core Services */}
+          {/* 9 Core Services */}
           <div className="lg:col-span-3 space-y-4">
-            <h3 className="text-xs font-bold tracking-wider text-white uppercase">
-              Core Services
+            <h3 className="text-xs font-extrabold tracking-wider text-[#D4AF37] uppercase">
+              Core Services (9 Areas)
             </h3>
-            <ul className="space-y-2.5 text-sm">
+            <ul className="space-y-2 text-xs">
               <li>
                 <Link
                   href="/services/web-development"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-[#D4AF37] transition-colors"
                 >
                   Web Development
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/services/web-applications"
-                  className="hover:text-white transition-colors"
+                  href="/hosting"
+                  className="hover:text-[#D4AF37] transition-colors"
                 >
-                  Custom Web Applications
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/ecommerce"
-                  className="hover:text-white transition-colors"
-                >
-                  E-commerce Solutions
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/branding"
-                  className="hover:text-white transition-colors"
-                >
-                  Branding & Creative
+                  Domain & Hosting
                 </Link>
               </li>
               <li>
                 <Link
                   href="/services/digital-marketing"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-[#D4AF37] transition-colors"
                 >
                   Digital Marketing
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/services/ai-solutions"
-                  className="hover:text-white transition-colors"
+                  href="/services/google-business-profile-local-seo"
+                  className="hover:text-[#D4AF37] transition-colors"
                 >
-                  AI Solutions & Automation
+                  Google Business Profile & Local SEO
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/ai-seo-search"
+                  className="hover:text-[#D4AF37] transition-colors"
+                >
+                  AI SEO & Search (AEO & GEO)
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/ai-automation"
+                  className="hover:text-[#D4AF37] transition-colors"
+                >
+                  AI Automation & WhatsApp Bots
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/crm-marketing-automation"
+                  className="hover:text-[#D4AF37] transition-colors"
+                >
+                  CRM & Marketing Automation
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/branding-creative"
+                  className="hover:text-[#D4AF37] transition-colors"
+                >
+                  Branding & Creative Design
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/analytics-cro"
+                  className="hover:text-[#D4AF37] transition-colors"
+                >
+                  Analytics & CRO Funnels
                 </Link>
               </li>
             </ul>
@@ -134,18 +157,18 @@ export function Footer() {
 
           {/* Contact & Location */}
           <div className="lg:col-span-3 space-y-4">
-            <h3 className="text-xs font-bold tracking-wider text-white uppercase">
+            <h3 className="text-xs font-extrabold tracking-wider text-[#D4AF37] uppercase">
               Dubai Headquarters
             </h3>
-            <div className="space-y-3 text-sm text-slate-400">
+            <div className="space-y-3 text-xs sm:text-sm text-slate-400">
               <div className="flex items-start gap-2.5">
-                <MapPin size={16} className="text-[#38BDF8] shrink-0 mt-0.5" />
+                <MapPin size={16} className="text-[#D4AF37] shrink-0 mt-0.5" />
                 <span className="leading-snug">
                   Deira - Stone Building - 122 7th A Street - Al Baraha - Dubai, UAE
                 </span>
               </div>
               <div className="flex items-center gap-2.5">
-                <Phone size={15} className="text-[#38BDF8] shrink-0" />
+                <Phone size={15} className="text-[#D4AF37] shrink-0" />
                 <a
                   href="tel:+971524405785"
                   className="hover:text-white transition-colors"
@@ -154,7 +177,7 @@ export function Footer() {
                 </a>
               </div>
               <div className="flex items-center gap-2.5">
-                <Mail size={15} className="text-[#38BDF8] shrink-0" />
+                <Mail size={15} className="text-[#D4AF37] shrink-0" />
                 <a
                   href="mailto:contact@birdhillstech.com"
                   className="hover:text-white transition-colors"
@@ -167,10 +190,10 @@ export function Footer() {
                   href="https://wa.me/971524405785"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-emerald-600/90 hover:bg-emerald-600 text-white text-xs font-semibold shadow-sm transition-all"
+                  className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#25D366] hover:bg-[#1ebd59] text-white text-xs font-bold shadow-sm transition-all"
                 >
-                  <MessageSquare size={14} />
-                  Chat on WhatsApp
+                  <MessageCircle size={14} />
+                  <span>Chat on WhatsApp</span>
                   <ArrowUpRight size={13} />
                 </a>
               </div>
@@ -184,13 +207,13 @@ export function Footer() {
             © 2026 Bird Hills Tech. All rights reserved. Registered in Dubai, United Arab Emirates.
           </div>
           <div className="flex items-center gap-6">
-            <Link href="/privacy-policy" className="hover:text-white transition-colors">
+            <Link href="/privacy-policy" className="hover:text-[#D4AF37] transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="hover:text-white transition-colors">
+            <Link href="/terms" className="hover:text-[#D4AF37] transition-colors">
               Terms of Service
             </Link>
-            <Link href="/admin/login" className="hover:text-slate-300 transition-colors text-slate-400">
+            <Link href="/admin/login" className="hover:text-[#D4AF37] transition-colors text-slate-400">
               Admin Portal
             </Link>
           </div>
@@ -199,4 +222,5 @@ export function Footer() {
     </footer>
   );
 }
+
 export default Footer;

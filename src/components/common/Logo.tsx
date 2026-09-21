@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 interface LogoProps {
   variant?: "dark" | "white";
@@ -13,64 +14,46 @@ export function Logo({ variant = "dark", className = "", iconOnly = false }: Log
   return (
     <Link
       href="/"
-      className={`inline-flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1D68BD] rounded-lg transition-transform hover:opacity-95 ${className}`}
-      aria-label="Bird Hills Tech - Home"
+      className={`inline-flex items-center gap-2.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C59B27] rounded-xl transition-all hover:opacity-95 ${className}`}
+      aria-label="Bird Hills Technology - Home"
     >
-      {/* Geometric Wing / Ascent Emblem */}
-      <div className="relative w-9 h-9 shrink-0 flex items-center justify-center">
-        <svg viewBox="0 0 44 44" fill="none" className="w-full h-full drop-shadow-sm">
-          {/* Primary Ascent Wing */}
-          <path
-            d="M6 34L20 8L26 18L16 34H6Z"
-            fill={isWhite ? "#38BDF8" : "#1D68BD"}
-            className="transition-colors duration-300"
-          />
-          {/* Central Peak Anchor */}
-          <path
-            d="M18 34L28 15L34 25L27 34H18Z"
-            fill={isWhite ? "#FFFFFF" : "#0B1730"}
-            className="transition-colors duration-300"
-          />
-          {/* Secondary Forward Momentum */}
-          <path
-            d="M28 34L35 20L40 29L37 34H28Z"
-            fill={isWhite ? "#93C5FD" : "#2563EB"}
-            opacity="0.9"
-            className="transition-colors duration-300"
-          />
-          {/* North Star Indicator */}
-          <circle cx="20" cy="8" r="2.5" fill={isWhite ? "#60A5FA" : "#1D68BD"} />
-        </svg>
+      {/* Official Bird Hills Logo Asset */}
+      <div className="relative h-10 sm:h-11 w-10 sm:w-11 shrink-0 rounded-xl overflow-hidden bg-black p-0.5 border border-[#C59B27]/30 shadow-md">
+        <Image
+          src="/images/logo.png"
+          alt="Bird Hills Technology Logo"
+          fill
+          priority
+          sizes="48px"
+          className="object-cover object-left"
+        />
       </div>
 
       {!iconOnly && (
         <div className="flex flex-col">
-          <div className="flex items-baseline gap-1.5 leading-none">
+          <div className="flex items-baseline gap-1 leading-none">
             <span
-              className={`font-extrabold tracking-tight text-[18px] sm:text-[20px] transition-colors ${
-                isWhite ? "text-white" : "text-[#0B1730]"
+              className={`font-black tracking-tight text-[17px] sm:text-[19px] transition-colors ${
+                isWhite ? "text-white" : "text-[#0B0F19]"
               }`}
             >
-              BIRD HILLS
+              BIRD <span className="text-[#C59B27]">HILLS</span>
             </span>
-            <span
-              className={`font-semibold tracking-normal text-[15px] sm:text-[17px] ${
-                isWhite ? "text-[#38BDF8]" : "text-[#1D68BD]"
-              }`}
-            >
+            <span className="text-[11px] font-extrabold tracking-wider text-[#C59B27] uppercase">
               TECH
             </span>
           </div>
           <span
-            className={`text-[8px] sm:text-[9px] font-semibold tracking-[0.18em] uppercase mt-0.5 transition-colors ${
+            className={`text-[8px] font-bold tracking-[0.22em] uppercase mt-0.5 transition-colors ${
               isWhite ? "text-slate-400" : "text-[#667085]"
             }`}
           >
-            Dubai · Tech × Creative × Growth
+            Dubai · Technology × Creative × Growth
           </span>
         </div>
       )}
     </Link>
   );
 }
+
 export default Logo;

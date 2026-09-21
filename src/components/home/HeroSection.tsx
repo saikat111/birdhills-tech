@@ -6,8 +6,6 @@ import Image from "next/image";
 import {
   ArrowRight,
   Calendar,
-  MapPin,
-  ShieldCheck,
   Sparkles,
   ChevronLeft,
   ChevronRight,
@@ -95,7 +93,7 @@ export function HeroSection({
   const activeSlideData = HERO_SLIDES[currentSlide];
 
   return (
-    <section className="relative min-h-[90vh] lg:min-h-[96vh] pt-32 pb-24 md:pt-40 md:pb-32 overflow-hidden flex items-center bg-[#070D1B] text-white">
+    <section className="relative min-h-[90vh] lg:min-h-[96vh] pt-32 pb-24 md:pt-40 md:pb-32 overflow-hidden flex items-center bg-[#070B14] text-white">
       {/* 1. FULL-BLEED HIGH-VISIBILITY BACKGROUND IMAGE SLIDER */}
       <div className="absolute inset-0 z-0">
         {HERO_SLIDES.map((slide, index) => {
@@ -123,12 +121,9 @@ export function HeroSection({
           );
         })}
 
-        {/* Dynamic Multi-Layer Gradient Overlays for High Visual Contrast & Readability */}
-        {/* Deep navy base gradient that preserves clear visibility of the image on the right/center while ensuring 100% readable text on the left */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#070D1B]/95 via-[#070D1B]/75 to-[#070D1B]/40 lg:to-[#070D1B]/25" />
-        {/* Subtle top & bottom vignette to blend gracefully with the header and following sections */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#070D1B]/90 via-transparent to-[#070D1B]" />
-        {/* Subtle tech grid texture */}
+        {/* Dynamic Multi-Layer Gradient Overlays for Luxury Contrast & Readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#070B14]/95 via-[#070B14]/80 to-[#070B14]/40 lg:to-[#070B14]/25" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#070B14]/90 via-transparent to-[#070B14]" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:48px_48px] pointer-events-none opacity-40" />
       </div>
 
@@ -139,8 +134,8 @@ export function HeroSection({
           <div className="lg:col-span-7 space-y-6 sm:space-y-8 text-left">
             {/* Badges & Live Status */}
             <div className="flex flex-wrap items-center gap-3">
-              <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase bg-[#1D68BD]/25 text-[#38BDF8] border border-[#38BDF8]/30 backdrop-blur-md shadow-sm">
-                <Sparkles size={13} className="text-[#38BDF8]" />
+              <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase bg-[#C59B27]/20 text-[#D4AF37] border border-[#C59B27]/40 backdrop-blur-md shadow-sm">
+                <Sparkles size={13} className="text-[#D4AF37]" />
                 {eyebrow}
               </span>
               <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold text-slate-200 bg-white/10 border border-white/15 backdrop-blur-md">
@@ -152,7 +147,7 @@ export function HeroSection({
             {/* Main Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.12]">
               {headline.split("Dubai")[0]}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#38BDF8] via-[#60A5FA] to-[#1D68BD] relative inline-block">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F3E7C4] via-[#D4AF37] to-[#C59B27] relative inline-block">
                 Dubai
               </span>
               {headline.split("Dubai")[1] || ""}
@@ -167,9 +162,9 @@ export function HeroSection({
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-2">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl bg-[#1D68BD] text-white text-base font-semibold shadow-lg shadow-[#1D68BD]/30 hover:bg-[#155196] hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 group"
+                className="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl bg-gradient-to-r from-[#D4AF37] via-[#C59B27] to-[#B38728] text-white text-base font-bold shadow-lg shadow-[#C59B27]/30 hover:brightness-105 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 group"
               >
-                Start a Project
+                <span>Start a Project</span>
                 <ArrowRight
                   size={18}
                   className="transition-transform group-hover:translate-x-1"
@@ -179,8 +174,8 @@ export function HeroSection({
                 href="/book-a-meeting"
                 className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-white/15 hover:bg-white/25 text-white text-base font-semibold border border-white/25 backdrop-blur-md transition-all duration-200 shadow-sm"
               >
-                <Calendar size={18} className="text-[#38BDF8]" />
-                Book a Meeting
+                <Calendar size={18} className="text-[#D4AF37]" />
+                <span>Book a Meeting</span>
               </Link>
               <a
                 href="https://wa.me/971524405785?text=Hello%20Bird%20Hills%20Tech%2C%20I%20would%20like%20to%20discuss%20a%20project."
@@ -189,7 +184,7 @@ export function HeroSection({
                 className="inline-flex items-center justify-center gap-2 px-5 py-4 rounded-xl text-sm font-bold text-[#25D366] hover:bg-[#25D366]/10 border border-[#25D366]/30 backdrop-blur-md transition-colors"
               >
                 <MessageCircle size={17} />
-                WhatsApp Us
+                <span>WhatsApp Us</span>
               </a>
             </div>
 
@@ -197,21 +192,21 @@ export function HeroSection({
             <div className="pt-6 border-t border-white/15 grid grid-cols-3 gap-4 text-left">
               <div>
                 <div className="text-xs font-bold text-white uppercase tracking-wider flex items-center gap-1.5">
-                  <Zap size={13} className="text-[#38BDF8]" />
+                  <Zap size={13} className="text-[#D4AF37]" />
                   Technology
                 </div>
                 <div className="text-xs text-slate-300 mt-0.5">Sub-second Web Platforms</div>
               </div>
               <div>
                 <div className="text-xs font-bold text-white uppercase tracking-wider flex items-center gap-1.5">
-                  <Layers size={13} className="text-[#38BDF8]" />
+                  <Layers size={13} className="text-[#D4AF37]" />
                   Creative
                 </div>
                 <div className="text-xs text-slate-300 mt-0.5">Prestige Corporate UI/UX</div>
               </div>
               <div>
                 <div className="text-xs font-bold text-white uppercase tracking-wider flex items-center gap-1.5">
-                  <Sparkles size={13} className="text-[#38BDF8]" />
+                  <Sparkles size={13} className="text-[#D4AF37]" />
                   Growth
                 </div>
                 <div className="text-xs text-slate-300 mt-0.5">Measurable GCC Revenue ROI</div>
@@ -223,10 +218,10 @@ export function HeroSection({
           <div className="lg:col-span-5 relative">
             <div className="relative mx-auto max-w-md lg:max-w-none space-y-4">
               {/* Glassmorphic Slide Controller Card */}
-              <div className="rounded-2xl p-6 bg-[#0B1730]/75 backdrop-blur-xl border border-white/20 shadow-2xl relative overflow-hidden group">
+              <div className="rounded-2xl p-6 bg-[#070B14]/80 backdrop-blur-xl border border-[#C59B27]/30 shadow-2xl relative overflow-hidden group">
                 <div className="flex items-center justify-between gap-3 mb-4">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider text-[#38BDF8] bg-[#38BDF8]/10 border border-[#38BDF8]/20">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#38BDF8] animate-ping" />
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider text-[#D4AF37] bg-[#C59B27]/15 border border-[#C59B27]/30">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] animate-ping" />
                     {activeSlideData.tag}
                   </span>
                   <div className="text-xs font-mono text-slate-300">
@@ -251,7 +246,7 @@ export function HeroSection({
                         onClick={() => setCurrentSlide(i)}
                         className={`h-2 rounded-full transition-all duration-300 ${
                           i === currentSlide
-                            ? "w-8 bg-[#38BDF8]"
+                            ? "w-8 bg-[#D4AF37]"
                             : "w-2 bg-white/30 hover:bg-white/60"
                         }`}
                         aria-label={`Slide ${i + 1}`}
@@ -259,26 +254,27 @@ export function HeroSection({
                     ))}
                   </div>
 
-                  {/* Navigation Arrows */}
-                  <div className="flex items-center gap-2">
+                  {/* Play/Pause & Arrow Navigation */}
+                  <div className="flex items-center gap-1">
                     <button
                       onClick={() => setIsPaused(!isPaused)}
-                      className="p-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-white transition-colors"
-                      title={isPaused ? "Play Auto-Slide" : "Pause Auto-Slide"}
+                      className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/10 transition-colors"
+                      aria-label={isPaused ? "Play auto-slideshow" : "Pause auto-slideshow"}
+                      title={isPaused ? "Play slideshow" : "Pause slideshow"}
                     >
-                      {isPaused ? <Play size={13} /> : <Pause size={13} />}
+                      {isPaused ? <Play size={14} /> : <Pause size={14} />}
                     </button>
                     <button
                       onClick={handlePrev}
-                      className="p-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-white transition-colors"
-                      aria-label="Previous Slide"
+                      className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/10 transition-colors"
+                      aria-label="Previous slide"
                     >
                       <ChevronLeft size={16} />
                     </button>
                     <button
                       onClick={handleNext}
-                      className="p-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-white transition-colors"
-                      aria-label="Next Slide"
+                      className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/10 transition-colors"
+                      aria-label="Next slide"
                     >
                       <ChevronRight size={16} />
                     </button>
@@ -286,25 +282,22 @@ export function HeroSection({
                 </div>
               </div>
 
-              {/* Verified Proof Badges Floating Below */}
+              {/* Quick Credentials Floating Bar */}
               <div className="grid grid-cols-2 gap-3">
-                <div className="p-4 rounded-xl bg-white/10 backdrop-blur-md border border-white/15 flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-lg bg-[#1D68BD]/30 border border-[#38BDF8]/40 flex items-center justify-center shrink-0">
-                    <ShieldCheck size={18} className="text-[#38BDF8]" />
+                <div className="p-4 rounded-xl bg-white/10 backdrop-blur-md border border-white/15 text-left">
+                  <div className="text-xl font-extrabold text-[#D4AF37] font-mono">
+                    &lt; 0.8s LCP
                   </div>
-                  <div>
-                    <div className="text-xs font-bold text-white">100% IP Ownership</div>
-                    <div className="text-[11px] text-slate-300">Direct Source Code Transfer</div>
+                  <div className="text-[11px] text-slate-300 font-medium mt-0.5">
+                    Sub-second speed guarantee
                   </div>
                 </div>
-
-                <div className="p-4 rounded-xl bg-white/10 backdrop-blur-md border border-white/15 flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-lg bg-[#25D366]/20 border border-[#25D366]/40 flex items-center justify-center shrink-0">
-                    <Zap size={18} className="text-[#25D366]" />
+                <div className="p-4 rounded-xl bg-white/10 backdrop-blur-md border border-white/15 text-left">
+                  <div className="text-xl font-extrabold text-white font-mono">
+                    100% IP
                   </div>
-                  <div>
-                    <div className="text-xs font-bold text-white">&lt; 0.8s LCP Speed</div>
-                    <div className="text-[11px] text-slate-300">Guaranteed Core Web Vitals</div>
+                  <div className="text-[11px] text-slate-300 font-medium mt-0.5">
+                    Client code & asset ownership
                   </div>
                 </div>
               </div>
