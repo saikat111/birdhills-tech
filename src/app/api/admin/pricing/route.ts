@@ -56,6 +56,7 @@ export async function POST(req: NextRequest) {
       badge: badge || null,
       description,
       priceAed,
+      priceUsd: body.priceUsd || priceAed,
       billingType: billingType || "one-time",
       deliveryTime: deliveryTime || null,
       featuresJson: typeof featuresJson === "string" ? featuresJson : JSON.stringify(featuresJson || []),

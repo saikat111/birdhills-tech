@@ -19,7 +19,7 @@ import FinalCtaSection from "@/components/home/FinalCtaSection";
 export const metadata: Metadata = {
   title: "Transparent Pricing Architecture | Bird Hills Tech Dubai",
   description:
-    "Explore transparent corporate pricing packages for web development, custom software, and digital growth in Dubai. Clear AED investment tiers with no hidden fees.",
+    "Explore transparent corporate pricing packages for web development, custom software, and digital growth in US Dollars (USD). Clear investment tiers with no hidden fees.",
   alternates: {
     canonical: "https://birdhillstech.com/pricing",
   },
@@ -49,7 +49,8 @@ export default async function PricingPage() {
         badge: "SMEs & Fast Launch",
         description:
           "Custom high-speed corporate web platform built on Next.js with CMS integration, SEO readiness, and conversion architecture.",
-        priceAed: "AED 18,500",
+        priceAed: "$4,950",
+        priceUsd: "$4,950",
         billingType: "one-time",
         deliveryTime: "2-3 Weeks Delivery",
         popular: false,
@@ -71,7 +72,8 @@ export default async function PricingPage() {
         badge: "Most Popular in Dubai",
         description:
           "Enterprise web application or custom digital portal with advanced database modeling, role-based workflows, and regional integrations.",
-        priceAed: "AED 42,000",
+        priceAed: "$9,500",
+        priceUsd: "$9,500",
         billingType: "one-time",
         deliveryTime: "4-6 Weeks Delivery",
         popular: true,
@@ -93,7 +95,8 @@ export default async function PricingPage() {
         badge: "Conglomerates & FinTech",
         description:
           "Tailored multi-platform digital ecosystem designed for GCC family offices, regional conglomerates, and high-security enterprise operations.",
-        priceAed: "From AED 85,000",
+        priceAed: "From $19,500",
+        priceUsd: "From $19,500",
         billingType: "one-time",
         deliveryTime: "8-12 Weeks Delivery",
         popular: false,
@@ -114,25 +117,25 @@ export default async function PricingPage() {
   const retainers = [
     {
       title: "Technical SLA & DevOps Maintenance",
-      price: "From AED 4,500 / month",
+      price: "From $1,250 / month",
       desc: "24/7 infrastructure monitoring, database backups, dependency security updates, and priority developer bug fixes.",
     },
     {
       title: "Performance SEO & B2B Acquisition",
-      price: "From AED 7,500 / month",
+      price: "From $2,400 / month",
       desc: "Closed-loop commercial keyword ranking, localized Dubai authority backlinks, Google Ads management, and CAC optimization.",
     },
     {
       title: "Dedicated Creative & UI/UX Sprint",
-      price: "From AED 6,000 / month",
+      price: "From $1,800 / month",
       desc: "Monthly design sprints for product features, interactive campaign landing pages, investor collateral, and conversion audits.",
     },
   ];
 
   const pricingFaqs = [
     {
-      q: "Are the prices in UAE Dirhams (AED)?",
-      a: "Yes. All standard pricing is quoted in UAE Dirhams (AED) excluding 5% UAE VAT. We also issue invoices in USD, EUR, and GBP for international corporate accounts with international SWIFT transfer support.",
+      q: "Are the prices in US Dollars (USD)?",
+      a: "Yes. All pricing is quoted in US Dollars ($ USD) with transparent milestone billing. We also accept payments in AED (Dirhams), EUR, and GBP for UAE and international corporate accounts via corporate wire, credit card, and Stripe.",
     },
     {
       q: "How are project payment milestones structured?",
@@ -245,9 +248,10 @@ export default async function PricingPage() {
                 features = [];
               }
 
+              const displayPrice = tier.priceUsd || (tier.priceAed?.startsWith("$") ? tier.priceAed : tier.priceAed ? "$" + tier.priceAed.replace(/AED\s*/i, "") : "$4,950");
               const waUrl = `https://wa.me/971524405785?text=Hello%20Bird%20Hills%20Tech%2C%20I%20am%20interested%20in%20the%20${encodeURIComponent(
                 tier.name
-              )}%20package%20(${encodeURIComponent(tier.priceAed)}).`;
+              )}%20package%20(${encodeURIComponent(displayPrice)}).`;
 
               return (
                 <div
@@ -278,7 +282,7 @@ export default async function PricingPage() {
                     <div className="p-4 rounded-2xl bg-[#F7F9FC] border border-slate-100 mb-6 flex items-baseline justify-between">
                       <div>
                         <div className="text-3xl font-black text-[#0B1730] tracking-tight">
-                          {tier.priceAed}
+                          {displayPrice}
                         </div>
                         <span className="text-[10px] text-slate-400">
                           {tier.billingType === "monthly" ? "Per Month (Billed Monthly)" : "Fixed Project Investment"}

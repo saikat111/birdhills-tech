@@ -65,7 +65,7 @@ export function PricingClient({ initialTiers }: PricingClientProps) {
       slug: "",
       badge: "",
       description: "",
-      priceAed: "AED 25,000",
+      priceAed: "$9,500",
       billingType: "one-time",
       deliveryTime: "3-4 Weeks Delivery",
       featuresRaw: "Feature point 1\nFeature point 2\nFeature point 3",
@@ -203,7 +203,7 @@ export function PricingClient({ initialTiers }: PricingClientProps) {
             Pricing Packages CMS
           </h1>
           <p className="text-xs sm:text-sm text-[#667085] mt-1">
-            Manage commercial packages, AED pricing, delivery timelines, and feature deliverables shown on `/pricing`.
+            Manage commercial packages, USD ($) pricing, delivery timelines, and feature deliverables shown on `/pricing`.
           </p>
         </div>
         <div className="flex items-center gap-3">
@@ -377,14 +377,14 @@ export function PricingClient({ initialTiers }: PricingClientProps) {
               <div className="grid grid-cols-3 gap-4">
                 <div>
                   <label className="block text-xs font-bold text-slate-700 mb-1">
-                    Price (AED) *
+                    Price (USD $) *
                   </label>
                   <input
                     type="text"
                     required
                     value={form.priceAed}
                     onChange={(e) => setForm({ ...form, priceAed: e.target.value })}
-                    placeholder="AED 18,500"
+                    placeholder="$9,500"
                     className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#0B1730] focus:border-[#1D68BD] focus:outline-none"
                   />
                 </div>

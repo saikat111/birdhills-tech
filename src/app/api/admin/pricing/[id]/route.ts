@@ -22,6 +22,11 @@ export async function PATCH(
       ...(body.badge !== undefined ? { badge: body.badge } : {}),
       ...(body.description !== undefined ? { description: body.description } : {}),
       ...(body.priceAed !== undefined ? { priceAed: body.priceAed } : {}),
+      ...(body.priceUsd !== undefined
+        ? { priceUsd: body.priceUsd }
+        : body.priceAed !== undefined
+        ? { priceUsd: body.priceAed }
+        : {}),
       ...(body.billingType !== undefined ? { billingType: body.billingType } : {}),
       ...(body.deliveryTime !== undefined ? { deliveryTime: body.deliveryTime } : {}),
       ...(body.featuresJson !== undefined

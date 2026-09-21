@@ -53,6 +53,16 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/hosting" className="hover:text-white transition-colors">
+                  Cloud Hosting & VPS
+                </Link>
+              </li>
+              <li>
+                <Link href="/domains" className="hover:text-white transition-colors">
+                  Domain Registration
+                </Link>
+              </li>
+              <li>
                 <Link href="/blog" className="hover:text-white transition-colors">
                   Blog & Articles
                 </Link>

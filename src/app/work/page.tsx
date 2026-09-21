@@ -25,7 +25,7 @@ export default async function WorkPage() {
   });
 
   const impactStats = [
-    { value: "AED 85M+", label: "Regional Transaction Volume Powered" },
+    { value: "$25M+", label: "Regional Transaction Volume Powered" },
     { value: "< 0.8s", label: "Average Core Web Vitals (LCP)" },
     { value: "4.2x", label: "Average B2B Campaign Return on Ad Spend" },
     { value: "99.98%", label: "Platform SLA Uptime Across Cloud Deployments" },

@@ -75,12 +75,12 @@ export function HeroSection({
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
-  // Auto-advance timer (5.5 seconds)
+  // Auto-advance timer (4.5 seconds) - plays by default continuously
   useEffect(() => {
     if (isPaused) return;
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
-    }, 5500);
+    }, 4500);
     return () => clearInterval(interval);
   }, [isPaused]);
 
@@ -95,11 +95,7 @@ export function HeroSection({
   const activeSlideData = HERO_SLIDES[currentSlide];
 
   return (
-    <section
-      className="relative min-h-[90vh] lg:min-h-[96vh] pt-32 pb-24 md:pt-40 md:pb-32 overflow-hidden flex items-center bg-[#070D1B] text-white"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-    >
+    <section className="relative min-h-[90vh] lg:min-h-[96vh] pt-32 pb-24 md:pt-40 md:pb-32 overflow-hidden flex items-center bg-[#070D1B] text-white">
       {/* 1. FULL-BLEED HIGH-VISIBILITY BACKGROUND IMAGE SLIDER */}
       <div className="absolute inset-0 z-0">
         {HERO_SLIDES.map((slide, index) => {

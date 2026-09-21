@@ -225,8 +225,28 @@ model PricingTier {
   badge        String?
   description  String
   priceAed     String
+  priceUsd     String?
   billingType  String   @default("one-time")
   deliveryTime String?
+  featuresJson String
+  popular      Boolean  @default(false)
+  sortOrder    Int      @default(0)
+  active       Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model HostingPlan {
+  id           String   @id @default(uuid())
+  name         String
+  slug         String   @unique
+  category     String   @default("cloud")
+  priceUsd     String
+  billingCycle String   @default("/ month")
+  badge        String?
+  description  String
+  storage      String?
+  bandwidth    String?
   featuresJson String
   popular      Boolean  @default(false)
   sortOrder    Int      @default(0)

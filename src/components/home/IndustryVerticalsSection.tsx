@@ -12,7 +12,7 @@ export function IndustryVerticalsSection() {
       image:
         "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80",
       icon: Building2,
-      stat: "AED 85M+ Volume",
+      stat: "$25M+ Volume",
     },
     {
       title: "Luxury Retail & Fine Jewelry",

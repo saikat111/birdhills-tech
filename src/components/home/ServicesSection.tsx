@@ -21,7 +21,7 @@ export function ServicesSection() {
       href: "/services/web-development",
       icon: Code2,
       tag: "Technology",
-      startingPrice: "From AED 18,500",
+      startingPrice: "From $4,950",
     },
     {
       num: "02",
@@ -30,7 +30,7 @@ export function ServicesSection() {
       href: "/services/web-applications",
       icon: Cpu,
       tag: "Technology",
-      startingPrice: "From AED 35,000",
+      startingPrice: "From $9,500",
     },
     {
       num: "03",
@@ -39,7 +39,7 @@ export function ServicesSection() {
       href: "/services/branding",
       icon: Sparkles,
       tag: "Creative",
-      startingPrice: "From AED 12,000",
+      startingPrice: "From $3,500",
     },
     {
       num: "04",
@@ -48,7 +48,7 @@ export function ServicesSection() {
       href: "/services/ecommerce",
       icon: ShoppingBag,
       tag: "Technology",
-      startingPrice: "From AED 22,000",
+      startingPrice: "From $6,800",
     },
     {
       num: "05",
@@ -57,7 +57,7 @@ export function ServicesSection() {
       href: "/services/digital-marketing",
       icon: TrendingUp,
       tag: "Growth",
-      startingPrice: "From AED 7,500/mo",
+      startingPrice: "From $1,950/mo",
     },
     {
       num: "06",
@@ -66,7 +66,7 @@ export function ServicesSection() {
       href: "/services/ai-solutions",
       icon: Compass,
       tag: "Strategy",
-      startingPrice: "From AED 15,000",
+      startingPrice: "From $4,200",
     },
   ];
 

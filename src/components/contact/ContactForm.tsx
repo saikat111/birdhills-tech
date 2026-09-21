@@ -10,7 +10,7 @@ export function ContactForm() {
     email: "",
     phone: "",
     service: "Web Development",
-    budget: "AED 25,000 - 50,000",
+    budget: "$5,000 - $10,000",
     message: "",
   });
 
@@ -20,6 +20,7 @@ export function ContactForm() {
   const serviceOptions = [
     "Web Development",
     "Web Application",
+    "Cloud Hosting & Domains",
     "E-commerce",
     "Branding & Design",
     "Digital Marketing",
@@ -30,11 +31,11 @@ export function ContactForm() {
   ];
 
   const budgetOptions = [
-    "Under AED 25,000",
-    "AED 25,000 - 50,000",
-    "AED 50,000 - 100,000",
-    "AED 100,000 - 250,000",
-    "AED 250,000+",
+    "Under $5,000",
+    "$5,000 - $10,000",
+    "$10,000 - $25,000",
+    "$25,000 - $50,000",
+    "$50,000+",
   ];
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -65,7 +66,7 @@ export function ContactForm() {
         email: "",
         phone: "",
         service: "Web Development",
-        budget: "AED 25,000 - 50,000",
+        budget: "$5,000 - $10,000",
         message: "",
       });
     } catch (err: any) {

@@ -749,7 +749,8 @@ A world-class visual identity allows your company to command higher fee structur
       slug: "growth-launchpad",
       badge: "SMEs & Fast Launch",
       description: "Custom high-speed corporate web platform built on Next.js with CMS integration, SEO readiness, and conversion architecture.",
-      priceAed: "AED 18,500",
+      priceAed: "$4,950",
+      priceUsd: "$4,950",
       billingType: "one-time",
       deliveryTime: "2-3 Weeks Delivery",
       popular: false,
@@ -760,7 +761,7 @@ A world-class visual identity allows your company to command higher fee structur
         "Sub-second Core Web Vitals (< 0.8s LCP)",
         "Mobile-First Responsive Design",
         "Integrated Headless Content Management (CMS)",
-        "Technical SEO & Local Dubai Schema",
+        "Technical SEO & Google Indexing Schema",
         "Lead Capture & Contact Pipeline Integration",
         "30 Days Dedicated Post-Launch Support",
         "100% Full IP & Source Code Ownership"
@@ -769,9 +770,10 @@ A world-class visual identity allows your company to command higher fee structur
     {
       name: "Corporate Pro & SaaS",
       slug: "corporate-pro",
-      badge: "Most Popular in Dubai",
+      badge: "Most Popular",
       description: "Enterprise web application or custom digital portal with advanced database modeling, role-based workflows, and regional integrations.",
-      priceAed: "AED 42,000",
+      priceAed: "$9,500",
+      priceUsd: "$9,500",
       billingType: "one-time",
       deliveryTime: "4-6 Weeks Delivery",
       popular: true,
@@ -793,7 +795,8 @@ A world-class visual identity allows your company to command higher fee structur
       slug: "bespoke-enterprise",
       badge: "Conglomerates & FinTech",
       description: "Tailored multi-platform digital ecosystem designed for GCC family offices, regional conglomerates, and high-security enterprise operations.",
-      priceAed: "From AED 85,000",
+      priceAed: "$19,500+",
+      priceUsd: "$19,500+",
       billingType: "one-time",
       deliveryTime: "8-12 Weeks Delivery",
       popular: false,
@@ -821,7 +824,118 @@ A world-class visual identity allows your company to command higher fee structur
     }
   }
 
-  console.log("Database seed completed successfully!");
+  // 7. Seed Hosting and Domain Plans
+  const hostingPlansData = [
+    {
+      name: "Starter Cloud Hosting",
+      slug: "cloud-starter",
+      category: "cloud",
+      priceUsd: "$9.99",
+      billingCycle: "/ month",
+      badge: "Fast SME Launch",
+      description: "Ideal for personal brands, small corporate portfolios, and early-stage startups needing high speed.",
+      storage: "25 GB NVMe SSD",
+      bandwidth: "Unmetered Bandwidth",
+      popular: false,
+      sortOrder: 1,
+      active: true,
+      featuresJson: JSON.stringify([
+        "1 High-Speed Website",
+        "25 GB Enterprise NVMe SSD Storage",
+        "Unmetered Monthly Bandwidth",
+        "Free Automatic Let's Encrypt SSL",
+        "10 Corporate Email Accounts",
+        "Standard GCC Edge CDN Caching",
+        "Weekly Automated Backups",
+        "99.9% Uptime Network SLA"
+      ]),
+    },
+    {
+      name: "Business Pro Cloud",
+      slug: "cloud-business",
+      category: "cloud",
+      priceUsd: "$24.99",
+      billingCycle: "/ month",
+      badge: "Most Popular",
+      description: "Comprehensive cloud hosting for growing businesses, e-commerce stores, and high-traffic portals.",
+      storage: "100 GB NVMe SSD",
+      bandwidth: "Unmetered Bandwidth",
+      popular: true,
+      sortOrder: 2,
+      active: true,
+      featuresJson: JSON.stringify([
+        "Unlimited Hosted Websites",
+        "100 GB Ultra-Fast NVMe SSD Storage",
+        "Free Domain Name (.com / .ae) for 1st Year",
+        "Free Wildcard SSL & Dedicated IP Support",
+        "Unlimited Professional Email Inboxes",
+        "Dubai GCC Edge Cloud Node Acceleration",
+        "Daily Automated Off-Site Backups",
+        "1-Click Staging & Git Deployment Hub",
+        "24/7 Priority Emergency Support"
+      ]),
+    },
+    {
+      name: "Managed Cloud VPS",
+      slug: "managed-vps",
+      category: "vps",
+      priceUsd: "$59.99",
+      billingCycle: "/ month",
+      badge: "Dedicated Resources",
+      description: "Isolated virtual private server for SaaS applications, custom databases, and heavy APIs.",
+      storage: "250 GB NVMe Storage",
+      bandwidth: "10 TB Premium Traffic",
+      popular: false,
+      sortOrder: 3,
+      active: true,
+      featuresJson: JSON.stringify([
+        "4 vCPU Dedicated Compute Cores",
+        "16 GB High-Speed RAM",
+        "250 GB Pure NVMe RAID-10 Storage",
+        "Dedicated Clean IPv4 & IPv6 Addresses",
+        "Full Root & SSH Terminal Access",
+        "Next.js, Node.js, Docker & Python Ready",
+        "Enterprise DDoS Shield (100 Gbps+)",
+        "Daily Real-Time Snapshots & Rollbacks",
+        "Dedicated DevOps Technical Account Lead"
+      ]),
+    },
+    {
+      name: "Enterprise Dedicated Server",
+      slug: "enterprise-dedicated",
+      category: "dedicated",
+      priceUsd: "$149.99",
+      billingCycle: "/ month",
+      badge: "Maximum Power",
+      description: "Mission-critical bare-metal infrastructure for financial services, institutions, and high-security compliance.",
+      storage: "1 TB NVMe RAID-1",
+      bandwidth: "Unmetered 10 Gbps Port",
+      popular: false,
+      sortOrder: 4,
+      active: true,
+      featuresJson: JSON.stringify([
+        "16 vCPU Cores / 32 Threads Bare-Metal",
+        "64 GB ECC Server Memory",
+        "1 TB Enterprise NVMe Dual Mirror Array",
+        "Unmetered 10 Gbps Low-Latency Uplink",
+        "Hardware Firewall & Custom IDS/IPS",
+        "DIFC & Regional UAE Data Compliance",
+        "24/7 Proactive Hardware Monitoring",
+        "15-Minute Guaranteed Critical SLA Response"
+      ]),
+    },
+  ];
+
+  for (const plan of hostingPlansData) {
+    const existing = await prisma.hostingPlan.findUnique({ where: { slug: plan.slug } });
+    if (existing) {
+      await prisma.hostingPlan.update({ where: { id: existing.id }, data: plan });
+    } else {
+      await prisma.hostingPlan.create({ data: plan });
+    }
+  }
+
+  console.log("Database seed completed successfully with USD Pricing & Hosting plans!");
 }
 
 main()

@@ -24,14 +24,14 @@ export function TestimonialsSection({ testimonials }: TestimonialsProps) {
 
   const items = testimonials && testimonials.length > 0 ? testimonials : [];
 
-  // Auto-slide effect
+  // Auto-slide effect - continuous autoplay
   useEffect(() => {
-    if (items.length <= 1 || isPaused) return;
+    if (items.length <= 1) return;
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % items.length);
-    }, 5500);
+    }, 4500);
     return () => clearInterval(timer);
-  }, [items.length, isPaused]);
+  }, [items.length]);
 
   if (items.length === 0) return null;
 
@@ -81,11 +81,7 @@ export function TestimonialsSection({ testimonials }: TestimonialsProps) {
         </div>
 
         {/* Featured Auto-Sliding Card */}
-        <div
-          className="relative bg-white rounded-3xl p-8 sm:p-12 lg:p-16 border border-[#E4E7EC] shadow-xl overflow-hidden"
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
-        >
+        <div className="relative bg-white rounded-3xl p-8 sm:p-12 lg:p-16 border border-[#E4E7EC] shadow-xl overflow-hidden">
           {/* Background watermark quote */}
           <Quote
             size={180}

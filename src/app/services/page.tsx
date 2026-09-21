@@ -46,7 +46,7 @@ export default function ServicesHubPage() {
       image:
         "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=85",
       icon: Code2,
-      price: "From AED 18,500",
+      price: "From $4,950",
       features: [
         "Modern Next.js & TypeScript Architectures",
         "Sub-second Core Web Vitals (< 0.8s LCP)",
@@ -62,7 +62,7 @@ export default function ServicesHubPage() {
       image:
         "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=85",
       icon: Layers,
-      price: "From AED 42,000",
+      price: "From $9,500",
       features: [
         "Complex Relational Data Modeling & PostgreSQL",
         "Granular Role-Based Access Control (RBAC)",
@@ -78,7 +78,7 @@ export default function ServicesHubPage() {
       image:
         "https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=800&q=85",
       icon: ShoppingBag,
-      price: "From AED 28,000",
+      price: "From $6,800",
       features: [
         "Headless Shopify & Custom Cart Architecture",
         "Stripe, Tabby, Tamara & Network International",
@@ -94,7 +94,7 @@ export default function ServicesHubPage() {
       image:
         "https://images.unsplash.com/photo-1581291518655-9523c932edcf?auto=format&fit=crop&w=800&q=85",
       icon: Palette,
-      price: "From AED 16,000",
+      price: "From $3,950",
       features: [
         "Interactive High-Fidelity Figma Prototypes",
         "Enterprise Design System & Token Libraries",
@@ -110,7 +110,7 @@ export default function ServicesHubPage() {
       image:
         "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=85",
       icon: Sparkles,
-      price: "From AED 14,000",
+      price: "From $3,500",
       features: [
         "Corporate Vector Logo & Brand Guidelines",
         "Editorial Typography & High-End Color Theory",
@@ -126,7 +126,7 @@ export default function ServicesHubPage() {
       image:
         "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=85",
       icon: TrendingUp,
-      price: "From AED 7,500/mo",
+      price: "From $1,950/mo",
       features: [
         "High-Intent Commercial Google Search Ads",
         "Precision B2B LinkedIn Decision-Maker Targeting",
@@ -142,7 +142,7 @@ export default function ServicesHubPage() {
       image:
         "https://images.unsplash.com/photo-1571786256017-aee7a0c009b6?auto=format&fit=crop&w=800&q=85",
       icon: Search,
-      price: "From AED 6,500/mo",
+      price: "From $1,650/mo",
       features: [
         "Local Dubai Map Pack & Entity Authority",
         "High-Value Commercial Keyword Dominance",
@@ -158,7 +158,7 @@ export default function ServicesHubPage() {
       image:
         "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=85",
       icon: Cpu,
-      price: "From AED 16,000",
+      price: "From $4,200",
       features: [
         "24/7 Autonomous Conversational Qualifiers",
         "Private Retrieval-Augmented Generation (RAG)",

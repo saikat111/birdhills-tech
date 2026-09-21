@@ -155,6 +155,56 @@ const serviceDetails: Record<
   },
 };
 
+const serviceImagery: Record<
+  string,
+  {
+    image: string;
+    priceUsd: string;
+    timeline: string;
+  }
+> = {
+  "web-development": {
+    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=2000&q=90",
+    priceUsd: "$4,950",
+    timeline: "2-4 Weeks",
+  },
+  "web-applications": {
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=2000&q=90",
+    priceUsd: "$9,500",
+    timeline: "4-8 Weeks",
+  },
+  ecommerce: {
+    image: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=2000&q=90",
+    priceUsd: "$6,800",
+    timeline: "3-6 Weeks",
+  },
+  "ui-ux-design": {
+    image: "https://images.unsplash.com/photo-1581291518655-9523c932edcf?auto=format&fit=crop&w=2000&q=90",
+    priceUsd: "$3,950",
+    timeline: "2-3 Weeks",
+  },
+  branding: {
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=90",
+    priceUsd: "$3,500",
+    timeline: "2-3 Weeks",
+  },
+  "digital-marketing": {
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=2000&q=90",
+    priceUsd: "$1,950/mo",
+    timeline: "Monthly Sprint",
+  },
+  seo: {
+    image: "https://images.unsplash.com/photo-1571786256017-aee7a0c009b6?auto=format&fit=crop&w=2000&q=90",
+    priceUsd: "$1,650/mo",
+    timeline: "Monthly Sprint",
+  },
+  "ai-solutions": {
+    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=2000&q=90",
+    priceUsd: "$4,200",
+    timeline: "3-5 Weeks",
+  },
+};
+
 export async function generateStaticParams() {
   const services = await prisma.service.findMany({ select: { slug: true } });
   return services.map((s) => ({ slug: s.slug }));
@@ -198,6 +248,14 @@ export default async function ServiceDetailPage({
     notFound();
   }
 
+  const imagery = serviceImagery[slug] || {
+    image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2000&q=90",
+    priceUsd: "$4,950",
+    timeline: "2-4 Weeks",
+  };
+
+  const detail = serviceDetails[slug] || serviceDetails["web-development"];
+
   // Parse JSON data safely
   let features: string[] = [];
   let processSteps: { step: string; title: string; desc: string }[] = [];
@@ -218,22 +276,8 @@ export default async function ServiceDetailPage({
   try {
     benefits = JSON.parse(service.benefitsJson || "[]");
   } catch {
-    benefits = [];
+    benefits = ["Rapid time-to-market", "Measurable commercial ROI", "Zero platform lock-in"];
   }
-
-  const detail = serviceDetails[service.slug] || {
-    problem:
-      "Modern companies in Dubai need high-speed, secure digital solutions to remain competitive and capture serious market share.",
-    approach:
-      "Bird Hills Tech combines engineering rigor with creative design and growth strategy to deliver measurable results.",
-    tools: ["Modern Technologies", "Enterprise Frameworks", "Secure Infrastructure"],
-    faqs: [
-      {
-        q: "How does Bird Hills Tech deliver this service in Dubai?",
-        a: "We work directly with your leadership team from our Deira office to plan, execute, and scale your digital initiative.",
-      },
-    ],
-  };
 
   // Fetch 2 related projects
   const relatedProjects = await prisma.project.findMany({
@@ -241,53 +285,115 @@ export default async function ServiceDetailPage({
     take: 2,
   });
 
+  const waUrl = `https://wa.me/971524405785?text=Hello%20Bird%20Hills%20Tech%2C%20I%20am%20interested%20in%20discussing%20your%20${encodeURIComponent(
+    service.title
+  )}%20services%20(Starting%20${encodeURIComponent(imagery.priceUsd)}).`;
+
   return (
     <div className="flex flex-col min-h-screen pt-24">
-      {/* 1. HERO */}
-      <section className="py-20 md:py-28 bg-[#F7F9FC] border-b border-[#E4E7EC] relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      {/* 1. VIBRANT HIGH-VISIBILITY HERO WITH PHOTOGRAPHY */}
+      <section className="relative py-20 md:py-32 bg-[#070D1B] text-white border-b border-white/10 overflow-hidden">
+        {/* Full-Bleed High-Res Service Background */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src={imagery.image}
+            alt={`${service.title} engineering in Dubai`}
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#070D1B]/95 via-[#070D1B]/80 to-[#070D1B]/45" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#070D1B]/90 via-transparent to-[#070D1B]" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Breadcrumb */}
-          <div className="flex items-center gap-2 text-xs text-[#667085] mb-6">
-            <Link href="/" className="hover:text-[#1D68BD]">
+          <div className="flex items-center gap-2 text-xs text-slate-300 mb-8 flex-wrap">
+            <Link href="/" className="hover:text-white transition-colors">
               Home
             </Link>
             <ChevronRight size={12} />
-            <Link href="/services" className="hover:text-[#1D68BD]">
+            <Link href="/services" className="hover:text-white transition-colors">
               Services
             </Link>
             <ChevronRight size={12} />
-            <span className="text-[#0B1730] font-semibold">{service.title}</span>
+            <span className="text-[#38BDF8] font-semibold">{service.title}</span>
           </div>
 
-          <div className="max-w-3xl space-y-6">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase bg-[#EBF3FE] text-[#1D68BD] border border-[#BFDBFE]">
-              <Sparkles size={13} />
-              {service.category} EXCELLENCE
-            </span>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            {/* Left Content */}
+            <div className="lg:col-span-8 space-y-6">
+              <div className="flex flex-wrap items-center gap-2.5">
+                <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold tracking-wider uppercase bg-[#1D68BD]/30 text-[#38BDF8] border border-[#38BDF8]/40">
+                  <Sparkles size={13} />
+                  {service.category} EXCELLENCE
+                </span>
+                <span className="px-3.5 py-1 rounded-full text-xs font-bold bg-[#25D366]/20 text-[#25D366] border border-[#25D366]/40">
+                  {imagery.priceUsd} USD
+                </span>
+                <span className="px-3.5 py-1 rounded-full text-xs font-semibold text-slate-300 bg-white/10 border border-white/15">
+                  Timeline: {imagery.timeline}
+                </span>
+              </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0B1730] tracking-tight leading-[1.12]">
-              {service.title}
-            </h1>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.12]">
+                {service.title}
+              </h1>
 
-            <p className="text-lg sm:text-xl text-[#667085] leading-relaxed">
-              {service.fullDesc}
-            </p>
+              <p className="text-lg sm:text-xl text-slate-200 leading-relaxed font-normal max-w-2xl drop-shadow-sm">
+                {service.fullDesc}
+              </p>
 
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-[#1D68BD] text-white text-sm font-semibold shadow-md hover:bg-[#155196] transition-all"
-              >
-                Inquire About {service.title}
-                <ArrowRight size={16} />
-              </Link>
-              <Link
-                href="/book-a-meeting"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white text-[#101828] text-sm font-semibold border border-[#E4E7EC] hover:bg-[#F7F9FC] transition-colors"
-              >
-                <Calendar size={16} className="text-[#1D68BD]" />
-                Book a Consultation
-              </Link>
+              {/* Dual Action Buttons */}
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-4">
+                <Link
+                  href={`/book-a-meeting?service=${encodeURIComponent(service.title)}`}
+                  className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-[#1D68BD] text-white text-xs font-bold shadow-lg shadow-[#1D68BD]/30 hover:bg-[#155196] transition-all"
+                >
+                  <Calendar size={15} />
+                  Schedule Technical Briefing
+                </Link>
+
+                <a
+                  href={waUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-[#25D366] hover:bg-[#1ebd59] text-white text-xs font-bold shadow-lg shadow-[#25D366]/20 transition-all"
+                >
+                  <span>Chat on WhatsApp (+971 52 440 5785)</span>
+                  <ArrowRight size={14} />
+                </a>
+              </div>
+            </div>
+
+            {/* Right Card: Quick Specs Overview */}
+            <div className="lg:col-span-4 bg-white/10 backdrop-blur-xl border border-white/20 p-7 rounded-3xl shadow-2xl space-y-4">
+              <div className="text-xs font-bold uppercase tracking-wider text-[#38BDF8]">
+                Practice Specifications
+              </div>
+              <div className="space-y-3 text-xs">
+                <div className="flex items-center justify-between pb-2 border-b border-white/10">
+                  <span className="text-slate-300">Starting Investment</span>
+                  <span className="font-bold text-[#25D366] text-sm">{imagery.priceUsd}</span>
+                </div>
+                <div className="flex items-center justify-between pb-2 border-b border-white/10">
+                  <span className="text-slate-300">Typical Turnaround</span>
+                  <span className="font-bold text-white">{imagery.timeline}</span>
+                </div>
+                <div className="flex items-center justify-between pb-2 border-b border-white/10">
+                  <span className="text-slate-300">Performance Guarantee</span>
+                  <span className="font-bold text-white">&lt; 0.8s LCP</span>
+                </div>
+                <div className="flex items-center justify-between pb-2 border-b border-white/10">
+                  <span className="text-slate-300">Code & IP Rights</span>
+                  <span className="font-bold text-white">100% Client Ownership</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-slate-300">Direct Senior Architect</span>
+                  <span className="font-bold text-white">Included</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
