@@ -109,10 +109,11 @@ export function Header() {
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "Services", href: "/services", hasDropdown: true },
+    { name: "Portfolio", href: "/work" },
     { name: "Pricing", href: "/pricing" },
-    { name: "Work", href: "/work" },
+    { name: "Blog", href: "/blog" },
     { name: "About", href: "/about" },
-    { name: "Insights", href: "/insights" },
+    { name: "Contact Us", href: "/contact" },
   ];
 
   return (
@@ -293,16 +294,22 @@ export function Header() {
                   </div>
                 </div>
                 <Link
-                  href="/pricing"
-                  className="text-2xl font-bold text-[#0B1730] hover:text-[#1D68BD] transition-colors"
-                >
-                  Pricing
-                </Link>
-                <Link
                   href="/work"
                   className="text-2xl font-bold text-[#0B1730] hover:text-[#1D68BD] transition-colors"
                 >
-                  Work & Case Studies
+                  Portfolio
+                </Link>
+                <Link
+                  href="/pricing"
+                  className="text-2xl font-bold text-[#0B1730] hover:text-[#1D68BD] transition-colors"
+                >
+                  Pricing Packages
+                </Link>
+                <Link
+                  href="/blog"
+                  className="text-2xl font-bold text-[#0B1730] hover:text-[#1D68BD] transition-colors"
+                >
+                  Blog & Insights
                 </Link>
                 <Link
                   href="/about"
@@ -311,10 +318,10 @@ export function Header() {
                   About Bird Hills
                 </Link>
                 <Link
-                  href="/insights"
-                  className="text-2xl font-bold text-[#0B1730] hover:text-[#1D68BD] transition-colors"
+                  href="/contact"
+                  className="text-2xl font-bold text-[#1D68BD] hover:underline transition-colors"
                 >
-                  Insights & Blog
+                  Contact Us
                 </Link>
               </nav>
             </div>

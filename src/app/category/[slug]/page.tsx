@@ -139,7 +139,7 @@ export default async function CategoryPage({
                     </div>
 
                     <h3 className="text-lg font-bold text-[#0B1730] group-hover:text-[#1D68BD] transition-colors leading-snug">
-                      <Link href={`/insights/${post.slug}`}>{post.title}</Link>
+                      <Link href={`/blog/${post.slug}`}>{post.title}</Link>
                     </h3>
 
                     <p className="text-xs sm:text-sm text-[#667085] line-clamp-2 leading-relaxed">
@@ -151,7 +151,7 @@ export default async function CategoryPage({
                 <div className="p-6 pt-0 border-t border-slate-200/60 mt-3 flex items-center justify-between">
                   <span className="text-[11px] text-slate-400">{post.author}</span>
                   <Link
-                    href={`/insights/${post.slug}`}
+                    href={`/blog/${post.slug}`}
                     className="inline-flex items-center gap-1 text-xs font-bold text-[#1D68BD]"
                   >
                     Read <ArrowRight size={13} />

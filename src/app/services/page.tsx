@@ -20,6 +20,10 @@ import {
   Lock,
   Clock,
   Compass,
+  Server,
+  FileCheck,
+  HelpCircle,
+  ChevronRight,
 } from "lucide-react";
 import FinalCtaSection from "@/components/home/FinalCtaSection";
 
@@ -40,7 +44,7 @@ export default function ServicesHubPage() {
       category: "Technology",
       desc: "Custom corporate websites and digital platforms built on modern Next.js architecture with sub-second page speeds.",
       image:
-        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=85",
       icon: Code2,
       price: "From AED 18,500",
       features: [
@@ -56,71 +60,71 @@ export default function ServicesHubPage() {
       category: "Technology",
       desc: "Bespoke SaaS platforms, internal business software, and secure client portals that streamline complex business logic.",
       image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=85",
       icon: Layers,
-      price: "From AED 35,000",
+      price: "From AED 42,000",
       features: [
-        "Role-Based Access Control (RBAC) & Auth",
-        "Complex Workflow & Database Modeling",
-        "Real-Time Data Pipelines & WebSockets",
-        "High-Concurrency Cloud Architecture",
+        "Complex Relational Data Modeling & PostgreSQL",
+        "Granular Role-Based Access Control (RBAC)",
+        "Real-Time Analytics & Event Pipeline",
+        "DIFC & Regional Compliance Ready",
       ],
     },
     {
       title: "E-commerce Solutions",
       slug: "/services/ecommerce",
       category: "Technology",
-      desc: "Scalable online stores with conversion-focused architecture and seamless regional GCC payment gateway integration.",
+      desc: "High-converting online flagships and headless storefronts integrated with regional GCC payment gateways.",
       image:
-        "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=800&q=85",
       icon: ShoppingBag,
-      price: "From AED 24,000",
+      price: "From AED 28,000",
       features: [
-        "High-Conversion Checkout Workflows",
-        "GCC Payment Gateways (Apple Pay, Tamara, Tabby)",
-        "Automated ERP & Inventory Synchronization",
-        "Multi-Currency & Bilingual Arabic Support",
+        "Headless Shopify & Custom Cart Architecture",
+        "Stripe, Tabby, Tamara & Network International",
+        "High-Volume Inventory & ERP Synchronization",
+        "Mobile-First Frictionless 1-Click Checkout",
       ],
     },
     {
-      title: "UI/UX Design Systems",
+      title: "UI/UX Experience Design",
       slug: "/services/ui-ux-design",
       category: "Creative",
-      desc: "Human-centered digital interfaces crafted through rigorous behavioral research, interactive prototyping, and design systems.",
+      desc: "Deep customer research, wireframing, and interactive design systems built for high retention and seamless usability.",
       image:
-        "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1581291518655-9523c932edcf?auto=format&fit=crop&w=800&q=85",
       icon: Palette,
-      price: "From AED 14,000",
+      price: "From AED 16,000",
       features: [
-        "Customer Behavioral & User Journey Mapping",
-        "Scalable Figma Tokenized Design Systems",
-        "Interactive Clickable High-Fidelity Prototypes",
-        "WCAG 2.1 AA Accessibility Standards",
+        "Interactive High-Fidelity Figma Prototypes",
+        "Enterprise Design System & Token Libraries",
+        "Bilingual English & Arabic UX Hierarchy",
+        "Quantitative User Testing & Usability Auditing",
       ],
     },
     {
       title: "Branding & Corporate Identity",
       slug: "/services/branding",
       category: "Creative",
-      desc: "Authoritative corporate identities, logo systems, and visual design guidelines that command prestige in the Gulf market.",
+      desc: "Prestigious brand identities, typography guidelines, and visual positioning engineered for Dubai leadership.",
       image:
-        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=85",
       icon: Sparkles,
-      price: "From AED 12,000",
+      price: "From AED 14,000",
       features: [
-        "Vector Logo Systems & Visual Guidelines",
-        "Brand Identity Manuals & Color Specifications",
-        "Corporate Stationery & Investor Decks",
-        "Bilingual English & Arabic Typography",
+        "Corporate Vector Logo & Brand Guidelines",
+        "Editorial Typography & High-End Color Theory",
+        "Executive Pitch Decks & Digital Collateral",
+        "Bilingual Middle East Cultural Nuance",
       ],
     },
     {
-      title: "Digital Marketing & Acquisition",
+      title: "Performance Digital Marketing",
       slug: "/services/digital-marketing",
       category: "Growth",
       desc: "Data-driven performance campaigns on Google and LinkedIn focused on generating verified commercial pipeline.",
       image:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=85",
       icon: TrendingUp,
       price: "From AED 7,500/mo",
       features: [
@@ -136,7 +140,7 @@ export default function ServicesHubPage() {
       category: "Growth",
       desc: "Technical SEO, site architecture, and content authority strategies designed to dominate Dubai business search results.",
       image:
-        "https://images.unsplash.com/photo-1571786256017-aee7a0c009b6?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1571786256017-aee7a0c009b6?auto=format&fit=crop&w=800&q=85",
       icon: Search,
       price: "From AED 6,500/mo",
       features: [
@@ -152,7 +156,7 @@ export default function ServicesHubPage() {
       category: "Technology",
       desc: "Pragmatic generative AI, intelligent conversational lead qualifiers, and internal knowledge automation.",
       image:
-        "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=85",
       icon: Cpu,
       price: "From AED 16,000",
       features: [
@@ -164,51 +168,153 @@ export default function ServicesHubPage() {
     },
   ];
 
+  const deliveryPhases = [
+    {
+      step: "01",
+      title: "Discovery & Strategic Alignment",
+      desc: "We analyze your business model, target audience in the UAE, competitive landscape, and technical constraints to define clear ROI goals.",
+      timeframe: "Week 1",
+    },
+    {
+      step: "02",
+      title: "Architecture & System Specification",
+      desc: "Our senior architects design the database schemas, API integrations, security protocols, and user flows before writing a single line of code.",
+      timeframe: "Week 2",
+    },
+    {
+      step: "03",
+      title: "High-Fidelity UI/UX Prototyping",
+      desc: "We create interactive Figma prototypes reflecting your corporate prestige, verified against real user interactions and device form-factors.",
+      timeframe: "Weeks 2 - 3",
+    },
+    {
+      step: "04",
+      title: "Rapid Agile Development & Testing",
+      desc: "Next.js 16 and TypeScript engineering in rapid two-week sprints. Zero code bloat, clean git workflows, and weekly live staging demos.",
+      timeframe: "Weeks 3 - 6",
+    },
+    {
+      step: "05",
+      title: "Production Launch & Continuous SLA",
+      desc: "Zero-downtime deployment to global edge infrastructure, Google indexing, security audit, and 30-90 days of guaranteed SLA warranty.",
+      timeframe: "Week 6+",
+    },
+  ];
+
+  const techStackGroups = [
+    {
+      category: "Frontend Engineering",
+      tools: ["Next.js 16 (App Router)", "React 19", "TypeScript", "Tailwind CSS v4", "Framer Motion", "Turbopack"],
+    },
+    {
+      category: "Backend & Database",
+      tools: ["Node.js / Bun", "Prisma ORM", "PostgreSQL", "SQLite / Cloudflare D1", "Redis Cache", "REST / GraphQL"],
+    },
+    {
+      category: "Cloud Infrastructure",
+      tools: ["Vercel Edge Network", "AWS (ECS / S3)", "Cloudflare Enterprise", "Docker Containers", "GitHub CI/CD"],
+    },
+    {
+      category: "AI & Growth Marketing",
+      tools: ["Google Gemini & OpenAI APIs", "GA4 & Meta CAPI", "LinkedIn Insight Tag", "Technical Schema.org", "Stripe & Tabby"],
+    },
+  ];
+
+  const serviceFaqs = [
+    {
+      q: "Do we get full ownership of the source code and design files?",
+      a: "Yes, 100%. Unlike agencies that lock clients into proprietary systems or monthly platform rent, Bird Hills Tech transfers complete intellectual property (IP), GitHub repositories, and Figma source files upon project completion.",
+    },
+    {
+      q: "How long does a typical corporate website or application take?",
+      a: "Standard corporate web platforms are delivered in 2 to 4 weeks. Complex bespoke web applications and SaaS portals typically require 6 to 10 weeks depending on database modeling and third-party integrations.",
+    },
+    {
+      q: "Can we manage the content in-house after launch?",
+      a: "Absolutely. Every platform comes integrated with a tailored, modern CMS (Headless or Custom Admin Panel) that allows your marketing team to edit text, upload media, publish articles, and manage leads without needing a developer.",
+    },
+    {
+      q: "Do you offer post-launch maintenance and technical SLA support?",
+      a: "Yes. Every project includes a 30 to 90-day comprehensive technical warranty. We also offer monthly technology and growth retainers covering security updates, server monitoring, speed optimization, and ongoing feature rollouts.",
+    },
+  ];
+
   return (
     <div className="flex flex-col min-h-screen pt-24">
-      {/* 1. VISUAL HERO SECTION WITH DUBAI PHOTOGRAPHY */}
-      <section className="relative py-24 md:py-32 bg-[#0B1730] text-white overflow-hidden">
-        {/* Background Image with Overlay */}
+      {/* 1. VIBRANT HIGH-VISIBILITY HERO SECTION */}
+      <section className="relative py-24 md:py-32 bg-[#070D1B] text-white overflow-hidden">
+        {/* Full-Bleed High-Res Corporate Photography Backdrop */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2000&q=85"
-            alt="Dubai business district and technology skyline"
+            src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2000&q=90"
+            alt="Dubai business district and engineering skyline"
             fill
             priority
             sizes="100vw"
-            className="object-cover opacity-20"
+            className="object-cover object-center scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0B1730] via-[#0B1730]/90 to-[#0B1730]/60" />
+          {/* Luminous multi-layer gradient allowing clear visuality of the Dubai skyline while ensuring crisp typography */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#070D1B]/95 via-[#070D1B]/75 to-[#070D1B]/40" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#070D1B]/90 via-transparent to-[#070D1B]" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl space-y-6">
-            <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-widest text-[#38BDF8] uppercase bg-white/10 border border-white/15 backdrop-blur-md">
-              COMPREHENSIVE CAPABILITIES
-            </span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.12]">
-              Digital engineering, creative mastery & commercial growth.
-            </h1>
-            <p className="text-lg sm:text-xl text-slate-300 leading-relaxed font-normal">
-              We combine web development, bespoke software, brand systems, and performance marketing to build market-dominating digital operations in Dubai and the GCC.
-            </p>
-            <div className="flex flex-wrap items-center gap-4 pt-2">
-              <Link
-                href="/book-a-meeting"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#1D68BD] text-white text-xs font-bold shadow-md hover:bg-[#155196] transition-colors"
-              >
-                <Calendar size={15} />
-                Schedule Technical Consultation
-              </Link>
-              <a
-                href="https://wa.me/971524405785?text=Hello%20Bird%20Hills%20Tech%2C%20I%20would%20like%20to%20inquire%20about%20your%20services."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white text-xs font-bold backdrop-blur-md transition-colors"
-              >
-                <MessageCircle size={15} className="text-[#25D366]" />
-                Direct WhatsApp Chat
-              </a>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            {/* Left Content */}
+            <div className="lg:col-span-8 space-y-6">
+              <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-widest text-[#38BDF8] uppercase bg-white/10 border border-white/15 backdrop-blur-md">
+                <Sparkles size={13} className="text-[#38BDF8]" />
+                COMPREHENSIVE CAPABILITIES · DUBAI, UAE
+              </span>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.12]">
+                Precision engineering, creative mastery & commercial growth.
+              </h1>
+              <p className="text-lg sm:text-xl text-slate-200 leading-relaxed font-normal max-w-2xl drop-shadow-sm">
+                We combine web development, bespoke software, brand systems, and performance marketing to build market-dominating digital operations in Dubai and the GCC.
+              </p>
+              <div className="flex flex-wrap items-center gap-4 pt-2">
+                <Link
+                  href="/book-a-meeting"
+                  className="inline-flex items-center gap-2 px-7 py-4 rounded-xl bg-[#1D68BD] text-white text-xs font-bold shadow-lg shadow-[#1D68BD]/30 hover:bg-[#155196] transition-all"
+                >
+                  <Calendar size={15} />
+                  Schedule Technical Consultation
+                </Link>
+                <a
+                  href="https://wa.me/971524405785?text=Hello%20Bird%20Hills%20Tech%2C%20I%20would%20like%20to%20inquire%20about%20your%20services."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-4 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white text-xs font-bold backdrop-blur-md transition-colors"
+                >
+                  <MessageCircle size={15} className="text-[#25D366]" />
+                  Direct WhatsApp Chat
+                </a>
+              </div>
+            </div>
+
+            {/* Right Card: Quick Practice Summary */}
+            <div className="lg:col-span-4 bg-white/10 backdrop-blur-xl border border-white/20 p-6 rounded-3xl shadow-2xl space-y-4">
+              <div className="text-xs font-bold uppercase tracking-wider text-[#38BDF8]">
+                At a Glance
+              </div>
+              <div className="space-y-3">
+                <div className="flex items-center justify-between pb-2 border-b border-white/10 text-xs">
+                  <span className="text-slate-300">Core Disciplines</span>
+                  <span className="font-bold text-white">8 Practice Areas</span>
+                </div>
+                <div className="flex items-center justify-between pb-2 border-b border-white/10 text-xs">
+                  <span className="text-slate-300">LCP Speed Guarantee</span>
+                  <span className="font-bold text-[#25D366]">&lt; 0.8s Core Web Vitals</span>
+                </div>
+                <div className="flex items-center justify-between pb-2 border-b border-white/10 text-xs">
+                  <span className="text-slate-300">Source Code Ownership</span>
+                  <span className="font-bold text-white">100% Client IP</span>
+                </div>
+                <div className="flex items-center justify-between text-xs">
+                  <span className="text-slate-300">Location</span>
+                  <span className="font-bold text-white">Deira, Dubai, UAE</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -246,7 +352,7 @@ export default function ServicesHubPage() {
                 >
                   <div>
                     {/* Top Visual Imagery */}
-                    <div className="relative h-48 w-full bg-slate-900 overflow-hidden">
+                    <div className="relative h-52 w-full bg-slate-900 overflow-hidden">
                       <Image
                         src={service.image}
                         alt={service.title}
@@ -330,7 +436,96 @@ export default function ServicesHubPage() {
         </div>
       </section>
 
-      {/* 3. ENGINEERING RIGOR & SLA STANDARDS SECTION */}
+      {/* 3. NEW SECTION: 5-PHASE COMMERCIAL DELIVERY BLUEPRINT */}
+      <section className="py-24 bg-white border-t border-[#E4E7EC]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mb-16">
+            <span className="text-xs font-bold tracking-wider uppercase text-[#1D68BD]">
+              EXECUTION EXCELLENCE
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B1730] tracking-tight mt-2">
+              Our 5-Stage Delivery Blueprint
+            </h2>
+            <p className="text-sm text-[#667085] mt-2">
+              From the initial technical audit to post-launch SLA support, our structured workflow eliminates ambiguity.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+            {deliveryPhases.map((phase) => (
+              <div
+                key={phase.step}
+                className="relative p-6 rounded-2xl bg-[#F7F9FC] border border-[#E4E7EC] flex flex-col justify-between space-y-4 hover:border-[#1D68BD]/40 hover:shadow-lg transition-all"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-2xl font-extrabold text-[#1D68BD] font-mono">
+                      {phase.step}
+                    </span>
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#667085] bg-white px-2 py-0.5 rounded-full border border-slate-200">
+                      {phase.timeframe}
+                    </span>
+                  </div>
+                  <h3 className="text-sm font-bold text-[#0B1730] leading-snug">
+                    {phase.title}
+                  </h3>
+                  <p className="text-xs text-[#667085] mt-2 leading-relaxed">
+                    {phase.desc}
+                  </p>
+                </div>
+                <div className="pt-2 border-t border-slate-200/60 flex items-center gap-1 text-[11px] font-semibold text-[#1D68BD]">
+                  <CheckCircle2 size={12} />
+                  <span>Deliverable Sign-Off</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 4. NEW SECTION: MODERN TECH STACK BY PRACTICE AREA */}
+      <section className="py-24 bg-[#F7F9FC] border-t border-[#E4E7EC]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mb-16">
+            <span className="text-xs font-bold tracking-wider uppercase text-[#1D68BD]">
+              ENTERPRISE STANDARDS
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B1730] tracking-tight mt-2">
+              Technology Stack by Discipline
+            </h2>
+            <p className="text-sm text-[#667085] mt-2">
+              We do not use bloated page-builders or obsolete stacks. Every system is built on modern, battle-tested technologies.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {techStackGroups.map((group) => (
+              <div
+                key={group.category}
+                className="p-7 rounded-2xl bg-white border border-[#E4E7EC] space-y-4 shadow-2xs hover:shadow-md transition-shadow"
+              >
+                <div className="flex items-center gap-2">
+                  <Server size={18} className="text-[#1D68BD]" />
+                  <h3 className="text-sm font-bold text-[#0B1730]">{group.category}</h3>
+                </div>
+                <div className="space-y-2">
+                  {group.tools.map((tool) => (
+                    <div
+                      key={tool}
+                      className="flex items-center gap-2 text-xs font-medium text-[#475467] py-1 border-b border-slate-100 last:border-0"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#1D68BD]" />
+                      <span>{tool}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 5. ENGINEERING COMMITMENTS & SLA STANDARDS SECTION */}
       <section className="py-24 bg-white border-t border-[#E4E7EC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-16">
@@ -349,7 +544,7 @@ export default function ServicesHubPage() {
               </div>
               <h3 className="text-base font-bold text-[#0B1730]">Sub-Second Speed</h3>
               <p className="text-xs text-[#667085] leading-relaxed">
-                Guaranteed Core Web Vitals with LCP under 0.8 seconds across desktop and mobile devices in the GCC.
+                Core Web Vitals guaranteed. Sub-0.8s Largest Contentful Paint ensures high conversions and organic search dominance.
               </p>
             </div>
 
@@ -357,19 +552,9 @@ export default function ServicesHubPage() {
               <div className="w-12 h-12 rounded-xl bg-[#EBF3FE] text-[#1D68BD] flex items-center justify-center">
                 <Lock size={22} />
               </div>
-              <h3 className="text-base font-bold text-[#0B1730]">100% IP Ownership</h3>
+              <h3 className="text-base font-bold text-[#0B1730]">Zero-Trust Security</h3>
               <p className="text-xs text-[#667085] leading-relaxed">
-                Full source code and intellectual property transferred unconditionally upon milestone completion.
-              </p>
-            </div>
-
-            <div className="p-7 rounded-2xl bg-[#F7F9FC] border border-[#E4E7EC] space-y-3">
-              <div className="w-12 h-12 rounded-xl bg-[#EBF3FE] text-[#1D68BD] flex items-center justify-center">
-                <ShieldCheck size={22} />
-              </div>
-              <h3 className="text-base font-bold text-[#0B1730]">Zero Security Debt</h3>
-              <p className="text-xs text-[#667085] leading-relaxed">
-                Zero-trust authentication, parameterized SQL query sanitation, CSP headers, and automated security scans.
+                HTTPS, parameterized queries, CSRF defenses, and DIFC data sovereignty compliant architecture from day one.
               </p>
             </div>
 
@@ -377,92 +562,57 @@ export default function ServicesHubPage() {
               <div className="w-12 h-12 rounded-xl bg-[#EBF3FE] text-[#1D68BD] flex items-center justify-center">
                 <Clock size={22} />
               </div>
-              <h3 className="text-base font-bold text-[#0B1730]">90-Day SLA Warranty</h3>
+              <h3 className="text-base font-bold text-[#0B1730]">Guaranteed SLAs</h3>
               <p className="text-xs text-[#667085] leading-relaxed">
-                Comprehensive post-launch technical warranty covering bug fixes, performance monitoring, and support.
+                Clear contractual milestone dates, weekly staging reviews, and responsive post-launch bug resolution guarantees.
+              </p>
+            </div>
+
+            <div className="p-7 rounded-2xl bg-[#F7F9FC] border border-[#E4E7EC] space-y-3">
+              <div className="w-12 h-12 rounded-xl bg-[#EBF3FE] text-[#1D68BD] flex items-center justify-center">
+                <Compass size={22} />
+              </div>
+              <h3 className="text-base font-bold text-[#0B1730]">Full IP Ownership</h3>
+              <p className="text-xs text-[#667085] leading-relaxed">
+                100% of the source code, design systems, and database configurations belong to you upon final handover.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 4. COMPARISON MATRIX: BIRD HILLS TECH VS TRADITIONAL AGENCIES */}
+      {/* 6. NEW SECTION: COMPREHENSIVE SERVICES FAQ ACCORDION */}
       <section className="py-24 bg-[#F7F9FC] border-t border-[#E4E7EC]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-16">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-xs font-bold tracking-wider uppercase text-[#1D68BD]">
-              MARKET COMPARISON
+              FREQUENTLY ASKED QUESTIONS
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B1730] tracking-tight mt-2">
-              Why Dubai Enterprises Choose Bird Hills Tech
+              Everything You Need to Know
             </h2>
           </div>
 
-          <div className="bg-white rounded-3xl border border-[#E4E7EC] overflow-hidden shadow-sm">
-            <div className="overflow-x-auto">
-              <table className="w-full text-left border-collapse text-xs">
-                <thead>
-                  <tr className="bg-[#0B1730] text-white">
-                    <th className="py-4 px-6 font-bold uppercase tracking-wider">Evaluation Factor</th>
-                    <th className="py-4 px-6 font-bold uppercase tracking-wider text-[#38BDF8]">
-                      Bird Hills Tech (Dubai)
-                    </th>
-                    <th className="py-4 px-6 font-bold uppercase tracking-wider text-slate-400">
-                      Traditional Agencies
-                    </th>
-                    <th className="py-4 px-6 font-bold uppercase tracking-wider text-slate-400">
-                      Freelancers & Off-Shore
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-100 text-[#0B1730]">
-                  <tr className="hover:bg-[#F7F9FC]">
-                    <td className="py-4 px-6 font-bold">Architecture & Tech Stack</td>
-                    <td className="py-4 px-6 font-semibold text-[#1D68BD] bg-[#EBF3FE]/30">
-                      Modern Next.js 16, TypeScript, Cloud Native
-                    </td>
-                    <td className="py-4 px-6 text-slate-500">Bloated WordPress / Themes</td>
-                    <td className="py-4 px-6 text-slate-500">Inconsistent / Fragile Stack</td>
-                  </tr>
-                  <tr className="hover:bg-[#F7F9FC]">
-                    <td className="py-4 px-6 font-bold">Speed & Core Web Vitals</td>
-                    <td className="py-4 px-6 font-semibold text-[#1D68BD] bg-[#EBF3FE]/30">
-                      Sub-800ms guaranteed LCP
-                    </td>
-                    <td className="py-4 px-6 text-slate-500">Often 3 - 6 seconds</td>
-                    <td className="py-4 px-6 text-slate-500">Unmonitored / Unoptimized</td>
-                  </tr>
-                  <tr className="hover:bg-[#F7F9FC]">
-                    <td className="py-4 px-6 font-bold">Direct Access & Communication</td>
-                    <td className="py-4 px-6 font-semibold text-[#1D68BD] bg-[#EBF3FE]/30">
-                      Direct access to Technical Directors in Dubai
-                    </td>
-                    <td className="py-4 px-6 text-slate-500">Account managers & intermediaries</td>
-                    <td className="py-4 px-6 text-slate-500">Timezone delays & ghosting risks</td>
-                  </tr>
-                  <tr className="hover:bg-[#F7F9FC]">
-                    <td className="py-4 px-6 font-bold">Commercial ROI Focus</td>
-                    <td className="py-4 px-6 font-semibold text-[#1D68BD] bg-[#EBF3FE]/30">
-                      Tracks real pipeline, revenue & CAC attribution
-                    </td>
-                    <td className="py-4 px-6 text-slate-500">Reports vanity clicks & impressions</td>
-                    <td className="py-4 px-6 text-slate-500">No commercial strategic scope</td>
-                  </tr>
-                  <tr className="hover:bg-[#F7F9FC]">
-                    <td className="py-4 px-6 font-bold">Physical Dubai Presence</td>
-                    <td className="py-4 px-6 font-semibold text-[#1D68BD] bg-[#EBF3FE]/30">
-                      Stone Building, Al Baraha, Deira, Dubai
-                    </td>
-                    <td className="py-4 px-6 text-slate-500">Often virtual or offshore-based</td>
-                    <td className="py-4 px-6 text-slate-500">No legal UAE corporate accountability</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+          <div className="space-y-4">
+            {serviceFaqs.map((faq, idx) => (
+              <div
+                key={idx}
+                className="p-6 sm:p-8 rounded-2xl bg-white border border-[#E4E7EC] shadow-2xs space-y-2"
+              >
+                <h3 className="text-base font-bold text-[#0B1730] flex items-start gap-3">
+                  <HelpCircle size={18} className="text-[#1D68BD] shrink-0 mt-0.5" />
+                  <span>{faq.q}</span>
+                </h3>
+                <p className="text-xs sm:text-sm text-[#667085] leading-relaxed pl-7">
+                  {faq.a}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
+      {/* 7. FINAL CONVERSION CTA */}
       <FinalCtaSection />
     </div>
   );

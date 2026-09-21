@@ -408,13 +408,22 @@ export function ProjectsClient({ initialProjects }: ProjectsClientProps) {
 
               <div className="space-y-1">
                 <label className="font-bold text-[#0B1730] uppercase">Cover Image URL</label>
-                <input
-                  type="text"
-                  required
-                  value={form.coverImage}
-                  onChange={(e) => setForm({ ...form, coverImage: e.target.value })}
-                  className="w-full bg-[#F7F9FC] border border-[#E4E7EC] rounded-xl px-3 py-2 text-[#101828]"
-                />
+                <div className="flex gap-3 items-center">
+                  <input
+                    type="text"
+                    required
+                    value={form.coverImage}
+                    onChange={(e) => setForm({ ...form, coverImage: e.target.value })}
+                    className="flex-1 bg-[#F7F9FC] border border-[#E4E7EC] rounded-xl px-3 py-2 text-[#101828]"
+                  />
+                  {form.coverImage && (
+                    <img
+                      src={form.coverImage}
+                      alt="Thumbnail"
+                      className="w-10 h-10 rounded-lg object-cover border border-slate-200 shrink-0"
+                    />
+                  )}
+                </div>
               </div>
 
               <div className="space-y-1">

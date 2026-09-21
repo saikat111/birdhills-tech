@@ -151,17 +151,18 @@ export default async function PricingPage() {
   return (
     <div className="flex flex-col min-h-screen pt-24">
       {/* 1. HERO SECTION WITH DUBAI SKYLINE */}
-      <section className="relative py-24 md:py-32 bg-[#0B1730] text-white overflow-hidden">
+      <section className="relative py-24 md:py-32 bg-[#070D1B] text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=2000&q=85"
+            src="https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=2000&q=90"
             alt="Dubai financial district skyline"
             fill
             priority
             sizes="100vw"
-            className="object-cover opacity-20"
+            className="object-cover object-center scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0B1730] via-[#0B1730]/90 to-[#0B1730]/60" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#070D1B]/95 via-[#070D1B]/75 to-[#070D1B]/40" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#070D1B]/90 via-transparent to-[#070D1B]" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
