@@ -217,3 +217,20 @@ model Media {
   size      Int?
   createdAt DateTime @default(now())
 }
+
+model PricingTier {
+  id           String   @id @default(uuid())
+  name         String
+  slug         String   @unique
+  badge        String?
+  description  String
+  priceAed     String
+  billingType  String   @default("one-time")
+  deliveryTime String?
+  featuresJson String
+  popular      Boolean  @default(false)
+  sortOrder    Int      @default(0)
+  active       Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}

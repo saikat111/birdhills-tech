@@ -3,7 +3,9 @@ import { prisma } from "@/lib/prisma";
 import HeroSection from "@/components/home/HeroSection";
 import TrustSection from "@/components/home/TrustSection";
 import ServicesSection from "@/components/home/ServicesSection";
+import TechEcosystemSection from "@/components/home/TechEcosystemSection";
 import WhyUsSection from "@/components/home/WhyUsSection";
+import IndustryVerticalsSection from "@/components/home/IndustryVerticalsSection";
 import ProcessSection from "@/components/home/ProcessSection";
 import SelectedWorkSection from "@/components/home/SelectedWorkSection";
 import DubaiSection from "@/components/home/DubaiSection";
@@ -35,7 +37,7 @@ export default async function HomePage() {
     testimonials = await prisma.testimonial.findMany({
       where: { active: true },
       orderBy: { sortOrder: "asc" },
-      take: 3,
+      take: 6,
     });
   } catch (err) {
     console.error("Database fetch error on homepage:", err);
@@ -43,7 +45,7 @@ export default async function HomePage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* SECTION 01 — HERO */}
+      {/* SECTION 01 — HERO (AUTO-SLIDER) */}
       <HeroSection
         eyebrow={settingsMap["hero_eyebrow"]}
         headline={settingsMap["hero_headline"]}
@@ -56,28 +58,34 @@ export default async function HomePage() {
         statement={settingsMap["trust_statement"]}
       />
 
-      {/* SECTION 03 — SERVICES */}
+      {/* SECTION 03 — SERVICES WITH DIRECT ACTIONS */}
       <ServicesSection />
 
-      {/* SECTION 04 — WHY BIRD HILLS TECH */}
+      {/* SECTION 04 — TECH STACK & ECOSYSTEM (NEW) */}
+      <TechEcosystemSection />
+
+      {/* SECTION 05 — WHY BIRD HILLS TECH */}
       <WhyUsSection />
 
-      {/* SECTION 05 — PROCESS */}
+      {/* SECTION 06 — REGIONAL INDUSTRY VERTICALS (NEW) */}
+      <IndustryVerticalsSection />
+
+      {/* SECTION 07 — PROCESS */}
       <ProcessSection />
 
-      {/* SECTION 06 — SELECTED WORK */}
+      {/* SECTION 08 — SELECTED WORK */}
       <SelectedWorkSection projects={projects} />
 
-      {/* SECTION 07 — DUBAI */}
+      {/* SECTION 09 — DUBAI STRATEGIC PRESENCE */}
       <DubaiSection />
 
-      {/* SECTION 08 — TESTIMONIALS */}
+      {/* SECTION 10 — CLIENT TESTIMONIALS (AUTO-SLIDER) */}
       <TestimonialsSection testimonials={testimonials} />
 
-      {/* SECTION 09 — AI CAPABILITY */}
+      {/* SECTION 11 — AI CAPABILITY */}
       <AiCapabilitySection />
 
-      {/* SECTION 10 — FINAL CTA */}
+      {/* SECTION 12 — FINAL CTA */}
       <FinalCtaSection />
     </div>
   );

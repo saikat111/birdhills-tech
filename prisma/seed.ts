@@ -742,6 +742,85 @@ A world-class visual identity allows your company to command higher fee structur
     await prisma.booking.create({ data: sampleBooking });
   }
 
+  // 10. Pricing Packages
+  const pricingTiersData = [
+    {
+      name: "Growth Launchpad",
+      slug: "growth-launchpad",
+      badge: "SMEs & Fast Launch",
+      description: "Custom high-speed corporate web platform built on Next.js with CMS integration, SEO readiness, and conversion architecture.",
+      priceAed: "AED 18,500",
+      billingType: "one-time",
+      deliveryTime: "2-3 Weeks Delivery",
+      popular: false,
+      sortOrder: 1,
+      active: true,
+      featuresJson: JSON.stringify([
+        "Custom Next.js & TypeScript Architecture",
+        "Sub-second Core Web Vitals (< 0.8s LCP)",
+        "Mobile-First Responsive Design",
+        "Integrated Headless Content Management (CMS)",
+        "Technical SEO & Local Dubai Schema",
+        "Lead Capture & Contact Pipeline Integration",
+        "30 Days Dedicated Post-Launch Support",
+        "100% Full IP & Source Code Ownership"
+      ]),
+    },
+    {
+      name: "Corporate Pro & SaaS",
+      slug: "corporate-pro",
+      badge: "Most Popular in Dubai",
+      description: "Enterprise web application or custom digital portal with advanced database modeling, role-based workflows, and regional integrations.",
+      priceAed: "AED 42,000",
+      billingType: "one-time",
+      deliveryTime: "4-6 Weeks Delivery",
+      popular: true,
+      sortOrder: 2,
+      active: true,
+      featuresJson: JSON.stringify([
+        "Everything in Growth Launchpad",
+        "Custom Web App or Customer Portal",
+        "Role-Based Access Control (RBAC) & Auth",
+        "Payment Gateway (Stripe / Apple Pay / GCC)",
+        "Custom ERP, CRM & API Integrations",
+        "Bilingual Localization (English + Arabic RTL)",
+        "Zero-Trust Security & Latency Profiling",
+        "90 Days SLA Technical Warranty"
+      ]),
+    },
+    {
+      name: "Bespoke Enterprise",
+      slug: "bespoke-enterprise",
+      badge: "Conglomerates & FinTech",
+      description: "Tailored multi-platform digital ecosystem designed for GCC family offices, regional conglomerates, and high-security enterprise operations.",
+      priceAed: "From AED 85,000",
+      billingType: "one-time",
+      deliveryTime: "8-12 Weeks Delivery",
+      popular: false,
+      sortOrder: 3,
+      active: true,
+      featuresJson: JSON.stringify([
+        "Full Custom Architecture & Multi-Tenant Setup",
+        "Dedicated Product Squad & Technical Lead",
+        "Private AI Agent & Workflow Automation",
+        "High-Concurrency Microservices & Cloud Infrastructure",
+        "Enterprise Penetration Testing & Compliance",
+        "Custom Analytics & Attribution Dashboard",
+        "Direct Director-Level Advisory & Steering",
+        "Annual SLA with 24/7 Incident Escalation"
+      ]),
+    },
+  ];
+
+  for (const tier of pricingTiersData) {
+    const existing = await prisma.pricingTier.findUnique({ where: { slug: tier.slug } });
+    if (existing) {
+      await prisma.pricingTier.update({ where: { id: existing.id }, data: tier });
+    } else {
+      await prisma.pricingTier.create({ data: tier });
+    }
+  }
+
   console.log("Database seed completed successfully!");
 }
 

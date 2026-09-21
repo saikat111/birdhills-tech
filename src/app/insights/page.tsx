@@ -3,11 +3,11 @@ import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { prisma } from "@/lib/prisma";
-import { Calendar, Clock, ArrowRight, User, Sparkles } from "lucide-react";
+import { Calendar, Clock, ArrowRight, User, Sparkles, FileText, Download, MessageCircle } from "lucide-react";
 import FinalCtaSection from "@/components/home/FinalCtaSection";
 
 export const metadata: Metadata = {
-  title: "Insights & Engineering Articles | Bird Hills Tech",
+  title: "Insights & Engineering Articles | Bird Hills Tech Dubai",
   description:
     "Expert perspectives on web architecture, corporate branding, B2B digital marketing in the UAE, and pragmatic enterprise AI integrations.",
   alternates: {
@@ -29,46 +29,75 @@ export default async function InsightsPage() {
   const featuredPost = posts[0];
   const regularPosts = posts.slice(1);
 
+  const whitepapers = [
+    {
+      title: "2026 GCC Digital Architecture Report",
+      tag: "Technical Whitepaper",
+      desc: "An in-depth benchmark analyzing sub-second Core Web Vitals, headless CMS adoption, and modern web architectures among top UAE firms.",
+    },
+    {
+      title: "B2B Demand Generation Playbook for Dubai",
+      tag: "Growth Strategy",
+      desc: "How regional enterprises are replacing vanity metrics with closed-loop commercial revenue attribution and high-intent LinkedIn/Google funnels.",
+    },
+    {
+      title: "Pragmatic AI & Knowledge Automation in the Gulf",
+      tag: "Executive Briefing",
+      desc: "A decision-maker guide to deploying secure, private retrieval-augmented generation (RAG) and conversational agents.",
+    },
+  ];
+
   return (
     <div className="flex flex-col min-h-screen pt-24">
-      {/* Hero */}
-      <section className="py-20 md:py-28 bg-[#F7F9FC] border-b border-[#E4E7EC]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl space-y-4">
-            <span className="text-xs font-bold tracking-widest text-[#1D68BD] uppercase">
-              THOUGHT LEADERSHIP
-            </span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0B1730] tracking-tight leading-[1.12]">
-              Perspectives on Technology, Design & Growth.
-            </h1>
-            <p className="text-lg sm:text-xl text-[#667085] leading-relaxed">
-              Strategic analysis, technical deep dives, and commercial insights tailored for
-              business leaders in Dubai and the GCC.
-            </p>
-          </div>
+      {/* 1. VISUAL HERO WITH DUBAI EDITORIAL BACKGROUND */}
+      <section className="relative py-24 md:py-32 bg-[#0B1730] text-white overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=2000&q=85"
+            alt="Dubai skyline perspective"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover opacity-20"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0B1730] via-[#0B1730]/90 to-[#0B1730]/60" />
+        </div>
 
-          {/* Categories Nav */}
-          <div className="flex flex-wrap items-center gap-2 pt-8">
-            <Link
-              href="/insights"
-              className="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-[#0B1730] text-white shadow-xs"
-            >
-              All Topics
-            </Link>
-            {categories.map((c) => (
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-3xl space-y-6">
+            <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-widest text-[#38BDF8] uppercase bg-white/10 border border-white/15 backdrop-blur-md">
+              THOUGHT LEADERSHIP & RESEARCH
+            </span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.12]">
+              Perspectives on Technology, Design & Commercial Growth.
+            </h1>
+            <p className="text-lg sm:text-xl text-slate-300 leading-relaxed font-normal">
+              Strategic analysis, technical architecture guides, and market insights tailored for business leaders across Dubai and the GCC.
+            </p>
+
+            {/* Categories Nav */}
+            <div className="flex flex-wrap items-center gap-2 pt-4">
               <Link
-                key={c.id}
-                href={`/category/${c.slug}`}
-                className="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white text-[#667085] hover:text-[#0B1730] hover:bg-slate-100 border border-[#E4E7EC] transition-colors"
+                href="/insights"
+                className="px-4 py-2 rounded-xl text-xs font-semibold bg-[#1D68BD] text-white shadow-xs"
               >
-                {c.name}
+                All Topics
               </Link>
-            ))}
+              {categories.map((c) => (
+                <Link
+                  key={c.id}
+                  href={`/category/${c.slug}`}
+                  className="px-4 py-2 rounded-xl text-xs font-semibold bg-white/10 hover:bg-white/20 text-slate-200 border border-white/10 transition-colors backdrop-blur-sm"
+                >
+                  {c.name}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Featured Post (Hero Editorial) */}
+      {/* 2. FEATURED POST (HERO EDITORIAL) */}
       {featuredPost && (
         <section className="py-16 bg-white border-b border-[#E4E7EC]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -121,14 +150,23 @@ export default async function InsightsPage() {
         </section>
       )}
 
-      {/* Regular Articles Grid */}
-      <section className="py-20 bg-white">
+      {/* 3. REGULAR ARTICLES GRID */}
+      <section className="py-20 bg-[#F7F9FC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-12">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#1D68BD]">
+              KNOWLEDGE ARCHIVE
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0B1730] mt-1">
+              Latest Technical & Growth Analyses
+            </h2>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {regularPosts.map((post) => (
               <article
                 key={post.id}
-                className="group bg-[#F7F9FC] rounded-2xl border border-[#E4E7EC] overflow-hidden flex flex-col justify-between hover:shadow-xl transition-all duration-300"
+                className="group bg-white rounded-3xl border border-[#E4E7EC] overflow-hidden flex flex-col justify-between hover:shadow-xl transition-all duration-300"
               >
                 <div>
                   <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
@@ -161,24 +199,62 @@ export default async function InsightsPage() {
                   </div>
                 </div>
 
-                <div className="p-6 pt-0 border-t border-slate-200/60 mt-3 flex items-center justify-between">
+                <div className="p-6 pt-0 border-t border-slate-100 mt-3 flex items-center justify-between">
                   <span className="text-[11px] text-slate-400">{post.author}</span>
                   <Link
                     href={`/insights/${post.slug}`}
                     className="inline-flex items-center gap-1 text-xs font-bold text-[#1D68BD]"
                   >
-                    Read <ArrowRight size={13} />
+                    Read Article <ArrowRight size={13} />
                   </Link>
                 </div>
               </article>
             ))}
           </div>
+        </div>
+      </section>
 
-          {posts.length === 0 && (
-            <div className="text-center py-20 bg-[#F7F9FC] rounded-2xl border border-dashed border-slate-300">
-              <p className="text-slate-500">No articles published yet.</p>
-            </div>
-          )}
+      {/* 4. EXECUTIVE WHITEPAPERS & RESEARCH REPORTS (NEW SECTION) */}
+      <section className="py-24 bg-white border-t border-[#E4E7EC]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mb-16">
+            <span className="text-xs font-bold tracking-wider uppercase text-[#1D68BD]">
+              REGIONAL RESEARCH
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B1730] tracking-tight mt-2">
+              Executive Whitepapers & Reports
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {whitepapers.map((wp) => (
+              <div
+                key={wp.title}
+                className="p-8 rounded-3xl bg-[#F7F9FC] border border-[#E4E7EC] hover:shadow-lg transition-all flex flex-col justify-between"
+              >
+                <div>
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#1D68BD] bg-[#EBF3FE] px-2.5 py-0.5 rounded">
+                    {wp.tag}
+                  </span>
+                  <h3 className="text-lg font-bold text-[#0B1730] mt-3 mb-2">{wp.title}</h3>
+                  <p className="text-xs text-[#667085] leading-relaxed">{wp.desc}</p>
+                </div>
+
+                <div className="pt-6 mt-6 border-t border-slate-200/80">
+                  <a
+                    href={`https://wa.me/971524405785?text=Hello%20Bird%20Hills%20Tech%2C%20I%20would%20like%20to%20request%20a%20copy%20of%20the%20${encodeURIComponent(
+                      wp.title
+                    )}.`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#1D68BD] hover:underline"
+                  >
+                    Request Full Briefing on WhatsApp <ArrowRight size={13} />
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

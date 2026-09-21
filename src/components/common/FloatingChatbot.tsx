@@ -114,7 +114,7 @@ export function FloatingChatbot() {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <div className={`fixed right-6 z-50 ${isOpen ? "bottom-6" : "bottom-24"}`}>
       {/* Closed State Floating Trigger Button */}
       {!isOpen && (
         <button

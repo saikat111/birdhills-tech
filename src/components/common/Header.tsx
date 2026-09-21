@@ -109,6 +109,7 @@ export function Header() {
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "Services", href: "/services", hasDropdown: true },
+    { name: "Pricing", href: "/pricing" },
     { name: "Work", href: "/work" },
     { name: "About", href: "/about" },
     { name: "Insights", href: "/insights" },
@@ -291,6 +292,12 @@ export function Header() {
                     </Link>
                   </div>
                 </div>
+                <Link
+                  href="/pricing"
+                  className="text-2xl font-bold text-[#0B1730] hover:text-[#1D68BD] transition-colors"
+                >
+                  Pricing
+                </Link>
                 <Link
                   href="/work"
                   className="text-2xl font-bold text-[#0B1730] hover:text-[#1D68BD] transition-colors"
