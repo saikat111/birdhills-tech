@@ -23,6 +23,7 @@ import {
   ShieldCheck,
   Phone,
   ChevronRight,
+  Zap,
 } from "lucide-react";
 import Logo from "./Logo";
 
@@ -234,7 +235,7 @@ export function Header() {
 
                       {/* 4-Column Luxury Mega Menu Container */}
                       {isServicesOpen && (
-                        <div className="absolute top-full -left-20 xl:left-1/2 xl:-translate-x-1/2 pt-2 w-[980px] max-w-[95vw] transition-all animate-in fade-in slide-in-from-top-2 duration-150">
+                        <div className="absolute top-full -left-28 xl:-left-40 pt-2 w-[980px] max-w-[95vw] transition-all animate-in fade-in slide-in-from-top-2 duration-150 z-50">
                           <div className="bg-white rounded-3xl shadow-2xl border border-[#E4E7EC] p-6 overflow-hidden">
                             {/* Header row in mega menu */}
                             <div className="flex items-center justify-between pb-4 mb-4 border-b border-slate-100">
@@ -278,7 +279,7 @@ export function Header() {
                                               {svc.title}
                                             </span>
                                           </div>
-                                          <p className="text-[10px] text-[#667085] leading-snug mt-1 line-clamp-1">
+                                          <p className="text-[10px] text-[#667085] leading-relaxed mt-1">
                                             {svc.desc}
                                           </p>
                                           <div className="flex flex-wrap gap-1 mt-1.5">
@@ -300,7 +301,7 @@ export function Header() {
                             </div>
 
                             {/* Mega Menu Footer Banner */}
-                            <div className="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between bg-gradient-to-r from-[#FAF8F5] to-white p-3 rounded-2xl">
+                            <div className="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between bg-gradient-to-r from-[#FAF8F5] to-white p-3.5 rounded-2xl">
                               <div className="flex items-center gap-2 text-xs text-slate-700">
                                 <Sparkles size={14} className="text-[#C59B27]" />
                                 <span className="font-semibold">Need a custom enterprise architecture or multi-channel retainer?</span>
@@ -329,7 +330,7 @@ export function Header() {
                   );
                 }
 
-                // 2. HOSTING & DOMAINS MEGA MENU
+                // 2. HOSTING & DOMAINS MEGA MENU (BULLET-PROOF 3-COLUMN + BOTTOM BANNER)
                 if (link.hasHostingMegaMenu) {
                   return (
                     <div
@@ -358,147 +359,158 @@ export function Header() {
                         />
                       </Link>
 
-                      {/* Mega Menu Container */}
+                      {/* Mega Menu Container - Fixed width with spacious 3 columns */}
                       {isHostingOpen && (
-                        <div className="absolute top-full -left-40 xl:left-1/2 xl:-translate-x-1/2 pt-2 w-[880px] max-w-[95vw] transition-all animate-in fade-in slide-in-from-top-2 duration-150">
-                          <div className="bg-white rounded-3xl shadow-2xl border border-[#E4E7EC] p-6 grid grid-cols-12 gap-6">
-                            {/* Col 1: Domains */}
-                            <div className="col-span-3 space-y-3 border-r border-slate-100 pr-3">
-                              <div className="flex items-center gap-2 text-xs font-extrabold uppercase tracking-wider text-[#C59B27] whitespace-nowrap">
-                                <Globe size={15} />
-                                <span>Domains</span>
-                              </div>
-                              <div className="space-y-1">
-                                {hostingMegaMenu.domains.map((item) => (
-                                  <Link
-                                    key={item.title}
-                                    href={item.href}
-                                    className="block p-2 rounded-xl hover:bg-[#FAF8F5] transition-colors group"
-                                  >
-                                    <div className="flex items-center justify-between">
-                                      <span className="text-xs font-bold text-[#0B0F19] group-hover:text-[#C59B27] transition-colors whitespace-nowrap">
-                                        {item.title}
-                                      </span>
-                                      {item.badge && (
-                                        <span className="text-[9px] font-extrabold px-1.5 py-0.5 rounded bg-[#C59B27]/10 text-[#C59B27]">
-                                          {item.badge}
+                        <div className="absolute top-full -left-56 xl:-left-72 pt-2 w-[860px] max-w-[95vw] transition-all animate-in fade-in slide-in-from-top-2 duration-150 z-50">
+                          <div className="bg-white rounded-3xl shadow-2xl border border-[#E4E7EC] p-6 overflow-hidden">
+                            {/* 3 Spacious Columns (Domains, Web Hosting, Infrastructure) */}
+                            <div className="grid grid-cols-3 gap-6 pb-6 border-b border-slate-100">
+                              {/* Col 1: Domains */}
+                              <div className="space-y-3">
+                                <div className="flex items-center gap-2 text-xs font-extrabold uppercase tracking-wider text-[#C59B27] border-b border-slate-100 pb-2">
+                                  <Globe size={15} />
+                                  <span>Domains</span>
+                                </div>
+                                <div className="space-y-2">
+                                  {hostingMegaMenu.domains.map((item) => (
+                                    <Link
+                                      key={item.title}
+                                      href={item.href}
+                                      className="block p-2 rounded-xl hover:bg-[#FAF8F5] transition-colors group"
+                                    >
+                                      <div className="flex items-start justify-between gap-2">
+                                        <span className="text-xs font-bold text-[#0B0F19] group-hover:text-[#C59B27] transition-colors leading-tight">
+                                          {item.title}
                                         </span>
-                                      )}
-                                    </div>
-                                    <p className="text-[11px] text-[#667085] line-clamp-1 mt-0.5">
-                                      {item.desc}
-                                    </p>
-                                  </Link>
-                                ))}
-                              </div>
-                              <Link
-                                href="/domains"
-                                className="text-xs font-semibold text-[#C59B27] hover:underline inline-flex items-center gap-1 pt-1 pl-2"
-                              >
-                                Live Domain Search →
-                              </Link>
-                            </div>
-
-                            {/* Col 2: Web Hosting */}
-                            <div className="col-span-3 space-y-3 border-r border-slate-100 pr-3">
-                              <div className="flex items-center gap-2 text-xs font-extrabold uppercase tracking-wider text-[#C59B27] whitespace-nowrap">
-                                <Server size={15} />
-                                <span>Web Hosting</span>
-                              </div>
-                              <div className="space-y-1">
-                                {hostingMegaMenu.hosting.map((item) => (
-                                  <Link
-                                    key={item.title}
-                                    href={item.href}
-                                    className="block p-2 rounded-xl hover:bg-[#FAF8F5] transition-colors group"
-                                  >
-                                    <div className="flex items-center justify-between">
-                                      <span className="text-xs font-bold text-[#0B0F19] group-hover:text-[#C59B27] transition-colors whitespace-nowrap">
-                                        {item.title}
-                                      </span>
-                                      {item.badge && (
-                                        <span className="text-[9px] font-extrabold px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-700">
-                                          {item.badge}
-                                        </span>
-                                      )}
-                                    </div>
-                                    <p className="text-[11px] text-[#667085] line-clamp-1 mt-0.5">
-                                      {item.desc}
-                                    </p>
-                                  </Link>
-                                ))}
-                              </div>
-                              <Link
-                                href="/hosting"
-                                className="text-xs font-semibold text-[#C59B27] hover:underline inline-flex items-center gap-1 pt-1 pl-2"
-                              >
-                                Explore Cloud Plans →
-                              </Link>
-                            </div>
-
-                            {/* Col 3: Servers & Security */}
-                            <div className="col-span-3 space-y-3">
-                              <div className="flex items-center gap-2 text-xs font-extrabold uppercase tracking-wider text-[#C59B27] whitespace-nowrap">
-                                <HardDrive size={15} />
-                                <span>Infrastructure</span>
-                              </div>
-                              <div className="space-y-1">
-                                {hostingMegaMenu.servers.map((item) => (
-                                  <Link
-                                    key={item.title}
-                                    href={item.href}
-                                    className="block p-2 rounded-xl hover:bg-[#FAF8F5] transition-colors group"
-                                  >
-                                    <div className="flex items-center justify-between">
-                                      <span className="text-xs font-bold text-[#0B0F19] group-hover:text-[#C59B27] transition-colors whitespace-nowrap">
-                                        {item.title}
-                                      </span>
-                                      {item.badge && (
-                                        <span className="text-[9px] font-extrabold px-1.5 py-0.5 rounded bg-[#C59B27]/10 text-[#C59B27]">
-                                          {item.badge}
-                                        </span>
-                                      )}
-                                    </div>
-                                    <p className="text-[11px] text-[#667085] line-clamp-1 mt-0.5">
-                                      {item.desc}
-                                    </p>
-                                  </Link>
-                                ))}
-                              </div>
-                              <Link
-                                href="/hosting#vps"
-                                className="text-xs font-semibold text-[#C59B27] hover:underline inline-flex items-center gap-1 pt-1 pl-2"
-                              >
-                                View VPS Plans →
-                              </Link>
-                            </div>
-
-                            {/* Col 4: Featured Gold Promo Card */}
-                            <div className="col-span-3 rounded-2xl bg-[#070B14] p-5 text-white flex flex-col justify-between shadow-md border border-[#C59B27]/30">
-                              <div>
-                                <span className="inline-block px-2 py-0.5 rounded-md text-[9px] font-extrabold tracking-wider uppercase bg-[#C59B27]/20 text-[#D4AF37] border border-[#C59B27]/40 mb-2.5">
-                                  DUBAI CLOUD NODE
-                                </span>
-                                <h4 className="text-sm font-bold text-white leading-tight mb-1.5">
-                                  High-Speed Cloud from $9.99/mo
-                                </h4>
-                                <p className="text-[11px] text-slate-300 leading-relaxed">
-                                  Pure NVMe SSD array, free SSL, 10 corporate mailboxes, and sub-15ms GCC latency.
-                                </p>
-                              </div>
-
-                              <div className="pt-4 mt-4 border-t border-white/15 space-y-2">
-                                <Link
-                                  href="/hosting"
-                                  className="w-full inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl bg-gradient-to-r from-[#D4AF37] via-[#C59B27] to-[#B38728] text-white text-xs font-bold shadow-md hover:brightness-105 transition-all"
-                                >
-                                  View Hosting Plans <ArrowRight size={12} />
-                                </Link>
+                                        {item.badge && (
+                                          <span className="text-[9px] font-extrabold px-1.5 py-0.5 rounded bg-[#C59B27]/10 text-[#C59B27] shrink-0 whitespace-nowrap">
+                                            {item.badge}
+                                          </span>
+                                        )}
+                                      </div>
+                                      <p className="text-[11px] text-[#667085] leading-normal mt-0.5">
+                                        {item.desc}
+                                      </p>
+                                    </Link>
+                                  ))}
+                                </div>
                                 <Link
                                   href="/domains"
-                                  className="w-full inline-flex items-center justify-center gap-1.5 py-1.5 px-3 rounded-xl bg-white/10 hover:bg-white/20 text-white text-[11px] font-semibold transition-colors"
+                                  className="text-xs font-bold text-[#C59B27] hover:underline inline-flex items-center gap-1 pt-1 pl-2"
                                 >
-                                  Search Domain Names
+                                  Live Domain Search →
+                                </Link>
+                              </div>
+
+                              {/* Col 2: Web Hosting */}
+                              <div className="space-y-3 border-x border-slate-100 px-4">
+                                <div className="flex items-center gap-2 text-xs font-extrabold uppercase tracking-wider text-[#C59B27] border-b border-slate-100 pb-2">
+                                  <Server size={15} />
+                                  <span>Web Hosting</span>
+                                </div>
+                                <div className="space-y-2">
+                                  {hostingMegaMenu.hosting.map((item) => (
+                                    <Link
+                                      key={item.title}
+                                      href={item.href}
+                                      className="block p-2 rounded-xl hover:bg-[#FAF8F5] transition-colors group"
+                                    >
+                                      <div className="flex items-start justify-between gap-2">
+                                        <span className="text-xs font-bold text-[#0B0F19] group-hover:text-[#C59B27] transition-colors leading-tight">
+                                          {item.title}
+                                        </span>
+                                        {item.badge && (
+                                          <span className="text-[9px] font-extrabold px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-700 shrink-0 whitespace-nowrap">
+                                            {item.badge}
+                                          </span>
+                                        )}
+                                      </div>
+                                      <p className="text-[11px] text-[#667085] leading-normal mt-0.5">
+                                        {item.desc}
+                                      </p>
+                                    </Link>
+                                  ))}
+                                </div>
+                                <Link
+                                  href="/hosting"
+                                  className="text-xs font-bold text-[#C59B27] hover:underline inline-flex items-center gap-1 pt-1 pl-2"
+                                >
+                                  Explore Cloud Plans →
+                                </Link>
+                              </div>
+
+                              {/* Col 3: Infrastructure */}
+                              <div className="space-y-3">
+                                <div className="flex items-center gap-2 text-xs font-extrabold uppercase tracking-wider text-[#C59B27] border-b border-slate-100 pb-2">
+                                  <HardDrive size={15} />
+                                  <span>Infrastructure</span>
+                                </div>
+                                <div className="space-y-2">
+                                  {hostingMegaMenu.servers.map((item) => (
+                                    <Link
+                                      key={item.title}
+                                      href={item.href}
+                                      className="block p-2 rounded-xl hover:bg-[#FAF8F5] transition-colors group"
+                                    >
+                                      <div className="flex items-start justify-between gap-2">
+                                        <span className="text-xs font-bold text-[#0B0F19] group-hover:text-[#C59B27] transition-colors leading-tight">
+                                          {item.title}
+                                        </span>
+                                        {item.badge && (
+                                          <span className="text-[9px] font-extrabold px-1.5 py-0.5 rounded bg-[#C59B27]/10 text-[#C59B27] shrink-0 whitespace-nowrap">
+                                            {item.badge}
+                                          </span>
+                                        )}
+                                      </div>
+                                      <p className="text-[11px] text-[#667085] leading-normal mt-0.5">
+                                        {item.desc}
+                                      </p>
+                                    </Link>
+                                  ))}
+                                </div>
+                                <Link
+                                  href="/hosting#vps"
+                                  className="text-xs font-bold text-[#C59B27] hover:underline inline-flex items-center gap-1 pt-1 pl-2"
+                                >
+                                  View VPS Plans →
+                                </Link>
+                              </div>
+                            </div>
+
+                            {/* Full-Width Bottom Featured Cloud Node Banner */}
+                            <div className="mt-5 p-4 rounded-2xl bg-[#070B14] text-white flex flex-col sm:flex-row items-center justify-between gap-4 border border-[#C59B27]/30 shadow-md">
+                              <div className="flex items-center gap-3.5">
+                                <div className="w-10 h-10 rounded-xl bg-[#C59B27]/20 border border-[#C59B27]/40 flex items-center justify-center text-[#D4AF37] shrink-0">
+                                  <Zap size={20} />
+                                </div>
+                                <div>
+                                  <div className="flex items-center gap-2">
+                                    <span className="px-2 py-0.5 rounded text-[9px] font-extrabold tracking-wider uppercase bg-[#C59B27]/25 text-[#D4AF37] border border-[#C59B27]/40">
+                                      DUBAI CLOUD NODE
+                                    </span>
+                                    <h4 className="text-xs sm:text-sm font-bold text-white">
+                                      High-Speed Cloud from $9.99/mo
+                                    </h4>
+                                  </div>
+                                  <p className="text-[11px] text-slate-300 leading-snug mt-0.5">
+                                    Pure NVMe SSD array, free SSL, 10 corporate mailboxes, and sub-15ms GCC latency.
+                                  </p>
+                                </div>
+                              </div>
+
+                              <div className="flex items-center gap-2 shrink-0">
+                                <Link
+                                  href="/domains"
+                                  className="px-3.5 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-semibold border border-white/20 transition-colors whitespace-nowrap"
+                                >
+                                  Search Domains
+                                </Link>
+                                <Link
+                                  href="/hosting"
+                                  className="px-4 py-2 rounded-xl bg-gradient-to-r from-[#D4AF37] via-[#C59B27] to-[#B38728] text-white text-xs font-bold shadow-md hover:brightness-105 transition-all inline-flex items-center gap-1.5 whitespace-nowrap"
+                                >
+                                  <span>View Hosting Plans</span>
+                                  <ArrowRight size={13} />
                                 </Link>
                               </div>
                             </div>
