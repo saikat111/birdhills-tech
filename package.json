@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "package:hostinger": "next build && cp -r public .next/standalone/ && cp -r .next/static .next/standalone/.next/ && cp -r prisma .next/standalone/ && echo 'Hostinger deployment files ready in .next/standalone!'",
+    "build": "prisma generate && next build && node scripts/sync-db.js",
+    "start": "node server.js",
+    "postinstall": "prisma generate",
+    "package:hostinger": "next build && node scripts/sync-db.js && echo 'Hostinger deployment files ready!'",
     "lint": "eslint"
   },
   "dependencies": {
