@@ -289,17 +289,62 @@ export function BlogClient({ initialPosts, categories }: BlogClientProps) {
 
   const handleSave = async (e?: React.FormEvent, overrideStatus?: string) => {
     if (e) e.preventDefault();
-    setIsSubmitting(true);
     setError(null);
+
+    const trimmedTitle = form.title.trim();
+    if (!trimmedTitle) {
+      setError("Please enter an Article Title before saving or publishing.");
+      const titleEl = document.getElementById("blog-title-input");
+      titleEl?.focus();
+      return;
+    }
+
+    const trimmedContent = form.content.trim();
+    if (!trimmedContent) {
+      setError("Please write content in the article body before saving or publishing.");
+      textareaRef.current?.focus();
+      return;
+    }
+
+    setIsSubmitting(true);
 
     const targetStatus = overrideStatus || form.status;
 
+    // Auto-generate slug if blank
+    let computedSlug =
+      form.slug.trim() ||
+      trimmedTitle
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "");
+    if (!computedSlug) computedSlug = `post-${Date.now()}`;
+
+    // Auto-generate excerpt if blank
+    let computedExcerpt = form.excerpt.trim();
+    if (!computedExcerpt) {
+      computedExcerpt = trimmedContent
+        .replace(/#+\s+/g, "")
+        .replace(/[*_~`>]/g, "")
+        .replace(/\s+/g, " ")
+        .slice(0, 160)
+        .trim();
+      if (computedExcerpt.length >= 160) computedExcerpt += "...";
+    }
+
+    // Resolve categoryId
+    const computedCategoryId = form.categoryId || categories[0]?.id || "";
+
     const payload = {
       ...form,
+      title: trimmedTitle,
+      slug: computedSlug,
+      excerpt: computedExcerpt,
+      content: trimmedContent,
+      categoryId: computedCategoryId,
       status: targetStatus,
       readTime: form.readTime || estimatedReadTime,
-      seoTitle: form.seoTitle || form.title,
-      seoDescription: form.seoDescription || form.excerpt,
+      seoTitle: form.seoTitle || trimmedTitle,
+      seoDescription: form.seoDescription || computedExcerpt,
     };
 
     try {
@@ -911,59 +956,98 @@ export function BlogClient({ initialPosts, categories }: BlogClientProps) {
                     {/* Canvas: Post Title & Editor Area */}
                     <div className="p-8 sm:p-12 max-w-4xl mx-auto w-full space-y-6">
                       {/* Big WordPress Title Input */}
-                      <input
-                        type="text"
-                        required
-                        value={form.title}
-                        onChange={(e) => handleTitleChange(e.target.value)}
-                        placeholder="Add title..."
-                        className="w-full text-3xl sm:text-4xl font-extrabold text-[#070B14] placeholder:text-slate-300 border-0 focus:outline-none focus:ring-0 leading-tight"
-                      />
+                      <div className="space-y-1.5">
+                        <div className="flex items-center justify-between">
+                          <label
+                            htmlFor="blog-title-input"
+                            className="text-[11px] font-bold uppercase tracking-wider text-[#C59B27] flex items-center gap-1"
+                          >
+                            <span>Article Title</span>
+                            <span className="text-rose-500 font-extrabold">*</span>
+                          </label>
+                          <span className="text-[10px] text-slate-400 font-mono">
+                            {form.title.length} characters
+                          </span>
+                        </div>
+                        <input
+                          id="blog-title-input"
+                          type="text"
+                          required
+                          value={form.title}
+                          onChange={(e) => handleTitleChange(e.target.value)}
+                          placeholder="e.g. Next-Generation Cloud Architecture in Dubai"
+                          className={`w-full text-2xl sm:text-3xl font-extrabold text-[#070B14] placeholder:text-slate-300 border rounded-2xl p-4 bg-[#FAF8F5]/60 focus:bg-white focus:outline-none transition-all leading-tight ${
+                            error && !form.title.trim()
+                              ? "border-rose-400 ring-2 ring-rose-200"
+                              : "border-[#E4E7EC] focus:border-[#C59B27] focus:ring-2 focus:ring-[#C59B27]/20"
+                          }`}
+                        />
+                      </div>
 
-                      {/* Permalink indicator */}
-                      <div className="flex items-center gap-2 text-xs font-mono text-[#667085] pb-4 border-b border-slate-100">
-                        <Globe size={13} className="text-[#C59B27]" />
-                        <span>https://birdhillstech.com/blog/</span>
-                        {isEditingSlug ? (
-                          <div className="flex items-center gap-1">
-                            <input
-                              type="text"
-                              value={form.slug}
-                              onChange={(e) => setForm({ ...form, slug: e.target.value })}
-                              className="px-2 py-0.5 rounded bg-slate-100 text-[#070B14] border border-slate-200 focus:outline-none focus:border-[#C59B27] text-xs font-mono"
-                            />
-                            <button
-                              type="button"
-                              onClick={() => setIsEditingSlug(false)}
-                              className="px-2 py-0.5 rounded bg-[#070B14] text-white text-[10px] font-semibold"
-                            >
-                              OK
-                            </button>
-                          </div>
-                        ) : (
-                          <div className="flex items-center gap-1.5">
-                            <span className="font-bold text-[#070B14]">{form.slug || "post-slug"}</span>
-                            <button
-                              type="button"
-                              onClick={() => setIsEditingSlug(true)}
-                              className="text-[10px] text-[#C59B27] hover:underline font-semibold"
-                            >
-                              Edit
-                            </button>
-                            <button
-                              type="button"
-                              onClick={() => {
-                                navigator.clipboard.writeText(`https://birdhillstech.com/blog/${form.slug}`);
-                                setCopiedLink(true);
-                                setTimeout(() => setCopiedLink(false), 2000);
-                              }}
-                              className="p-1 text-slate-400 hover:text-[#070B14] rounded"
-                              title="Copy URL"
-                            >
-                              {copiedLink ? <Check size={12} className="text-emerald-500" /> : <Copy size={12} />}
-                            </button>
-                          </div>
-                        )}
+                      {/* Permalink & Category quick-bar */}
+                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-slate-100">
+                        <div className="flex items-center gap-2 text-xs font-mono text-[#667085] flex-wrap">
+                          <Globe size={13} className="text-[#C59B27] shrink-0" />
+                          <span>https://birdhillstech.com/blog/</span>
+                          {isEditingSlug ? (
+                            <div className="flex items-center gap-1">
+                              <input
+                                type="text"
+                                value={form.slug}
+                                onChange={(e) => setForm({ ...form, slug: e.target.value })}
+                                className="px-2 py-0.5 rounded bg-slate-100 text-[#070B14] border border-slate-200 focus:outline-none focus:border-[#C59B27] text-xs font-mono"
+                              />
+                              <button
+                                type="button"
+                                onClick={() => setIsEditingSlug(false)}
+                                className="px-2 py-0.5 rounded bg-[#070B14] text-white text-[10px] font-semibold"
+                              >
+                                OK
+                              </button>
+                            </div>
+                          ) : (
+                            <div className="flex items-center gap-1.5">
+                              <span className="font-bold text-[#070B14]">{form.slug || "post-slug"}</span>
+                              <button
+                                type="button"
+                                onClick={() => setIsEditingSlug(true)}
+                                className="text-[10px] text-[#C59B27] hover:underline font-semibold"
+                              >
+                                Edit
+                              </button>
+                              <button
+                                type="button"
+                                onClick={() => {
+                                  navigator.clipboard.writeText(`https://birdhillstech.com/blog/${form.slug}`);
+                                  setCopiedLink(true);
+                                  setTimeout(() => setCopiedLink(false), 2000);
+                                }}
+                                className="p-1 text-slate-400 hover:text-[#070B14] rounded"
+                                title="Copy URL"
+                              >
+                                {copiedLink ? <Check size={12} className="text-emerald-500" /> : <Copy size={12} />}
+                              </button>
+                            </div>
+                          )}
+                        </div>
+
+                        {/* Inline Category Selector */}
+                        <div className="flex items-center gap-2">
+                          <label className="text-[11px] font-bold uppercase tracking-wider text-slate-400 shrink-0">
+                            Category:
+                          </label>
+                          <select
+                            value={form.categoryId || categories[0]?.id || ""}
+                            onChange={(e) => setForm({ ...form, categoryId: e.target.value })}
+                            className="px-2.5 py-1 text-xs font-semibold bg-[#FAF8F5] border border-slate-200 rounded-lg text-[#070B14] focus:outline-none focus:border-[#C59B27]"
+                          >
+                            {categories.map((c) => (
+                              <option key={c.id} value={c.id}>
+                                {c.name}
+                              </option>
+                            ))}
+                          </select>
+                        </div>
                       </div>
 
                       {/* Excerpt box */}
