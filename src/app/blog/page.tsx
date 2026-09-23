@@ -114,13 +114,11 @@ export default async function BlogListingPage() {
               <div className="grid grid-cols-1 lg:grid-cols-12">
                 {/* Visual Cover */}
                 <div className="lg:col-span-7 relative h-72 lg:h-auto min-h-[340px] bg-slate-900 overflow-hidden">
-                  <Image
+                  <img
                     src={featuredPost.coverImage}
                     alt={featuredPost.title}
-                    fill
-                    priority
-                    sizes="(max-width: 1024px) 100vw, 58vw"
-                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    loading="eager"
                   />
                   <div className="absolute top-4 left-4">
                     <span className="px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-white/95 backdrop-blur-md text-[#070B14] shadow-sm">
@@ -201,14 +199,13 @@ export default async function BlogListingPage() {
                 <div>
                   <Link
                     href={`/blog/${post.slug}`}
-                    className="relative block h-52 w-full bg-slate-900 overflow-hidden"
+                    className="relative block h-52 w-full bg-slate-100 overflow-hidden"
                   >
-                    <Image
+                    <img
                       src={post.coverImage}
                       alt={post.title}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                      className="object-cover group-hover:scale-105 transition-transform duration-700"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      loading="lazy"
                     />
                     <div className="absolute top-4 left-4">
                       <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-white/95 backdrop-blur-md text-[#070B14] shadow-sm">

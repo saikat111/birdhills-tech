@@ -124,12 +124,11 @@ export default async function CategoryPage({
               >
                 <div>
                   <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
-                    <Image
+                    <img
                       src={post.coverImage}
                       alt={post.title}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
                     />
                   </div>
 

@@ -40,30 +40,29 @@ export async function POST(req: NextRequest) {
       .toLowerCase();
     const filename = `media-${timestamp}-${safeOriginalName}`;
 
-    // Target upload locations (support both root and standalone environments)
-    const rootUploadDir = path.join(process.cwd(), "public", "uploads");
-    if (!fs.existsSync(rootUploadDir)) {
-      fs.mkdirSync(rootUploadDir, { recursive: true });
-    }
-
     const arrayBuffer = await file.arrayBuffer();
     const buffer = Buffer.from(arrayBuffer);
 
-    // Save to primary public/uploads
-    const filePath = path.join(rootUploadDir, filename);
-    fs.writeFileSync(filePath, buffer);
+    // Target upload locations (support both root and standalone environments)
+    const targetDirs = [
+      path.join(process.cwd(), "public", "uploads"),
+      path.join(process.cwd(), ".next", "standalone", "public", "uploads"),
+      path.join(process.cwd(), "..", "public", "uploads"),
+      path.join(process.cwd(), "..", ".next", "standalone", "public", "uploads"),
+    ];
 
-    // If standalone build directory exists, sync to standalone public/uploads
-    try {
-      const standaloneUploadDir = path.join(process.cwd(), ".next", "standalone", "public", "uploads");
-      if (fs.existsSync(path.join(process.cwd(), ".next", "standalone"))) {
-        if (!fs.existsSync(standaloneUploadDir)) {
-          fs.mkdirSync(standaloneUploadDir, { recursive: true });
+    for (const dir of targetDirs) {
+      try {
+        const parentDir = path.dirname(/*turbopackIgnore: true*/ dir);
+        if (fs.existsSync(/*turbopackIgnore: true*/ parentDir)) {
+          if (!fs.existsSync(/*turbopackIgnore: true*/ dir)) {
+            fs.mkdirSync(/*turbopackIgnore: true*/ dir, { recursive: true });
+          }
+          fs.writeFileSync(/*turbopackIgnore: true*/ path.join(/*turbopackIgnore: true*/ dir, filename), buffer);
         }
-        fs.writeFileSync(path.join(standaloneUploadDir, filename), buffer);
+      } catch (writeErr) {
+        console.warn("Notice: could not write to directory:", dir, writeErr);
       }
-    } catch (standaloneErr) {
-      console.warn("Notice: standalone upload sync warning:", standaloneErr);
     }
 
     const publicUrl = `/uploads/${filename}`;

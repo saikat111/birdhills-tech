@@ -201,15 +201,19 @@ export default async function SingleBlogPage({
       {/* 2. FEATURED COVER IMAGE */}
       <section className="py-8 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative aspect-[16/9] rounded-3xl overflow-hidden shadow-xl border border-[#E4E7EC]">
-            <Image
-              src={post.coverImage}
-              alt={post.title}
-              fill
-              priority
-              sizes="(max-width: 1024px) 100vw, 896px"
-              className="object-cover"
-            />
+          <div className="relative aspect-[16/9] rounded-3xl overflow-hidden shadow-xl border border-[#E4E7EC] bg-slate-100">
+            {post.coverImage ? (
+              <img
+                src={post.coverImage}
+                alt={post.title}
+                className="w-full h-full object-cover"
+                loading="eager"
+              />
+            ) : (
+              <div className="w-full h-full flex items-center justify-center bg-[#FAF8F5]">
+                <Sparkles size={48} className="text-[#C59B27]/40" />
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -231,6 +235,31 @@ export default async function SingleBlogPage({
           {/* Formatted Article Content */}
           <div className="prose prose-slate max-w-none space-y-6 text-[#344054] text-base leading-relaxed">
             {contentParagraphs.map((para, i) => {
+              // Check if paragraph is an image: ![alt](url)
+              if (para.includes("![") && para.includes("](")) {
+                const imgMatch = para.match(/^!\[(.*?)\]\((.*?)\)(?:\s*\n\s*\*?(.*?)\*?)?$/);
+                if (imgMatch) {
+                  const altText = imgMatch[1] || "Article visual";
+                  const imgSrc = imgMatch[2];
+                  const captionText = imgMatch[3];
+                  return (
+                    <figure key={i} className="my-8 rounded-2xl overflow-hidden border border-slate-200 bg-slate-50 shadow-sm">
+                      <img
+                        src={imgSrc}
+                        alt={altText}
+                        className="w-full h-auto max-h-[620px] object-cover"
+                        loading="lazy"
+                      />
+                      {captionText && (
+                        <figcaption className="p-3 text-center text-xs text-slate-500 italic bg-white border-t border-slate-100">
+                          {captionText}
+                        </figcaption>
+                      )}
+                    </figure>
+                  );
+                }
+              }
+
               // Check if paragraph is a heading
               if (para.startsWith("## ")) {
                 return (
@@ -345,13 +374,12 @@ export default async function SingleBlogPage({
                   className="group bg-white rounded-2xl border border-slate-200/80 hover:border-[#C59B27]/50 hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between"
                 >
                   <div>
-                    <div className="relative h-44 w-full bg-slate-900 overflow-hidden">
-                      <Image
+                    <div className="relative h-44 w-full bg-slate-100 overflow-hidden">
+                      <img
                         src={r.coverImage}
                         alt={r.title}
-                        fill
-                        sizes="(max-width: 768px) 100vw, 33vw"
-                        className="object-cover group-hover:scale-105 transition-transform duration-700"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        loading="lazy"
                       />
                     </div>
                     <div className="p-6 space-y-2">
