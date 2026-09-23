@@ -42,6 +42,9 @@ import {
   Sliders,
   FolderOpen,
   ArrowRight,
+  UploadCloud,
+  Upload,
+  Loader2,
 } from "lucide-react";
 
 interface Category {
@@ -123,6 +126,146 @@ export function BlogClient({ initialPosts, categories }: BlogClientProps) {
   const [focusKeyword, setFocusKeyword] = useState("Dubai Web Development");
 
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const featuredFileInputRef = useRef<HTMLInputElement>(null);
+
+  // Media Modal & File Upload State
+  const [isMediaModalOpen, setIsMediaModalOpen] = useState(false);
+  const [mediaModalTarget, setMediaModalTarget] = useState<"content" | "featured">("content");
+  const [mediaLibrary, setMediaLibrary] = useState<
+    Array<{ id: string; name: string; url: string; mimeType?: string | null; size?: number | null }>
+  >([]);
+  const [mediaTab, setMediaTab] = useState<"upload" | "library" | "url">("upload");
+  const [isUploading, setIsUploading] = useState(false);
+  const [uploadError, setUploadError] = useState<string | null>(null);
+  const [imageAltText, setImageAltText] = useState("");
+  const [imageCaption, setImageCaption] = useState("");
+  const [mediaSearch, setMediaSearch] = useState("");
+  const [selectedMediaUrl, setSelectedMediaUrl] = useState("");
+  const [isDragging, setIsDragging] = useState(false);
+
+  const fetchMediaLibrary = async () => {
+    try {
+      const res = await fetch("/api/admin/media");
+      const data = await res.json();
+      if (res.ok && data.media) {
+        setMediaLibrary(data.media);
+      }
+    } catch (e) {
+      console.error("Could not fetch media library:", e);
+    }
+  };
+
+  const openMediaModal = (target: "content" | "featured") => {
+    setMediaModalTarget(target);
+    setMediaTab("upload");
+    setSelectedMediaUrl(target === "featured" ? form.coverImage : "");
+    setImageAltText("");
+    setImageCaption("");
+    setUploadError(null);
+    setIsMediaModalOpen(true);
+    fetchMediaLibrary();
+  };
+
+  const handleFileUpload = async (file: File) => {
+    if (!file) return;
+    setIsUploading(true);
+    setUploadError(null);
+
+    const formData = new FormData();
+    formData.append("file", file);
+
+    try {
+      const res = await fetch("/api/admin/media/upload", {
+        method: "POST",
+        body: formData,
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Failed to upload image");
+
+      setMediaLibrary((prev) => [data.media, ...prev]);
+      setSelectedMediaUrl(data.url);
+      if (!imageAltText) setImageAltText(file.name.replace(/\.[^/.]+$/, ""));
+
+      if (mediaModalTarget === "featured") {
+        setForm((prev) => ({ ...prev, coverImage: data.url }));
+        setIsMediaModalOpen(false);
+      } else {
+        setMediaTab("library");
+      }
+    } catch (err: any) {
+      setUploadError(err.message || "Failed to upload image");
+    } finally {
+      setIsUploading(false);
+    }
+  };
+
+  const handleFeaturedDirectUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    setIsUploading(true);
+    const formData = new FormData();
+    formData.append("file", file);
+    try {
+      const res = await fetch("/api/admin/media/upload", {
+        method: "POST",
+        body: formData,
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Featured image upload failed");
+      setForm((prev) => ({ ...prev, coverImage: data.url }));
+      setMediaLibrary((prev) => [data.media, ...prev]);
+    } catch (err: any) {
+      setError(err.message || "Featured image upload failed");
+    } finally {
+      setIsUploading(false);
+      if (e.target) e.target.value = "";
+    }
+  };
+
+  const insertSelectedMediaIntoPost = (url: string, alt?: string, caption?: string) => {
+    if (!url) return;
+    if (mediaModalTarget === "featured") {
+      setForm((prev) => ({ ...prev, coverImage: url }));
+    } else {
+      const altStr = alt || imageAltText || "Article visual";
+      const captionStr = caption || imageCaption;
+      let markdown = `![${altStr}](${url})`;
+      if (captionStr) {
+        markdown += `\n*${captionStr}*`;
+      }
+      insertBlock(markdown);
+    }
+    setIsMediaModalOpen(false);
+    setSelectedMediaUrl("");
+    setImageAltText("");
+    setImageCaption("");
+  };
+
+  const handleTextareaDrop = async (e: React.DragEvent<HTMLTextAreaElement>) => {
+    const files = e.dataTransfer.files;
+    if (files && files.length > 0 && files[0].type.startsWith("image/")) {
+      e.preventDefault();
+      const file = files[0];
+      setIsUploading(true);
+      const formData = new FormData();
+      formData.append("file", file);
+      try {
+        const res = await fetch("/api/admin/media/upload", {
+          method: "POST",
+          body: formData,
+        });
+        const data = await res.json();
+        if (res.ok && data.url) {
+          insertBlock(`![${file.name.replace(/\.[^/.]+$/, "")}](${data.url})`);
+        }
+      } catch (err) {
+        console.error("Drop upload failed:", err);
+      } finally {
+        setIsUploading(false);
+      }
+    }
+  };
 
   const [form, setForm] = useState({
     title: "",
@@ -197,8 +340,7 @@ export function BlogClient({ initialPosts, categories }: BlogClientProps) {
       title: "",
       slug: "",
       excerpt: "",
-      content:
-        "## Executive Overview\n\nProvide an authoritative summary of the challenge and industry context in Dubai.\n\n## Technical Architecture & Approach\n\nDetail the exact engineering methodology, technologies, and implementation strategy.\n\n- Sub-second Core Web Vitals (< 0.8s LCP)\n- Clean TypeScript & Next.js 16 modular components\n- Enterprise data security and privacy compliance\n\n## Commercial Impact & ROI\n\nSummarize the tangible business outcomes and performance benchmarks achieved for the UAE market.",
+      content: "",
       coverImage: PRESET_IMAGES[0].url,
       categoryId: categories[0]?.id || "",
       status: "published",
@@ -919,15 +1061,12 @@ export function BlogClient({ initialPosts, categories }: BlogClientProps) {
                       </button>
                       <button
                         type="button"
-                        onClick={() => {
-                          const url = prompt("Enter image URL:", "https://images.unsplash.com/...");
-                          const alt = prompt("Enter image description / caption:", "Article visual");
-                          if (url) insertBlock(`![${alt || "Image"}](${url})`);
-                        }}
-                        className="p-1.5 rounded-lg hover:bg-white text-slate-700 border border-transparent hover:border-[#E4E7EC]"
-                        title="Insert Image"
+                        onClick={() => openMediaModal("content")}
+                        className="px-2.5 py-1.5 rounded-lg bg-white border border-[#E4E7EC] text-xs font-bold text-[#070B14] hover:bg-slate-100 flex items-center gap-1.5 shadow-2xs hover:text-[#C59B27] transition-colors"
+                        title="Upload from Device or Select from Media Library"
                       >
-                        <ImageIcon size={15} />
+                        <UploadCloud size={14} className="text-[#C59B27]" />
+                        <span>Add Media</span>
                       </button>
                       <button
                         type="button"
@@ -1066,18 +1205,44 @@ export function BlogClient({ initialPosts, categories }: BlogClientProps) {
 
                       {/* Main Rich Content Textarea with Gutenberg font feel */}
                       <div>
-                        <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">
-                          Article Body (Markdown / Gutenberg Structured Content)
-                        </label>
-                        <textarea
-                          ref={textareaRef}
-                          required
-                          rows={18}
-                          value={form.content}
-                          onChange={(e) => setForm({ ...form, content: e.target.value })}
-                          placeholder="Begin writing your article here..."
-                          className="w-full p-4 border border-slate-200/80 rounded-xl text-sm sm:text-base font-normal text-[#344054] focus:border-[#C59B27] focus:outline-none leading-relaxed font-sans"
-                        />
+                        <div className="flex items-center justify-between mb-1.5">
+                          <label className="block text-xs font-bold uppercase tracking-wider text-slate-700">
+                            Article Body (Markdown / Gutenberg Structured Content) <span className="text-rose-500">*</span>
+                          </label>
+                          <span className="text-[11px] text-slate-400">
+                            Drop images directly here or click &ldquo;Add Media&rdquo;
+                          </span>
+                        </div>
+                        <div className="relative">
+                          <textarea
+                            ref={textareaRef}
+                            required
+                            rows={18}
+                            value={form.content}
+                            onChange={(e) => setForm({ ...form, content: e.target.value })}
+                            onDragOver={(e) => {
+                              e.preventDefault();
+                              setIsDragging(true);
+                            }}
+                            onDragLeave={() => setIsDragging(false)}
+                            onDrop={(e) => {
+                              setIsDragging(false);
+                              handleTextareaDrop(e);
+                            }}
+                            placeholder="Write your article content here... Use the Gutenberg toolbar above for headings, lists, and formatting, or click 'Add Media' to upload images."
+                            className={`w-full p-4 border rounded-xl text-sm sm:text-base font-normal text-[#101828] focus:border-[#C59B27] focus:outline-none leading-relaxed font-sans transition-all ${
+                              isDragging
+                                ? "border-[#C59B27] ring-4 ring-[#C59B27]/20 bg-[#FAF8F5]"
+                                : "border-slate-200/90 bg-white"
+                            }`}
+                          />
+                          {isUploading && (
+                            <div className="absolute inset-0 bg-white/80 backdrop-blur-2xs flex flex-col items-center justify-center rounded-xl gap-2 z-10">
+                              <Loader2 size={24} className="animate-spin text-[#C59B27]" />
+                              <span className="text-xs font-bold text-[#070B14]">Uploading media asset...</span>
+                            </div>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1243,17 +1408,48 @@ export function BlogClient({ initialPosts, categories }: BlogClientProps) {
 
                       {/* Featured Image Section */}
                       <div className="pt-4 border-t border-slate-200">
-                        <label className="block text-xs font-bold text-slate-700 mb-1">
-                          Featured Image (16:9)
-                        </label>
+                        <div className="flex items-center justify-between mb-2">
+                          <label className="block text-xs font-bold text-slate-700">
+                            Featured Image (16:9)
+                          </label>
+                          {form.coverImage && (
+                            <button
+                              type="button"
+                              onClick={() => setForm({ ...form, coverImage: "" })}
+                              className="text-[10px] text-rose-600 hover:underline font-semibold"
+                            >
+                              Remove
+                            </button>
+                          )}
+                        </div>
+
+                        {/* Direct File Upload & Media Library Triggers */}
                         <input
-                          type="url"
-                          required
-                          value={form.coverImage}
-                          onChange={(e) => setForm({ ...form, coverImage: e.target.value })}
-                          placeholder="https://images.unsplash.com/..."
-                          className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs bg-white text-[#070B14] focus:border-[#C59B27] focus:outline-none mb-3"
+                          type="file"
+                          ref={featuredFileInputRef}
+                          accept="image/*"
+                          onChange={handleFeaturedDirectUpload}
+                          className="hidden"
                         />
+                        <div className="grid grid-cols-2 gap-2 mb-3">
+                          <button
+                            type="button"
+                            onClick={() => featuredFileInputRef.current?.click()}
+                            disabled={isUploading}
+                            className="px-2.5 py-2 rounded-xl bg-white border border-[#E4E7EC] text-xs font-bold text-[#070B14] hover:bg-slate-50 flex items-center justify-center gap-1.5 shadow-2xs hover:border-[#C59B27] transition-all disabled:opacity-50"
+                          >
+                            <UploadCloud size={14} className="text-[#C59B27]" />
+                            <span>{isUploading ? "Uploading..." : "Upload Image"}</span>
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => openMediaModal("featured")}
+                            className="px-2.5 py-2 rounded-xl bg-white border border-[#E4E7EC] text-xs font-bold text-[#070B14] hover:bg-slate-50 flex items-center justify-center gap-1.5 shadow-2xs hover:border-[#C59B27] transition-all"
+                          >
+                            <ImageIcon size={14} className="text-[#C59B27]" />
+                            <span>Media Library</span>
+                          </button>
+                        </div>
 
                         {form.coverImage && (
                           <div className="relative aspect-[16/10] rounded-xl overflow-hidden border border-slate-300 shadow-sm mb-3">
@@ -1264,6 +1460,19 @@ export function BlogClient({ initialPosts, categories }: BlogClientProps) {
                             />
                           </div>
                         )}
+
+                        <div className="mb-3">
+                          <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">
+                            Or Image URL
+                          </label>
+                          <input
+                            type="url"
+                            value={form.coverImage}
+                            onChange={(e) => setForm({ ...form, coverImage: e.target.value })}
+                            placeholder="https://images.unsplash.com/... or /uploads/..."
+                            className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs bg-white text-[#070B14] focus:border-[#C59B27] focus:outline-none"
+                          />
+                        </div>
 
                         <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-2">
                           Quick Preset Images
@@ -1585,6 +1794,386 @@ export function BlogClient({ initialPosts, categories }: BlogClientProps) {
                   )}
                 </div>
               )}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* WORDPRESS-STYLE MEDIA MODAL */}
+      {isMediaModalOpen && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-6 bg-black/60 backdrop-blur-xs animate-in fade-in duration-200">
+          <div className="bg-white w-full max-w-5xl h-[85vh] max-h-[780px] rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-slate-200">
+            {/* Modal Header */}
+            <div className="px-6 py-4 border-b border-slate-200 flex items-center justify-between shrink-0 bg-white">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-lg bg-[#C59B27]/10 flex items-center justify-center text-[#C59B27]">
+                    <UploadCloud size={18} />
+                  </div>
+                  <div>
+                    <h2 className="text-sm sm:text-base font-bold text-[#070B14]">
+                      {mediaModalTarget === "featured" ? "Set Featured Cover Image" : "Add Media Asset"}
+                    </h2>
+                    <p className="text-[11px] text-slate-500 hidden sm:block">
+                      Upload from computer or pick from previously uploaded library assets
+                    </p>
+                  </div>
+                </div>
+
+                {/* Tabs */}
+                <div className="flex items-center gap-1 bg-slate-100 p-1 rounded-xl">
+                  <button
+                    type="button"
+                    onClick={() => setMediaTab("upload")}
+                    className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
+                      mediaTab === "upload"
+                        ? "bg-white text-[#070B14] shadow-xs"
+                        : "text-slate-600 hover:text-slate-900"
+                    }`}
+                  >
+                    Upload Files
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setMediaTab("library")}
+                    className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
+                      mediaTab === "library"
+                        ? "bg-white text-[#070B14] shadow-xs"
+                        : "text-slate-600 hover:text-slate-900"
+                    }`}
+                  >
+                    Media Library ({mediaLibrary.length})
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setMediaTab("url")}
+                    className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
+                      mediaTab === "url"
+                        ? "bg-white text-[#070B14] shadow-xs"
+                        : "text-slate-600 hover:text-slate-900"
+                    }`}
+                  >
+                    Insert from URL
+                  </button>
+                </div>
+              </div>
+
+              <button
+                type="button"
+                onClick={() => setIsMediaModalOpen(false)}
+                className="p-1.5 text-slate-400 hover:text-slate-700 hover:bg-slate-100 rounded-lg transition-colors"
+              >
+                <X size={20} />
+              </button>
+            </div>
+
+            {/* Hidden File Input for Modal */}
+            <input
+              type="file"
+              ref={fileInputRef}
+              accept="image/*"
+              className="hidden"
+              onChange={(e) => {
+                const file = e.target.files?.[0];
+                if (file) handleFileUpload(file);
+                if (e.target) e.target.value = "";
+              }}
+            />
+
+            {/* Modal Body */}
+            <div className="flex-1 overflow-hidden flex flex-col md:flex-row bg-[#FAF8F5]">
+              {/* TAB 1: UPLOAD FILES */}
+              {mediaTab === "upload" && (
+                <div className="flex-1 p-6 sm:p-10 flex flex-col items-center justify-center overflow-y-auto">
+                  <div
+                    onDragOver={(e) => e.preventDefault()}
+                    onDrop={(e) => {
+                      e.preventDefault();
+                      const file = e.dataTransfer.files?.[0];
+                      if (file && file.type.startsWith("image/")) {
+                        handleFileUpload(file);
+                      }
+                    }}
+                    className="w-full max-w-xl border-2 border-dashed border-slate-300 rounded-2xl p-8 sm:p-12 flex flex-col items-center justify-center text-center bg-white hover:border-[#C59B27] transition-colors shadow-2xs"
+                  >
+                    <div className="w-16 h-16 rounded-full bg-[#FAF8F5] border border-slate-200 flex items-center justify-center text-[#C59B27] mb-4">
+                      {isUploading ? (
+                        <Loader2 size={32} className="animate-spin text-[#C59B27]" />
+                      ) : (
+                        <UploadCloud size={32} />
+                      )}
+                    </div>
+                    <h3 className="text-base font-bold text-[#070B14] mb-1">
+                      {isUploading ? "Uploading to Server..." : "Drop image files here to upload"}
+                    </h3>
+                    <p className="text-xs text-slate-500 mb-6">
+                      Upload high-resolution photography, diagrams, or graphics (JPEG, PNG, WebP, SVG up to 15MB)
+                    </p>
+                    <button
+                      type="button"
+                      disabled={isUploading}
+                      onClick={() => fileInputRef.current?.click()}
+                      className="px-6 py-2.5 bg-[#C59B27] hover:bg-[#B38728] text-white text-xs font-bold rounded-xl shadow-xs transition-colors disabled:opacity-50 inline-flex items-center gap-2"
+                    >
+                      <Upload size={14} />
+                      <span>{isUploading ? "Uploading..." : "Select Files from Computer"}</span>
+                    </button>
+                    {uploadError && (
+                      <div className="mt-4 p-3 rounded-xl bg-rose-50 border border-rose-200 text-xs text-rose-700 flex items-center gap-2">
+                        <AlertCircle size={14} className="shrink-0" />
+                        <span>{uploadError}</span>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )}
+
+              {/* TAB 2: MEDIA LIBRARY */}
+              {mediaTab === "library" && (
+                <div className="flex-1 flex flex-col md:flex-row overflow-hidden">
+                  {/* Library Grid */}
+                  <div className="flex-1 flex flex-col p-4 overflow-hidden border-r border-slate-200 bg-white">
+                    <div className="flex items-center justify-between mb-3 gap-3">
+                      <div className="relative flex-1 max-w-sm">
+                        <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+                        <input
+                          type="text"
+                          value={mediaSearch}
+                          onChange={(e) => setMediaSearch(e.target.value)}
+                          placeholder="Search media assets..."
+                          className="w-full pl-9 pr-3 py-1.5 text-xs border border-slate-200 rounded-lg focus:border-[#C59B27] focus:outline-none"
+                        />
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => fileInputRef.current?.click()}
+                        className="px-3 py-1.5 rounded-lg border border-slate-200 text-xs font-bold text-slate-700 hover:border-[#C59B27] hover:text-[#C59B27] flex items-center gap-1.5 transition-colors"
+                      >
+                        <Plus size={13} />
+                        <span>Upload New</span>
+                      </button>
+                    </div>
+
+                    <div className="flex-1 overflow-y-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 p-1">
+                      {mediaLibrary
+                        .filter((m) => m.name.toLowerCase().includes(mediaSearch.toLowerCase()))
+                        .map((media) => {
+                          const isSelected = selectedMediaUrl === media.url;
+                          return (
+                            <button
+                              key={media.id}
+                              type="button"
+                              onClick={() => {
+                                setSelectedMediaUrl(media.url);
+                                if (!imageAltText) setImageAltText(media.name.replace(/\.[^/.]+$/, ""));
+                              }}
+                              className={`group relative aspect-square rounded-xl overflow-hidden border-2 text-left transition-all ${
+                                isSelected
+                                  ? "border-[#C59B27] ring-2 ring-[#C59B27]/30 shadow-md"
+                                  : "border-slate-200 hover:border-slate-300"
+                              }`}
+                            >
+                              <img
+                                src={media.url}
+                                alt={media.name}
+                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
+                              />
+                              {isSelected && (
+                                <div className="absolute top-1.5 right-1.5 w-5 h-5 rounded-full bg-[#C59B27] text-white flex items-center justify-center shadow-xs">
+                                  <Check size={12} strokeWidth={3} />
+                                </div>
+                              )}
+                              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
+                                <p className="text-[10px] text-white font-medium truncate">{media.name}</p>
+                              </div>
+                            </button>
+                          );
+                        })}
+
+                      {mediaLibrary.length === 0 && (
+                        <div className="col-span-full py-16 text-center text-slate-400">
+                          <ImageIcon size={40} className="mx-auto mb-2 opacity-50" />
+                          <p className="text-xs font-semibold">No media assets in library yet.</p>
+                          <p className="text-[11px] text-slate-400 mt-0.5">Click below to upload an image from your device.</p>
+                          <button
+                            type="button"
+                            onClick={() => fileInputRef.current?.click()}
+                            className="mt-3 px-4 py-1.5 bg-[#C59B27] text-white text-xs font-bold rounded-lg hover:bg-[#B38728] transition-colors inline-flex items-center gap-1.5"
+                          >
+                            <Upload size={13} />
+                            <span>Upload First Image</span>
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Attachment Details Sidebar */}
+                  <div className="w-full md:w-72 p-4 bg-[#FAF8F5] overflow-y-auto space-y-4 shrink-0 border-t md:border-t-0 md:border-l border-slate-200">
+                    <h3 className="text-xs font-bold text-[#070B14] uppercase tracking-wider">
+                      Attachment Details
+                    </h3>
+
+                    {selectedMediaUrl ? (
+                      <div className="space-y-3">
+                        <div className="aspect-video rounded-lg overflow-hidden border border-slate-200 bg-white">
+                          <img
+                            src={selectedMediaUrl}
+                            alt="Selected attachment"
+                            className="w-full h-full object-contain"
+                          />
+                        </div>
+
+                        <div>
+                          <label className="block text-[11px] font-bold text-slate-700 mb-1">
+                            Alt Text (SEO & Accessibility)
+                          </label>
+                          <input
+                            type="text"
+                            value={imageAltText}
+                            onChange={(e) => setImageAltText(e.target.value)}
+                            placeholder="Describe image for search engines..."
+                            className="w-full px-2.5 py-1.5 text-xs bg-white border border-slate-200 rounded-lg focus:border-[#C59B27] focus:outline-none"
+                          />
+                        </div>
+
+                        {mediaModalTarget === "content" && (
+                          <div>
+                            <label className="block text-[11px] font-bold text-slate-700 mb-1">
+                              Caption (Optional)
+                            </label>
+                            <input
+                              type="text"
+                              value={imageCaption}
+                              onChange={(e) => setImageCaption(e.target.value)}
+                              placeholder="Photo caption underneath image..."
+                              className="w-full px-2.5 py-1.5 text-xs bg-white border border-slate-200 rounded-lg focus:border-[#C59B27] focus:outline-none"
+                            />
+                          </div>
+                        )}
+
+                        <div>
+                          <label className="block text-[11px] font-bold text-slate-700 mb-1">
+                            Direct Image URL
+                          </label>
+                          <div className="flex items-center gap-1">
+                            <input
+                              type="text"
+                              readOnly
+                              value={selectedMediaUrl}
+                              className="w-full px-2.5 py-1.5 text-[10px] bg-slate-100 border border-slate-200 rounded-lg text-slate-600 focus:outline-none select-all"
+                            />
+                            <button
+                              type="button"
+                              onClick={() => navigator.clipboard.writeText(selectedMediaUrl)}
+                              className="p-1.5 text-slate-600 hover:text-[#C59B27] border border-slate-200 rounded-lg bg-white shrink-0"
+                              title="Copy URL"
+                            >
+                              <Copy size={13} />
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    ) : (
+                      <p className="text-xs text-slate-400 italic">
+                        Select an image from the library grid to view details and insert options.
+                      </p>
+                    )}
+                  </div>
+                </div>
+              )}
+
+              {/* TAB 3: INSERT FROM URL */}
+              {mediaTab === "url" && (
+                <div className="flex-1 p-6 sm:p-10 flex flex-col items-center justify-center overflow-y-auto">
+                  <div className="w-full max-w-lg bg-white p-6 rounded-2xl border border-slate-200 shadow-2xs space-y-4">
+                    <h3 className="text-sm font-bold text-[#070B14]">
+                      Insert Image via External URL
+                    </h3>
+                    <div>
+                      <label className="block text-xs font-semibold text-slate-700 mb-1">
+                        Image Address (URL) *
+                      </label>
+                      <input
+                        type="url"
+                        value={selectedMediaUrl}
+                        onChange={(e) => setSelectedMediaUrl(e.target.value)}
+                        placeholder="https://images.unsplash.com/... or /uploads/..."
+                        className="w-full px-3 py-2 border border-slate-200 rounded-xl text-xs focus:border-[#C59B27] focus:outline-none"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-semibold text-slate-700 mb-1">
+                        Alt Text (SEO)
+                      </label>
+                      <input
+                        type="text"
+                        value={imageAltText}
+                        onChange={(e) => setImageAltText(e.target.value)}
+                        placeholder="Alternative text for image..."
+                        className="w-full px-3 py-2 border border-slate-200 rounded-xl text-xs focus:border-[#C59B27] focus:outline-none"
+                      />
+                    </div>
+                    {mediaModalTarget === "content" && (
+                      <div>
+                        <label className="block text-xs font-semibold text-slate-700 mb-1">
+                          Caption (Optional)
+                        </label>
+                        <input
+                          type="text"
+                          value={imageCaption}
+                          onChange={(e) => setImageCaption(e.target.value)}
+                          placeholder="Caption..."
+                          className="w-full px-3 py-2 border border-slate-200 rounded-xl text-xs focus:border-[#C59B27] focus:outline-none"
+                        />
+                      </div>
+                    )}
+                    {selectedMediaUrl && (
+                      <div className="aspect-video rounded-xl overflow-hidden border border-slate-200 bg-slate-50">
+                        <img
+                          src={selectedMediaUrl}
+                          alt="URL preview"
+                          className="w-full h-full object-cover"
+                          onError={(e) => {
+                            (e.target as HTMLElement).style.display = "none";
+                          }}
+                        />
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Modal Footer */}
+            <div className="px-6 py-3.5 border-t border-slate-200 bg-white flex items-center justify-between shrink-0">
+              <div className="text-xs text-slate-500">
+                {selectedMediaUrl ? (
+                  <span className="font-semibold text-[#070B14]">Asset ready to insert</span>
+                ) : (
+                  <span>Choose or upload an image to continue</span>
+                )}
+              </div>
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => setIsMediaModalOpen(false)}
+                  className="px-4 py-2 border border-slate-200 rounded-xl text-xs font-bold text-slate-600 hover:bg-slate-50 transition-colors"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="button"
+                  disabled={!selectedMediaUrl || isUploading}
+                  onClick={() => insertSelectedMediaIntoPost(selectedMediaUrl, imageAltText, imageCaption)}
+                  className="px-5 py-2 bg-[#C59B27] hover:bg-[#B38728] text-white text-xs font-bold rounded-xl shadow-xs transition-colors disabled:opacity-50 flex items-center gap-1.5"
+                >
+                  <Check size={14} />
+                  <span>
+                    {mediaModalTarget === "featured" ? "Set as Featured Image" : "Insert into Article"}
+                  </span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
