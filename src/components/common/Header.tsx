@@ -183,6 +183,10 @@ export function Header() {
     { name: "Contact Us", href: "/contact" },
   ];
 
+  if (pathname?.startsWith("/admin")) {
+    return null;
+  }
+
   return (
     <>
       <header

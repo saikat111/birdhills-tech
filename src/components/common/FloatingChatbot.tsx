@@ -13,6 +13,7 @@ import {
   Calendar,
 } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 interface Message {
   id: string;
@@ -30,6 +31,7 @@ const quickActions = [
 ];
 
 export function FloatingChatbot() {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     {
@@ -112,6 +114,10 @@ export function FloatingChatbot() {
       setIsLoading(false);
     }
   };
+
+  if (pathname?.startsWith("/admin")) {
+    return null;
+  }
 
   return (
     <div className={`fixed right-6 z-50 ${isOpen ? "bottom-6" : "bottom-24"}`}>

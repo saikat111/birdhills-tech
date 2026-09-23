@@ -1,9 +1,18 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Phone, MessageCircle, MapPin, Mail, ArrowUpRight } from "lucide-react";
 import Logo from "./Logo";
 
 export function Footer() {
+  const pathname = usePathname();
+
+  if (pathname?.startsWith("/admin")) {
+    return null;
+  }
+
   return (
     <footer className="bg-[#070B14] text-slate-300 border-t border-[#C59B27]/25">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
@@ -212,9 +221,6 @@ export function Footer() {
             </Link>
             <Link href="/terms" className="hover:text-[#D4AF37] transition-colors">
               Terms of Service
-            </Link>
-            <Link href="/admin/login" className="hover:text-[#D4AF37] transition-colors text-slate-400">
-              Admin Portal
             </Link>
           </div>
         </div>

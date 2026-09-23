@@ -79,7 +79,7 @@ export default function AdminLoginPage() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="admin@birdhillstech.com"
+                placeholder="name@company.com"
                 className="w-full text-sm bg-[#FAF8F5] border border-[#E4E7EC] rounded-xl pl-10 pr-4 py-3 text-[#101828] focus:outline-none focus:border-[#C59B27] focus:bg-white transition-colors"
               />
             </div>
@@ -120,12 +120,6 @@ export default function AdminLoginPage() {
             )}
           </button>
         </form>
-
-        <div className="pt-4 border-t border-slate-100 text-center text-xs text-slate-400">
-          Default seed credentials:{" "}
-          <span className="font-mono text-[#C59B27] font-semibold">admin@birdhillstech.com</span> /{" "}
-          <span className="font-mono text-[#C59B27] font-semibold">DubaiTech2026!</span>
-        </div>
       </div>
     </div>
   );
