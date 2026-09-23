@@ -157,7 +157,7 @@ export function MediaClient({ initialMedia }: MediaClientProps) {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-[#E4E7EC]">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-[#0B1730]">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-[#070B14]">
             Media Assets & Imagery
           </h1>
           <p className="text-xs sm:text-sm text-[#667085] mt-1">
@@ -170,7 +170,7 @@ export function MediaClient({ initialMedia }: MediaClientProps) {
             setError(null);
             setIsModalOpen(true);
           }}
-          className="px-4 py-2 bg-[#1D68BD] hover:bg-[#155196] text-white text-xs font-semibold rounded-xl shadow-xs transition-colors inline-flex items-center gap-1.5"
+          className="px-4 py-2 bg-[#C59B27] hover:bg-[#B38728] text-white text-xs font-semibold rounded-xl shadow-xs transition-colors inline-flex items-center gap-1.5"
         >
           <Plus size={15} />
           Add Media Asset
@@ -185,7 +185,7 @@ export function MediaClient({ initialMedia }: MediaClientProps) {
           placeholder="Search media by title..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="w-full pl-10 pr-4 py-2 bg-white border border-[#E4E7EC] rounded-xl text-xs text-[#0B1730] placeholder:text-slate-400 focus:outline-none focus:border-[#1D68BD]"
+          className="w-full pl-10 pr-4 py-2 bg-white border border-[#E4E7EC] rounded-xl text-xs text-[#070B14] placeholder:text-slate-400 focus:outline-none focus:border-[#C59B27]"
         />
       </div>
 
@@ -193,8 +193,8 @@ export function MediaClient({ initialMedia }: MediaClientProps) {
       {mediaList.length < 8 && (
         <div className="p-5 bg-[#F7F9FC] rounded-2xl border border-[#E4E7EC] space-y-3">
           <div className="flex items-center justify-between">
-            <h3 className="text-xs font-bold text-[#0B1730] uppercase tracking-wider flex items-center gap-1.5">
-              <Sparkles size={14} className="text-[#1D68BD]" />
+            <h3 className="text-xs font-bold text-[#070B14] uppercase tracking-wider flex items-center gap-1.5">
+              <Sparkles size={14} className="text-[#C59B27]" />
               Quick Stock Presets (Dubai High-Res Photography)
             </h3>
             <span className="text-[10px] text-slate-400">Click to instantly add to library</span>
@@ -211,7 +211,7 @@ export function MediaClient({ initialMedia }: MediaClientProps) {
                   className={`text-xs px-3 py-1.5 rounded-xl border transition-all text-left flex items-center gap-2 ${
                     alreadyAdded
                       ? "bg-slate-100 text-slate-400 border-slate-200 cursor-default"
-                      : "bg-white hover:bg-[#EBF3FE] text-[#0B1730] hover:text-[#1D68BD] border-[#E4E7EC] shadow-2xs"
+                      : "bg-white hover:bg-[#FAF5EB] text-[#070B14] hover:text-[#C59B27] border-[#E4E7EC] shadow-2xs"
                   }`}
                 >
                   <Plus size={12} />
@@ -261,7 +261,7 @@ export function MediaClient({ initialMedia }: MediaClientProps) {
 
               <div className="p-4 flex-1 flex flex-col justify-between">
                 <div>
-                  <h4 className="text-xs font-bold text-[#0B1730] line-clamp-1 mb-1">
+                  <h4 className="text-xs font-bold text-[#070B14] line-clamp-1 mb-1">
                     {media.name}
                   </h4>
                   <p className="text-[10px] font-mono text-slate-400 truncate mb-3">{media.url}</p>
@@ -273,7 +273,7 @@ export function MediaClient({ initialMedia }: MediaClientProps) {
                   className={`w-full py-2 px-3 rounded-xl text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors ${
                     isCopied
                       ? "bg-emerald-50 text-emerald-700 border border-emerald-200"
-                      : "bg-[#F7F9FC] hover:bg-[#EBF3FE] text-[#1D68BD] border border-[#E4E7EC]"
+                      : "bg-[#F7F9FC] hover:bg-[#FAF5EB] text-[#C59B27] border border-[#E4E7EC]"
                   }`}
                 >
                   {isCopied ? (
@@ -305,7 +305,7 @@ export function MediaClient({ initialMedia }: MediaClientProps) {
         <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4 backdrop-blur-2xs">
           <div className="bg-white rounded-2xl w-full max-w-lg shadow-2xl overflow-hidden">
             <div className="p-5 border-b border-[#E4E7EC] flex items-center justify-between">
-              <h3 className="text-base font-bold text-[#0B1730]">Add Media Asset</h3>
+              <h3 className="text-base font-bold text-[#070B14]">Add Media Asset</h3>
               <button
                 type="button"
                 onClick={() => setIsModalOpen(false)}
@@ -333,7 +333,7 @@ export function MediaClient({ initialMedia }: MediaClientProps) {
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
                   placeholder="e.g. Dubai Office Tech Workspace"
-                  className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#0B1730] focus:border-[#1D68BD] focus:outline-none"
+                  className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#070B14] focus:border-[#C59B27] focus:outline-none"
                 />
               </div>
 
@@ -347,7 +347,7 @@ export function MediaClient({ initialMedia }: MediaClientProps) {
                   value={form.url}
                   onChange={(e) => setForm({ ...form, url: e.target.value })}
                   placeholder="https://images.unsplash.com/..."
-                  className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#0B1730] focus:border-[#1D68BD] focus:outline-none"
+                  className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#070B14] focus:border-[#C59B27] focus:outline-none"
                 />
               </div>
 
@@ -378,7 +378,7 @@ export function MediaClient({ initialMedia }: MediaClientProps) {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="px-5 py-2 bg-[#1D68BD] hover:bg-[#155196] text-white text-xs font-semibold rounded-xl shadow-xs transition-colors flex items-center gap-1.5 disabled:opacity-50"
+                  className="px-5 py-2 bg-[#C59B27] hover:bg-[#B38728] text-white text-xs font-semibold rounded-xl shadow-xs transition-colors flex items-center gap-1.5 disabled:opacity-50"
                 >
                   <Save size={14} />
                   {isSubmitting ? "Saving..." : "Add to Library"}

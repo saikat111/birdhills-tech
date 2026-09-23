@@ -136,7 +136,7 @@ export default function DomainsPage() {
   return (
     <div className="flex flex-col min-h-screen pt-24">
       {/* 1. HERO SECTION WITH LIVE DOMAIN CHECKER */}
-      <section className="relative py-24 md:py-32 bg-[#070D1B] text-white overflow-hidden">
+      <section className="relative py-24 md:py-32 bg-[#070B14] text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2000&q=90"
@@ -146,13 +146,13 @@ export default function DomainsPage() {
             sizes="100vw"
             className="object-cover object-center scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#070D1B]/95 via-[#070D1B]/85 to-[#070D1B]/50" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#070D1B]/90 via-transparent to-[#070D1B]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#070B14]/95 via-[#070B14]/85 to-[#070B14]/50" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#070B14]/90 via-transparent to-[#070B14]" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl mx-auto text-center space-y-6 mb-12">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-widest text-[#38BDF8] uppercase bg-white/10 border border-white/15 backdrop-blur-md">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-widest text-[#D4AF37] uppercase bg-[#C59B27]/15 border border-[#C59B27]/30 backdrop-blur-md">
               <Globe size={14} />
               <span>OFFICIAL DOMAIN REGISTRAR</span>
             </div>
@@ -173,10 +173,10 @@ export default function DomainsPage() {
       <section className="py-24 bg-white" id="pricing">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-            <span className="text-xs font-bold tracking-wider uppercase text-[#1D68BD]">
+            <span className="text-xs font-bold tracking-wider uppercase text-[#C59B27]">
               TRANSPARENT TLD PRICING IN USD ($)
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B1730] tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#070B14] tracking-tight">
               Honest Domain Pricing with Zero Markup Traps
             </h2>
             <p className="text-sm text-[#667085]">
@@ -195,15 +195,15 @@ export default function DomainsPage() {
                   key={tld.extension}
                   className={`p-6 rounded-3xl border transition-all flex flex-col justify-between ${
                     tld.popular
-                      ? "bg-white border-[#1D68BD] shadow-xl ring-2 ring-[#1D68BD]/20"
-                      : "bg-[#F7F9FC] border-[#E4E7EC] hover:shadow-md hover:border-[#1D68BD]/40"
+                      ? "bg-white border-[#C59B27] shadow-xl ring-2 ring-[#C59B27]/20"
+                      : "bg-[#FAF8F5] border-[#E4E7EC] hover:shadow-md hover:border-[#C59B27]/40"
                   }`}
                 >
                   <div>
                     <div className="flex items-center justify-between mb-3">
-                      <span className="text-2xl font-black text-[#0B1730]">{tld.extension}</span>
+                      <span className="text-2xl font-black text-[#070B14]">{tld.extension}</span>
                       {tld.badge && (
-                        <span className="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-md bg-[#EBF3FE] text-[#1D68BD]">
+                        <span className="text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded-md bg-[#C59B27]/15 text-[#B38728]">
                           {tld.badge}
                         </span>
                       )}
@@ -215,15 +215,15 @@ export default function DomainsPage() {
 
                   <div className="pt-4 border-t border-slate-200/80 flex items-center justify-between">
                     <div>
-                      <div className="text-2xl font-black text-[#0B1730]">{tld.price}</div>
-                      <span className="text-[10px] text-slate-400">{tld.period}</span>
+                      <div className="text-2xl font-black text-[#070B14]">{tld.price}</div>
+                      <span className="text-[10px] text-slate-400 font-medium">{tld.period}</span>
                     </div>
 
                     <a
                       href={waUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-[#1D68BD] hover:bg-[#155196] text-white text-xs font-bold transition-all shadow-2xs"
+                      className="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl bg-gradient-to-r from-[#D4AF37] via-[#C59B27] to-[#B38728] hover:brightness-105 text-white text-xs font-bold transition-all shadow-md shadow-[#C59B27]/20"
                     >
                       <span>Register</span>
                       <ArrowRight size={13} />
@@ -237,13 +237,13 @@ export default function DomainsPage() {
       </section>
 
       {/* 3. WHY REGISTER WITH BIRD HILLS TECH */}
-      <section className="py-24 bg-[#F7F9FC] border-t border-[#E4E7EC]">
+      <section className="py-24 bg-[#FAF8F5] border-t border-[#E4E7EC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-            <span className="text-xs font-bold tracking-wider uppercase text-[#1D68BD]">
+            <span className="text-xs font-bold tracking-wider uppercase text-[#C59B27]">
               ENTERPRISE DOMAIN MANAGEMENT
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B1730] tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#070B14] tracking-tight">
               Everything Included With Every Domain Name
             </h2>
             <p className="text-sm text-[#667085]">
@@ -257,12 +257,12 @@ export default function DomainsPage() {
               return (
                 <div
                   key={f.title}
-                  className="p-8 rounded-3xl bg-white border border-[#E4E7EC] space-y-3 shadow-xs hover:shadow-lg transition-all"
+                  className="p-8 rounded-3xl bg-white border border-[#E4E7EC] hover:border-[#C59B27]/30 space-y-3 shadow-xs hover:shadow-lg transition-all"
                 >
-                  <div className="w-12 h-12 rounded-2xl bg-[#EBF3FE] flex items-center justify-center text-[#1D68BD]">
+                  <div className="w-12 h-12 rounded-2xl bg-[#C59B27]/10 flex items-center justify-center text-[#C59B27]">
                     <Icon size={22} />
                   </div>
-                  <h3 className="text-base font-extrabold text-[#0B1730]">{f.title}</h3>
+                  <h3 className="text-base font-extrabold text-[#070B14]">{f.title}</h3>
                   <p className="text-xs text-[#667085] leading-relaxed">{f.desc}</p>
                 </div>
               );
@@ -272,11 +272,11 @@ export default function DomainsPage() {
       </section>
 
       {/* 4. DOMAIN TRANSFER & CONSOLIDATION SECTION */}
-      <section className="py-20 bg-gradient-to-br from-[#0B1730] to-[#15254d] text-white" id="transfer">
+      <section className="py-20 bg-gradient-to-br from-[#070B14] via-[#0F1420] to-[#070B14] border-t border-[#C59B27]/25 text-white" id="transfer">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <span className="inline-block px-3 py-1 rounded-full text-xs font-bold tracking-widest text-[#38BDF8] uppercase bg-white/10 border border-white/20">
+              <span className="inline-block px-3 py-1 rounded-full text-xs font-bold tracking-widest text-[#D4AF37] uppercase bg-[#C59B27]/15 border border-[#C59B27]/30">
                 PORTFOLIO CONSOLIDATION
               </span>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
@@ -286,19 +286,19 @@ export default function DomainsPage() {
                 Consolidate your domains and cloud hosting under a single authoritative Dubai technology partner. Every domain transfer includes an automatic 1-year renewal extension and dedicated technical oversight.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
-                <div className="p-4 rounded-2xl bg-white/10 border border-white/15">
+                <div className="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-[#C59B27]/30 transition-colors">
                   <div className="text-lg font-bold text-white">01. Unlock</div>
                   <p className="text-[11px] text-slate-300 mt-1">
                     Disable registrar lock at your current provider
                   </p>
                 </div>
-                <div className="p-4 rounded-2xl bg-white/10 border border-white/15">
+                <div className="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-[#C59B27]/30 transition-colors">
                   <div className="text-lg font-bold text-white">02. Auth Code</div>
                   <p className="text-[11px] text-slate-300 mt-1">
                     Copy your domain EPP or Authorization key
                   </p>
                 </div>
-                <div className="p-4 rounded-2xl bg-white/10 border border-white/15">
+                <div className="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-[#C59B27]/30 transition-colors">
                   <div className="text-lg font-bold text-white">03. Renew +1 Yr</div>
                   <p className="text-[11px] text-slate-300 mt-1">
                     We complete transfer with full year added
@@ -307,7 +307,7 @@ export default function DomainsPage() {
               </div>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/15 space-y-6">
+            <div className="bg-white/5 backdrop-blur-md p-8 rounded-3xl border border-white/10 space-y-6">
               <h3 className="text-xl font-bold text-white">Transfer Your Corporate Portfolio</h3>
               <p className="text-xs text-slate-300 leading-relaxed">
                 Managing multiple domains across GoDaddy, Namecheap, or Google Domains? Let our registrar squad manage your transfer smoothly.
@@ -317,14 +317,14 @@ export default function DomainsPage() {
                   href="https://wa.me/971524405785?text=Hello%20Bird%20Hills%20Tech%2C%20I%20would%20like%20to%20transfer%20my%20domain%20names%20to%20your%20management."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2 py-3 px-6 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-bold transition-all shadow-md"
+                  className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl bg-[#25D366] hover:bg-[#1ebd59] text-white text-xs font-bold transition-all shadow-md"
                 >
                   <MessageCircle size={15} />
                   <span>Chat with Domain Registrar on WhatsApp</span>
                 </a>
                 <Link
                   href="/hosting"
-                  className="w-full inline-flex items-center justify-center gap-2 py-3 px-6 rounded-xl bg-white text-[#0B1730] hover:bg-slate-100 text-xs font-bold transition-all"
+                  className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl bg-white text-[#070B14] hover:bg-slate-100 text-xs font-bold transition-all"
                 >
                   <Server size={14} />
                   <span>Pair with Cloud Hosting Plans</span>
@@ -336,13 +336,13 @@ export default function DomainsPage() {
       </section>
 
       {/* 5. DOMAIN FAQS */}
-      <section className="py-24 bg-[#F7F9FC] border-t border-[#E4E7EC]">
+      <section className="py-24 bg-[#FAF8F5] border-t border-[#E4E7EC]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 space-y-2">
-            <span className="text-xs font-bold tracking-wider uppercase text-[#1D68BD]">
+            <span className="text-xs font-bold tracking-wider uppercase text-[#C59B27]">
               REGISTRY CLARITY
             </span>
-            <h2 className="text-3xl font-extrabold text-[#0B1730] tracking-tight">
+            <h2 className="text-3xl font-extrabold text-[#070B14] tracking-tight">
               Domain Registration Frequently Asked Questions
             </h2>
           </div>
@@ -353,8 +353,8 @@ export default function DomainsPage() {
                 key={faq.q}
                 className="p-6 rounded-2xl bg-white border border-[#E4E7EC] shadow-2xs space-y-2"
               >
-                <h3 className="text-base font-bold text-[#0B1730] flex items-center gap-2">
-                  <HelpCircle size={17} className="text-[#1D68BD] shrink-0" />
+                <h3 className="text-base font-bold text-[#070B14] flex items-center gap-2">
+                  <HelpCircle size={17} className="text-[#C59B27] shrink-0" />
                   {faq.q}
                 </h3>
                 <p className="text-xs text-[#475467] leading-relaxed pl-6">{faq.a}</p>

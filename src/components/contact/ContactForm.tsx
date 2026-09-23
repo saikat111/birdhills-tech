@@ -109,7 +109,7 @@ export function ContactForm() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {/* Name */}
             <div className="space-y-1.5">
-              <label htmlFor="name" className="text-xs font-bold text-[#0B1730] uppercase tracking-wider">
+              <label htmlFor="name" className="text-xs font-bold text-[#070B14] uppercase tracking-wider">
                 Full Name <span className="text-rose-500">*</span>
               </label>
               <input
@@ -119,13 +119,13 @@ export function ContactForm() {
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 placeholder="e.g. Tariq Al-Mansoor"
-                className="w-full text-sm bg-[#F7F9FC] border border-[#E4E7EC] rounded-xl px-4 py-3 text-[#101828] placeholder-slate-400 focus:outline-none focus:border-[#1D68BD] focus:bg-white transition-colors"
+                className="w-full text-sm bg-[#F7F9FC] border border-[#E4E7EC] rounded-xl px-4 py-3 text-[#101828] placeholder-slate-400 focus:outline-none focus:border-[#C59B27] focus:ring-1 focus:ring-[#C59B27] focus:bg-white transition-colors"
               />
             </div>
 
             {/* Company */}
             <div className="space-y-1.5">
-              <label htmlFor="company" className="text-xs font-bold text-[#0B1730] uppercase tracking-wider">
+              <label htmlFor="company" className="text-xs font-bold text-[#070B14] uppercase tracking-wider">
                 Company Name
               </label>
               <input
@@ -134,13 +134,13 @@ export function ContactForm() {
                 value={formData.company}
                 onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                 placeholder="e.g. Gulf Horizon Holdings"
-                className="w-full text-sm bg-[#F7F9FC] border border-[#E4E7EC] rounded-xl px-4 py-3 text-[#101828] placeholder-slate-400 focus:outline-none focus:border-[#1D68BD] focus:bg-white transition-colors"
+                className="w-full text-sm bg-[#F7F9FC] border border-[#E4E7EC] rounded-xl px-4 py-3 text-[#101828] placeholder-slate-400 focus:outline-none focus:border-[#C59B27] focus:ring-1 focus:ring-[#C59B27] focus:bg-white transition-colors"
               />
             </div>
 
             {/* Email */}
             <div className="space-y-1.5">
-              <label htmlFor="email" className="text-xs font-bold text-[#0B1730] uppercase tracking-wider">
+              <label htmlFor="email" className="text-xs font-bold text-[#070B14] uppercase tracking-wider">
                 Work Email <span className="text-rose-500">*</span>
               </label>
               <input
@@ -150,13 +150,13 @@ export function ContactForm() {
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 placeholder="name@company.ae"
-                className="w-full text-sm bg-[#F7F9FC] border border-[#E4E7EC] rounded-xl px-4 py-3 text-[#101828] placeholder-slate-400 focus:outline-none focus:border-[#1D68BD] focus:bg-white transition-colors"
+                className="w-full text-sm bg-[#F7F9FC] border border-[#E4E7EC] rounded-xl px-4 py-3 text-[#101828] placeholder-slate-400 focus:outline-none focus:border-[#C59B27] focus:ring-1 focus:ring-[#C59B27] focus:bg-white transition-colors"
               />
             </div>
 
             {/* Phone / WhatsApp */}
             <div className="space-y-1.5">
-              <label htmlFor="phone" className="text-xs font-bold text-[#0B1730] uppercase tracking-wider">
+              <label htmlFor="phone" className="text-xs font-bold text-[#070B14] uppercase tracking-wider">
                 Phone / WhatsApp <span className="text-rose-500">*</span>
               </label>
               <input
@@ -166,20 +166,20 @@ export function ContactForm() {
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                 placeholder="+971 50 000 0000"
-                className="w-full text-sm bg-[#F7F9FC] border border-[#E4E7EC] rounded-xl px-4 py-3 text-[#101828] placeholder-slate-400 focus:outline-none focus:border-[#1D68BD] focus:bg-white transition-colors"
+                className="w-full text-sm bg-[#F7F9FC] border border-[#E4E7EC] rounded-xl px-4 py-3 text-[#101828] placeholder-slate-400 focus:outline-none focus:border-[#C59B27] focus:ring-1 focus:ring-[#C59B27] focus:bg-white transition-colors"
               />
             </div>
 
             {/* Service Interest */}
             <div className="space-y-1.5">
-              <label htmlFor="service" className="text-xs font-bold text-[#0B1730] uppercase tracking-wider">
+              <label htmlFor="service" className="text-xs font-bold text-[#070B14] uppercase tracking-wider">
                 Service Required <span className="text-rose-500">*</span>
               </label>
               <select
                 id="service"
                 value={formData.service}
                 onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                className="w-full text-sm bg-[#F7F9FC] border border-[#E4E7EC] rounded-xl px-4 py-3 text-[#101828] focus:outline-none focus:border-[#1D68BD] focus:bg-white transition-colors cursor-pointer"
+                className="w-full text-sm bg-[#F7F9FC] border border-[#E4E7EC] rounded-xl px-4 py-3 text-[#101828] focus:outline-none focus:border-[#C59B27] focus:ring-1 focus:ring-[#C59B27] focus:bg-white transition-colors cursor-pointer"
               >
                 {serviceOptions.map((opt) => (
                   <option key={opt} value={opt}>
@@ -191,14 +191,14 @@ export function ContactForm() {
 
             {/* Estimated Budget */}
             <div className="space-y-1.5">
-              <label htmlFor="budget" className="text-xs font-bold text-[#0B1730] uppercase tracking-wider">
+              <label htmlFor="budget" className="text-xs font-bold text-[#070B14] uppercase tracking-wider">
                 Estimated Project Budget
               </label>
               <select
                 id="budget"
                 value={formData.budget}
                 onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                className="w-full text-sm bg-[#F7F9FC] border border-[#E4E7EC] rounded-xl px-4 py-3 text-[#101828] focus:outline-none focus:border-[#1D68BD] focus:bg-white transition-colors cursor-pointer"
+                className="w-full text-sm bg-[#F7F9FC] border border-[#E4E7EC] rounded-xl px-4 py-3 text-[#101828] focus:outline-none focus:border-[#C59B27] focus:ring-1 focus:ring-[#C59B27] focus:bg-white transition-colors cursor-pointer"
               >
                 {budgetOptions.map((b) => (
                   <option key={b} value={b}>
@@ -211,7 +211,7 @@ export function ContactForm() {
 
           {/* Project Details */}
           <div className="space-y-1.5">
-            <label htmlFor="message" className="text-xs font-bold text-[#0B1730] uppercase tracking-wider">
+            <label htmlFor="message" className="text-xs font-bold text-[#070B14] uppercase tracking-wider">
               Project Overview & Objectives <span className="text-rose-500">*</span>
             </label>
             <textarea
@@ -221,14 +221,14 @@ export function ContactForm() {
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
               placeholder="Tell us about your timeline, current technical landscape, or commercial goals..."
-              className="w-full text-sm bg-[#F7F9FC] border border-[#E4E7EC] rounded-xl px-4 py-3 text-[#101828] placeholder-slate-400 focus:outline-none focus:border-[#1D68BD] focus:bg-white transition-colors resize-y"
+              className="w-full text-sm bg-[#F7F9FC] border border-[#E4E7EC] rounded-xl px-4 py-3 text-[#101828] placeholder-slate-400 focus:outline-none focus:border-[#C59B27] focus:ring-1 focus:ring-[#C59B27] focus:bg-white transition-colors resize-y"
             />
           </div>
 
           <button
             type="submit"
             disabled={status === "loading"}
-            className="w-full py-4 rounded-xl bg-[#1D68BD] hover:bg-[#155196] text-white text-base font-semibold shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 disabled:opacity-60"
+            className="w-full py-4 rounded-xl bg-gradient-to-r from-[#D4AF37] via-[#C59B27] to-[#B38728] hover:brightness-105 text-white text-base font-bold shadow-md shadow-[#C59B27]/25 transition-all flex items-center justify-center gap-2 disabled:opacity-60"
           >
             {status === "loading" ? (
               <>

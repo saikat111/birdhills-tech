@@ -110,7 +110,7 @@ export function SettingsClient({ initialSettings }: SettingsClientProps) {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-[#E4E7EC]">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-[#0B1730]">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-[#070B14]">
             System & Site Settings
           </h1>
           <p className="text-xs sm:text-sm text-[#667085] mt-1">
@@ -140,7 +140,7 @@ export function SettingsClient({ initialSettings }: SettingsClientProps) {
           onClick={() => setActiveTab("general")}
           className={`px-4 py-2.5 text-xs font-bold border-b-2 transition-colors whitespace-nowrap flex items-center gap-2 ${
             activeTab === "general"
-              ? "border-[#1D68BD] text-[#1D68BD]"
+              ? "border-[#C59B27] text-[#C59B27]"
               : "border-transparent text-slate-500 hover:text-slate-800"
           }`}
         >
@@ -153,7 +153,7 @@ export function SettingsClient({ initialSettings }: SettingsClientProps) {
           onClick={() => setActiveTab("social")}
           className={`px-4 py-2.5 text-xs font-bold border-b-2 transition-colors whitespace-nowrap flex items-center gap-2 ${
             activeTab === "social"
-              ? "border-[#1D68BD] text-[#1D68BD]"
+              ? "border-[#C59B27] text-[#C59B27]"
               : "border-transparent text-slate-500 hover:text-slate-800"
           }`}
         >
@@ -166,7 +166,7 @@ export function SettingsClient({ initialSettings }: SettingsClientProps) {
           onClick={() => setActiveTab("ai")}
           className={`px-4 py-2.5 text-xs font-bold border-b-2 transition-colors whitespace-nowrap flex items-center gap-2 ${
             activeTab === "ai"
-              ? "border-[#1D68BD] text-[#1D68BD]"
+              ? "border-[#C59B27] text-[#C59B27]"
               : "border-transparent text-slate-500 hover:text-slate-800"
           }`}
         >
@@ -179,7 +179,7 @@ export function SettingsClient({ initialSettings }: SettingsClientProps) {
           onClick={() => setActiveTab("notifications")}
           className={`px-4 py-2.5 text-xs font-bold border-b-2 transition-colors whitespace-nowrap flex items-center gap-2 ${
             activeTab === "notifications"
-              ? "border-[#1D68BD] text-[#1D68BD]"
+              ? "border-[#C59B27] text-[#C59B27]"
               : "border-transparent text-slate-500 hover:text-slate-800"
           }`}
         >
@@ -192,7 +192,7 @@ export function SettingsClient({ initialSettings }: SettingsClientProps) {
         {/* Tab 1: General */}
         {activeTab === "general" && (
           <div className="space-y-6">
-            <h3 className="text-sm font-bold text-[#0B1730] uppercase tracking-wider">
+            <h3 className="text-sm font-bold text-[#070B14] uppercase tracking-wider">
               Dubai Headquarters & Identity
             </h3>
 
@@ -205,7 +205,7 @@ export function SettingsClient({ initialSettings }: SettingsClientProps) {
                   type="text"
                   value={form.company_name}
                   onChange={(e) => handleChange("company_name", e.target.value)}
-                  className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#0B1730] focus:border-[#1D68BD] focus:outline-none"
+                  className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#070B14] focus:border-[#C59B27] focus:outline-none"
                 />
               </div>
 
@@ -217,7 +217,7 @@ export function SettingsClient({ initialSettings }: SettingsClientProps) {
                   type="text"
                   value={form.tagline}
                   onChange={(e) => handleChange("tagline", e.target.value)}
-                  className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#0B1730] focus:border-[#1D68BD] focus:outline-none"
+                  className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#070B14] focus:border-[#C59B27] focus:outline-none"
                 />
               </div>
             </div>
@@ -230,7 +230,7 @@ export function SettingsClient({ initialSettings }: SettingsClientProps) {
                 type="text"
                 value={form.address}
                 onChange={(e) => handleChange("address", e.target.value)}
-                className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#0B1730] focus:border-[#1D68BD] focus:outline-none"
+                className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#070B14] focus:border-[#C59B27] focus:outline-none"
               />
               <p className="text-[11px] text-slate-400 mt-1">
                 Standard: Deira - Stone Building - 122 7th A Street - Al Baraha - Dubai, UAE
@@ -246,7 +246,7 @@ export function SettingsClient({ initialSettings }: SettingsClientProps) {
                   type="text"
                   value={form.phone}
                   onChange={(e) => handleChange("phone", e.target.value)}
-                  className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#0B1730] focus:border-[#1D68BD] focus:outline-none"
+                  className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#070B14] focus:border-[#C59B27] focus:outline-none"
                 />
               </div>
 
@@ -258,7 +258,7 @@ export function SettingsClient({ initialSettings }: SettingsClientProps) {
                   type="text"
                   value={form.whatsapp}
                   onChange={(e) => handleChange("whatsapp", e.target.value)}
-                  className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#0B1730] focus:border-[#1D68BD] focus:outline-none"
+                  className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#070B14] focus:border-[#C59B27] focus:outline-none"
                 />
               </div>
 
@@ -270,7 +270,7 @@ export function SettingsClient({ initialSettings }: SettingsClientProps) {
                   type="email"
                   value={form.email}
                   onChange={(e) => handleChange("email", e.target.value)}
-                  className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#0B1730] focus:border-[#1D68BD] focus:outline-none"
+                  className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#070B14] focus:border-[#C59B27] focus:outline-none"
                 />
               </div>
             </div>
@@ -284,7 +284,7 @@ export function SettingsClient({ initialSettings }: SettingsClientProps) {
                   type="url"
                   value={form.website}
                   onChange={(e) => handleChange("website", e.target.value)}
-                  className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#0B1730] focus:border-[#1D68BD] focus:outline-none"
+                  className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#070B14] focus:border-[#C59B27] focus:outline-none"
                 />
               </div>
 
@@ -296,7 +296,7 @@ export function SettingsClient({ initialSettings }: SettingsClientProps) {
                   type="text"
                   value={form.working_hours}
                   onChange={(e) => handleChange("working_hours", e.target.value)}
-                  className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#0B1730] focus:border-[#1D68BD] focus:outline-none"
+                  className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#070B14] focus:border-[#C59B27] focus:outline-none"
                 />
               </div>
             </div>
@@ -306,7 +306,7 @@ export function SettingsClient({ initialSettings }: SettingsClientProps) {
         {/* Tab 2: Social */}
         {activeTab === "social" && (
           <div className="space-y-6">
-            <h3 className="text-sm font-bold text-[#0B1730] uppercase tracking-wider">
+            <h3 className="text-sm font-bold text-[#070B14] uppercase tracking-wider">
               Social Profiles & Regional Channels
             </h3>
 
@@ -320,7 +320,7 @@ export function SettingsClient({ initialSettings }: SettingsClientProps) {
                   value={form.linkedin_url}
                   onChange={(e) => handleChange("linkedin_url", e.target.value)}
                   placeholder="https://linkedin.com/company/..."
-                  className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#0B1730] focus:border-[#1D68BD] focus:outline-none"
+                  className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#070B14] focus:border-[#C59B27] focus:outline-none"
                 />
               </div>
 
@@ -333,7 +333,7 @@ export function SettingsClient({ initialSettings }: SettingsClientProps) {
                   value={form.twitter_url}
                   onChange={(e) => handleChange("twitter_url", e.target.value)}
                   placeholder="https://twitter.com/..."
-                  className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#0B1730] focus:border-[#1D68BD] focus:outline-none"
+                  className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#070B14] focus:border-[#C59B27] focus:outline-none"
                 />
               </div>
 
@@ -346,7 +346,7 @@ export function SettingsClient({ initialSettings }: SettingsClientProps) {
                   value={form.instagram_url}
                   onChange={(e) => handleChange("instagram_url", e.target.value)}
                   placeholder="https://instagram.com/..."
-                  className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#0B1730] focus:border-[#1D68BD] focus:outline-none"
+                  className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#070B14] focus:border-[#C59B27] focus:outline-none"
                 />
               </div>
 
@@ -359,7 +359,7 @@ export function SettingsClient({ initialSettings }: SettingsClientProps) {
                   value={form.github_url}
                   onChange={(e) => handleChange("github_url", e.target.value)}
                   placeholder="https://github.com/..."
-                  className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#0B1730] focus:border-[#1D68BD] focus:outline-none"
+                  className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#070B14] focus:border-[#C59B27] focus:outline-none"
                 />
               </div>
             </div>
@@ -369,7 +369,7 @@ export function SettingsClient({ initialSettings }: SettingsClientProps) {
         {/* Tab 3: AI Assistant */}
         {activeTab === "ai" && (
           <div className="space-y-6">
-            <h3 className="text-sm font-bold text-[#0B1730] uppercase tracking-wider">
+            <h3 className="text-sm font-bold text-[#070B14] uppercase tracking-wider">
               Autonomous AI Chatbot Directives
             </h3>
 
@@ -382,7 +382,7 @@ export function SettingsClient({ initialSettings }: SettingsClientProps) {
                   type="text"
                   value={form.ai_bot_name}
                   onChange={(e) => handleChange("ai_bot_name", e.target.value)}
-                  className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#0B1730] focus:border-[#1D68BD] focus:outline-none"
+                  className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#070B14] focus:border-[#C59B27] focus:outline-none"
                 />
               </div>
             </div>
@@ -395,7 +395,7 @@ export function SettingsClient({ initialSettings }: SettingsClientProps) {
                 rows={2}
                 value={form.ai_welcome_message}
                 onChange={(e) => handleChange("ai_welcome_message", e.target.value)}
-                className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#0B1730] focus:border-[#1D68BD] focus:outline-none"
+                className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#070B14] focus:border-[#C59B27] focus:outline-none"
               />
             </div>
 
@@ -407,7 +407,7 @@ export function SettingsClient({ initialSettings }: SettingsClientProps) {
                 rows={4}
                 value={form.ai_qualification_notes}
                 onChange={(e) => handleChange("ai_qualification_notes", e.target.value)}
-                className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#0B1730] focus:border-[#1D68BD] focus:outline-none"
+                className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#070B14] focus:border-[#C59B27] focus:outline-none"
               />
             </div>
           </div>
@@ -416,7 +416,7 @@ export function SettingsClient({ initialSettings }: SettingsClientProps) {
         {/* Tab 4: Notifications */}
         {activeTab === "notifications" && (
           <div className="space-y-6">
-            <h3 className="text-sm font-bold text-[#0B1730] uppercase tracking-wider">
+            <h3 className="text-sm font-bold text-[#070B14] uppercase tracking-wider">
               Administrative Notifications & Dispatch
             </h3>
 
@@ -428,7 +428,7 @@ export function SettingsClient({ initialSettings }: SettingsClientProps) {
                 type="email"
                 value={form.lead_notification_email}
                 onChange={(e) => handleChange("lead_notification_email", e.target.value)}
-                className="w-full sm:w-96 px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#0B1730] focus:border-[#1D68BD] focus:outline-none"
+                className="w-full sm:w-96 px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#070B14] focus:border-[#C59B27] focus:outline-none"
               />
               <p className="text-[11px] text-slate-400 mt-1">
                 New contact form submissions and qualified AI chatbot leads will be dispatched here.
@@ -442,7 +442,7 @@ export function SettingsClient({ initialSettings }: SettingsClientProps) {
           <button
             type="submit"
             disabled={isSaving}
-            className="px-6 py-2.5 bg-[#1D68BD] hover:bg-[#155196] text-white text-xs font-semibold rounded-xl shadow-xs transition-colors flex items-center gap-2 disabled:opacity-50"
+            className="px-6 py-2.5 bg-[#C59B27] hover:bg-[#B38728] text-white text-xs font-semibold rounded-xl shadow-xs transition-colors flex items-center gap-2 disabled:opacity-50"
           >
             <Save size={15} />
             {isSaving ? "Saving..." : "Save All Settings"}

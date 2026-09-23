@@ -199,7 +199,7 @@ export function PricingClient({ initialTiers }: PricingClientProps) {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-[#E4E7EC]">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-[#0B1730]">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-[#070B14]">
             Pricing Packages CMS
           </h1>
           <p className="text-xs sm:text-sm text-[#667085] mt-1">
@@ -218,7 +218,7 @@ export function PricingClient({ initialTiers }: PricingClientProps) {
           <button
             type="button"
             onClick={openCreateModal}
-            className="px-4 py-2 bg-[#1D68BD] hover:bg-[#155196] text-white text-xs font-semibold rounded-xl shadow-xs transition-colors inline-flex items-center gap-1.5"
+            className="px-4 py-2 bg-[#C59B27] hover:bg-[#B38728] text-white text-xs font-semibold rounded-xl shadow-xs transition-colors inline-flex items-center gap-1.5"
           >
             <Plus size={15} />
             Add Pricing Package
@@ -240,18 +240,18 @@ export function PricingClient({ initialTiers }: PricingClientProps) {
             <div
               key={t.id}
               className={`bg-white rounded-2xl border p-6 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between ${
-                t.popular ? "border-[#1D68BD] ring-2 ring-[#1D68BD]/20" : "border-[#E4E7EC]"
+                t.popular ? "border-[#C59B27] ring-2 ring-[#C59B27]/20" : "border-[#E4E7EC]"
               }`}
             >
               <div>
                 <div className="flex items-start justify-between gap-2 mb-3">
                   <div>
                     {t.badge && (
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#1D68BD] bg-[#EBF3FE] px-2 py-0.5 rounded">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#C59B27] bg-[#C59B27]/10] px-2 py-0.5 rounded">
                         {t.badge}
                       </span>
                     )}
-                    <h3 className="text-xl font-bold text-[#0B1730] mt-1">{t.name}</h3>
+                    <h3 className="text-xl font-bold text-[#070B14] mt-1">{t.name}</h3>
                   </div>
 
                   <div className="flex items-center gap-1">
@@ -270,7 +270,7 @@ export function PricingClient({ initialTiers }: PricingClientProps) {
                     <button
                       type="button"
                       onClick={() => openEditModal(t)}
-                      className="p-1 text-slate-400 hover:text-[#1D68BD]"
+                      className="p-1 text-slate-400 hover:text-[#C59B27]"
                     >
                       <Edit2 size={15} />
                     </button>
@@ -284,7 +284,7 @@ export function PricingClient({ initialTiers }: PricingClientProps) {
                   </div>
                 </div>
 
-                <div className="text-2xl font-black text-[#0B1730] mb-1">{t.priceAed}</div>
+                <div className="text-2xl font-black text-[#070B14] mb-1">{t.priceAed}</div>
                 <div className="text-[11px] text-slate-400 mb-3 font-mono">
                   {t.billingType} · {t.deliveryTime || "Flexible"}
                 </div>
@@ -297,7 +297,7 @@ export function PricingClient({ initialTiers }: PricingClientProps) {
                   </div>
                   {features.slice(0, 4).map((f) => (
                     <div key={f} className="text-xs text-slate-700 flex items-center gap-1.5 truncate">
-                      <CheckCircle2 size={12} className="text-[#1D68BD] shrink-0" />
+                      <CheckCircle2 size={12} className="text-[#C59B27] shrink-0" />
                       <span className="truncate">{f}</span>
                     </div>
                   ))}
@@ -327,7 +327,7 @@ export function PricingClient({ initialTiers }: PricingClientProps) {
         <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4 backdrop-blur-2xs overflow-y-auto">
           <div className="bg-white rounded-2xl w-full max-w-xl max-h-[90vh] flex flex-col shadow-2xl my-8">
             <div className="p-5 border-b border-[#E4E7EC] flex items-center justify-between">
-              <h3 className="text-base font-bold text-[#0B1730]">
+              <h3 className="text-base font-bold text-[#070B14]">
                 {editingTier ? "Edit Pricing Package" : "Create Pricing Package"}
               </h3>
               <button
@@ -358,7 +358,7 @@ export function PricingClient({ initialTiers }: PricingClientProps) {
                     value={form.name}
                     onChange={(e) => handleNameChange(e.target.value)}
                     placeholder="e.g. Growth Launchpad"
-                    className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#0B1730] focus:border-[#1D68BD] focus:outline-none"
+                    className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#070B14] focus:border-[#C59B27] focus:outline-none"
                   />
                 </div>
 
@@ -369,7 +369,7 @@ export function PricingClient({ initialTiers }: PricingClientProps) {
                     required
                     value={form.slug}
                     onChange={(e) => setForm({ ...form, slug: e.target.value })}
-                    className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs font-mono text-[#0B1730] focus:border-[#1D68BD] focus:outline-none"
+                    className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs font-mono text-[#070B14] focus:border-[#C59B27] focus:outline-none"
                   />
                 </div>
               </div>
@@ -385,7 +385,7 @@ export function PricingClient({ initialTiers }: PricingClientProps) {
                     value={form.priceAed}
                     onChange={(e) => setForm({ ...form, priceAed: e.target.value })}
                     placeholder="$9,500"
-                    className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#0B1730] focus:border-[#1D68BD] focus:outline-none"
+                    className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#070B14] focus:border-[#C59B27] focus:outline-none"
                   />
                 </div>
 
@@ -396,7 +396,7 @@ export function PricingClient({ initialTiers }: PricingClientProps) {
                   <select
                     value={form.billingType}
                     onChange={(e) => setForm({ ...form, billingType: e.target.value })}
-                    className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#0B1730] focus:border-[#1D68BD] focus:outline-none"
+                    className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#070B14] focus:border-[#C59B27] focus:outline-none"
                   >
                     <option value="one-time">One-Time Project</option>
                     <option value="monthly">Monthly Retainer</option>
@@ -412,7 +412,7 @@ export function PricingClient({ initialTiers }: PricingClientProps) {
                     value={form.deliveryTime}
                     onChange={(e) => setForm({ ...form, deliveryTime: e.target.value })}
                     placeholder="3-4 Weeks"
-                    className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#0B1730] focus:border-[#1D68BD] focus:outline-none"
+                    className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#070B14] focus:border-[#C59B27] focus:outline-none"
                   />
                 </div>
               </div>
@@ -427,7 +427,7 @@ export function PricingClient({ initialTiers }: PricingClientProps) {
                     value={form.badge}
                     onChange={(e) => setForm({ ...form, badge: e.target.value })}
                     placeholder="Most Popular in Dubai"
-                    className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#0B1730] focus:border-[#1D68BD] focus:outline-none"
+                    className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#070B14] focus:border-[#C59B27] focus:outline-none"
                   />
                 </div>
 
@@ -439,7 +439,7 @@ export function PricingClient({ initialTiers }: PricingClientProps) {
                     type="number"
                     value={form.sortOrder}
                     onChange={(e) => setForm({ ...form, sortOrder: Number(e.target.value) })}
-                    className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#0B1730] focus:border-[#1D68BD] focus:outline-none"
+                    className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#070B14] focus:border-[#C59B27] focus:outline-none"
                   />
                 </div>
               </div>
@@ -454,7 +454,7 @@ export function PricingClient({ initialTiers }: PricingClientProps) {
                   value={form.description}
                   onChange={(e) => setForm({ ...form, description: e.target.value })}
                   placeholder="2-3 sentence overview of this engagement scope..."
-                  className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#0B1730] focus:border-[#1D68BD] focus:outline-none"
+                  className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#070B14] focus:border-[#C59B27] focus:outline-none"
                 />
               </div>
 
@@ -468,7 +468,7 @@ export function PricingClient({ initialTiers }: PricingClientProps) {
                   value={form.featuresRaw}
                   onChange={(e) => setForm({ ...form, featuresRaw: e.target.value })}
                   placeholder="Custom Next.js & TypeScript Architecture&#10;Sub-second Core Web Vitals&#10;Full IP Ownership"
-                  className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs font-mono text-[#0B1730] focus:border-[#1D68BD] focus:outline-none"
+                  className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs font-mono text-[#070B14] focus:border-[#C59B27] focus:outline-none"
                 />
               </div>
 
@@ -478,7 +478,7 @@ export function PricingClient({ initialTiers }: PricingClientProps) {
                     type="checkbox"
                     checked={form.popular}
                     onChange={(e) => setForm({ ...form, popular: e.target.checked })}
-                    className="rounded text-[#1D68BD] focus:ring-[#1D68BD] w-4 h-4"
+                    className="rounded text-[#C59B27] focus:ring-[#C59B27] w-4 h-4"
                   />
                   <span>Mark as &ldquo;Most Popular&rdquo;</span>
                 </label>
@@ -488,7 +488,7 @@ export function PricingClient({ initialTiers }: PricingClientProps) {
                     type="checkbox"
                     checked={form.active}
                     onChange={(e) => setForm({ ...form, active: e.target.checked })}
-                    className="rounded text-[#1D68BD] focus:ring-[#1D68BD] w-4 h-4"
+                    className="rounded text-[#C59B27] focus:ring-[#C59B27] w-4 h-4"
                   />
                   <span>Active on Public Pricing Page</span>
                 </label>
@@ -505,7 +505,7 @@ export function PricingClient({ initialTiers }: PricingClientProps) {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="px-5 py-2 bg-[#1D68BD] hover:bg-[#155196] text-white text-xs font-semibold rounded-xl shadow-xs transition-colors flex items-center gap-1.5 disabled:opacity-50"
+                  className="px-5 py-2 bg-[#C59B27] hover:bg-[#B38728] text-white text-xs font-semibold rounded-xl shadow-xs transition-colors flex items-center gap-1.5 disabled:opacity-50"
                 >
                   <Save size={14} />
                   {isSubmitting ? "Saving..." : editingTier ? "Update Package" : "Create Package"}

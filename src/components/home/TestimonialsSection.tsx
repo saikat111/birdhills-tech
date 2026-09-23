@@ -51,10 +51,10 @@ export function TestimonialsSection({ testimonials }: TestimonialsProps) {
         {/* Header with Navigation Arrows */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-16 gap-6">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold tracking-widest text-[#1D68BD] uppercase bg-[#EBF3FE] border border-[#BFDBFE] mb-3">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold tracking-widest text-[#B38728] uppercase bg-[#C59B27]/10 border border-[#C59B27]/30 mb-3">
               CLIENT TESTIMONIALS & PROOF
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0B1730] tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#070B14] tracking-tight leading-tight">
               Trusted by leaders who expect measurable excellence.
             </h2>
           </div>
@@ -65,7 +65,7 @@ export function TestimonialsSection({ testimonials }: TestimonialsProps) {
               type="button"
               onClick={handlePrev}
               aria-label="Previous Testimonial"
-              className="p-3 rounded-xl border border-[#E4E7EC] bg-white text-[#0B1730] hover:bg-[#1D68BD] hover:text-white hover:border-[#1D68BD] shadow-2xs transition-all"
+              className="p-3 rounded-xl border border-[#E4E7EC] bg-white text-[#070B14] hover:bg-[#C59B27] hover:text-white hover:border-[#C59B27] shadow-2xs transition-all"
             >
               <ChevronLeft size={18} />
             </button>
@@ -73,7 +73,7 @@ export function TestimonialsSection({ testimonials }: TestimonialsProps) {
               type="button"
               onClick={handleNext}
               aria-label="Next Testimonial"
-              className="p-3 rounded-xl border border-[#E4E7EC] bg-white text-[#0B1730] hover:bg-[#1D68BD] hover:text-white hover:border-[#1D68BD] shadow-2xs transition-all"
+              className="p-3 rounded-xl border border-[#E4E7EC] bg-white text-[#070B14] hover:bg-[#C59B27] hover:text-white hover:border-[#C59B27] shadow-2xs transition-all"
             >
               <ChevronRight size={18} />
             </button>
@@ -81,7 +81,7 @@ export function TestimonialsSection({ testimonials }: TestimonialsProps) {
         </div>
 
         {/* Featured Auto-Sliding Card */}
-        <div className="relative bg-white rounded-3xl p-8 sm:p-12 lg:p-16 border border-[#E4E7EC] shadow-xl overflow-hidden">
+        <div className="relative bg-white rounded-3xl p-8 sm:p-12 lg:p-16 border border-slate-200/80 shadow-xl overflow-hidden">
           {/* Background watermark quote */}
           <Quote
             size={180}
@@ -103,7 +103,7 @@ export function TestimonialsSection({ testimonials }: TestimonialsProps) {
             </div>
 
             {/* Quote Typography */}
-            <blockquote className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#0B1730] leading-snug tracking-tight">
+            <blockquote className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#070B14] leading-snug tracking-tight">
               &ldquo;{current.quote}&rdquo;
             </blockquote>
 
@@ -111,7 +111,7 @@ export function TestimonialsSection({ testimonials }: TestimonialsProps) {
             <div className="pt-6 border-t border-slate-100 flex items-center justify-between flex-wrap gap-4">
               <div className="flex items-center gap-4">
                 {current.avatarUrl ? (
-                  <div className="relative w-14 h-14 rounded-full overflow-hidden shrink-0 border-2 border-[#1D68BD]/20 shadow-sm">
+                  <div className="relative w-14 h-14 rounded-full overflow-hidden shrink-0 border-2 border-[#C59B27]/30 shadow-sm">
                     <Image
                       src={current.avatarUrl}
                       alt={current.authorName}
@@ -121,17 +121,17 @@ export function TestimonialsSection({ testimonials }: TestimonialsProps) {
                     />
                   </div>
                 ) : (
-                  <div className="w-14 h-14 rounded-full bg-[#1D68BD] text-white font-bold text-lg flex items-center justify-center shrink-0 shadow-sm">
+                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#B38728] text-white font-bold text-lg flex items-center justify-center shrink-0 shadow-sm">
                     {current.authorName.charAt(0)}
                   </div>
                 )}
                 <div>
-                  <div className="text-base sm:text-lg font-extrabold text-[#0B1730]">
+                  <div className="text-base sm:text-lg font-extrabold text-[#070B14]">
                     {current.authorName}
                   </div>
                   <div className="text-xs sm:text-sm text-[#667085]">
                     {current.role} ·{" "}
-                    <span className="text-[#1D68BD] font-semibold">{current.company}</span>
+                    <span className="text-[#C59B27] font-semibold">{current.company}</span>
                   </div>
                 </div>
               </div>
@@ -145,7 +145,7 @@ export function TestimonialsSection({ testimonials }: TestimonialsProps) {
                     onClick={() => setCurrentIndex(idx)}
                     aria-label={`Go to review ${idx + 1}`}
                     className={`h-2 rounded-full transition-all duration-300 ${
-                      idx === currentIndex ? "w-8 bg-[#1D68BD]" : "w-2.5 bg-slate-200 hover:bg-slate-300"
+                      idx === currentIndex ? "w-8 bg-[#C59B27]" : "w-2.5 bg-slate-200 hover:bg-slate-300"
                     }`}
                   />
                 ))}
@@ -164,12 +164,12 @@ export function TestimonialsSection({ testimonials }: TestimonialsProps) {
                 onClick={() => setCurrentIndex(idx)}
                 className={`p-4 rounded-2xl text-left border transition-all ${
                   idx === currentIndex
-                    ? "bg-white border-[#1D68BD] shadow-md ring-1 ring-[#1D68BD]"
-                    : "bg-[#F7F9FC] border-[#E4E7EC] hover:bg-white text-slate-600"
+                    ? "bg-white border-[#C59B27] shadow-md ring-1 ring-[#C59B27]"
+                    : "bg-[#FAF8F5] border-slate-200/80 hover:bg-white text-slate-600"
                 }`}
               >
                 <div className="flex items-center gap-2.5 mb-1">
-                  <span className="text-xs font-bold text-[#0B1730] truncate">
+                  <span className="text-xs font-bold text-[#070B14] truncate">
                     {item.authorName}
                   </span>
                   <span className="text-[10px] text-slate-400 truncate">({item.company})</span>

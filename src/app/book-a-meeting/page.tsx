@@ -17,7 +17,7 @@ export default function BookMeetingPage() {
   return (
     <div className="flex flex-col min-h-screen pt-24">
       {/* 1. VISUAL HERO WITH EXECUTIVE BACKGROUND */}
-      <section className="relative py-24 md:py-32 bg-[#070D1B] text-white overflow-hidden">
+      <section className="relative py-24 md:py-32 bg-[#070B14] text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=2000&q=90"
@@ -27,13 +27,13 @@ export default function BookMeetingPage() {
             sizes="100vw"
             className="object-cover object-center scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#070D1B]/95 via-[#070D1B]/75 to-[#070D1B]/40" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#070D1B]/90 via-transparent to-[#070D1B]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#070B14]/95 via-[#070B14]/80 to-[#070B14]/50" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#070B14]/90 via-transparent to-[#070B14]" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl space-y-6">
-            <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-widest text-[#38BDF8] uppercase bg-white/10 border border-white/15 backdrop-blur-md">
+            <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-widest text-[#D4AF37] uppercase bg-[#C59B27]/15 border border-[#C59B27]/30 backdrop-blur-md">
               EXECUTIVE BRIEFING & STRATEGY
             </span>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.12]">
@@ -47,7 +47,7 @@ export default function BookMeetingPage() {
       </section>
 
       {/* 2. MAIN FORM & CONTEXT GRID */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#FAF8F5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
             {/* Form */}
@@ -57,30 +57,30 @@ export default function BookMeetingPage() {
 
             {/* Sidebar Context */}
             <div className="lg:col-span-5 space-y-8">
-              <div className="p-8 rounded-3xl bg-[#F7F9FC] border border-[#E4E7EC] space-y-6">
-                <h3 className="text-lg font-bold text-[#0B1730]">
+              <div className="p-8 rounded-3xl bg-white border border-[#E4E7EC] space-y-6 shadow-sm">
+                <h3 className="text-lg font-bold text-[#070B14]">
                   What to Expect from the Session
                 </h3>
 
                 <ul className="space-y-4 text-xs sm:text-sm text-[#667085]">
                   <li className="flex items-start gap-3">
-                    <CheckCircle2 size={18} className="text-[#1D68BD] shrink-0 mt-0.5" />
+                    <CheckCircle2 size={18} className="text-[#C59B27] shrink-0 mt-0.5" />
                     <div>
-                      <span className="font-bold text-[#0B1730]">Commercial Architecture Audit:</span>{" "}
+                      <span className="font-bold text-[#070B14]">Commercial Architecture Audit:</span>{" "}
                       We review your current website, conversion funnel, and technical bottlenecks.
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle2 size={18} className="text-[#1D68BD] shrink-0 mt-0.5" />
+                    <CheckCircle2 size={18} className="text-[#C59B27] shrink-0 mt-0.5" />
                     <div>
-                      <span className="font-bold text-[#0B1730]">Tailored Technical Scope:</span> Clear
+                      <span className="font-bold text-[#070B14]">Tailored Technical Scope:</span> Clear
                       recommendations on framework selection, timelines, and realistic milestones.
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle2 size={18} className="text-[#1D68BD] shrink-0 mt-0.5" />
+                    <CheckCircle2 size={18} className="text-[#C59B27] shrink-0 mt-0.5" />
                     <div>
-                      <span className="font-bold text-[#0B1730]">Confidential & Direct:</span> You
+                      <span className="font-bold text-[#070B14]">Confidential & Direct:</span> You
                       speak directly with senior practitioners, not junior sales representatives.
                     </div>
                   </li>
@@ -88,7 +88,7 @@ export default function BookMeetingPage() {
 
                 <div className="pt-4 border-t border-slate-200 text-xs text-slate-500 space-y-2">
                   <div className="flex items-center gap-2">
-                    <Clock size={14} className="text-[#1D68BD]" />
+                    <Clock size={14} className="text-[#C59B27]" />
                     <span>Duration: 45 minutes · Gulf Standard Time (GST)</span>
                   </div>
                   <div className="flex items-center gap-2">
@@ -99,8 +99,8 @@ export default function BookMeetingPage() {
               </div>
 
               {/* Office Callout */}
-              <div className="p-8 rounded-3xl bg-[#0B1730] text-white space-y-4 shadow-sm">
-                <div className="text-xs font-bold uppercase tracking-wider text-[#38BDF8]">
+              <div className="p-8 rounded-3xl bg-[#070B14] border border-[#C59B27]/25 text-white space-y-4 shadow-lg">
+                <div className="text-xs font-bold uppercase tracking-wider text-[#D4AF37]">
                   In-Person Consultations in Dubai
                 </div>
                 <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
@@ -110,7 +110,7 @@ export default function BookMeetingPage() {
                 <div className="pt-2 flex items-center justify-between">
                   <a
                     href="tel:+971524405785"
-                    className="text-xs font-bold text-white hover:text-[#38BDF8] underline"
+                    className="text-xs font-bold text-white hover:text-[#D4AF37] underline transition-colors"
                   >
                     Hotline: +971 52 440 5785
                   </a>
@@ -118,10 +118,10 @@ export default function BookMeetingPage() {
                     href="https://wa.me/971524405785?text=Hello%20Bird%20Hills%20Tech%2C%20I%20would%20like%20to%20schedule%20a%20meeting."
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs font-bold text-[#25D366] hover:underline inline-flex items-center gap-1"
+                    className="text-xs font-bold text-[#25D366] hover:text-[#1ebd59] inline-flex items-center gap-1.5 transition-colors"
                   >
-                    <MessageCircle size={14} />
-                    WhatsApp
+                    <MessageCircle size={15} />
+                    WhatsApp Direct
                   </a>
                 </div>
               </div>

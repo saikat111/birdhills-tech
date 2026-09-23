@@ -154,7 +154,7 @@ export default async function PricingPage() {
   return (
     <div className="flex flex-col min-h-screen pt-24">
       {/* 1. HERO SECTION WITH DUBAI SKYLINE */}
-      <section className="relative py-24 md:py-32 bg-[#070D1B] text-white overflow-hidden">
+      <section className="relative py-24 md:py-32 bg-[#070B14] text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=2000&q=90"
@@ -164,13 +164,13 @@ export default async function PricingPage() {
             sizes="100vw"
             className="object-cover object-center scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#070D1B]/95 via-[#070D1B]/75 to-[#070D1B]/40" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#070D1B]/90 via-transparent to-[#070D1B]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#070B14]/95 via-[#070B14]/80 to-[#070B14]/50" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#070B14]/90 via-transparent to-[#070B14]" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl space-y-6">
-            <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-widest text-[#38BDF8] uppercase bg-white/10 border border-white/15 backdrop-blur-md">
+            <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-widest text-[#D4AF37] uppercase bg-[#C59B27]/15 border border-[#C59B27]/30 backdrop-blur-md">
               TRANSPARENT COMMERCIAL PRICING
             </span>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.12]">
@@ -184,37 +184,37 @@ export default async function PricingPage() {
       </section>
 
       {/* 2. THREE CORE ENGAGEMENT MODELS */}
-      <section className="py-16 bg-white border-b border-[#E4E7EC]">
+      <section className="py-16 bg-[#FAF8F5] border-b border-[#E4E7EC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-6 rounded-2xl bg-[#F7F9FC] border border-[#E4E7EC] space-y-2">
-              <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#1D68BD]">
+            <div className="p-6 rounded-2xl bg-white border border-[#E4E7EC] hover:border-[#C59B27]/40 shadow-sm transition-all space-y-2">
+              <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#C59B27]">
                 <Zap size={15} />
                 Fixed-Scope Sprints
               </div>
-              <h3 className="text-base font-bold text-[#0B1730]">Defined Scope & Fixed Budget</h3>
+              <h3 className="text-base font-bold text-[#070B14]">Defined Scope & Fixed Budget</h3>
               <p className="text-xs text-[#667085] leading-relaxed">
                 Ideal for websites, portals, and defined product launches with agreed milestones and delivery deadlines.
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-[#F7F9FC] border border-[#E4E7EC] space-y-2">
-              <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#1D68BD]">
+            <div className="p-6 rounded-2xl bg-white border border-[#E4E7EC] hover:border-[#C59B27]/40 shadow-sm transition-all space-y-2">
+              <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#C59B27]">
                 <Clock size={15} />
                 Dedicated Product Squad
               </div>
-              <h3 className="text-base font-bold text-[#0B1730]">Agile Bi-Weekly Sprints</h3>
+              <h3 className="text-base font-bold text-[#070B14]">Agile Bi-Weekly Sprints</h3>
               <p className="text-xs text-[#667085] leading-relaxed">
                 Full-stack engineers, UI/UX designers, and QA dedicated exclusively to your continuous roadmap and features.
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-[#F7F9FC] border border-[#E4E7EC] space-y-2">
-              <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#1D68BD]">
+            <div className="p-6 rounded-2xl bg-white border border-[#E4E7EC] hover:border-[#C59B27]/40 shadow-sm transition-all space-y-2">
+              <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#C59B27]">
                 <ShieldCheck size={15} />
                 Strategic Growth Retainer
               </div>
-              <h3 className="text-base font-bold text-[#0B1730]">Ongoing Pipeline Scaling</h3>
+              <h3 className="text-base font-bold text-[#070B14]">Ongoing Pipeline Scaling</h3>
               <p className="text-xs text-[#667085] leading-relaxed">
                 Continuous performance marketing, technical SEO, and conversion optimization driving commercial revenue.
               </p>
@@ -224,13 +224,13 @@ export default async function PricingPage() {
       </section>
 
       {/* 3. PRIMARY PRICING TIERS GRID */}
-      <section className="py-24 bg-[#F7F9FC]" id="packages">
+      <section className="py-24 bg-white" id="packages">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-            <span className="text-xs font-bold tracking-wider uppercase text-[#1D68BD]">
+            <span className="text-xs font-bold tracking-wider uppercase text-[#C59B27]">
               CURATED PRODUCTION PACKAGES
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B1730] tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#070B14] tracking-tight">
               Transparent Packages Built for Execution
             </h2>
             <p className="text-sm text-[#667085]">
@@ -258,12 +258,12 @@ export default async function PricingPage() {
                   key={tier.slug}
                   className={`relative rounded-3xl p-8 transition-all duration-300 flex flex-col justify-between ${
                     tier.popular
-                      ? "bg-white border-2 border-[#1D68BD] shadow-2xl scale-[1.02] z-10 ring-4 ring-[#1D68BD]/10"
-                      : "bg-white border border-[#E4E7EC] shadow-sm hover:shadow-xl hover:border-[#1D68BD]/40"
+                      ? "bg-white border-2 border-[#C59B27] shadow-2xl scale-[1.02] z-10 ring-4 ring-[#C59B27]/15"
+                      : "bg-[#FAF8F5] border border-[#E4E7EC] shadow-sm hover:shadow-xl hover:border-[#C59B27]/40"
                   }`}
                 >
                   {tier.popular && (
-                    <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-[#1D68BD] text-white text-[11px] font-extrabold uppercase tracking-wider shadow-sm">
+                    <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-[#D4AF37] via-[#C59B27] to-[#B38728] text-white text-[11px] font-extrabold uppercase tracking-wider shadow-md shadow-[#C59B27]/25">
                       {tier.badge || "Most Popular in Dubai"}
                     </div>
                   )}
@@ -274,22 +274,22 @@ export default async function PricingPage() {
                       <div className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">
                         {tier.badge && !tier.popular ? tier.badge : "Package"}
                       </div>
-                      <h3 className="text-2xl font-extrabold text-[#0B1730] mb-2">{tier.name}</h3>
+                      <h3 className="text-2xl font-extrabold text-[#070B14] mb-2">{tier.name}</h3>
                       <p className="text-xs text-[#667085] leading-relaxed">{tier.description}</p>
                     </div>
 
                     {/* Price Tag */}
-                    <div className="p-4 rounded-2xl bg-[#F7F9FC] border border-slate-100 mb-6 flex items-baseline justify-between">
+                    <div className="p-4 rounded-2xl bg-white border border-slate-200/80 mb-6 flex items-baseline justify-between shadow-2xs">
                       <div>
-                        <div className="text-3xl font-black text-[#0B1730] tracking-tight">
+                        <div className="text-3xl font-black text-[#070B14] tracking-tight">
                           {displayPrice}
                         </div>
-                        <span className="text-[10px] text-slate-400">
+                        <span className="text-[10px] text-slate-400 font-medium">
                           {tier.billingType === "monthly" ? "Per Month (Billed Monthly)" : "Fixed Project Investment"}
                         </span>
                       </div>
                       {tier.deliveryTime && (
-                        <span className="text-[10px] font-bold text-[#1D68BD] bg-[#EBF3FE] px-2 py-1 rounded-lg">
+                        <span className="text-[10px] font-bold text-[#B38728] bg-[#C59B27]/15 px-2.5 py-1 rounded-lg">
                           {tier.deliveryTime}
                         </span>
                       )}
@@ -301,8 +301,8 @@ export default async function PricingPage() {
                         Included Deliverables:
                       </div>
                       {features.map((feat) => (
-                        <div key={feat} className="flex items-start gap-2.5 text-xs text-[#0B1730]">
-                          <CheckCircle2 size={15} className="text-[#1D68BD] shrink-0 mt-0.5" />
+                        <div key={feat} className="flex items-start gap-2.5 text-xs text-[#070B14]">
+                          <CheckCircle2 size={15} className="text-[#C59B27] shrink-0 mt-0.5" />
                           <span className="leading-snug">{feat}</span>
                         </div>
                       ))}
@@ -310,13 +310,13 @@ export default async function PricingPage() {
                   </div>
 
                   {/* Dual Action Buttons */}
-                  <div className="pt-6 border-t border-slate-100 space-y-2.5">
+                  <div className="pt-6 border-t border-slate-200/80 space-y-2.5">
                     <Link
                       href={`/book-a-meeting?service=${encodeURIComponent(tier.name)}`}
                       className={`w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs font-bold transition-all shadow-xs ${
                         tier.popular
-                          ? "bg-[#1D68BD] hover:bg-[#155196] text-white shadow-md"
-                          : "bg-[#0B1730] hover:bg-[#15254d] text-white"
+                          ? "bg-gradient-to-r from-[#D4AF37] via-[#C59B27] to-[#B38728] hover:brightness-105 text-white shadow-md shadow-[#C59B27]/25"
+                          : "bg-[#070B14] hover:bg-[#1a2336] text-white"
                       }`}
                     >
                       <Calendar size={14} />
@@ -341,13 +341,13 @@ export default async function PricingPage() {
       </section>
 
       {/* 4. ONGOING RETAINERS & MAINTENANCE ADD-ONS */}
-      <section className="py-24 bg-white border-t border-[#E4E7EC]">
+      <section className="py-24 bg-[#FAF8F5] border-t border-[#E4E7EC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-16">
-            <span className="text-xs font-bold tracking-wider uppercase text-[#1D68BD]">
+            <span className="text-xs font-bold tracking-wider uppercase text-[#C59B27]">
               LONG-TERM PARTNERSHIPS
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B1730] tracking-tight mt-2">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#070B14] tracking-tight mt-2">
               Monthly Retainers & SLA Guarantees
             </h2>
             <p className="text-sm text-[#667085] mt-2">
@@ -359,11 +359,11 @@ export default async function PricingPage() {
             {retainers.map((ret) => (
               <div
                 key={ret.title}
-                className="p-8 rounded-3xl bg-[#F7F9FC] border border-[#E4E7EC] hover:shadow-lg transition-all flex flex-col justify-between"
+                className="p-8 rounded-3xl bg-white border border-[#E4E7EC] hover:border-[#C59B27]/30 hover:shadow-lg transition-all flex flex-col justify-between"
               >
                 <div>
-                  <h3 className="text-lg font-bold text-[#0B1730] mb-2">{ret.title}</h3>
-                  <div className="text-sm font-extrabold text-[#1D68BD] mb-4">{ret.price}</div>
+                  <h3 className="text-lg font-bold text-[#070B14] mb-2">{ret.title}</h3>
+                  <div className="text-sm font-extrabold text-[#C59B27] mb-4">{ret.price}</div>
                   <p className="text-xs text-[#667085] leading-relaxed">{ret.desc}</p>
                 </div>
 
@@ -374,7 +374,7 @@ export default async function PricingPage() {
                     )}%20retainer.`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#1D68BD] hover:underline"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#C59B27] hover:underline"
                   >
                     Inquire via WhatsApp <ArrowRight size={13} />
                   </a>
@@ -386,13 +386,13 @@ export default async function PricingPage() {
       </section>
 
       {/* 5. PRICING FAQS */}
-      <section className="py-24 bg-[#F7F9FC] border-t border-[#E4E7EC]">
+      <section className="py-24 bg-white border-t border-[#E4E7EC]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 space-y-2">
-            <span className="text-xs font-bold tracking-wider uppercase text-[#1D68BD]">
+            <span className="text-xs font-bold tracking-wider uppercase text-[#C59B27]">
               COMMERCIAL CLARITY
             </span>
-            <h2 className="text-3xl font-extrabold text-[#0B1730] tracking-tight">
+            <h2 className="text-3xl font-extrabold text-[#070B14] tracking-tight">
               Frequently Asked Pricing Questions
             </h2>
           </div>
@@ -401,10 +401,10 @@ export default async function PricingPage() {
             {pricingFaqs.map((faq) => (
               <div
                 key={faq.q}
-                className="p-6 rounded-2xl bg-white border border-[#E4E7EC] shadow-2xs space-y-2"
+                className="p-6 rounded-2xl bg-[#FAF8F5] border border-[#E4E7EC] shadow-2xs space-y-2"
               >
-                <h3 className="text-base font-bold text-[#0B1730] flex items-center gap-2">
-                  <HelpCircle size={17} className="text-[#1D68BD] shrink-0" />
+                <h3 className="text-base font-bold text-[#070B14] flex items-center gap-2">
+                  <HelpCircle size={17} className="text-[#C59B27] shrink-0" />
                   {faq.q}
                 </h3>
                 <p className="text-xs text-[#475467] leading-relaxed pl-6">{faq.a}</p>

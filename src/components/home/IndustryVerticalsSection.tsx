@@ -58,10 +58,10 @@ export function IndustryVerticalsSection() {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="max-w-3xl">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold tracking-widest text-[#1D68BD] uppercase bg-[#EBF3FE] border border-[#BFDBFE] mb-3">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold tracking-widest text-[#B38728] uppercase bg-[#C59B27]/10 border border-[#C59B27]/30 mb-3">
               REGIONAL INDUSTRY VERTICALS
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0B1730] tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#070B14] tracking-tight leading-tight">
               Tailored solutions for Dubai’s premier sectors.
             </h2>
             <p className="text-base sm:text-lg text-[#667085] mt-4">
@@ -71,7 +71,7 @@ export function IndustryVerticalsSection() {
 
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#1D68BD] text-white text-xs font-bold shadow-sm hover:bg-[#155196] transition-colors shrink-0"
+            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#D4AF37] via-[#C59B27] to-[#B38728] hover:brightness-105 text-white text-xs font-bold shadow-md shadow-[#C59B27]/25 transition-all shrink-0"
           >
             Discuss Your Industry Scope
             <ArrowRight size={14} />
@@ -85,7 +85,7 @@ export function IndustryVerticalsSection() {
             return (
               <div
                 key={ind.title}
-                className={`group bg-[#F7F9FC] rounded-3xl border border-[#E4E7EC] overflow-hidden hover:shadow-xl hover:border-[#1D68BD]/40 transition-all duration-300 flex flex-col justify-between ${
+                className={`group bg-[#FAF8F5] rounded-3xl border border-slate-200/80 overflow-hidden hover:shadow-xl hover:border-[#C59B27]/50 transition-all duration-300 flex flex-col justify-between ${
                   idx === 0 ? "md:col-span-2 lg:col-span-2" : ""
                 }`}
               >
@@ -102,15 +102,15 @@ export function IndustryVerticalsSection() {
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B1730]/90 via-[#0B1730]/30 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#070B14]/90 via-[#070B14]/30 to-transparent" />
 
                   {/* Overlaid Badges */}
                   <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-white/90 backdrop-blur-md text-[#0B1730] shadow-sm">
-                      <Icon size={12} className="text-[#1D68BD]" />
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-white/90 backdrop-blur-md text-[#070B14] shadow-sm">
+                      <Icon size={12} className="text-[#C59B27]" />
                       {ind.market}
                     </span>
-                    <span className="px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-[#1D68BD] text-white shadow-sm">
+                    <span className="px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-gradient-to-r from-[#D4AF37] to-[#B38728] text-white shadow-sm">
                       {ind.stat}
                     </span>
                   </div>
@@ -131,7 +131,7 @@ export function IndustryVerticalsSection() {
                   <div className="pt-4 border-t border-slate-200/80 flex items-center justify-between">
                     <Link
                       href="/contact"
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#1D68BD] group-hover:underline"
+                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#C59B27] group-hover:underline"
                     >
                       Inquire for {ind.title.split("&")[0]}
                       <ArrowRight size={13} className="transition-transform group-hover:translate-x-1" />

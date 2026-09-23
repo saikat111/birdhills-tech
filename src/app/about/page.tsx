@@ -115,7 +115,7 @@ export default function AboutPage() {
   return (
     <div className="flex flex-col min-h-screen pt-24">
       {/* 1. VISUAL HERO WITH DUBAI CORPORATE BACKGROUND */}
-      <section className="relative py-24 md:py-32 bg-[#070D1B] text-white overflow-hidden">
+      <section className="relative py-24 md:py-32 bg-[#070B14] text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2000&q=90"
@@ -125,13 +125,13 @@ export default function AboutPage() {
             sizes="100vw"
             className="object-cover object-center scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#070D1B]/95 via-[#070D1B]/75 to-[#070D1B]/40" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#070D1B]/90 via-transparent to-[#070D1B]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#070B14]/95 via-[#070B14]/80 to-[#070B14]/50" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#070B14]/90 via-transparent to-[#070B14]" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl space-y-6">
-            <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-widest text-[#38BDF8] uppercase bg-white/10 border border-white/15 backdrop-blur-md">
+            <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-widest text-[#D4AF37] uppercase bg-[#C59B27]/15 border border-[#C59B27]/30 backdrop-blur-md">
               ABOUT BIRD HILLS TECH
             </span>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.12]">
@@ -149,10 +149,10 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-6 space-y-6">
-              <div className="text-xs font-bold tracking-widest text-[#1D68BD] uppercase">
+              <div className="text-xs font-bold tracking-widest text-[#C59B27] uppercase">
                 OUR PHILOSOPHY
               </div>
-              <blockquote className="text-2xl sm:text-3xl font-bold text-[#0B1730] leading-snug border-l-4 border-[#1D68BD] pl-6 italic">
+              <blockquote className="text-2xl sm:text-3xl font-bold text-[#070B14] leading-snug border-l-4 border-[#C59B27] pl-6 italic">
                 &ldquo;Technology should not simply exist. It should create commercial momentum for the business behind it.&rdquo;
               </blockquote>
               <p className="text-base text-[#667085] leading-relaxed">
@@ -172,12 +172,12 @@ export default function AboutPage() {
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0B1730]/80 via-transparent to-transparent" />
-                <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-white/95 backdrop-blur-md shadow-lg border border-white/50 text-left">
-                  <div className="text-xs font-bold uppercase tracking-wider text-[#1D68BD]">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#070B14]/80 via-transparent to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-white/95 backdrop-blur-md shadow-lg border border-[#C59B27]/30 text-left">
+                  <div className="text-xs font-bold uppercase tracking-wider text-[#C59B27]">
                     DUBAI CORPORATE PRESENCE
                   </div>
-                  <div className="text-sm font-extrabold text-[#0B1730]">
+                  <div className="text-sm font-extrabold text-[#070B14]">
                     Stone Building · Al Baraha · Deira, UAE
                   </div>
                   <div className="text-xs text-[#667085] mt-0.5">
@@ -191,13 +191,13 @@ export default function AboutPage() {
       </section>
 
       {/* 3. THE COMBINATION ADVANTAGE (TECH × CREATIVE × GROWTH) */}
-      <section className="py-24 bg-[#F7F9FC] border-t border-[#E4E7EC]">
+      <section className="py-24 bg-[#FAF8F5] border-t border-[#E4E7EC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-16">
-            <span className="text-xs font-bold tracking-wider uppercase text-[#1D68BD]">
+            <span className="text-xs font-bold tracking-wider uppercase text-[#C59B27]">
               THE THREE CORNERSTONES
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B1730] tracking-tight mt-2">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#070B14] tracking-tight mt-2">
               Technology × Creative × Growth
             </h2>
             <p className="text-base text-[#667085] mt-3">
@@ -209,19 +209,19 @@ export default function AboutPage() {
             {capabilities.map((c) => (
               <div
                 key={c.domain}
-                className="bg-white rounded-3xl p-8 border border-[#E4E7EC] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+                className="bg-white rounded-3xl p-8 border border-[#E4E7EC] shadow-sm hover:border-[#C59B27]/40 hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
-                  <div className="w-12 h-12 rounded-2xl bg-[#EBF3FE] text-[#1D68BD] font-bold text-lg flex items-center justify-center mb-6">
+                  <div className="w-12 h-12 rounded-2xl bg-[#C59B27]/10 text-[#C59B27] font-bold text-lg flex items-center justify-center mb-6">
                     {c.domain.charAt(0)}
                   </div>
-                  <h3 className="text-2xl font-bold text-[#0B1730] mb-2">{c.domain}</h3>
+                  <h3 className="text-2xl font-bold text-[#070B14] mb-2">{c.domain}</h3>
                   <p className="text-xs text-[#667085] leading-relaxed mb-6">{c.focus}</p>
 
                   <div className="space-y-2.5 pt-4 border-t border-slate-100">
                     {c.items.map((item) => (
-                      <div key={item} className="flex items-start gap-2 text-xs text-[#0B1730]">
-                        <CheckCircle2 size={13} className="text-[#1D68BD] shrink-0 mt-0.5" />
+                      <div key={item} className="flex items-start gap-2 text-xs text-[#070B14]">
+                        <CheckCircle2 size={13} className="text-[#C59B27] shrink-0 mt-0.5" />
                         <span>{item}</span>
                       </div>
                     ))}
@@ -233,27 +233,27 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 4. EXPANSION TIMELINE & MILESTONES (NEW SECTION) */}
+      {/* 4. EXPANSION TIMELINE & MILESTONES */}
       <section className="py-24 bg-white border-t border-[#E4E7EC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-16">
-            <span className="text-xs font-bold tracking-wider uppercase text-[#1D68BD]">
+            <span className="text-xs font-bold tracking-wider uppercase text-[#C59B27]">
               OUR JOURNEY & TRAJECTORY
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B1730] tracking-tight mt-2">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#070B14] tracking-tight mt-2">
               Milestones of Growth in the UAE
             </h2>
           </div>
 
-          <div className="relative border-l-2 border-[#1D68BD]/30 ml-4 sm:ml-8 space-y-12 pl-6 sm:pl-10">
+          <div className="relative border-l-2 border-[#C59B27]/40 ml-4 sm:ml-8 space-y-12 pl-6 sm:pl-10">
             {milestones.map((m) => (
               <div key={m.year} className="relative group">
-                <div className="absolute -left-[31px] sm:-left-[47px] top-1.5 w-6 h-6 rounded-full bg-white border-4 border-[#1D68BD] group-hover:scale-125 transition-transform" />
-                <div className="bg-[#F7F9FC] rounded-2xl p-6 border border-[#E4E7EC] hover:shadow-md transition-shadow">
-                  <span className="inline-block px-3 py-1 rounded-full text-xs font-bold font-mono bg-[#EBF3FE] text-[#1D68BD] mb-2">
+                <div className="absolute -left-[31px] sm:-left-[47px] top-1.5 w-6 h-6 rounded-full bg-white border-4 border-[#C59B27] group-hover:scale-125 transition-transform" />
+                <div className="bg-[#FAF8F5] rounded-2xl p-6 border border-[#E4E7EC] hover:border-[#C59B27]/30 hover:shadow-md transition-all">
+                  <span className="inline-block px-3 py-1 rounded-full text-xs font-bold font-mono bg-[#C59B27]/15 text-[#B38728] mb-2">
                     {m.year}
                   </span>
-                  <h3 className="text-lg font-bold text-[#0B1730]">{m.title}</h3>
+                  <h3 className="text-lg font-bold text-[#070B14]">{m.title}</h3>
                   <p className="text-xs sm:text-sm text-[#667085] mt-1.5 leading-relaxed">
                     {m.desc}
                   </p>
@@ -264,14 +264,14 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 5. STUDIO CULTURE & EXECUTION (NEW PHOTO GRID SECTION) */}
-      <section className="py-24 bg-[#F7F9FC] border-t border-[#E4E7EC]">
+      {/* 5. STUDIO CULTURE & EXECUTION */}
+      <section className="py-24 bg-[#FAF8F5] border-t border-[#E4E7EC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-16">
-            <span className="text-xs font-bold tracking-wider uppercase text-[#1D68BD]">
+            <span className="text-xs font-bold tracking-wider uppercase text-[#C59B27]">
               INSIDE BIRD HILLS TECH
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B1730] tracking-tight mt-2">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#070B14] tracking-tight mt-2">
               Our Dubai Studio & Engineering Practice
             </h2>
           </div>
@@ -289,7 +289,7 @@ export default function AboutPage() {
                   sizes="(max-width: 768px) 100vw, 25vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0B1730]/90 via-[#0B1730]/30 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#070B14]/90 via-[#070B14]/30 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4">
                   <div className="text-xs font-bold text-white">{s.title}</div>
                 </div>
@@ -302,9 +302,9 @@ export default function AboutPage() {
       {/* 6. DUBAI PRESENCE & CONTACT */}
       <section className="py-20 bg-white border-t border-[#E4E7EC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="p-8 sm:p-12 rounded-3xl bg-[#0B1730] text-white flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="p-8 sm:p-12 rounded-3xl bg-[#070B14] border border-[#C59B27]/25 text-white flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl">
             <div className="space-y-3">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#38BDF8]">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#D4AF37]">
                 IN-PERSON CONSULTATIONS IN DUBAI
               </span>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
@@ -317,7 +317,7 @@ export default function AboutPage() {
             <div className="flex items-center gap-3 shrink-0">
               <Link
                 href="/book-a-meeting"
-                className="px-6 py-3 rounded-xl bg-[#1D68BD] hover:bg-[#155196] text-white text-xs font-bold transition-colors shadow-sm"
+                className="px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#D4AF37] via-[#C59B27] to-[#B38728] hover:brightness-105 text-white text-xs font-bold transition-all shadow-md shadow-[#C59B27]/20"
               >
                 Book a Meeting
               </Link>
@@ -325,7 +325,7 @@ export default function AboutPage() {
                 href="https://wa.me/971524405785?text=Hello%20Bird%20Hills%20Tech%2C%20I%20would%20like%20to%20schedule%20an%20office%20visit."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-bold border border-white/20 transition-colors"
+                className="px-6 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#1ebd59] text-white text-xs font-bold transition-colors shadow-sm"
               >
                 WhatsApp Us
               </a>

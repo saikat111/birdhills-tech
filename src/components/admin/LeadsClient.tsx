@@ -135,7 +135,7 @@ export function LeadsClient({ initialLeads }: LeadsClientProps) {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search by name, company, email, service..."
-            className="w-full text-xs bg-[#F7F9FC] border border-[#E4E7EC] rounded-xl pl-10 pr-4 py-2.5 text-[#101828] focus:outline-none focus:border-[#1D68BD]"
+            className="w-full text-xs bg-[#F7F9FC] border border-[#E4E7EC] rounded-xl pl-10 pr-4 py-2.5 text-[#101828] focus:outline-none focus:border-[#C59B27]"
           />
         </div>
 
@@ -196,7 +196,7 @@ export function LeadsClient({ initialLeads }: LeadsClientProps) {
                   onClick={() => openDrawer(lead)}
                 >
                   <td className="py-3 px-4">
-                    <div className="font-bold text-[#0B1730]">{lead.name}</div>
+                    <div className="font-bold text-[#070B14]">{lead.name}</div>
                     <div className="text-[#667085] text-[11px]">
                       {lead.company ? `${lead.company} · ` : ""}
                       {lead.email}
@@ -207,7 +207,7 @@ export function LeadsClient({ initialLeads }: LeadsClientProps) {
                       {lead.service || "General Inquiry"}
                     </div>
                     {lead.budget && (
-                      <div className="text-[11px] text-[#1D68BD] font-semibold">
+                      <div className="text-[11px] text-[#C59B27] font-semibold">
                         {lead.budget}
                       </div>
                     )}
@@ -276,10 +276,10 @@ export function LeadsClient({ initialLeads }: LeadsClientProps) {
               {/* Header */}
               <div className="flex items-center justify-between pb-4 border-b border-slate-100">
                 <div>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#1D68BD] bg-[#EBF3FE] px-2 py-0.5 rounded">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#C59B27] bg-[#FAF5EB] px-2 py-0.5 rounded">
                     Lead File · {selectedLead.source}
                   </span>
-                  <h3 className="text-xl font-extrabold text-[#0B1730] mt-1.5">
+                  <h3 className="text-xl font-extrabold text-[#070B14] mt-1.5">
                     {selectedLead.name}
                   </h3>
                 </div>
@@ -300,7 +300,7 @@ export function LeadsClient({ initialLeads }: LeadsClientProps) {
                 <select
                   value={selectedLead.status}
                   onChange={(e) => handleStatusChange(selectedLead.id, e.target.value)}
-                  className="w-full text-xs font-bold bg-[#F7F9FC] border border-[#E4E7EC] rounded-xl px-3 py-2.5 text-[#0B1730]"
+                  className="w-full text-xs font-bold bg-[#F7F9FC] border border-[#E4E7EC] rounded-xl px-3 py-2.5 text-[#070B14]"
                 >
                   {statusOptions.map((st) => (
                     <option key={st} value={st}>
@@ -313,8 +313,8 @@ export function LeadsClient({ initialLeads }: LeadsClientProps) {
               {/* Contact Information */}
               <div className="bg-[#F7F9FC] p-4 rounded-xl border border-[#E4E7EC] space-y-3 text-xs">
                 <div className="flex items-center gap-2">
-                  <Mail size={14} className="text-[#1D68BD]" />
-                  <a href={`mailto:${selectedLead.email}`} className="text-[#1D68BD] font-semibold underline">
+                  <Mail size={14} className="text-[#C59B27]" />
+                  <a href={`mailto:${selectedLead.email}`} className="text-[#C59B27] font-semibold underline">
                     {selectedLead.email}
                   </a>
                 </div>
@@ -354,13 +354,13 @@ export function LeadsClient({ initialLeads }: LeadsClientProps) {
                   value={editingNotes}
                   onChange={(e) => setEditingNotes(e.target.value)}
                   placeholder="Record call summary, meeting outcomes, or next follow-up dates..."
-                  className="w-full text-xs bg-white border border-[#E4E7EC] rounded-xl p-3 text-[#101828] focus:outline-none focus:border-[#1D68BD]"
+                  className="w-full text-xs bg-white border border-[#E4E7EC] rounded-xl p-3 text-[#101828] focus:outline-none focus:border-[#C59B27]"
                 />
                 <button
                   type="button"
                   onClick={() => handleSaveNotes(selectedLead.id)}
                   disabled={isUpdating}
-                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#0B1730] text-white text-xs font-semibold hover:bg-[#152342] transition-colors"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#070B14] text-white text-xs font-semibold hover:bg-[#111622] transition-colors"
                 >
                   <Save size={13} />
                   {isUpdating ? "Saving Notes..." : "Save Internal Notes"}

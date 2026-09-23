@@ -132,13 +132,13 @@ export function BlogCategoriesClient({ initialCategories }: BlogCategoriesClient
           <div className="flex items-center gap-2 mb-1">
             <Link
               href="/admin/blog"
-              className="text-xs text-[#1D68BD] hover:underline inline-flex items-center gap-1 font-semibold"
+              className="text-xs text-[#C59B27] hover:underline inline-flex items-center gap-1 font-semibold"
             >
               <ArrowLeft size={13} />
               Back to Blog Articles
             </Link>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-[#0B1730]">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-[#070B14]">
             Blog Categories
           </h1>
           <p className="text-xs sm:text-sm text-[#667085] mt-1">
@@ -148,7 +148,7 @@ export function BlogCategoriesClient({ initialCategories }: BlogCategoriesClient
         <button
           type="button"
           onClick={openCreateModal}
-          className="px-4 py-2 bg-[#1D68BD] hover:bg-[#155196] text-white text-xs font-semibold rounded-xl shadow-xs transition-colors inline-flex items-center gap-1.5"
+          className="px-4 py-2 bg-gradient-to-r from-[#D4AF37] via-[#C59B27] to-[#B38728] hover:brightness-105 text-white text-xs font-bold rounded-xl shadow-md shadow-[#C59B27]/25 transition-all inline-flex items-center gap-1.5"
         >
           <Plus size={15} />
           Add Category
@@ -160,18 +160,18 @@ export function BlogCategoriesClient({ initialCategories }: BlogCategoriesClient
         {categories.map((cat) => (
           <div
             key={cat.id}
-            className="bg-white p-5 rounded-2xl border border-[#E4E7EC] shadow-2xs hover:shadow-md transition-all flex flex-col justify-between"
+            className="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-2xs hover:border-[#C59B27]/40 hover:shadow-md transition-all flex flex-col justify-between"
           >
             <div>
               <div className="flex items-start justify-between gap-2 mb-3">
-                <div className="w-10 h-10 rounded-xl bg-[#EBF3FE] text-[#1D68BD] flex items-center justify-center">
+                <div className="w-10 h-10 rounded-xl bg-[#C59B27]/10 text-[#C59B27] flex items-center justify-center">
                   <FolderOpen size={20} />
                 </div>
                 <div className="flex items-center gap-1">
                   <button
                     type="button"
                     onClick={() => openEditModal(cat)}
-                    className="p-1.5 text-slate-400 hover:text-[#1D68BD] hover:bg-slate-100 rounded-lg transition-colors"
+                    className="p-1.5 text-slate-400 hover:text-[#C59B27] hover:bg-slate-100 rounded-lg transition-colors"
                     title="Edit"
                   >
                     <Edit2 size={14} />
@@ -187,7 +187,7 @@ export function BlogCategoriesClient({ initialCategories }: BlogCategoriesClient
                 </div>
               </div>
 
-              <h3 className="text-base font-bold text-[#0B1730] mb-1">{cat.name}</h3>
+              <h3 className="text-base font-bold text-[#070B14] mb-1">{cat.name}</h3>
               <p className="text-xs font-mono text-slate-400 mb-2">/category/{cat.slug}</p>
               <p className="text-xs text-[#667085] line-clamp-2">
                 {cat.description || "No description provided."}
@@ -196,13 +196,13 @@ export function BlogCategoriesClient({ initialCategories }: BlogCategoriesClient
 
             <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
               <span className="flex items-center gap-1.5 font-medium">
-                <FileText size={13} className="text-[#1D68BD]" />
+                <FileText size={13} className="text-[#C59B27]" />
                 {cat._count?.posts ?? 0} Articles
               </span>
               <Link
                 href={`/category/${cat.slug}`}
                 target="_blank"
-                className="text-xs font-semibold text-[#1D68BD] hover:underline"
+                className="text-xs font-semibold text-[#C59B27] hover:underline"
               >
                 View on Site →
               </Link>
@@ -213,10 +213,10 @@ export function BlogCategoriesClient({ initialCategories }: BlogCategoriesClient
 
       {/* Modal */}
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4 backdrop-blur-2xs">
-          <div className="bg-white rounded-2xl w-full max-w-lg shadow-2xl overflow-hidden">
+        <div className="fixed inset-0 z-50 bg-[#070B14]/80 flex items-center justify-center p-4 backdrop-blur-2xs">
+          <div className="bg-white rounded-2xl w-full max-w-lg shadow-2xl overflow-hidden border border-slate-200">
             <div className="p-5 border-b border-[#E4E7EC] flex items-center justify-between">
-              <h3 className="text-base font-bold text-[#0B1730]">
+              <h3 className="text-base font-bold text-[#070B14]">
                 {editingCat ? "Edit Category" : "Create New Category"}
               </h3>
               <button
@@ -246,7 +246,7 @@ export function BlogCategoriesClient({ initialCategories }: BlogCategoriesClient
                   value={form.name}
                   onChange={(e) => handleNameChange(e.target.value)}
                   placeholder="e.g. Artificial Intelligence"
-                  className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#0B1730] focus:border-[#1D68BD] focus:outline-none"
+                  className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#070B14] focus:border-[#C59B27] focus:outline-none"
                 />
               </div>
 
@@ -260,7 +260,7 @@ export function BlogCategoriesClient({ initialCategories }: BlogCategoriesClient
                   value={form.slug}
                   onChange={(e) => setForm({ ...form, slug: e.target.value })}
                   placeholder="artificial-intelligence"
-                  className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs font-mono text-[#0B1730] focus:border-[#1D68BD] focus:outline-none"
+                  className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs font-mono text-[#070B14] focus:border-[#C59B27] focus:outline-none"
                 />
               </div>
 
@@ -273,7 +273,7 @@ export function BlogCategoriesClient({ initialCategories }: BlogCategoriesClient
                   value={form.description}
                   onChange={(e) => setForm({ ...form, description: e.target.value })}
                   placeholder="Brief synopsis for the category archive header..."
-                  className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#0B1730] focus:border-[#1D68BD] focus:outline-none"
+                  className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#070B14] focus:border-[#C59B27] focus:outline-none"
                 />
               </div>
 
@@ -281,14 +281,14 @@ export function BlogCategoriesClient({ initialCategories }: BlogCategoriesClient
                 <button
                   type="button"
                   onClick={() => setIsModalOpen(false)}
-                  className="px-4 py-2 border border-[#E4E7EC] hover:bg-[#F7F9FC] text-slate-700 text-xs font-semibold rounded-xl transition-colors"
+                  className="px-4 py-2 border border-[#E4E7EC] hover:bg-[#FAF8F5] text-slate-700 text-xs font-semibold rounded-xl transition-colors"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="px-5 py-2 bg-[#1D68BD] hover:bg-[#155196] text-white text-xs font-semibold rounded-xl shadow-xs transition-colors flex items-center gap-1.5 disabled:opacity-50"
+                  className="px-5 py-2 bg-gradient-to-r from-[#D4AF37] via-[#C59B27] to-[#B38728] hover:brightness-105 text-white text-xs font-bold rounded-xl shadow-md shadow-[#C59B27]/25 transition-all flex items-center gap-1.5 disabled:opacity-50"
                 >
                   <Save size={14} />
                   {isSubmitting ? "Saving..." : editingCat ? "Update Category" : "Create Category"}

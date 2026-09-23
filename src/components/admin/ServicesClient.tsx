@@ -180,7 +180,7 @@ export function ServicesClient({ initialServices }: ServicesClientProps) {
         <button
           type="button"
           onClick={openCreateModal}
-          className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#1D68BD] hover:bg-[#155196] text-white text-xs font-bold rounded-xl shadow-xs transition-colors"
+          className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#C59B27] hover:bg-[#B38728] text-white text-xs font-bold rounded-xl shadow-xs transition-colors"
         >
           <Plus size={15} />
           Add New Service
@@ -207,13 +207,13 @@ export function ServicesClient({ initialServices }: ServicesClientProps) {
                     {s.sortOrder}
                   </td>
                   <td className="py-3 px-4">
-                    <div className="font-bold text-[#0B1730] flex items-center gap-2">
+                    <div className="font-bold text-[#070B14] flex items-center gap-2">
                       <span>{s.title}</span>
                       <a
                         href={`/services/${s.slug}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-slate-400 hover:text-[#1D68BD]"
+                        className="text-slate-400 hover:text-[#C59B27]"
                         title="Preview Public Page"
                       >
                         <ExternalLink size={12} />
@@ -224,7 +224,7 @@ export function ServicesClient({ initialServices }: ServicesClientProps) {
                     </div>
                   </td>
                   <td className="py-3 px-4">
-                    <span className="text-[10px] font-bold uppercase text-[#1D68BD] bg-[#EBF3FE] px-2 py-0.5 rounded">
+                    <span className="text-[10px] font-bold uppercase text-[#C59B27] bg-[#FAF5EB] px-2 py-0.5 rounded">
                       {s.category}
                     </span>
                   </td>
@@ -253,7 +253,7 @@ export function ServicesClient({ initialServices }: ServicesClientProps) {
                     <button
                       type="button"
                       onClick={() => openEditModal(s)}
-                      className="p-1.5 text-slate-400 hover:text-[#1D68BD] hover:bg-slate-100 rounded-lg transition-colors"
+                      className="p-1.5 text-slate-400 hover:text-[#C59B27] hover:bg-slate-100 rounded-lg transition-colors"
                       title="Edit Service"
                     >
                       <Edit2 size={15} />
@@ -279,7 +279,7 @@ export function ServicesClient({ initialServices }: ServicesClientProps) {
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-2xs animate-in fade-in">
           <div className="bg-white rounded-3xl w-full max-w-2xl max-h-[90vh] shadow-2xl border border-[#E4E7EC] flex flex-col overflow-hidden animate-in zoom-in-95 duration-150">
             <div className="p-6 border-b border-slate-100 flex items-center justify-between">
-              <h3 className="text-lg font-bold text-[#0B1730]">
+              <h3 className="text-lg font-bold text-[#070B14]">
                 {editingService ? "Edit Service" : "Create New Service"}
               </h3>
               <button
@@ -294,7 +294,7 @@ export function ServicesClient({ initialServices }: ServicesClientProps) {
             <form onSubmit={handleSave} className="p-6 overflow-y-auto space-y-4 flex-1">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-1">
-                  <label className="text-xs font-bold text-[#0B1730] uppercase">Title</label>
+                  <label className="text-xs font-bold text-[#070B14] uppercase">Title</label>
                   <input
                     type="text"
                     required
@@ -313,7 +313,7 @@ export function ServicesClient({ initialServices }: ServicesClientProps) {
                   />
                 </div>
                 <div className="space-y-1">
-                  <label className="text-xs font-bold text-[#0B1730] uppercase">Slug</label>
+                  <label className="text-xs font-bold text-[#070B14] uppercase">Slug</label>
                   <input
                     type="text"
                     required
@@ -323,7 +323,7 @@ export function ServicesClient({ initialServices }: ServicesClientProps) {
                   />
                 </div>
                 <div className="space-y-1">
-                  <label className="text-xs font-bold text-[#0B1730] uppercase">Category</label>
+                  <label className="text-xs font-bold text-[#070B14] uppercase">Category</label>
                   <select
                     value={form.category}
                     onChange={(e) => setForm({ ...form, category: e.target.value })}
@@ -336,7 +336,7 @@ export function ServicesClient({ initialServices }: ServicesClientProps) {
                   </select>
                 </div>
                 <div className="space-y-1">
-                  <label className="text-xs font-bold text-[#0B1730] uppercase">Sort Order</label>
+                  <label className="text-xs font-bold text-[#070B14] uppercase">Sort Order</label>
                   <input
                     type="number"
                     value={form.sortOrder}
@@ -347,7 +347,7 @@ export function ServicesClient({ initialServices }: ServicesClientProps) {
               </div>
 
               <div className="space-y-1">
-                <label className="text-xs font-bold text-[#0B1730] uppercase">Short Description</label>
+                <label className="text-xs font-bold text-[#070B14] uppercase">Short Description</label>
                 <input
                   type="text"
                   required
@@ -359,7 +359,7 @@ export function ServicesClient({ initialServices }: ServicesClientProps) {
               </div>
 
               <div className="space-y-1">
-                <label className="text-xs font-bold text-[#0B1730] uppercase">Full Description</label>
+                <label className="text-xs font-bold text-[#070B14] uppercase">Full Description</label>
                 <textarea
                   rows={3}
                   required
@@ -371,7 +371,7 @@ export function ServicesClient({ initialServices }: ServicesClientProps) {
               </div>
 
               <div className="space-y-1">
-                <label className="text-xs font-bold text-[#0B1730] uppercase">
+                <label className="text-xs font-bold text-[#070B14] uppercase">
                   Features (One per line)
                 </label>
                 <textarea
@@ -385,7 +385,7 @@ export function ServicesClient({ initialServices }: ServicesClientProps) {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-1">
-                  <label className="text-xs font-bold text-[#0B1730] uppercase">SEO Title</label>
+                  <label className="text-xs font-bold text-[#070B14] uppercase">SEO Title</label>
                   <input
                     type="text"
                     value={form.seoTitle}
@@ -394,7 +394,7 @@ export function ServicesClient({ initialServices }: ServicesClientProps) {
                   />
                 </div>
                 <div className="space-y-1">
-                  <label className="text-xs font-bold text-[#0B1730] uppercase">SEO Description</label>
+                  <label className="text-xs font-bold text-[#070B14] uppercase">SEO Description</label>
                   <input
                     type="text"
                     value={form.seoDescription}
@@ -410,9 +410,9 @@ export function ServicesClient({ initialServices }: ServicesClientProps) {
                   id="pubCheck"
                   checked={form.published}
                   onChange={(e) => setForm({ ...form, published: e.target.checked })}
-                  className="rounded text-[#1D68BD]"
+                  className="rounded text-[#C59B27]"
                 />
-                <label htmlFor="pubCheck" className="text-xs font-semibold text-[#0B1730]">
+                <label htmlFor="pubCheck" className="text-xs font-semibold text-[#070B14]">
                   Published & visible on public site
                 </label>
               </div>
@@ -427,7 +427,7 @@ export function ServicesClient({ initialServices }: ServicesClientProps) {
                 </button>
                 <button
                   type="submit"
-                  className="px-5 py-2 rounded-xl bg-[#1D68BD] hover:bg-[#155196] text-white text-xs font-bold shadow-sm"
+                  className="px-5 py-2 rounded-xl bg-[#C59B27] hover:bg-[#B38728] text-white text-xs font-bold shadow-sm"
                 >
                   Save Service
                 </button>

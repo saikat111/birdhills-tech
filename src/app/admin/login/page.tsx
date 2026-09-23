@@ -47,12 +47,12 @@ export default function AdminLoginPage() {
         <div className="flex flex-col items-center text-center space-y-3">
           <Logo />
           <div className="pt-2">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase bg-[#EBF3FE] text-[#1D68BD]">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase bg-[#C59B27]/10 text-[#B38728] border border-[#C59B27]/30">
               <ShieldCheck size={12} />
               INTERNAL MANAGEMENT CMS
             </span>
           </div>
-          <h1 className="text-2xl font-extrabold text-[#0B1730]">
+          <h1 className="text-2xl font-extrabold text-[#070B14]">
             Sign in to Administration
           </h1>
           <p className="text-xs text-[#667085]">
@@ -69,7 +69,7 @@ export default function AdminLoginPage() {
 
         <form onSubmit={handleLogin} className="space-y-5">
           <div className="space-y-1.5">
-            <label className="text-xs font-bold text-[#0B1730] uppercase tracking-wider">
+            <label className="text-xs font-bold text-[#070B14] uppercase tracking-wider">
               Corporate Email
             </label>
             <div className="relative">
@@ -80,13 +80,13 @@ export default function AdminLoginPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="admin@birdhillstech.com"
-                className="w-full text-sm bg-[#F7F9FC] border border-[#E4E7EC] rounded-xl pl-10 pr-4 py-3 text-[#101828] focus:outline-none focus:border-[#1D68BD] focus:bg-white transition-colors"
+                className="w-full text-sm bg-[#FAF8F5] border border-[#E4E7EC] rounded-xl pl-10 pr-4 py-3 text-[#101828] focus:outline-none focus:border-[#C59B27] focus:bg-white transition-colors"
               />
             </div>
           </div>
 
           <div className="space-y-1.5">
-            <label className="text-xs font-bold text-[#0B1730] uppercase tracking-wider">
+            <label className="text-xs font-bold text-[#070B14] uppercase tracking-wider">
               Password
             </label>
             <div className="relative">
@@ -97,7 +97,7 @@ export default function AdminLoginPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••••••"
-                className="w-full text-sm bg-[#F7F9FC] border border-[#E4E7EC] rounded-xl pl-10 pr-4 py-3 text-[#101828] focus:outline-none focus:border-[#1D68BD] focus:bg-white transition-colors"
+                className="w-full text-sm bg-[#FAF8F5] border border-[#E4E7EC] rounded-xl pl-10 pr-4 py-3 text-[#101828] focus:outline-none focus:border-[#C59B27] focus:bg-white transition-colors"
               />
             </div>
           </div>
@@ -105,7 +105,7 @@ export default function AdminLoginPage() {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full py-3.5 rounded-xl bg-[#0B1730] hover:bg-[#152342] text-white text-sm font-semibold shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 disabled:opacity-60"
+            className="w-full py-3.5 rounded-xl bg-gradient-to-r from-[#D4AF37] via-[#C59B27] to-[#B38728] hover:brightness-105 text-white text-sm font-bold shadow-md shadow-[#C59B27]/25 transition-all flex items-center justify-center gap-2 disabled:opacity-60"
           >
             {isLoading ? (
               <>
@@ -123,8 +123,8 @@ export default function AdminLoginPage() {
 
         <div className="pt-4 border-t border-slate-100 text-center text-xs text-slate-400">
           Default seed credentials:{" "}
-          <span className="font-mono text-[#1D68BD] font-medium">admin@birdhillstech.com</span> /{" "}
-          <span className="font-mono text-[#1D68BD] font-medium">DubaiTech2026!</span>
+          <span className="font-mono text-[#C59B27] font-semibold">admin@birdhillstech.com</span> /{" "}
+          <span className="font-mono text-[#C59B27] font-semibold">DubaiTech2026!</span>
         </div>
       </div>
     </div>

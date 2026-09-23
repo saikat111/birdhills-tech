@@ -97,11 +97,11 @@ export default async function SingleBlogPage({
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Breadcrumbs */}
           <div className="flex items-center gap-2 text-xs text-[#667085] mb-6 flex-wrap">
-            <Link href="/" className="hover:text-[#1D68BD]">
+            <Link href="/" className="hover:text-[#C59B27] transition-colors">
               Home
             </Link>
             <ChevronRight size={12} />
-            <Link href="/blog" className="hover:text-[#1D68BD]">
+            <Link href="/blog" className="hover:text-[#C59B27] transition-colors">
               Blog
             </Link>
             <ChevronRight size={12} />
@@ -109,14 +109,14 @@ export default async function SingleBlogPage({
               <>
                 <Link
                   href={`/category/${post.category.slug}`}
-                  className="hover:text-[#1D68BD]"
+                  className="hover:text-[#C59B27] transition-colors"
                 >
                   {post.category.name}
                 </Link>
                 <ChevronRight size={12} />
               </>
             )}
-            <span className="text-[#0B1730] font-semibold truncate max-w-xs">
+            <span className="text-[#070B14] font-semibold truncate max-w-xs">
               {post.title}
             </span>
           </div>
@@ -124,11 +124,11 @@ export default async function SingleBlogPage({
           {/* Category Badge & Meta */}
           <div className="space-y-4">
             <div className="flex flex-wrap items-center gap-3">
-              <span className="px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#EBF3FE] text-[#1D68BD] border border-[#BFDBFE]">
+              <span className="px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#C59B27]/10 text-[#B38728] border border-[#C59B27]/30">
                 {post.category?.name || "Technology"}
               </span>
               <span className="text-xs text-[#667085] flex items-center gap-1.5">
-                <Calendar size={13} className="text-[#1D68BD]" />
+                <Calendar size={13} className="text-[#C59B27]" />
                 {new Date(post.publishedAt).toLocaleDateString("en-US", {
                   month: "long",
                   day: "numeric",
@@ -136,12 +136,12 @@ export default async function SingleBlogPage({
                 })}
               </span>
               <span className="text-xs text-[#667085] flex items-center gap-1.5">
-                <Clock size={13} className="text-[#1D68BD]" />
+                <Clock size={13} className="text-[#C59B27]" />
                 {post.readTime}
               </span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0B1730] tracking-tight leading-[1.18]">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#070B14] tracking-tight leading-[1.18]">
               {post.title}
             </h1>
 
@@ -152,11 +152,11 @@ export default async function SingleBlogPage({
             {/* Author Attribution & Share Row */}
             <div className="pt-6 border-t border-slate-200/80 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-[#1D68BD] text-white font-bold text-sm flex items-center justify-center shadow-xs">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#B38728] text-white font-bold text-sm flex items-center justify-center shadow-xs">
                   {post.author.charAt(0)}
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-[#0B1730]">{post.author}</div>
+                  <div className="text-xs font-bold text-[#070B14]">{post.author}</div>
                   <div className="text-[11px] text-[#667085]">Bird Hills Tech Editorial Board</div>
                 </div>
               </div>
@@ -218,8 +218,8 @@ export default async function SingleBlogPage({
       <section className="py-12 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Executive Summary Callout Box */}
-          <div className="p-6 sm:p-7 rounded-2xl bg-[#F7F9FC] border-l-4 border-[#1D68BD] mb-10 space-y-2 shadow-2xs">
-            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#1D68BD]">
+          <div className="p-6 sm:p-7 rounded-2xl bg-[#FAF8F5] border-l-4 border-[#C59B27] mb-10 space-y-2 shadow-2xs">
+            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#C59B27]">
               <Sparkles size={14} />
               <span>Executive Summary & Key Takeaways</span>
             </div>
@@ -236,7 +236,7 @@ export default async function SingleBlogPage({
                 return (
                   <h2
                     key={i}
-                    className="text-2xl sm:text-3xl font-extrabold text-[#0B1730] tracking-tight pt-6 pb-2 border-b border-slate-100"
+                    className="text-2xl sm:text-3xl font-extrabold text-[#070B14] tracking-tight pt-6 pb-2 border-b border-slate-100"
                   >
                     {para.replace("## ", "")}
                   </h2>
@@ -246,7 +246,7 @@ export default async function SingleBlogPage({
                 return (
                   <h3
                     key={i}
-                    className="text-xl font-bold text-[#0B1730] tracking-tight pt-4"
+                    className="text-xl font-bold text-[#070B14] tracking-tight pt-4"
                   >
                     {para.replace("### ", "")}
                   </h3>
@@ -256,7 +256,7 @@ export default async function SingleBlogPage({
                 return (
                   <blockquote
                     key={i}
-                    className="p-4 my-4 border-l-4 border-[#1D68BD] bg-[#F7F9FC] rounded-r-xl italic text-slate-700"
+                    className="p-4 my-4 border-l-4 border-[#C59B27] bg-[#FAF8F5] rounded-r-xl italic text-slate-700"
                   >
                     {para.replace("> ", "")}
                   </blockquote>
@@ -268,7 +268,7 @@ export default async function SingleBlogPage({
                   <ul key={i} className="space-y-2 my-4 list-none pl-0">
                     {items.map((item, idx) => (
                       <li key={idx} className="flex items-start gap-2.5 text-sm sm:text-base">
-                        <CheckCircle2 size={16} className="text-[#1D68BD] shrink-0 mt-1" />
+                        <CheckCircle2 size={16} className="text-[#C59B27] shrink-0 mt-1" />
                         <span>{item.replace(/^[-*]\s+/, "")}</span>
                       </li>
                     ))}
@@ -285,15 +285,15 @@ export default async function SingleBlogPage({
           </div>
 
           {/* Author Bio Box */}
-          <div className="mt-16 p-8 rounded-3xl bg-[#F7F9FC] border border-[#E4E7EC] flex flex-col sm:flex-row items-center sm:items-start gap-6">
-            <div className="w-16 h-16 rounded-full bg-[#1D68BD] text-white font-extrabold text-xl flex items-center justify-center shrink-0 shadow-md">
+          <div className="mt-16 p-8 rounded-3xl bg-[#FAF8F5] border border-slate-200/80 flex flex-col sm:flex-row items-center sm:items-start gap-6">
+            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#B38728] text-white font-extrabold text-xl flex items-center justify-center shrink-0 shadow-md">
               {post.author.charAt(0)}
             </div>
             <div className="space-y-2 text-center sm:text-left">
-              <div className="text-xs font-bold uppercase tracking-wider text-[#1D68BD]">
+              <div className="text-xs font-bold uppercase tracking-wider text-[#C59B27]">
                 WRITTEN BY
               </div>
-              <h4 className="text-lg font-bold text-[#0B1730]">{post.author}</h4>
+              <h4 className="text-lg font-bold text-[#070B14]">{post.author}</h4>
               <p className="text-xs sm:text-sm text-[#667085] leading-relaxed">
                 Senior Technology & Digital Strategy Specialist at Bird Hills Tech Dubai. Advising enterprise leadership on modern Next.js cloud architecture, high-converting digital branding, and revenue-centric digital transformation across the UAE.
               </p>
@@ -301,9 +301,10 @@ export default async function SingleBlogPage({
           </div>
 
           {/* Direct Consultation Trigger */}
-          <div className="mt-12 p-8 rounded-3xl bg-[#0B1730] text-white text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
-            <div className="space-y-2">
-              <span className="text-[11px] font-bold uppercase tracking-wider text-[#38BDF8]">
+          <div className="mt-12 p-8 rounded-3xl bg-[#070B14] border border-[#C59B27]/30 text-white text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl relative overflow-hidden">
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#C59B27]/15 via-transparent to-transparent pointer-events-none" />
+            <div className="space-y-2 relative z-10">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-[#D4AF37]">
                 ENTERPRISE IMPLEMENTATION
               </span>
               <h3 className="text-xl font-bold text-white">
@@ -315,7 +316,7 @@ export default async function SingleBlogPage({
             </div>
             <Link
               href="/book-a-meeting"
-              className="px-6 py-3.5 rounded-xl bg-[#1D68BD] text-white text-xs font-bold hover:bg-[#155196] transition-colors whitespace-nowrap shrink-0 shadow-md"
+              className="px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#D4AF37] via-[#C59B27] to-[#B38728] text-white text-xs font-bold hover:brightness-105 transition-all whitespace-nowrap shrink-0 shadow-md shadow-[#C59B27]/25 relative z-10"
             >
               Book Strategy Session
             </Link>
@@ -325,13 +326,13 @@ export default async function SingleBlogPage({
 
       {/* 4. RELATED ARTICLES */}
       {relatedPosts.length > 0 && (
-        <section className="py-20 bg-[#F7F9FC] border-t border-[#E4E7EC]">
+        <section className="py-20 bg-[#FAF8F5] border-t border-slate-200/80">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-12">
-              <span className="text-xs font-bold tracking-widest uppercase text-[#1D68BD]">
+              <span className="text-xs font-bold tracking-widest uppercase text-[#C59B27]">
                 FURTHER READING
               </span>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0B1730] mt-1">
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#070B14] mt-1">
                 Related Articles & Perspectives
               </h2>
             </div>
@@ -341,7 +342,7 @@ export default async function SingleBlogPage({
                 <Link
                   key={r.id}
                   href={`/blog/${r.slug}`}
-                  className="group bg-white rounded-2xl border border-[#E4E7EC] hover:border-[#1D68BD]/40 hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between"
+                  className="group bg-white rounded-2xl border border-slate-200/80 hover:border-[#C59B27]/50 hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between"
                 >
                   <div>
                     <div className="relative h-44 w-full bg-slate-900 overflow-hidden">
@@ -354,10 +355,10 @@ export default async function SingleBlogPage({
                       />
                     </div>
                     <div className="p-6 space-y-2">
-                      <span className="text-[10px] font-bold uppercase text-[#1D68BD]">
+                      <span className="text-[10px] font-bold uppercase text-[#C59B27]">
                         {r.category?.name || "Insight"}
                       </span>
-                      <h3 className="text-base font-bold text-[#0B1730] group-hover:text-[#1D68BD] transition-colors line-clamp-2">
+                      <h3 className="text-base font-bold text-[#070B14] group-hover:text-[#C59B27] transition-colors line-clamp-2">
                         {r.title}
                       </h3>
                       <p className="text-xs text-[#667085] line-clamp-2">
@@ -365,7 +366,7 @@ export default async function SingleBlogPage({
                       </p>
                     </div>
                   </div>
-                  <div className="p-6 pt-0 text-xs font-bold text-[#1D68BD] flex items-center gap-1">
+                  <div className="p-6 pt-0 text-xs font-bold text-[#C59B27] flex items-center gap-1">
                     <span>Read Article</span>
                     <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
                   </div>

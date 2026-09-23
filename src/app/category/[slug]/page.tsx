@@ -58,26 +58,26 @@ export default async function CategoryPage({
   return (
     <div className="flex flex-col min-h-screen pt-24">
       {/* Hero */}
-      <section className="py-20 md:py-28 bg-[#F7F9FC] border-b border-[#E4E7EC]">
+      <section className="py-20 md:py-28 bg-[#FAF8F5] border-b border-slate-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Breadcrumb */}
           <div className="flex items-center gap-2 text-xs text-[#667085] mb-6">
-            <Link href="/" className="hover:text-[#1D68BD]">
+            <Link href="/" className="hover:text-[#C59B27] transition-colors">
               Home
             </Link>
             <ChevronRight size={12} />
-            <Link href="/insights" className="hover:text-[#1D68BD]">
-              Insights
+            <Link href="/blog" className="hover:text-[#C59B27] transition-colors">
+              Blog
             </Link>
             <ChevronRight size={12} />
-            <span className="text-[#0B1730] font-semibold">{category.name}</span>
+            <span className="text-[#070B14] font-semibold">{category.name}</span>
           </div>
 
           <div className="max-w-3xl space-y-4">
-            <span className="text-xs font-bold tracking-widest text-[#1D68BD] uppercase">
+            <span className="text-xs font-bold tracking-widest text-[#C59B27] uppercase">
               CATEGORY ARCHIVE
             </span>
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-[#0B1730] tracking-tight">
+            <h1 className="text-4xl sm:text-5xl font-extrabold text-[#070B14] tracking-tight">
               {category.name}
             </h1>
             <p className="text-lg text-[#667085] leading-relaxed">
@@ -88,8 +88,8 @@ export default async function CategoryPage({
           {/* Category Tabs */}
           <div className="flex flex-wrap items-center gap-2 pt-8">
             <Link
-              href="/insights"
-              className="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white text-[#667085] hover:text-[#0B1730] border border-[#E4E7EC]"
+              href="/blog"
+              className="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white text-[#667085] hover:text-[#C59B27] hover:border-[#C59B27]/40 border border-[#E4E7EC] transition-colors"
             >
               All Topics
             </Link>
@@ -101,8 +101,8 @@ export default async function CategoryPage({
                   href={`/category/${c.slug}`}
                   className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-colors ${
                     isCurrent
-                      ? "bg-[#0B1730] text-white shadow-xs"
-                      : "bg-white text-[#667085] hover:text-[#0B1730] border border-[#E4E7EC]"
+                      ? "bg-[#070B14] text-[#D4AF37] border border-[#C59B27]/40 shadow-xs"
+                      : "bg-white text-[#667085] hover:text-[#C59B27] hover:border-[#C59B27]/40 border border-[#E4E7EC]"
                   }`}
                 >
                   {c.name}
@@ -120,7 +120,7 @@ export default async function CategoryPage({
             {category.posts.map((post) => (
               <article
                 key={post.id}
-                className="group bg-[#F7F9FC] rounded-2xl border border-[#E4E7EC] overflow-hidden flex flex-col justify-between hover:shadow-xl transition-all duration-300"
+                className="group bg-[#FAF8F5] rounded-2xl border border-slate-200/80 overflow-hidden flex flex-col justify-between hover:border-[#C59B27]/50 hover:shadow-xl transition-all duration-300"
               >
                 <div>
                   <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
@@ -135,10 +135,10 @@ export default async function CategoryPage({
 
                   <div className="p-6 space-y-3">
                     <div className="text-xs text-slate-400 flex items-center gap-1">
-                      <Clock size={12} /> {post.readTime}
+                      <Clock size={12} className="text-[#C59B27]" /> {post.readTime}
                     </div>
 
-                    <h3 className="text-lg font-bold text-[#0B1730] group-hover:text-[#1D68BD] transition-colors leading-snug">
+                    <h3 className="text-lg font-bold text-[#070B14] group-hover:text-[#C59B27] transition-colors leading-snug">
                       <Link href={`/blog/${post.slug}`}>{post.title}</Link>
                     </h3>
 
@@ -152,7 +152,7 @@ export default async function CategoryPage({
                   <span className="text-[11px] text-slate-400">{post.author}</span>
                   <Link
                     href={`/blog/${post.slug}`}
-                    className="inline-flex items-center gap-1 text-xs font-bold text-[#1D68BD]"
+                    className="inline-flex items-center gap-1 text-xs font-bold text-[#C59B27] hover:underline"
                   >
                     Read <ArrowRight size={13} />
                   </Link>
@@ -162,7 +162,7 @@ export default async function CategoryPage({
           </div>
 
           {category.posts.length === 0 && (
-            <div className="text-center py-20 bg-[#F7F9FC] rounded-2xl border border-dashed border-slate-300">
+            <div className="text-center py-20 bg-[#FAF8F5] rounded-2xl border border-dashed border-[#C59B27]/30">
               <p className="text-slate-500">No articles published in this category yet.</p>
             </div>
           )}

@@ -121,7 +121,7 @@ export function BookingsClient({ initialBookings }: BookingsClientProps) {
                   }}
                 >
                   <td className="py-3 px-4">
-                    <div className="font-bold text-[#0B1730]">{b.name}</div>
+                    <div className="font-bold text-[#070B14]">{b.name}</div>
                     <div className="text-[#667085] text-[11px]">
                       {b.company ? `${b.company} · ` : ""}
                       {b.phone}
@@ -129,8 +129,8 @@ export function BookingsClient({ initialBookings }: BookingsClientProps) {
                   </td>
                   <td className="py-3 px-4 font-medium text-[#101828]">{b.service}</td>
                   <td className="py-3 px-4">
-                    <div className="font-semibold text-[#0B1730] flex items-center gap-1.5">
-                      <CalendarIcon size={13} className="text-[#1D68BD]" />
+                    <div className="font-semibold text-[#070B14] flex items-center gap-1.5">
+                      <CalendarIcon size={13} className="text-[#C59B27]" />
                       <span>{b.date}</span>
                     </div>
                     <div className="text-[11px] text-[#667085] mt-0.5">{b.timeSlot}</div>
@@ -188,10 +188,10 @@ export function BookingsClient({ initialBookings }: BookingsClientProps) {
             <div className="space-y-6">
               <div className="flex items-center justify-between pb-4 border-b border-slate-100">
                 <div>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#1D68BD] bg-[#EBF3FE] px-2 py-0.5 rounded">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#C59B27] bg-[#FAF5EB] px-2 py-0.5 rounded">
                     Consultation File
                   </span>
-                  <h3 className="text-xl font-extrabold text-[#0B1730] mt-1.5">
+                  <h3 className="text-xl font-extrabold text-[#070B14] mt-1.5">
                     {selectedBooking.name}
                   </h3>
                 </div>
@@ -212,7 +212,7 @@ export function BookingsClient({ initialBookings }: BookingsClientProps) {
                 <select
                   value={selectedBooking.status}
                   onChange={(e) => handleStatusChange(selectedBooking.id, e.target.value)}
-                  className="w-full text-xs font-bold bg-[#F7F9FC] border border-[#E4E7EC] rounded-xl px-3 py-2.5 text-[#0B1730]"
+                  className="w-full text-xs font-bold bg-[#F7F9FC] border border-[#E4E7EC] rounded-xl px-3 py-2.5 text-[#070B14]"
                 >
                   {statusOptions.map((st) => (
                     <option key={st} value={st}>
@@ -223,8 +223,8 @@ export function BookingsClient({ initialBookings }: BookingsClientProps) {
               </div>
 
               {/* Date & Time */}
-              <div className="p-4 rounded-xl bg-[#EBF3FE] border border-[#BFDBFE] space-y-1 text-xs">
-                <div className="font-bold text-[#1D68BD] flex items-center gap-1.5">
+              <div className="p-4 rounded-xl bg-[#FAF5EB] border border-[#E6D5A7] space-y-1 text-xs">
+                <div className="font-bold text-[#C59B27] flex items-center gap-1.5">
                   <CalendarIcon size={14} />
                   <span>{selectedBooking.date}</span>
                 </div>
@@ -237,8 +237,8 @@ export function BookingsClient({ initialBookings }: BookingsClientProps) {
               {/* Contact Info */}
               <div className="bg-[#F7F9FC] p-4 rounded-xl border border-[#E4E7EC] space-y-2 text-xs">
                 <div className="flex items-center gap-2">
-                  <Mail size={14} className="text-[#1D68BD]" />
-                  <a href={`mailto:${selectedBooking.email}`} className="text-[#1D68BD] underline">
+                  <Mail size={14} className="text-[#C59B27]" />
+                  <a href={`mailto:${selectedBooking.email}`} className="text-[#C59B27] underline">
                     {selectedBooking.email}
                   </a>
                 </div>
@@ -278,13 +278,13 @@ export function BookingsClient({ initialBookings }: BookingsClientProps) {
                   value={editingNotes}
                   onChange={(e) => setEditingNotes(e.target.value)}
                   placeholder="Record Google Meet link, attendee names, or meeting outcomes..."
-                  className="w-full text-xs bg-white border border-[#E4E7EC] rounded-xl p-3 text-[#101828] focus:outline-none focus:border-[#1D68BD]"
+                  className="w-full text-xs bg-white border border-[#E4E7EC] rounded-xl p-3 text-[#101828] focus:outline-none focus:border-[#C59B27]"
                 />
                 <button
                   type="button"
                   onClick={() => handleSaveNotes(selectedBooking.id)}
                   disabled={isUpdating}
-                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#0B1730] text-white text-xs font-semibold hover:bg-[#152342] transition-colors"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#070B14] text-white text-xs font-semibold hover:bg-[#111622] transition-colors"
                 >
                   <Save size={13} />
                   {isUpdating ? "Saving..." : "Save Notes"}

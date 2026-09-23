@@ -18,15 +18,15 @@ export function TrustSection({
   ];
 
   return (
-    <section className="py-12 bg-[#F7F9FC] border-y border-[#E4E7EC]">
+    <section className="py-12 bg-[#FAF8F5] border-y border-slate-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Trust Statement */}
           <div className="md:max-w-lg space-y-1.5 text-center md:text-left">
-            <div className="text-xs font-bold tracking-widest text-[#1D68BD] uppercase">
+            <div className="text-xs font-bold tracking-widest text-[#C59B27] uppercase">
               {headline}
             </div>
-            <p className="text-sm sm:text-base font-semibold text-[#0B1730] leading-snug">
+            <p className="text-sm sm:text-base font-semibold text-[#070B14] leading-snug">
               {statement}
             </p>
           </div>
@@ -36,9 +36,9 @@ export function TrustSection({
             {pillars.map((pillar) => (
               <div
                 key={pillar}
-                className="flex items-center gap-2 bg-white px-3.5 py-2.5 rounded-xl border border-[#E4E7EC] shadow-2xs text-xs font-semibold text-[#101828]"
+                className="flex items-center gap-2 bg-white px-3.5 py-2.5 rounded-xl border border-slate-200/80 hover:border-[#C59B27]/40 transition-colors shadow-2xs text-xs font-semibold text-[#101828]"
               >
-                <CheckCircle2 size={15} className="text-[#1D68BD] shrink-0" />
+                <CheckCircle2 size={15} className="text-[#C59B27] shrink-0" />
                 <span>{pillar}</span>
               </div>
             ))}

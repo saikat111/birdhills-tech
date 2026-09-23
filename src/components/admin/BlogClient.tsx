@@ -19,7 +19,6 @@ import {
   Eye,
   Bold,
   Italic,
-  Underline,
   Strikethrough,
   Heading2,
   Heading3,
@@ -36,6 +35,13 @@ import {
   Settings,
   HelpCircle,
   Copy,
+  Smartphone,
+  Monitor,
+  Check,
+  BarChart3,
+  Sliders,
+  FolderOpen,
+  ArrowRight,
 } from "lucide-react";
 
 interface Category {
@@ -88,13 +94,17 @@ const PRESET_IMAGES = [
     name: "Enterprise Boardroom Strategy",
     url: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80",
   },
+  {
+    name: "Cloud Servers & Architecture",
+    url: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80",
+  },
 ];
 
 export function BlogClient({ initialPosts, categories }: BlogClientProps) {
   const [posts, setPosts] = useState<BlogPostItem[]>(initialPosts);
   const [search, setSearch] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
-  const [statusFilter, setStatusFilter] = useState("all");
+  const [statusFilter, setStatusFilter] = useState<"all" | "published" | "draft">("all");
   const [isEditorOpen, setIsEditorOpen] = useState(false);
   const [editingPost, setEditingPost] = useState<BlogPostItem | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -102,8 +112,15 @@ export function BlogClient({ initialPosts, categories }: BlogClientProps) {
 
   // Editor View Mode: "visual" | "preview" | "code"
   const [editorMode, setEditorMode] = useState<"visual" | "preview" | "code">("visual");
-  // Active Sidebar Tab: "settings" | "featuredImage" | "seo"
-  const [sidebarTab, setSidebarTab] = useState<"settings" | "featuredImage" | "seo">("settings");
+  // Active Sidebar Tab: "post" | "seo"
+  const [sidebarTab, setSidebarTab] = useState<"post" | "seo">("post");
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isEditingSlug, setIsEditingSlug] = useState(false);
+  const [devicePreview, setDevicePreview] = useState<"desktop" | "mobile">("desktop");
+  const [copiedLink, setCopiedLink] = useState(false);
+
+  // Focus keyword for Yoast-style SEO analysis
+  const [focusKeyword, setFocusKeyword] = useState("Dubai Web Development");
 
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -115,7 +132,7 @@ export function BlogClient({ initialPosts, categories }: BlogClientProps) {
     coverImage: "",
     categoryId: categories[0]?.id || "",
     status: "published",
-    author: "Bird Hills Tech Team",
+    author: "Bird Hills Tech Editorial Board",
     readTime: "5 min read",
     seoTitle: "",
     seoDescription: "",
@@ -125,6 +142,11 @@ export function BlogClient({ initialPosts, categories }: BlogClientProps) {
   const wordCount = form.content
     ? form.content.trim().split(/\s+/).filter(Boolean).length
     : 0;
+  const charCount = form.content.length;
+  const paragraphCount = form.content
+    ? form.content.split(/\n\s*\n/).filter(Boolean).length
+    : 0;
+  const headingCount = (form.content.match(/^#{1,6}\s+/gm) || []).length;
   const estimatedReadTime = `${Math.max(1, Math.ceil(wordCount / 200))} min read`;
 
   // Auto-update read time when content changes
@@ -134,17 +156,49 @@ export function BlogClient({ initialPosts, categories }: BlogClientProps) {
     }
   }, [wordCount, estimatedReadTime, editingPost]);
 
+  // SEO Heuristics & Scoring Engine
+  const effectiveTitle = form.seoTitle || form.title;
+  const effectiveDesc = form.seoDescription || form.excerpt;
+  const kw = focusKeyword.trim().toLowerCase();
+
+  const kwInTitle = kw ? effectiveTitle.toLowerCase().includes(kw) : false;
+  const kwInDesc = kw ? effectiveDesc.toLowerCase().includes(kw) : false;
+  const kwInContent = kw ? form.content.toLowerCase().includes(kw) : false;
+  const kwInSlug = kw ? form.slug.toLowerCase().includes(kw.replace(/\s+/g, "-")) : false;
+  const titleOptimal = effectiveTitle.length >= 45 && effectiveTitle.length <= 60;
+  const descOptimal = effectiveDesc.length >= 120 && effectiveDesc.length <= 160;
+  const lengthGood = wordCount >= 350;
+  const hasHeadings = headingCount >= 2;
+
+  let seoScore = 0;
+  if (kwInTitle) seoScore += 20;
+  if (kwInDesc) seoScore += 20;
+  if (kwInSlug) seoScore += 15;
+  if (kwInContent) seoScore += 15;
+  if (titleOptimal) seoScore += 10;
+  if (descOptimal) seoScore += 10;
+  if (lengthGood) seoScore += 5;
+  if (hasHeadings) seoScore += 5;
+
+  const getScoreColor = (score: number) => {
+    if (score >= 75) return "text-emerald-500 bg-emerald-500/10 border-emerald-500/30";
+    if (score >= 50) return "text-amber-500 bg-amber-500/10 border-amber-500/30";
+    return "text-rose-500 bg-rose-500/10 border-rose-500/30";
+  };
+
   const openCreateModal = () => {
     setEditingPost(null);
     setError(null);
     setEditorMode("visual");
-    setSidebarTab("settings");
+    setSidebarTab("post");
+    setIsSidebarOpen(true);
+    setFocusKeyword("Dubai Next.js Development");
     setForm({
       title: "",
       slug: "",
       excerpt: "",
       content:
-        "## Executive Overview\n\nProvide an authoritative summary of the challenge and industry context in Dubai.\n\n## Technical Architecture & Approach\n\nDetail the exact engineering methodology, technologies, and implementation strategy.\n\n- Sub-second Core Web Vitals (< 0.8s LCP)\n- Clean TypeScript & Next.js 16 modular components\n- Enterprise data security and privacy compliance\n\n## Commercial Impact & ROI\n\nSummarize the tangible business outcomes and performance benchmarks achieved.",
+        "## Executive Overview\n\nProvide an authoritative summary of the challenge and industry context in Dubai.\n\n## Technical Architecture & Approach\n\nDetail the exact engineering methodology, technologies, and implementation strategy.\n\n- Sub-second Core Web Vitals (< 0.8s LCP)\n- Clean TypeScript & Next.js 16 modular components\n- Enterprise data security and privacy compliance\n\n## Commercial Impact & ROI\n\nSummarize the tangible business outcomes and performance benchmarks achieved for the UAE market.",
       coverImage: PRESET_IMAGES[0].url,
       categoryId: categories[0]?.id || "",
       status: "published",
@@ -160,7 +214,9 @@ export function BlogClient({ initialPosts, categories }: BlogClientProps) {
     setEditingPost(p);
     setError(null);
     setEditorMode("visual");
-    setSidebarTab("settings");
+    setSidebarTab("post");
+    setIsSidebarOpen(true);
+    setFocusKeyword(p.title.split(" ").slice(0, 3).join(" "));
     setForm({
       title: p.title,
       slug: p.slug,
@@ -178,17 +234,21 @@ export function BlogClient({ initialPosts, categories }: BlogClientProps) {
   };
 
   const handleTitleChange = (val: string) => {
-    setForm((prev) => ({
-      ...prev,
-      title: val,
-      slug: !editingPost
+    setForm((prev) => {
+      const autoSlug = !editingPost
         ? val
             .toLowerCase()
             .replace(/[^a-z0-9]+/g, "-")
             .replace(/^-|-$/g, "")
-        : prev.slug,
-      seoTitle: !prev.seoTitle || prev.seoTitle === prev.title ? val : prev.seoTitle,
-    }));
+        : prev.slug;
+
+      return {
+        ...prev,
+        title: val,
+        slug: autoSlug,
+        seoTitle: !prev.seoTitle || prev.seoTitle === prev.title ? val : prev.seoTitle,
+      };
+    });
   };
 
   // Helper to insert formatting tags at current cursor location in textarea
@@ -302,207 +362,321 @@ export function BlogClient({ initialPosts, categories }: BlogClientProps) {
     return matchSearch && matchCat && matchStatus;
   });
 
+  const publishedCount = posts.filter((p) => p.status === "published").length;
+  const draftCount = posts.filter((p) => p.status === "draft").length;
+
   return (
     <div className="space-y-6">
-      {/* 1. TOP HEADER & METRICS */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-6 rounded-2xl border border-[#E4E7EC] shadow-2xs">
+      {/* 1. TOP STATS BAR & QUICK ACTIONS */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-2xs">
+          <div className="text-xs font-semibold text-[#667085]">Total Articles</div>
+          <div className="text-2xl font-extrabold text-[#070B14] mt-1">{posts.length}</div>
+          <div className="text-[11px] text-[#B38728] mt-1 font-medium">All database records</div>
+        </div>
+
+        <div className="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-2xs">
+          <div className="text-xs font-semibold text-[#667085]">Live on Website</div>
+          <div className="text-2xl font-extrabold text-emerald-600 mt-1">{publishedCount}</div>
+          <div className="text-[11px] text-emerald-700/80 mt-1 font-medium">Publicly indexed articles</div>
+        </div>
+
+        <div className="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-2xs">
+          <div className="text-xs font-semibold text-[#667085]">Drafts in Progress</div>
+          <div className="text-2xl font-extrabold text-amber-600 mt-1">{draftCount}</div>
+          <div className="text-[11px] text-amber-700/80 mt-1 font-medium">Internal review drafts</div>
+        </div>
+
+        <div className="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-2xs flex items-center justify-between">
+          <div>
+            <div className="text-xs font-semibold text-[#667085]">Topic Categories</div>
+            <div className="text-2xl font-extrabold text-[#070B14] mt-1">{categories.length}</div>
+            <Link
+              href="/admin/blog/categories"
+              className="text-[11px] text-[#C59B27] hover:underline font-bold mt-1 inline-flex items-center gap-1"
+            >
+              <span>Manage Clusters</span>
+              <ArrowRight size={11} />
+            </Link>
+          </div>
+          <div className="w-11 h-11 rounded-xl bg-[#C59B27]/10 text-[#C59B27] flex items-center justify-center">
+            <FolderOpen size={20} />
+          </div>
+        </div>
+      </div>
+
+      {/* 2. TOP HEADER & MAIN CMS ACTION BAR */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-6 rounded-2xl border border-slate-200/80 shadow-2xs">
         <div>
-          <h1 className="text-2xl font-bold text-[#0B1730]">
+          <div className="flex items-center gap-2 mb-1">
+            <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase bg-[#C59B27]/10 text-[#B38728] border border-[#C59B27]/30">
+              WordPress-Style Studio
+            </span>
+          </div>
+          <h1 className="text-2xl font-extrabold text-[#070B14]">
             Articles & Thought Leadership CMS
           </h1>
           <p className="text-xs text-[#667085] mt-1">
-            Author and publish technical articles, whitepapers, and Dubai market perspectives with our Gutenberg-style writing studio.
+            Author and publish technical articles, whitepapers, and Dubai market perspectives with our Gutenberg-style writing studio and live Yoast SEO score meters.
           </p>
         </div>
 
-        <button
-          onClick={openCreateModal}
-          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#1D68BD] text-white text-xs font-bold hover:bg-[#155196] shadow-sm transition-colors whitespace-nowrap"
-        >
-          <Plus size={16} />
-          <span>Write New Article</span>
-        </button>
+        <div className="flex items-center gap-2.5">
+          <Link
+            href="/admin/seo-tools"
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white border border-[#E4E7EC] hover:border-[#C59B27]/40 text-[#070B14] hover:text-[#C59B27] text-xs font-semibold shadow-2xs transition-all"
+          >
+            <Sliders size={14} className="text-[#C59B27]" />
+            <span>Global SEO Tools</span>
+          </Link>
+
+          <button
+            onClick={openCreateModal}
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#D4AF37] via-[#C59B27] to-[#B38728] hover:brightness-105 text-white text-xs font-bold shadow-md shadow-[#C59B27]/25 transition-all whitespace-nowrap"
+          >
+            <Plus size={16} />
+            <span>Write New Article</span>
+          </button>
+        </div>
       </div>
 
-      {/* 2. FILTERS & SEARCH BAR */}
-      <div className="flex flex-col sm:flex-row gap-3 bg-white p-4 rounded-xl border border-[#E4E7EC]">
-        <div className="relative flex-1">
-          <Search
-            size={16}
-            className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400"
-          />
-          <input
-            type="text"
-            placeholder="Search by title, author, or slug..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className="w-full pl-9 pr-4 py-2 text-xs border border-[#E4E7EC] rounded-lg text-[#0B1730] focus:outline-none focus:border-[#1D68BD]"
-          />
+      {/* 3. FILTERS, TABS & SEARCH BAR */}
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-3 bg-white p-4 rounded-xl border border-slate-200/80">
+        {/* Status Quick Filter Tabs */}
+        <div className="flex items-center gap-1 w-full sm:w-auto">
+          <button
+            type="button"
+            onClick={() => setStatusFilter("all")}
+            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
+              statusFilter === "all"
+                ? "bg-[#070B14] text-[#D4AF37]"
+                : "text-slate-600 hover:text-[#070B14] hover:bg-slate-100"
+            }`}
+          >
+            All ({posts.length})
+          </button>
+          <button
+            type="button"
+            onClick={() => setStatusFilter("published")}
+            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
+              statusFilter === "published"
+                ? "bg-[#070B14] text-[#D4AF37]"
+                : "text-slate-600 hover:text-[#070B14] hover:bg-slate-100"
+            }`}
+          >
+            Published ({publishedCount})
+          </button>
+          <button
+            type="button"
+            onClick={() => setStatusFilter("draft")}
+            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
+              statusFilter === "draft"
+                ? "bg-[#070B14] text-[#D4AF37]"
+                : "text-slate-600 hover:text-[#070B14] hover:bg-slate-100"
+            }`}
+          >
+            Drafts ({draftCount})
+          </button>
         </div>
 
-        <select
-          value={selectedCategory}
-          onChange={(e) => setSelectedCategory(e.target.value)}
-          className="px-3 py-2 text-xs border border-[#E4E7EC] rounded-lg text-[#0B1730] focus:outline-none focus:border-[#1D68BD]"
-        >
-          <option value="all">All Categories ({categories.length})</option>
-          {categories.map((c) => (
-            <option key={c.id} value={c.id}>
-              {c.name}
-            </option>
-          ))}
-        </select>
+        {/* Search & Category Filter */}
+        <div className="flex items-center gap-2.5 w-full sm:w-auto">
+          <div className="relative flex-1 sm:w-64">
+            <Search
+              size={15}
+              className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"
+            />
+            <input
+              type="text"
+              placeholder="Search title or slug..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className="w-full pl-8 pr-3 py-1.5 text-xs bg-[#FAF8F5] border border-slate-200 rounded-lg text-[#070B14] focus:outline-none focus:border-[#C59B27]"
+            />
+          </div>
 
-        <select
-          value={statusFilter}
-          onChange={(e) => setStatusFilter(e.target.value)}
-          className="px-3 py-2 text-xs border border-[#E4E7EC] rounded-lg text-[#0B1730] focus:outline-none focus:border-[#1D68BD]"
-        >
-          <option value="all">All Statuses</option>
-          <option value="published">Published</option>
-          <option value="draft">Drafts</option>
-        </select>
+          <select
+            value={selectedCategory}
+            onChange={(e) => setSelectedCategory(e.target.value)}
+            className="px-3 py-1.5 text-xs bg-[#FAF8F5] border border-slate-200 rounded-lg text-[#070B14] focus:outline-none focus:border-[#C59B27]"
+          >
+            <option value="all">All Categories ({categories.length})</option>
+            {categories.map((c) => (
+              <option key={c.id} value={c.id}>
+                {c.name}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
 
-      {/* 3. POSTS TABLE LISTING */}
-      <div className="bg-white rounded-2xl border border-[#E4E7EC] shadow-2xs overflow-hidden">
+      {/* 4. POSTS TABLE LISTING */}
+      <div className="bg-white rounded-2xl border border-slate-200/80 shadow-2xs overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs">
-            <thead className="bg-[#F7F9FC] text-[#475467] font-semibold border-b border-[#E4E7EC]">
+            <thead className="bg-[#FAF8F5] text-[#475467] font-semibold border-b border-slate-200/80">
               <tr>
                 <th className="py-3.5 px-4">Article</th>
                 <th className="py-3.5 px-4">Category</th>
                 <th className="py-3.5 px-4">Status</th>
                 <th className="py-3.5 px-4">Author</th>
-                <th className="py-3.5 px-4">Published Date</th>
+                <th className="py-3.5 px-4">SEO Score</th>
+                <th className="py-3.5 px-4">Date</th>
                 <th className="py-3.5 px-4 text-right">Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[#E4E7EC]">
+            <tbody className="divide-y divide-slate-100">
               {filtered.length === 0 ? (
                 <tr>
-                  <td colSpan={6} className="py-12 text-center text-slate-400">
-                    No articles found matching your criteria.
+                  <td colSpan={7} className="py-12 text-center text-slate-400">
+                    No articles found matching your criteria. Click &quot;Write New Article&quot; to begin.
                   </td>
                 </tr>
               ) : (
-                filtered.map((post) => (
-                  <tr key={post.id} className="hover:bg-slate-50/80 transition-colors">
-                    <td className="py-3.5 px-4">
-                      <div className="flex items-center gap-3">
-                        <div className="relative w-12 h-12 rounded-lg overflow-hidden shrink-0 bg-slate-100 border border-slate-200">
-                          <Image
-                            src={post.coverImage}
-                            alt={post.title}
-                            fill
-                            className="object-cover"
-                          />
-                        </div>
-                        <div className="min-w-0">
-                          <div className="font-bold text-[#0B1730] truncate max-w-sm sm:max-w-md">
-                            {post.title}
+                filtered.map((post) => {
+                  const pTitle = post.seoTitle || post.title;
+                  const pDesc = post.seoDescription || post.excerpt;
+                  let pScore = 60;
+                  if (pTitle.length >= 40 && pTitle.length <= 65) pScore += 15;
+                  if (pDesc.length >= 100) pScore += 15;
+                  if (post.content.length > 500) pScore += 10;
+
+                  return (
+                    <tr key={post.id} className="hover:bg-slate-50/80 transition-colors group">
+                      <td className="py-3.5 px-4">
+                        <div className="flex items-center gap-3">
+                          <div className="relative w-12 h-12 rounded-lg overflow-hidden shrink-0 bg-slate-100 border border-slate-200">
+                            <Image
+                              src={post.coverImage}
+                              alt={post.title}
+                              fill
+                              sizes="48px"
+                              className="object-cover"
+                            />
                           </div>
-                          <div className="text-[11px] font-mono text-[#667085] flex items-center gap-1 mt-0.5">
-                            <span>/blog/{post.slug}</span>
-                            <Link
-                              href={`/blog/${post.slug}`}
-                              target="_blank"
-                              className="text-[#1D68BD] hover:underline"
-                            >
-                              <ExternalLink size={11} />
-                            </Link>
+                          <div className="min-w-0">
+                            <div className="font-bold text-[#070B14] truncate max-w-sm sm:max-w-md group-hover:text-[#C59B27] transition-colors">
+                              {post.title}
+                            </div>
+                            <div className="text-[11px] font-mono text-[#667085] flex items-center gap-1 mt-0.5">
+                              <span>/blog/{post.slug}</span>
+                              <Link
+                                href={`/blog/${post.slug}`}
+                                target="_blank"
+                                className="text-[#C59B27] hover:underline"
+                              >
+                                <ExternalLink size={11} />
+                              </Link>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </td>
+                      </td>
 
-                    <td className="py-3.5 px-4">
-                      <span className="px-2.5 py-1 rounded-md text-[11px] font-semibold bg-[#EBF3FE] text-[#1D68BD]">
-                        {post.category?.name || "Uncategorized"}
-                      </span>
-                    </td>
+                      <td className="py-3.5 px-4">
+                        <span className="px-2.5 py-1 rounded-md text-[11px] font-semibold bg-[#C59B27]/10 text-[#B38728] border border-[#C59B27]/20">
+                          {post.category?.name || "Uncategorized"}
+                        </span>
+                      </td>
 
-                    <td className="py-3.5 px-4">
-                      <span
-                        className={`px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider ${
-                          post.status === "published"
-                            ? "bg-emerald-100 text-emerald-800"
-                            : "bg-amber-100 text-amber-800"
-                        }`}
-                      >
-                        {post.status}
-                      </span>
-                    </td>
-
-                    <td className="py-3.5 px-4 text-[#475467] font-medium">
-                      {post.author}
-                    </td>
-
-                    <td className="py-3.5 px-4 text-[#667085]">
-                      {new Date(post.publishedAt).toLocaleDateString("en-US", {
-                        month: "short",
-                        day: "numeric",
-                        year: "numeric",
-                      })}
-                    </td>
-
-                    <td className="py-3.5 px-4 text-right">
-                      <div className="flex items-center justify-end gap-1.5">
-                        <button
-                          onClick={() => openEditModal(post)}
-                          className="p-1.5 text-slate-500 hover:text-[#1D68BD] hover:bg-[#EBF3FE] rounded-lg transition-colors"
-                          title="Open Gutenberg Editor"
+                      <td className="py-3.5 px-4">
+                        <span
+                          className={`px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider ${
+                            post.status === "published"
+                              ? "bg-emerald-100 text-emerald-800"
+                              : "bg-amber-100 text-amber-800"
+                          }`}
                         >
-                          <Edit2 size={15} />
-                        </button>
-                        <button
-                          onClick={() => handleDelete(post.id, post.title)}
-                          className="p-1.5 text-slate-500 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition-colors"
-                          title="Delete Post"
+                          {post.status}
+                        </span>
+                      </td>
+
+                      <td className="py-3.5 px-4 text-[#475467] font-medium">
+                        {post.author}
+                      </td>
+
+                      <td className="py-3.5 px-4">
+                        <span
+                          className={`px-2 py-0.5 rounded-full text-[10px] font-bold border ${getScoreColor(
+                            pScore
+                          )}`}
                         >
-                          <Trash2 size={15} />
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                ))
+                          SEO {pScore}/100
+                        </span>
+                      </td>
+
+                      <td className="py-3.5 px-4 text-[#667085]">
+                        {new Date(post.publishedAt).toLocaleDateString("en-US", {
+                          month: "short",
+                          day: "numeric",
+                          year: "numeric",
+                        })}
+                      </td>
+
+                      <td className="py-3.5 px-4 text-right">
+                        <div className="flex items-center justify-end gap-1.5">
+                          <button
+                            onClick={() => openEditModal(post)}
+                            className="p-1.5 text-slate-500 hover:text-[#C59B27] hover:bg-[#C59B27]/10 rounded-lg transition-colors"
+                            title="Open WordPress Studio Editor"
+                          >
+                            <Edit2 size={15} />
+                          </button>
+                          <button
+                            onClick={() => handleDelete(post.id, post.title)}
+                            className="p-1.5 text-slate-500 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition-colors"
+                            title="Delete Post"
+                          >
+                            <Trash2 size={15} />
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  );
+                })
               )}
             </tbody>
           </table>
         </div>
       </div>
 
-      {/* 4. WORDPRESS / GUTENBERG-STYLE WRITING STUDIO (FULL SCREEN MODAL) */}
+      {/* 5. WORDPRESS / GUTENBERG-STYLE STUDIO EDITOR (FULL SCREEN OVERLAY) */}
       {isEditorOpen && (
-        <div className="fixed inset-0 z-50 bg-[#0B1730]/80 backdrop-blur-sm flex items-center justify-center p-2 sm:p-4 animate-in fade-in duration-200">
-          <div className="bg-white w-full max-w-7xl h-[95vh] rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-slate-200">
+        <div className="fixed inset-0 z-50 bg-[#070B14]/90 backdrop-blur-sm flex items-center justify-center p-0 sm:p-3 animate-in fade-in duration-200">
+          <div className="bg-white w-full h-full max-w-[1550px] max-h-[96vh] rounded-none sm:rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-[#C59B27]/30">
             {/* Top WordPress Studio Bar */}
-            <div className="h-16 px-6 bg-[#0B1730] text-white flex items-center justify-between border-b border-white/10 shrink-0">
+            <div className="h-16 px-4 sm:px-6 bg-[#070B14] text-white flex items-center justify-between border-b border-[#C59B27]/20 shrink-0">
               <div className="flex items-center gap-3">
-                <span className="w-8 h-8 rounded-lg bg-[#1D68BD] flex items-center justify-center text-white font-bold text-xs">
+                {/* WordPress "W" Logo */}
+                <button
+                  type="button"
+                  onClick={() => setIsEditorOpen(false)}
+                  title="Close and return to post list"
+                  className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#D4AF37] to-[#B38728] flex items-center justify-center text-white font-extrabold text-sm shadow-sm hover:brightness-110 transition-all"
+                >
                   W
-                </span>
+                </button>
+
                 <div>
                   <div className="text-xs font-bold text-white flex items-center gap-2">
-                    <span>WordPress-Style Studio Editor</span>
-                    <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-white/10 text-[#38BDF8]">
-                      {editingPost ? "Editing Post" : "New Post Draft"}
+                    <span>WordPress Gutenberg Studio</span>
+                    <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-[#C59B27]/20 text-[#D4AF37] border border-[#C59B27]/30">
+                      {editingPost ? "Editing Post" : "Drafting New Post"}
                     </span>
                   </div>
                   <div className="text-[11px] text-slate-400">
-                    {wordCount} Words • {estimatedReadTime}
+                    {wordCount} Words • {estimatedReadTime} • {charCount} Chars
                   </div>
                 </div>
               </div>
 
-              {/* View Switcher Tabs (Visual, Live Preview, Code) */}
+              {/* View Switcher Tabs (Visual, Reader Preview, Raw Code) */}
               <div className="hidden sm:flex items-center bg-white/10 rounded-xl p-1 border border-white/10 text-xs">
                 <button
                   type="button"
                   onClick={() => setEditorMode("visual")}
                   className={`px-3 py-1.5 rounded-lg font-semibold transition-colors ${
                     editorMode === "visual"
-                      ? "bg-[#1D68BD] text-white shadow-sm"
+                      ? "bg-gradient-to-r from-[#D4AF37] to-[#B38728] text-white shadow-sm font-bold"
                       : "text-slate-300 hover:text-white"
                   }`}
                 >
@@ -513,7 +687,7 @@ export function BlogClient({ initialPosts, categories }: BlogClientProps) {
                   onClick={() => setEditorMode("preview")}
                   className={`px-3 py-1.5 rounded-lg font-semibold transition-colors flex items-center gap-1.5 ${
                     editorMode === "preview"
-                      ? "bg-[#1D68BD] text-white shadow-sm"
+                      ? "bg-gradient-to-r from-[#D4AF37] to-[#B38728] text-white shadow-sm font-bold"
                       : "text-slate-300 hover:text-white"
                   }`}
                 >
@@ -525,16 +699,16 @@ export function BlogClient({ initialPosts, categories }: BlogClientProps) {
                   onClick={() => setEditorMode("code")}
                   className={`px-3 py-1.5 rounded-lg font-semibold transition-colors flex items-center gap-1.5 ${
                     editorMode === "code"
-                      ? "bg-[#1D68BD] text-white shadow-sm"
+                      ? "bg-gradient-to-r from-[#D4AF37] to-[#B38728] text-white shadow-sm font-bold"
                       : "text-slate-300 hover:text-white"
                   }`}
                 >
                   <Code size={13} />
-                  Raw Source
+                  Markdown Code
                 </button>
               </div>
 
-              {/* Action Buttons: Save Draft / Publish / Close */}
+              {/* Action Buttons: Save Draft / Publish / Settings Toggle / Close */}
               <div className="flex items-center gap-2">
                 <button
                   type="button"
@@ -549,7 +723,7 @@ export function BlogClient({ initialPosts, categories }: BlogClientProps) {
                   type="button"
                   onClick={() => handleSave(undefined, "published")}
                   disabled={isSubmitting}
-                  className="px-5 py-2 rounded-xl bg-[#1D68BD] hover:bg-[#155196] text-white text-xs font-bold shadow-md transition-colors disabled:opacity-50 flex items-center gap-1.5"
+                  className="px-5 py-2 rounded-xl bg-gradient-to-r from-[#D4AF37] via-[#C59B27] to-[#B38728] hover:brightness-105 text-white text-xs font-bold shadow-md shadow-[#C59B27]/25 transition-all disabled:opacity-50 flex items-center gap-1.5"
                 >
                   {isSubmitting ? (
                     <span>Saving...</span>
@@ -561,9 +735,24 @@ export function BlogClient({ initialPosts, categories }: BlogClientProps) {
                   )}
                 </button>
 
+                {/* Sidebar Inspector Toggle */}
+                <button
+                  type="button"
+                  onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+                  title="Toggle Document Inspector"
+                  className={`p-2 rounded-xl border transition-colors ${
+                    isSidebarOpen
+                      ? "bg-[#C59B27]/20 border-[#C59B27]/40 text-[#D4AF37]"
+                      : "border-white/10 text-slate-400 hover:text-white"
+                  }`}
+                >
+                  <Settings size={17} />
+                </button>
+
                 <button
                   type="button"
                   onClick={() => setIsEditorOpen(false)}
+                  title="Close Studio"
                   className="p-2 text-slate-400 hover:text-white rounded-xl hover:bg-white/10 transition-colors"
                 >
                   <X size={18} />
@@ -581,17 +770,17 @@ export function BlogClient({ initialPosts, categories }: BlogClientProps) {
             {/* Main Stage: Writing Canvas (Left) + Document Inspector (Right) */}
             <div className="flex-1 flex overflow-hidden">
               {/* Left Writing Canvas */}
-              <div className="flex-1 flex flex-col overflow-y-auto bg-white border-r border-[#E4E7EC]">
+              <div className="flex-1 flex flex-col overflow-y-auto bg-white">
                 {/* Visual Editor Mode */}
                 {editorMode === "visual" && (
                   <div className="flex-1 flex flex-col">
                     {/* Gutenberg-style Formatting Toolbar */}
-                    <div className="sticky top-0 z-10 px-6 py-2.5 bg-slate-50 border-b border-[#E4E7EC] flex flex-wrap items-center gap-1.5">
+                    <div className="sticky top-0 z-10 px-6 py-2.5 bg-[#FAF8F5] border-b border-slate-200/80 flex flex-wrap items-center gap-1.5 shadow-2xs">
                       {/* Text Style Dropdown */}
                       <button
                         type="button"
                         onClick={() => insertFormatting("## ", "\n")}
-                        className="px-2.5 py-1.5 rounded-lg bg-white border border-[#E4E7EC] text-xs font-bold text-[#0B1730] hover:bg-slate-100 flex items-center gap-1"
+                        className="px-2.5 py-1.5 rounded-lg bg-white border border-[#E4E7EC] text-xs font-bold text-[#070B14] hover:bg-slate-100 flex items-center gap-1 shadow-2xs"
                         title="Heading 2"
                       >
                         <Heading2 size={14} /> H2
@@ -599,7 +788,7 @@ export function BlogClient({ initialPosts, categories }: BlogClientProps) {
                       <button
                         type="button"
                         onClick={() => insertFormatting("### ", "\n")}
-                        className="px-2.5 py-1.5 rounded-lg bg-white border border-[#E4E7EC] text-xs font-bold text-[#0B1730] hover:bg-slate-100 flex items-center gap-1"
+                        className="px-2.5 py-1.5 rounded-lg bg-white border border-[#E4E7EC] text-xs font-bold text-[#070B14] hover:bg-slate-100 flex items-center gap-1 shadow-2xs"
                         title="Heading 3"
                       >
                         <Heading3 size={14} /> H3
@@ -702,7 +891,7 @@ export function BlogClient({ initialPosts, categories }: BlogClientProps) {
                             "> [!NOTE]\n> **Strategic Takeaway**: Enterprise performance in Dubai requires sub-second Core Web Vitals and local GCC compliance."
                           )
                         }
-                        className="px-2 py-1 rounded-lg bg-white border border-[#E4E7EC] text-[11px] font-bold text-[#1D68BD] hover:bg-[#EBF3FE] flex items-center gap-1"
+                        className="px-2 py-1 rounded-lg bg-white border border-[#E4E7EC] text-[11px] font-bold text-[#C59B27] hover:bg-[#FAF8F5] flex items-center gap-1 shadow-2xs"
                         title="Insert Callout Alert"
                       >
                         <Sparkles size={12} /> Callout Box
@@ -712,7 +901,7 @@ export function BlogClient({ initialPosts, categories }: BlogClientProps) {
                         onClick={() =>
                           insertBlock("```typescript\n// Enterprise Next.js 16 Implementation\nexport async function getDubaiData() {\n  return await db.query();\n}\n```")
                         }
-                        className="px-2 py-1 rounded-lg bg-white border border-[#E4E7EC] text-[11px] font-bold text-slate-700 hover:bg-slate-100 flex items-center gap-1"
+                        className="px-2 py-1 rounded-lg bg-white border border-[#E4E7EC] text-[11px] font-bold text-slate-700 hover:bg-slate-100 flex items-center gap-1 shadow-2xs"
                         title="Insert Code Snippet"
                       >
                         <Code size={12} /> Code Block
@@ -728,19 +917,53 @@ export function BlogClient({ initialPosts, categories }: BlogClientProps) {
                         value={form.title}
                         onChange={(e) => handleTitleChange(e.target.value)}
                         placeholder="Add title..."
-                        className="w-full text-3xl sm:text-4xl font-extrabold text-[#0B1730] placeholder:text-slate-300 border-0 focus:outline-none focus:ring-0 leading-tight"
+                        className="w-full text-3xl sm:text-4xl font-extrabold text-[#070B14] placeholder:text-slate-300 border-0 focus:outline-none focus:ring-0 leading-tight"
                       />
 
                       {/* Permalink indicator */}
                       <div className="flex items-center gap-2 text-xs font-mono text-[#667085] pb-4 border-b border-slate-100">
-                        <Globe size={13} className="text-[#1D68BD]" />
+                        <Globe size={13} className="text-[#C59B27]" />
                         <span>https://birdhillstech.com/blog/</span>
-                        <input
-                          type="text"
-                          value={form.slug}
-                          onChange={(e) => setForm({ ...form, slug: e.target.value })}
-                          className="px-2 py-0.5 rounded bg-slate-100 text-[#0B1730] border border-slate-200 focus:outline-none focus:border-[#1D68BD] text-xs font-mono"
-                        />
+                        {isEditingSlug ? (
+                          <div className="flex items-center gap-1">
+                            <input
+                              type="text"
+                              value={form.slug}
+                              onChange={(e) => setForm({ ...form, slug: e.target.value })}
+                              className="px-2 py-0.5 rounded bg-slate-100 text-[#070B14] border border-slate-200 focus:outline-none focus:border-[#C59B27] text-xs font-mono"
+                            />
+                            <button
+                              type="button"
+                              onClick={() => setIsEditingSlug(false)}
+                              className="px-2 py-0.5 rounded bg-[#070B14] text-white text-[10px] font-semibold"
+                            >
+                              OK
+                            </button>
+                          </div>
+                        ) : (
+                          <div className="flex items-center gap-1.5">
+                            <span className="font-bold text-[#070B14]">{form.slug || "post-slug"}</span>
+                            <button
+                              type="button"
+                              onClick={() => setIsEditingSlug(true)}
+                              className="text-[10px] text-[#C59B27] hover:underline font-semibold"
+                            >
+                              Edit
+                            </button>
+                            <button
+                              type="button"
+                              onClick={() => {
+                                navigator.clipboard.writeText(`https://birdhillstech.com/blog/${form.slug}`);
+                                setCopiedLink(true);
+                                setTimeout(() => setCopiedLink(false), 2000);
+                              }}
+                              className="p-1 text-slate-400 hover:text-[#070B14] rounded"
+                              title="Copy URL"
+                            >
+                              {copiedLink ? <Check size={12} className="text-emerald-500" /> : <Copy size={12} />}
+                            </button>
+                          </div>
+                        )}
                       </div>
 
                       {/* Excerpt box */}
@@ -753,7 +976,7 @@ export function BlogClient({ initialPosts, categories }: BlogClientProps) {
                           value={form.excerpt}
                           onChange={(e) => setForm({ ...form, excerpt: e.target.value })}
                           placeholder="Write a concise 2-sentence summary that appears in search results and post cards..."
-                          className="w-full p-3 border border-[#E4E7EC] rounded-xl text-xs sm:text-sm text-[#0B1730] focus:border-[#1D68BD] focus:outline-none leading-relaxed"
+                          className="w-full p-3 border border-slate-200/80 rounded-xl text-xs sm:text-sm text-[#070B14] focus:border-[#C59B27] focus:outline-none leading-relaxed bg-[#FAF8F5]"
                         />
                       </div>
 
@@ -769,7 +992,7 @@ export function BlogClient({ initialPosts, categories }: BlogClientProps) {
                           value={form.content}
                           onChange={(e) => setForm({ ...form, content: e.target.value })}
                           placeholder="Begin writing your article here..."
-                          className="w-full p-4 border border-[#E4E7EC] rounded-xl text-sm sm:text-base font-normal text-[#344054] focus:border-[#1D68BD] focus:outline-none leading-relaxed font-sans"
+                          className="w-full p-4 border border-slate-200/80 rounded-xl text-sm sm:text-base font-normal text-[#344054] focus:border-[#C59B27] focus:outline-none leading-relaxed font-sans"
                         />
                       </div>
                     </div>
@@ -780,10 +1003,10 @@ export function BlogClient({ initialPosts, categories }: BlogClientProps) {
                 {editorMode === "preview" && (
                   <div className="p-8 sm:p-12 max-w-3xl mx-auto w-full space-y-8">
                     <div className="space-y-4">
-                      <span className="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#EBF3FE] text-[#1D68BD]">
+                      <span className="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#C59B27]/10 text-[#B38728] border border-[#C59B27]/30">
                         {categories.find((c) => c.id === form.categoryId)?.name || "Technology"}
                       </span>
-                      <h1 className="text-3xl sm:text-4xl font-extrabold text-[#0B1730] leading-tight">
+                      <h1 className="text-3xl sm:text-4xl font-extrabold text-[#070B14] leading-tight">
                         {form.title || "Untitled Article"}
                       </h1>
                       <div className="flex items-center gap-3 text-xs text-[#667085]">
@@ -803,7 +1026,7 @@ export function BlogClient({ initialPosts, categories }: BlogClientProps) {
                       </div>
                     )}
 
-                    <div className="p-5 rounded-xl bg-[#F7F9FC] border-l-4 border-[#1D68BD] text-xs sm:text-sm text-slate-700 italic">
+                    <div className="p-5 rounded-xl bg-[#FAF8F5] border-l-4 border-[#C59B27] text-xs sm:text-sm text-slate-700 italic">
                       {form.excerpt || "No excerpt provided yet."}
                     </div>
 
@@ -823,231 +1046,461 @@ export function BlogClient({ initialPosts, categories }: BlogClientProps) {
                       rows={25}
                       value={form.content}
                       onChange={(e) => setForm({ ...form, content: e.target.value })}
-                      className="w-full p-4 border border-[#E4E7EC] rounded-xl font-mono text-xs text-[#0B1730] bg-slate-50 focus:border-[#1D68BD] focus:outline-none leading-relaxed"
+                      className="w-full p-4 border border-slate-200/80 rounded-xl font-mono text-xs text-[#070B14] bg-[#FAF8F5] focus:border-[#C59B27] focus:outline-none leading-relaxed"
                     />
                   </div>
                 )}
               </div>
 
               {/* Right Document Settings Sidebar (WordPress Style) */}
-              <div className="w-80 sm:w-96 bg-[#F7F9FC] border-l border-[#E4E7EC] flex flex-col shrink-0 overflow-y-auto">
-                {/* Sidebar Navigation Tabs */}
-                <div className="flex border-b border-[#E4E7EC] bg-white text-xs font-bold text-slate-600">
-                  <button
-                    type="button"
-                    onClick={() => setSidebarTab("settings")}
-                    className={`flex-1 py-3 px-2 text-center border-b-2 transition-colors ${
-                      sidebarTab === "settings"
-                        ? "border-[#1D68BD] text-[#1D68BD]"
-                        : "border-transparent hover:text-[#0B1730]"
-                    }`}
-                  >
-                    Post Settings
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setSidebarTab("featuredImage")}
-                    className={`flex-1 py-3 px-2 text-center border-b-2 transition-colors ${
-                      sidebarTab === "featuredImage"
-                        ? "border-[#1D68BD] text-[#1D68BD]"
-                        : "border-transparent hover:text-[#0B1730]"
-                    }`}
-                  >
-                    Featured Image
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setSidebarTab("seo")}
-                    className={`flex-1 py-3 px-2 text-center border-b-2 transition-colors ${
-                      sidebarTab === "seo"
-                        ? "border-[#1D68BD] text-[#1D68BD]"
-                        : "border-transparent hover:text-[#0B1730]"
-                    }`}
-                  >
-                    SEO Snippet
-                  </button>
-                </div>
-
-                {/* Tab 1: Post Settings */}
-                {sidebarTab === "settings" && (
-                  <div className="p-6 space-y-5">
-                    <div>
-                      <label className="block text-xs font-bold text-slate-700 mb-1">
-                        Publication Status
-                      </label>
-                      <select
-                        value={form.status}
-                        onChange={(e) => setForm({ ...form, status: e.target.value })}
-                        className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs bg-white text-[#0B1730] focus:border-[#1D68BD] focus:outline-none"
-                      >
-                        <option value="published">Published (Live on Website)</option>
-                        <option value="draft">Draft (Private Admin Only)</option>
-                      </select>
-                    </div>
-
-                    <div>
-                      <label className="block text-xs font-bold text-slate-700 mb-1">
-                        Category Classification
-                      </label>
-                      <select
-                        value={form.categoryId}
-                        onChange={(e) => setForm({ ...form, categoryId: e.target.value })}
-                        className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs bg-white text-[#0B1730] focus:border-[#1D68BD] focus:outline-none"
-                      >
-                        {categories.map((c) => (
-                          <option key={c.id} value={c.id}>
-                            {c.name}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-
-                    <div>
-                      <label className="block text-xs font-bold text-slate-700 mb-1">
-                        Author Byline
-                      </label>
-                      <input
-                        type="text"
-                        value={form.author}
-                        onChange={(e) => setForm({ ...form, author: e.target.value })}
-                        className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs bg-white text-[#0B1730] focus:border-[#1D68BD] focus:outline-none"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-xs font-bold text-slate-700 mb-1">
-                        Estimated Reading Time
-                      </label>
-                      <input
-                        type="text"
-                        value={form.readTime}
-                        onChange={(e) => setForm({ ...form, readTime: e.target.value })}
-                        placeholder="5 min read"
-                        className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs bg-white text-[#0B1730] focus:border-[#1D68BD] focus:outline-none"
-                      />
-                    </div>
-
-                    <div className="pt-4 border-t border-slate-200">
-                      <div className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2">
-                        Post Statistics
-                      </div>
-                      <div className="space-y-1.5 text-xs text-slate-600">
-                        <div className="flex justify-between">
-                          <span>Word Count:</span>
-                          <span className="font-bold text-[#0B1730]">{wordCount}</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span>Characters:</span>
-                          <span className="font-bold text-[#0B1730]">{form.content.length}</span>
-                        </div>
-                      </div>
-                    </div>
+              {isSidebarOpen && (
+                <div className="w-80 sm:w-96 bg-[#FAF8F5] border-l border-slate-200/80 flex flex-col shrink-0 overflow-y-auto">
+                  {/* Sidebar Navigation Tabs: Post Settings vs Yoast/RankMath SEO */}
+                  <div className="flex border-b border-slate-200/80 bg-white text-xs font-bold text-slate-600">
+                    <button
+                      type="button"
+                      onClick={() => setSidebarTab("post")}
+                      className={`flex-1 py-3 px-2 text-center border-b-2 transition-colors flex items-center justify-center gap-1.5 ${
+                        sidebarTab === "post"
+                          ? "border-[#C59B27] text-[#070B14] font-bold"
+                          : "border-transparent hover:text-[#070B14]"
+                      }`}
+                    >
+                      <Settings size={14} />
+                      Post Settings
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setSidebarTab("seo")}
+                      className={`flex-1 py-3 px-2 text-center border-b-2 transition-colors flex items-center justify-center gap-1.5 ${
+                        sidebarTab === "seo"
+                          ? "border-[#C59B27] text-[#070B14] font-bold"
+                          : "border-transparent hover:text-[#070B14]"
+                      }`}
+                    >
+                      <Sparkles size={14} className="text-[#C59B27]" />
+                      <span>Yoast SEO</span>
+                      <span className={`px-1.5 py-0.2 rounded text-[10px] font-extrabold border ${getScoreColor(seoScore)}`}>
+                        {seoScore}
+                      </span>
+                    </button>
                   </div>
-                )}
 
-                {/* Tab 2: Featured Image */}
-                {sidebarTab === "featuredImage" && (
-                  <div className="p-6 space-y-5">
-                    <div>
-                      <label className="block text-xs font-bold text-slate-700 mb-1">
-                        Cover Image URL *
-                      </label>
-                      <input
-                        type="url"
-                        required
-                        value={form.coverImage}
-                        onChange={(e) => setForm({ ...form, coverImage: e.target.value })}
-                        placeholder="https://images.unsplash.com/..."
-                        className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs bg-white text-[#0B1730] focus:border-[#1D68BD] focus:outline-none"
-                      />
-                    </div>
+                  {/* TAB 1: POST SETTINGS */}
+                  {sidebarTab === "post" && (
+                    <div className="p-6 space-y-6">
+                      {/* Publication Status */}
+                      <div>
+                        <label className="block text-xs font-bold text-slate-700 mb-1">
+                          Publication Status
+                        </label>
+                        <select
+                          value={form.status}
+                          onChange={(e) => setForm({ ...form, status: e.target.value })}
+                          className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs bg-white text-[#070B14] focus:border-[#C59B27] focus:outline-none"
+                        >
+                          <option value="published">Published (Live on Website)</option>
+                          <option value="draft">Draft (Private Admin Only)</option>
+                        </select>
+                      </div>
 
-                    {form.coverImage && (
-                      <div className="relative aspect-[16/10] rounded-xl overflow-hidden border border-slate-300 shadow-sm">
-                        <img
-                          src={form.coverImage}
-                          alt="Cover preview"
-                          className="w-full h-full object-cover"
+                      {/* Category Classification */}
+                      <div>
+                        <div className="flex items-center justify-between mb-1">
+                          <label className="text-xs font-bold text-slate-700">
+                            Category Classification
+                          </label>
+                          <Link
+                            href="/admin/blog/categories"
+                            className="text-[10px] text-[#C59B27] hover:underline font-semibold"
+                          >
+                            + Add New
+                          </Link>
+                        </div>
+                        <select
+                          value={form.categoryId}
+                          onChange={(e) => setForm({ ...form, categoryId: e.target.value })}
+                          className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs bg-white text-[#070B14] focus:border-[#C59B27] focus:outline-none"
+                        >
+                          {categories.map((c) => (
+                            <option key={c.id} value={c.id}>
+                              {c.name}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+
+                      {/* Author Byline */}
+                      <div>
+                        <label className="block text-xs font-bold text-slate-700 mb-1">
+                          Author Byline
+                        </label>
+                        <input
+                          type="text"
+                          value={form.author}
+                          onChange={(e) => setForm({ ...form, author: e.target.value })}
+                          className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs bg-white text-[#070B14] focus:border-[#C59B27] focus:outline-none"
                         />
                       </div>
-                    )}
 
-                    <div className="pt-2 border-t border-slate-200">
-                      <label className="block text-xs font-bold text-slate-700 mb-2">
-                        Quick Corporate Preset Images
-                      </label>
-                      <div className="space-y-2">
-                        {PRESET_IMAGES.map((preset) => (
-                          <button
-                            key={preset.name}
-                            type="button"
-                            onClick={() => setForm({ ...form, coverImage: preset.url })}
-                            className="w-full text-left p-2 rounded-lg bg-white border border-[#E4E7EC] hover:border-[#1D68BD] hover:bg-[#EBF3FE] transition-colors flex items-center gap-2.5 text-xs"
-                          >
+                      {/* Estimated Reading Time */}
+                      <div>
+                        <label className="block text-xs font-bold text-slate-700 mb-1">
+                          Estimated Reading Time
+                        </label>
+                        <input
+                          type="text"
+                          value={form.readTime}
+                          onChange={(e) => setForm({ ...form, readTime: e.target.value })}
+                          placeholder="5 min read"
+                          className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs bg-white text-[#070B14] focus:border-[#C59B27] focus:outline-none"
+                        />
+                      </div>
+
+                      {/* Featured Image Section */}
+                      <div className="pt-4 border-t border-slate-200">
+                        <label className="block text-xs font-bold text-slate-700 mb-1">
+                          Featured Image (16:9)
+                        </label>
+                        <input
+                          type="url"
+                          required
+                          value={form.coverImage}
+                          onChange={(e) => setForm({ ...form, coverImage: e.target.value })}
+                          placeholder="https://images.unsplash.com/..."
+                          className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs bg-white text-[#070B14] focus:border-[#C59B27] focus:outline-none mb-3"
+                        />
+
+                        {form.coverImage && (
+                          <div className="relative aspect-[16/10] rounded-xl overflow-hidden border border-slate-300 shadow-sm mb-3">
                             <img
-                              src={preset.url}
-                              alt={preset.name}
-                              className="w-8 h-8 rounded-md object-cover"
+                              src={form.coverImage}
+                              alt="Cover preview"
+                              className="w-full h-full object-cover"
                             />
-                            <span className="font-medium text-[#0B1730] truncate">
-                              {preset.name}
-                            </span>
-                          </button>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                )}
+                          </div>
+                        )}
 
-                {/* Tab 3: Google SEO & Social Meta */}
-                {sidebarTab === "seo" && (
-                  <div className="p-6 space-y-5">
-                    <div>
-                      <label className="block text-xs font-bold text-slate-700 mb-1">
-                        SEO Meta Title
-                      </label>
-                      <input
-                        type="text"
-                        value={form.seoTitle}
-                        onChange={(e) => setForm({ ...form, seoTitle: e.target.value })}
-                        placeholder={form.title || "Custom Google title..."}
-                        className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs bg-white text-[#0B1730] focus:border-[#1D68BD] focus:outline-none"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-xs font-bold text-slate-700 mb-1">
-                        SEO Meta Description
-                      </label>
-                      <textarea
-                        rows={3}
-                        value={form.seoDescription}
-                        onChange={(e) => setForm({ ...form, seoDescription: e.target.value })}
-                        placeholder={form.excerpt || "Custom Google description..."}
-                        className="w-full p-3 border border-[#E4E7EC] rounded-xl text-xs bg-white text-[#0B1730] focus:border-[#1D68BD] focus:outline-none leading-relaxed"
-                      />
-                    </div>
-
-                    {/* Google SERP Live Simulation Box */}
-                    <div className="pt-2 border-t border-slate-200">
-                      <div className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2">
-                        Google Search Preview
-                      </div>
-                      <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-2xs space-y-1">
-                        <div className="text-[11px] text-slate-500 font-mono truncate">
-                          https://birdhillstech.com › blog › {form.slug || "article-slug"}
+                        <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-2">
+                          Quick Preset Images
                         </div>
-                        <div className="text-sm font-semibold text-[#1a0dab] hover:underline cursor-pointer leading-snug">
-                          {form.seoTitle || form.title || "Article Title Preview"}
-                        </div>
-                        <div className="text-xs text-[#4d5156] line-clamp-2 leading-relaxed">
-                          {form.seoDescription || form.excerpt || "Article meta snippet description will appear here on Google search engine results."}
+                        <div className="grid grid-cols-2 gap-2">
+                          {PRESET_IMAGES.map((preset) => (
+                            <button
+                              key={preset.name}
+                              type="button"
+                              onClick={() => setForm({ ...form, coverImage: preset.url })}
+                              className={`p-1.5 rounded-lg border text-left transition-all ${
+                                form.coverImage === preset.url
+                                  ? "border-[#C59B27] ring-1 ring-[#C59B27] bg-[#C59B27]/10"
+                                  : "border-slate-200 bg-white hover:border-slate-300"
+                              }`}
+                            >
+                              <div className="relative aspect-[16/10] rounded overflow-hidden mb-1">
+                                <img
+                                  src={preset.url}
+                                  alt={preset.name}
+                                  className="w-full h-full object-cover"
+                                />
+                              </div>
+                              <div className="text-[10px] font-semibold text-[#070B14] truncate">
+                                {preset.name}
+                              </div>
+                            </button>
+                          ))}
                         </div>
                       </div>
+
+                      {/* Statistics */}
+                      <div className="pt-4 border-t border-slate-200">
+                        <div className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2">
+                          Document Metrics
+                        </div>
+                        <div className="space-y-1.5 text-xs text-slate-600">
+                          <div className="flex justify-between">
+                            <span>Words:</span>
+                            <span className="font-bold text-[#070B14]">{wordCount}</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span>Characters:</span>
+                            <span className="font-bold text-[#070B14]">{charCount}</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span>Paragraphs:</span>
+                            <span className="font-bold text-[#070B14]">{paragraphCount}</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span>Headings (H2/H3):</span>
+                            <span className="font-bold text-[#070B14]">{headingCount}</span>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                )}
-              </div>
+                  )}
+
+                  {/* TAB 2: YOAST / RANKMATH SEO AUDITOR */}
+                  {sidebarTab === "seo" && (
+                    <div className="p-6 space-y-6">
+                      {/* Overall Health Score Card */}
+                      <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-2xs space-y-2">
+                        <div className="flex items-center justify-between">
+                          <span className="text-xs font-bold text-[#070B14] uppercase tracking-wider">
+                            SEO Health Grade
+                          </span>
+                          <span className={`px-2.5 py-0.5 rounded-full text-xs font-extrabold border ${getScoreColor(seoScore)}`}>
+                            {seoScore} / 100
+                          </span>
+                        </div>
+                        {/* Progress Bar */}
+                        <div className="w-full bg-slate-100 rounded-full h-2 overflow-hidden">
+                          <div
+                            className={`h-full transition-all duration-500 ${
+                              seoScore >= 75
+                                ? "bg-emerald-500"
+                                : seoScore >= 50
+                                ? "bg-amber-500"
+                                : "bg-rose-500"
+                            }`}
+                            style={{ width: `${seoScore}%` }}
+                          />
+                        </div>
+                        <p className="text-[11px] text-slate-500">
+                          {seoScore >= 75
+                            ? "Excellent! High ranking potential on Google UAE."
+                            : seoScore >= 50
+                            ? "Moderate. Complete the checklist items below to improve score."
+                            : "Needs optimization. Focus keyword and meta lengths required."}
+                        </p>
+                      </div>
+
+                      {/* Focus Keyword */}
+                      <div>
+                        <label className="block text-xs font-bold text-slate-700 mb-1">
+                          Focus Keyword / Keyphrase *
+                        </label>
+                        <input
+                          type="text"
+                          value={focusKeyword}
+                          onChange={(e) => setFocusKeyword(e.target.value)}
+                          placeholder="e.g. Dubai Web Development"
+                          className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs bg-white text-[#070B14] focus:border-[#C59B27] focus:outline-none"
+                        />
+                        <p className="text-[10px] text-slate-400 mt-1">
+                          The target query users in UAE type to find this article.
+                        </p>
+                      </div>
+
+                      {/* Google Search Live Simulation Snippet */}
+                      <div>
+                        <div className="flex items-center justify-between mb-2">
+                          <label className="text-xs font-bold text-slate-700">
+                            Google SERP Snippet Preview
+                          </label>
+                          <div className="flex items-center gap-1 bg-white p-0.5 rounded border border-slate-200">
+                            <button
+                              type="button"
+                              onClick={() => setDevicePreview("desktop")}
+                              className={`p-1 rounded ${
+                                devicePreview === "desktop"
+                                  ? "bg-slate-100 text-[#070B14]"
+                                  : "text-slate-400"
+                              }`}
+                              title="Desktop Preview"
+                            >
+                              <Monitor size={12} />
+                            </button>
+                            <button
+                              type="button"
+                              onClick={() => setDevicePreview("mobile")}
+                              className={`p-1 rounded ${
+                                devicePreview === "mobile"
+                                  ? "bg-slate-100 text-[#070B14]"
+                                  : "text-slate-400"
+                              }`}
+                              title="Mobile Preview"
+                            >
+                              <Smartphone size={12} />
+                            </button>
+                          </div>
+                        </div>
+
+                        <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-2xs space-y-1">
+                          <div className="text-[11px] text-slate-500 font-mono truncate">
+                            https://birdhillstech.com › blog › {form.slug || "article-slug"}
+                          </div>
+                          <div className="text-sm font-semibold text-[#1a0dab] hover:underline cursor-pointer leading-snug">
+                            {effectiveTitle || "Article Title Preview"}
+                          </div>
+                          <div className="text-xs text-[#4d5156] line-clamp-2 leading-relaxed">
+                            {effectiveDesc || "Article meta snippet description will appear here on Google search engine results."}
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* SEO Meta Title Input & Meter */}
+                      <div>
+                        <div className="flex items-center justify-between mb-1">
+                          <label className="text-xs font-bold text-slate-700">
+                            SEO Title Tag
+                          </label>
+                          <span className={`text-[10px] font-bold ${
+                            titleOptimal ? "text-emerald-600" : "text-amber-600"
+                          }`}>
+                            {effectiveTitle.length}/60 chars
+                          </span>
+                        </div>
+                        <input
+                          type="text"
+                          value={form.seoTitle}
+                          onChange={(e) => setForm({ ...form, seoTitle: e.target.value })}
+                          placeholder={form.title || "Custom Google title..."}
+                          className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs bg-white text-[#070B14] focus:border-[#C59B27] focus:outline-none mb-1.5"
+                        />
+                        <div className="w-full bg-slate-100 rounded-full h-1 overflow-hidden">
+                          <div
+                            className={`h-full ${
+                              titleOptimal
+                                ? "bg-emerald-500"
+                                : effectiveTitle.length > 60
+                                ? "bg-rose-500"
+                                : "bg-amber-400"
+                            }`}
+                            style={{ width: `${Math.min(100, (effectiveTitle.length / 60) * 100)}%` }}
+                          />
+                        </div>
+                      </div>
+
+                      {/* SEO Meta Description Input & Meter */}
+                      <div>
+                        <div className="flex items-center justify-between mb-1">
+                          <label className="text-xs font-bold text-slate-700">
+                            Meta Description
+                          </label>
+                          <span className={`text-[10px] font-bold ${
+                            descOptimal ? "text-emerald-600" : "text-amber-600"
+                          }`}>
+                            {effectiveDesc.length}/160 chars
+                          </span>
+                        </div>
+                        <textarea
+                          rows={3}
+                          value={form.seoDescription}
+                          onChange={(e) => setForm({ ...form, seoDescription: e.target.value })}
+                          placeholder={form.excerpt || "Custom Google description..."}
+                          className="w-full p-3 border border-[#E4E7EC] rounded-xl text-xs bg-white text-[#070B14] focus:border-[#C59B27] focus:outline-none leading-relaxed mb-1.5"
+                        />
+                        <div className="w-full bg-slate-100 rounded-full h-1 overflow-hidden">
+                          <div
+                            className={`h-full ${
+                              descOptimal
+                                ? "bg-emerald-500"
+                                : effectiveDesc.length > 160
+                                ? "bg-rose-500"
+                                : "bg-amber-400"
+                            }`}
+                            style={{ width: `${Math.min(100, (effectiveDesc.length / 160) * 100)}%` }}
+                          />
+                        </div>
+                      </div>
+
+                      {/* Yoast-Style SEO Checklist */}
+                      <div className="pt-2 border-t border-slate-200 space-y-2.5">
+                        <div className="text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-2">
+                          SEO Analysis Checklist
+                        </div>
+
+                        <div className="flex items-start gap-2 text-xs">
+                          {kwInTitle ? (
+                            <CheckCircle2 size={14} className="text-emerald-500 shrink-0 mt-0.5" />
+                          ) : (
+                            <AlertCircle size={14} className="text-amber-500 shrink-0 mt-0.5" />
+                          )}
+                          <span className={kwInTitle ? "text-slate-700" : "text-slate-500"}>
+                            Focus keyword appears in the SEO Title
+                          </span>
+                        </div>
+
+                        <div className="flex items-start gap-2 text-xs">
+                          {kwInDesc ? (
+                            <CheckCircle2 size={14} className="text-emerald-500 shrink-0 mt-0.5" />
+                          ) : (
+                            <AlertCircle size={14} className="text-amber-500 shrink-0 mt-0.5" />
+                          )}
+                          <span className={kwInDesc ? "text-slate-700" : "text-slate-500"}>
+                            Focus keyword appears in the Meta Description
+                          </span>
+                        </div>
+
+                        <div className="flex items-start gap-2 text-xs">
+                          {kwInSlug ? (
+                            <CheckCircle2 size={14} className="text-emerald-500 shrink-0 mt-0.5" />
+                          ) : (
+                            <AlertCircle size={14} className="text-amber-500 shrink-0 mt-0.5" />
+                          )}
+                          <span className={kwInSlug ? "text-slate-700" : "text-slate-500"}>
+                            Focus keyword included in the URL permalink slug
+                          </span>
+                        </div>
+
+                        <div className="flex items-start gap-2 text-xs">
+                          {kwInContent ? (
+                            <CheckCircle2 size={14} className="text-emerald-500 shrink-0 mt-0.5" />
+                          ) : (
+                            <AlertCircle size={14} className="text-rose-500 shrink-0 mt-0.5" />
+                          )}
+                          <span className={kwInContent ? "text-slate-700" : "text-slate-500"}>
+                            Focus keyword found inside article body
+                          </span>
+                        </div>
+
+                        <div className="flex items-start gap-2 text-xs">
+                          {titleOptimal ? (
+                            <CheckCircle2 size={14} className="text-emerald-500 shrink-0 mt-0.5" />
+                          ) : (
+                            <AlertCircle size={14} className="text-amber-500 shrink-0 mt-0.5" />
+                          )}
+                          <span className={titleOptimal ? "text-slate-700" : "text-slate-500"}>
+                            SEO Title length is optimal (45-60 chars)
+                          </span>
+                        </div>
+
+                        <div className="flex items-start gap-2 text-xs">
+                          {descOptimal ? (
+                            <CheckCircle2 size={14} className="text-emerald-500 shrink-0 mt-0.5" />
+                          ) : (
+                            <AlertCircle size={14} className="text-amber-500 shrink-0 mt-0.5" />
+                          )}
+                          <span className={descOptimal ? "text-slate-700" : "text-slate-500"}>
+                            Meta description length is optimal (120-160 chars)
+                          </span>
+                        </div>
+
+                        <div className="flex items-start gap-2 text-xs">
+                          {lengthGood ? (
+                            <CheckCircle2 size={14} className="text-emerald-500 shrink-0 mt-0.5" />
+                          ) : (
+                            <AlertCircle size={14} className="text-amber-500 shrink-0 mt-0.5" />
+                          )}
+                          <span className={lengthGood ? "text-slate-700" : "text-slate-500"}>
+                            Article length: {wordCount} words (350+ recommended)
+                          </span>
+                        </div>
+
+                        <div className="flex items-start gap-2 text-xs">
+                          {hasHeadings ? (
+                            <CheckCircle2 size={14} className="text-emerald-500 shrink-0 mt-0.5" />
+                          ) : (
+                            <AlertCircle size={14} className="text-amber-500 shrink-0 mt-0.5" />
+                          )}
+                          <span className={hasHeadings ? "text-slate-700" : "text-slate-500"}>
+                            Subheadings present ({headingCount} H2/H3 blocks)
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
           </div>
         </div>

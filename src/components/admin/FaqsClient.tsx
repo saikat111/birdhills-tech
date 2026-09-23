@@ -152,7 +152,7 @@ export function FaqsClient({ initialFaqs }: FaqsClientProps) {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-[#E4E7EC]">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-[#0B1730]">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-[#070B14]">
             Frequently Asked Questions (FAQs)
           </h1>
           <p className="text-xs sm:text-sm text-[#667085] mt-1">
@@ -162,7 +162,7 @@ export function FaqsClient({ initialFaqs }: FaqsClientProps) {
         <button
           type="button"
           onClick={openCreateModal}
-          className="px-4 py-2 bg-[#1D68BD] hover:bg-[#155196] text-white text-xs font-semibold rounded-xl shadow-xs transition-colors inline-flex items-center gap-1.5"
+          className="px-4 py-2 bg-[#C59B27] hover:bg-[#B38728] text-white text-xs font-semibold rounded-xl shadow-xs transition-colors inline-flex items-center gap-1.5"
         >
           <Plus size={15} />
           Add New FAQ
@@ -178,14 +178,14 @@ export function FaqsClient({ initialFaqs }: FaqsClientProps) {
             placeholder="Search questions or answers..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full pl-10 pr-4 py-2 bg-white border border-[#E4E7EC] rounded-xl text-xs text-[#0B1730] placeholder:text-slate-400 focus:outline-none focus:border-[#1D68BD]"
+            className="w-full pl-10 pr-4 py-2 bg-white border border-[#E4E7EC] rounded-xl text-xs text-[#070B14] placeholder:text-slate-400 focus:outline-none focus:border-[#C59B27]"
           />
         </div>
 
         <select
           value={selectedCategory}
           onChange={(e) => setSelectedCategory(e.target.value)}
-          className="w-full sm:w-56 px-3 py-2 bg-white border border-[#E4E7EC] rounded-xl text-xs text-[#0B1730] focus:outline-none focus:border-[#1D68BD]"
+          className="w-full sm:w-56 px-3 py-2 bg-white border border-[#E4E7EC] rounded-xl text-xs text-[#070B14] focus:outline-none focus:border-[#C59B27]"
         >
           <option value="all">All Categories ({faqs.length})</option>
           {CATEGORIES.map((c) => (
@@ -208,14 +208,14 @@ export function FaqsClient({ initialFaqs }: FaqsClientProps) {
             <div className="flex items-start justify-between gap-4">
               <div className="space-y-1.5 flex-1">
                 <div className="flex items-center gap-2">
-                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#EBF3FE] text-[#1D68BD] border border-[#BFDBFE]">
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#C59B27]/10] text-[#C59B27] border border-[#C59B27]/25]">
                     {faq.category}
                   </span>
                   <span className="text-[10px] text-slate-400 font-mono">
                     Order: {faq.sortOrder}
                   </span>
                 </div>
-                <h3 className="text-sm font-bold text-[#0B1730]">{faq.question}</h3>
+                <h3 className="text-sm font-bold text-[#070B14]">{faq.question}</h3>
                 <p className="text-xs text-[#475467] leading-relaxed pt-1 whitespace-pre-line">
                   {faq.answer}
                 </p>
@@ -237,7 +237,7 @@ export function FaqsClient({ initialFaqs }: FaqsClientProps) {
                 <button
                   type="button"
                   onClick={() => openEditModal(faq)}
-                  className="p-1.5 text-slate-400 hover:text-[#1D68BD] rounded-lg hover:bg-slate-100 transition-colors"
+                  className="p-1.5 text-slate-400 hover:text-[#C59B27] rounded-lg hover:bg-slate-100 transition-colors"
                   title="Edit"
                 >
                   <Edit2 size={15} />
@@ -267,7 +267,7 @@ export function FaqsClient({ initialFaqs }: FaqsClientProps) {
         <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4 backdrop-blur-2xs">
           <div className="bg-white rounded-2xl w-full max-w-xl shadow-2xl overflow-hidden">
             <div className="p-5 border-b border-[#E4E7EC] flex items-center justify-between">
-              <h3 className="text-base font-bold text-[#0B1730]">
+              <h3 className="text-base font-bold text-[#070B14]">
                 {editingFaq ? "Edit FAQ" : "Add New FAQ"}
               </h3>
               <button
@@ -297,7 +297,7 @@ export function FaqsClient({ initialFaqs }: FaqsClientProps) {
                   value={form.question}
                   onChange={(e) => setForm({ ...form, question: e.target.value })}
                   placeholder="e.g. How does Bird Hills Tech structure project timelines and sprints?"
-                  className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#0B1730] focus:border-[#1D68BD] focus:outline-none"
+                  className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#070B14] focus:border-[#C59B27] focus:outline-none"
                 />
               </div>
 
@@ -309,7 +309,7 @@ export function FaqsClient({ initialFaqs }: FaqsClientProps) {
                   <select
                     value={form.category}
                     onChange={(e) => setForm({ ...form, category: e.target.value })}
-                    className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#0B1730] focus:border-[#1D68BD] focus:outline-none"
+                    className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#070B14] focus:border-[#C59B27] focus:outline-none"
                   >
                     {CATEGORIES.map((c) => (
                       <option key={c} value={c}>
@@ -327,7 +327,7 @@ export function FaqsClient({ initialFaqs }: FaqsClientProps) {
                     type="number"
                     value={form.sortOrder}
                     onChange={(e) => setForm({ ...form, sortOrder: Number(e.target.value) })}
-                    className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#0B1730] focus:border-[#1D68BD] focus:outline-none"
+                    className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#070B14] focus:border-[#C59B27] focus:outline-none"
                   />
                 </div>
               </div>
@@ -342,7 +342,7 @@ export function FaqsClient({ initialFaqs }: FaqsClientProps) {
                   value={form.answer}
                   onChange={(e) => setForm({ ...form, answer: e.target.value })}
                   placeholder="Clear, authoritative explanation addressing the prospective client..."
-                  className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#0B1730] focus:border-[#1D68BD] focus:outline-none leading-relaxed"
+                  className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#070B14] focus:border-[#C59B27] focus:outline-none leading-relaxed"
                 />
               </div>
 
@@ -352,7 +352,7 @@ export function FaqsClient({ initialFaqs }: FaqsClientProps) {
                     type="checkbox"
                     checked={form.active}
                     onChange={(e) => setForm({ ...form, active: e.target.checked })}
-                    className="rounded text-[#1D68BD] focus:ring-[#1D68BD] w-4 h-4"
+                    className="rounded text-[#C59B27] focus:ring-[#C59B27] w-4 h-4"
                   />
                   <span>Active (Visible on public FAQ sections)</span>
                 </label>
@@ -369,7 +369,7 @@ export function FaqsClient({ initialFaqs }: FaqsClientProps) {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="px-5 py-2 bg-[#1D68BD] hover:bg-[#155196] text-white text-xs font-semibold rounded-xl shadow-xs transition-colors flex items-center gap-1.5 disabled:opacity-50"
+                  className="px-5 py-2 bg-[#C59B27] hover:bg-[#B38728] text-white text-xs font-semibold rounded-xl shadow-xs transition-colors flex items-center gap-1.5 disabled:opacity-50"
                 >
                   <Save size={14} />
                   {isSubmitting ? "Saving..." : editingFaq ? "Update FAQ" : "Add FAQ"}

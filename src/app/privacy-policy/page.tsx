@@ -14,16 +14,16 @@ export const metadata: Metadata = {
 export default function PrivacyPolicyPage() {
   return (
     <div className="flex flex-col min-h-screen pt-24">
-      <section className="py-16 md:py-20 bg-[#F7F9FC] border-b border-[#E4E7EC]">
+      <section className="py-16 md:py-20 bg-[#FAF8F5] border-b border-slate-200/80">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2 text-xs text-[#667085] mb-4">
-            <Link href="/" className="hover:text-[#1D68BD]">
+            <Link href="/" className="hover:text-[#C59B27] transition-colors">
               Home
             </Link>
             <ChevronRight size={12} />
-            <span className="text-[#0B1730] font-semibold">Privacy Policy</span>
+            <span className="text-[#070B14] font-semibold">Privacy Policy</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-[#0B1730]">Privacy Policy</h1>
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-[#070B14]">Privacy Policy</h1>
           <p className="text-xs text-slate-500 mt-2">
             Last Updated: January 2026 · Bird Hills Tech (Dubai, UAE)
           </p>
@@ -33,7 +33,7 @@ export default function PrivacyPolicyPage() {
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 prose prose-slate max-w-none text-[#101828] space-y-8">
           <div>
-            <h2 className="text-xl font-bold text-[#0B1730] mb-3">1. Information We Collect</h2>
+            <h2 className="text-xl font-bold text-[#070B14] mb-3">1. Information We Collect</h2>
             <p className="text-sm sm:text-base text-[#667085] leading-relaxed">
               Bird Hills Tech (&ldquo;we&rdquo;, &ldquo;our&rdquo;, or &ldquo;us&rdquo;) collects
               information that you provide directly to us when you fill out contact forms, book a
@@ -44,7 +44,7 @@ export default function PrivacyPolicyPage() {
           </div>
 
           <div>
-            <h2 className="text-xl font-bold text-[#0B1730] mb-3">2. How We Use Your Information</h2>
+            <h2 className="text-xl font-bold text-[#070B14] mb-3">2. How We Use Your Information</h2>
             <p className="text-sm sm:text-base text-[#667085] leading-relaxed">
               We process your personal information solely for commercial communication, providing
               custom project proposals, fulfilling our contractual obligations, scheduling
@@ -54,7 +54,7 @@ export default function PrivacyPolicyPage() {
           </div>
 
           <div>
-            <h2 className="text-xl font-bold text-[#0B1730] mb-3">3. Data Protection and Regional Compliance</h2>
+            <h2 className="text-xl font-bold text-[#070B14] mb-3">3. Data Protection and Regional Compliance</h2>
             <p className="text-sm sm:text-base text-[#667085] leading-relaxed">
               We maintain technical, administrative, and physical security measures designed to
               protect personal data against unauthorized access, loss, or alteration. Our operations
@@ -64,7 +64,7 @@ export default function PrivacyPolicyPage() {
           </div>
 
           <div>
-            <h2 className="text-xl font-bold text-[#0B1730] mb-3">4. Cookies and Analytical Telemetry</h2>
+            <h2 className="text-xl font-bold text-[#070B14] mb-3">4. Cookies and Analytical Telemetry</h2>
             <p className="text-sm sm:text-base text-[#667085] leading-relaxed">
               Our website uses strictly necessary and anonymized analytical cookies to measure Core
               Web Vitals performance, user traffic paths, and session integrity. You may disable
@@ -73,12 +73,12 @@ export default function PrivacyPolicyPage() {
           </div>
 
           <div>
-            <h2 className="text-xl font-bold text-[#0B1730] mb-3">5. Contact and Inquiries</h2>
+            <h2 className="text-xl font-bold text-[#070B14] mb-3">5. Contact and Inquiries</h2>
             <p className="text-sm sm:text-base text-[#667085] leading-relaxed">
               If you have any questions regarding this Privacy Policy or wish to request data
               rectification or deletion, please contact our legal representative at:
               <br />
-              <strong className="text-[#0B1730]">Bird Hills Tech</strong>
+              <strong className="text-[#070B14]">Bird Hills Tech</strong>
               <br />
               Deira - Stone Building - 122 7th A Street - Al Baraha - Dubai, UAE
               <br />

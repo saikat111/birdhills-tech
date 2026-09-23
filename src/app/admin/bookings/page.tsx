@@ -25,7 +25,7 @@ export default async function AdminBookingsPage() {
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-[#E4E7EC]">
         <div>
-          <h1 className="text-2xl font-extrabold text-[#0B1730]">Consultation Bookings</h1>
+          <h1 className="text-2xl font-extrabold text-[#070B14]">Consultation Bookings</h1>
           <p className="text-xs text-[#667085] mt-0.5">
             Manage scheduled Google Meet and in-person Dubai office meetings.
           </p>

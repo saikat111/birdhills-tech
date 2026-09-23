@@ -59,15 +59,15 @@ export function TechEcosystemSection() {
   ];
 
   return (
-    <section className="py-24 bg-[#0B1730] text-white relative overflow-hidden">
+    <section className="py-24 bg-[#070B14] text-white relative overflow-hidden">
       {/* Subtle Background Glow */}
-      <div className="absolute top-0 right-1/3 w-96 h-96 bg-[#1D68BD]/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-10 w-96 h-96 bg-sky-500/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-1/3 w-96 h-96 bg-[#C59B27]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-10 w-96 h-96 bg-[#D4AF37]/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="max-w-3xl mb-16">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold tracking-widest text-[#38BDF8] uppercase bg-white/5 border border-white/10 mb-3">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold tracking-widest text-[#D4AF37] uppercase bg-[#C59B27]/10 border border-[#C59B27]/30 mb-3">
             TECH STACK & ARCHITECTURE
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
@@ -83,19 +83,19 @@ export function TechEcosystemSection() {
           {technologies.map((t) => (
             <div
               key={t.name}
-              className="bg-white/5 backdrop-blur-md rounded-2xl p-6 sm:p-8 border border-white/10 hover:border-[#1D68BD] hover:bg-white/10 transition-all duration-300 flex flex-col justify-between group"
+              className="bg-white/5 backdrop-blur-md rounded-2xl p-6 sm:p-8 border border-white/10 hover:border-[#C59B27] hover:bg-white/10 transition-all duration-300 flex flex-col justify-between group"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#38BDF8] px-2.5 py-0.5 rounded-full bg-[#38BDF8]/10 border border-[#38BDF8]/20">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#D4AF37] px-2.5 py-0.5 rounded-full bg-[#C59B27]/15 border border-[#C59B27]/30">
                     {t.badge}
                   </span>
-                  <Terminal size={16} className="text-slate-500 group-hover:text-[#38BDF8] transition-colors" />
+                  <Terminal size={16} className="text-slate-500 group-hover:text-[#D4AF37] transition-colors" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#38BDF8] transition-colors">
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#D4AF37] transition-colors">
                   {t.name}
                 </h3>
-                <p className="text-xs font-semibold text-slate-400 mb-3">{t.category}</p>
+                <p className="text-xs font-semibold text-amber-200/70 mb-3">{t.category}</p>
                 <p className="text-xs text-slate-300 leading-relaxed font-normal">{t.desc}</p>
               </div>
             </div>
@@ -106,7 +106,7 @@ export function TechEcosystemSection() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 p-8 rounded-3xl bg-gradient-to-r from-white/10 to-white/5 border border-white/15 backdrop-blur-md">
           {benchmarks.map((b) => (
             <div key={b.label} className="text-left space-y-1">
-              <div className="text-3xl sm:text-4xl font-extrabold text-[#38BDF8] tracking-tight">
+              <div className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] via-[#C59B27] to-[#B38728] tracking-tight">
                 {b.value}
               </div>
               <div className="text-sm font-bold text-white">{b.label}</div>

@@ -172,7 +172,7 @@ export default async function HostingPage() {
   return (
     <div className="flex flex-col min-h-screen pt-24">
       {/* 1. HERO SECTION */}
-      <section className="relative py-24 md:py-32 bg-[#070D1B] text-white overflow-hidden">
+      <section className="relative py-24 md:py-32 bg-[#070B14] text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=2000&q=90"
@@ -182,13 +182,13 @@ export default async function HostingPage() {
             sizes="100vw"
             className="object-cover object-center scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#070D1B]/95 via-[#070D1B]/85 to-[#070D1B]/50" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#070D1B]/90 via-transparent to-[#070D1B]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#070B14]/95 via-[#070B14]/85 to-[#070B14]/50" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#070B14]/90 via-transparent to-[#070B14]" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl space-y-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-widest text-[#38BDF8] uppercase bg-white/10 border border-white/15 backdrop-blur-md">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-widest text-[#D4AF37] uppercase bg-[#C59B27]/15 border border-[#C59B27]/30 backdrop-blur-md">
               <Server size={14} />
               <span>GCC CLOUD INFRASTRUCTURE</span>
             </div>
@@ -202,7 +202,7 @@ export default async function HostingPage() {
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <a
                 href="#plans"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#1D68BD] hover:bg-[#155196] text-white text-sm font-bold shadow-lg shadow-[#1D68BD]/25 transition-all hover:translate-y-[-1px]"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#D4AF37] via-[#C59B27] to-[#B38728] hover:brightness-105 text-white text-sm font-bold shadow-lg shadow-[#C59B27]/25 transition-all hover:translate-y-[-1px]"
               >
                 <span>View Hosting Plans</span>
                 <ArrowRight size={16} />
@@ -223,19 +223,19 @@ export default async function HostingPage() {
       <section className="bg-white border-b border-[#E4E7EC] py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            <div className="p-4 rounded-2xl bg-[#F7F9FC] border border-[#E4E7EC]">
-              <div className="text-2xl sm:text-3xl font-black text-[#0B1730]">99.99%</div>
+            <div className="p-4 rounded-2xl bg-[#FAF8F5] border border-[#E4E7EC]">
+              <div className="text-2xl sm:text-3xl font-black text-[#070B14]">99.99%</div>
               <div className="text-xs text-[#667085] font-semibold uppercase mt-1">Uptime SLA Guarantee</div>
             </div>
-            <div className="p-4 rounded-2xl bg-[#F7F9FC] border border-[#E4E7EC]">
-              <div className="text-2xl sm:text-3xl font-black text-[#1D68BD]">&lt; 15ms</div>
+            <div className="p-4 rounded-2xl bg-[#FAF8F5] border border-[#E4E7EC]">
+              <div className="text-2xl sm:text-3xl font-black text-[#C59B27]">&lt; 15ms</div>
               <div className="text-xs text-[#667085] font-semibold uppercase mt-1">Dubai & GCC Latency</div>
             </div>
-            <div className="p-4 rounded-2xl bg-[#F7F9FC] border border-[#E4E7EC]">
-              <div className="text-2xl sm:text-3xl font-black text-[#0B1730]">Pure NVMe</div>
+            <div className="p-4 rounded-2xl bg-[#FAF8F5] border border-[#E4E7EC]">
+              <div className="text-2xl sm:text-3xl font-black text-[#070B14]">Pure NVMe</div>
               <div className="text-xs text-[#667085] font-semibold uppercase mt-1">Gen4 Enterprise Storage</div>
             </div>
-            <div className="p-4 rounded-2xl bg-[#F7F9FC] border border-[#E4E7EC]">
+            <div className="p-4 rounded-2xl bg-[#FAF8F5] border border-[#E4E7EC]">
               <div className="text-2xl sm:text-3xl font-black text-emerald-600">0 Downtime</div>
               <div className="text-xs text-[#667085] font-semibold uppercase mt-1">Free Expert Migration</div>
             </div>
@@ -244,13 +244,13 @@ export default async function HostingPage() {
       </section>
 
       {/* 3. HOSTING PLANS PRICING GRID */}
-      <section className="py-24 bg-[#F7F9FC]" id="plans">
+      <section className="py-24 bg-[#FAF8F5]" id="plans">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-            <span className="text-xs font-bold tracking-wider uppercase text-[#1D68BD]">
+            <span className="text-xs font-bold tracking-wider uppercase text-[#C59B27]">
               PREMIUM INFRASTRUCTURE TIERS
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B1730] tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#070B14] tracking-tight">
               Select Your Cloud Architecture
             </h2>
             <p className="text-sm text-[#667085]">
@@ -276,12 +276,12 @@ export default async function HostingPage() {
                   key={plan.slug}
                   className={`relative rounded-3xl p-7 transition-all duration-300 flex flex-col justify-between ${
                     plan.popular
-                      ? "bg-white border-2 border-[#1D68BD] shadow-2xl scale-[1.02] z-10 ring-4 ring-[#1D68BD]/10"
-                      : "bg-white border border-[#E4E7EC] shadow-xs hover:shadow-xl hover:border-[#1D68BD]/40"
+                      ? "bg-white border-2 border-[#C59B27] shadow-2xl scale-[1.02] z-10 ring-4 ring-[#C59B27]/15"
+                      : "bg-white border border-[#E4E7EC] shadow-xs hover:shadow-xl hover:border-[#C59B27]/40"
                   }`}
                 >
                   {plan.popular && (
-                    <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-[#1D68BD] text-white text-[11px] font-extrabold uppercase tracking-wider shadow-sm">
+                    <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-[#D4AF37] via-[#C59B27] to-[#B38728] text-white text-[11px] font-extrabold uppercase tracking-wider shadow-md shadow-[#C59B27]/25">
                       {plan.badge || "Most Popular"}
                     </div>
                   )}
@@ -292,22 +292,22 @@ export default async function HostingPage() {
                       <div className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">
                         {plan.badge && !plan.popular ? plan.badge : plan.category.toUpperCase()}
                       </div>
-                      <h3 className="text-xl font-extrabold text-[#0B1730] mb-2">{plan.name}</h3>
+                      <h3 className="text-xl font-extrabold text-[#070B14] mb-2">{plan.name}</h3>
                       <p className="text-xs text-[#667085] leading-relaxed line-clamp-2">
                         {plan.description}
                       </p>
                     </div>
 
                     {/* Price */}
-                    <div className="p-4 rounded-2xl bg-[#F7F9FC] border border-slate-100 mb-6">
+                    <div className="p-4 rounded-2xl bg-[#FAF8F5] border border-slate-200/80 mb-6">
                       <div className="flex items-baseline gap-1">
-                        <span className="text-3xl font-black text-[#0B1730] tracking-tight">
+                        <span className="text-3xl font-black text-[#070B14] tracking-tight">
                           {plan.priceUsd}
                         </span>
                         <span className="text-xs text-slate-500 font-medium">{plan.billingCycle}</span>
                       </div>
                       {(plan.storage || plan.bandwidth) && (
-                        <div className="mt-2 pt-2 border-t border-slate-200/70 flex items-center justify-between text-[11px] text-[#1D68BD] font-bold">
+                        <div className="mt-2 pt-2 border-t border-slate-200/70 flex items-center justify-between text-[11px] text-[#B38728] font-bold">
                           <span>{plan.storage}</span>
                           <span>{plan.bandwidth}</span>
                         </div>
@@ -320,8 +320,8 @@ export default async function HostingPage() {
                         Hardware & Service Specs:
                       </div>
                       {features.map((feat: string) => (
-                        <div key={feat} className="flex items-start gap-2 text-xs text-[#0B1730]">
-                          <CheckCircle2 size={14} className="text-[#1D68BD] shrink-0 mt-0.5" />
+                        <div key={feat} className="flex items-start gap-2 text-xs text-[#070B14]">
+                          <CheckCircle2 size={14} className="text-[#C59B27] shrink-0 mt-0.5" />
                           <span className="leading-snug">{feat}</span>
                         </div>
                       ))}
@@ -334,8 +334,8 @@ export default async function HostingPage() {
                       href={`/book-a-meeting?service=${encodeURIComponent("Hosting: " + plan.name)}`}
                       className={`w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs font-bold transition-all ${
                         plan.popular
-                          ? "bg-[#1D68BD] hover:bg-[#155196] text-white shadow-md"
-                          : "bg-[#0B1730] hover:bg-[#15254d] text-white"
+                          ? "bg-gradient-to-r from-[#D4AF37] via-[#C59B27] to-[#B38728] hover:brightness-105 text-white shadow-md shadow-[#C59B27]/25"
+                          : "bg-[#070B14] hover:bg-[#1a2336] text-white"
                       }`}
                     >
                       <Zap size={14} />
@@ -363,10 +363,10 @@ export default async function HostingPage() {
       <section className="py-24 bg-white border-t border-[#E4E7EC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-            <span className="text-xs font-bold tracking-wider uppercase text-[#1D68BD]">
+            <span className="text-xs font-bold tracking-wider uppercase text-[#C59B27]">
               ENGINEERED FOR SUPREMACY
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B1730] tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#070B14] tracking-tight">
               The Bird Hills Cloud Architecture
             </h2>
             <p className="text-sm text-[#667085]">
@@ -375,31 +375,31 @@ export default async function HostingPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-8 rounded-3xl bg-[#F7F9FC] border border-[#E4E7EC] space-y-4">
-              <div className="w-12 h-12 rounded-2xl bg-[#EBF3FE] flex items-center justify-center text-[#1D68BD]">
+            <div className="p-8 rounded-3xl bg-[#FAF8F5] border border-[#E4E7EC] hover:border-[#C59B27]/30 shadow-sm transition-all space-y-4">
+              <div className="w-12 h-12 rounded-2xl bg-[#C59B27]/10 flex items-center justify-center text-[#C59B27]">
                 <HardDrive size={24} />
               </div>
-              <h3 className="text-lg font-extrabold text-[#0B1730]">Pure NVMe Gen4 Storage</h3>
+              <h3 className="text-lg font-extrabold text-[#070B14]">Pure NVMe Gen4 Storage</h3>
               <p className="text-xs text-[#667085] leading-relaxed">
                 Up to 7,000 MB/s read and write speeds. Traditional SATA SSDs throttle databases and dynamic WordPress queries; our NVMe arrays handle high-concurrency traffic effortlessly.
               </p>
             </div>
 
-            <div className="p-8 rounded-3xl bg-[#F7F9FC] border border-[#E4E7EC] space-y-4">
-              <div className="w-12 h-12 rounded-2xl bg-[#EBF3FE] flex items-center justify-center text-[#1D68BD]">
+            <div className="p-8 rounded-3xl bg-[#FAF8F5] border border-[#E4E7EC] hover:border-[#C59B27]/30 shadow-sm transition-all space-y-4">
+              <div className="w-12 h-12 rounded-2xl bg-[#C59B27]/10 flex items-center justify-center text-[#C59B27]">
                 <Globe size={24} />
               </div>
-              <h3 className="text-lg font-extrabold text-[#0B1730]">Sub-15ms GCC Edge Latency</h3>
+              <h3 className="text-lg font-extrabold text-[#070B14]">Sub-15ms GCC Edge Latency</h3>
               <p className="text-xs text-[#667085] leading-relaxed">
                 Hosting websites in the US or Europe adds 140ms–200ms latency on every request. Our Dubai edge nodes serve your local UAE customers with near-zero network delay.
               </p>
             </div>
 
-            <div className="p-8 rounded-3xl bg-[#F7F9FC] border border-[#E4E7EC] space-y-4">
-              <div className="w-12 h-12 rounded-2xl bg-[#EBF3FE] flex items-center justify-center text-[#1D68BD]">
+            <div className="p-8 rounded-3xl bg-[#FAF8F5] border border-[#E4E7EC] hover:border-[#C59B27]/30 shadow-sm transition-all space-y-4">
+              <div className="w-12 h-12 rounded-2xl bg-[#C59B27]/10 flex items-center justify-center text-[#C59B27]">
                 <ShieldCheck size={24} />
               </div>
-              <h3 className="text-lg font-extrabold text-[#0B1730]">Zero-Trust Security & DDoS</h3>
+              <h3 className="text-lg font-extrabold text-[#070B14]">Zero-Trust Security & DDoS</h3>
               <p className="text-xs text-[#667085] leading-relaxed">
                 Enterprise 100 Gbps+ anti-DDoS scrubbing, Web Application Firewall (WAF), automated malware isolation, and free automatic Let&apos;s Encrypt Wildcard SSL renewals.
               </p>
@@ -409,11 +409,11 @@ export default async function HostingPage() {
       </section>
 
       {/* 5. WHITE-GLOVE MIGRATION GUARANTEE */}
-      <section className="py-20 bg-gradient-to-br from-[#0B1730] via-[#102042] to-[#0B1730] text-white" id="migration">
+      <section className="py-20 bg-gradient-to-br from-[#070B14] via-[#0F1420] to-[#070B14] border-t border-[#C59B27]/25 text-white" id="migration">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <span className="inline-block px-3 py-1 rounded-full text-xs font-bold tracking-widest text-[#38BDF8] uppercase bg-white/10 border border-white/20">
+              <span className="inline-block px-3 py-1 rounded-full text-xs font-bold tracking-widest text-[#D4AF37] uppercase bg-[#C59B27]/15 border border-[#C59B27]/30">
                 100% FREE WHITE-GLOVE SERVICE
               </span>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
@@ -424,21 +424,21 @@ export default async function HostingPage() {
               </p>
               <div className="space-y-3 pt-2">
                 <div className="flex items-center gap-3 text-xs text-slate-200">
-                  <CheckCircle2 size={16} className="text-[#38BDF8]" />
+                  <CheckCircle2 size={16} className="text-[#D4AF37]" />
                   <span>Full file system, database, and email mailbox replication</span>
                 </div>
                 <div className="flex items-center gap-3 text-xs text-slate-200">
-                  <CheckCircle2 size={16} className="text-[#38BDF8]" />
+                  <CheckCircle2 size={16} className="text-[#D4AF37]" />
                   <span>Staging verification URL before switching DNS records</span>
                 </div>
                 <div className="flex items-center gap-3 text-xs text-slate-200">
-                  <CheckCircle2 size={16} className="text-[#38BDF8]" />
+                  <CheckCircle2 size={16} className="text-[#D4AF37]" />
                   <span>Zero data loss guarantee signed by our technical lead</span>
                 </div>
               </div>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/15 space-y-6">
+            <div className="bg-white/5 backdrop-blur-md p-8 rounded-3xl border border-white/10 space-y-6">
               <h3 className="text-xl font-bold text-white">Request Free Migration Assistance</h3>
               <p className="text-xs text-slate-300 leading-relaxed">
                 Connect directly with our Dubai cloud engineering desk to schedule your seamless site transfer.
@@ -448,14 +448,14 @@ export default async function HostingPage() {
                   href="https://wa.me/971524405785?text=Hello%20Bird%20Hills%20Tech%2C%20I%20would%20like%20to%20request%20a%20free%20zero-downtime%20website%20migration%20to%20your%20cloud%20hosting."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2 py-3 px-6 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-bold transition-all shadow-md"
+                  className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl bg-[#25D366] hover:bg-[#1ebd59] text-white text-xs font-bold transition-all shadow-md"
                 >
                   <MessageCircle size={15} />
                   <span>Chat with Migration Specialist on WhatsApp</span>
                 </a>
                 <Link
                   href="/contact"
-                  className="w-full inline-flex items-center justify-center gap-2 py-3 px-6 rounded-xl bg-white text-[#0B1730] hover:bg-slate-100 text-xs font-bold transition-all"
+                  className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl bg-white text-[#070B14] hover:bg-slate-100 text-xs font-bold transition-all"
                 >
                   <span>Submit Migration Brief</span>
                   <ArrowRight size={14} />
@@ -467,13 +467,13 @@ export default async function HostingPage() {
       </section>
 
       {/* 6. FAQS */}
-      <section className="py-24 bg-[#F7F9FC] border-t border-[#E4E7EC]">
+      <section className="py-24 bg-[#FAF8F5] border-t border-[#E4E7EC]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 space-y-2">
-            <span className="text-xs font-bold tracking-wider uppercase text-[#1D68BD]">
+            <span className="text-xs font-bold tracking-wider uppercase text-[#C59B27]">
               TECHNICAL CLARITY
             </span>
-            <h2 className="text-3xl font-extrabold text-[#0B1730] tracking-tight">
+            <h2 className="text-3xl font-extrabold text-[#070B14] tracking-tight">
               Hosting Frequently Asked Questions
             </h2>
           </div>
@@ -484,8 +484,8 @@ export default async function HostingPage() {
                 key={faq.q}
                 className="p-6 rounded-2xl bg-white border border-[#E4E7EC] shadow-2xs space-y-2"
               >
-                <h3 className="text-base font-bold text-[#0B1730] flex items-center gap-2">
-                  <HelpCircle size={17} className="text-[#1D68BD] shrink-0" />
+                <h3 className="text-base font-bold text-[#070B14] flex items-center gap-2">
+                  <HelpCircle size={17} className="text-[#C59B27] shrink-0" />
                   {faq.q}
                 </h3>
                 <p className="text-xs text-[#475467] leading-relaxed pl-6">{faq.a}</p>

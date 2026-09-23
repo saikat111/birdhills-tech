@@ -114,7 +114,7 @@ export function BookingForm() {
 
           {/* Meeting Format Pill Selector */}
           <div className="space-y-2">
-            <label className="text-xs font-bold text-[#0B1730] uppercase tracking-wider">
+            <label className="text-xs font-bold text-[#070B14] uppercase tracking-wider">
               Meeting Location / Format
             </label>
             <div className="grid grid-cols-2 gap-3">
@@ -123,8 +123,8 @@ export function BookingForm() {
                 onClick={() => setFormData({ ...formData, meetingType: "Video Call (Google Meet)" })}
                 className={`py-3 px-4 rounded-xl border text-xs font-bold flex items-center justify-center gap-2 transition-all ${
                   formData.meetingType.includes("Video")
-                    ? "bg-[#EBF3FE] border-[#1D68BD] text-[#1D68BD]"
-                    : "bg-[#F7F9FC] border-[#E4E7EC] text-[#667085]"
+                    ? "bg-[#C59B27]/15 border-[#C59B27] text-[#B38728] shadow-sm"
+                    : "bg-[#F7F9FC] border-[#E4E7EC] text-[#667085] hover:border-slate-300"
                 }`}
               >
                 <Video size={16} />
@@ -135,8 +135,8 @@ export function BookingForm() {
                 onClick={() => setFormData({ ...formData, meetingType: "In-Person (Dubai Office)" })}
                 className={`py-3 px-4 rounded-xl border text-xs font-bold flex items-center justify-center gap-2 transition-all ${
                   formData.meetingType.includes("In-Person")
-                    ? "bg-[#EBF3FE] border-[#1D68BD] text-[#1D68BD]"
-                    : "bg-[#F7F9FC] border-[#E4E7EC] text-[#667085]"
+                    ? "bg-[#C59B27]/15 border-[#C59B27] text-[#B38728] shadow-sm"
+                    : "bg-[#F7F9FC] border-[#E4E7EC] text-[#667085] hover:border-slate-300"
                 }`}
               >
                 <MapPin size={16} />
@@ -148,7 +148,7 @@ export function BookingForm() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {/* Preferred Date */}
             <div className="space-y-1.5">
-              <label htmlFor="date" className="text-xs font-bold text-[#0B1730] uppercase tracking-wider">
+              <label htmlFor="date" className="text-xs font-bold text-[#070B14] uppercase tracking-wider">
                 Preferred Date <span className="text-rose-500">*</span>
               </label>
               <input
@@ -158,20 +158,20 @@ export function BookingForm() {
                 min={minDateStr}
                 value={formData.date}
                 onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-                className="w-full text-sm bg-[#F7F9FC] border border-[#E4E7EC] rounded-xl px-4 py-3 text-[#101828] focus:outline-none focus:border-[#1D68BD] focus:bg-white transition-colors"
+                className="w-full text-sm bg-[#F7F9FC] border border-[#E4E7EC] rounded-xl px-4 py-3 text-[#101828] focus:outline-none focus:border-[#C59B27] focus:ring-1 focus:ring-[#C59B27] focus:bg-white transition-colors"
               />
             </div>
 
             {/* Time Slot */}
             <div className="space-y-1.5">
-              <label htmlFor="timeSlot" className="text-xs font-bold text-[#0B1730] uppercase tracking-wider">
+              <label htmlFor="timeSlot" className="text-xs font-bold text-[#070B14] uppercase tracking-wider">
                 Time Window (Gulf Standard Time) <span className="text-rose-500">*</span>
               </label>
               <select
                 id="timeSlot"
                 value={formData.timeSlot}
                 onChange={(e) => setFormData({ ...formData, timeSlot: e.target.value })}
-                className="w-full text-sm bg-[#F7F9FC] border border-[#E4E7EC] rounded-xl px-4 py-3 text-[#101828] focus:outline-none focus:border-[#1D68BD] focus:bg-white transition-colors cursor-pointer"
+                className="w-full text-sm bg-[#F7F9FC] border border-[#E4E7EC] rounded-xl px-4 py-3 text-[#101828] focus:outline-none focus:border-[#C59B27] focus:ring-1 focus:ring-[#C59B27] focus:bg-white transition-colors cursor-pointer"
               >
                 {timeSlots.map((slot) => (
                   <option key={slot} value={slot}>
@@ -183,7 +183,7 @@ export function BookingForm() {
 
             {/* Name */}
             <div className="space-y-1.5">
-              <label htmlFor="bname" className="text-xs font-bold text-[#0B1730] uppercase tracking-wider">
+              <label htmlFor="bname" className="text-xs font-bold text-[#070B14] uppercase tracking-wider">
                 Full Name <span className="text-rose-500">*</span>
               </label>
               <input
@@ -193,13 +193,13 @@ export function BookingForm() {
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 placeholder="e.g. Sultan Al-Ketbi"
-                className="w-full text-sm bg-[#F7F9FC] border border-[#E4E7EC] rounded-xl px-4 py-3 text-[#101828] placeholder-slate-400 focus:outline-none focus:border-[#1D68BD] focus:bg-white transition-colors"
+                className="w-full text-sm bg-[#F7F9FC] border border-[#E4E7EC] rounded-xl px-4 py-3 text-[#101828] placeholder-slate-400 focus:outline-none focus:border-[#C59B27] focus:ring-1 focus:ring-[#C59B27] focus:bg-white transition-colors"
               />
             </div>
 
             {/* Company */}
             <div className="space-y-1.5">
-              <label htmlFor="bcompany" className="text-xs font-bold text-[#0B1730] uppercase tracking-wider">
+              <label htmlFor="bcompany" className="text-xs font-bold text-[#070B14] uppercase tracking-wider">
                 Company Name
               </label>
               <input
@@ -208,13 +208,13 @@ export function BookingForm() {
                 value={formData.company}
                 onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                 placeholder="e.g. Apex Holdings DXB"
-                className="w-full text-sm bg-[#F7F9FC] border border-[#E4E7EC] rounded-xl px-4 py-3 text-[#101828] placeholder-slate-400 focus:outline-none focus:border-[#1D68BD] focus:bg-white transition-colors"
+                className="w-full text-sm bg-[#F7F9FC] border border-[#E4E7EC] rounded-xl px-4 py-3 text-[#101828] placeholder-slate-400 focus:outline-none focus:border-[#C59B27] focus:ring-1 focus:ring-[#C59B27] focus:bg-white transition-colors"
               />
             </div>
 
             {/* Email */}
             <div className="space-y-1.5">
-              <label htmlFor="bemail" className="text-xs font-bold text-[#0B1730] uppercase tracking-wider">
+              <label htmlFor="bemail" className="text-xs font-bold text-[#070B14] uppercase tracking-wider">
                 Business Email <span className="text-rose-500">*</span>
               </label>
               <input
@@ -224,13 +224,13 @@ export function BookingForm() {
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 placeholder="director@company.com"
-                className="w-full text-sm bg-[#F7F9FC] border border-[#E4E7EC] rounded-xl px-4 py-3 text-[#101828] placeholder-slate-400 focus:outline-none focus:border-[#1D68BD] focus:bg-white transition-colors"
+                className="w-full text-sm bg-[#F7F9FC] border border-[#E4E7EC] rounded-xl px-4 py-3 text-[#101828] placeholder-slate-400 focus:outline-none focus:border-[#C59B27] focus:ring-1 focus:ring-[#C59B27] focus:bg-white transition-colors"
               />
             </div>
 
             {/* Phone */}
             <div className="space-y-1.5">
-              <label htmlFor="bphone" className="text-xs font-bold text-[#0B1730] uppercase tracking-wider">
+              <label htmlFor="bphone" className="text-xs font-bold text-[#070B14] uppercase tracking-wider">
                 WhatsApp / Mobile <span className="text-rose-500">*</span>
               </label>
               <input
@@ -240,21 +240,21 @@ export function BookingForm() {
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                 placeholder="+971 52 000 0000"
-                className="w-full text-sm bg-[#F7F9FC] border border-[#E4E7EC] rounded-xl px-4 py-3 text-[#101828] placeholder-slate-400 focus:outline-none focus:border-[#1D68BD] focus:bg-white transition-colors"
+                className="w-full text-sm bg-[#F7F9FC] border border-[#E4E7EC] rounded-xl px-4 py-3 text-[#101828] placeholder-slate-400 focus:outline-none focus:border-[#C59B27] focus:ring-1 focus:ring-[#C59B27] focus:bg-white transition-colors"
               />
             </div>
           </div>
 
           {/* Service */}
           <div className="space-y-1.5">
-            <label htmlFor="bservice" className="text-xs font-bold text-[#0B1730] uppercase tracking-wider">
+            <label htmlFor="bservice" className="text-xs font-bold text-[#070B14] uppercase tracking-wider">
               Discussion Topic / Service Focus
             </label>
             <select
               id="bservice"
               value={formData.service}
               onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-              className="w-full text-sm bg-[#F7F9FC] border border-[#E4E7EC] rounded-xl px-4 py-3 text-[#101828] focus:outline-none focus:border-[#1D68BD] focus:bg-white transition-colors cursor-pointer"
+              className="w-full text-sm bg-[#F7F9FC] border border-[#E4E7EC] rounded-xl px-4 py-3 text-[#101828] focus:outline-none focus:border-[#C59B27] focus:ring-1 focus:ring-[#C59B27] focus:bg-white transition-colors cursor-pointer"
             >
               {serviceOptions.map((opt) => (
                 <option key={opt} value={opt}>
@@ -266,7 +266,7 @@ export function BookingForm() {
 
           {/* Brief */}
           <div className="space-y-1.5">
-            <label htmlFor="bmsg" className="text-xs font-bold text-[#0B1730] uppercase tracking-wider">
+            <label htmlFor="bmsg" className="text-xs font-bold text-[#070B14] uppercase tracking-wider">
               Topics to Cover or Project Context
             </label>
             <textarea
@@ -275,14 +275,14 @@ export function BookingForm() {
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
               placeholder="Provide any specific goals, questions, or existing systems you would like to discuss..."
-              className="w-full text-sm bg-[#F7F9FC] border border-[#E4E7EC] rounded-xl px-4 py-3 text-[#101828] placeholder-slate-400 focus:outline-none focus:border-[#1D68BD] focus:bg-white transition-colors resize-y"
+              className="w-full text-sm bg-[#F7F9FC] border border-[#E4E7EC] rounded-xl px-4 py-3 text-[#101828] placeholder-slate-400 focus:outline-none focus:border-[#C59B27] focus:ring-1 focus:ring-[#C59B27] focus:bg-white transition-colors resize-y"
             />
           </div>
 
           <button
             type="submit"
             disabled={status === "loading"}
-            className="w-full py-4 rounded-xl bg-[#1D68BD] hover:bg-[#155196] text-white text-base font-semibold shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 disabled:opacity-60"
+            className="w-full py-4 rounded-xl bg-gradient-to-r from-[#D4AF37] via-[#C59B27] to-[#B38728] hover:brightness-105 text-white text-base font-bold shadow-md shadow-[#C59B27]/25 transition-all flex items-center justify-center gap-2 disabled:opacity-60"
           >
             {status === "loading" ? (
               <>

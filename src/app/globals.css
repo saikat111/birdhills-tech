@@ -4,10 +4,13 @@
   --background: #ffffff;
   --foreground: #101828;
   --soft-bg: #f7f9fc;
-  --navy: #0b1730;
-  --brand-blue: #1d68bd;
-  --brand-blue-hover: #155196;
-  --brand-blue-light: #ebf3fe;
+  --navy: #070b14;
+  --brand-blue: #c59b27;
+  --brand-blue-hover: #b38728;
+  --brand-blue-light: #faf5ea;
+  --brand-gold: #c59b27;
+  --brand-gold-hover: #b38728;
+  --brand-gold-light: #faf5ea;
   --text-muted: #667085;
   --border-color: #e4e7ec;
 }
@@ -20,6 +23,9 @@
   --color-brand-blue: var(--brand-blue);
   --color-brand-blue-hover: var(--brand-blue-hover);
   --color-brand-blue-light: var(--brand-blue-light);
+  --color-brand-gold: var(--brand-gold);
+  --color-brand-gold-hover: var(--brand-gold-hover);
+  --color-brand-gold-light: var(--brand-gold-light);
   --color-text-muted: var(--text-muted);
   --color-border-color: var(--border-color);
   --font-sans: var(--font-geist-sans), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -39,7 +45,7 @@ body {
 }
 
 ::selection {
-  background-color: #1d68bd;
+  background-color: #c59b27;
   color: #ffffff;
 }
 

@@ -190,7 +190,7 @@ export function ContentClient({ initialPages }: ContentClientProps) {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-[#E4E7EC]">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-[#0B1730]">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-[#070B14]">
             Website Page Content
           </h1>
           <p className="text-xs sm:text-sm text-[#667085] mt-1">
@@ -215,8 +215,8 @@ export function ContentClient({ initialPages }: ContentClientProps) {
                 onClick={() => handleSelectPage(p.slug)}
                 className={`w-full text-left p-4 rounded-2xl border transition-all flex items-center justify-between ${
                   isSelected
-                    ? "bg-[#1D68BD] text-white border-[#1D68BD] shadow-sm"
-                    : "bg-white border-[#E4E7EC] text-[#0B1730] hover:bg-[#F7F9FC]"
+                    ? "bg-[#C59B27] text-white border-[#C59B27] shadow-sm"
+                    : "bg-white border-[#E4E7EC] text-[#070B14] hover:bg-[#F7F9FC]"
                 }`}
               >
                 <div>
@@ -235,7 +235,7 @@ export function ContentClient({ initialPages }: ContentClientProps) {
           })}
 
           <div className="p-4 bg-blue-50/70 rounded-2xl border border-blue-200 mt-4 text-xs text-blue-900 leading-relaxed flex items-start gap-2.5">
-            <Info size={16} className="text-[#1D68BD] shrink-0 mt-0.5" />
+            <Info size={16} className="text-[#C59B27] shrink-0 mt-0.5" />
             <div>
               <strong>CMS Content Control:</strong> Updates made here are saved directly to the database and can be bound dynamically across page templates.
             </div>
@@ -246,8 +246,8 @@ export function ContentClient({ initialPages }: ContentClientProps) {
         <div className="lg:col-span-8 bg-white p-6 rounded-2xl border border-[#E4E7EC] shadow-2xs space-y-5">
           <div className="flex items-center justify-between pb-4 border-b border-[#E4E7EC]">
             <div>
-              <h2 className="text-base font-bold text-[#0B1730] flex items-center gap-2">
-                <FileText size={18} className="text-[#1D68BD]" />
+              <h2 className="text-base font-bold text-[#070B14] flex items-center gap-2">
+                <FileText size={18} className="text-[#C59B27]" />
                 Editing: {activePage?.title}
               </h2>
               <span className="text-[10px] text-slate-400 font-mono">
@@ -259,7 +259,7 @@ export function ContentClient({ initialPages }: ContentClientProps) {
               href={activeSlug === "homepage" ? "/" : `/${activeSlug}`}
               target="_blank"
               rel="noreferrer"
-              className="text-xs text-[#1D68BD] hover:underline font-semibold inline-flex items-center gap-1"
+              className="text-xs text-[#C59B27] hover:underline font-semibold inline-flex items-center gap-1"
             >
               View Page <ExternalLink size={13} />
             </a>
@@ -289,7 +289,7 @@ export function ContentClient({ initialPages }: ContentClientProps) {
                 required
                 value={form.title}
                 onChange={(e) => setForm({ ...form, title: e.target.value })}
-                className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#0B1730] focus:border-[#1D68BD] focus:outline-none"
+                className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#070B14] focus:border-[#C59B27] focus:outline-none"
               />
             </div>
 
@@ -303,7 +303,7 @@ export function ContentClient({ initialPages }: ContentClientProps) {
                   value={form.seoTitle}
                   onChange={(e) => setForm({ ...form, seoTitle: e.target.value })}
                   placeholder="Appears in Google search results"
-                  className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#0B1730] focus:border-[#1D68BD] focus:outline-none"
+                  className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#070B14] focus:border-[#C59B27] focus:outline-none"
                 />
               </div>
 
@@ -316,7 +316,7 @@ export function ContentClient({ initialPages }: ContentClientProps) {
                   value={form.seoDescription}
                   onChange={(e) => setForm({ ...form, seoDescription: e.target.value })}
                   placeholder="150-160 character snippet for search engines"
-                  className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#0B1730] focus:border-[#1D68BD] focus:outline-none"
+                  className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#070B14] focus:border-[#C59B27] focus:outline-none"
                 />
               </div>
             </div>
@@ -335,7 +335,7 @@ export function ContentClient({ initialPages }: ContentClientProps) {
                 required
                 value={form.contentRaw}
                 onChange={(e) => setForm({ ...form, contentRaw: e.target.value })}
-                className="w-full px-3 py-2.5 border border-[#E4E7EC] rounded-xl text-xs font-mono text-[#0B1730] focus:border-[#1D68BD] focus:outline-none leading-relaxed bg-[#F8FAFC]"
+                className="w-full px-3 py-2.5 border border-[#E4E7EC] rounded-xl text-xs font-mono text-[#070B14] focus:border-[#C59B27] focus:outline-none leading-relaxed bg-[#F8FAFC]"
               />
             </div>
 
@@ -343,7 +343,7 @@ export function ContentClient({ initialPages }: ContentClientProps) {
               <button
                 type="submit"
                 disabled={isSaving}
-                className="px-5 py-2.5 bg-[#1D68BD] hover:bg-[#155196] text-white text-xs font-semibold rounded-xl shadow-xs transition-colors flex items-center gap-1.5 disabled:opacity-50"
+                className="px-5 py-2.5 bg-[#C59B27] hover:bg-[#B38728] text-white text-xs font-semibold rounded-xl shadow-xs transition-colors flex items-center gap-1.5 disabled:opacity-50"
               >
                 <Save size={15} />
                 {isSaving ? "Saving..." : "Save Page Content"}

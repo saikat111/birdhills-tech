@@ -221,14 +221,14 @@ export function ProjectsClient({ initialProjects }: ProjectsClientProps) {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search projects by title, client, category..."
-            className="w-full text-xs bg-[#F7F9FC] border border-[#E4E7EC] rounded-xl pl-10 pr-4 py-2.5 text-[#101828] focus:outline-none focus:border-[#1D68BD]"
+            className="w-full text-xs bg-[#F7F9FC] border border-[#E4E7EC] rounded-xl pl-10 pr-4 py-2.5 text-[#101828] focus:outline-none focus:border-[#C59B27]"
           />
         </div>
 
         <button
           type="button"
           onClick={openCreateModal}
-          className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 bg-[#1D68BD] hover:bg-[#155196] text-white text-xs font-bold rounded-xl shadow-xs transition-colors"
+          className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 bg-[#C59B27] hover:bg-[#B38728] text-white text-xs font-bold rounded-xl shadow-xs transition-colors"
         >
           <Plus size={15} />
           Add Case Study
@@ -252,7 +252,7 @@ export function ProjectsClient({ initialProjects }: ProjectsClientProps) {
                   className="object-cover"
                 />
                 <div className="absolute top-2 left-2 flex items-center gap-1">
-                  <span className="bg-white/95 px-2 py-0.5 rounded text-[10px] font-bold text-[#0B1730]">
+                  <span className="bg-white/95 px-2 py-0.5 rounded text-[10px] font-bold text-[#070B14]">
                     {p.category}
                   </span>
                   {p.featured && (
@@ -264,8 +264,8 @@ export function ProjectsClient({ initialProjects }: ProjectsClientProps) {
               </div>
 
               <div className="p-5 space-y-2">
-                <div className="text-[11px] text-[#1D68BD] font-semibold">{p.client}</div>
-                <h3 className="text-base font-bold text-[#0B1730] leading-snug">
+                <div className="text-[11px] text-[#C59B27] font-semibold">{p.client}</div>
+                <h3 className="text-base font-bold text-[#070B14] leading-snug">
                   <a
                     href={`/work/${p.slug}`}
                     target="_blank"
@@ -300,7 +300,7 @@ export function ProjectsClient({ initialProjects }: ProjectsClientProps) {
                 <button
                   type="button"
                   onClick={() => openEditModal(p)}
-                  className="p-1.5 text-slate-400 hover:text-[#1D68BD] rounded-lg"
+                  className="p-1.5 text-slate-400 hover:text-[#C59B27] rounded-lg"
                   title="Edit"
                 >
                   <Edit2 size={15} />
@@ -324,7 +324,7 @@ export function ProjectsClient({ initialProjects }: ProjectsClientProps) {
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-2xs animate-in fade-in">
           <div className="bg-white rounded-3xl w-full max-w-3xl max-h-[90vh] shadow-2xl border border-[#E4E7EC] flex flex-col overflow-hidden animate-in zoom-in-95 duration-150">
             <div className="p-6 border-b border-slate-100 flex items-center justify-between">
-              <h3 className="text-lg font-bold text-[#0B1730]">
+              <h3 className="text-lg font-bold text-[#070B14]">
                 {editingProject ? "Edit Case Study" : "Add New Case Study"}
               </h3>
               <button
@@ -339,7 +339,7 @@ export function ProjectsClient({ initialProjects }: ProjectsClientProps) {
             <form onSubmit={handleSave} className="p-6 overflow-y-auto space-y-4 flex-1 text-xs">
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <div className="space-y-1 sm:col-span-2">
-                  <label className="font-bold text-[#0B1730] uppercase">Project Title</label>
+                  <label className="font-bold text-[#070B14] uppercase">Project Title</label>
                   <input
                     type="text"
                     required
@@ -358,7 +358,7 @@ export function ProjectsClient({ initialProjects }: ProjectsClientProps) {
                   />
                 </div>
                 <div className="space-y-1">
-                  <label className="font-bold text-[#0B1730] uppercase">Slug</label>
+                  <label className="font-bold text-[#070B14] uppercase">Slug</label>
                   <input
                     type="text"
                     required
@@ -371,7 +371,7 @@ export function ProjectsClient({ initialProjects }: ProjectsClientProps) {
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <div className="space-y-1">
-                  <label className="font-bold text-[#0B1730] uppercase">Client Name</label>
+                  <label className="font-bold text-[#070B14] uppercase">Client Name</label>
                   <input
                     type="text"
                     required
@@ -381,7 +381,7 @@ export function ProjectsClient({ initialProjects }: ProjectsClientProps) {
                   />
                 </div>
                 <div className="space-y-1">
-                  <label className="font-bold text-[#0B1730] uppercase">Industry</label>
+                  <label className="font-bold text-[#070B14] uppercase">Industry</label>
                   <input
                     type="text"
                     value={form.industry}
@@ -390,7 +390,7 @@ export function ProjectsClient({ initialProjects }: ProjectsClientProps) {
                   />
                 </div>
                 <div className="space-y-1">
-                  <label className="font-bold text-[#0B1730] uppercase">Category</label>
+                  <label className="font-bold text-[#070B14] uppercase">Category</label>
                   <select
                     value={form.category}
                     onChange={(e) => setForm({ ...form, category: e.target.value })}
@@ -407,7 +407,7 @@ export function ProjectsClient({ initialProjects }: ProjectsClientProps) {
               </div>
 
               <div className="space-y-1">
-                <label className="font-bold text-[#0B1730] uppercase">Cover Image URL</label>
+                <label className="font-bold text-[#070B14] uppercase">Cover Image URL</label>
                 <div className="flex gap-3 items-center">
                   <input
                     type="text"
@@ -427,7 +427,7 @@ export function ProjectsClient({ initialProjects }: ProjectsClientProps) {
               </div>
 
               <div className="space-y-1">
-                <label className="font-bold text-[#0B1730] uppercase">Short Description (Cards)</label>
+                <label className="font-bold text-[#070B14] uppercase">Short Description (Cards)</label>
                 <input
                   type="text"
                   required
@@ -438,7 +438,7 @@ export function ProjectsClient({ initialProjects }: ProjectsClientProps) {
               </div>
 
               <div className="space-y-1">
-                <label className="font-bold text-[#0B1730] uppercase">Full Overview</label>
+                <label className="font-bold text-[#070B14] uppercase">Full Overview</label>
                 <textarea
                   rows={2}
                   value={form.description}
@@ -449,7 +449,7 @@ export function ProjectsClient({ initialProjects }: ProjectsClientProps) {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div className="space-y-1">
-                  <label className="font-bold text-[#0B1730] uppercase">01. Challenge</label>
+                  <label className="font-bold text-[#070B14] uppercase">01. Challenge</label>
                   <textarea
                     rows={2}
                     value={form.challenge}
@@ -458,7 +458,7 @@ export function ProjectsClient({ initialProjects }: ProjectsClientProps) {
                   />
                 </div>
                 <div className="space-y-1">
-                  <label className="font-bold text-[#0B1730] uppercase">02. Approach</label>
+                  <label className="font-bold text-[#070B14] uppercase">02. Approach</label>
                   <textarea
                     rows={2}
                     value={form.approach}
@@ -467,7 +467,7 @@ export function ProjectsClient({ initialProjects }: ProjectsClientProps) {
                   />
                 </div>
                 <div className="space-y-1">
-                  <label className="font-bold text-[#0B1730] uppercase">03. Solution</label>
+                  <label className="font-bold text-[#070B14] uppercase">03. Solution</label>
                   <textarea
                     rows={2}
                     value={form.solution}
@@ -476,7 +476,7 @@ export function ProjectsClient({ initialProjects }: ProjectsClientProps) {
                   />
                 </div>
                 <div className="space-y-1">
-                  <label className="font-bold text-[#0B1730] uppercase">04. Results & Metrics</label>
+                  <label className="font-bold text-[#070B14] uppercase">04. Results & Metrics</label>
                   <textarea
                     rows={2}
                     value={form.results}
@@ -488,7 +488,7 @@ export function ProjectsClient({ initialProjects }: ProjectsClientProps) {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div className="space-y-1">
-                  <label className="font-bold text-[#0B1730] uppercase">Services (One per line)</label>
+                  <label className="font-bold text-[#070B14] uppercase">Services (One per line)</label>
                   <textarea
                     rows={2}
                     value={form.servicesRaw}
@@ -497,7 +497,7 @@ export function ProjectsClient({ initialProjects }: ProjectsClientProps) {
                   />
                 </div>
                 <div className="space-y-1">
-                  <label className="font-bold text-[#0B1730] uppercase">Tech Stack (Comma separated)</label>
+                  <label className="font-bold text-[#070B14] uppercase">Tech Stack (Comma separated)</label>
                   <textarea
                     rows={2}
                     value={form.techRaw}
@@ -513,7 +513,7 @@ export function ProjectsClient({ initialProjects }: ProjectsClientProps) {
                     type="checkbox"
                     checked={form.featured}
                     onChange={(e) => setForm({ ...form, featured: e.target.checked })}
-                    className="rounded text-[#1D68BD]"
+                    className="rounded text-[#C59B27]"
                   />
                   Feature on Homepage
                 </label>
@@ -529,7 +529,7 @@ export function ProjectsClient({ initialProjects }: ProjectsClientProps) {
                 </button>
                 <button
                   type="submit"
-                  className="px-5 py-2 rounded-xl bg-[#1D68BD] hover:bg-[#155196] text-white font-bold shadow-sm"
+                  className="px-5 py-2 rounded-xl bg-[#C59B27] hover:bg-[#B38728] text-white font-bold shadow-sm"
                 >
                   Save Project
                 </button>

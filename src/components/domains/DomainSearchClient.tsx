@@ -92,7 +92,7 @@ export function DomainSearchClient() {
     <div className="w-full max-w-4xl mx-auto">
       {/* Search Input Box */}
       <form onSubmit={handleSearch} className="relative z-20">
-        <div className="flex flex-col sm:flex-row items-center bg-white rounded-2xl p-2.5 sm:p-3 shadow-2xl border-2 border-white/20 ring-4 ring-[#1D68BD]/10 gap-2">
+        <div className="flex flex-col sm:flex-row items-center bg-white rounded-2xl p-2.5 sm:p-3 shadow-2xl border-2 border-white/20 ring-4 ring-[#C59B27]/15 gap-2">
           <div className="flex items-center gap-3 flex-1 px-3 w-full">
             <Search className="text-slate-400 shrink-0" size={20} />
             <input
@@ -100,13 +100,13 @@ export function DomainSearchClient() {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="Enter your ideal corporate brand (e.g. mycompany)"
-              className="w-full text-sm sm:text-base font-medium text-[#0B1730] placeholder-slate-400 focus:outline-none bg-transparent"
+              className="w-full text-sm sm:text-base font-medium text-[#070B14] placeholder-slate-400 focus:outline-none bg-transparent"
             />
           </div>
           <button
             type="submit"
             disabled={isSearching}
-            className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-[#1D68BD] hover:bg-[#155196] text-white text-xs sm:text-sm font-bold transition-all shadow-md flex items-center justify-center gap-2 shrink-0 disabled:opacity-60"
+            className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-gradient-to-r from-[#D4AF37] via-[#C59B27] to-[#B38728] hover:brightness-105 text-white text-xs sm:text-sm font-bold transition-all shadow-md shadow-[#C59B27]/25 flex items-center justify-center gap-2 shrink-0 disabled:opacity-60"
           >
             {isSearching ? (
               <>
@@ -133,7 +133,7 @@ export function DomainSearchClient() {
           }}
           className="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-white/20 transition-colors flex items-center gap-1.5"
         >
-          <span className="text-[#38BDF8] font-bold">.ae</span>
+          <span className="text-[#D4AF37] font-bold">.ae</span>
           <span>$39.99/yr</span>
         </button>
         <button
@@ -143,7 +143,7 @@ export function DomainSearchClient() {
           }}
           className="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-white/20 transition-colors flex items-center gap-1.5"
         >
-          <span className="text-[#38BDF8] font-bold">.com</span>
+          <span className="text-[#D4AF37] font-bold">.com</span>
           <span>$12.99/yr</span>
         </button>
         <button
@@ -153,7 +153,7 @@ export function DomainSearchClient() {
           }}
           className="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-white/20 transition-colors flex items-center gap-1.5"
         >
-          <span className="text-[#38BDF8] font-bold">.ai</span>
+          <span className="text-[#D4AF37] font-bold">.ai</span>
           <span>$69.99/yr</span>
         </button>
         <button
@@ -163,7 +163,7 @@ export function DomainSearchClient() {
           }}
           className="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-white/20 transition-colors flex items-center gap-1.5"
         >
-          <span className="text-[#38BDF8] font-bold">.tech</span>
+          <span className="text-[#D4AF37] font-bold">.tech</span>
           <span>$4.99/yr</span>
         </button>
       </div>
@@ -176,7 +176,7 @@ export function DomainSearchClient() {
               <span className="text-xs text-slate-400 font-bold uppercase tracking-wider">
                 Availability Results for
               </span>
-              <h3 className="text-lg font-extrabold text-[#0B1730]">
+              <h3 className="text-lg font-extrabold text-[#070B14]">
                 &ldquo;{searchedDomain}&rdquo;
               </h3>
             </div>
@@ -197,7 +197,7 @@ export function DomainSearchClient() {
                   key={r.tld}
                   className={`p-4 rounded-2xl border flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all ${
                     r.status === "available"
-                      ? "bg-[#F7F9FC] border-[#E4E7EC] hover:border-[#1D68BD]/40"
+                      ? "bg-[#FAF8F5] border-[#E4E7EC] hover:border-[#C59B27]/40"
                       : "bg-slate-50 border-slate-200 opacity-70"
                   }`}
                 >
@@ -205,7 +205,7 @@ export function DomainSearchClient() {
                     <div
                       className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 ${
                         r.status === "available"
-                          ? "bg-[#EBF3FE] text-[#1D68BD]"
+                          ? "bg-[#C59B27]/15 text-[#C59B27]"
                           : "bg-slate-200 text-slate-500"
                       }`}
                     >
@@ -213,12 +213,12 @@ export function DomainSearchClient() {
                     </div>
                     <div>
                       <div className="flex items-center gap-2">
-                        <span className="text-base font-extrabold text-[#0B1730]">
+                        <span className="text-base font-extrabold text-[#070B14]">
                           {searchedDomain}
-                          <span className="text-[#1D68BD]">{r.tld}</span>
+                          <span className="text-[#C59B27]">{r.tld}</span>
                         </span>
                         {r.popular && (
-                          <span className="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-full bg-[#1D68BD] text-white">
+                          <span className="text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded-full bg-gradient-to-r from-[#D4AF37] via-[#C59B27] to-[#B38728] text-white">
                             Popular in UAE
                           </span>
                         )}
@@ -239,8 +239,8 @@ export function DomainSearchClient() {
 
                   <div className="flex items-center gap-3 self-end sm:self-center">
                     <div className="text-right">
-                      <div className="text-xl font-black text-[#0B1730]">{r.price}</div>
-                      <span className="text-[10px] text-slate-400">Renews at {r.renewal}</span>
+                      <div className="text-xl font-black text-[#070B14]">{r.price}</div>
+                      <span className="text-[10px] text-slate-400 font-medium">Renews at {r.renewal}</span>
                     </div>
 
                     {r.status === "available" ? (
@@ -248,7 +248,7 @@ export function DomainSearchClient() {
                         href={waUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#1D68BD] hover:bg-[#155196] text-white text-xs font-bold transition-all shadow-xs"
+                        className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-gradient-to-r from-[#D4AF37] via-[#C59B27] to-[#B38728] hover:brightness-105 text-white text-xs font-bold transition-all shadow-md shadow-[#C59B27]/20"
                       >
                         <span>Register Now</span>
                         <ArrowRight size={13} />
@@ -273,14 +273,14 @@ export function DomainSearchClient() {
 
           <div className="mt-4 pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-2">
             <span className="flex items-center gap-1.5">
-              <ShieldCheck size={15} className="text-[#1D68BD]" />
+              <ShieldCheck size={15} className="text-[#C59B27]" />
               Free WHOIS Privacy Mask Included with Every Domain
             </span>
             <a
               href="https://wa.me/971524405785?text=Hello%20Bird%20Hills%20Tech%2C%20I%20need%20assistance%20with%20a%20custom%20corporate%20domain%20portfolio."
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#1D68BD] font-bold hover:underline inline-flex items-center gap-1"
+              className="text-[#C59B27] font-bold hover:underline inline-flex items-center gap-1"
             >
               Need a Bulk Portfolio Quote? WhatsApp Our Registrar <ArrowRight size={12} />
             </a>

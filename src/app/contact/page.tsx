@@ -29,7 +29,7 @@ export default function ContactPage() {
   return (
     <div className="flex flex-col min-h-screen pt-24">
       {/* 1. VISUAL HERO WITH DUBAI CORPORATE BACKGROUND */}
-      <section className="relative py-24 md:py-32 bg-[#070D1B] text-white overflow-hidden">
+      <section className="relative py-24 md:py-32 bg-[#070B14] text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2000&q=90"
@@ -39,13 +39,13 @@ export default function ContactPage() {
             sizes="100vw"
             className="object-cover object-center scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#070D1B]/95 via-[#070D1B]/75 to-[#070D1B]/40" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#070D1B]/90 via-transparent to-[#070D1B]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#070B14]/95 via-[#070B14]/80 to-[#070B14]/50" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#070B14]/90 via-transparent to-[#070B14]" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl space-y-6">
-            <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-widest text-[#38BDF8] uppercase bg-white/10 border border-white/15 backdrop-blur-md">
+            <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-widest text-[#D4AF37] uppercase bg-[#C59B27]/15 border border-[#C59B27]/30 backdrop-blur-md">
               DIRECT ENGAGEMENT
             </span>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.12]">
@@ -59,7 +59,7 @@ export default function ContactPage() {
       </section>
 
       {/* 2. MAIN GRID: FORM + DIRECT CHANNELS */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-[#FAF8F5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
             {/* Left: Validated Interactive Form */}
@@ -70,17 +70,17 @@ export default function ContactPage() {
             {/* Right: Dubai Office Details & Direct Channels */}
             <div className="lg:col-span-5 space-y-8">
               {/* Direct WhatsApp Action Box */}
-              <div className="p-8 rounded-3xl bg-emerald-50 border border-emerald-200 space-y-4 shadow-xs">
+              <div className="p-8 rounded-3xl bg-white border border-emerald-200/80 space-y-4 shadow-sm">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-2xl bg-emerald-600 text-white flex items-center justify-center shadow-md">
+                  <div className="w-12 h-12 rounded-2xl bg-[#25D366] text-white flex items-center justify-center shadow-md">
                     <MessageSquare size={22} />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-emerald-950">Immediate WhatsApp Response</h3>
-                    <div className="text-xs text-emerald-700">Average response under 15 minutes during UAE business hours</div>
+                    <h3 className="text-lg font-bold text-[#070B14]">Immediate WhatsApp Response</h3>
+                    <div className="text-xs text-emerald-700 font-semibold">Average response under 15 minutes during UAE business hours</div>
                   </div>
                 </div>
-                <p className="text-xs sm:text-sm text-emerald-800 leading-relaxed">
+                <p className="text-xs sm:text-sm text-[#475467] leading-relaxed">
                   Need an immediate consultation or want to share scope documents directly with our project directors in Dubai?
                 </p>
                 <div>
@@ -88,7 +88,7 @@ export default function ContactPage() {
                     href="https://wa.me/971524405785?text=Hello%20Bird%20Hills%20Tech%2C%20I%20would%20like%20to%20discuss%20a%20new%20project."
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-sm transition-all"
+                    className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#1ebd59] text-white text-xs font-bold shadow-sm transition-all"
                   >
                     Open WhatsApp Chat (+971 52 440 5785)
                     <ArrowUpRight size={14} />
@@ -97,12 +97,13 @@ export default function ContactPage() {
               </div>
 
               {/* Consultation Scheduler Shortcut */}
-              <div className="p-8 rounded-3xl bg-[#EBF3FE] border border-[#BFDBFE] space-y-3">
-                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#1D68BD]">
+              <div className="p-8 rounded-3xl bg-white border border-[#C59B27]/30 space-y-3 shadow-sm relative overflow-hidden">
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#D4AF37] via-[#C59B27] to-[#B38728]" />
+                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#C59B27]">
                   <Calendar size={15} />
                   Direct Video or In-Person Consultation
                 </div>
-                <h3 className="text-base font-bold text-[#0B1730]">
+                <h3 className="text-base font-bold text-[#070B14]">
                   Prefer a Scheduled 30-Minute Briefing?
                 </h3>
                 <p className="text-xs text-[#667085] leading-relaxed">
@@ -111,7 +112,7 @@ export default function ContactPage() {
                 <div className="pt-2">
                   <Link
                     href="/book-a-meeting"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#1D68BD] hover:bg-[#155196] text-white text-xs font-bold shadow-xs transition-colors"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#D4AF37] via-[#C59B27] to-[#B38728] hover:brightness-105 text-white text-xs font-bold shadow-md shadow-[#C59B27]/20 transition-all"
                   >
                     Select Time Slot <ArrowUpRight size={13} />
                   </Link>
@@ -119,36 +120,36 @@ export default function ContactPage() {
               </div>
 
               {/* Corporate Coordinates */}
-              <div className="p-8 rounded-3xl bg-[#F7F9FC] border border-[#E4E7EC] space-y-6">
-                <h3 className="text-base font-bold text-[#0B1730]">Dubai Headquarters Coordinates</h3>
+              <div className="p-8 rounded-3xl bg-white border border-[#E4E7EC] space-y-6 shadow-sm">
+                <h3 className="text-base font-bold text-[#070B14]">Dubai Headquarters Coordinates</h3>
 
                 <div className="space-y-4 text-xs sm:text-sm text-[#667085]">
                   <div className="flex items-start gap-3">
-                    <MapPin size={18} className="text-[#1D68BD] shrink-0 mt-0.5" />
+                    <MapPin size={18} className="text-[#C59B27] shrink-0 mt-0.5" />
                     <div>
-                      <div className="font-semibold text-[#0B1730]">Physical Office Address</div>
+                      <div className="font-semibold text-[#070B14]">Physical Office Address</div>
                       <div className="mt-0.5">Deira - Stone Building - 122 7th A Street</div>
                       <div>Al Baraha, Dubai, United Arab Emirates</div>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <Phone size={18} className="text-[#1D68BD] shrink-0 mt-0.5" />
+                    <Phone size={18} className="text-[#C59B27] shrink-0 mt-0.5" />
                     <div>
-                      <div className="font-semibold text-[#0B1730]">Direct Telephone / Hotline</div>
-                      <a href="tel:+971524405785" className="hover:text-[#1D68BD] text-[#0B1730] font-medium">
+                      <div className="font-semibold text-[#070B14]">Direct Telephone / Hotline</div>
+                      <a href="tel:+971524405785" className="hover:text-[#C59B27] text-[#070B14] font-medium transition-colors">
                         +971 52 440 5785
                       </a>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <Mail size={18} className="text-[#1D68BD] shrink-0 mt-0.5" />
+                    <Mail size={18} className="text-[#C59B27] shrink-0 mt-0.5" />
                     <div>
-                      <div className="font-semibold text-[#0B1730]">Official Inquiries Email</div>
+                      <div className="font-semibold text-[#070B14]">Official Inquiries Email</div>
                       <a
                         href="mailto:contact@birdhillstech.com"
-                        className="hover:text-[#1D68BD] text-[#0B1730] font-medium"
+                        className="hover:text-[#C59B27] text-[#070B14] font-medium transition-colors"
                       >
                         contact@birdhillstech.com
                       </a>
@@ -156,9 +157,9 @@ export default function ContactPage() {
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <Clock size={18} className="text-[#1D68BD] shrink-0 mt-0.5" />
+                    <Clock size={18} className="text-[#C59B27] shrink-0 mt-0.5" />
                     <div>
-                      <div className="font-semibold text-[#0B1730]">Operating Hours</div>
+                      <div className="font-semibold text-[#070B14]">Operating Hours</div>
                       <div>Monday – Saturday: 9:00 AM – 6:00 PM (Gulf Standard Time)</div>
                     </div>
                   </div>
@@ -169,35 +170,35 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* 3. VISIT OUR DUBAI HEADQUARTERS & LANDMARKS (NEW SECTION) */}
-      <section className="py-20 bg-[#F7F9FC] border-t border-[#E4E7EC]">
+      {/* 3. VISIT OUR DUBAI HEADQUARTERS & LANDMARKS */}
+      <section className="py-20 bg-white border-t border-[#E4E7EC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-6 space-y-4">
-              <span className="text-xs font-bold tracking-wider uppercase text-[#1D68BD]">
+              <span className="text-xs font-bold tracking-wider uppercase text-[#C59B27]">
                 LOCATION & DIRECTIONS
               </span>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0B1730]">
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#070B14]">
                 Visiting Stone Building, Al Baraha
               </h2>
               <p className="text-xs sm:text-sm text-[#667085] leading-relaxed">
                 Our central Dubai location provides seamless connectivity to both Old Dubai and modern business centers:
               </p>
               <div className="space-y-2.5 pt-2">
-                <div className="flex items-center gap-2 text-xs text-[#0B1730]">
-                  <Navigation size={14} className="text-[#1D68BD]" />
+                <div className="flex items-center gap-2 text-xs text-[#070B14]">
+                  <Navigation size={14} className="text-[#C59B27]" />
                   <span>5 minutes from Deira Waterfront & Corniche</span>
                 </div>
-                <div className="flex items-center gap-2 text-xs text-[#0B1730]">
-                  <Navigation size={14} className="text-[#1D68BD]" />
+                <div className="flex items-center gap-2 text-xs text-[#070B14]">
+                  <Navigation size={14} className="text-[#C59B27]" />
                   <span>10 minutes from Dubai International Airport (DXB)</span>
                 </div>
-                <div className="flex items-center gap-2 text-xs text-[#0B1730]">
-                  <Navigation size={14} className="text-[#1D68BD]" />
+                <div className="flex items-center gap-2 text-xs text-[#070B14]">
+                  <Navigation size={14} className="text-[#C59B27]" />
                   <span>15 minutes from DIFC & Downtown Dubai</span>
                 </div>
-                <div className="flex items-center gap-2 text-xs text-[#0B1730]">
-                  <Navigation size={14} className="text-[#1D68BD]" />
+                <div className="flex items-center gap-2 text-xs text-[#070B14]">
+                  <Navigation size={14} className="text-[#C59B27]" />
                   <span>Convenient visitor parking available on 7th A Street</span>
                 </div>
               </div>
@@ -212,12 +213,12 @@ export default function ContactPage() {
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0B1730]/90 via-[#0B1730]/30 to-transparent" />
-                <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-white/95 backdrop-blur-md shadow-md text-left">
-                  <div className="text-xs font-bold uppercase text-[#1D68BD]">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#070B14]/90 via-[#070B14]/30 to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-white/95 backdrop-blur-md shadow-md text-left border border-slate-200">
+                  <div className="text-xs font-bold uppercase text-[#C59B27]">
                     Bird Hills Tech HQ
                   </div>
-                  <div className="text-sm font-extrabold text-[#0B1730]">
+                  <div className="text-sm font-extrabold text-[#070B14]">
                     Deira - Stone Building - 122 7th A Street
                   </div>
                   <div className="text-[11px] text-[#667085] mt-0.5">

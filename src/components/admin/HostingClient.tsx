@@ -233,7 +233,7 @@ export function HostingClient({ initialPlans }: HostingClientProps) {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-[#E4E7EC]">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-[#0B1730]">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-[#070B14]">
             Hosting & Domains CMS
           </h1>
           <p className="text-xs sm:text-sm text-[#667085] mt-1">
@@ -260,7 +260,7 @@ export function HostingClient({ initialPlans }: HostingClientProps) {
           <button
             type="button"
             onClick={openCreateModal}
-            className="px-4 py-2 bg-[#1D68BD] hover:bg-[#155196] text-white text-xs font-semibold rounded-xl shadow-xs transition-colors inline-flex items-center gap-1.5"
+            className="px-4 py-2 bg-[#C59B27] hover:bg-[#B38728] text-white text-xs font-semibold rounded-xl shadow-xs transition-colors inline-flex items-center gap-1.5"
           >
             <Plus size={15} />
             Add Hosting Plan
@@ -282,7 +282,7 @@ export function HostingClient({ initialPlans }: HostingClientProps) {
             onClick={() => setActiveCategory(tab.key)}
             className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
               activeCategory === tab.key
-                ? "bg-[#0B1730] text-white shadow-xs"
+                ? "bg-[#070B14] text-white shadow-xs"
                 : "bg-white border border-[#E4E7EC] text-[#475467] hover:bg-[#F7F9FC]"
             }`}
           >
@@ -305,14 +305,14 @@ export function HostingClient({ initialPlans }: HostingClientProps) {
             <div
               key={p.id}
               className={`bg-white rounded-2xl border p-6 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between ${
-                p.popular ? "border-[#1D68BD] ring-2 ring-[#1D68BD]/20" : "border-[#E4E7EC]"
+                p.popular ? "border-[#C59B27] ring-2 ring-[#C59B27]/20" : "border-[#E4E7EC]"
               } ${!p.active ? "opacity-60 bg-slate-50" : ""}`}
             >
               <div>
                 <div className="flex items-start justify-between gap-2 mb-3">
                   <div>
                     {p.badge && (
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#1D68BD] bg-[#EBF3FE] px-2 py-0.5 rounded">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#C59B27] bg-[#FAF5EB] px-2 py-0.5 rounded">
                         {p.badge}
                       </span>
                     )}
@@ -348,7 +348,7 @@ export function HostingClient({ initialPlans }: HostingClientProps) {
                   </div>
                 </div>
 
-                <h3 className="text-lg font-bold text-[#0B1730] mb-1">{p.name}</h3>
+                <h3 className="text-lg font-bold text-[#070B14] mb-1">{p.name}</h3>
                 <p className="text-xs text-[#667085] line-clamp-2 mb-4 leading-relaxed">
                   {p.description}
                 </p>
@@ -356,7 +356,7 @@ export function HostingClient({ initialPlans }: HostingClientProps) {
                 {/* Price Display */}
                 <div className="bg-[#F7F9FC] p-3 rounded-xl border border-slate-100 mb-4">
                   <div className="flex items-baseline gap-1">
-                    <span className="text-2xl font-black text-[#0B1730]">{p.priceUsd}</span>
+                    <span className="text-2xl font-black text-[#070B14]">{p.priceUsd}</span>
                     <span className="text-xs text-[#667085]">{p.billingCycle}</span>
                   </div>
                   {(p.storage || p.bandwidth) && (
@@ -374,7 +374,7 @@ export function HostingClient({ initialPlans }: HostingClientProps) {
                   </div>
                   {features.slice(0, 4).map((f) => (
                     <div key={f} className="flex items-center gap-2 text-xs text-slate-700">
-                      <CheckCircle2 size={13} className="text-[#1D68BD] shrink-0" />
+                      <CheckCircle2 size={13} className="text-[#C59B27] shrink-0" />
                       <span className="truncate">{f}</span>
                     </div>
                   ))}
@@ -393,7 +393,7 @@ export function HostingClient({ initialPlans }: HostingClientProps) {
                   <button
                     type="button"
                     onClick={() => openEditModal(p)}
-                    className="p-1.5 text-slate-600 hover:text-[#1D68BD] hover:bg-slate-100 rounded-lg transition-colors"
+                    className="p-1.5 text-slate-600 hover:text-[#C59B27] hover:bg-slate-100 rounded-lg transition-colors"
                     title="Edit Plan"
                   >
                     <Pencil size={15} />
@@ -426,7 +426,7 @@ export function HostingClient({ initialPlans }: HostingClientProps) {
             </button>
 
             <div className="mb-6">
-              <h2 className="text-xl font-bold text-[#0B1730]">
+              <h2 className="text-xl font-bold text-[#070B14]">
                 {editingPlan ? "Edit Hosting Plan" : "Create New Hosting Plan"}
               </h2>
               <p className="text-xs text-[#667085] mt-1">
@@ -452,7 +452,7 @@ export function HostingClient({ initialPlans }: HostingClientProps) {
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
                     placeholder="e.g. Business Pro Cloud"
-                    className="w-full px-3 py-2 border border-[#D0D5DD] rounded-xl text-xs focus:ring-2 focus:ring-[#1D68BD] focus:outline-none"
+                    className="w-full px-3 py-2 border border-[#D0D5DD] rounded-xl text-xs focus:ring-2 focus:ring-[#C59B27] focus:outline-none"
                   />
                 </div>
 
@@ -466,7 +466,7 @@ export function HostingClient({ initialPlans }: HostingClientProps) {
                     value={form.slug}
                     onChange={(e) => setForm({ ...form, slug: e.target.value })}
                     placeholder="e.g. cloud-business"
-                    className="w-full px-3 py-2 border border-[#D0D5DD] rounded-xl text-xs focus:ring-2 focus:ring-[#1D68BD] focus:outline-none"
+                    className="w-full px-3 py-2 border border-[#D0D5DD] rounded-xl text-xs focus:ring-2 focus:ring-[#C59B27] focus:outline-none"
                   />
                 </div>
               </div>
@@ -479,7 +479,7 @@ export function HostingClient({ initialPlans }: HostingClientProps) {
                   <select
                     value={form.category}
                     onChange={(e) => setForm({ ...form, category: e.target.value })}
-                    className="w-full px-3 py-2 border border-[#D0D5DD] rounded-xl text-xs focus:ring-2 focus:ring-[#1D68BD] focus:outline-none bg-white"
+                    className="w-full px-3 py-2 border border-[#D0D5DD] rounded-xl text-xs focus:ring-2 focus:ring-[#C59B27] focus:outline-none bg-white"
                   >
                     <option value="cloud">Cloud Hosting</option>
                     <option value="vps">Managed Cloud VPS</option>
@@ -498,7 +498,7 @@ export function HostingClient({ initialPlans }: HostingClientProps) {
                     value={form.priceUsd}
                     onChange={(e) => setForm({ ...form, priceUsd: e.target.value })}
                     placeholder="e.g. $24.99"
-                    className="w-full px-3 py-2 border border-[#D0D5DD] rounded-xl text-xs focus:ring-2 focus:ring-[#1D68BD] focus:outline-none"
+                    className="w-full px-3 py-2 border border-[#D0D5DD] rounded-xl text-xs focus:ring-2 focus:ring-[#C59B27] focus:outline-none"
                   />
                 </div>
 
@@ -511,7 +511,7 @@ export function HostingClient({ initialPlans }: HostingClientProps) {
                     value={form.billingCycle}
                     onChange={(e) => setForm({ ...form, billingCycle: e.target.value })}
                     placeholder="e.g. / month"
-                    className="w-full px-3 py-2 border border-[#D0D5DD] rounded-xl text-xs focus:ring-2 focus:ring-[#1D68BD] focus:outline-none"
+                    className="w-full px-3 py-2 border border-[#D0D5DD] rounded-xl text-xs focus:ring-2 focus:ring-[#C59B27] focus:outline-none"
                   />
                 </div>
               </div>
@@ -526,7 +526,7 @@ export function HostingClient({ initialPlans }: HostingClientProps) {
                     value={form.badge}
                     onChange={(e) => setForm({ ...form, badge: e.target.value })}
                     placeholder="e.g. Most Popular"
-                    className="w-full px-3 py-2 border border-[#D0D5DD] rounded-xl text-xs focus:ring-2 focus:ring-[#1D68BD] focus:outline-none"
+                    className="w-full px-3 py-2 border border-[#D0D5DD] rounded-xl text-xs focus:ring-2 focus:ring-[#C59B27] focus:outline-none"
                   />
                 </div>
 
@@ -539,7 +539,7 @@ export function HostingClient({ initialPlans }: HostingClientProps) {
                     value={form.storage}
                     onChange={(e) => setForm({ ...form, storage: e.target.value })}
                     placeholder="e.g. 100 GB NVMe SSD"
-                    className="w-full px-3 py-2 border border-[#D0D5DD] rounded-xl text-xs focus:ring-2 focus:ring-[#1D68BD] focus:outline-none"
+                    className="w-full px-3 py-2 border border-[#D0D5DD] rounded-xl text-xs focus:ring-2 focus:ring-[#C59B27] focus:outline-none"
                   />
                 </div>
 
@@ -552,7 +552,7 @@ export function HostingClient({ initialPlans }: HostingClientProps) {
                     value={form.bandwidth}
                     onChange={(e) => setForm({ ...form, bandwidth: e.target.value })}
                     placeholder="e.g. Unmetered Bandwidth"
-                    className="w-full px-3 py-2 border border-[#D0D5DD] rounded-xl text-xs focus:ring-2 focus:ring-[#1D68BD] focus:outline-none"
+                    className="w-full px-3 py-2 border border-[#D0D5DD] rounded-xl text-xs focus:ring-2 focus:ring-[#C59B27] focus:outline-none"
                   />
                 </div>
               </div>
@@ -567,7 +567,7 @@ export function HostingClient({ initialPlans }: HostingClientProps) {
                   value={form.description}
                   onChange={(e) => setForm({ ...form, description: e.target.value })}
                   placeholder="Target use cases and architecture overview..."
-                  className="w-full px-3 py-2 border border-[#D0D5DD] rounded-xl text-xs focus:ring-2 focus:ring-[#1D68BD] focus:outline-none"
+                  className="w-full px-3 py-2 border border-[#D0D5DD] rounded-xl text-xs focus:ring-2 focus:ring-[#C59B27] focus:outline-none"
                 />
               </div>
 
@@ -581,7 +581,7 @@ export function HostingClient({ initialPlans }: HostingClientProps) {
                   value={form.featuresRaw}
                   onChange={(e) => setForm({ ...form, featuresRaw: e.target.value })}
                   placeholder="100 GB Ultra-Fast NVMe SSD Storage&#10;Free Wildcard SSL Certificate&#10;Unlimited Corporate Email Accounts&#10;Daily Automated Off-Site Backups"
-                  className="w-full px-3 py-2 border border-[#D0D5DD] rounded-xl text-xs focus:ring-2 focus:ring-[#1D68BD] focus:outline-none font-mono"
+                  className="w-full px-3 py-2 border border-[#D0D5DD] rounded-xl text-xs focus:ring-2 focus:ring-[#C59B27] focus:outline-none font-mono"
                 />
               </div>
 
@@ -592,7 +592,7 @@ export function HostingClient({ initialPlans }: HostingClientProps) {
                     id="popular"
                     checked={form.popular}
                     onChange={(e) => setForm({ ...form, popular: e.target.checked })}
-                    className="rounded border-slate-300 text-[#1D68BD] focus:ring-[#1D68BD]"
+                    className="rounded border-slate-300 text-[#C59B27] focus:ring-[#C59B27]"
                   />
                   <label htmlFor="popular" className="text-xs font-semibold text-[#344054]">
                     Mark Most Popular
@@ -605,7 +605,7 @@ export function HostingClient({ initialPlans }: HostingClientProps) {
                     id="active"
                     checked={form.active}
                     onChange={(e) => setForm({ ...form, active: e.target.checked })}
-                    className="rounded border-slate-300 text-[#1D68BD] focus:ring-[#1D68BD]"
+                    className="rounded border-slate-300 text-[#C59B27] focus:ring-[#C59B27]"
                   />
                   <label htmlFor="active" className="text-xs font-semibold text-[#344054]">
                     Active on Public Site
@@ -636,7 +636,7 @@ export function HostingClient({ initialPlans }: HostingClientProps) {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="px-5 py-2 bg-[#1D68BD] hover:bg-[#155196] text-white rounded-xl text-xs font-semibold shadow-xs disabled:opacity-50 transition-colors inline-flex items-center gap-1.5"
+                  className="px-5 py-2 bg-[#C59B27] hover:bg-[#B38728] text-white rounded-xl text-xs font-semibold shadow-xs disabled:opacity-50 transition-colors inline-flex items-center gap-1.5"
                 >
                   {isSubmitting ? "Saving Plan..." : editingPlan ? "Update Plan" : "Create Plan"}
                 </button>
