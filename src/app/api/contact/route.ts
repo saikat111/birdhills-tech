@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { z } from "zod";
+import { sendContactNotification } from "@/lib/email";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name is required"),
@@ -55,6 +56,22 @@ export async function POST(req: NextRequest) {
         notes: `Inquiry submitted via website contact form. Budget indication: ${budget || "Not specified"}.`,
       },
     });
+
+    // 3. Dispatch Email Notification via Hostinger SMTP
+    try {
+      await sendContactNotification({
+        contactId: contactRecord.id,
+        name,
+        company,
+        email,
+        phone,
+        service,
+        budget,
+        message,
+      });
+    } catch (mailError) {
+      console.error("Contact email dispatch warning:", mailError);
+    }
 
     return NextResponse.json(
       {

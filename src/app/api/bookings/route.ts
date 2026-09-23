@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { z } from "zod";
+import { sendBookingNotification } from "@/lib/email";
 
 const bookingSchema = z.object({
   name: z.string().min(2, "Name is required"),
@@ -57,6 +58,23 @@ export async function POST(req: NextRequest) {
         notes: `Direct consultation booking submitted on website. Booking ID: ${booking.id}`,
       },
     });
+
+    // 3. Dispatch Email Notification via Hostinger SMTP
+    try {
+      await sendBookingNotification({
+        bookingId: booking.id,
+        name,
+        company,
+        email,
+        phone,
+        service,
+        date,
+        timeSlot,
+        message,
+      });
+    } catch (mailError) {
+      console.error("Booking email dispatch warning:", mailError);
+    }
 
     return NextResponse.json(
       {
