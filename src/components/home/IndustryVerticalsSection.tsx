@@ -10,7 +10,7 @@ export function IndustryVerticalsSection() {
       market: "Dubai & Abu Dhabi",
       desc: "High-converting off-plan project portals, interactive masterplan viewers, and investor lead engines for premier developers and brokerages.",
       image:
-        "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80",
       icon: Building2,
       stat: "$25M+ Volume",
     },

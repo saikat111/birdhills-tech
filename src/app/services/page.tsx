@@ -100,9 +100,9 @@ export default function ServicesHubPage() {
       category: "Local Dominance",
       desc: "Rank in Dubai Google Maps 3-Pack, verify your Google Business Profile, capture high-intent localized calls, and scale customer reviews.",
       image:
-        "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800&q=85",
+        "https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=800&q=85",
       icon: MapPin,
-      price: "From $850/mo",
+      price: "From AED 1,500/mo ($400)",
       subServices: [
         "GBP Creation",
         "GBP Verification Assistance",
@@ -122,9 +122,9 @@ export default function ServicesHubPage() {
       category: "Future Search",
       desc: "AEO and GEO optimization engineered so Perplexity AI, ChatGPT Search, and Google AI Overviews cite and recommend your brand.",
       image:
-        "https://images.unsplash.com/photo-1571786256017-aee7a0c009b6?auto=format&fit=crop&w=800&q=85",
+        "https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&w=800&q=85",
       icon: Sparkles,
-      price: "From $1,650/mo",
+      price: "From AED 2,200/mo ($600)",
       subServices: [
         "Technical SEO",
         "On-Page SEO",
@@ -143,9 +143,9 @@ export default function ServicesHubPage() {
       category: "Automation",
       desc: "Deploy autonomous conversational agents, 24/7 WhatsApp customer service bots, and n8n workflow pipelines that eradicate manual tasks.",
       image:
-        "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=85",
+        "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=85",
       icon: Bot,
-      price: "From $3,200",
+      price: "From AED 3,500 ($950)",
       subServices: [
         "AI Agents",
         "AI Chatbots",
@@ -165,9 +165,9 @@ export default function ServicesHubPage() {
       category: "Operations",
       desc: "Centralize your sales pipeline with HubSpot, Zoho, automated lead routing, instant WhatsApp lead follow-ups, and calendar bookings.",
       image:
-        "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=85",
+        "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=85",
       icon: Workflow,
-      price: "From $2,800",
+      price: "From AED 2,800 ($760)",
       subServices: [
         "CRM Setup",
         "Lead Management",
@@ -186,9 +186,9 @@ export default function ServicesHubPage() {
       category: "Creative",
       desc: "Prestigious corporate identity design, bilingual English & Arabic typography, interactive UI/UX systems, and high-conversion ad creatives.",
       image:
-        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=85",
+        "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=85",
       icon: Palette,
-      price: "From $3,500",
+      price: "From AED 3,200 ($870)",
       subServices: [
         "Brand Identity",
         "Logo Design",
@@ -206,7 +206,7 @@ export default function ServicesHubPage() {
       image:
         "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=85",
       icon: BarChart3,
-      price: "From $1,450/mo",
+      price: "From AED 1,800/mo ($490)",
       subServices: [
         "Google Analytics",
         "Google Tag Manager",

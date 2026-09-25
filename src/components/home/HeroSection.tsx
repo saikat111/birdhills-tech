@@ -49,7 +49,7 @@ const HERO_SLIDES = [
   },
   {
     image:
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=90",
+      "https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&w=2000&q=90",
     alt: "High-end creative branding and UI/UX design studio",
     tag: "CREATIVE & BRAND SYSTEMS",
     location: "Prestige Visual Identity",

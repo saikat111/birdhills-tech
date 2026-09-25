@@ -24,6 +24,7 @@ import {
   Phone,
   ChevronRight,
   Zap,
+  Mail,
 } from "lucide-react";
 import Logo from "./Logo";
 
@@ -202,7 +203,7 @@ export function Header() {
             <Logo />
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-1 xl:gap-1.5 whitespace-nowrap">
+            <nav className="hidden xl:flex items-center gap-1 xl:gap-1.5 whitespace-nowrap">
               {navLinks.map((link) => {
                 const isActive =
                   pathname === link.href ||
@@ -239,7 +240,7 @@ export function Header() {
 
                       {/* 4-Column Luxury Mega Menu Container */}
                       {isServicesOpen && (
-                        <div className="absolute top-full -left-28 xl:-left-40 pt-2 w-[980px] max-w-[95vw] transition-all animate-in fade-in slide-in-from-top-2 duration-150 z-50">
+                        <div className="fixed left-1/2 -translate-x-1/2 top-[68px] sm:top-[76px] pt-2 w-[980px] max-w-[calc(100vw-2rem)] transition-all animate-in fade-in slide-in-from-top-2 duration-150 z-50">
                           <div className="bg-white rounded-3xl shadow-2xl border border-[#E4E7EC] p-6 overflow-hidden">
                             {/* Header row in mega menu */}
                             <div className="flex items-center justify-between pb-4 mb-4 border-b border-slate-100">
@@ -363,9 +364,9 @@ export function Header() {
                         />
                       </Link>
 
-                      {/* Mega Menu Container - Fixed width with spacious 3 columns */}
+                      {/* Mega Menu Container - Centered and Viewport Bounded */}
                       {isHostingOpen && (
-                        <div className="absolute top-full -left-56 xl:-left-72 pt-2 w-[860px] max-w-[95vw] transition-all animate-in fade-in slide-in-from-top-2 duration-150 z-50">
+                        <div className="fixed left-1/2 -translate-x-1/2 top-[68px] sm:top-[76px] pt-2 w-[860px] max-w-[calc(100vw-2rem)] transition-all animate-in fade-in slide-in-from-top-2 duration-150 z-50">
                           <div className="bg-white rounded-3xl shadow-2xl border border-[#E4E7EC] p-6 overflow-hidden">
                             {/* 3 Spacious Columns (Domains, Web Hosting, Infrastructure) */}
                             <div className="grid grid-cols-3 gap-6 pb-6 border-b border-slate-100">
@@ -543,7 +544,7 @@ export function Header() {
             </nav>
 
             {/* Right-Side Desktop CTAs */}
-            <div className="hidden lg:flex items-center gap-2.5 whitespace-nowrap">
+            <div className="hidden xl:flex items-center gap-2.5 whitespace-nowrap">
               <Link
                 href="/book-a-meeting"
                 className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-bold text-[#0B0F19] hover:text-[#C59B27] hover:bg-[#FAF8F5] rounded-xl transition-colors border border-slate-200"
@@ -560,12 +561,12 @@ export function Header() {
               </Link>
             </div>
 
-            {/* Mobile Menu Button */}
+            {/* Mobile / Tablet Menu Button */}
             <button
               type="button"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
-              className="lg:hidden p-2 rounded-xl text-[#0B0F19] hover:bg-slate-100 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C59B27]"
+              className="xl:hidden p-2 rounded-xl text-[#0B0F19] hover:bg-slate-100 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C59B27]"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -573,24 +574,31 @@ export function Header() {
         </div>
       </header>
 
-      {/* Responsive Mobile Navigation Drawer */}
+      {/* Responsive Mobile / Tablet Navigation Drawer */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-white lg:hidden flex flex-col pt-24 px-6 pb-8 overflow-y-auto animate-in fade-in slide-in-from-top-4 duration-200">
-          <div className="flex-1 flex flex-col justify-between max-w-md mx-auto w-full">
-            <div className="space-y-5">
-              <div className="text-[11px] font-extrabold tracking-wider text-[#C59B27] uppercase">
-                Explore Bird Hills Tech
+        <div className="fixed inset-0 z-40 bg-white xl:hidden flex flex-col pt-24 px-5 sm:px-8 pb-8 overflow-y-auto animate-in fade-in slide-in-from-top-4 duration-200">
+          <div className="flex-1 flex flex-col justify-between max-w-lg mx-auto w-full">
+            <div className="space-y-4">
+              <div className="flex items-center justify-between pb-2 border-b border-slate-100">
+                <span className="text-[11px] font-extrabold tracking-wider text-[#C59B27] uppercase">
+                  Menu & Services
+                </span>
+                <span className="text-[10px] text-slate-400 font-semibold">
+                  Dubai, UAE
+                </span>
               </div>
-              <nav className="flex flex-col space-y-3">
+
+              <nav className="flex flex-col space-y-2.5">
                 <Link
                   href="/"
-                  className="text-lg font-bold text-[#0B0F19] hover:text-[#C59B27] transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-base font-bold text-[#0B0F19] hover:text-[#C59B27] transition-colors py-1.5 px-2 rounded-lg hover:bg-slate-50"
                 >
                   Home
                 </Link>
 
                 {/* 9 Services Accordion */}
-                <div className="border border-slate-200 rounded-2xl overflow-hidden">
+                <div className="border border-slate-200 rounded-2xl overflow-hidden shadow-xs">
                   <button
                     type="button"
                     onClick={() =>
@@ -600,43 +608,52 @@ export function Header() {
                   >
                     <span className="flex items-center gap-2">
                       <Code2 size={16} className="text-[#C59B27]" />
-                      <span>Services (All 9 Disciplines)</span>
+                      <span>Services (9 Disciplines)</span>
                     </span>
                     <ChevronDown
                       size={16}
-                      className={`text-slate-400 transition-transform ${
+                      className={`text-slate-400 transition-transform duration-200 ${
                         mobileExpandedCat === "services" ? "rotate-180 text-[#C59B27]" : ""
                       }`}
                     />
                   </button>
 
                   {mobileExpandedCat === "services" && (
-                    <div className="p-3 bg-white divide-y divide-slate-100 space-y-2">
-                      {serviceCategories.flatMap((g) => g.services).map((s) => (
-                        <div key={s.slug} className="pt-2 first:pt-0">
-                          <Link
-                            href={s.slug}
-                            className="text-xs font-bold text-[#0B0F19] hover:text-[#C59B27] transition-colors flex items-center justify-between"
-                          >
-                            <span>{s.title}</span>
-                            <ChevronRight size={12} className="text-slate-400" />
-                          </Link>
-                          <div className="flex flex-wrap gap-1 mt-1">
-                            {s.subItems.slice(0, 3).map((sub) => (
-                              <span
-                                key={sub}
-                                className="text-[9px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600"
-                              >
-                                {sub}
-                              </span>
-                            ))}
+                    <div className="p-3 bg-white space-y-3">
+                      {serviceCategories.map((group) => (
+                        <div key={group.category} className="space-y-1.5">
+                          <div className="text-[10px] font-extrabold uppercase tracking-wider text-[#C59B27] px-2 pt-1">
+                            {group.category}
+                          </div>
+                          <div className="space-y-1">
+                            {group.services.map((s) => {
+                              const SvgIcon = s.icon;
+                              return (
+                                <Link
+                                  key={s.slug}
+                                  href={s.slug}
+                                  onClick={() => setIsMobileMenuOpen(false)}
+                                  className="flex items-center gap-2.5 p-2 rounded-xl hover:bg-[#FAF8F5] transition-colors text-xs font-semibold text-[#0B0F19] hover:text-[#C59B27]"
+                                >
+                                  <div className="w-6 h-6 rounded-lg bg-[#C59B27]/10 text-[#C59B27] flex items-center justify-center shrink-0">
+                                    <SvgIcon size={13} />
+                                  </div>
+                                  <div className="flex-1 min-w-0">
+                                    <div className="font-bold truncate">{s.title}</div>
+                                    <div className="text-[10px] text-slate-400 truncate">{s.desc}</div>
+                                  </div>
+                                  <ChevronRight size={13} className="text-slate-300 shrink-0" />
+                                </Link>
+                              );
+                            })}
                           </div>
                         </div>
                       ))}
-                      <div className="pt-2">
+                      <div className="pt-2 border-t border-slate-100">
                         <Link
                           href="/services"
-                          className="text-xs font-bold text-[#C59B27] hover:underline block py-1"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                          className="text-xs font-bold text-[#C59B27] hover:underline block text-center py-1.5"
                         >
                           View Full Services Hub →
                         </Link>
@@ -646,7 +663,7 @@ export function Header() {
                 </div>
 
                 {/* Hosting & Domains Accordion */}
-                <div className="border border-slate-200 rounded-2xl overflow-hidden">
+                <div className="border border-slate-200 rounded-2xl overflow-hidden shadow-xs">
                   <button
                     type="button"
                     onClick={() =>
@@ -660,7 +677,7 @@ export function Header() {
                     </span>
                     <ChevronDown
                       size={16}
-                      className={`text-slate-400 transition-transform ${
+                      className={`text-slate-400 transition-transform duration-200 ${
                         mobileExpandedCat === "hosting" ? "rotate-180 text-[#C59B27]" : ""
                       }`}
                     />
@@ -670,33 +687,49 @@ export function Header() {
                     <div className="p-3 bg-white space-y-2 text-xs">
                       <Link
                         href="/domains"
-                        className="flex items-center justify-between font-semibold text-[#0B0F19] hover:text-[#C59B27]"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="flex items-center justify-between p-2 rounded-xl hover:bg-[#FAF8F5] font-semibold text-[#0B0F19] hover:text-[#C59B27]"
                       >
-                        <span>Domain Registration (.ae, .com)</span>
+                        <div className="flex items-center gap-2">
+                          <Globe size={14} className="text-[#C59B27]" />
+                          <span>Domain Registration (.ae, .com)</span>
+                        </div>
                         <span className="text-[9px] px-1.5 py-0.5 rounded bg-[#C59B27]/10 text-[#C59B27] font-bold">
                           Instant
                         </span>
                       </Link>
                       <Link
                         href="/hosting"
-                        className="flex items-center justify-between font-semibold text-[#0B0F19] hover:text-[#C59B27]"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="flex items-center justify-between p-2 rounded-xl hover:bg-[#FAF8F5] font-semibold text-[#0B0F19] hover:text-[#C59B27]"
                       >
-                        <span>Ultra-Fast Cloud Hosting</span>
+                        <div className="flex items-center gap-2">
+                          <Server size={14} className="text-[#C59B27]" />
+                          <span>Ultra-Fast Cloud Hosting</span>
+                        </div>
                         <span className="text-[9px] px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-700 font-bold">
-                          From $9.99
+                          From AED 36/mo
                         </span>
                       </Link>
                       <Link
                         href="/hosting#vps"
-                        className="block text-slate-600 hover:text-[#C59B27]"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="flex items-center justify-between p-2 rounded-xl hover:bg-[#FAF8F5] text-slate-700 hover:text-[#C59B27]"
                       >
-                        Managed Cloud VPS & Dedicated Servers
+                        <div className="flex items-center gap-2">
+                          <HardDrive size={14} className="text-[#C59B27]" />
+                          <span>Managed Cloud VPS & Dedicated</span>
+                        </div>
                       </Link>
                       <Link
                         href="/hosting#email"
-                        className="block text-slate-600 hover:text-[#C59B27]"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="flex items-center justify-between p-2 rounded-xl hover:bg-[#FAF8F5] text-slate-700 hover:text-[#C59B27]"
                       >
-                        Professional Business Email & SSL
+                        <div className="flex items-center gap-2">
+                          <Mail size={14} className="text-[#C59B27]" />
+                          <span>Professional Business Email & SSL</span>
+                        </div>
                       </Link>
                     </div>
                   )}
@@ -704,34 +737,43 @@ export function Header() {
 
                 <Link
                   href="/work"
-                  className="text-lg font-bold text-[#0B0F19] hover:text-[#C59B27] transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-base font-bold text-[#0B0F19] hover:text-[#C59B27] transition-colors py-1.5 px-2 rounded-lg hover:bg-slate-50"
                 >
-                  Portfolio
+                  Portfolio & Case Studies
                 </Link>
+
                 <Link
                   href="/pricing"
-                  className="text-lg font-bold text-[#0B0F19] hover:text-[#C59B27] transition-colors flex items-center justify-between"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-base font-bold text-[#0B0F19] hover:text-[#C59B27] transition-colors flex items-center justify-between py-1.5 px-2 rounded-lg hover:bg-slate-50"
                 >
                   <span>Pricing Packages</span>
-                  <span className="text-xs font-semibold text-[#C59B27] bg-[#C59B27]/10 px-2 py-0.5 rounded-full">
-                    USD $
+                  <span className="text-[10px] font-bold text-[#C59B27] bg-[#C59B27]/10 px-2 py-0.5 rounded-full">
+                    AED / USD
                   </span>
                 </Link>
+
                 <Link
                   href="/blog"
-                  className="text-lg font-bold text-[#0B0F19] hover:text-[#C59B27] transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-base font-bold text-[#0B0F19] hover:text-[#C59B27] transition-colors py-1.5 px-2 rounded-lg hover:bg-slate-50"
                 >
                   Blog & Insights
                 </Link>
+
                 <Link
                   href="/about"
-                  className="text-lg font-bold text-[#0B0F19] hover:text-[#C59B27] transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-base font-bold text-[#0B0F19] hover:text-[#C59B27] transition-colors py-1.5 px-2 rounded-lg hover:bg-slate-50"
                 >
-                  About Bird Hills
+                  About Bird Hills Tech
                 </Link>
+
                 <Link
                   href="/contact"
-                  className="text-lg font-bold text-[#C59B27] hover:underline transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-base font-bold text-[#C59B27] hover:underline transition-colors py-1.5 px-2 rounded-lg hover:bg-[#C59B27]/5"
                 >
                   Contact Us
                 </Link>
@@ -739,33 +781,35 @@ export function Header() {
             </div>
 
             {/* Mobile Footer CTAs & WhatsApp Contact */}
-            <div className="pt-6 border-t border-slate-200 space-y-4 mt-6">
+            <div className="pt-5 border-t border-slate-200 space-y-3.5 mt-5">
               <div className="grid grid-cols-2 gap-3">
                 <Link
                   href="/book-a-meeting"
-                  className="flex items-center justify-center gap-2 py-3 px-4 rounded-xl border border-[#E4E7EC] font-bold text-xs text-[#0B0F19] hover:bg-slate-50 transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="flex items-center justify-center gap-1.5 py-3 px-3 rounded-xl border border-[#E4E7EC] font-bold text-xs text-[#0B0F19] hover:bg-slate-50 transition-colors"
                 >
-                  <Calendar size={14} className="text-[#C59B27]" />
+                  <Calendar size={13} className="text-[#C59B27]" />
                   <span>Book Meeting</span>
                 </Link>
                 <Link
                   href="/contact"
-                  className="flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-gradient-to-r from-[#D4AF37] via-[#C59B27] to-[#B38728] text-white font-bold text-xs shadow-md transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="flex items-center justify-center gap-1.5 py-3 px-3 rounded-xl bg-gradient-to-r from-[#D4AF37] via-[#C59B27] to-[#B38728] text-white font-bold text-xs shadow-md transition-colors"
                 >
                   <span>Let&apos;s Talk</span>
-                  <ArrowRight size={14} />
+                  <ArrowRight size={13} />
                 </Link>
               </div>
 
-              <div className="bg-[#FAF8F5] p-3.5 rounded-2xl border border-[#C59B27]/20 text-xs text-[#667085] space-y-1.5">
-                <div className="font-bold text-[#0B0F19] flex items-center gap-1.5">
+              <div className="bg-[#FAF8F5] p-3 rounded-2xl border border-[#C59B27]/20 text-xs text-[#667085] space-y-1">
+                <div className="font-bold text-[#070B14] flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-[#C59B27]" />
                   <span>Dubai Corporate Office</span>
                 </div>
-                <div>Deira - Stone Building - 122 7th A Street - Al Baraha, Dubai, UAE</div>
-                <div className="pt-1 flex items-center justify-between text-[#C59B27] font-semibold">
+                <div className="text-[11px] leading-tight">Deira · Stone Building · Al Baraha, Dubai, UAE</div>
+                <div className="pt-1 flex items-center justify-between text-[#C59B27] font-semibold text-[11px]">
                   <span className="flex items-center gap-1">
-                    <Phone size={13} /> +971 52 440 5785
+                    <Phone size={12} /> +971 52 440 5785
                   </span>
                   <a
                     href="https://wa.me/971524405785"
