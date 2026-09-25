@@ -6,8 +6,6 @@ import { usePathname } from "next/navigation";
 import {
   Menu,
   X,
-  ArrowRight,
-  Calendar,
   ChevronDown,
   Code2,
   Globe,
@@ -15,13 +13,8 @@ import {
   MapPin,
   Sparkles,
   Bot,
-  Workflow,
-  Palette,
-  BarChart3,
-  Phone,
-  MessageCircle,
-  Layers,
   ChevronRight,
+  Calendar,
 } from "lucide-react";
 import Logo from "./Logo";
 
@@ -141,60 +134,6 @@ export const MAIN_MENU_SERVICES = [
   },
 ];
 
-// 2. ADDITIONAL SERVICES UNDER "MORE SERVICES"
-export const MORE_SERVICES = [
-  {
-    id: "crm-marketing-automation",
-    title: "CRM & Marketing Automation",
-    slug: "/services/crm-marketing-automation",
-    icon: Workflow,
-    desc: "HubSpot & Zoho setups, lead routing & automated nurture funnels",
-    subItems: [
-      { title: "CRM Setup", href: "/services/crm-marketing-automation#setup" },
-      { title: "Lead Management", href: "/services/crm-marketing-automation#management" },
-      { title: "Lead Automation", href: "/services/crm-marketing-automation#lead-automation" },
-      { title: "Lead Routing", href: "/services/crm-marketing-automation#routing" },
-      { title: "Email Automation", href: "/services/crm-marketing-automation#email" },
-      { title: "WhatsApp Automation", href: "/services/crm-marketing-automation#whatsapp" },
-      { title: "Sales Pipeline Automation", href: "/services/crm-marketing-automation#pipeline" },
-      { title: "Appointment Automation", href: "/services/crm-marketing-automation#appointments" },
-      { title: "CRM Integrations", href: "/services/crm-marketing-automation#integrations" },
-    ],
-  },
-  {
-    id: "branding-creative",
-    title: "Branding & Creative",
-    slug: "/services/branding-creative",
-    icon: Palette,
-    desc: "Prestigious corporate identity, bilingual typography & high-converting UI/UX",
-    subItems: [
-      { title: "Brand Identity", href: "/services/branding-creative#identity" },
-      { title: "Logo Design", href: "/services/branding-creative#logo" },
-      { title: "UI/UX Design", href: "/services/branding-creative#uiux" },
-      { title: "Ad Creative", href: "/services/branding-creative#ad-creative" },
-      { title: "Social Media Design", href: "/services/branding-creative#social" },
-      { title: "Marketing Graphics", href: "/services/branding-creative#graphics" },
-    ],
-  },
-  {
-    id: "analytics-cro",
-    title: "Analytics & CRO",
-    slug: "/services/analytics-cro",
-    icon: BarChart3,
-    desc: "Server-side tracking, GTM, Meta CAPI & closed-loop reporting",
-    subItems: [
-      { title: "Google Analytics", href: "/services/analytics-cro#ga4" },
-      { title: "Google Tag Manager", href: "/services/analytics-cro#gtm" },
-      { title: "Conversion Tracking", href: "/services/analytics-cro#tracking" },
-      { title: "Meta Pixel & CAPI", href: "/services/analytics-cro#capi" },
-      { title: "Conversion Optimization", href: "/services/analytics-cro#cro" },
-      { title: "Lead Attribution", href: "/services/analytics-cro#attribution" },
-      { title: "Marketing Dashboards", href: "/services/analytics-cro#dashboards" },
-      { title: "Reporting & Analytics", href: "/services/analytics-cro#reporting" },
-    ],
-  },
-];
-
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -203,7 +142,6 @@ export function Header() {
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const pathname = usePathname();
 
-  // Scroll detection
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -213,13 +151,11 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close menus on route change
   useEffect(() => {
     setIsMobileMenuOpen(false);
     setActiveDropdown(null);
   }, [pathname]);
 
-  // Lock body scroll when mobile menu open
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = "hidden";
@@ -258,12 +194,12 @@ export function Header() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between gap-3 lg:gap-6">
+          <div className="flex items-center justify-between gap-4">
             {/* Brand Logo */}
             <Logo />
 
-            {/* Desktop Navigation: 6 Main Services + More Services Dropdown */}
-            <nav className="hidden xl:flex items-center gap-1 xl:gap-1.5">
+            {/* Desktop Navigation: 6 Main Services Only */}
+            <nav className="hidden xl:flex items-center gap-1.5 xl:gap-2">
               {MAIN_MENU_SERVICES.map((service, index) => {
                 const isActive =
                   pathname === service.href ||
@@ -271,9 +207,8 @@ export function Header() {
                 const isOpen = activeDropdown === service.id;
                 const Icon = service.icon;
 
-                // Position alignment: left-aligned for first 3, center for 4th, right-aligned for last 2
                 let dropdownPositionClass = "left-0";
-                if (index === 3) dropdownPositionClass = "left-1/2 -translate-x-1/2";
+                if (index === 2 || index === 3) dropdownPositionClass = "left-1/2 -translate-x-1/2";
                 if (index >= 4) dropdownPositionClass = "right-0";
 
                 return (
@@ -285,7 +220,7 @@ export function Header() {
                   >
                     <Link
                       href={service.href}
-                      className={`inline-flex items-center gap-1 px-2.5 py-2 text-[13px] font-semibold rounded-lg transition-colors whitespace-nowrap ${
+                      className={`inline-flex items-center gap-1 px-3 py-2 text-[13px] font-semibold rounded-lg transition-colors whitespace-nowrap ${
                         isActive || isOpen
                           ? "text-[#C59B27] bg-[#FAF8F5] font-bold"
                           : "text-[#0B0F19] hover:text-[#C59B27] hover:bg-slate-50"
@@ -356,17 +291,12 @@ export function Header() {
                                 className="transition-transform group-hover/link:translate-x-0.5"
                               />
                             </Link>
-                            <a
-                              href={`https://wa.me/971524405785?text=Hello%20Bird%20Hills%20Tech%2C%20I%20am%20interested%20in%20${encodeURIComponent(
-                                service.name
-                              )}.`}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-slate-500 hover:text-[#25D366] font-semibold flex items-center gap-1"
+                            <Link
+                              href="/pricing"
+                              className="text-slate-500 hover:text-[#C59B27] font-semibold"
                             >
-                              <MessageCircle size={12} className="text-[#25D366]" />
-                              <span>Fast Inquiry</span>
-                            </a>
+                              Pricing Packages →
+                            </Link>
                           </div>
                         </div>
                       </div>
@@ -374,139 +304,7 @@ export function Header() {
                   </div>
                 );
               })}
-
-              {/* 7. MORE SERVICES MEGA DROPDOWN (CRM, Branding, Analytics) */}
-              <div
-                className="relative"
-                onMouseEnter={() => handleMouseEnter("more-services")}
-                onMouseLeave={handleMouseLeave}
-              >
-                <button
-                  type="button"
-                  className={`inline-flex items-center gap-1 px-2.5 py-2 text-[13px] font-semibold rounded-lg transition-colors whitespace-nowrap ${
-                    activeDropdown === "more-services"
-                      ? "text-[#C59B27] bg-[#FAF8F5] font-bold"
-                      : "text-[#0B0F19] hover:text-[#C59B27] hover:bg-slate-50"
-                  }`}
-                >
-                  <Layers size={13} className="text-[#C59B27]" />
-                  <span>More Services</span>
-                  <ChevronDown
-                    size={13}
-                    className={`transition-transform duration-200 ${
-                      activeDropdown === "more-services" ? "rotate-180 text-[#C59B27]" : "text-slate-400"
-                    }`}
-                  />
-                </button>
-
-                {activeDropdown === "more-services" && (
-                  <div className="absolute top-full right-0 pt-2 z-50 animate-in fade-in zoom-in-95 duration-150">
-                    <div className="bg-white rounded-2xl border border-[#C59B27]/30 shadow-2xl p-6 w-[820px] overflow-hidden">
-                      <div className="flex items-center justify-between pb-3.5 mb-5 border-b border-slate-100">
-                        <div>
-                          <div className="text-xs font-extrabold uppercase tracking-wider text-[#C59B27]">
-                            ADDITIONAL PRACTICE DISCIPLINES
-                          </div>
-                          <div className="text-[12px] text-[#667085]">
-                            Full-suite operational, creative, and analytics infrastructure
-                          </div>
-                        </div>
-                        <Link
-                          href="/services"
-                          className="text-xs font-bold text-[#C59B27] hover:underline flex items-center gap-1"
-                        >
-                          <span>Explore All 9 Practices</span>
-                          <ArrowRight size={13} />
-                        </Link>
-                      </div>
-
-                      {/* 3 Columns for CRM, Branding, Analytics */}
-                      <div className="grid grid-cols-3 gap-6">
-                        {MORE_SERVICES.map((srv) => {
-                          const SrvIcon = srv.icon;
-                          return (
-                            <div key={srv.id} className="space-y-3">
-                              <Link
-                                href={srv.slug}
-                                className="flex items-center gap-2 group/title"
-                              >
-                                <div className="w-7 h-7 rounded-lg bg-[#C59B27]/10 flex items-center justify-center text-[#C59B27] shrink-0">
-                                  <SrvIcon size={14} />
-                                </div>
-                                <div>
-                                  <div className="text-xs font-bold text-[#070B14] group-hover/title:text-[#C59B27] transition-colors leading-tight">
-                                    {srv.title}
-                                  </div>
-                                </div>
-                              </Link>
-                              <div className="space-y-1">
-                                {srv.subItems.map((sub) => (
-                                  <Link
-                                    key={sub.title}
-                                    href={sub.href}
-                                    className="flex items-center gap-2 px-2 py-1 rounded-md text-[11px] font-semibold text-[#667085] hover:text-[#070B14] hover:bg-[#FAF8F5] transition-colors group/sub"
-                                  >
-                                    <span className="w-1 h-1 rounded-full bg-[#C59B27]/50 group-hover/sub:bg-[#C59B27] transition-colors shrink-0" />
-                                    <span className="truncate">{sub.title}</span>
-                                  </Link>
-                                ))}
-                              </div>
-                            </div>
-                          );
-                        })}
-                      </div>
-
-                      {/* Bottom Banner with Portfolio & Pricing quick links */}
-                      <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs bg-[#FAF8F5] -mx-6 -mb-6 p-4">
-                        <div className="flex items-center gap-4 text-xs font-semibold text-[#070B14]">
-                          <Link
-                            href="/work"
-                            className="hover:text-[#C59B27] transition-colors flex items-center gap-1"
-                          >
-                            <span>Case Studies & Portfolio</span>
-                            <ChevronRight size={12} className="text-[#C59B27]" />
-                          </Link>
-                          <span className="text-slate-300">·</span>
-                          <Link
-                            href="/pricing"
-                            className="hover:text-[#C59B27] transition-colors flex items-center gap-1"
-                          >
-                            <span>Pricing Packages (AED & USD)</span>
-                            <ChevronRight size={12} className="text-[#C59B27]" />
-                          </Link>
-                        </div>
-                        <Link
-                          href="/contact"
-                          className="font-bold text-[#C59B27] hover:underline"
-                        >
-                          Request Custom Scope →
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </div>
             </nav>
-
-            {/* Right-Side Desktop CTAs */}
-            <div className="hidden xl:flex items-center gap-2 whitespace-nowrap">
-              <a
-                href="https://wa.me/971524405785?text=Hello%20Bird%20Hills%20Tech%2C%20I%20would%20like%20to%20discuss%20a%20project."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-bold text-emerald-600 hover:text-emerald-700 hover:bg-emerald-50 rounded-xl transition-colors border border-emerald-200"
-              >
-                <MessageCircle size={14} className="text-[#25D366]" />
-                <span>WhatsApp</span>
-              </a>
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-bold text-white bg-gradient-to-r from-[#D4AF37] via-[#C59B27] to-[#B38728] hover:brightness-105 rounded-xl shadow-md shadow-[#C59B27]/25 transition-all hover:translate-y-[-0.5px]"
-              >
-                <span>Let&apos;s Talk</span>
-                <ArrowRight size={13} />
-              </Link>
-            </div>
 
             {/* Mobile / Tablet Menu Button */}
             <button
@@ -528,10 +326,10 @@ export function Header() {
             <div className="space-y-4">
               <div className="flex items-center justify-between pb-2 border-b border-slate-100">
                 <span className="text-[11px] font-extrabold tracking-wider text-[#C59B27] uppercase">
-                  PRACTICE DISCIPLINES & SERVICES
+                  PRACTICE DISCIPLINES
                 </span>
                 <span className="text-[10px] text-slate-400 font-semibold">
-                  Structured Menu
+                  Main Services
                 </span>
               </div>
 
@@ -604,67 +402,6 @@ export function Header() {
                   );
                 })}
 
-                {/* More Services Accordion */}
-                <div className="border border-slate-200 rounded-2xl overflow-hidden shadow-2xs">
-                  <button
-                    type="button"
-                    onClick={() =>
-                      setMobileExpandedService(
-                        mobileExpandedService === "more-services" ? null : "more-services"
-                      )
-                    }
-                    className="w-full flex items-center justify-between p-3.5 bg-[#FAF8F5] text-left font-bold text-xs text-[#0B0F19]"
-                  >
-                    <span className="flex items-center gap-2">
-                      <Layers size={15} className="text-[#C59B27]" />
-                      <span>More Services (CRM, Branding, Analytics)</span>
-                    </span>
-                    <ChevronDown
-                      size={15}
-                      className={`text-slate-400 transition-transform duration-200 ${
-                        mobileExpandedService === "more-services" ? "rotate-180 text-[#C59B27]" : ""
-                      }`}
-                    />
-                  </button>
-
-                  {mobileExpandedService === "more-services" && (
-                    <div className="p-3 bg-white space-y-4 border-t border-slate-100">
-                      {MORE_SERVICES.map((ms) => {
-                        const MsIcon = ms.icon;
-                        return (
-                          <div key={ms.id} className="space-y-1.5">
-                            <div className="flex items-center justify-between">
-                              <span className="text-xs font-bold text-[#070B14] flex items-center gap-1.5">
-                                <MsIcon size={13} className="text-[#C59B27]" />
-                                {ms.title}
-                              </span>
-                              <Link
-                                href={ms.slug}
-                                onClick={() => setIsMobileMenuOpen(false)}
-                                className="text-[10px] font-bold text-[#C59B27] hover:underline"
-                              >
-                                View →
-                              </Link>
-                            </div>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-1 pl-4">
-                              {ms.subItems.map((sub) => (
-                                <Link
-                                  key={sub.title}
-                                  href={sub.href}
-                                  onClick={() => setIsMobileMenuOpen(false)}
-                                  className="text-xs text-[#667085] hover:text-[#070B14] py-1 block"
-                                >
-                                  • {sub.title}
-                                </Link>
-                              ))}
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  )}
-                </div>
-
                 {/* Additional Quick Links */}
                 <div className="grid grid-cols-2 gap-2 pt-2">
                   <Link
@@ -685,57 +422,16 @@ export function Header() {
               </nav>
             </div>
 
-            {/* Bottom Actions: NO Physical Address Highlight */}
-            <div className="pt-6 mt-6 border-t border-slate-100 space-y-3">
-              <div className="grid grid-cols-2 gap-3">
-                <Link
-                  href="/book-a-meeting"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="flex items-center justify-center gap-1.5 py-3 px-3 rounded-xl bg-slate-50 border border-slate-200 hover:bg-slate-100 text-[#0B0F19] font-bold text-xs transition-colors"
-                >
-                  <Calendar size={13} className="text-[#C59B27]" />
-                  <span>Book Meeting</span>
-                </Link>
-                <Link
-                  href="/contact"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="flex items-center justify-center gap-1.5 py-3 px-3 rounded-xl bg-gradient-to-r from-[#D4AF37] via-[#C59B27] to-[#B38728] text-white font-bold text-xs shadow-md transition-colors"
-                >
-                  <span>Let&apos;s Talk</span>
-                  <ArrowRight size={13} />
-                </Link>
-              </div>
-
-              {/* Direct Communication Quick Bar (Clean, Zero Address) */}
-              <div className="bg-[#FAF8F5] p-3 rounded-2xl border border-[#C59B27]/20 text-xs space-y-2">
-                <div className="flex items-center justify-between">
-                  <span className="font-bold text-[#070B14] flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                    <span>Direct Communication</span>
-                  </span>
-                  <span className="text-[10px] font-semibold text-[#B38728] uppercase tracking-wider">
-                    Fast Response
-                  </span>
-                </div>
-                <div className="flex items-center justify-between pt-1">
-                  <a
-                    href="tel:+971524405785"
-                    className="flex items-center gap-1 text-[#070B14] font-semibold hover:text-[#C59B27] transition-colors text-[11px]"
-                  >
-                    <Phone size={12} className="text-[#C59B27]" />
-                    <span>+971 52 440 5785</span>
-                  </a>
-                  <a
-                    href="https://wa.me/971524405785"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-bold text-[#25D366] hover:underline flex items-center gap-1 text-[11px]"
-                  >
-                    <MessageCircle size={12} />
-                    <span>WhatsApp Chat</span>
-                  </a>
-                </div>
-              </div>
+            {/* Bottom Actions: Clean, No Address, No Let's Talk */}
+            <div className="pt-6 mt-6 border-t border-slate-100">
+              <Link
+                href="/book-a-meeting"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="flex items-center justify-center gap-1.5 py-3 px-3 rounded-xl bg-slate-50 border border-slate-200 hover:bg-slate-100 text-[#0B0F19] font-bold text-xs transition-colors w-full"
+              >
+                <Calendar size={13} className="text-[#C59B27]" />
+                <span>Book a Meeting</span>
+              </Link>
             </div>
           </div>
         </div>

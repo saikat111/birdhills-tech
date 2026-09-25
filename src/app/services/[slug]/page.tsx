@@ -625,9 +625,17 @@ export default async function ServiceDetailPage({
                       {subDesc}
                     </p>
                   </div>
-                  <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-[#C59B27] font-semibold">
-                    <span>Verified Deliverable</span>
-                    <ArrowRight size={12} />
+                  <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-xs">
+                    <span className="text-[11px] font-semibold text-[#667085] bg-slate-50 px-2.5 py-1 rounded-md border border-slate-200/70">
+                      Verified Deliverable
+                    </span>
+                    <Link
+                      href={`/contact?service=${encodeURIComponent(service.title)}&inquiry=${encodeURIComponent(feat)}`}
+                      className="inline-flex items-center gap-1 text-xs font-bold text-[#C59B27] hover:text-[#0B0F19] transition-colors group"
+                    >
+                      <span>Learn More</span>
+                      <ArrowRight size={13} className="transition-transform group-hover:translate-x-0.5" />
+                    </Link>
                   </div>
                 </div>
               );

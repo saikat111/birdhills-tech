@@ -36,15 +36,13 @@ export function Footer() {
             </h3>
             <ul className="space-y-2.5 text-xs sm:text-sm">
               <li>
-                <Link href="/about" className="hover:text-[#D4AF37] text-white font-semibold transition-colors flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#C59B27]" />
-                  <span>About Us</span>
+                <Link href="/about" className="hover:text-[#D4AF37] transition-colors">
+                  About Us
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="hover:text-[#D4AF37] text-white font-semibold transition-colors flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#C59B27]" />
-                  <span>Blog &amp; Insights</span>
+                <Link href="/blog" className="hover:text-[#D4AF37] transition-colors">
+                  Blog &amp; Insights
                 </Link>
               </li>
               <li>

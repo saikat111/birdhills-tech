@@ -13,6 +13,7 @@ import {
   Calendar,
 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 interface Message {
@@ -129,8 +130,14 @@ export function FloatingChatbot() {
           className="group relative flex items-center gap-2.5 px-4 py-3 rounded-full bg-[#070B14] text-white shadow-xl hover:shadow-2xl border border-[#C59B27]/40 hover:bg-[#0B0F19] transition-all duration-300 hover:scale-[1.02] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C59B27]"
           aria-label="Open Bird Hills AI Assistant"
         >
-          <div className="relative w-8 h-8 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#B38728] flex items-center justify-center text-white shrink-0 shadow-sm">
-            <Sparkles size={16} className="animate-pulse text-amber-100" />
+          <div className="relative w-9 h-9 rounded-full bg-white flex items-center justify-center p-1.5 shrink-0 shadow-sm border border-[#C59B27]/40 overflow-hidden">
+            <Image
+              src="/images/logo-icon.png"
+              alt="Bird Hills Tech"
+              width={26}
+              height={26}
+              className="object-contain"
+            />
             <span className="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-400 border-2 border-[#070B14] rounded-full"></span>
           </div>
           <span className="text-sm font-semibold tracking-tight text-white pr-1">
@@ -145,8 +152,14 @@ export function FloatingChatbot() {
           {/* Header */}
           <div className="bg-[#070B14] text-white p-4 flex items-center justify-between border-b border-[#C59B27]/20 shrink-0">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#B38728] flex items-center justify-center text-white">
-                <Bot size={18} />
+              <div className="w-9 h-9 rounded-full bg-white p-1.5 flex items-center justify-center shrink-0 border border-[#C59B27]/40 shadow-sm overflow-hidden">
+                <Image
+                  src="/images/logo-icon.png"
+                  alt="Bird Hills AI Avatar"
+                  width={24}
+                  height={24}
+                  className="object-contain"
+                />
               </div>
               <div>
                 <div className="text-sm font-bold flex items-center gap-1.5">
@@ -202,8 +215,14 @@ export function FloatingChatbot() {
                 }`}
               >
                 {m.sender === "assistant" && (
-                  <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#B38728] text-white flex items-center justify-center shrink-0 mt-0.5 shadow-2xs">
-                    <Bot size={13} />
+                  <div className="w-7 h-7 rounded-full bg-white p-1 flex items-center justify-center shrink-0 mt-0.5 shadow-2xs border border-[#C59B27]/30 overflow-hidden">
+                    <Image
+                      src="/images/logo-icon.png"
+                      alt="Bird Hills AI"
+                      width={20}
+                      height={20}
+                      className="object-contain"
+                    />
                   </div>
                 )}
                 <div
@@ -225,8 +244,14 @@ export function FloatingChatbot() {
 
             {isLoading && (
               <div className="flex gap-2.5 justify-start">
-                <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#B38728] text-white flex items-center justify-center shrink-0">
-                  <Bot size={13} />
+                <div className="w-7 h-7 rounded-full bg-white p-1 flex items-center justify-center shrink-0 border border-[#C59B27]/30 shadow-2xs overflow-hidden">
+                  <Image
+                    src="/images/logo-icon.png"
+                    alt="Bird Hills AI"
+                    width={20}
+                    height={20}
+                    className="object-contain"
+                  />
                 </div>
                 <div className="bg-white border border-[#E4E7EC] rounded-2xl rounded-tl-none px-4 py-3 text-xs text-slate-400 flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#C59B27] animate-bounce"></span>
