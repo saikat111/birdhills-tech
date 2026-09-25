@@ -20,7 +20,7 @@ export function ContactForm() {
   const serviceOptions = [
     "Web Development",
     "Web Application",
-    "Cloud Hosting & Domains",
+    "Domain & Hosting",
     "E-commerce",
     "Branding & Design",
     "Digital Marketing",

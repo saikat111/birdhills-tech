@@ -263,7 +263,7 @@ export default function ServicesHubPage() {
       tools: ["Node.js / Bun", "Prisma ORM", "PostgreSQL", "SQLite / Cloudflare D1", "Redis Cache", "REST / GraphQL"],
     },
     {
-      category: "Cloud, Hosting & Domains",
+      category: "Cloud, Domain & Hosting",
       tools: ["Pure NVMe Edge Nodes", "AWS & Cloudflare Enterprise", ".ae UAE Accredited Registry", "Docker Containers", "DIFC Compliance"],
     },
     {

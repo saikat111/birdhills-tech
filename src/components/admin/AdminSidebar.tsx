@@ -36,7 +36,7 @@ const navItems = [
   { name: "SEO & AEO Suite", href: "/admin/seo-tools", icon: Sparkles },
   { name: "Services (9 Areas)", href: "/admin/services", icon: Layers },
   { name: "Pricing Packages", href: "/admin/pricing", icon: CreditCard },
-  { name: "Hosting & Domains", href: "/admin/hosting", icon: Server },
+  { name: "Domain & Hosting", href: "/admin/hosting", icon: Server },
   { name: "Projects", href: "/admin/projects", icon: Briefcase },
   { name: "Blog Posts", href: "/admin/blog", icon: FileText },
   { name: "Blog Categories", href: "/admin/blog-categories", icon: FolderOpen },

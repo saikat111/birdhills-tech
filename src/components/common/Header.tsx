@@ -176,7 +176,7 @@ export function Header() {
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "Services", href: "/services", hasServicesDropdown: true },
-    { name: "Hosting & Domains", href: "/hosting", hasHostingMegaMenu: true },
+    { name: "Domain & Hosting", href: "/hosting", hasHostingMegaMenu: true },
     { name: "Portfolio", href: "/work" },
     { name: "Pricing", href: "/pricing" },
     { name: "Blog", href: "/blog" },
@@ -673,7 +673,7 @@ export function Header() {
                   >
                     <span className="flex items-center gap-2">
                       <Globe size={16} className="text-[#C59B27]" />
-                      <span>Hosting & Domains</span>
+                      <span>Domain & Hosting</span>
                     </span>
                     <ChevronDown
                       size={16}

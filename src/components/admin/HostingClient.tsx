@@ -234,7 +234,7 @@ export function HostingClient({ initialPlans }: HostingClientProps) {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-[#E4E7EC]">
         <div>
           <h1 className="text-2xl sm:text-3xl font-extrabold text-[#070B14]">
-            Hosting & Domains CMS
+            Domain & Hosting CMS
           </h1>
           <p className="text-xs sm:text-sm text-[#667085] mt-1">
             Manage Cloud Hosting, VPS, and Dedicated server tiers in USD ($) displayed on `/hosting` and `/domains`.

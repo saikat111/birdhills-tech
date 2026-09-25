@@ -27,7 +27,7 @@ const HERO_SLIDES = [
     image:
       "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2000&q=90",
     alt: "Dubai iconic Downtown skyline and Financial Centre at dusk",
-    tag: "DUBAI HEADQUARTERS",
+    tag: "DUBAI, UAE",
     location: "Deira · Al Baraha · Dubai, UAE",
     highlight: "Enterprise Digital Execution · +971 52 440 5785",
   },
@@ -140,7 +140,7 @@ export function HeroSection({
               </span>
               <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold text-slate-200 bg-white/10 border border-white/15 backdrop-blur-md">
                 <span className="w-2 h-2 rounded-full bg-[#25D366] animate-pulse" />
-                Dubai Headquarters · Al Baraha
+                Al Baraha, Deira · Dubai, UAE
               </span>
             </div>
 

@@ -34,25 +34,6 @@ export function Logo({ variant = "dark", className = "", iconOnly = false }: Log
           className="object-contain p-1"
         />
       </div>
-
-      {!iconOnly && (
-        <div className="hidden sm:flex flex-col border-l border-slate-200 dark:border-white/15 pl-2.5">
-          <span
-            className={`text-[9px] font-extrabold tracking-[0.2em] uppercase transition-colors ${
-              isWhite ? "text-[#D4AF37]" : "text-[#C59B27]"
-            }`}
-          >
-            Dubai Headquarters
-          </span>
-          <span
-            className={`text-[8px] font-semibold tracking-wider transition-colors ${
-              isWhite ? "text-slate-400" : "text-[#667085]"
-            }`}
-          >
-            Tech × Creative × Growth
-          </span>
-        </div>
-      )}
     </Link>
   );
 }
