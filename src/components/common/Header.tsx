@@ -203,7 +203,7 @@ export function Header() {
             <Logo />
 
             {/* Desktop Navigation */}
-            <nav className="hidden xl:flex items-center gap-1 xl:gap-1.5 whitespace-nowrap">
+            <nav className="hidden xl:flex items-center gap-1 xl:gap-1.5">
               {navLinks.map((link) => {
                 const isActive =
                   pathname === link.href ||
@@ -240,7 +240,7 @@ export function Header() {
 
                       {/* 4-Column Luxury Mega Menu Container */}
                       {isServicesOpen && (
-                        <div className="fixed left-1/2 -translate-x-1/2 top-[68px] sm:top-[76px] pt-2 w-[980px] max-w-[calc(100vw-2rem)] transition-all animate-in fade-in slide-in-from-top-2 duration-150 z-50">
+                        <div className="fixed left-1/2 -translate-x-1/2 top-[68px] sm:top-[76px] pt-2 w-[1060px] max-w-[calc(100vw-2rem)] transition-all animate-in fade-in slide-in-from-top-2 duration-150 z-50 whitespace-normal">
                           <div className="bg-white rounded-3xl shadow-2xl border border-[#E4E7EC] p-6 overflow-hidden">
                             {/* Header row in mega menu */}
                             <div className="flex items-center justify-between pb-4 mb-4 border-b border-slate-100">
@@ -263,28 +263,28 @@ export function Header() {
                             {/* 4 Practice Columns */}
                             <div className="grid grid-cols-4 gap-5">
                               {serviceCategories.map((group) => (
-                                <div key={group.category} className="space-y-3.5">
-                                  <div className="text-[11px] font-extrabold uppercase tracking-wider text-[#C59B27] border-b border-slate-100 pb-1.5 whitespace-nowrap">
+                                <div key={group.category} className="space-y-3.5 min-w-0">
+                                  <div className="text-[11px] font-extrabold uppercase tracking-wider text-[#C59B27] border-b border-slate-100 pb-1.5 truncate">
                                     {group.category}
                                   </div>
-                                  <div className="space-y-3">
+                                  <div className="space-y-2.5">
                                     {group.services.map((svc) => {
                                       const Icon = svc.icon;
                                       return (
                                         <Link
                                           key={svc.slug}
                                           href={svc.slug}
-                                          className="block p-2.5 rounded-xl hover:bg-[#FAF8F5] border border-transparent hover:border-[#C59B27]/20 transition-all group"
+                                          className="block p-2.5 rounded-xl hover:bg-[#FAF8F5] border border-transparent hover:border-[#C59B27]/20 transition-all group min-w-0"
                                         >
-                                          <div className="flex items-center gap-2">
+                                          <div className="flex items-center gap-2 min-w-0">
                                             <div className="w-7 h-7 rounded-lg bg-[#FAF8F5] text-[#C59B27] flex items-center justify-center shrink-0 group-hover:bg-[#C59B27] group-hover:text-white transition-colors">
                                               <Icon size={14} />
                                             </div>
-                                            <span className="text-xs font-bold text-[#0B0F19] group-hover:text-[#C59B27] transition-colors leading-tight">
+                                            <span className="text-xs font-bold text-[#0B0F19] group-hover:text-[#C59B27] transition-colors leading-snug">
                                               {svc.title}
                                             </span>
                                           </div>
-                                          <p className="text-[10px] text-[#667085] leading-relaxed mt-1">
+                                          <p className="text-[10.5px] text-[#667085] leading-relaxed mt-1 break-words">
                                             {svc.desc}
                                           </p>
                                           <div className="flex flex-wrap gap-1 mt-1.5">
@@ -366,12 +366,12 @@ export function Header() {
 
                       {/* Mega Menu Container - Centered and Viewport Bounded */}
                       {isHostingOpen && (
-                        <div className="fixed left-1/2 -translate-x-1/2 top-[68px] sm:top-[76px] pt-2 w-[860px] max-w-[calc(100vw-2rem)] transition-all animate-in fade-in slide-in-from-top-2 duration-150 z-50">
+                        <div className="fixed left-1/2 -translate-x-1/2 top-[68px] sm:top-[76px] pt-2 w-[880px] max-w-[calc(100vw-2rem)] transition-all animate-in fade-in slide-in-from-top-2 duration-150 z-50 whitespace-normal">
                           <div className="bg-white rounded-3xl shadow-2xl border border-[#E4E7EC] p-6 overflow-hidden">
                             {/* 3 Spacious Columns (Domains, Web Hosting, Infrastructure) */}
                             <div className="grid grid-cols-3 gap-6 pb-6 border-b border-slate-100">
                               {/* Col 1: Domains */}
-                              <div className="space-y-3">
+                              <div className="space-y-3 min-w-0">
                                 <div className="flex items-center gap-2 text-xs font-extrabold uppercase tracking-wider text-[#C59B27] border-b border-slate-100 pb-2">
                                   <Globe size={15} />
                                   <span>Domains</span>
@@ -381,7 +381,7 @@ export function Header() {
                                     <Link
                                       key={item.title}
                                       href={item.href}
-                                      className="block p-2 rounded-xl hover:bg-[#FAF8F5] transition-colors group"
+                                      className="block p-2 rounded-xl hover:bg-[#FAF8F5] transition-colors group min-w-0"
                                     >
                                       <div className="flex items-start justify-between gap-2">
                                         <span className="text-xs font-bold text-[#0B0F19] group-hover:text-[#C59B27] transition-colors leading-tight">
@@ -393,7 +393,7 @@ export function Header() {
                                           </span>
                                         )}
                                       </div>
-                                      <p className="text-[11px] text-[#667085] leading-normal mt-0.5">
+                                      <p className="text-[11px] text-[#667085] leading-normal mt-0.5 break-words">
                                         {item.desc}
                                       </p>
                                     </Link>
@@ -408,7 +408,7 @@ export function Header() {
                               </div>
 
                               {/* Col 2: Web Hosting */}
-                              <div className="space-y-3 border-x border-slate-100 px-4">
+                              <div className="space-y-3 border-x border-slate-100 px-4 min-w-0">
                                 <div className="flex items-center gap-2 text-xs font-extrabold uppercase tracking-wider text-[#C59B27] border-b border-slate-100 pb-2">
                                   <Server size={15} />
                                   <span>Web Hosting</span>
@@ -418,7 +418,7 @@ export function Header() {
                                     <Link
                                       key={item.title}
                                       href={item.href}
-                                      className="block p-2 rounded-xl hover:bg-[#FAF8F5] transition-colors group"
+                                      className="block p-2 rounded-xl hover:bg-[#FAF8F5] transition-colors group min-w-0"
                                     >
                                       <div className="flex items-start justify-between gap-2">
                                         <span className="text-xs font-bold text-[#0B0F19] group-hover:text-[#C59B27] transition-colors leading-tight">
@@ -430,7 +430,7 @@ export function Header() {
                                           </span>
                                         )}
                                       </div>
-                                      <p className="text-[11px] text-[#667085] leading-normal mt-0.5">
+                                      <p className="text-[11px] text-[#667085] leading-normal mt-0.5 break-words">
                                         {item.desc}
                                       </p>
                                     </Link>
@@ -445,7 +445,7 @@ export function Header() {
                               </div>
 
                               {/* Col 3: Infrastructure */}
-                              <div className="space-y-3">
+                              <div className="space-y-3 min-w-0">
                                 <div className="flex items-center gap-2 text-xs font-extrabold uppercase tracking-wider text-[#C59B27] border-b border-slate-100 pb-2">
                                   <HardDrive size={15} />
                                   <span>Infrastructure</span>
@@ -455,7 +455,7 @@ export function Header() {
                                     <Link
                                       key={item.title}
                                       href={item.href}
-                                      className="block p-2 rounded-xl hover:bg-[#FAF8F5] transition-colors group"
+                                      className="block p-2 rounded-xl hover:bg-[#FAF8F5] transition-colors group min-w-0"
                                     >
                                       <div className="flex items-start justify-between gap-2">
                                         <span className="text-xs font-bold text-[#0B0F19] group-hover:text-[#C59B27] transition-colors leading-tight">
@@ -467,7 +467,7 @@ export function Header() {
                                           </span>
                                         )}
                                       </div>
-                                      <p className="text-[11px] text-[#667085] leading-normal mt-0.5">
+                                      <p className="text-[11px] text-[#667085] leading-normal mt-0.5 break-words">
                                         {item.desc}
                                       </p>
                                     </Link>
