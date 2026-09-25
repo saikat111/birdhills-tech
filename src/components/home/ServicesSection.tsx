@@ -24,7 +24,7 @@ export function ServicesSection() {
       href: "/services/web-development",
       icon: Code2,
       tag: "Technology",
-      startingPrice: "From $4,950",
+      startingPrice: "From AED 4,500",
       subItems: ["Business Websites", "WordPress", "eCommerce", "Custom Dev"],
     },
     {
@@ -44,7 +44,7 @@ export function ServicesSection() {
       href: "/services/digital-marketing",
       icon: TrendingUp,
       tag: "Growth",
-      startingPrice: "From $1,950/mo",
+      startingPrice: "From AED 2,800/mo",
       subItems: ["Google Ads", "Meta Ads", "Social Media", "Lead Gen"],
     },
     {
@@ -54,7 +54,7 @@ export function ServicesSection() {
       href: "/services/google-business-profile-local-seo",
       icon: MapPin,
       tag: "Local SEO",
-      startingPrice: "From $850/mo",
+      startingPrice: "From AED 1,500/mo",
       subItems: ["GBP Verification", "Maps Ranking", "Review Strategy", "Local Citations"],
     },
     {
@@ -64,7 +64,7 @@ export function ServicesSection() {
       href: "/services/ai-seo-search",
       icon: Sparkles,
       tag: "AEO & GEO",
-      startingPrice: "From $1,650/mo",
+      startingPrice: "From AED 2,200/mo",
       subItems: ["AEO & GEO", "Technical SEO", "Semantic Search", "Schema Markup"],
     },
     {
@@ -74,7 +74,7 @@ export function ServicesSection() {
       href: "/services/ai-automation",
       icon: Bot,
       tag: "Automation",
-      startingPrice: "From $3,200",
+      startingPrice: "From AED 3,500",
       subItems: ["AI Agents", "WhatsApp Bots", "Workflow Automation", "n8n Pipelines"],
     },
     {
@@ -84,7 +84,7 @@ export function ServicesSection() {
       href: "/services/crm-marketing-automation",
       icon: Workflow,
       tag: "Operations",
-      startingPrice: "From $2,800",
+      startingPrice: "From AED 3,200",
       subItems: ["CRM Setup", "Lead Routing", "WhatsApp Automation", "Sales Pipeline"],
     },
     {
@@ -94,7 +94,7 @@ export function ServicesSection() {
       href: "/services/branding-creative",
       icon: Palette,
       tag: "Creative",
-      startingPrice: "From $3,500",
+      startingPrice: "From AED 3,800",
       subItems: ["Brand Identity", "Logo Design", "UI/UX Design", "Ad Creatives"],
     },
     {
@@ -104,7 +104,7 @@ export function ServicesSection() {
       href: "/services/analytics-cro",
       icon: BarChart3,
       tag: "Data & CRO",
-      startingPrice: "From $1,450/mo",
+      startingPrice: "From AED 2,500/mo",
       subItems: ["GA4 & GTM", "Meta CAPI", "Conversion Audits", "Marketing Dashboards"],
     },
   ];
