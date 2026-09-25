@@ -25,43 +25,43 @@ interface HeroProps {
 const HERO_SLIDES = [
   {
     image:
-      "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2000&q=90",
-    alt: "Dubai iconic Downtown skyline and Financial Centre at dusk",
-    tag: "DUBAI, UAE",
-    location: "Deira · Al Baraha · Dubai, UAE",
-    highlight: "Enterprise Digital Execution · +971 52 440 5785",
-  },
-  {
-    image:
       "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=2000&q=90",
-    alt: "Modern software development lab and Next.js engineering",
-    tag: "PRECISION TECH STACK",
-    location: "Next.js 16 · TypeScript · Prisma",
-    highlight: "Sub-Second Core Web Vitals & Zero-Trust Security",
+    alt: "Modern Next.js web application engineering and custom corporate platforms",
+    tag: "FEATURED SERVICE · 01",
+    location: "Next.js Web Applications & Custom Portals",
+    highlight: "Sub-Second Speed · High-Converting UI/UX · Enterprise Next.js 16 Architecture",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=2000&q=90",
-    alt: "Executive corporate boardroom and strategic consulting suite in Dubai",
-    tag: "EXECUTIVE ADVISORY",
-    location: "Stone Building, Al Baraha, Deira",
-    highlight: "Direct Access to Directors & Senior Solution Architects",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&w=2000&q=90",
-    alt: "High-end creative branding and UI/UX design studio",
-    tag: "CREATIVE & BRAND SYSTEMS",
-    location: "Prestige Visual Identity",
-    highlight: "Human-Centric UX & High-Converting Gulf Interfaces",
+      "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=2000&q=90",
+    alt: "Accredited .ae domains, NVMe cloud servers, and business email infrastructure",
+    tag: "FEATURED SERVICE · 02",
+    location: "Domain & NVMe Cloud Hosting",
+    highlight: "Accredited .ae Registry · Pure NVMe SSD Edge Nodes · 99.99% Uptime SLA",
   },
   {
     image:
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=2000&q=90",
-    alt: "Digital marketing growth analytics and B2B revenue dashboard",
-    tag: "MEASURABLE GROWTH",
-    location: "Closed-Loop Attribution",
-    highlight: "Commercial Demand Generation, High-Intent Google & SEO",
+    alt: "Commercial digital marketing, Google Ads and B2B lead generation",
+    tag: "FEATURED SERVICE · 03",
+    location: "Digital Marketing & Performance Ads",
+    highlight: "High-Intent Google Ads · LinkedIn B2B · Closed-Loop Revenue Attribution",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=2000&q=90",
+    alt: "Google Business Profile optimization and Google Maps 3-Pack rankings",
+    tag: "FEATURED SERVICE · 04",
+    location: "Google Business Profile & Local SEO",
+    highlight: "Google Maps 3-Pack Dominance · GBP Verification Support · Local Call Inquiries",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2000&q=90",
+    alt: "Autonomous AI agents, WhatsApp bots, and n8n workflow automation",
+    tag: "FEATURED SERVICE · 05",
+    location: "AI Automation & WhatsApp Bots",
+    highlight: "Autonomous 24/7 AI Agents · Conversational WhatsApp Bots · n8n Pipelines",
   },
 ];
 
@@ -140,7 +140,7 @@ export function HeroSection({
               </span>
               <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold text-slate-200 bg-white/10 border border-white/15 backdrop-blur-md">
                 <span className="w-2 h-2 rounded-full bg-[#25D366] animate-pulse" />
-                Al Baraha, Deira · Dubai, UAE
+                Featured Practice Disciplines · Technology × Creative × Growth
               </span>
             </div>
 

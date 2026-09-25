@@ -32,47 +32,44 @@ export function Footer() {
           {/* Quick Links */}
           <div className="lg:col-span-2 space-y-4">
             <h3 className="text-xs font-extrabold tracking-wider text-[#D4AF37] uppercase">
-              Navigation
+              Company &amp; Insights
             </h3>
             <ul className="space-y-2.5 text-xs sm:text-sm">
+              <li>
+                <Link href="/about" className="hover:text-[#D4AF37] text-white font-semibold transition-colors flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#C59B27]" />
+                  <span>About Us</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog" className="hover:text-[#D4AF37] text-white font-semibold transition-colors flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#C59B27]" />
+                  <span>Blog &amp; Insights</span>
+                </Link>
+              </li>
               <li>
                 <Link href="/" className="hover:text-[#D4AF37] transition-colors">
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="hover:text-[#D4AF37] transition-colors">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/services" className="hover:text-[#D4AF37] transition-colors">
-                  All 9 Services
-                </Link>
-              </li>
-              <li>
                 <Link href="/work" className="hover:text-[#D4AF37] transition-colors">
-                  Selected Work
+                  Case Studies &amp; Work
                 </Link>
               </li>
               <li>
                 <Link href="/pricing" className="hover:text-[#D4AF37] transition-colors">
-                  Pricing Packages (USD)
+                  Pricing Packages
                 </Link>
               </li>
               <li>
                 <Link href="/hosting" className="hover:text-[#D4AF37] transition-colors">
-                  Cloud Hosting & VPS
+                  Cloud Hosting &amp; VPS
                 </Link>
               </li>
               <li>
                 <Link href="/domains" className="hover:text-[#D4AF37] transition-colors">
                   .ae Domain Search
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog" className="hover:text-[#D4AF37] transition-colors">
-                  Blog & Insights
                 </Link>
               </li>
               <li>

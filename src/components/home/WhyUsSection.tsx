@@ -36,8 +36,8 @@ export function WhyUsSection() {
               WHY BIRD HILLS TECH
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#070B14] tracking-tight leading-[1.15]">
-              More than a service provider.
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] via-[#C59B27] to-[#B38728] mt-1">A long-term growth partner.</span>
+              Engineering digital advantage.
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] via-[#C59B27] to-[#B38728] mt-1">Driving measurable commercial growth.</span>
             </h2>
             <p className="text-base sm:text-lg text-[#667085] leading-relaxed">
               We bring technology, creativity and marketing together under one roof, giving
@@ -48,15 +48,15 @@ export function WhyUsSection() {
             <div className="pt-4">
               <div className="relative aspect-[16/10] rounded-2xl overflow-hidden shadow-lg border border-white">
                 <Image
-                  src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80"
-                  alt="Modern executive boardroom in Dubai"
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
+                  alt="Bird Hills Tech engineering and creative growth team collaborating on software products"
                   fill
                   sizes="(max-width: 1024px) 100vw, 40vw"
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#070B14]/60 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#070B14]/70 via-transparent to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4 text-xs font-semibold text-white">
-                  Collaborative Strategy Sessions · Dubai Corporate Office
+                  Integrated Engineering, Creative &amp; Growth Squads
                 </div>
               </div>
             </div>

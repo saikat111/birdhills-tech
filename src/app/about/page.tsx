@@ -166,8 +166,8 @@ export default function AboutPage() {
             <div className="lg:col-span-6">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3] bg-slate-900 border border-slate-200">
                 <Image
-                  src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80"
-                  alt="Bird Hills Tech Dubai leadership briefing"
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80"
+                  alt="Bird Hills Tech engineering and creative leadership team"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
@@ -175,13 +175,13 @@ export default function AboutPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#070B14]/80 via-transparent to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-white/95 backdrop-blur-md shadow-lg border border-[#C59B27]/30 text-left">
                   <div className="text-xs font-bold uppercase tracking-wider text-[#C59B27]">
-                    DUBAI CORPORATE PRESENCE
+                    LEADERSHIP &amp; ENGINEERING
                   </div>
                   <div className="text-sm font-extrabold text-[#070B14]">
-                    Stone Building · Al Baraha · Deira, UAE
+                    Integrated Tech, Creative &amp; Growth Squads
                   </div>
                   <div className="text-xs text-[#667085] mt-0.5">
-                    Direct access to Technical Directors & Dedicated Delivery Squads
+                    Direct access to Senior Solution Architects &amp; Technical Directors
                   </div>
                 </div>
               </div>

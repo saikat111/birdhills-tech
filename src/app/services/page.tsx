@@ -364,8 +364,8 @@ export default function ServicesHubPage() {
                   <span className="font-bold text-white">100% Client Ownership</span>
                 </div>
                 <div className="flex items-center justify-between text-xs">
-                  <span className="text-slate-300">Dubai HQ</span>
-                  <span className="font-bold text-white">Deira, Dubai, UAE</span>
+                  <span className="text-slate-300">Performance Guarantee</span>
+                  <span className="font-bold text-[#D4AF37]">99.99% Uptime &amp; SLA</span>
                 </div>
               </div>
             </div>
