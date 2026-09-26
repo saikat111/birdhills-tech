@@ -15,6 +15,11 @@ import {
   Bot,
   ChevronRight,
   Calendar,
+  Layers,
+  Workflow,
+  Palette,
+  BarChart3,
+  ArrowRight,
 } from "lucide-react";
 import Logo from "./Logo";
 
@@ -131,6 +136,60 @@ export const MAIN_MENU_SERVICES = [
       { title: "AI Content Automation", href: "/services/ai-automation#content" },
       { title: "Business Process Automation", href: "/services/ai-automation#business-process" },
       { title: "n8n Automation", href: "/services/ai-automation#n8n" },
+    ],
+  },
+];
+
+// 2. ADDITIONAL SERVICES UNDER "OTHER SERVICES"
+export const MORE_SERVICES = [
+  {
+    id: "crm-marketing-automation",
+    title: "CRM & Marketing Automation",
+    slug: "/services/crm-marketing-automation",
+    icon: Workflow,
+    desc: "HubSpot & Zoho setups, lead routing & automated nurture funnels",
+    subItems: [
+      { title: "CRM Setup", href: "/services/crm-marketing-automation#setup" },
+      { title: "Lead Management", href: "/services/crm-marketing-automation#management" },
+      { title: "Lead Automation", href: "/services/crm-marketing-automation#lead-automation" },
+      { title: "Lead Routing", href: "/services/crm-marketing-automation#routing" },
+      { title: "Email Automation", href: "/services/crm-marketing-automation#email" },
+      { title: "WhatsApp Automation", href: "/services/crm-marketing-automation#whatsapp" },
+      { title: "Sales Pipeline Automation", href: "/services/crm-marketing-automation#pipeline" },
+      { title: "Appointment Automation", href: "/services/crm-marketing-automation#appointments" },
+      { title: "CRM Integrations", href: "/services/crm-marketing-automation#integrations" },
+    ],
+  },
+  {
+    id: "branding-creative",
+    title: "Branding & Creative",
+    slug: "/services/branding-creative",
+    icon: Palette,
+    desc: "Prestigious corporate identity, bilingual typography & high-converting UI/UX",
+    subItems: [
+      { title: "Brand Identity", href: "/services/branding-creative#identity" },
+      { title: "Logo Design", href: "/services/branding-creative#logo" },
+      { title: "UI/UX Design", href: "/services/branding-creative#uiux" },
+      { title: "Ad Creative", href: "/services/branding-creative#ad-creative" },
+      { title: "Social Media Design", href: "/services/branding-creative#social" },
+      { title: "Marketing Graphics", href: "/services/branding-creative#graphics" },
+    ],
+  },
+  {
+    id: "analytics-cro",
+    title: "Analytics & CRO",
+    slug: "/services/analytics-cro",
+    icon: BarChart3,
+    desc: "Server-side tracking, GTM, Meta CAPI & closed-loop reporting",
+    subItems: [
+      { title: "Google Analytics", href: "/services/analytics-cro#ga4" },
+      { title: "Google Tag Manager", href: "/services/analytics-cro#gtm" },
+      { title: "Conversion Tracking", href: "/services/analytics-cro#tracking" },
+      { title: "Meta Pixel & CAPI", href: "/services/analytics-cro#capi" },
+      { title: "Conversion Optimization", href: "/services/analytics-cro#cro" },
+      { title: "Lead Attribution", href: "/services/analytics-cro#attribution" },
+      { title: "Marketing Dashboards", href: "/services/analytics-cro#dashboards" },
+      { title: "Reporting & Analytics", href: "/services/analytics-cro#reporting" },
     ],
   },
 ];
@@ -306,7 +365,122 @@ export function Header() {
                   </div>
                 );
               })}
-              </nav>
+
+              {/* 7. Other Services Dropdown */}
+              <div
+                className="relative"
+                onMouseEnter={() => handleMouseEnter("more-services")}
+                onMouseLeave={handleMouseLeave}
+              >
+                <button
+                  type="button"
+                  className={`inline-flex items-center gap-1 px-2.5 xl:px-3 py-1.5 xl:py-2 text-xs xl:text-[13px] font-semibold rounded-lg transition-colors whitespace-nowrap ${
+                    activeDropdown === "more-services" ||
+                    pathname.startsWith("/services/crm-marketing-automation") ||
+                    pathname.startsWith("/services/branding-creative") ||
+                    pathname.startsWith("/services/analytics-cro")
+                      ? "text-[#C59B27] bg-[#FAF8F5] font-bold"
+                      : "text-[#0B0F19] hover:text-[#C59B27] hover:bg-slate-50"
+                  }`}
+                >
+                  <Layers size={13} className="text-[#C59B27]" />
+                  <span>Other Services</span>
+                  <ChevronDown
+                    size={12}
+                    className={`transition-transform duration-200 ${
+                      activeDropdown === "more-services" ? "rotate-180 text-[#C59B27]" : "text-slate-400"
+                    }`}
+                  />
+                </button>
+
+                {activeDropdown === "more-services" && (
+                  <div className="absolute top-full right-0 pt-2 z-50 animate-in fade-in zoom-in-95 duration-150">
+                    <div className="bg-white rounded-2xl border border-[#C59B27]/30 shadow-2xl p-6 w-[780px] lg:w-[800px] xl:w-[820px] overflow-hidden">
+                      <div className="flex items-center justify-between pb-3.5 mb-5 border-b border-slate-100">
+                        <div>
+                          <div className="text-xs font-extrabold uppercase tracking-wider text-[#C59B27]">
+                            ADDITIONAL PRACTICE DISCIPLINES
+                          </div>
+                          <div className="text-[12px] text-[#667085]">
+                            Full-suite operational, creative, and analytics infrastructure
+                          </div>
+                        </div>
+                        <Link
+                          href="/services"
+                          className="text-xs font-bold text-[#C59B27] hover:underline flex items-center gap-1"
+                        >
+                          <span>Explore All 9 Practices</span>
+                          <ArrowRight size={13} />
+                        </Link>
+                      </div>
+
+                      {/* 3 Columns for CRM, Branding, Analytics */}
+                      <div className="grid grid-cols-3 gap-6">
+                        {MORE_SERVICES.map((srv) => {
+                          const SrvIcon = srv.icon;
+                          return (
+                            <div key={srv.id} className="space-y-3">
+                              <Link
+                                href={srv.slug}
+                                className="flex items-center gap-2 group/title"
+                              >
+                                <div className="w-7 h-7 rounded-lg bg-[#C59B27]/10 flex items-center justify-center text-[#C59B27] shrink-0">
+                                  <SrvIcon size={14} />
+                                </div>
+                                <div>
+                                  <div className="text-xs font-bold text-[#070B14] group-hover/title:text-[#C59B27] transition-colors leading-tight">
+                                    {srv.title}
+                                  </div>
+                                </div>
+                              </Link>
+                              <div className="space-y-1">
+                                {srv.subItems.map((sub) => (
+                                  <Link
+                                    key={sub.title}
+                                    href={sub.href}
+                                    className="flex items-center gap-2 px-2 py-1 rounded-md text-[11px] font-semibold text-[#667085] hover:text-[#070B14] hover:bg-[#FAF8F5] transition-colors group/sub"
+                                  >
+                                    <span className="w-1 h-1 rounded-full bg-[#C59B27]/50 group-hover/sub:bg-[#C59B27] transition-colors shrink-0" />
+                                    <span className="truncate">{sub.title}</span>
+                                  </Link>
+                                ))}
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+
+                      {/* Bottom Banner with Portfolio & Pricing quick links */}
+                      <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs bg-[#FAF8F5] -mx-6 -mb-6 p-4">
+                        <div className="flex items-center gap-4 text-xs font-semibold text-[#070B14]">
+                          <Link
+                            href="/work"
+                            className="hover:text-[#C59B27] transition-colors flex items-center gap-1"
+                          >
+                            <span>Case Studies & Portfolio</span>
+                            <ChevronRight size={12} className="text-[#C59B27]" />
+                          </Link>
+                          <span className="text-slate-300">·</span>
+                          <Link
+                            href="/pricing"
+                            className="hover:text-[#C59B27] transition-colors flex items-center gap-1"
+                          >
+                            <span>Pricing Packages (AED & USD)</span>
+                            <ChevronRight size={12} className="text-[#C59B27]" />
+                          </Link>
+                        </div>
+                        <Link
+                          href="/contact"
+                          className="font-bold text-[#C59B27] hover:underline"
+                        >
+                          Request Custom Scope →
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </nav>
             </div>
 
             {/* Right Group: Fast Consultation Meeting Shortcut */}
@@ -416,6 +590,67 @@ export function Header() {
                     </div>
                   );
                 })}
+
+                {/* 7. Other Services Accordion (CRM, Branding, Analytics) */}
+                <div className="border border-slate-200 rounded-2xl overflow-hidden shadow-2xs">
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setMobileExpandedService(
+                        mobileExpandedService === "more-services" ? null : "more-services"
+                      )
+                    }
+                    className="w-full flex items-center justify-between p-3.5 bg-[#FAF8F5] text-left font-bold text-xs text-[#0B0F19]"
+                  >
+                    <span className="flex items-center gap-2">
+                      <Layers size={15} className="text-[#C59B27]" />
+                      <span>Other Services (CRM, Branding, Analytics)</span>
+                    </span>
+                    <ChevronDown
+                      size={15}
+                      className={`text-slate-400 transition-transform duration-200 ${
+                        mobileExpandedService === "more-services" ? "rotate-180 text-[#C59B27]" : ""
+                      }`}
+                    />
+                  </button>
+
+                  {mobileExpandedService === "more-services" && (
+                    <div className="p-3 bg-white space-y-4 border-t border-slate-100">
+                      {MORE_SERVICES.map((ms) => {
+                        const MsIcon = ms.icon;
+                        return (
+                          <div key={ms.id} className="space-y-1.5">
+                            <div className="flex items-center justify-between">
+                              <span className="text-xs font-bold text-[#070B14] flex items-center gap-1.5">
+                                <MsIcon size={13} className="text-[#C59B27]" />
+                                {ms.title}
+                              </span>
+                              <Link
+                                href={ms.slug}
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                className="text-[10px] font-bold text-[#C59B27] hover:underline"
+                              >
+                                View →
+                              </Link>
+                            </div>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-1 pl-4">
+                              {ms.subItems.map((sub) => (
+                                <Link
+                                  key={sub.title}
+                                  href={sub.href}
+                                  onClick={() => setIsMobileMenuOpen(false)}
+                                  className="text-xs text-[#667085] hover:text-[#070B14] py-1 block"
+                                >
+                                  • {sub.title}
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  )}
+                </div>
 
                 {/* Additional Quick Links */}
                 <div className="grid grid-cols-2 gap-2 pt-2">
