@@ -16,6 +16,10 @@ import {
 } from "lucide-react";
 import ContactForm from "@/components/contact/ContactForm";
 
+import { getSiteSettings } from "@/lib/settings";
+
+export const revalidate = 60;
+
 export const metadata: Metadata = {
   title: "Contact Us | Start a Project in Dubai | Bird Hills Tech",
   description:
@@ -25,7 +29,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ContactPage() {
+export default async function ContactPage() {
+  const settings = await getSiteSettings();
+  const cleanPhone = settings.phone.replace(/[^0-9+]/g, "");
+  const cleanWhatsapp = settings.whatsapp.replace(/[^0-9]/g, "");
+
   return (
     <div className="flex flex-col min-h-screen pt-24">
       {/* 1. VISUAL HERO WITH DUBAI CORPORATE BACKGROUND */}
@@ -85,12 +93,12 @@ export default function ContactPage() {
                 </p>
                 <div>
                   <a
-                    href="https://wa.me/971524405785?text=Hello%20Bird%20Hills%20Tech%2C%20I%20would%20like%20to%20discuss%20a%20new%20project."
+                    href={`https://wa.me/${cleanWhatsapp}?text=Hello%20Bird%20Hills%20Tech%2C%20I%20would%20like%20to%20discuss%20a%20new%20project.`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#1ebd59] text-white text-xs font-bold shadow-sm transition-all"
                   >
-                    Open WhatsApp Chat (+971 52 440 5785)
+                    Open WhatsApp Chat ({settings.whatsapp})
                     <ArrowUpRight size={14} />
                   </a>
                 </div>
@@ -128,8 +136,7 @@ export default function ContactPage() {
                     <MapPin size={18} className="text-[#C59B27] shrink-0 mt-0.5" />
                     <div>
                       <div className="font-semibold text-[#070B14]">Physical Office Address</div>
-                      <div className="mt-0.5">Deira - Stone Building - 122 7th A Street</div>
-                      <div>Al Baraha, Dubai, United Arab Emirates</div>
+                      <div className="mt-0.5 leading-relaxed">{settings.address}</div>
                     </div>
                   </div>
 
@@ -137,8 +144,8 @@ export default function ContactPage() {
                     <Phone size={18} className="text-[#C59B27] shrink-0 mt-0.5" />
                     <div>
                       <div className="font-semibold text-[#070B14]">Direct Telephone / Hotline</div>
-                      <a href="tel:+971524405785" className="hover:text-[#C59B27] text-[#070B14] font-medium transition-colors">
-                        +971 52 440 5785
+                      <a href={`tel:${cleanPhone}`} className="hover:text-[#C59B27] text-[#070B14] font-medium transition-colors">
+                        {settings.phone}
                       </a>
                     </div>
                   </div>
@@ -148,10 +155,10 @@ export default function ContactPage() {
                     <div>
                       <div className="font-semibold text-[#070B14]">Official Inquiries Email</div>
                       <a
-                        href="mailto:contact@birdhillstech.com"
+                        href={`mailto:${settings.email}`}
                         className="hover:text-[#C59B27] text-[#070B14] font-medium transition-colors"
                       >
-                        contact@birdhillstech.com
+                        {settings.email}
                       </a>
                     </div>
                   </div>
@@ -160,7 +167,7 @@ export default function ContactPage() {
                     <Clock size={18} className="text-[#C59B27] shrink-0 mt-0.5" />
                     <div>
                       <div className="font-semibold text-[#070B14]">Operating Hours</div>
-                      <div>Monday – Saturday: 9:00 AM – 6:00 PM (Gulf Standard Time)</div>
+                      <div>{settings.working_hours}</div>
                     </div>
                   </div>
                 </div>

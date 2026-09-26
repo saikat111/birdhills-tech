@@ -6,8 +6,20 @@ import { usePathname } from "next/navigation";
 import { Phone, MessageCircle, MapPin, Mail, ArrowUpRight } from "lucide-react";
 import Logo from "./Logo";
 
-export function Footer() {
+interface FooterProps {
+  settings?: Record<string, string>;
+}
+
+export function Footer({ settings = {} }: FooterProps) {
   const pathname = usePathname();
+
+  const phone = settings["phone"] || "+971 52 440 5785";
+  const email = settings["email"] || "contact@birdhillstech.com";
+  const address = settings["address"] || "Deira - Stone Building - 122 7th A Street - Al Baraha - Dubai, UAE";
+  const whatsapp = settings["whatsapp"] || "+971 52 440 5785";
+  const companyName = settings["company_name"] || "Bird Hills Tech";
+  const cleanPhone = phone.replace(/[^0-9+]/g, "");
+  const cleanWhatsapp = whatsapp.replace(/[^0-9]/g, "");
 
   if (pathname?.startsWith("/admin")) {
     return null;
@@ -168,30 +180,30 @@ export function Footer() {
               <div className="flex items-start gap-2.5">
                 <MapPin size={16} className="text-[#D4AF37] shrink-0 mt-0.5" />
                 <span className="leading-snug">
-                  Deira - Stone Building - 122 7th A Street - Al Baraha - Dubai, UAE
+                  {address}
                 </span>
               </div>
               <div className="flex items-center gap-2.5">
                 <Phone size={15} className="text-[#D4AF37] shrink-0" />
                 <a
-                  href="tel:+971524405785"
+                  href={`tel:${cleanPhone}`}
                   className="hover:text-white transition-colors"
                 >
-                  +971 52 440 5785
+                  {phone}
                 </a>
               </div>
               <div className="flex items-center gap-2.5">
                 <Mail size={15} className="text-[#D4AF37] shrink-0" />
                 <a
-                  href="mailto:contact@birdhillstech.com"
+                  href={`mailto:${email}`}
                   className="hover:text-white transition-colors"
                 >
-                  contact@birdhillstech.com
+                  {email}
                 </a>
               </div>
               <div className="pt-2">
                 <a
-                  href="https://wa.me/971524405785"
+                  href={`https://wa.me/${cleanWhatsapp}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#25D366] hover:bg-[#1ebd59] text-white text-xs font-bold shadow-sm transition-all"
@@ -208,7 +220,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <div>
-            © 2026 Bird Hills Tech. All rights reserved. Registered in Dubai, United Arab Emirates.
+            © {new Date().getFullYear()} {companyName}. All rights reserved. Registered in Dubai, United Arab Emirates.
           </div>
           <div className="flex items-center gap-6">
             <Link href="/privacy-policy" className="hover:text-[#D4AF37] transition-colors">

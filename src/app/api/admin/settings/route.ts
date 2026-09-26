@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
 import { prisma } from "@/lib/prisma";
 import { getAdminSessionFromRequest } from "@/lib/auth";
 
@@ -41,9 +42,21 @@ export async function POST(req: NextRequest) {
     }
   }
 
+  // Instantly revalidate all cached pages and layouts on the main site
+  try {
+    revalidatePath("/", "layout");
+    revalidatePath("/");
+    revalidatePath("/contact");
+    revalidatePath("/about");
+    revalidatePath("/services");
+  } catch (err) {
+    console.warn("Could not revalidate path cache:", err);
+  }
+
   const updatedSettings = await prisma.siteSetting.findMany({
     orderBy: { key: "asc" },
   });
 
   return NextResponse.json({ success: true, settings: updatedSettings });
 }
+

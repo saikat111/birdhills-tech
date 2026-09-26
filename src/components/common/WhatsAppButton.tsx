@@ -4,13 +4,19 @@ import React, { useState } from "react";
 import { usePathname } from "next/navigation";
 import { MessageCircle } from "lucide-react";
 
-export function WhatsAppButton() {
+interface WhatsAppButtonProps {
+  whatsappNumber?: string;
+}
+
+export function WhatsAppButton({ whatsappNumber = "+971 52 440 5785" }: WhatsAppButtonProps) {
   const pathname = usePathname();
   const [isHovered, setIsHovered] = useState(false);
 
   if (pathname?.startsWith("/admin")) {
     return null;
   }
+
+  const cleanNumber = whatsappNumber.replace(/[^0-9]/g, "") || "971524405785";
 
   return (
     <div
@@ -27,15 +33,15 @@ export function WhatsAppButton() {
         }`}
       >
         <span className="w-2 h-2 rounded-full bg-[#25D366] mr-2 animate-ping shrink-0" />
-        <span>Chat on WhatsApp · +971 52 440 5785</span>
+        <span>Chat on WhatsApp · {whatsappNumber}</span>
       </div>
 
       {/* Floating Button */}
       <a
-        href="https://wa.me/971524405785?text=Hello%20Bird%20Hills%20Tech%2C%20I%20would%20like%20to%20discuss%20a%20project%20in%20Dubai."
+        href={`https://wa.me/${cleanNumber}?text=Hello%20Bird%20Hills%20Tech%2C%20I%20would%20like%20to%20discuss%20a%20project%20in%20Dubai.`}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Chat with Bird Hills Tech on WhatsApp (+971 52 440 5785)"
+        aria-label={`Chat with Bird Hills Tech on WhatsApp (${whatsappNumber})`}
         className="relative flex items-center justify-center w-14 h-14 rounded-full bg-[#25D366] text-white shadow-2xl hover:bg-[#20ba5a] hover:scale-105 active:scale-95 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-[#25D366]/40"
       >
         {/* Pulsing ring animation */}

@@ -101,11 +101,12 @@ const serviceDetails: Record<
       "Companies burn tens of thousands of dirhams on generic agency retainers that report vanity impressions and clicks without generating actual qualified sales pipeline or measurable customer acquisition.",
     approach:
       "Our growth methodology targets high-intent commercial buyers on Google Search, LinkedIn B2B, and Meta. Every campaign is monitored through closed-loop server-side analytics tied directly to Cost Per Qualified Lead (CPQL) and revenue pipeline.",
-    tools: ["Google Ads Search & PMax", "LinkedIn Campaign Manager", "Meta Ads Manager", "Google Analytics 4", "Looker Studio", "Klaviyo"],
+    tools: ["Google Ads Search & PMax", "LinkedIn Campaign Manager", "Meta Ads Manager", "TikTok Ads Manager", "Google Analytics 4", "Looker Studio", "Klaviyo"],
     subServiceDescriptions: {
       "SEO": "Organic ranking strategies targeting high-value commercial purchase queries in Dubai and the GCC.",
       "Google Ads": "High-intent Google Search and Performance Max campaigns driving ready-to-buy inquiries.",
       "Meta Ads": "Precision Instagram and Facebook ad funnels capturing qualified consumer and business demand.",
+      "TikTok Ads": "High-engagement short-form video advertising campaigns engineered for rapid GCC brand scaling and direct-response customer acquisition.",
       "Social Media Marketing": "Executive brand positioning, content distribution, and targeted B2B community engagement.",
       "Content Marketing": "Authoritative thought leadership, industry whitepapers, and technical case studies.",
       "Email Marketing": "Automated nurture sequences, high-converting drip funnels, and executive client newsletters.",

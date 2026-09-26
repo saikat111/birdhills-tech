@@ -15,6 +15,8 @@ import {
   AlertCircle,
   Clock,
   ShieldCheck,
+  Search,
+  Eye,
 } from "lucide-react";
 
 interface SettingItem {
@@ -36,6 +38,19 @@ export function SettingsClient({ initialSettings }: SettingsClientProps) {
   });
 
   const [form, setForm] = useState({
+    // SEO & Site Meta (Directly controls site title, meta description, and crawler indexing)
+    site_title:
+      settingsMap["site_title"] ||
+      "Bird Hills Tech | Digital Marketing & Web Development Agency",
+    site_description:
+      settingsMap["site_description"] ||
+      "Bird Hills Tech delivers Digital Marketing, AI Business Automation, Web Development, Domain & Hosting Services for smarter, scalable business growth.",
+    site_keywords:
+      settingsMap["site_keywords"] ||
+      "Web Development Company in Dubai, Digital Marketing Agency in Dubai, AI Business Automation Dubai, Domain and Hosting Services, Local SEO Dubai, Bird Hills Tech",
+    google_indexing:
+      settingsMap["google_indexing"] || "disabled",
+
     // Company Profile
     company_name: settingsMap["company_name"] || "Bird Hills Tech",
     tagline: settingsMap["tagline"] || "Technology × Creative × Growth",
@@ -68,10 +83,10 @@ export function SettingsClient({ initialSettings }: SettingsClientProps) {
 
     // Notifications
     lead_notification_email:
-      settingsMap["lead_notification_email"] || "admin@birdhillstech.com",
+      settingsMap["lead_notification_email"] || "birdhillstech@gmail.com",
   });
 
-  const [activeTab, setActiveTab] = useState<"general" | "social" | "ai" | "notifications">("general");
+  const [activeTab, setActiveTab] = useState<"seo" | "general" | "social" | "ai" | "notifications">("seo");
   const [isSaving, setIsSaving] = useState(false);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -137,6 +152,19 @@ export function SettingsClient({ initialSettings }: SettingsClientProps) {
       <div className="flex border-b border-[#E4E7EC] gap-2 overflow-x-auto">
         <button
           type="button"
+          onClick={() => setActiveTab("seo")}
+          className={`px-4 py-2.5 text-xs font-bold border-b-2 transition-colors whitespace-nowrap flex items-center gap-2 ${
+            activeTab === "seo"
+              ? "border-[#C59B27] text-[#C59B27]"
+              : "border-transparent text-slate-500 hover:text-slate-800"
+          }`}
+        >
+          <Search size={15} />
+          Site Title, Meta &amp; SEO
+        </button>
+
+        <button
+          type="button"
           onClick={() => setActiveTab("general")}
           className={`px-4 py-2.5 text-xs font-bold border-b-2 transition-colors whitespace-nowrap flex items-center gap-2 ${
             activeTab === "general"
@@ -145,7 +173,7 @@ export function SettingsClient({ initialSettings }: SettingsClientProps) {
           }`}
         >
           <Building2 size={15} />
-          Corporate & Contact
+          Corporate &amp; Contact
         </button>
 
         <button
@@ -158,7 +186,7 @@ export function SettingsClient({ initialSettings }: SettingsClientProps) {
           }`}
         >
           <Globe size={15} />
-          Social & Web Channels
+          Social &amp; Web Channels
         </button>
 
         <button
@@ -184,11 +212,142 @@ export function SettingsClient({ initialSettings }: SettingsClientProps) {
           }`}
         >
           <Mail size={15} />
-          Alerts & Routing
+          Alerts &amp; Routing
         </button>
       </div>
 
       <form onSubmit={handleSave} className="bg-white p-6 sm:p-8 rounded-2xl border border-[#E4E7EC] shadow-2xs space-y-6">
+        {/* Tab 0: SEO & Meta (Site Title, Description, Indexing) */}
+        {activeTab === "seo" && (
+          <div className="space-y-6">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-slate-100">
+              <div>
+                <h3 className="text-sm font-bold text-[#070B14] uppercase tracking-wider">
+                  Site Title &amp; Global Meta Description
+                </h3>
+                <p className="text-xs text-[#667085] mt-0.5">
+                  Control what appears in browser tabs, Google search engine results, and social media share previews across the entire website.
+                </p>
+              </div>
+              <span className="text-[11px] font-bold px-2.5 py-1 rounded-full bg-amber-50 text-[#C59B27] border border-[#C59B27]/30 self-start sm:self-auto">
+                Live Dynamic Sync
+              </span>
+            </div>
+
+            {/* Site Title */}
+            <div>
+              <div className="flex items-center justify-between mb-1">
+                <label className="block text-xs font-bold text-slate-700">
+                  Global Site Title (Browser Tab &amp; Primary Google Search Title)
+                </label>
+                <span className={`text-[11px] font-mono ${form.site_title.length > 65 ? "text-amber-600 font-bold" : "text-slate-400"}`}>
+                  {form.site_title.length} characters (recommended: 50–65)
+                </span>
+              </div>
+              <input
+                type="text"
+                value={form.site_title}
+                onChange={(e) => handleChange("site_title", e.target.value)}
+                placeholder="Bird Hills Tech | Digital Marketing & Web Development Agency"
+                className="w-full px-3.5 py-2.5 border border-[#E4E7EC] rounded-xl text-xs sm:text-sm text-[#070B14] focus:border-[#C59B27] focus:outline-none font-medium"
+              />
+              <p className="text-[11px] text-slate-400 mt-1">
+                Appears in browser tabs and as the main blue headline on Google search engine results.
+              </p>
+            </div>
+
+            {/* Site Description */}
+            <div>
+              <div className="flex items-center justify-between mb-1">
+                <label className="block text-xs font-bold text-slate-700">
+                  Global Meta Description (Search Snippet &amp; Social Share Previews)
+                </label>
+                <span className={`text-[11px] font-mono ${form.site_description.length > 165 ? "text-amber-600 font-bold" : "text-slate-400"}`}>
+                  {form.site_description.length} characters (recommended: 120–160)
+                </span>
+              </div>
+              <textarea
+                rows={3}
+                value={form.site_description}
+                onChange={(e) => handleChange("site_description", e.target.value)}
+                placeholder="Bird Hills Tech delivers Digital Marketing, AI Business Automation, Web Development, Domain & Hosting Services for smarter, scalable business growth."
+                className="w-full px-3.5 py-2.5 border border-[#E4E7EC] rounded-xl text-xs sm:text-sm text-[#070B14] focus:border-[#C59B27] focus:outline-none leading-relaxed"
+              />
+              <p className="text-[11px] text-slate-400 mt-1">
+                A concise description displayed below your title on Google search results and when links are shared on WhatsApp, LinkedIn, or Facebook.
+              </p>
+            </div>
+
+            {/* Keywords */}
+            <div>
+              <label className="block text-xs font-bold text-slate-700 mb-1">
+                Meta Keywords (Comma-separated)
+              </label>
+              <input
+                type="text"
+                value={form.site_keywords}
+                onChange={(e) => handleChange("site_keywords", e.target.value)}
+                placeholder="Web Development Company in Dubai, Digital Marketing Agency in Dubai, ..."
+                className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#070B14] focus:border-[#C59B27] focus:outline-none"
+              />
+            </div>
+
+            {/* Google Crawling / Indexing Control */}
+            <div className="p-4 rounded-xl border border-slate-200 bg-[#FAF8F5] space-y-2">
+              <label className="block text-xs font-bold text-[#070B14]">
+                Search Engine Indexing &amp; Crawling Status
+              </label>
+              <p className="text-[11px] text-[#667085]">
+                Control whether search engine spiders (GoogleBot, BingBot) are permitted to index and rank your pages.
+              </p>
+              <div className="flex flex-wrap gap-3 pt-1">
+                <label className="inline-flex items-center gap-2 cursor-pointer bg-white px-3.5 py-2 rounded-xl border border-slate-200 text-xs font-semibold hover:border-[#C59B27]/40 transition-colors">
+                  <input
+                    type="radio"
+                    name="google_indexing"
+                    value="disabled"
+                    checked={form.google_indexing === "disabled"}
+                    onChange={(e) => handleChange("google_indexing", e.target.value)}
+                    className="accent-[#C59B27]"
+                  />
+                  <span className="text-rose-600 font-bold">● Blocked (noindex, nofollow, disallow: /)</span>
+                </label>
+                <label className="inline-flex items-center gap-2 cursor-pointer bg-white px-3.5 py-2 rounded-xl border border-slate-200 text-xs font-semibold hover:border-[#C59B27]/40 transition-colors">
+                  <input
+                    type="radio"
+                    name="google_indexing"
+                    value="enabled"
+                    checked={form.google_indexing === "enabled"}
+                    onChange={(e) => handleChange("google_indexing", e.target.value)}
+                    className="accent-[#C59B27]"
+                  />
+                  <span className="text-emerald-600 font-bold">● Allowed (Index &amp; Crawl live on Google)</span>
+                </label>
+              </div>
+            </div>
+
+            {/* Live Google Search Preview Card */}
+            <div className="border border-slate-200 rounded-2xl p-5 bg-white space-y-2.5">
+              <div className="flex items-center gap-2 text-xs font-bold text-slate-500 uppercase tracking-wider">
+                <Eye size={14} className="text-[#C59B27]" />
+                <span>Live Google Search Snippet Preview</span>
+              </div>
+              <div className="p-4 rounded-xl bg-[#F8FAFC] border border-slate-100 max-w-2xl space-y-1 font-sans shadow-2xs">
+                <div className="flex items-center gap-2 text-xs text-slate-600">
+                  <div className="w-4 h-4 rounded-full bg-slate-200 flex items-center justify-center text-[10px]">🌐</div>
+                  <span className="text-[12px] text-slate-700 font-normal">https://birdhillstech.com</span>
+                </div>
+                <div className="text-base sm:text-lg font-semibold text-[#1a0dab] hover:underline cursor-pointer truncate">
+                  {form.site_title || "Bird Hills Tech | Digital Marketing & Web Development Agency"}
+                </div>
+                <div className="text-xs sm:text-sm text-[#4d5156] line-clamp-2 leading-relaxed">
+                  {form.site_description || "Bird Hills Tech delivers Digital Marketing, AI Business Automation, Web Development, Domain & Hosting Services for smarter, scalable business growth."}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Tab 1: General */}
         {activeTab === "general" && (
           <div className="space-y-6">

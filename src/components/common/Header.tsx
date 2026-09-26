@@ -66,6 +66,7 @@ export const MAIN_MENU_SERVICES = [
       { title: "SEO", href: "/services/digital-marketing#seo" },
       { title: "Google Ads", href: "/services/digital-marketing#google-ads" },
       { title: "Meta Ads", href: "/services/digital-marketing#meta-ads" },
+      { title: "TikTok Ads", href: "/services/digital-marketing#tiktok-ads" },
       { title: "Social Media Marketing", href: "/services/digital-marketing#social-media" },
       { title: "Content Marketing", href: "/services/digital-marketing#content-marketing" },
       { title: "Email Marketing", href: "/services/digital-marketing#email-marketing" },
@@ -195,45 +196,46 @@ export function Header() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between gap-4">
-            {/* Brand Logo */}
-            <Logo />
+            {/* Left Group: Brand Logo & Navigation close together */}
+            <div className="flex items-center gap-4 lg:gap-6 xl:gap-7">
+              <Logo />
 
-            {/* Desktop Navigation: 6 Main Services Only */}
-            <nav className="hidden xl:flex items-center gap-1.5 xl:gap-2">
-              {MAIN_MENU_SERVICES.map((service, index) => {
-                const isActive =
-                  pathname === service.href ||
-                  (service.href !== "/" && pathname.startsWith(service.href));
-                const isOpen = activeDropdown === service.id;
-                const Icon = service.icon;
+              {/* Desktop Navigation: 6 Main Services Only */}
+              <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1.5">
+                {MAIN_MENU_SERVICES.map((service, index) => {
+                  const isActive =
+                    pathname === service.href ||
+                    (service.href !== "/" && pathname.startsWith(service.href));
+                  const isOpen = activeDropdown === service.id;
+                  const Icon = service.icon;
 
-                let dropdownPositionClass = "left-0";
-                if (index === 2 || index === 3) dropdownPositionClass = "left-1/2 -translate-x-1/2";
-                if (index >= 4) dropdownPositionClass = "right-0";
+                  let dropdownPositionClass = "left-0";
+                  if (index === 2 || index === 3) dropdownPositionClass = "left-1/2 -translate-x-1/2";
+                  if (index >= 4) dropdownPositionClass = "right-0";
 
-                return (
-                  <div
-                    key={service.id}
-                    className="relative"
-                    onMouseEnter={() => handleMouseEnter(service.id)}
-                    onMouseLeave={handleMouseLeave}
-                  >
-                    <Link
-                      href={service.href}
-                      className={`inline-flex items-center gap-1 px-3 py-2 text-[13px] font-semibold rounded-lg transition-colors whitespace-nowrap ${
-                        isActive || isOpen
-                          ? "text-[#C59B27] bg-[#FAF8F5] font-bold"
-                          : "text-[#0B0F19] hover:text-[#C59B27] hover:bg-slate-50"
-                      }`}
+                  return (
+                    <div
+                      key={service.id}
+                      className="relative"
+                      onMouseEnter={() => handleMouseEnter(service.id)}
+                      onMouseLeave={handleMouseLeave}
                     >
-                      <span>{service.name}</span>
-                      <ChevronDown
-                        size={13}
-                        className={`transition-transform duration-200 ${
-                          isOpen ? "rotate-180 text-[#C59B27]" : "text-slate-400"
+                      <Link
+                        href={service.href}
+                        className={`inline-flex items-center gap-1 px-2.5 xl:px-3 py-1.5 xl:py-2 text-xs xl:text-[13px] font-semibold rounded-lg transition-colors whitespace-nowrap ${
+                          isActive || isOpen
+                            ? "text-[#C59B27] bg-[#FAF8F5] font-bold"
+                            : "text-[#0B0F19] hover:text-[#C59B27] hover:bg-slate-50"
                         }`}
-                      />
-                    </Link>
+                      >
+                        <span>{service.name}</span>
+                        <ChevronDown
+                          size={12}
+                          className={`transition-transform duration-200 ${
+                            isOpen ? "rotate-180 text-[#C59B27]" : "text-slate-400"
+                          }`}
+                        />
+                      </Link>
 
                     {/* Structured Sub-Menu Dropdown */}
                     {isOpen && (
@@ -304,14 +306,27 @@ export function Header() {
                   </div>
                 );
               })}
-            </nav>
+              </nav>
+            </div>
+
+            {/* Right Group: Fast Consultation Meeting Shortcut */}
+            <div className="hidden lg:flex items-center gap-3">
+              <Link
+                href="/book-a-meeting"
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-bold text-[#0B0F19] hover:text-[#C59B27] bg-[#FAF8F5] border border-[#E4E7EC] hover:border-[#C59B27]/40 rounded-xl transition-all shadow-2xs hover:bg-white"
+              >
+                <Calendar size={13} className="text-[#C59B27]" />
+                <span className="hidden xl:inline">Book a Meeting</span>
+                <span className="xl:hidden">Meeting</span>
+              </Link>
+            </div>
 
             {/* Mobile / Tablet Menu Button */}
             <button
               type="button"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
-              className="xl:hidden p-2 rounded-xl text-[#0B0F19] hover:bg-slate-100 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C59B27]"
+              className="lg:hidden p-2 rounded-xl text-[#0B0F19] hover:bg-slate-100 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C59B27]"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -321,7 +336,7 @@ export function Header() {
 
       {/* Responsive Mobile / Tablet Navigation Drawer */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-white xl:hidden flex flex-col pt-24 px-5 sm:px-8 pb-8 overflow-y-auto animate-in fade-in slide-in-from-top-4 duration-200">
+        <div className="fixed inset-0 z-40 bg-white lg:hidden flex flex-col pt-24 px-5 sm:px-8 pb-8 overflow-y-auto animate-in fade-in slide-in-from-top-4 duration-200">
           <div className="flex-1 flex flex-col justify-between max-w-lg mx-auto w-full">
             <div className="space-y-4">
               <div className="flex items-center justify-between pb-2 border-b border-slate-100">

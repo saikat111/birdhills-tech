@@ -31,14 +31,24 @@ const quickActions = [
   "I want to grow my business",
 ];
 
-export function FloatingChatbot() {
+interface FloatingChatbotProps {
+  settings?: Record<string, string>;
+}
+
+export function FloatingChatbot({ settings = {} }: FloatingChatbotProps) {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const welcomeMessage =
+    settings["ai_welcome_message"] ||
+    "Tell us what you're trying to build. I'll help you find the right direction.";
+  const fallbackPhone = settings["phone"] || "+971 52 440 5785";
+  const fallbackEmail = settings["email"] || "contact@birdhillstech.com";
+
   const [messages, setMessages] = useState<Message[]>([
     {
       id: "intro-1",
       sender: "assistant",
-      text: "Tell us what you're trying to build. I'll help you find the right direction.",
+      text: welcomeMessage,
     },
   ]);
   const [inputText, setInputText] = useState("");
@@ -108,7 +118,7 @@ export function FloatingChatbot() {
         {
           id: `bot_err_${Date.now()}`,
           sender: "assistant",
-          text: "Thank you for reaching out. Please leave your email or WhatsApp number at contact@birdhillstech.com or call +971 52 440 5785 and our team will get back to you immediately.",
+          text: `Thank you for reaching out. Please leave your email or WhatsApp number at ${fallbackEmail} or call ${fallbackPhone} and our team will get back to you immediately.`,
         },
       ]);
     } finally {

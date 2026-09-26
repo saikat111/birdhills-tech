@@ -1,5 +1,7 @@
 import React from "react";
+import { Metadata } from "next";
 import { prisma } from "@/lib/prisma";
+import { getSiteSettings } from "@/lib/settings";
 import HeroSection from "@/components/home/HeroSection";
 import TrustSection from "@/components/home/TrustSection";
 import ServicesSection from "@/components/home/ServicesSection";
@@ -15,6 +17,23 @@ import FinalCtaSection from "@/components/home/FinalCtaSection";
 
 // Revalidate page cache periodically for high performance and live CMS updates
 export const revalidate = 60;
+
+export async function generateMetadata(): Promise<Metadata> {
+  const settings = await getSiteSettings();
+  return {
+    title: settings.site_title,
+    description: settings.site_description,
+    openGraph: {
+      title: settings.site_title,
+      description: settings.site_description,
+    },
+    twitter: {
+      card: "summary",
+      title: settings.site_title,
+      description: settings.site_description,
+    },
+  };
+}
 
 export default async function HomePage() {
   // Fetch dynamic content from Prisma database
