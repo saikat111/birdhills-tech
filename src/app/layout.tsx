@@ -47,8 +47,21 @@ export async function generateMetadata(): Promise<Metadata> {
     authors: [{ name: settings.company_name || "Bird Hills Tech" }],
     creator: settings.company_name || "Bird Hills Tech",
     publisher: settings.company_name || "Bird Hills Tech",
+    alternates: {
+      canonical: "https://birdhillstech.com",
+    },
     robots: allowCrawling
-      ? { index: true, follow: true }
+      ? {
+          index: true,
+          follow: true,
+          googleBot: {
+            index: true,
+            follow: true,
+            "max-video-preview": -1,
+            "max-image-preview": "large",
+            "max-snippet": -1,
+          },
+        }
       : {
           index: false,
           follow: false,

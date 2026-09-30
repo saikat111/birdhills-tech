@@ -2,9 +2,12 @@ import { MetadataRoute } from "next";
 import { prisma } from "@/lib/prisma";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://birdhillstech.com";
+  const baseUrl =
+    process.env.NEXT_PUBLIC_SITE_URL ||
+    process.env.NEXT_PUBLIC_APP_URL ||
+    "https://birdhillstech.com";
 
-  // Static core routes
+  // Static core canonical routes
   const staticRoutes: MetadataRoute.Sitemap = [
     {
       url: `${baseUrl}`,
@@ -13,13 +16,25 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 1.0,
     },
     {
-      url: `${baseUrl}/about`,
+      url: `${baseUrl}/services`,
       lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
+      changeFrequency: "weekly",
+      priority: 0.95,
     },
     {
-      url: `${baseUrl}/services`,
+      url: `${baseUrl}/hosting`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/domains`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/work`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.9,
@@ -31,28 +46,28 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.85,
     },
     {
-      url: `${baseUrl}/work`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
       url: `${baseUrl}/blog`,
       lastModified: new Date(),
       changeFrequency: "daily",
       priority: 0.85,
     },
     {
-      url: `${baseUrl}/contact`,
+      url: `${baseUrl}/about`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/contact`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
       url: `${baseUrl}/book-a-meeting`,
       lastModified: new Date(),
       changeFrequency: "monthly",
-      priority: 0.8,
+      priority: 0.85,
     },
     {
       url: `${baseUrl}/privacy-policy`,
@@ -70,38 +85,49 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   try {
     const [services, projects, posts, categories] = await Promise.all([
-      prisma.service.findMany({ where: { published: true }, select: { slug: true, updatedAt: true } }),
-      prisma.project.findMany({ where: { status: "published" }, select: { slug: true, updatedAt: true } }),
-      prisma.blogPost.findMany({ where: { status: "published" }, select: { slug: true, updatedAt: true } }),
-      prisma.blogCategory.findMany({ select: { slug: true } }),
+      prisma.service.findMany({
+        where: { published: true },
+        select: { slug: true, updatedAt: true },
+      }),
+      prisma.project.findMany({
+        where: { status: "published" },
+        select: { slug: true, updatedAt: true },
+      }),
+      prisma.blogPost.findMany({
+        where: { status: "published" },
+        select: { slug: true, updatedAt: true },
+      }),
+      prisma.blogCategory.findMany({
+        select: { slug: true },
+      }),
     ]);
 
     const serviceUrls: MetadataRoute.Sitemap = services.map((s) => ({
       url: `${baseUrl}/services/${s.slug}`,
-      lastModified: s.updatedAt,
+      lastModified: s.updatedAt || new Date(),
       changeFrequency: "weekly",
-      priority: 0.85,
+      priority: 0.9,
     }));
 
     const projectUrls: MetadataRoute.Sitemap = projects.map((p) => ({
       url: `${baseUrl}/work/${p.slug}`,
-      lastModified: p.updatedAt,
+      lastModified: p.updatedAt || new Date(),
       changeFrequency: "monthly",
       priority: 0.85,
     }));
 
     const postUrls: MetadataRoute.Sitemap = posts.map((post) => ({
       url: `${baseUrl}/blog/${post.slug}`,
-      lastModified: post.updatedAt,
+      lastModified: post.updatedAt || new Date(),
       changeFrequency: "monthly",
-      priority: 0.75,
+      priority: 0.8,
     }));
 
     const categoryUrls: MetadataRoute.Sitemap = categories.map((cat) => ({
       url: `${baseUrl}/category/${cat.slug}`,
       lastModified: new Date(),
       changeFrequency: "weekly",
-      priority: 0.7,
+      priority: 0.75,
     }));
 
     return [...staticRoutes, ...serviceUrls, ...projectUrls, ...postUrls, ...categoryUrls];

@@ -32,7 +32,7 @@ export const defaultSettings: SiteSettings = {
     "Bird Hills Tech delivers Digital Marketing, AI Business Automation, Web Development, Domain & Hosting Services for smarter, scalable business growth.",
   site_keywords:
     "Web Development Company in Dubai, Digital Marketing Agency in Dubai, AI Business Automation Dubai, Domain and Hosting Services, Local SEO Dubai, Bird Hills Tech",
-  google_indexing: "disabled", // off by default
+  google_indexing: "enabled", // enabled for search engine crawling
   company_name: "Bird Hills Tech",
   tagline: "Technology × Creative × Growth",
   address: "Deira - Stone Building - 122 7th A Street - Al Baraha - Dubai, UAE",

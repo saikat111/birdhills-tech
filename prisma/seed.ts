@@ -33,7 +33,7 @@ async function main() {
     { key: "site_title", value: "Bird Hills Tech | Digital Marketing & Web Development Agency", description: "Main website SEO browser title" },
     { key: "site_description", value: "Bird Hills Tech delivers Digital Marketing, AI Business Automation, Web Development, Domain & Hosting Services for smarter, scalable business growth.", description: "Main website SEO meta description" },
     { key: "site_keywords", value: "Web Development Company in Dubai, Digital Marketing Agency in Dubai, AI Business Automation Dubai, Domain and Hosting Services, Local SEO Dubai, Bird Hills Tech", description: "Meta search keywords" },
-    { key: "google_indexing", value: "disabled", description: "Google and search crawler indexing status (disabled or enabled)" },
+    { key: "google_indexing", value: "enabled", description: "Google and search crawler indexing status (disabled or enabled)" },
     { key: "company_name", value: "Bird Hills Tech", description: "Official company name" },
     { key: "tagline", value: "Technology × Creative × Growth", description: "Primary brand positioning" },
     { key: "address", value: "Deira - Stone Building - 122 7th A Street - Al Baraha - Dubai, UAE", description: "Registered corporate address" },
