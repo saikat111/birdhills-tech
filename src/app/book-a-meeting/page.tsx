@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import Image from "next/image";
 import { Calendar, Clock, Video, MapPin, CheckCircle2, Shield, MessageCircle } from "lucide-react";
 import BookingForm from "@/components/booking/BookingForm";
+import FaqAccordion from "@/components/common/FaqAccordion";
 
 export const metadata: Metadata = {
   title: "Book a Strategic Consultation | Bird Hills Tech Dubai",
@@ -129,6 +130,41 @@ export default function BookMeetingPage() {
           </div>
         </div>
       </section>
+
+      {/* 3. CONSULTATION FAQ ACCORDION WITH SCHEMA MARKUP */}
+      <FaqAccordion
+        items={[
+          {
+            question: "Is there any cost or commitment for the initial consultation?",
+            answer:
+              "No. The initial 45-minute discovery consultation is completely complimentary. We evaluate your architectural goals, discuss commercial feasibility, and outline concrete milestones with zero obligation.",
+            category: "Consultation",
+          },
+          {
+            question: "How do video consultations work?",
+            answer:
+              "Once booked, you receive an automated calendar invitation with a secure Google Meet link. You can also request a Microsoft Teams or Zoom link if preferred by your IT department.",
+            category: "Video Meeting",
+          },
+          {
+            question: "Can our technical and commercial team members both attend?",
+            answer:
+              "Yes. We encourage attendance from your CTO/lead engineer as well as your Managing Director or marketing head so we can address technical specs and business targets simultaneously.",
+            category: "Attendance",
+          },
+          {
+            question: "Can we request an in-person meeting at our office in Dubai?",
+            answer:
+              "Certainly. Mention your office location in the notes field, and our partners will confirm travel arrangements across Dubai, Abu Dhabi, or Sharjah.",
+            category: "In-Person",
+          },
+        ]}
+        title="Consultation & Briefing FAQs"
+        eyebrow="MEETING DETAILS"
+        description="Clear expectations regarding our discovery session format, duration, and agenda."
+        theme="light"
+        includeSchema={true}
+      />
     </div>
   );
 }

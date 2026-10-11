@@ -798,48 +798,132 @@ By integrating **server-side tracking (Meta CAPI, Google Enhanced Conversions)**
     }
   }
 
-  // 7. FAQs
+  // 7. Comprehensive Marketing-Ready FAQs
   const faqsData = [
     {
-      question: "What core services does Bird Hills Tech provide?",
-      answer: "Bird Hills Tech is intentionally positioned at the intersection of Technology, Creative Strategy, and Digital Growth. We provide custom web development, web applications, e-commerce architectures, corporate UI/UX and branding, performance digital marketing, technical SEO, and AI workflow integrations.",
+      question: "What core services does Bird Hills Tech provide in Dubai?",
+      answer: "Bird Hills Tech is positioned at the intersection of Technology, Creative Strategy, and Digital Growth. We engineer custom Next.js web applications, provide accredited .ae domain registration and pure NVMe GCC cloud hosting, execute performance digital marketing and local SEO, and build autonomous AI agents with WhatsApp automations.",
       category: "General",
       sortOrder: 1,
       active: true
     },
     {
-      question: "Where is Bird Hills Tech located?",
-      answer: "We are proudly based in Dubai, UAE. Our registered corporate address is Deira - Stone Building - 122 7th A Street - Al Baraha - Dubai, UAE. We welcome client consultations at our premises and can also arrange strategic meetings across Dubai.",
+      question: "Where is your office located, and can we meet in person in Dubai?",
+      answer: "We are headquartered at Stone Building, 122 7th A Street, Al Baraha, Deira, Dubai, UAE (+971 52 440 5785). We welcome clients for strategy sessions at our office, or our partners can arrange an introductory consultation at your corporate headquarters across Dubai, Abu Dhabi, or Sharjah.",
       category: "General",
       sortOrder: 2,
       active: true
     },
     {
-      question: "How does the project engagement process work?",
-      answer: "Every project follows our 6-step roadmap: 01 Discover (understand goals & constraints), 02 Strategize (define technical and commercial direction), 03 Design (create UI systems & prototypes), 04 Develop (clean type-safe engineering), 05 Launch (rigorous testing & deployment), and 06 Grow (conversion monitoring, SEO & scaling).",
-      category: "Process",
+      question: "Do we retain 100% intellectual property and source code ownership?",
+      answer: "Yes, 100%. We operate with a strict zero-vendor-lock-in philosophy. Upon final milestone completion, full source code repositories (Git), database models, Figma design systems, and deployment keys are transferred permanently to your company.",
+      category: "General",
       sortOrder: 3,
       active: true
     },
     {
-      question: "Can we schedule an in-person meeting in Dubai?",
-      answer: "Yes, absolutely. You can schedule a meeting directly through our 'Book a Meeting' page, contact us via phone/WhatsApp at +971 52 440 5785, or request an introductory briefing at your Dubai office.",
-      category: "General",
+      question: "Why choose custom Next.js development over off-the-shelf WordPress themes?",
+      answer: "Next.js 16 delivers sub-second page loads (< 0.8s LCP), enterprise data security, and zero plugin dependencies. In Dubai's competitive market, slow corporate websites lose high-intent clients within 3 seconds. Custom code compiles cleanly, scales infinitely, and avoids ongoing plugin vulnerabilities.",
+      category: "Web Development",
       sortOrder: 4,
       active: true
     },
     {
-      question: "What technology stack do you build with?",
-      answer: "We specialize in modern, high-performance web ecosystems including Next.js, React, TypeScript, Tailwind CSS, Prisma, PostgreSQL/SQLite, Node.js, and leading cloud providers (Vercel, AWS, Google Cloud). We prioritize sub-second Core Web Vitals, enterprise security, and clean maintainable code.",
-      category: "Services",
+      question: "Do your web platforms support native Arabic Right-to-Left (RTL) localization?",
+      answer: "Yes. All our digital platforms support true bidirectional RTL/LTR typography, localized UI component hierarchies, and bilingual English/Arabic content switching designed to command prestige across the UAE and GCC.",
+      category: "Web Development",
       sortOrder: 5,
       active: true
     },
     {
-      question: "How do your digital marketing and SEO services drive actual ROI?",
-      answer: "Unlike traditional agencies that report vanity clicks and impressions, our growth practice tracks qualified pipeline, customer acquisition cost (CAC), and commercial deal sizes. We target high-intent commercial keywords and decision-makers on Google, LinkedIn, and Meta.",
-      category: "Services",
+      question: "Can you integrate regional payment gateways like Stripe UAE, Apple Pay, and Tabby?",
+      answer: "Yes. We regularly integrate seamless checkout flows with Stripe UAE, Network International, Telr, Apple Pay, Google Pay, and popular regional buy-now-pay-later services (Tabby, Tamara).",
+      category: "Web Development",
       sortOrder: 6,
+      active: true
+    },
+    {
+      question: "How do your digital marketing and SEO services drive actual commercial ROI?",
+      answer: "Unlike traditional agencies reporting superficial clicks and impressions, our growth practice tracks closed-loop commercial pipeline. We focus on high-intent commercial search queries on Google and B2B decision-makers on LinkedIn, tying every dirham directly to qualified CRM opportunities and Customer Acquisition Cost (CAC) targets.",
+      category: "Digital Marketing & SEO",
+      sortOrder: 7,
+      active: true
+    },
+    {
+      question: "How do you help businesses rank #1 on Google Maps in Dubai?",
+      answer: "We resolve Department of Economy & Tourism (DET) trade license verification roadblocks, execute geo-grid ranking expansion across key commercial zones (Deira, Downtown, DIFC, Business Bay), syndicate citations on authoritative UAE business directories, and establish structured review acquisition systems.",
+      category: "Digital Marketing & SEO",
+      sortOrder: 8,
+      active: true
+    },
+    {
+      question: "What is AI Search Optimization (AEO & GEO)?",
+      answer: "Search is evolving into conversational answer engines. We optimize your corporate website knowledge graph, schema markup, and entity authority so AI engines like ChatGPT Search, Perplexity AI, Google AI Overviews, and Gemini directly recommend and quote your company.",
+      category: "Digital Marketing & SEO",
+      sortOrder: 9,
+      active: true
+    },
+    {
+      question: "Where are your web hosting cloud nodes physically located?",
+      answer: "Our primary edge infrastructure is deployed in Tier-3/Tier-4 data centres in Dubai (Datamena / Equinix DX1) and Frankfurt, paired with Cloudflare GCC edge caching to ensure sub-15ms regional latency across Dubai, Abu Dhabi, Riyadh, and Doha.",
+      category: "Hosting & Cloud",
+      sortOrder: 10,
+      active: true
+    },
+    {
+      question: "What are the requirements for registering an official .ae domain in Dubai?",
+      answer: ".ae domains can be registered by any local or international entity or individual. There is no requirement to possess a local trade license for standard .ae registrations, allowing instant activation and DNS propagation.",
+      category: "Hosting & Cloud",
+      sortOrder: 11,
+      active: true
+    },
+    {
+      question: "How does your Free Zero-Downtime Website Migration work?",
+      answer: "Our senior DevOps team replicates your databases, files, SSL certificates, and email inboxes to our pure NVMe edge cloud, verifies everything on a private staging URL, and updates DNS records with zero lost emails and zero website downtime.",
+      category: "Hosting & Cloud",
+      sortOrder: 12,
+      active: true
+    },
+    {
+      question: "How do your AI WhatsApp agents qualify leads automatically?",
+      answer: "Connected to your official WhatsApp Business Cloud API, our autonomous agents engage inbound prospects in under 3 seconds in English and Arabic. They answer technical queries from your approved knowledge base, verify budget and project timelines, and route qualified deals directly to your CRM.",
+      category: "AI Automation",
+      sortOrder: 13,
+      active: true
+    },
+    {
+      question: "Can you automate internal business processes with n8n and CRM systems?",
+      answer: "Yes. We build end-to-end automated pipelines that synchronize lead forms, generate PDF proposals, trigger WhatsApp alerts, and update deals across HubSpot, Zoho, Salesforce, or Google Sheets without manual human intervention.",
+      category: "AI Automation",
+      sortOrder: 14,
+      active: true
+    },
+    {
+      question: "Can we pay in UAE Dirhams (AED) or US Dollars (USD)?",
+      answer: "Yes. All pricing is quoted in both AED and USD. We accept UAE corporate bank transfers, international SWIFT wires, credit cards, and Stripe invoices with structured milestone sign-offs.",
+      category: "Pricing & Terms",
+      sortOrder: 15,
+      active: true
+    },
+    {
+      question: "What is your typical project payment schedule?",
+      answer: "Standard fixed-price projects follow a clear 3-stage milestone: 50% upon project kickoff and architecture sign-off, 25% upon interactive staging review, and 25% upon final QA testing and production deployment.",
+      category: "Pricing & Terms",
+      sortOrder: 16,
+      active: true
+    },
+    {
+      question: "What post-launch SLA and technical warranty do you provide?",
+      answer: "Every custom web platform includes 30 to 90 days of comprehensive post-launch warranty covering bug resolution, performance monitoring, and security patching. We also offer dedicated monthly SLA retainers with 15-minute emergency response times.",
+      category: "Pricing & Terms",
+      sortOrder: 17,
+      active: true
+    },
+    {
+      question: "How quickly can your team begin discovery on our project?",
+      answer: "We can initiate technical discovery within 24 to 48 hours of agreement. Schedule a consultation directly through our website scheduler or message our partners on WhatsApp at +971 52 440 5785 to get started immediately.",
+      category: "General",
+      sortOrder: 18,
       active: true
     }
   ];

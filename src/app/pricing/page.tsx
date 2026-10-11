@@ -10,6 +10,7 @@ import {
   Clock,
 } from "lucide-react";
 import PricingCardsClient from "@/components/pricing/PricingCardsClient";
+import FaqAccordion from "@/components/common/FaqAccordion";
 import FinalCtaSection from "@/components/home/FinalCtaSection";
 
 export const metadata: Metadata = {
@@ -225,34 +226,19 @@ export default async function PricingPage() {
         </div>
       </section>
 
-      {/* 5. PRICING FAQS */}
-      <section className="py-24 bg-white border-t border-[#E4E7EC]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 space-y-2">
-            <span className="text-xs font-bold tracking-wider uppercase text-[#C59B27]">
-              COMMERCIAL CLARITY
-            </span>
-            <h2 className="text-3xl font-extrabold text-[#070B14] tracking-tight">
-              Frequently Asked Pricing Questions
-            </h2>
-          </div>
-
-          <div className="space-y-4">
-            {pricingFaqs.map((faq) => (
-              <div
-                key={faq.q}
-                className="p-6 rounded-2xl bg-[#FAF8F5] border border-[#E4E7EC] shadow-2xs space-y-2"
-              >
-                <h3 className="text-base font-bold text-[#070B14] flex items-center gap-2">
-                  <HelpCircle size={17} className="text-[#C59B27] shrink-0" />
-                  {faq.q}
-                </h3>
-                <p className="text-xs text-[#475467] leading-relaxed pl-6">{faq.a}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* 5. PRICING FAQS ACCORDION WITH SCHEMA MARKUP */}
+      <FaqAccordion
+        items={pricingFaqs.map((f) => ({
+          question: f.q,
+          answer: f.a,
+          category: "Commercial & Billing",
+        }))}
+        title="Frequently Asked Pricing Questions"
+        eyebrow="COMMERCIAL TRANSPARENCY"
+        description="Direct answers on currency payment options (AED / USD), milestone invoicing, IP ownership transfer, and custom project scopes."
+        theme="light"
+        includeSchema={true}
+      />
 
       <FinalCtaSection />
     </div>

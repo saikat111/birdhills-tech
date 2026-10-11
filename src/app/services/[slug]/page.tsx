@@ -23,6 +23,7 @@ import {
   MessageCircle,
 } from "lucide-react";
 import FinalCtaSection from "@/components/home/FinalCtaSection";
+import FaqAccordion from "@/components/common/FaqAccordion";
 
 // Service specific problem/approach database for all 9 official services
 const serviceDetails: Record<
@@ -734,34 +735,21 @@ export default async function ServiceDetailPage({
         </section>
       )}
 
-      {/* 7. FAQS */}
-      <section className="py-20 bg-[#FAF8F5] border-t border-[#E4E7EC]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 space-y-2">
-            <span className="text-xs font-extrabold tracking-widest text-[#C59B27] uppercase">
-              FAQ
-            </span>
-            <h2 className="text-3xl font-extrabold text-[#0B0F19]">
-              Frequently Asked Questions
-            </h2>
-          </div>
-
-          <div className="space-y-4">
-            {detail.faqs.map((faq, i) => (
-              <div
-                key={i}
-                className="bg-white p-6 rounded-2xl border border-[#E4E7EC] shadow-2xs space-y-2"
-              >
-                <h3 className="text-base font-bold text-[#0B0F19] flex items-start gap-2.5">
-                  <HelpCircle size={18} className="text-[#C59B27] shrink-0 mt-0.5" />
-                  <span>{faq.q}</span>
-                </h3>
-                <p className="text-sm text-[#667085] leading-relaxed pl-7">{faq.a}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* 7. SERVICE SPECIFIC FAQ ACCORDION WITH SCHEMA MARKUP */}
+      {detail.faqs && detail.faqs.length > 0 && (
+        <FaqAccordion
+          items={detail.faqs.map((f) => ({
+            question: f.q,
+            answer: f.a,
+            category: service.title,
+          }))}
+          title={`Frequently Asked About ${service.title}`}
+          eyebrow="PRACTICE AREA FAQ"
+          description={`Direct answers to common technical and commercial questions regarding our ${service.title.toLowerCase()} practice.`}
+          theme="light"
+          includeSchema={true}
+        />
+      )}
 
       {/* 8. RELATED CASE STUDIES */}
       {relatedProjects.length > 0 && (

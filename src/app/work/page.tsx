@@ -4,8 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import { WorkFilterList } from "@/components/work/WorkFilterList";
+import FaqAccordion, { FaqItem } from "@/components/common/FaqAccordion";
 import FinalCtaSection from "@/components/home/FinalCtaSection";
-import { Zap, ShieldCheck, TrendingUp, Award, Calendar, MessageCircle } from "lucide-react";
+import { Zap, ShieldCheck, TrendingUp, Award, Calendar, MessageCircle, CheckCircle2, Lock, FileCode2 } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Selected Work & Case Studies | Bird Hills Tech Dubai",
@@ -14,15 +15,62 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://birdhillstech.com/work",
   },
+  openGraph: {
+    title: "Selected Work & Case Studies | Bird Hills Tech Dubai",
+    description:
+      "Real engineering and measurable commercial impact across technology, creative brand architecture, and performance acquisition.",
+    url: "https://birdhillstech.com/work",
+    siteName: "Bird Hills Tech",
+    locale: "en_AE",
+    type: "website",
+  },
 };
 
 export const revalidate = 60;
 
+const WORK_FAQS: FaqItem[] = [
+  {
+    question: "Can Bird Hills Tech provide client references and live production demos in the UAE?",
+    answer:
+      "Yes. During our initial discovery briefing, we can showcase live production web platforms, demonstrate headless e-commerce checkouts, and walk through real-time admin analytics for regional clients under non-disclosure agreements.",
+    category: "Portfolio",
+  },
+  {
+    question: "How do you protect proprietary business logic and client confidentiality?",
+    answer:
+      "We sign standard bilateral Non-Disclosure Agreements (NDAs) prior to examining any internal client specifications, database schemas, or business processes. All client development is conducted within private, isolated repositories with zero third-party code exposure.",
+    category: "Security",
+  },
+  {
+    question: "What quantifiable metrics do you track to declare a project successful?",
+    answer:
+      "We track technical Core Web Vitals (< 0.8s LCP, zero layout shifts), commercial conversion metrics (form submissions, WhatsApp click-throughs, lead-to-deal conversion), and search engine indexing benchmarks (Google Maps 3-Pack rank, organic keyword authority).",
+    category: "Metrics",
+  },
+  {
+    question: "Can you take over, audit, and re-engineer an existing sluggish website or portal?",
+    answer:
+      "Yes. We frequently conduct deep codebase audits for companies whose previous agencies left them with bloated plugins or slow loading times. We can either perform targeted speed refactoring or execute a seamless migration to modern Next.js 16 architecture with zero downtime.",
+    category: "Engineering",
+  },
+  {
+    question: "What is your project engagement and payment schedule?",
+    answer:
+      "Projects operate on transparent milestone deliverables: typically 40% project kickoff, 30% approved prototype and core engineering demonstration, and 30% final deployment and 100% IP code handover. We accept UAE bank transfers and corporate payment cards.",
+    category: "Commercial",
+  },
+];
+
 export default async function WorkPage() {
-  const projects = await prisma.project.findMany({
-    where: { status: "published" },
-    orderBy: { createdAt: "desc" },
-  });
+  let projects: any[] = [];
+  try {
+    projects = await prisma.project.findMany({
+      where: { status: "published" },
+      orderBy: { createdAt: "desc" },
+    });
+  } catch (err) {
+    console.error("Error fetching projects:", err);
+  }
 
   const impactStats = [
     { value: "$25M+", label: "Regional Transaction Volume Powered" },
@@ -58,7 +106,7 @@ export default async function WorkPage() {
               <span className="block text-[#D4AF37]">Measurable commercial impact.</span>
             </h1>
             <p className="text-lg sm:text-xl text-slate-300 leading-relaxed font-normal">
-              Explore selected digital experiences and custom platforms engineered across technology, creative brand architecture, and performance acquisition.
+              Explore selected digital experiences and custom platforms engineered across technology, creative brand architecture, and performance acquisition for ambitious GCC enterprises.
             </p>
           </div>
         </div>
@@ -143,6 +191,16 @@ export default async function WorkPage() {
           </div>
         </div>
       </section>
+
+      {/* 5. PORTFOLIO & CASE STUDY FAQ ACCORDION (NEW) */}
+      <FaqAccordion
+        items={WORK_FAQS}
+        title="Frequently Asked About Our Deployments"
+        eyebrow="PORTFOLIO & PROCESS ANSWERS"
+        description="Clear details on our client engagements, confidentiality protocols, code handovers, and measurable delivery standards."
+        theme="light"
+        includeSchema={true}
+      />
 
       <FinalCtaSection />
     </div>

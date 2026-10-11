@@ -15,7 +15,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import ContactForm from "@/components/contact/ContactForm";
-
+import FaqAccordion, { FaqItem } from "@/components/common/FaqAccordion";
 import { getSiteSettings } from "@/lib/settings";
 
 export const revalidate = 60;
@@ -237,6 +237,47 @@ export default async function ContactPage() {
           </div>
         </div>
       </section>
+
+      {/* 4. CONTACT & CONSULTATION INTAKE FAQ ACCORDION WITH SCHEMA MARKUP */}
+      <FaqAccordion
+        items={[
+          {
+            question: "How quickly will your Dubai team respond to our message?",
+            answer:
+              "We guarantee a response within 2 business hours during UAE business hours (Monday – Saturday, 9:00 AM – 6:00 PM GST). For urgent inquiries, please contact our team directly via WhatsApp or phone at +971 52 440 5785.",
+            category: "Consultation",
+          },
+          {
+            question: "Can we schedule an in-person meeting in Dubai before signing an agreement?",
+            answer:
+              "Yes, absolutely. We welcome meetings at our registered corporate office at Stone Building, Deira, or we can arrange an introductory consultation at your Dubai premises.",
+            category: "Meetings",
+          },
+          {
+            question: "Do you execute Non-Disclosure Agreements (NDAs) prior to project discussions?",
+            answer:
+              "Yes. We take intellectual property and confidentiality seriously. We routinely execute mutual NDAs before reviewing detailed product briefs, architectures, or proprietary data.",
+            category: "Legal",
+          },
+          {
+            question: "What information should we prepare for our initial scoping call?",
+            answer:
+              "A high-level overview of your business goals, target audience, preferred timeline, and approximate investment band helps us prepare concrete architectural options and recommendations for your initial briefing.",
+            category: "Scoping",
+          },
+          {
+            question: "Do you work with international clients outside the UAE?",
+            answer:
+              "Yes. While we are headquartered in Dubai, we partner with enterprises across Saudi Arabia, Qatar, the UK, Europe, and North America, accommodating regional time zones and international wire transfers seamlessly.",
+            category: "International",
+          },
+        ]}
+        title="Project Intake & Consultation Questions"
+        eyebrow="COMMUNICATION & PROCESS CLARITY"
+        description="Direct details on our consultation process, NDA confidentiality, meeting locations, and response times in Dubai."
+        theme="light"
+        includeSchema={true}
+      />
     </div>
   );
 }

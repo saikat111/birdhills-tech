@@ -25,41 +25,41 @@ interface HeroProps {
 const HERO_SLIDES = [
   {
     image:
-      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=2000&q=90",
-    alt: "Modern Next.js web application engineering and custom corporate platforms",
+      "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2400&q=95",
+    alt: "Dubai futuristic architectural skyline and Burj Khalifa business district at dusk",
+    tag: "DUBAI HEADQUARTERS · GCC",
+    location: "Enterprise Web Engineering & GCC Digital Operations",
+    highlight: "Sub-Second Speed Guarantee · Bespoke UI/UX Design · Full Intellectual Property Transfer",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=2400&q=95",
+    alt: "High-performance Next.js application development studio with modern engineering workstations",
     tag: "FEATURED SERVICE · 01",
     location: "Next.js Web Applications & Custom Portals",
     highlight: "Sub-Second Speed · High-Converting UI/UX · Enterprise Next.js 16 Architecture",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=2000&q=90",
-    alt: "Accredited .ae domains, NVMe cloud servers, and business email infrastructure",
+      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=2400&q=95",
+    alt: "Illuminated high-speed cloud datacenter with glowing server racks and fiber optic connectivity",
     tag: "FEATURED SERVICE · 02",
     location: "Domain & NVMe Cloud Hosting",
     highlight: "Accredited .ae Registry · Pure NVMe SSD Edge Nodes · 99.99% Uptime SLA",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=2000&q=90",
-    alt: "Commercial digital marketing, Google Ads and B2B lead generation",
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=2400&q=95",
+    alt: "Executive commercial digital analytics and multi-channel revenue growth dashboard",
     tag: "FEATURED SERVICE · 03",
     location: "Digital Marketing & Performance Ads",
     highlight: "High-Intent Google Ads · LinkedIn B2B · Closed-Loop Revenue Attribution",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=2000&q=90",
-    alt: "Google Business Profile optimization and Google Maps 3-Pack rankings",
+      "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=2400&q=95",
+    alt: "Autonomous artificial intelligence agents and smart conversational business workflow automation",
     tag: "FEATURED SERVICE · 04",
-    location: "Google Business Profile & Local SEO",
-    highlight: "Google Maps 3-Pack Dominance · GBP Verification Support · Local Call Inquiries",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2000&q=90",
-    alt: "Autonomous AI agents, WhatsApp bots, and n8n workflow automation",
-    tag: "FEATURED SERVICE · 05",
     location: "AI Automation & WhatsApp Bots",
     highlight: "Autonomous 24/7 AI Agents · Conversational WhatsApp Bots · n8n Pipelines",
   },
@@ -110,10 +110,11 @@ export function HeroSection({
                 alt={slide.alt}
                 fill
                 priority={index === 0}
+                quality={95}
                 sizes="100vw"
-                className="object-cover object-center scale-105 transition-transform duration-10000 ease-out"
+                className="object-cover object-center"
                 style={{
-                  transform: isActive ? "scale(1)" : "scale(1.08)",
+                  transform: isActive ? "scale(1.02)" : "scale(1.08)",
                   transition: "transform 7s ease-out, opacity 1s ease-in-out",
                 }}
               />
@@ -121,10 +122,10 @@ export function HeroSection({
           );
         })}
 
-        {/* Dynamic Multi-Layer Gradient Overlays for Luxury Contrast & Readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#070B14]/95 via-[#070B14]/80 to-[#070B14]/40 lg:to-[#070B14]/25" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#070B14]/90 via-transparent to-[#070B14]" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:48px_48px] pointer-events-none opacity-40" />
+        {/* Balanced Dynamic Overlays: Crystal Clear, Vibrant Background with High Contrast for Text */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#070B14]/85 via-[#070B14]/55 to-[#070B14]/20 lg:to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#070B14]/65 via-transparent to-[#070B14]/90" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(212,175,55,0.12),transparent_50%)] pointer-events-none" />
       </div>
 
       {/* 2. MAIN HERO CONTENT CONTAINER */}
@@ -145,16 +146,16 @@ export function HeroSection({
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.12]">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.12] drop-shadow-md">
               {headline.split("Dubai")[0]}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F3E7C4] via-[#D4AF37] to-[#C59B27] relative inline-block">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F3E7C4] via-[#D4AF37] to-[#C59B27] relative inline-block drop-shadow-sm">
                 Dubai
               </span>
               {headline.split("Dubai")[1] || ""}
             </h1>
 
             {/* Supporting Copy */}
-            <p className="text-lg sm:text-xl text-slate-200 leading-relaxed max-w-2xl font-normal drop-shadow-sm">
+            <p className="text-lg sm:text-xl text-slate-100 leading-relaxed max-w-2xl font-normal drop-shadow-md">
               {subcopy}
             </p>
 

@@ -23,6 +23,7 @@ import {
   HelpCircle,
 } from "lucide-react";
 import FinalCtaSection from "@/components/home/FinalCtaSection";
+import FaqAccordion from "@/components/common/FaqAccordion";
 
 export const metadata: Metadata = {
   title: "Digital Services & Practice Areas | Bird Hills Tech Dubai",
@@ -639,36 +640,19 @@ export default function ServicesHubPage() {
         </div>
       </section>
 
-      {/* 6. COMPREHENSIVE SERVICES FAQ */}
-      <section className="py-24 bg-[#FAF8F5] border-t border-[#E4E7EC]">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-xs font-extrabold tracking-wider uppercase text-[#C59B27]">
-              FREQUENTLY ASKED QUESTIONS
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B0F19] tracking-tight mt-2">
-              Everything You Need to Know
-            </h2>
-          </div>
-
-          <div className="space-y-4">
-            {serviceFaqs.map((faq, idx) => (
-              <div
-                key={idx}
-                className="p-6 sm:p-8 rounded-2xl bg-white border border-[#E4E7EC] shadow-2xs space-y-2"
-              >
-                <h3 className="text-base font-bold text-[#0B0F19] flex items-start gap-3">
-                  <HelpCircle size={18} className="text-[#C59B27] shrink-0 mt-0.5" />
-                  <span>{faq.q}</span>
-                </h3>
-                <p className="text-xs sm:text-sm text-[#667085] leading-relaxed pl-7">
-                  {faq.a}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* 6. COMPREHENSIVE SERVICES FAQ ACCORDION WITH SCHEMA MARKUP */}
+      <FaqAccordion
+        items={serviceFaqs.map((f) => ({
+          question: f.q,
+          answer: f.a,
+          category: "Services",
+        }))}
+        title="Frequently Asked Questions"
+        eyebrow="COMMERCIAL CLARITY & TERMS"
+        description="Clear answers regarding our 9 practice areas, IP ownership transfer, billing milestones, and ongoing SLA maintenance."
+        theme="light"
+        includeSchema={true}
+      />
 
       {/* 7. FINAL CONVERSION CTA */}
       <FinalCtaSection />

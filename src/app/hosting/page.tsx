@@ -22,13 +22,14 @@ import {
   Award,
 } from "lucide-react";
 import FinalCtaSection from "@/components/home/FinalCtaSection";
+import FaqAccordion from "@/components/common/FaqAccordion";
 
 export const metadata: Metadata = {
   title: "Enterprise Cloud Hosting & Managed Infrastructure | Bird Hills Tech Dubai",
   description:
     "Ultra-fast NVMe cloud hosting, managed VPS, and dedicated servers in Dubai. Sub-15ms GCC latency, 99.99% uptime guarantee, free SSL, and zero-downtime migration.",
   alternates: {
-    canonical: "https://birdhillstechnew.com/hosting",
+    canonical: "https://birdhillstech.com/hosting",
   },
 };
 
@@ -466,34 +467,19 @@ export default async function HostingPage() {
         </div>
       </section>
 
-      {/* 6. FAQS */}
-      <section className="py-24 bg-[#FAF8F5] border-t border-[#E4E7EC]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 space-y-2">
-            <span className="text-xs font-bold tracking-wider uppercase text-[#C59B27]">
-              TECHNICAL CLARITY
-            </span>
-            <h2 className="text-3xl font-extrabold text-[#070B14] tracking-tight">
-              Hosting Frequently Asked Questions
-            </h2>
-          </div>
-
-          <div className="space-y-4">
-            {hostingFaqs.map((faq) => (
-              <div
-                key={faq.q}
-                className="p-6 rounded-2xl bg-white border border-[#E4E7EC] shadow-2xs space-y-2"
-              >
-                <h3 className="text-base font-bold text-[#070B14] flex items-center gap-2">
-                  <HelpCircle size={17} className="text-[#C59B27] shrink-0" />
-                  {faq.q}
-                </h3>
-                <p className="text-xs text-[#475467] leading-relaxed pl-6">{faq.a}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* 6. FAQS ACCORDION WITH SCHEMA MARKUP */}
+      <FaqAccordion
+        items={hostingFaqs.map((f) => ({
+          question: f.q,
+          answer: f.a,
+          category: "Cloud Infrastructure",
+        }))}
+        title="Hosting Frequently Asked Questions"
+        eyebrow="TECHNICAL CLARITY"
+        description="Everything you need to know about our Dubai Tier-3/4 data center nodes, zero-downtime migration, and automated off-site backups."
+        theme="light"
+        includeSchema={true}
+      />
 
       <FinalCtaSection />
     </div>

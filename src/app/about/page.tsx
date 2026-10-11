@@ -16,17 +16,63 @@ import {
   Compass,
   CheckCircle2,
   Award,
+  Lock,
+  Server,
+  FileCode2,
 } from "lucide-react";
+import FaqAccordion, { FaqItem } from "@/components/common/FaqAccordion";
 import FinalCtaSection from "@/components/home/FinalCtaSection";
 
 export const metadata: Metadata = {
   title: "About Us | Technology × Creative × Growth | Bird Hills Tech Dubai",
   description:
-    "Learn about Bird Hills Tech, a premier Dubai digital firm bridging technology engineering, creative design, and measurable commercial growth.",
+    "Learn about Bird Hills Tech, a premier Dubai digital firm bridging software engineering, creative design systems, and measurable commercial growth in the UAE.",
   alternates: {
     canonical: "https://birdhillstech.com/about",
   },
+  openGraph: {
+    title: "About Bird Hills Tech | Dubai Technology & Digital Growth Firm",
+    description:
+      "Enterprise web engineering, prestigious corporate identity, and B2B growth marketing headquartered at Stone Building, Deira, Dubai.",
+    url: "https://birdhillstech.com/about",
+    siteName: "Bird Hills Tech",
+    locale: "en_AE",
+    type: "website",
+  },
 };
+
+const ABOUT_FAQS: FaqItem[] = [
+  {
+    question: "Where is Bird Hills Tech located, and can we visit your office?",
+    answer:
+      "Our registered corporate headquarters is located at Stone Building, 122 7th A Street, Al Baraha, Deira, Dubai, UAE (+971 52 440 5785). We welcome scheduled client consultations at our premises and also conduct executive briefing meetings at client offices across Dubai, Abu Dhabi, and Sharjah.",
+    category: "General",
+  },
+  {
+    question: "What differentiates Bird Hills Tech from other digital agencies in Dubai?",
+    answer:
+      "Most agencies in the region are either pure marketing firms that outsource coding to unvetted freelancers, or offshore dev shops with no creative sophistication. Bird Hills Tech integrates senior software architects, brand designers, and performance marketing specialists under one roof in Dubai. We guarantee sub-second page loads (< 0.8s), 100% full source code ownership, and closed-loop revenue reporting.",
+    category: "Philosophy",
+  },
+  {
+    question: "What are your core engineering standards and data protection protocols?",
+    answer:
+      "We build type-safe, modern web platforms using Next.js 16, TypeScript, and edge cloud architectures. All platforms adhere strictly to UAE Federal Decree-Law No. 45 on Personal Data Protection (PDPL), incorporate automated daily encrypted backups, TLS 1.3 encryption, and sub-15ms GCC latency.",
+    category: "Engineering",
+  },
+  {
+    question: "Who will manage and communicate on our project?",
+    answer:
+      "You work directly with a dedicated Senior Technical Project Lead and Solution Architect based in Dubai. You have direct access via Slack, WhatsApp, and weekly milestone review calls—no layers of junior account coordinators or miscommunicated requirements.",
+    category: "Execution",
+  },
+  {
+    question: "Do we retain full ownership of the intellectual property and code?",
+    answer:
+      "Yes, completely. Unlike traditional agencies that attempt to lock you into proprietary hosting platforms or recurring code licenses, Bird Hills Tech transfers 100% of all intellectual property, Figma master design files, database schemas, and Git repositories upon project completion.",
+    category: "Legal & IP",
+  },
+];
 
 export default function AboutPage() {
   const capabilities = [
@@ -62,6 +108,29 @@ export default function AboutPage() {
         "Conversion Rate Optimization (CRO) Audits",
         "Closed-Loop Revenue & Pipeline Tracking",
       ],
+    },
+  ];
+
+  const engineeringGuarantees = [
+    {
+      icon: Zap,
+      title: "Sub-Second LCP Guarantee",
+      desc: "Every website and web application is engineered to achieve < 0.8s Largest Contentful Paint on mobile networks, maximizing conversion and Google SEO rank.",
+    },
+    {
+      icon: Lock,
+      title: "UAE PDPL Data Compliance",
+      desc: "Architected in strict adherence with UAE Federal Decree-Law No. 45, ensuring regional data sovereignty, bank-grade encryption, and zero third-party telemetry leaks.",
+    },
+    {
+      icon: FileCode2,
+      title: "100% IP & Code Ownership",
+      desc: "You receive clean, documented source code repositories, database models, and Figma design tokens. No licensing lock-ins or proprietary CMS hostage-taking.",
+    },
+    {
+      icon: Server,
+      title: "Sub-15ms GCC Cloud Latency",
+      desc: "Deployed on pure NVMe enterprise edge servers physically situated for UAE and GCC speed, backed by 99.99% uptime SLAs and 15-minute emergency support.",
     },
   ];
 
@@ -119,7 +188,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2000&q=90"
-            alt="Dubai business district"
+            alt="Dubai business district and corporate financial center"
             fill
             priority
             sizes="100vw"
@@ -138,7 +207,7 @@ export default function AboutPage() {
               Built to bridge the divide between technology and growth.
             </h1>
             <p className="text-lg sm:text-xl text-slate-300 leading-relaxed font-normal">
-              Bird Hills Tech is a Dubai-based technology, creative and digital growth firm. We engineer digital assets that command commercial authority and generate real business revenue.
+              Bird Hills Tech is a Dubai-based technology, creative, and digital growth firm. We engineer digital assets that command commercial authority and generate real business revenue across the UAE and GCC.
             </p>
           </div>
         </div>
@@ -233,7 +302,45 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 4. EXPANSION TIMELINE & MILESTONES */}
+      {/* 4. ENGINEERING STANDARDS & SECURITY GUARANTEES (NEW) */}
+      <section className="py-24 bg-[#0B1730] text-white border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-widest text-[#D4AF37] uppercase bg-[#C59B27]/15 border border-[#C59B27]/30 mb-4">
+              <ShieldCheck size={13} className="text-[#D4AF37]" />
+              ENGINEERING INTEGRITY & SLA
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+              Rigorous Standards for Mission-Critical Operations
+            </h2>
+            <p className="text-sm sm:text-base text-slate-300 mt-3 leading-relaxed">
+              We eliminate technical debt before it starts with uncompromising performance budgets, regional security standards, and zero proprietary lock-in.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {engineeringGuarantees.map((g) => {
+              const Icon = g.icon;
+              return (
+                <div
+                  key={g.title}
+                  className="bg-white/[0.04] border border-white/10 rounded-2xl p-6 hover:border-[#C59B27]/40 transition-all duration-300 flex flex-col justify-between"
+                >
+                  <div>
+                    <div className="w-12 h-12 rounded-xl bg-[#C59B27]/10 text-[#D4AF37] flex items-center justify-center mb-5">
+                      <Icon size={22} />
+                    </div>
+                    <h3 className="text-lg font-bold text-white mb-2">{g.title}</h3>
+                    <p className="text-xs text-slate-300 leading-relaxed">{g.desc}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* 5. EXPANSION TIMELINE & MILESTONES */}
       <section className="py-24 bg-white border-t border-[#E4E7EC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-16">
@@ -264,7 +371,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 5. STUDIO CULTURE & EXECUTION */}
+      {/* 6. STUDIO CULTURE & EXECUTION */}
       <section className="py-24 bg-[#FAF8F5] border-t border-[#E4E7EC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-16">
@@ -299,7 +406,17 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 6. DUBAI PRESENCE & CONTACT */}
+      {/* 7. DEDICATED ABOUT FAQ ACCORDION (NEW) */}
+      <FaqAccordion
+        items={ABOUT_FAQS}
+        title="Frequently Asked About Our Practice"
+        eyebrow="AGENCY CLARITY & GOVERNANCE"
+        description="Direct answers regarding our Dubai studio, team structure, client engagement contracts, and engineering guarantees."
+        theme="light"
+        includeSchema={true}
+      />
+
+      {/* 8. DUBAI PRESENCE & CONTACT */}
       <section className="py-20 bg-white border-t border-[#E4E7EC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="p-8 sm:p-12 rounded-3xl bg-[#070B14] border border-[#C59B27]/25 text-white flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl">

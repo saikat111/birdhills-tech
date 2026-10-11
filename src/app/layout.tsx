@@ -118,15 +118,16 @@ export default async function RootLayout({
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": ["Organization", "LocalBusiness"],
+    "@type": ["Organization", "LocalBusiness", "ProfessionalService"],
     name: settings.company_name || "Bird Hills Tech",
     url: settings.website || "https://birdhillstech.com",
     logo: "https://birdhillstech.com/images/logo-full.png",
+    image: "https://birdhillstech.com/images/logo-full.png",
     telephone: settings.phone,
     email: settings.email,
     address: {
       "@type": "PostalAddress",
-      streetAddress: settings.address,
+      streetAddress: settings.address || "Stone Building, 122 7th A Street, Al Baraha",
       addressLocality: "Dubai",
       addressRegion: "Dubai",
       addressCountry: "AE",
@@ -136,6 +137,30 @@ export default async function RootLayout({
       latitude: "25.2818",
       longitude: "55.3142",
     },
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+        ],
+        opens: "09:00",
+        closes: "18:00",
+      },
+    ],
+    sameAs: [
+      settings.linkedin_url,
+      settings.twitter_url,
+      settings.instagram_url,
+      settings.github_url,
+      settings.facebook_url,
+      settings.youtube_url,
+    ].filter(Boolean),
+    areaServed: ["United Arab Emirates", "Saudi Arabia", "Qatar", "GCC", "Global"],
     priceRange: "$$",
     description: settings.site_description,
   };

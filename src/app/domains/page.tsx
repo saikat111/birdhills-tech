@@ -16,6 +16,7 @@ import {
   Award,
 } from "lucide-react";
 import { DomainSearchClient } from "@/components/domains/DomainSearchClient";
+import FaqAccordion from "@/components/common/FaqAccordion";
 import FinalCtaSection from "@/components/home/FinalCtaSection";
 
 export const metadata: Metadata = {
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
   description:
     "Register official .ae, .com, .ai, and global domain names in Dubai. Instant DNS management, free WHOIS privacy, DNSSEC security, and zero-downtime domain transfers.",
   alternates: {
-    canonical: "https://birdhillstechnew.com/domains",
+    canonical: "https://birdhillstech.com/domains",
   },
 };
 
@@ -335,34 +336,19 @@ export default function DomainsPage() {
         </div>
       </section>
 
-      {/* 5. DOMAIN FAQS */}
-      <section className="py-24 bg-[#FAF8F5] border-t border-[#E4E7EC]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 space-y-2">
-            <span className="text-xs font-bold tracking-wider uppercase text-[#C59B27]">
-              REGISTRY CLARITY
-            </span>
-            <h2 className="text-3xl font-extrabold text-[#070B14] tracking-tight">
-              Domain Registration Frequently Asked Questions
-            </h2>
-          </div>
-
-          <div className="space-y-4">
-            {domainFaqs.map((faq) => (
-              <div
-                key={faq.q}
-                className="p-6 rounded-2xl bg-white border border-[#E4E7EC] shadow-2xs space-y-2"
-              >
-                <h3 className="text-base font-bold text-[#070B14] flex items-center gap-2">
-                  <HelpCircle size={17} className="text-[#C59B27] shrink-0" />
-                  {faq.q}
-                </h3>
-                <p className="text-xs text-[#475467] leading-relaxed pl-6">{faq.a}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* 5. DOMAIN FAQS ACCORDION WITH SCHEMA MARKUP */}
+      <FaqAccordion
+        items={domainFaqs.map((f) => ({
+          question: f.q,
+          answer: f.a,
+          category: "Domain Registry",
+        }))}
+        title="Domain Registration Frequently Asked Questions"
+        eyebrow="REGISTRY CLARITY"
+        description="Clear guidance on .ae domain registration requirements, DNSSEC security, free WHOIS privacy, and portfolio transfers."
+        theme="light"
+        includeSchema={true}
+      />
 
       <FinalCtaSection />
     </div>
