@@ -32,16 +32,15 @@ const HERO_SLIDES = [
     highlight: "Custom Digital Platforms · Bespoke UI/UX Design · Full Project Delivery",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=2400&q=95",
-    alt: "High-performance Next.js application development studio with modern engineering workstations",
+    image: "/ima/web8.jpg",
+    alt: "High-performance enterprise software and web development IDE workspace with code analytics",
     tag: "FEATURED SERVICE · 01",
     location: "Next.js Web Applications & Custom Portals",
     highlight: "Enterprise Architecture · High-Converting UI/UX · Scalable Cloud Tech Stack",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=2400&q=95",
+      "https://plus.unsplash.com/premium_photo-1685086785054-d047cdc0e525?auto=format&fit=crop&w=2400&q=95",
     alt: "Illuminated high-speed cloud datacenter with glowing server racks and fiber optic connectivity",
     tag: "FEATURED SERVICE · 02",
     location: "Domain & NVMe Cloud Hosting",
@@ -57,11 +56,19 @@ const HERO_SLIDES = [
   },
   {
     image:
-      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=2400&q=95",
+      "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=2400&q=95",
     alt: "Autonomous artificial intelligence agents and smart conversational business workflow automation",
     tag: "FEATURED SERVICE · 04",
     location: "AI Automation & WhatsApp Bots",
     highlight: "Autonomous 24/7 AI Agents · Conversational WhatsApp Bots · Automated Workflow Pipelines",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=2400&q=95",
+    alt: "Collaborative software engineering team working together on enterprise digital platforms in modern tech studio",
+    tag: "TECHNICAL SQUAD · DUBAI",
+    location: "Full-Stack Software Engineers & Solution Architects",
+    highlight: "Senior Technical Leadership · Type-Safe Engineering · Direct UAE Accountability",
   },
 ];
 

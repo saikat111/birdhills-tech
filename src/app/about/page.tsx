@@ -165,19 +165,20 @@ export default function AboutPage() {
   const studioImages = [
     {
       title: "Architecture & Engineering Planning",
-      image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
+      image: "/ima/web8.jpg",
     },
     {
       title: "Creative Design & UI/UX Systems",
-      image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80",
+      image: "/ima/web5.jpg",
     },
     {
-      title: "Dubai Corporate Consultation & Strategy",
-      image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80",
+      title: "Cloud Infrastructure & Sovereign Edge",
+      image:
+        "https://plus.unsplash.com/premium_photo-1685086785054-d047cdc0e525?auto=format&fit=crop&w=800&q=80",
     },
     {
-      title: "Real-Time Telemetry & Growth Analytics",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+      title: "Full-Stack Development & Architecture",
+      image: "/ima/web4.jpg",
     },
   ];
 
@@ -235,8 +236,8 @@ export default function AboutPage() {
             <div className="lg:col-span-6">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3] bg-slate-900 border border-slate-200">
                 <Image
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80"
-                  alt="Bird Hills Tech engineering and creative leadership team"
+                  src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=85"
+                  alt="Bird Hills Tech engineering and creative leadership team collaborating in Dubai studio"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"

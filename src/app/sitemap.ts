@@ -4,9 +4,9 @@ import { getSiteSettings } from "@/lib/settings";
 
 const SERVICE_IMAGES: Record<string, string> = {
   "web-development":
-    "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=2000&q=90",
+    "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=2000&q=90",
   "domain-hosting":
-    "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=2000&q=90",
+    "https://plus.unsplash.com/premium_photo-1685086785054-d047cdc0e525?auto=format&fit=crop&w=2000&q=90",
   "digital-marketing":
     "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=2000&q=90",
   "google-business-profile-local-seo":

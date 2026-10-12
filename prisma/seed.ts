@@ -537,7 +537,7 @@ async function main() {
       categoryId: catTech.id,
       author: "Bird Hills Tech Engineering Team",
       readTime: "7 min read",
-      coverImage: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80",
+      coverImage: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
       excerpt: "Why slow WordPress templates are costing Dubai businesses millions, and how high-performance Next.js architectures deliver sub-second page loads and higher conversions.",
       status: "published",
       seoTitle: "Next.js Web Development in Dubai 2026 | Enterprise Guide | Bird Hills Tech",

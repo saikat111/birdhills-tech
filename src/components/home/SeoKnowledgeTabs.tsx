@@ -61,8 +61,8 @@ const TABS_DATA: TabContent[] = [
     ],
     ctaText: "Explore Web Engineering",
     ctaHref: "/services/web-development",
-    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=85",
-    imageAlt: "Clean type-safe code editor and modern web architecture design",
+    image: "/ima/web3.jpeg",
+    imageAlt: "Type-safe Next.js enterprise web development architecture with cloud database and APIs",
   },
   {
     id: "local-seo",
@@ -157,8 +157,8 @@ const TABS_DATA: TabContent[] = [
     ],
     ctaText: "View Hosting Solutions",
     ctaHref: "/hosting",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=85",
-    imageAlt: "Modern enterprise cloud server data center",
+    image: "https://plus.unsplash.com/premium_photo-1685086785054-d047cdc0e525?auto=format&fit=crop&w=1200&q=85",
+    imageAlt: "High-speed enterprise cloud datacenter with illuminated optical network racks",
   },
   {
     id: "ai-auto",
@@ -221,8 +221,8 @@ const TABS_DATA: TabContent[] = [
     ],
     ctaText: "View Creative & UX Practice",
     ctaHref: "/services/branding-creative",
-    image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=85",
-    imageAlt: "Executive team reviewing bilingual design system",
+    image: "/ima/web6.jpg",
+    imageAlt: "Prestigious 3D gold embossed brand and web design architecture",
   },
 ];
 

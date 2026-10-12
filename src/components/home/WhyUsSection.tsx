@@ -48,8 +48,8 @@ export function WhyUsSection() {
             <div className="pt-4">
               <div className="relative aspect-[16/10] rounded-2xl overflow-hidden shadow-lg border border-white">
                 <Image
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
-                  alt="Bird Hills Tech engineering and creative growth team collaborating on software products"
+                  src="/ima/web4.jpg"
+                  alt="Bird Hills Tech senior software engineers architecting modern web platforms"
                   fill
                   sizes="(max-width: 1024px) 100vw, 40vw"
                   className="object-cover"

@@ -312,12 +312,12 @@ const serviceImagery: Record<
   }
 > = {
   "web-development": {
-    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=2000&q=90",
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=2000&q=90",
     priceUsd: "AED 4,500 ($1,225)",
     timeline: "2-4 Weeks",
   },
   "domain-hosting": {
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=2000&q=90",
+    image: "https://plus.unsplash.com/premium_photo-1685086785054-d047cdc0e525?auto=format&fit=crop&w=2000&q=90",
     priceUsd: "AED 36/mo ($9.99)",
     timeline: "Instant Setup",
   },
@@ -347,7 +347,7 @@ const serviceImagery: Record<
     timeline: "2-3 Weeks",
   },
   "branding-creative": {
-    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=2000&q=90",
+    image: "/ima/web5.jpg",
     priceUsd: "AED 3,200 ($870)",
     timeline: "2-3 Weeks",
   },
@@ -487,7 +487,7 @@ export default async function ServiceDetailPage({
                   {service.category} DISCIPLINE
                 </span>
                 <span className="px-3.5 py-1 rounded-full text-xs font-extrabold bg-[#070B14] text-[#D4AF37] border border-[#C59B27]/40">
-                  {imagery.priceUsd} USD
+                  {imagery.priceUsd}
                 </span>
                 <span className="px-3.5 py-1 rounded-full text-xs font-semibold text-slate-300 bg-white/10 border border-white/15">
                   Timeline: {imagery.timeline}
@@ -645,6 +645,182 @@ export default async function ServiceDetailPage({
           </div>
         </div>
       </section>
+
+      {/* 3.5 VISUAL ENGINEERING ARCHITECTURE SHOWCASE */}
+      {service.slug === "web-development" && (
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl mb-12">
+              <span className="text-xs font-extrabold tracking-widest text-[#C59B27] uppercase">
+                ENGINEERING ARCHITECTURE SHOWCASE
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B0F19] tracking-tight mt-1">
+                Visualizing High-Performance Web Engineering
+              </h2>
+              <p className="text-xs sm:text-sm text-[#667085] mt-2">
+                From component design systems to type-safe Next.js full-stack architectures, our platforms are engineered for extreme speed and enterprise reliability.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                {
+                  title: "Full-Stack Web Architecture & Cloud APIs",
+                  desc: "Modern headless frontend connected to cloud databases, microservices, and secure APIs.",
+                  image: "/ima/web3.jpeg",
+                  tag: "Architecture",
+                },
+                {
+                  title: "Enterprise IDE & Precision Engineering",
+                  desc: "Type-safe TypeScript, Next.js 16 Server Components, and automated CI/CD pipelines.",
+                  image: "/ima/web8.jpg",
+                  tag: "Engineering",
+                },
+                {
+                  title: "Human-Centered UI/UX Design Systems",
+                  desc: "Interactive Figma design tokens, accessible components, and seamless responsive flows.",
+                  image: "/ima/web5.jpg",
+                  tag: "UI/UX Systems",
+                },
+                {
+                  title: "Responsive Cross-Platform Development",
+                  desc: "Pixel-perfect mobile, tablet, and desktop rendering tested across real-world UAE networks.",
+                  image: "/ima/web1.jpg",
+                  tag: "Frontend",
+                },
+                {
+                  title: "System Architecture & Quality Testing",
+                  desc: "Comprehensive testing, security hardening, and performance audits prior to launch.",
+                  image: "/ima/web4.jpg",
+                  tag: "QA & Testing",
+                },
+                {
+                  title: "Prestige Brand Visual Authority",
+                  desc: "Bespoke digital design tailored to command respect in the Dubai and GCC luxury markets.",
+                  image: "/ima/web6.jpg",
+                  tag: "Prestige Brand",
+                },
+                {
+                  title: "Cloud Computing & Intelligent Systems",
+                  desc: "High-throughput cloud architecture, AI workflows, and distributed microservices for enterprise agility.",
+                  image: "/ima/web2.jpg",
+                  tag: "Cloud & AI",
+                },
+                {
+                  title: "Comprehensive Software Engineering Taxonomy",
+                  desc: "Holistic development lifecycle from data modeling and security hardening to automated deployment.",
+                  image: "/ima/web7.jpg",
+                  tag: "Software Engineering",
+                },
+                {
+                  title: "Modular Frontend Standards & Multi-Device UI",
+                  desc: "Clean semantic HTML5, CSS architecture, and modern JavaScript engines built for maximum cross-device speed.",
+                  image: "/ima/web9.jpg",
+                  tag: "Frontend Standards",
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="group rounded-3xl overflow-hidden border border-[#E4E7EC] bg-[#FAF8F5] hover:border-[#C59B27]/40 hover:shadow-xl transition-all duration-300 flex flex-col"
+                >
+                  <div className="relative aspect-[16/10] overflow-hidden bg-slate-900">
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#070B14]/80 via-transparent to-transparent" />
+                    <span className="absolute top-4 left-4 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#070B14]/90 text-[#D4AF37] border border-[#C59B27]/40 backdrop-blur-md">
+                      {item.tag}
+                    </span>
+                  </div>
+                  <div className="p-6 flex flex-col justify-between flex-1 space-y-2">
+                    <h3 className="text-base font-bold text-[#0B0F19] group-hover:text-[#C59B27] transition-colors">
+                      {item.title}
+                    </h3>
+                    <p className="text-xs text-[#667085] leading-relaxed">
+                      {item.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {service.slug === "domain-hosting" && (
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl mb-12">
+              <span className="text-xs font-extrabold tracking-widest text-[#C59B27] uppercase">
+                INFRASTRUCTURE ARCHITECTURE SHOWCASE
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B0F19] tracking-tight mt-1">
+                Tier-4 Cloud Infrastructure & Sovereign Edge
+              </h2>
+              <p className="text-xs sm:text-sm text-[#667085] mt-2">
+                Pure NVMe SSD arrays, sub-15ms GCC latency, bank-grade DNSSEC, and enterprise DDoS shielding.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                {
+                  title: "Illuminated High-Density NVMe Server Racks",
+                  desc: "Enterprise cloud hardware with dual mirrored arrays and automated daily snapshot backups.",
+                  image:
+                    "https://plus.unsplash.com/premium_photo-1685086785054-d047cdc0e525?auto=format&fit=crop&w=1200&q=85",
+                  tag: "Cloud Nodes",
+                },
+                {
+                  title: "Global Low-Latency Anycast Routing",
+                  desc: "Edge-cached DNS propagation and Anycast network delivering sub-15ms regional speed.",
+                  image:
+                    "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=85",
+                  tag: "Global DNS",
+                },
+                {
+                  title: "Modern Optical Datacenter Infrastructure",
+                  desc: "Sub-millisecond internal routing, fiber-optic uplinks, and redundant power backups.",
+                  image:
+                    "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&q=85",
+                  tag: "Tier-4 Center",
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="group rounded-3xl overflow-hidden border border-[#E4E7EC] bg-[#FAF8F5] hover:border-[#C59B27]/40 hover:shadow-xl transition-all duration-300 flex flex-col"
+                >
+                  <div className="relative aspect-[16/10] overflow-hidden bg-slate-900">
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#070B14]/80 via-transparent to-transparent" />
+                    <span className="absolute top-4 left-4 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#070B14]/90 text-[#D4AF37] border border-[#C59B27]/40 backdrop-blur-md">
+                      {item.tag}
+                    </span>
+                  </div>
+                  <div className="p-6 flex flex-col justify-between flex-1 space-y-2">
+                    <h3 className="text-base font-bold text-[#0B0F19] group-hover:text-[#C59B27] transition-colors">
+                      {item.title}
+                    </h3>
+                    <p className="text-xs text-[#667085] leading-relaxed">
+                      {item.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* 4. EXECUTION ROADMAP */}
       {processSteps.length > 0 && (

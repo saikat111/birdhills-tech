@@ -42,7 +42,7 @@ export default function ServicesHubPage() {
       category: "Technology",
       desc: "Bespoke corporate websites and mission-critical web applications built on modern Next.js architecture engineered for maximum performance.",
       image:
-        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=85",
+        "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=85",
       icon: Code2,
       price: "From AED 4,500 ($1,225)",
       subServices: [
@@ -61,7 +61,7 @@ export default function ServicesHubPage() {
       category: "Infrastructure",
       desc: "Accredited UAE .ae and global domain registration paired with pure NVMe GCC edge cloud servers and corporate business email.",
       image:
-        "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=85",
+        "https://plus.unsplash.com/premium_photo-1685086785054-d047cdc0e525?auto=format&fit=crop&w=800&q=85",
       icon: Globe,
       price: "From AED 36/mo ($9.99)",
       subServices: [
@@ -186,8 +186,7 @@ export default function ServicesHubPage() {
       slug: "/services/branding-creative",
       category: "Creative",
       desc: "Prestigious corporate identity design, bilingual English & Arabic typography, interactive UI/UX systems, and high-conversion ad creatives.",
-      image:
-        "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=800&q=85",
+      image: "/ima/web5.jpg",
       icon: Palette,
       price: "From AED 3,200 ($870)",
       subServices: [
