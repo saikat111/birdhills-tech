@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "prisma generate && next build && node scripts/sync-db.js",
+    "build": "prisma generate && next build --webpack && node scripts/sync-db.js",
     "start": "node server.js",
     "postinstall": "prisma generate",
-    "package:hostinger": "next build && node scripts/sync-db.js && echo 'Hostinger deployment files ready!'",
+    "package:hostinger": "next build --webpack && node scripts/sync-db.js && echo 'Hostinger deployment files ready!'",
     "lint": "eslint"
   },
   "dependencies": {
