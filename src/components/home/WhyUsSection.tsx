@@ -17,7 +17,7 @@ export function WhyUsSection() {
     {
       icon: Gauge,
       title: "Built for Performance",
-      desc: "Speed, usability, SEO and conversion are considered from day one. We engineer sub-second page loads that keep visitors engaged.",
+      desc: "Speed, usability, SEO and conversion are considered from day one. We engineer high-performance platforms that keep visitors engaged.",
     },
     {
       icon: Users2,

@@ -40,11 +40,11 @@ export default function ServicesHubPage() {
       title: "Web Development",
       slug: "/services/web-development",
       category: "Technology",
-      desc: "Bespoke corporate websites and mission-critical web applications built on modern Next.js architecture with sub-second page speeds.",
+      desc: "Bespoke corporate websites and mission-critical web applications built on modern Next.js architecture engineered for maximum performance.",
       image:
         "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=85",
       icon: Code2,
-      price: "From $4,950",
+      price: "From AED 4,500 ($1,225)",
       subServices: [
         "Business Websites",
         "WordPress",
@@ -63,7 +63,7 @@ export default function ServicesHubPage() {
       image:
         "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=85",
       icon: Globe,
-      price: "From $9.99/mo",
+      price: "From AED 36/mo ($9.99)",
       subServices: [
         "Domain Registration",
         "Domain Transfer & Management",
@@ -83,7 +83,7 @@ export default function ServicesHubPage() {
       image:
         "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=85",
       icon: TrendingUp,
-      price: "From $1,950/mo",
+      price: "From AED 4,500/mo ($1,225)",
       subServices: [
         "SEO",
         "Google Ads",
@@ -144,7 +144,7 @@ export default function ServicesHubPage() {
       category: "Automation",
       desc: "Deploy autonomous conversational agents, 24/7 WhatsApp customer service bots, and n8n workflow pipelines that eradicate manual tasks.",
       image:
-        "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=85",
+        "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=85",
       icon: Bot,
       price: "From AED 3,500 ($950)",
       subServices: [
@@ -166,7 +166,7 @@ export default function ServicesHubPage() {
       category: "Operations",
       desc: "Centralize your sales pipeline with HubSpot, Zoho, automated lead routing, instant WhatsApp lead follow-ups, and calendar bookings.",
       image:
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=85",
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=85",
       icon: Workflow,
       price: "From AED 2,800 ($760)",
       subServices: [
@@ -187,7 +187,7 @@ export default function ServicesHubPage() {
       category: "Creative",
       desc: "Prestigious corporate identity design, bilingual English & Arabic typography, interactive UI/UX systems, and high-conversion ad creatives.",
       image:
-        "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=85",
+        "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=800&q=85",
       icon: Palette,
       price: "From AED 3,200 ($870)",
       subServices: [

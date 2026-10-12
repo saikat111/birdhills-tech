@@ -1,5 +1,5 @@
 import React from "react";
-import { CheckCircle2 } from "lucide-react";
+import { ShieldCheck, Server, Cpu, CheckCircle2 } from "lucide-react";
 
 interface TrustProps {
   headline?: string;
@@ -11,10 +11,10 @@ export function TrustSection({
   statement = "Technology · Creative · Growth — Helping ambitious businesses build, launch and grow across the UAE and global markets.",
 }: TrustProps) {
   const pillars = [
-    "Enterprise Engineering Standards",
-    "Bespoke Brand Identities",
-    "Data-Driven Growth Execution",
-    "Direct Dubai Accountability",
+    { label: "Enterprise Engineering Standards", icon: Cpu },
+    { label: "Bespoke Brand & UI Systems", icon: CheckCircle2 },
+    { label: "Tier-4 Edge Infrastructure", icon: Server },
+    { label: "Direct Dubai Accountability", icon: ShieldCheck },
   ];
 
   return (
@@ -32,16 +32,19 @@ export function TrustSection({
           </div>
 
           {/* Typography-first Trust Badges */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full md:w-auto">
-            {pillars.map((pillar) => (
-              <div
-                key={pillar}
-                className="flex items-center gap-2 bg-white px-3.5 py-2.5 rounded-xl border border-slate-200/80 hover:border-[#C59B27]/40 transition-colors shadow-2xs text-xs font-semibold text-[#101828]"
-              >
-                <CheckCircle2 size={15} className="text-[#C59B27] shrink-0" />
-                <span>{pillar}</span>
-              </div>
-            ))}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 w-full md:w-auto">
+            {pillars.map((pillar) => {
+              const Icon = pillar.icon;
+              return (
+                <div
+                  key={pillar.label}
+                  className="flex items-center gap-2.5 bg-white px-3.5 py-2.5 rounded-xl border border-slate-200/80 hover:border-[#C59B27]/40 transition-colors shadow-2xs text-xs font-semibold text-[#101828]"
+                >
+                  <Icon size={15} className="text-[#C59B27] shrink-0" />
+                  <span>{pillar.label}</span>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

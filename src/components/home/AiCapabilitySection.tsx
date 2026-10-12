@@ -47,7 +47,7 @@ export function AiCapabilitySection() {
 
               <div className="pt-2 flex flex-wrap items-center gap-4">
                 <Link
-                  href="/services/ai-solutions"
+                  href="/services/ai-automation"
                   className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#D4AF37] via-[#C59B27] to-[#B38728] hover:brightness-105 text-white font-bold text-sm shadow-md shadow-[#C59B27]/25 transition-all group"
                 >
                   Explore AI Solutions

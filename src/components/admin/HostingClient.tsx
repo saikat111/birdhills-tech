@@ -73,7 +73,7 @@ export function HostingClient({ initialPlans }: HostingClientProps) {
       priceUsd: "$19.99",
       billingCycle: "/ month",
       badge: "Fast Launch",
-      description: "Ultra-fast NVMe cloud hosting with sub-second page loads and free SSL.",
+      description: "Ultra-fast NVMe cloud hosting with enterprise-grade speed and free SSL.",
       storage: "50 GB NVMe SSD",
       bandwidth: "Unmetered Bandwidth",
       featuresRaw: "Unlimited Hosted Websites\n50 GB Pure NVMe Storage\nFree Automatic Wildcard SSL\n10 Corporate Email Inboxes\nDaily Automated Cloud Backups\n99.99% Network Uptime SLA",

@@ -46,7 +46,7 @@ const serviceDetails: Record<
       "Business Websites": "Prestigious corporate web presences tailored for Dubai holding groups, firms, and enterprises.",
       "WordPress": "Hardened, edge-cached headless or custom-themed WordPress builds with zero plugin bloat.",
       "eCommerce": "High-conversion online storefronts integrated with UAE payment gateways (Stripe, Tabby, Tamara).",
-      "Landing Pages": "Sub-second PPC landing experiences engineered for maximum lead capture and high ad quality scores.",
+      "Landing Pages": "High-converting PPC landing experiences engineered for maximum lead capture and high ad quality scores.",
       "Custom Development": "Bespoke SaaS platforms, client portals, and secure internal software tailored to your workflow.",
       "Website Redesign": "Complete modernization of legacy websites to boost speed, mobile UX, and organic conversions.",
       "Website Support": "Dedicated 24/7 technical SLAs, security patching, uptime monitoring, and ongoing feature rollouts.",
@@ -54,7 +54,7 @@ const serviceDetails: Record<
     faqs: [
       {
         q: "Why choose custom Next.js web development over WordPress or template builders?",
-        a: "Next.js offers unbeatable speed, enterprise-grade security, and unlimited architectural flexibility. Unlike template builders that slow down with plugins, custom code guarantees sub-second page loads, higher Google rankings, and complete ownership of your intellectual property.",
+        a: "Next.js offers unbeatable speed, enterprise-grade security, and unlimited architectural flexibility. Unlike template builders that slow down with plugins, custom code guarantees high-performance page loads, higher Google rankings, and complete ownership of your intellectual property.",
       },
       {
         q: "How long does a corporate website development project take?",
@@ -313,17 +313,17 @@ const serviceImagery: Record<
 > = {
   "web-development": {
     image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=2000&q=90",
-    priceUsd: "$4,950",
+    priceUsd: "AED 4,500 ($1,225)",
     timeline: "2-4 Weeks",
   },
   "domain-hosting": {
     image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=2000&q=90",
-    priceUsd: "$9.99/mo",
+    priceUsd: "AED 36/mo ($9.99)",
     timeline: "Instant Setup",
   },
   "digital-marketing": {
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=2000&q=90",
-    priceUsd: "$1,950/mo",
+    priceUsd: "AED 4,500/mo ($1,225)",
     timeline: "Monthly Sprint",
   },
   "google-business-profile-local-seo": {
@@ -337,22 +337,22 @@ const serviceImagery: Record<
     timeline: "Monthly Sprint",
   },
   "ai-automation": {
-    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=2000&q=90",
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=2000&q=90",
     priceUsd: "AED 3,500 ($950)",
     timeline: "2-4 Weeks",
   },
   "crm-marketing-automation": {
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=2000&q=90",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=2000&q=90",
     priceUsd: "AED 2,800 ($760)",
     timeline: "2-3 Weeks",
   },
   "branding-creative": {
-    image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=2000&q=90",
+    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=2000&q=90",
     priceUsd: "AED 3,200 ($870)",
     timeline: "2-3 Weeks",
   },
   "analytics-cro": {
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=2000&q=90",
+    image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=2000&q=90",
     priceUsd: "AED 1,800/mo ($490)",
     timeline: "Monthly Sprint",
   },

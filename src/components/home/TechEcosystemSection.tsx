@@ -46,7 +46,7 @@ export function TechEcosystemSection() {
     {
       name: "AWS & Edge Cloud Infrastructure",
       category: "Cloud & DevOps",
-      desc: "Global CDN distribution, zero-downtime CI/CD deployments, DDoS mitigation, and sub-second GCC edge latency.",
+      desc: "Global CDN distribution, zero-downtime CI/CD deployments, DDoS mitigation, and low-latency GCC edge delivery.",
       badge: "Infrastructure",
     },
   ];

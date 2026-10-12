@@ -1072,7 +1072,7 @@ export function BlogClient({ initialPosts, categories }: BlogClientProps) {
                         type="button"
                         onClick={() =>
                           insertBlock(
-                            "> [!NOTE]\n> **Strategic Takeaway**: Enterprise performance in Dubai requires sub-second Core Web Vitals and local GCC compliance."
+                            "> [!NOTE]\n> **Strategic Takeaway**: Enterprise performance in Dubai requires top-tier Core Web Vitals and local GCC compliance."
                           )
                         }
                         className="px-2 py-1 rounded-lg bg-white border border-[#E4E7EC] text-[11px] font-bold text-[#C59B27] hover:bg-[#FAF8F5] flex items-center gap-1 shadow-2xs"

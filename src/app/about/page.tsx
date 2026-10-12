@@ -138,7 +138,7 @@ export default function AboutPage() {
     {
       year: "2022",
       title: "Foundations in Dubai",
-      desc: "Launched in the UAE with a pure engineering ethos: building sub-second headless websites and custom portals for regional businesses.",
+      desc: "Launched in the UAE with a pure engineering ethos: building high-performance modern websites and custom portals for regional businesses.",
     },
     {
       year: "2023",

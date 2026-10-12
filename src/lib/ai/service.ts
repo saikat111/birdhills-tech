@@ -196,7 +196,7 @@ export class BirdHillsAIService {
 
       if (lower.includes("website") || lower.includes("web development")) {
         return {
-          reply: `At Bird Hills Tech, we engineer high-performance websites built on modern frameworks like Next.js, optimized for sub-second page loads and maximum conversion.\n\nTo recommend the best architecture and scope for your project, could you share your name and company email address?`,
+          reply: `At Bird Hills Tech, we engineer high-performance websites built on modern frameworks like Next.js, optimized for ultra-fast load times and maximum conversion.\n\nTo recommend the best architecture and scope for your project, could you share your name and company email address?`,
           qualification: updatedQual,
         };
       }

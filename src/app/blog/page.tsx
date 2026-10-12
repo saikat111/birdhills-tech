@@ -68,7 +68,7 @@ export default async function BlogListingPage() {
               Knowledge, architecture & digital growth in Dubai.
             </h1>
             <p className="text-lg sm:text-xl text-slate-200 leading-relaxed font-normal drop-shadow-sm">
-              In-depth research on sub-second web architecture, B2B demand generation in the GCC, prestige brand identity, and pragmatic AI execution.
+              In-depth research on high-performance web architecture, B2B demand generation in the GCC, prestige brand identity, and pragmatic AI execution.
             </p>
           </div>
         </div>

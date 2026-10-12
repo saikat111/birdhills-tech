@@ -20,7 +20,7 @@ export function ServicesSection() {
     {
       num: "01",
       title: "Web Development",
-      desc: "Custom corporate websites, Next.js 16 platforms, and enterprise portals with sub-second page loads.",
+      desc: "Custom corporate websites, Next.js 16 platforms, and enterprise portals engineered for peak performance and scale.",
       href: "/services/web-development",
       icon: Code2,
       tag: "Technology",
