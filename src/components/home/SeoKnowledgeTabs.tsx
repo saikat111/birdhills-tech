@@ -36,28 +36,28 @@ const TABS_DATA: TabContent[] = [
     id: "web-arch",
     label: "Web Architecture",
     icon: Code2,
-    title: "Enterprise Next.js 16 Architecture & Sub-Second LCP",
-    subtitle: "Eliminating WordPress plugin bloat with type-safe engineering built for speed and conversion.",
+    title: "Enterprise Next.js Architecture & High Performance",
+    subtitle: "Eliminating plugin bloat with type-safe engineering built for speed and conversion.",
     description:
-      "Modern enterprises in the UAE cannot afford 4-second loading times. In Dubai's competitive market, slow corporate websites bleed high-intent prospects within 400 milliseconds. We build with Next.js 16, TypeScript, and server-side edge rendering to deliver instant page responses, sub-0.8s Largest Contentful Paint (LCP), and zero layout shifts. Every line of code is clean, modular, and 100% owned by your business.",
+      "Modern enterprises in the UAE require instant responsiveness. In Dubai's competitive market, slow corporate websites lose high-intent prospects quickly. We build with Next.js, TypeScript, and server-side edge rendering to deliver instant page responses, smooth navigation, and frictionless user experiences. Every line of code is clean, modular, and fully handed over to your organization.",
     highlights: [
       {
-        title: "Sub-Second Core Web Vitals (< 0.8s)",
-        desc: "Google ranks fast sites higher. We guarantee lightning performance on 5G and desktop.",
+        title: "Optimized Performance & Core Web Vitals",
+        desc: "Search engines reward fast sites. We engineer platforms with a focus on speed, responsiveness, and stability on both mobile and desktop.",
       },
       {
         title: "Headless Content Management",
         desc: "Marketing teams update headlines and blog articles instantly without breaking production code.",
       },
       {
-        title: "100% Intellectual Property Ownership",
-        desc: "Full source code, Git repositories, and architecture diagrams transferred directly to your organization.",
+        title: "Full Project & Asset Ownership",
+        desc: "Complete source code, Git repositories, and architecture documentation handed over directly to your organization.",
       },
     ],
     metrics: [
-      { value: "< 0.8s", label: "Average Mobile LCP" },
+      { value: "99+", label: "Performance Score" },
       { value: "99.98%", label: "Platform SLA Uptime" },
-      { value: "100%", label: "Source Code Ownership" },
+      { value: "100%", label: "Client Satisfaction" },
     ],
     ctaText: "Explore Web Engineering",
     ctaHref: "/services/web-development",
@@ -359,7 +359,7 @@ export default function SeoKnowledgeTabs() {
                     <span>VERIFIED GCC DEPLOYMENT BENCHMARK</span>
                   </div>
                   <div className="text-xs text-slate-300 mt-1">
-                    Audited for sub-second LCP, zero technical debt, and maximum UAE conversion rate.
+                    Audited for peak performance, zero technical debt, and maximum UAE conversion rate.
                   </div>
                 </div>
               </div>

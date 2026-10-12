@@ -258,9 +258,9 @@ export default async function ProjectDetailPage({
               <div className="text-xs font-bold text-slate-400 uppercase tracking-wider">
                 Performance Score
               </div>
-              <div className="text-3xl font-black text-[#C59B27]">&lt; 0.7s LCP</div>
+              <div className="text-3xl font-black text-[#C59B27]">99+ Score</div>
               <p className="text-xs text-[#667085] leading-relaxed">
-                Sub-second Largest Contentful Paint audited across regional GCC networks.
+                Top-tier Lighthouse performance and lightning-fast loading across regional GCC networks.
               </p>
             </div>
 

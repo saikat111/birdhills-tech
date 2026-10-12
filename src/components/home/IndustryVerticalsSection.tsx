@@ -10,16 +10,16 @@ export function IndustryVerticalsSection() {
       market: "Dubai & Abu Dhabi",
       desc: "High-converting off-plan project portals, interactive masterplan viewers, and investor lead engines for premier developers and brokerages.",
       image:
-        "https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=800&q=80", // Real estate website mockup on laptop
+        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85", // Luxury modern architectural villa in Dubai
       icon: Building2,
       stat: "$25M+ Volume",
     },
     {
       title: "Luxury Retail & Fine Jewelry",
       market: "GCC & International",
-      desc: "Bespoke digital flagships, private VIP appointment engines, and sub-second checkout experiences tailored for high-ticket luxury buyers.",
+      desc: "Bespoke digital flagships, private VIP appointment engines, and frictionless checkout experiences tailored for high-ticket luxury buyers.",
       image:
-        "https://images.unsplash.com/photo-1523726491678-bf852e717f6a?auto=format&fit=crop&w=800&q=80", // Luxury boutique website design & store on laptop
+        "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1200&q=85", // Luxury gold diamond high jewelry collection
       icon: ShoppingBag,
       stat: "4.2x ROAS Delivered",
     },
@@ -28,7 +28,7 @@ export function IndustryVerticalsSection() {
       market: "UAE & Regional Ports",
       desc: "Custom fleet telemetry dashboards, enterprise B2B shipment tracking portals, and client self-service clearing hubs.",
       image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80", // Logistics tracking dashboard on monitor
+        "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=85", // Container cargo ship and logistics maritime port
       icon: Truck,
       stat: "100K+ Tracking Ops",
     },
@@ -37,7 +37,7 @@ export function IndustryVerticalsSection() {
       market: "Dubai Healthcare City & Jumeirah",
       desc: "HIPAA/DHA-compliant patient scheduling engines, localized aesthetic treatment funnels, and high-intent Google search dominance.",
       image:
-        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80", // Healthcare clinic booking app on tablet
+        "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=85", // Modern aesthetic medical clinic and consulting suite
       icon: Stethoscope,
       stat: "+320% Qualified Consults",
     },
@@ -46,7 +46,7 @@ export function IndustryVerticalsSection() {
       market: "DIFC · ADGM · Riyadh",
       desc: "Prestige corporate portals, secure investor document distribution rooms, and authoritative institutional branding.",
       image:
-        "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=800&q=80", // Wealth management investor portal on screen
+        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=85", // High-rise architectural DIFC financial towers
       icon: Landmark,
       stat: "Bank-Grade Security",
     },

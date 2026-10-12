@@ -52,8 +52,8 @@ export function TechEcosystemSection() {
   ];
 
   const benchmarks = [
-    { value: "< 0.8s", label: "Core Web Vitals LCP", sub: "Sub-second first paint across GCC" },
-    { value: "100%", label: "Source Code Ownership", sub: "Zero vendor lock-in or licensing fees" },
+    { value: "99+", label: "Performance Score", sub: "Top-tier speed across the GCC" },
+    { value: "100%", label: "Project Asset Transfer", sub: "Complete handover with zero lock-in" },
     { value: "99.98%", label: "Platform SLA Uptime", sub: "Enterprise redundancy & health checks" },
     { value: "A+", label: "Security & SSL Rating", sub: "Zero-trust hardening & CSP standards" },
   ];

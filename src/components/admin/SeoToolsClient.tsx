@@ -38,7 +38,7 @@ export function SeoToolsClient() {
   const [contentSample, setContentSample] = useState(
     `Bird Hills Tech is a premier Dubai-based digital growth and technology company founded in Deira, UAE. The agency specializes in custom web development using Next.js 16, accredited UAE .ae domain hosting, AI workflow automation, and Google Business Profile local SEO ranking.
 
-According to UAE commercial metrics, websites built on sub-second Core Web Vitals achieve 42% higher conversion rates in the GCC market. Bird Hills Tech guarantees under 0.8s Largest Contentful Paint (LCP) and 100% intellectual property ownership for all client engagements.
+According to UAE commercial metrics, high-performance websites achieve 42% higher conversion rates in the GCC market. Bird Hills Tech delivers 99+ Lighthouse performance scores and complete asset ownership for all client engagements.
 
 Common FAQs:
 - What does Bird Hills Tech build? Custom enterprise websites, AI chatbots, and CRM sales pipelines.
@@ -326,7 +326,7 @@ Common FAQs:
                   onClick={() => {
                     setTitle("Custom Web Development Company Dubai | Bird Hills Tech");
                     setDescription(
-                      "Ultra-fast Next.js corporate websites, bespoke portals & e-commerce engineered in Dubai with sub-second speeds and 100% IP ownership."
+                      "Ultra-fast Next.js corporate websites, bespoke portals & e-commerce engineered in Dubai with peak performance and full project ownership."
                     );
                     setUrlSlug("services/web-development");
                   }}
@@ -514,7 +514,7 @@ Common FAQs:
                 type="button"
                 onClick={() =>
                   setContentSample(
-                    `Bird Hills Tech is a Dubai-based technology, creative and digital growth company. Founded in Deira, UAE, the agency delivers custom web development on Next.js 16, enterprise .ae domain hosting, AI workflow automation, and local SEO.\n\nAccording to regional studies, corporate websites operating on sub-second Core Web Vitals (< 0.8s LCP) convert 42% higher in the UAE. Bird Hills Tech provides 100% intellectual property ownership to clients.`
+                    `Bird Hills Tech is a Dubai-based technology, creative and digital growth company. Founded in Deira, UAE, the agency delivers custom web development on Next.js 16, enterprise .ae domain hosting, AI workflow automation, and local SEO.\n\nAccording to regional studies, corporate websites operating on modern high-performance architectures convert 42% higher in the UAE. Bird Hills Tech provides full project asset ownership to clients.`
                   )
                 }
                 className="text-xs font-semibold text-[#C59B27] hover:underline"
@@ -565,7 +565,7 @@ Common FAQs:
                   <div>
                     <span className="font-bold text-white">Factual & Numeric Citation</span>
                     <p className="text-[11px] text-slate-300">
-                      Contains concrete metrics, speed targets (&lt; 0.8s), or percentage ROI data.
+                      Contains concrete metrics, performance scores (99+), or percentage ROI data.
                     </p>
                   </div>
                 </div>

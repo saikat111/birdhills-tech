@@ -29,15 +29,15 @@ const HERO_SLIDES = [
     alt: "Dubai futuristic architectural skyline and Burj Khalifa business district at dusk",
     tag: "DUBAI HEADQUARTERS · GCC",
     location: "Enterprise Web Engineering & GCC Digital Operations",
-    highlight: "Sub-Second Speed Guarantee · Bespoke UI/UX Design · Full Intellectual Property Transfer",
+    highlight: "Custom Digital Platforms · Bespoke UI/UX Design · Full Project Delivery",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=2400&q=95",
+      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=2400&q=95",
     alt: "High-performance Next.js application development studio with modern engineering workstations",
     tag: "FEATURED SERVICE · 01",
     location: "Next.js Web Applications & Custom Portals",
-    highlight: "Sub-Second Speed · High-Converting UI/UX · Enterprise Next.js 16 Architecture",
+    highlight: "Enterprise Architecture · High-Converting UI/UX · Scalable Cloud Tech Stack",
   },
   {
     image:
@@ -49,19 +49,19 @@ const HERO_SLIDES = [
   },
   {
     image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=2400&q=95",
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=2400&q=95",
     alt: "Executive commercial digital analytics and multi-channel revenue growth dashboard",
     tag: "FEATURED SERVICE · 03",
     location: "Digital Marketing & Performance Ads",
-    highlight: "High-Intent Google Ads · LinkedIn B2B · Closed-Loop Revenue Attribution",
+    highlight: "High-Intent Google Ads · LinkedIn B2B Targeting · Closed-Loop Revenue Attribution",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=2400&q=95",
+      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=2400&q=95",
     alt: "Autonomous artificial intelligence agents and smart conversational business workflow automation",
     tag: "FEATURED SERVICE · 04",
     location: "AI Automation & WhatsApp Bots",
-    highlight: "Autonomous 24/7 AI Agents · Conversational WhatsApp Bots · n8n Pipelines",
+    highlight: "Autonomous 24/7 AI Agents · Conversational WhatsApp Bots · Automated Workflow Pipelines",
   },
 ];
 
@@ -196,7 +196,7 @@ export function HeroSection({
                   <Zap size={13} className="text-[#D4AF37]" />
                   Technology
                 </div>
-                <div className="text-xs text-slate-300 mt-0.5">Sub-second Web Platforms</div>
+                <div className="text-xs text-slate-300 mt-0.5">High-Performance Platforms</div>
               </div>
               <div>
                 <div className="text-xs font-bold text-white uppercase tracking-wider flex items-center gap-1.5">
@@ -227,6 +227,21 @@ export function HeroSection({
                   </span>
                   <div className="text-xs font-mono text-slate-300">
                     {currentSlide + 1} / {HERO_SLIDES.length}
+                  </div>
+                </div>
+
+                {/* Visual Slide Preview Thumbnail */}
+                <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden mb-4 border border-white/10 group-hover:border-[#D4AF37]/40 transition-colors shadow-inner">
+                  <Image
+                    src={activeSlideData.image}
+                    alt={activeSlideData.alt}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 420px"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#070B14]/75 via-transparent to-transparent" />
+                  <div className="absolute bottom-2 left-3 right-3 text-[11px] text-white/95 font-medium truncate drop-shadow">
+                    {activeSlideData.location}
                   </div>
                 </div>
 
@@ -279,26 +294,6 @@ export function HeroSection({
                     >
                       <ChevronRight size={16} />
                     </button>
-                  </div>
-                </div>
-              </div>
-
-              {/* Quick Credentials Floating Bar */}
-              <div className="grid grid-cols-2 gap-3">
-                <div className="p-4 rounded-xl bg-white/10 backdrop-blur-md border border-white/15 text-left">
-                  <div className="text-xl font-extrabold text-[#D4AF37] font-mono">
-                    &lt; 0.8s LCP
-                  </div>
-                  <div className="text-[11px] text-slate-300 font-medium mt-0.5">
-                    Sub-second speed guarantee
-                  </div>
-                </div>
-                <div className="p-4 rounded-xl bg-white/10 backdrop-blur-md border border-white/15 text-left">
-                  <div className="text-xl font-extrabold text-white font-mono">
-                    100% IP
-                  </div>
-                  <div className="text-[11px] text-slate-300 font-medium mt-0.5">
-                    Client code & asset ownership
                   </div>
                 </div>
               </div>

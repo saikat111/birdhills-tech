@@ -40,7 +40,7 @@ const serviceDetails: Record<
     problem:
       "Most corporate websites in the UAE suffer from slow page loads, bloated WordPress plugins, and poor mobile responsiveness. In Dubai's high-velocity market, a slow website loses high-intent prospects within 3 seconds and undermines corporate credibility.",
     approach:
-      "Bird Hills Tech architects bespoke corporate web platforms using Next.js 16, TypeScript, and modern headless architectures. We engineer every page with a sub-second Core Web Vitals budget (< 0.8s LCP), strict accessibility standards, and clean, modular code that your team 100% owns.",
+      "Bird Hills Tech architects bespoke corporate web platforms using Next.js 16, TypeScript, and modern headless architectures. We engineer every page with strict performance standards, accessible design, and clean, modular code that your team fully owns.",
     tools: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS v4", "Prisma ORM", "PostgreSQL", "Vercel / AWS"],
     subServiceDescriptions: {
       "Business Websites": "Prestigious corporate web presences tailored for Dubai holding groups, firms, and enterprises.",
@@ -178,7 +178,7 @@ const serviceDetails: Record<
       },
       {
         q: "Will this help our traditional Google rankings as well?",
-        a: "Yes. The semantic structure, sub-second speed, and authoritative entity schema required for AI search directly elevate standard Google organic rankings.",
+        a: "Yes. The semantic structure, high performance, and authoritative entity schema required for AI search directly elevate standard Google organic rankings.",
       },
     ],
   },
@@ -540,12 +540,12 @@ export default async function ServiceDetailPage({
                   <span className="font-bold text-white">{imagery.timeline}</span>
                 </div>
                 <div className="flex items-center justify-between pb-2 border-b border-white/10">
-                  <span className="text-slate-300">Speed SLA Guarantee</span>
-                  <span className="font-bold text-white">&lt; 0.8s LCP</span>
+                  <span className="text-slate-300">Speed SLA Standard</span>
+                  <span className="font-bold text-white">99+ Performance Score</span>
                 </div>
                 <div className="flex items-center justify-between pb-2 border-b border-white/10">
-                  <span className="text-slate-300">Code & Asset IP</span>
-                  <span className="font-bold text-white">100% Client Ownership</span>
+                  <span className="text-slate-300">Project Governance</span>
+                  <span className="font-bold text-white">Complete Client Handover</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-slate-300">Senior Director Oversight</span>

@@ -74,8 +74,8 @@ export function DubaiSection() {
             {/* Right Image: Sophisticated Dubai Architecture */}
             <div className="lg:col-span-6 relative aspect-[4/3] lg:aspect-auto lg:h-full min-h-[380px] bg-slate-900">
               <Image
-                src="https://images.unsplash.com/photo-1580674684081-7617fbf3d745?auto=format&fit=crop&w=1200&q=85"
-                alt="Dubai modern urban business district"
+                src="https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=1200&q=85"
+                alt="Dubai iconic modern urban business skyline and architecture"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover opacity-90 hover:opacity-100 transition-opacity duration-500"

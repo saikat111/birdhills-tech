@@ -44,7 +44,7 @@ const WORK_FAQS: FaqItem[] = [
   {
     question: "What quantifiable metrics do you track to declare a project successful?",
     answer:
-      "We track technical Core Web Vitals (< 0.8s LCP, zero layout shifts), commercial conversion metrics (form submissions, WhatsApp click-throughs, lead-to-deal conversion), and search engine indexing benchmarks (Google Maps 3-Pack rank, organic keyword authority).",
+      "We track technical performance metrics (99+ Lighthouse scores, responsive layouts), commercial conversion metrics (form submissions, WhatsApp click-throughs, lead-to-deal conversion), and search engine indexing benchmarks (Google Maps 3-Pack rank, organic keyword authority).",
     category: "Metrics",
   },
   {
@@ -56,7 +56,7 @@ const WORK_FAQS: FaqItem[] = [
   {
     question: "What is your project engagement and payment schedule?",
     answer:
-      "Projects operate on transparent milestone deliverables: typically 40% project kickoff, 30% approved prototype and core engineering demonstration, and 30% final deployment and 100% IP code handover. We accept UAE bank transfers and corporate payment cards.",
+      "Projects operate on transparent milestone deliverables: typically 40% project kickoff, 30% approved prototype and core engineering demonstration, and 30% final deployment and full project handover. We accept UAE bank transfers and corporate payment cards.",
     category: "Commercial",
   },
 ];
@@ -74,7 +74,7 @@ export default async function WorkPage() {
 
   const impactStats = [
     { value: "$25M+", label: "Regional Transaction Volume Powered" },
-    { value: "< 0.8s", label: "Average Core Web Vitals (LCP)" },
+    { value: "99+", label: "Average Performance & Speed Score" },
     { value: "4.2x", label: "Average B2B Campaign Return on Ad Spend" },
     { value: "99.98%", label: "Platform SLA Uptime Across Cloud Deployments" },
   ];
@@ -177,7 +177,7 @@ export default async function WorkPage() {
               <span className="text-xs font-mono font-bold text-[#C59B27]">PHASE 03</span>
               <h3 className="text-base font-bold text-[#070B14]">Type-Safe Engineering</h3>
               <p className="text-xs text-[#667085] leading-relaxed">
-                Next.js, TypeScript, sub-second LCP optimizations, and penetration security scans.
+                Next.js, TypeScript, peak performance optimizations, and penetration security scans.
               </p>
             </div>
 

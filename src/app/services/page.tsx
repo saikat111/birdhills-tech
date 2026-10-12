@@ -357,12 +357,12 @@ export default function ServicesHubPage() {
                   <span className="font-bold text-white">9 Specialized Disciplines</span>
                 </div>
                 <div className="flex items-center justify-between pb-2 border-b border-white/10 text-xs">
-                  <span className="text-slate-300">LCP Speed SLA</span>
-                  <span className="font-bold text-[#D4AF37]">&lt; 0.8s Core Web Vitals</span>
+                  <span className="text-slate-300">Performance Standard</span>
+                  <span className="font-bold text-[#D4AF37]">99+ Lighthouse Score</span>
                 </div>
                 <div className="flex items-center justify-between pb-2 border-b border-white/10 text-xs">
-                  <span className="text-slate-300">Intellectual Property</span>
-                  <span className="font-bold text-white">100% Client Ownership</span>
+                  <span className="text-slate-300">Project Governance</span>
+                  <span className="font-bold text-white">Full Client Asset Transfer</span>
                 </div>
                 <div className="flex items-center justify-between text-xs">
                   <span className="text-slate-300">Performance Guarantee</span>
@@ -601,9 +601,9 @@ export default function ServicesHubPage() {
               <div className="w-12 h-12 rounded-xl bg-[#C59B27]/10 text-[#C59B27] flex items-center justify-center">
                 <Zap size={22} />
               </div>
-              <h3 className="text-base font-bold text-[#0B0F19]">Sub-Second Speed</h3>
+              <h3 className="text-base font-bold text-[#0B0F19]">High-Speed Performance</h3>
               <p className="text-xs text-[#667085] leading-relaxed">
-                Core Web Vitals guaranteed. Sub-0.8s Largest Contentful Paint ensures high conversions and organic search authority.
+                Engineered for optimal speed and responsiveness, ensuring high conversion rates and seamless user experiences.
               </p>
             </div>
 

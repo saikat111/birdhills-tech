@@ -51,7 +51,7 @@ const ABOUT_FAQS: FaqItem[] = [
   {
     question: "What differentiates Bird Hills Tech from other digital agencies in Dubai?",
     answer:
-      "Most agencies in the region are either pure marketing firms that outsource coding to unvetted freelancers, or offshore dev shops with no creative sophistication. Bird Hills Tech integrates senior software architects, brand designers, and performance marketing specialists under one roof in Dubai. We guarantee sub-second page loads (< 0.8s), 100% full source code ownership, and closed-loop revenue reporting.",
+      "Most agencies in the region are either pure marketing firms that outsource coding to unvetted freelancers, or offshore dev shops with no creative sophistication. Bird Hills Tech integrates senior software architects, brand designers, and performance marketing specialists under one roof in Dubai. We deliver enterprise-grade performance, complete source code ownership, and closed-loop revenue reporting.",
     category: "Philosophy",
   },
   {
@@ -114,8 +114,8 @@ export default function AboutPage() {
   const engineeringGuarantees = [
     {
       icon: Zap,
-      title: "Sub-Second LCP Guarantee",
-      desc: "Every website and web application is engineered to achieve < 0.8s Largest Contentful Paint on mobile networks, maximizing conversion and Google SEO rank.",
+      title: "High Performance Architecture",
+      desc: "Every website and web application is engineered for maximum responsiveness, peak Lighthouse performance, and optimal conversion rates across GCC mobile networks.",
     },
     {
       icon: Lock,
@@ -124,8 +124,8 @@ export default function AboutPage() {
     },
     {
       icon: FileCode2,
-      title: "100% IP & Code Ownership",
-      desc: "You receive clean, documented source code repositories, database models, and Figma design tokens. No licensing lock-ins or proprietary CMS hostage-taking.",
+      title: "Full Code & Asset Ownership",
+      desc: "You receive clean, documented source code repositories, database models, and Figma design tokens. No licensing lock-ins or proprietary dependencies.",
     },
     {
       icon: Server,
@@ -165,19 +165,19 @@ export default function AboutPage() {
   const studioImages = [
     {
       title: "Architecture & Engineering Planning",
-      image: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
     },
     {
       title: "Creative Design & UI/UX Systems",
-      image: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80",
     },
     {
       title: "Dubai Corporate Consultation & Strategy",
-      image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80",
     },
     {
       title: "Real-Time Telemetry & Growth Analytics",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
     },
   ];
 

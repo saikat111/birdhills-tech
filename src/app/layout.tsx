@@ -5,6 +5,7 @@ import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
 import FloatingChatbot from "@/components/common/FloatingChatbot";
 import WhatsAppButton from "@/components/common/WhatsAppButton";
+import NavigationProgress from "@/components/common/NavigationProgress";
 import { getSiteSettings } from "@/lib/settings";
 
 const geistSans = Geist({
@@ -177,6 +178,7 @@ export default async function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col bg-white text-[#101828]">
+        <NavigationProgress />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer settings={settings} />

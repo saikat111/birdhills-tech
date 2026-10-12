@@ -53,13 +53,13 @@ export default async function PricingPage() {
         popular: false,
         featuresJson: JSON.stringify([
           "Custom Next.js & TypeScript Architecture",
-          "Sub-second Core Web Vitals (< 0.8s LCP)",
+          "Optimized Performance & Core Web Vitals",
           "Mobile-First Responsive Design",
           "Integrated Headless Content Management (CMS)",
           "Technical SEO & Local Dubai Schema",
           "Lead Capture & Contact Pipeline Integration",
           "30 Days Dedicated Post-Launch Support",
-          "100% Full IP & Source Code Ownership",
+          "Full Source Code & Asset Ownership",
         ]),
       },
       {

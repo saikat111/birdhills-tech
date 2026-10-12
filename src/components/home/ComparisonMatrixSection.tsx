@@ -7,15 +7,15 @@ import { Check, X, Shield, ArrowRight, Zap, Trophy } from "lucide-react";
 export function ComparisonMatrixSection() {
   const comparisonItems = [
     {
-      criterion: "Code & IP Ownership",
+      criterion: "Code & Asset Ownership",
       traditional: "Proprietary lock-in, withheld code repositories, recurring licensing fees.",
-      birdhills: "100% Full IP transfer. You own your code, databases, design tokens, and Git repos permanently.",
+      birdhills: "Complete ownership transfer. You retain your code, databases, design tokens, and Git repos permanently.",
       highlight: true,
     },
     {
-      criterion: "Speed & Core Web Vitals",
+      criterion: "Speed & User Experience",
       traditional: "Bloated 3-5s load times on mobile due to 40+ third-party WordPress plugins.",
-      birdhills: "Sub-second (< 0.8s LCP) guaranteed. Built on Next.js 16 with zero runtime bloat.",
+      birdhills: "Ultra-fast loading (99+ Lighthouse performance). Built on Next.js with zero runtime bloat.",
       highlight: true,
     },
     {

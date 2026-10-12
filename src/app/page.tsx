@@ -52,11 +52,11 @@ const DEFAULT_HOMEPAGE_FAQS: FaqItem[] = [
   {
     question: "Why should our company invest in custom Next.js web development over WordPress?",
     answer:
-      "Next.js 16 delivers sub-second page loads (< 0.8s LCP), zero runtime bloat, and enterprise security that WordPress cannot match. In Dubai's competitive market, a slow website loses high-intent prospects within 3 seconds. Furthermore, our builds guarantee 100% full intellectual property and source code ownership with zero dependency on third-party plugin licensing.",
+      "Next.js delivers lightning-fast page loads, zero runtime bloat, and enterprise security that traditional templates cannot match. In Dubai's competitive market, a slow website loses high-intent prospects quickly. Furthermore, our builds guarantee full intellectual property and source code ownership with zero dependency on third-party plugin licensing.",
     category: "Technology",
   },
   {
-    question: "How does Bird Hills Tech guarantee sub-second Core Web Vitals (< 0.8s LCP)?",
+    question: "How does Bird Hills Tech guarantee industry-leading website performance?",
     answer:
       "We engineer every page with strict performance budgets using modern server-side rendering (SSR), image optimization, and low-latency GCC edge caching (< 15ms regional latency). We eliminate unoptimized third-party tracking scripts and compile type-safe TypeScript directly into lean, edge-cached bundles.",
     category: "Technology",
