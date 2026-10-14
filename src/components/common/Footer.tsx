@@ -83,6 +83,17 @@ export function Footer({ settings = {} }: FooterProps) {
                 </Link>
               </li>
               <li>
+                <a
+                  href="https://birdhillstech.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#D4AF37] hover:underline transition-colors flex items-center gap-1 font-semibold"
+                >
+                  <span>Global Platform (birdhillstech.com)</span>
+                  <ArrowUpRight size={11} />
+                </a>
+              </li>
+              <li>
                 <Link href="/contact" className="hover:text-[#D4AF37] transition-colors">
                   Contact Us
                 </Link>

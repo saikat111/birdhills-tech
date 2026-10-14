@@ -483,8 +483,19 @@ export function Header() {
             </nav>
             </div>
 
-            {/* Right Group: Fast Consultation Meeting Shortcut */}
-            <div className="hidden lg:flex items-center gap-3">
+            {/* Right Group: Fast Consultation Meeting Shortcut & Global Edition */}
+            <div className="hidden lg:flex items-center gap-2.5">
+              <a
+                href="https://birdhillstech.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-slate-600 hover:text-[#C59B27] bg-[#FAF8F5] border border-[#E4E7EC] hover:border-[#C59B27]/40 rounded-xl transition-all shadow-2xs hover:bg-white"
+                title="Switch to Bird Hills Tech Global Platform"
+              >
+                <Globe size={13} className="text-[#C59B27]" />
+                <span className="hidden xl:inline">Global (USD)</span>
+                <span className="xl:hidden">Global</span>
+              </a>
               <Link
                 href="/book-a-meeting"
                 className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-bold text-[#0B0F19] hover:text-[#C59B27] bg-[#FAF8F5] border border-[#E4E7EC] hover:border-[#C59B27]/40 rounded-xl transition-all shadow-2xs hover:bg-white"
