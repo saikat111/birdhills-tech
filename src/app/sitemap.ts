@@ -1,6 +1,13 @@
 import { MetadataRoute } from "next";
 import { prisma } from "@/lib/prisma";
 import { getSiteSettings } from "@/lib/settings";
+import {
+  getAllHostingSubSlugs,
+  HOSTING_SUB_SERVICES,
+  getAllDomainSubSlugs,
+  DOMAINS_SUB_SERVICES,
+} from "@/data/subServicesData";
+import { getAllServiceSubSlugs, ALL_SERVICE_SUB_SERVICES } from "@/data/services";
 
 const SERVICE_IMAGES: Record<string, string> = {
   "web-development":
@@ -180,7 +187,50 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.75,
     }));
 
-    return [...staticRoutes, ...serviceUrls, ...projectUrls, ...postUrls, ...categoryUrls];
+    // Sub-service URLs
+    const hostingSubUrls: MetadataRoute.Sitemap = getAllHostingSubSlugs().map((slug) => {
+      const item = HOSTING_SUB_SERVICES[slug];
+      return {
+        url: `${baseUrl}/hosting/${slug}`,
+        lastModified: now,
+        changeFrequency: "weekly",
+        priority: 0.85,
+        images: item?.heroImage ? [item.heroImage] : undefined,
+      };
+    });
+
+    const domainSubUrls: MetadataRoute.Sitemap = getAllDomainSubSlugs().map((slug) => {
+      const item = DOMAINS_SUB_SERVICES[slug];
+      return {
+        url: `${baseUrl}/domains/${slug}`,
+        lastModified: now,
+        changeFrequency: "weekly",
+        priority: 0.85,
+        images: item?.heroImage ? [item.heroImage] : undefined,
+      };
+    });
+
+    const serviceSubUrls: MetadataRoute.Sitemap = getAllServiceSubSlugs().map(({ slug, subSlug }) => {
+      const item = ALL_SERVICE_SUB_SERVICES[slug]?.[subSlug];
+      return {
+        url: `${baseUrl}/services/${slug}/${subSlug}`,
+        lastModified: now,
+        changeFrequency: "weekly",
+        priority: 0.85,
+        images: item?.heroImage ? [item.heroImage] : undefined,
+      };
+    });
+
+    return [
+      ...staticRoutes,
+      ...serviceUrls,
+      ...hostingSubUrls,
+      ...domainSubUrls,
+      ...serviceSubUrls,
+      ...projectUrls,
+      ...postUrls,
+      ...categoryUrls,
+    ];
   } catch (err) {
     console.error("Error generating sitemap:", err);
     return staticRoutes;
