@@ -27,7 +27,7 @@ export default async function AdminBookingsPage() {
         <div>
           <h1 className="text-2xl font-extrabold text-[#070B14]">Consultation Bookings</h1>
           <p className="text-xs text-[#667085] mt-0.5">
-            Manage scheduled Google Meet and in-person Dubai office meetings.
+            Manage scheduled Google Meet and executive in-person meetings.
           </p>
         </div>
       </div>

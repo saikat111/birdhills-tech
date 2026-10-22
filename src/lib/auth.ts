@@ -3,7 +3,7 @@ import { cookies } from "next/headers";
 import { NextRequest } from "next/server";
 
 const JWT_SECRET = new TextEncoder().encode(
-  process.env.ADMIN_JWT_SECRET || "birdhills_enterprise_jwt_secret_key_dubai_2026"
+  process.env.ADMIN_JWT_SECRET || "birdhills_enterprise_jwt_secret_key_global_2026"
 );
 
 const COOKIE_NAME = "bht_admin_session";

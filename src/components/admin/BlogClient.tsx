@@ -78,8 +78,8 @@ interface BlogClientProps {
 
 const PRESET_IMAGES = [
   {
-    name: "Dubai Skyline & Financial Center",
-    url: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=80",
+    name: "Enterprise Architecture & Headquarters",
+    url: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
   },
   {
     name: "Next.js & Software Engineering",
@@ -123,7 +123,7 @@ export function BlogClient({ initialPosts, categories }: BlogClientProps) {
   const [copiedLink, setCopiedLink] = useState(false);
 
   // Focus keyword for Yoast-style SEO analysis
-  const [focusKeyword, setFocusKeyword] = useState("Dubai Web Development");
+  const [focusKeyword, setFocusKeyword] = useState("Enterprise Web Development");
 
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -335,7 +335,7 @@ export function BlogClient({ initialPosts, categories }: BlogClientProps) {
     setEditorMode("visual");
     setSidebarTab("post");
     setIsSidebarOpen(true);
-    setFocusKeyword("Dubai Next.js Development");
+    setFocusKeyword("Enterprise Next.js Development");
     setForm({
       title: "",
       slug: "",
@@ -604,7 +604,7 @@ export function BlogClient({ initialPosts, categories }: BlogClientProps) {
             Articles & Thought Leadership CMS
           </h1>
           <p className="text-xs text-[#667085] mt-1">
-            Author and publish technical articles, whitepapers, and Dubai market perspectives with our Gutenberg-style writing studio and live Yoast SEO score meters.
+            Author and publish technical articles, whitepapers, and digital strategy perspectives with our Gutenberg-style writing studio and live Yoast SEO score meters.
           </p>
         </div>
 
@@ -1072,7 +1072,7 @@ export function BlogClient({ initialPosts, categories }: BlogClientProps) {
                         type="button"
                         onClick={() =>
                           insertBlock(
-                            "> [!NOTE]\n> **Strategic Takeaway**: Enterprise performance in Dubai requires top-tier Core Web Vitals and local GCC compliance."
+                            "> [!NOTE]\n> **Strategic Takeaway**: Enterprise performance requires top-tier Core Web Vitals and global cloud edge routing."
                           )
                         }
                         className="px-2 py-1 rounded-lg bg-white border border-[#E4E7EC] text-[11px] font-bold text-[#C59B27] hover:bg-[#FAF8F5] flex items-center gap-1 shadow-2xs"
@@ -1083,7 +1083,7 @@ export function BlogClient({ initialPosts, categories }: BlogClientProps) {
                       <button
                         type="button"
                         onClick={() =>
-                          insertBlock("```typescript\n// Enterprise Next.js 16 Implementation\nexport async function getDubaiData() {\n  return await db.query();\n}\n```")
+                          insertBlock("```typescript\n// Enterprise Next.js 16 Implementation\nexport async function getEnterpriseData() {\n  return await db.query();\n}\n```")
                         }
                         className="px-2 py-1 rounded-lg bg-white border border-[#E4E7EC] text-[11px] font-bold text-slate-700 hover:bg-slate-100 flex items-center gap-1 shadow-2xs"
                         title="Insert Code Snippet"
@@ -1114,7 +1114,7 @@ export function BlogClient({ initialPosts, categories }: BlogClientProps) {
                           required
                           value={form.title}
                           onChange={(e) => handleTitleChange(e.target.value)}
-                          placeholder="e.g. Next-Generation Cloud Architecture in Dubai"
+                          placeholder="e.g. Next-Generation Cloud Architecture for Enterprises"
                           className={`w-full text-2xl sm:text-3xl font-extrabold text-[#070B14] placeholder:text-slate-300 border rounded-2xl p-4 bg-[#FAF8F5]/60 focus:bg-white focus:outline-none transition-all leading-tight ${
                             error && !form.title.trim()
                               ? "border-rose-400 ring-2 ring-rose-200"
@@ -1559,7 +1559,7 @@ export function BlogClient({ initialPosts, categories }: BlogClientProps) {
                         </div>
                         <p className="text-[11px] text-slate-500">
                           {seoScore >= 75
-                            ? "Excellent! High ranking potential on Google UAE."
+                            ? "Excellent! High ranking potential on Google search."
                             : seoScore >= 50
                             ? "Moderate. Complete the checklist items below to improve score."
                             : "Needs optimization. Focus keyword and meta lengths required."}
@@ -1575,11 +1575,11 @@ export function BlogClient({ initialPosts, categories }: BlogClientProps) {
                           type="text"
                           value={focusKeyword}
                           onChange={(e) => setFocusKeyword(e.target.value)}
-                          placeholder="e.g. Dubai Web Development"
+                          placeholder="e.g. Enterprise Web Development"
                           className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs bg-white text-[#070B14] focus:border-[#C59B27] focus:outline-none"
                         />
                         <p className="text-[10px] text-slate-400 mt-1">
-                          The target query users in UAE type to find this article.
+                          The target query users type to find this article.
                         </p>
                       </div>
 

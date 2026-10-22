@@ -38,7 +38,7 @@ export function WhatsAppButton({ whatsappNumber = "+971 52 440 5785" }: WhatsApp
 
       {/* Floating Button */}
       <a
-        href={`https://wa.me/${cleanNumber}?text=Hello%20Bird%20Hills%20Tech%2C%20I%20would%20like%20to%20discuss%20a%20project%20in%20Dubai.`}
+        href={`https://wa.me/${cleanNumber}?text=Hello%20Bird%20Hills%20Tech%2C%20I%20would%20like%20to%20discuss%20a%20project.`}
         target="_blank"
         rel="noopener noreferrer"
         aria-label={`Chat with Bird Hills Tech on WhatsApp (${whatsappNumber})`}

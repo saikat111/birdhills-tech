@@ -48,7 +48,7 @@ export async function POST(req: NextRequest) {
       try {
         const totalAdmins = await prisma.adminUser.count().catch(() => 0);
         if (totalAdmins === 0) {
-          const defaultHash = await bcrypt.hash("DubaiTech2026!", 10);
+          const defaultHash = await bcrypt.hash(process.env.ADMIN_PASSWORD || "GlobalTech2026!", 10);
           user = await prisma.adminUser.create({
             data: {
               email: "admin@birdhillstech.com",

@@ -42,7 +42,7 @@ export default function NotFound() {
         </div>
 
         <div className="pt-4 border-t border-slate-100 text-xs text-slate-400">
-          Need immediate support? Contact our Dubai office at{" "}
+          Need immediate support? Contact our client support team at{" "}
           <a href="tel:+971524405785" className="text-[#C59B27] font-semibold hover:underline">
             +971 52 440 5785
           </a>

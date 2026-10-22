@@ -24,46 +24,46 @@ import FaqAccordion, { FaqItem } from "@/components/common/FaqAccordion";
 import FinalCtaSection from "@/components/home/FinalCtaSection";
 
 export const metadata: Metadata = {
-  title: "About Us | Technology × Creative × Growth | Bird Hills Tech Dubai",
+  title: "About Us | Technology × Creative × Growth | Bird Hills Tech",
   description:
-    "Learn about Bird Hills Tech, a premier Dubai digital firm bridging software engineering, creative design systems, and measurable commercial growth in the UAE.",
+    "Learn about Bird Hills Tech, a premier global digital firm bridging software engineering, creative design systems, and measurable commercial growth.",
   alternates: {
     canonical: "https://birdhillstech.com/about",
   },
   openGraph: {
-    title: "About Bird Hills Tech | Dubai Technology & Digital Growth Firm",
+    title: "About Bird Hills Tech | Technology & Digital Growth Firm",
     description:
-      "Enterprise web engineering, prestigious corporate identity, and B2B growth marketing headquartered at Stone Building, Deira, Dubai.",
+      "Enterprise web engineering, prestigious corporate identity, and B2B growth marketing for ambitious global enterprises.",
     url: "https://birdhillstech.com/about",
     siteName: "Bird Hills Tech",
-    locale: "en_AE",
+    locale: "en_US",
     type: "website",
   },
 };
 
 const ABOUT_FAQS: FaqItem[] = [
   {
-    question: "Where is Bird Hills Tech located, and can we visit your office?",
+    question: "Where is Bird Hills Tech located, and how do client engagements work?",
     answer:
-      "Our registered corporate headquarters is located at Stone Building, 122 7th A Street, Al Baraha, Deira, Dubai, UAE (+971 52 440 5785). We welcome scheduled client consultations at our premises and also conduct executive briefing meetings at client offices across Dubai, Abu Dhabi, and Sharjah.",
+      "Bird Hills Tech provides global digital operations and client services (+971 52 440 5785). We welcome scheduled consultations via video conference or executive briefing sessions worldwide.",
     category: "General",
   },
   {
-    question: "What differentiates Bird Hills Tech from other digital agencies in Dubai?",
+    question: "What differentiates Bird Hills Tech from other digital agencies?",
     answer:
-      "Most agencies in the region are either pure marketing firms that outsource coding to unvetted freelancers, or offshore dev shops with no creative sophistication. Bird Hills Tech integrates senior software architects, brand designers, and performance marketing specialists under one roof in Dubai. We deliver enterprise-grade performance, complete source code ownership, and closed-loop revenue reporting.",
+      "Most agencies are either pure marketing firms that outsource coding to unvetted freelancers, or offshore dev shops with no creative sophistication. Bird Hills Tech integrates senior software architects, brand designers, and performance marketing specialists under one accountable team. We deliver enterprise-grade performance, complete source code ownership, and closed-loop revenue reporting.",
     category: "Philosophy",
   },
   {
     question: "What are your core engineering standards and data protection protocols?",
     answer:
-      "We build type-safe, modern web platforms using Next.js 16, TypeScript, and edge cloud architectures. All platforms adhere strictly to UAE Federal Decree-Law No. 45 on Personal Data Protection (PDPL), incorporate automated daily encrypted backups, TLS 1.3 encryption, and sub-15ms GCC latency.",
+      "We build type-safe, modern web platforms using Next.js 16, TypeScript, and edge cloud architectures. All platforms adhere strictly to international data privacy standards (GDPR/PDPL), incorporate automated daily encrypted backups, TLS 1.3 encryption, and sub-15ms edge latency.",
     category: "Engineering",
   },
   {
     question: "Who will manage and communicate on our project?",
     answer:
-      "You work directly with a dedicated Senior Technical Project Lead and Solution Architect based in Dubai. You have direct access via Slack, WhatsApp, and weekly milestone review calls—no layers of junior account coordinators or miscommunicated requirements.",
+      "You work directly with a dedicated Senior Technical Project Lead and Solution Architect. You have direct access via Slack, WhatsApp, and weekly milestone review calls—no layers of junior account coordinators or miscommunicated requirements.",
     category: "Execution",
   },
   {
@@ -104,7 +104,7 @@ export default function AboutPage() {
       items: [
         "High-Intent Google Ads & Search Campaigns",
         "Targeted B2B LinkedIn Demand Generation",
-        "Technical SEO & Local Dubai Organic Authority",
+        "Technical SEO & Global Organic Authority",
         "Conversion Rate Optimization (CRO) Audits",
         "Closed-Loop Revenue & Pipeline Tracking",
       ],
@@ -115,12 +115,12 @@ export default function AboutPage() {
     {
       icon: Zap,
       title: "High Performance Architecture",
-      desc: "Every website and web application is engineered for maximum responsiveness, peak Lighthouse performance, and optimal conversion rates across GCC mobile networks.",
+      desc: "Every website and web application is engineered for maximum responsiveness, peak Lighthouse performance, and optimal conversion rates across global networks.",
     },
     {
       icon: Lock,
-      title: "UAE PDPL Data Compliance",
-      desc: "Architected in strict adherence with UAE Federal Decree-Law No. 45, ensuring regional data sovereignty, bank-grade encryption, and zero third-party telemetry leaks.",
+      title: "Global Data Privacy & Compliance",
+      desc: "Architected in strict adherence with international data protection standards, ensuring data sovereignty, bank-grade encryption, and zero third-party telemetry leaks.",
     },
     {
       icon: FileCode2,
@@ -129,21 +129,21 @@ export default function AboutPage() {
     },
     {
       icon: Server,
-      title: "Sub-15ms GCC Cloud Latency",
-      desc: "Deployed on pure NVMe enterprise edge servers physically situated for UAE and GCC speed, backed by 99.99% uptime SLAs and 15-minute emergency support.",
+      title: "Sub-15ms Global Cloud Latency",
+      desc: "Deployed on pure NVMe enterprise edge servers physically optimized for global speed, backed by 99.99% uptime SLAs and 15-minute emergency support.",
     },
   ];
 
   const milestones = [
     {
       year: "2022",
-      title: "Foundations in Dubai",
-      desc: "Launched in the UAE with a pure engineering ethos: building high-performance modern websites and custom portals for regional businesses.",
+      title: "Foundations & Vision",
+      desc: "Launched with a pure engineering ethos: building high-performance modern websites and custom portals for scaling businesses.",
     },
     {
       year: "2023",
       title: "Design Systems & Creative Practice",
-      desc: "Integrated corporate brand identity, UI/UX research, and prestige design systems tailored for Gulf enterprise aesthetics.",
+      desc: "Integrated corporate brand identity, UI/UX research, and prestige design systems tailored for global enterprise aesthetics.",
     },
     {
       year: "2024",
@@ -152,13 +152,13 @@ export default function AboutPage() {
     },
     {
       year: "2025",
-      title: "AI Integration & Regional Scaling",
-      desc: "Deployed autonomous conversational agents and custom workflow automation for leading logistics and real estate operators.",
+      title: "AI Integration & Global Scaling",
+      desc: "Deployed autonomous conversational agents and custom workflow automation for leading logistics, finance, and enterprise operators.",
     },
     {
       year: "2026",
       title: "Consolidated Digital Partner",
-      desc: "Headquartered at Stone Building, Deira, serving ambitious enterprises across Dubai, Abu Dhabi, and the broader GCC.",
+      desc: "Delivering unified technology, creative, and performance marketing capabilities for ambitious enterprises worldwide.",
     },
   ];
 
@@ -184,12 +184,12 @@ export default function AboutPage() {
 
   return (
     <div className="flex flex-col min-h-screen pt-24">
-      {/* 1. VISUAL HERO WITH DUBAI CORPORATE BACKGROUND */}
+      {/* 1. VISUAL HERO WITH GLOBAL CORPORATE BACKGROUND */}
       <section className="relative py-24 md:py-32 bg-[#070B14] text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2000&q=90"
-            alt="Dubai business district and corporate financial center"
+            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=90"
+            alt="Global corporate business district and modern architecture"
             fill
             priority
             sizes="100vw"
@@ -208,7 +208,7 @@ export default function AboutPage() {
               Built to bridge the divide between technology and growth.
             </h1>
             <p className="text-lg sm:text-xl text-slate-300 leading-relaxed font-normal">
-              Bird Hills Tech is a Dubai-based technology, creative, and digital growth firm. We engineer digital assets that command commercial authority and generate real business revenue across the UAE and GCC.
+              Bird Hills Tech is a modern technology, creative, and digital growth firm. We engineer digital assets that command commercial authority and generate real business revenue worldwide.
             </p>
           </div>
         </div>
@@ -226,7 +226,7 @@ export default function AboutPage() {
                 &ldquo;Technology should not simply exist. It should create commercial momentum for the business behind it.&rdquo;
               </blockquote>
               <p className="text-base text-[#667085] leading-relaxed">
-                Too many companies in the UAE find themselves navigating fragmented partners: IT firms that lack creative sophistication, design studios that disregard technical performance, and digital marketing agencies that cannot write a single line of clean code.
+                Too many companies find themselves navigating fragmented partners: IT firms that lack creative sophistication, design studios that disregard technical performance, and digital marketing agencies that cannot write a single line of clean code.
               </p>
               <p className="text-base text-[#667085] leading-relaxed">
                 Bird Hills Tech was built to eliminate that friction. By uniting software engineering, creative design, and data-driven customer acquisition under one senior team, we give ambitious businesses the complete digital capability they need to lead their markets.
@@ -237,7 +237,7 @@ export default function AboutPage() {
               <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3] bg-slate-900 border border-slate-200">
                 <Image
                   src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=85"
-                  alt="Bird Hills Tech engineering and creative leadership team collaborating in Dubai studio"
+                  alt="Bird Hills Tech engineering and creative leadership team collaborating on enterprise digital platforms"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
@@ -349,7 +349,7 @@ export default function AboutPage() {
               OUR JOURNEY & TRAJECTORY
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#070B14] tracking-tight mt-2">
-              Milestones of Growth in the UAE
+              Milestones of Growth &amp; Innovation
             </h2>
           </div>
 
@@ -380,7 +380,7 @@ export default function AboutPage() {
               INSIDE BIRD HILLS TECH
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#070B14] tracking-tight mt-2">
-              Our Dubai Studio & Engineering Practice
+              Our Studio &amp; Engineering Practice
             </h2>
           </div>
 
@@ -412,24 +412,24 @@ export default function AboutPage() {
         items={ABOUT_FAQS}
         title="Frequently Asked About Our Practice"
         eyebrow="AGENCY CLARITY & GOVERNANCE"
-        description="Direct answers regarding our Dubai studio, team structure, client engagement contracts, and engineering guarantees."
+        description="Direct answers regarding our studio, team structure, client engagement contracts, and engineering guarantees."
         theme="light"
         includeSchema={true}
       />
 
-      {/* 8. DUBAI PRESENCE & CONTACT */}
+      {/* 8. GLOBAL STRATEGIC ENGAGEMENTS */}
       <section className="py-20 bg-white border-t border-[#E4E7EC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="p-8 sm:p-12 rounded-3xl bg-[#070B14] border border-[#C59B27]/25 text-white flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl">
             <div className="space-y-3">
               <span className="text-xs font-bold uppercase tracking-wider text-[#D4AF37]">
-                IN-PERSON CONSULTATIONS IN DUBAI
+                STRATEGIC CONSULTATIONS &amp; BRIEFINGS
               </span>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
-                Visit Our Deira Headquarters or Schedule a Briefing
+                Schedule an Executive Consultation or Briefing
               </h2>
               <p className="text-xs sm:text-sm text-slate-300 max-w-xl">
-                Stone Building, 122 7th A Street, Al Baraha, Deira, Dubai, UAE. We welcome meetings with founders, CXOs, and directors across the UAE.
+                Connect with our directors for a strategic project discovery session. We welcome meetings with founders, CXOs, and directors worldwide.
               </p>
             </div>
             <div className="flex items-center gap-3 shrink-0">
@@ -440,7 +440,7 @@ export default function AboutPage() {
                 Book a Meeting
               </Link>
               <a
-                href="https://wa.me/971524405785?text=Hello%20Bird%20Hills%20Tech%2C%20I%20would%20like%20to%20schedule%20an%20office%20visit."
+                href="https://wa.me/971524405785?text=Hello%20Bird%20Hills%20Tech%2C%20I%20would%20like%20to%20schedule%20a%20consultation."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#1ebd59] text-white text-xs font-bold transition-colors shadow-sm"

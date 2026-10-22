@@ -7,16 +7,16 @@ export function IndustryVerticalsSection() {
   const industries = [
     {
       title: "Real Estate & Luxury PropTech",
-      market: "Dubai & Abu Dhabi",
+      market: "Global Real Estate Markets",
       desc: "High-converting off-plan project portals, interactive masterplan viewers, and investor lead engines for premier developers and brokerages.",
       image:
-        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85", // Luxury modern architectural villa in Dubai
+        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85", // Luxury modern architectural villa
       icon: Building2,
       stat: "$25M+ Volume",
     },
     {
       title: "Luxury Retail & Fine Jewelry",
-      market: "GCC & International",
+      market: "Global Flagships & Luxury",
       desc: "Bespoke digital flagships, private VIP appointment engines, and frictionless checkout experiences tailored for high-ticket luxury buyers.",
       image:
         "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1200&q=85", // Luxury gold diamond high jewelry collection
@@ -25,7 +25,7 @@ export function IndustryVerticalsSection() {
     },
     {
       title: "Trade, Logistics & Maritime",
-      market: "UAE & Regional Ports",
+      market: "Global Ports & Supply Chains",
       desc: "Custom fleet telemetry dashboards, enterprise B2B shipment tracking portals, and client self-service clearing hubs.",
       image:
         "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=85", // Container cargo ship and logistics maritime port
@@ -34,19 +34,19 @@ export function IndustryVerticalsSection() {
     },
     {
       title: "Medical & Aesthetic Clinics",
-      market: "Dubai Healthcare City & Jumeirah",
-      desc: "HIPAA/DHA-compliant patient scheduling engines, localized aesthetic treatment funnels, and high-intent Google search dominance.",
+      market: "Specialized Healthcare & Clinics",
+      desc: "HIPAA-compliant patient scheduling engines, localized aesthetic treatment funnels, and high-intent Google search dominance.",
       image:
         "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=85", // Modern aesthetic medical clinic and consulting suite
       icon: Stethoscope,
       stat: "+320% Qualified Consults",
     },
     {
-      title: "DIFC Capital & Family Offices",
-      market: "DIFC · ADGM · Riyadh",
+      title: "Private Capital & Family Offices",
+      market: "Financial Centers & Family Offices",
       desc: "Prestige corporate portals, secure investor document distribution rooms, and authoritative institutional branding.",
       image:
-        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=85", // High-rise architectural DIFC financial towers
+        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=85", // High-rise architectural financial towers
       icon: Landmark,
       stat: "Bank-Grade Security",
     },
@@ -59,13 +59,13 @@ export function IndustryVerticalsSection() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="max-w-3xl">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold tracking-widest text-[#B38728] uppercase bg-[#C59B27]/10 border border-[#C59B27]/30 mb-3">
-              REGIONAL INDUSTRY VERTICALS
+              GLOBAL INDUSTRY VERTICALS
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#070B14] tracking-tight leading-tight">
-              Tailored solutions for Dubai’s premier sectors.
+              Tailored solutions for premier global sectors.
             </h2>
             <p className="text-base sm:text-lg text-[#667085] mt-4">
-              We understand the nuances of the UAE and GCC commercial landscape. Our engineering and marketing strategies are built for your sector’s high-value decision-makers.
+              We understand the nuances of the modern global commercial landscape. Our engineering and marketing strategies are built for your sector’s high-value decision-makers.
             </p>
           </div>
 

@@ -26,9 +26,9 @@ export function SeoToolsClient() {
   const [activeTab, setActiveTab] = useState<"onpage" | "aeo" | "schema" | "sitemap" | "keyword">("onpage");
 
   // Tab 1: Live On-Page SEO State
-  const [title, setTitle] = useState("Custom Web Development & AI Solutions Dubai | Bird Hills Tech");
+  const [title, setTitle] = useState("Custom Web Development & Enterprise AI Solutions | Bird Hills Tech");
   const [description, setDescription] = useState(
-    "Bird Hills Tech delivers custom Next.js websites, AI automation, local SEO & high-performance digital growth for enterprises in Dubai and the GCC. Book a consultation."
+    "Bird Hills Tech delivers custom Next.js websites, AI automation, and high-performance digital growth for global enterprises. Book a consultation."
   );
   const [urlSlug, setUrlSlug] = useState("services/web-development");
   const [devicePreview, setDevicePreview] = useState<"desktop" | "mobile">("desktop");
@@ -36,28 +36,28 @@ export function SeoToolsClient() {
 
   // Tab 2: AEO & GEO Content Analyzer State
   const [contentSample, setContentSample] = useState(
-    `Bird Hills Tech is a premier Dubai-based digital growth and technology company founded in Deira, UAE. The agency specializes in custom web development using Next.js 16, accredited UAE .ae domain hosting, AI workflow automation, and Google Business Profile local SEO ranking.
+    `Bird Hills Tech is a premier digital growth and technology company. The agency specializes in custom web development using Next.js 16, enterprise cloud hosting, AI workflow automation, and search engine optimization.
 
-According to UAE commercial metrics, high-performance websites achieve 42% higher conversion rates in the GCC market. Bird Hills Tech delivers 99+ Lighthouse performance scores and complete asset ownership for all client engagements.
+According to industry metrics, high-performance websites achieve 42% higher conversion rates across enterprise markets. Bird Hills Tech delivers 99+ Lighthouse performance scores and complete asset ownership for all client engagements.
 
 Common FAQs:
 - What does Bird Hills Tech build? Custom enterprise websites, AI chatbots, and CRM sales pipelines.
-- Where is the company located? Deira - Stone Building - 122 7th A Street - Al Baraha, Dubai, UAE.`
+- Where is the company located? Global Operations & Technology Headquarters.`
   );
 
-  // Tab 3: Local Dubai Schema Generator State
+  // Tab 3: Organization & Local Schema Generator State
   const [schemaData, setSchemaData] = useState({
     businessName: "Bird Hills Tech",
     serviceType: "ProfessionalService",
-    streetAddress: "Deira - Stone Building - 122 7th A Street - Al Baraha",
-    city: "Dubai",
-    country: "AE",
+    streetAddress: "Global Operations & Technology Headquarters",
+    city: "New York",
+    country: "US",
     phone: "+971 52 440 5785",
     email: "info@birdhillstech.com",
     website: "https://birdhillstech.com",
     priceRange: "$$$",
-    latitude: "25.276987",
-    longitude: "55.312952",
+    latitude: "40.712776",
+    longitude: "-74.005974",
     openingHours: "Mo-Sa 09:00-18:00",
   });
 
@@ -77,9 +77,9 @@ Common FAQs:
   const sampleWords = contentSample.trim().split(/\s+/).filter(Boolean);
   const sampleWordCount = sampleWords.length;
   const hasDirectDefinition = contentSample.toLowerCase().includes("is a") || contentSample.toLowerCase().includes("provides");
-  const hasStatistics = /\b\d{1,3}%\b|\b\d{1,4}\s*(ms|seconds|AED|USD|\$)\b/i.test(contentSample);
+  const hasStatistics = /\b\d{1,3}%\b|\b\d{1,4}\s*(ms|seconds|USD|\$)\b/i.test(contentSample);
   const hasFaqs = /faq|frequently asked|what|where|how|why/i.test(contentSample);
-  const hasLocation = /dubai|uae|gcc|deira/i.test(contentSample);
+  const hasLocation = /global|enterprise|international|worldwide|headquarters/i.test(contentSample);
 
   let aeoScore = 0;
   if (sampleWordCount >= 100) aeoScore += 25;
@@ -145,13 +145,13 @@ Common FAQs:
             <span className="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-[#C59B27]/20 text-[#D4AF37] border border-[#C59B27]/40">
               Interactive SEO & AEO Suite
             </span>
-            <span className="text-xs text-slate-400">Dubai Market Optimization</span>
+            <span className="text-xs text-slate-400">Enterprise Optimization</span>
           </div>
           <h1 className="text-2xl font-bold text-white mt-1">
             Search, Entity & Generative AI Tools
           </h1>
           <p className="text-xs text-slate-300 mt-1">
-            Real-time on-page SERP snippet simulator, Answer Engine Optimization (AEO/GEO) audits, and Dubai Local Schema.org generator.
+            Real-time on-page SERP snippet simulator, Answer Engine Optimization (AEO/GEO) audits, and Schema.org generator.
           </p>
         </div>
 
@@ -205,7 +205,7 @@ Common FAQs:
           }`}
         >
           <FileCode size={15} />
-          <span>Dubai Local Schema Generator</span>
+          <span>Schema.org Generator</span>
         </button>
 
         <button
@@ -266,7 +266,7 @@ Common FAQs:
                 className="w-full p-3 text-xs border border-[#E4E7EC] rounded-xl focus:border-[#C59B27] focus:outline-none text-[#0B0F19]"
               />
               <p className="text-[11px] text-[#667085] mt-1">
-                Google displays up to 60 characters (approx. 600px). Include primary target service and &quot;Dubai&quot;.
+                Google displays up to 60 characters (approx. 600px). Include primary target service and brand name.
               </p>
             </div>
 
@@ -324,9 +324,9 @@ Common FAQs:
                 <button
                   type="button"
                   onClick={() => {
-                    setTitle("Custom Web Development Company Dubai | Bird Hills Tech");
+                    setTitle("Custom Web Development Company | Bird Hills Tech");
                     setDescription(
-                      "Ultra-fast Next.js corporate websites, bespoke portals & e-commerce engineered in Dubai with peak performance and full project ownership."
+                      "Ultra-fast Next.js corporate websites, bespoke portals & e-commerce engineered with peak performance and full project ownership."
                     );
                     setUrlSlug("services/web-development");
                   }}
@@ -337,22 +337,22 @@ Common FAQs:
                 <button
                   type="button"
                   onClick={() => {
-                    setTitle("Google Business Profile & Local SEO Dubai | Bird Hills Tech");
+                    setTitle("Search Engine Optimization & Organic Growth | Bird Hills Tech");
                     setDescription(
-                      "Dominate Dubai Google Maps 3-pack, solve GBP verification delays, and drive high-intent local customer calls and reviews across the UAE."
+                      "Dominate search rankings, optimize Core Web Vitals, and drive high-intent commercial opportunities and qualified pipeline."
                     );
                     setUrlSlug("services/google-business-profile-local-seo");
                   }}
                   className="text-[10px] font-semibold px-2 py-1 bg-slate-100 hover:bg-[#C59B27]/15 hover:text-[#C59B27] rounded-md transition-colors"
                 >
-                  Google Maps & Local SEO
+                  SEO & Search Authority
                 </button>
                 <button
                   type="button"
                   onClick={() => {
-                    setTitle("AI SEO & Search (AEO & GEO) Dubai | Bird Hills Tech");
+                    setTitle("AI SEO & Search (AEO & GEO) | Bird Hills Tech");
                     setDescription(
-                      "Pioneering Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO) so Perplexity AI & ChatGPT cite your brand in Dubai."
+                      "Pioneering Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO) so Perplexity AI & ChatGPT cite your brand."
                     );
                     setUrlSlug("services/ai-seo-search");
                   }}
@@ -452,7 +452,7 @@ Common FAQs:
               <div className="rounded-xl border border-slate-200 overflow-hidden bg-slate-50">
                 <div className="relative aspect-[16/9] w-full bg-slate-900 flex items-center justify-center">
                   <Image
-                    src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80"
+                    src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80"
                     alt="OG Social Card Preview"
                     fill
                     className="object-cover opacity-80"
@@ -460,7 +460,7 @@ Common FAQs:
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
                   <div className="absolute bottom-3 left-3 right-3 text-white">
                     <span className="text-[10px] font-bold text-[#D4AF37] uppercase tracking-wider">
-                      BIRD HILLS TECH · DUBAI
+                      BIRD HILLS TECH · ENTERPRISE
                     </span>
                     <h5 className="text-xs sm:text-sm font-bold truncate mt-0.5">
                       {title}
@@ -514,7 +514,7 @@ Common FAQs:
                 type="button"
                 onClick={() =>
                   setContentSample(
-                    `Bird Hills Tech is a Dubai-based technology, creative and digital growth company. Founded in Deira, UAE, the agency delivers custom web development on Next.js 16, enterprise .ae domain hosting, AI workflow automation, and local SEO.\n\nAccording to regional studies, corporate websites operating on modern high-performance architectures convert 42% higher in the UAE. Bird Hills Tech provides full project asset ownership to clients.`
+                    `Bird Hills Tech is a technology, creative and digital growth company. The agency delivers custom web development on Next.js 16, enterprise cloud hosting, AI workflow automation, and search engine optimization.\n\nAccording to industry studies, corporate websites operating on modern high-performance architectures convert 42% higher. Bird Hills Tech provides full project asset ownership to clients.`
                   )
                 }
                 className="text-xs font-semibold text-[#C59B27] hover:underline"
@@ -587,9 +587,9 @@ Common FAQs:
                     <CheckCircle2 size={16} />
                   </div>
                   <div>
-                    <span className="font-bold text-white">Dubai & GCC Geographic Entities</span>
+                    <span className="font-bold text-white">Geographic & Entity Authority</span>
                     <p className="text-[11px] text-slate-300">
-                      Grounds entity authority to Dubai, Deira, UAE, and GCC regional jurisdiction.
+                      Grounds entity authority to global enterprise jurisdictions and organizational profiles.
                     </p>
                   </div>
                 </div>
@@ -608,14 +608,14 @@ Common FAQs:
         </div>
       )}
 
-      {/* TAB 3: DUBAI LOCAL SCHEMA.ORG GENERATOR */}
+      {/* TAB 3: LOCAL & ORGANIZATION SCHEMA.ORG GENERATOR */}
       {activeTab === "schema" && (
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           {/* Form */}
           <div className="lg:col-span-6 bg-white p-6 rounded-2xl border border-[#E4E7EC] shadow-2xs space-y-4">
             <h2 className="text-sm font-bold text-[#0B0F19] uppercase tracking-wider flex items-center gap-2">
               <MapPin size={16} className="text-[#C59B27]" />
-              <span>Entity & Local Dubai Schema Fields</span>
+              <span>Entity & Organization Schema Fields</span>
             </h2>
 
             <div className="grid grid-cols-2 gap-3 text-xs">
@@ -643,7 +643,7 @@ Common FAQs:
               </div>
 
               <div className="col-span-2">
-                <label className="font-bold text-[#0B0F19] block mb-1">Dubai Physical Address</label>
+                <label className="font-bold text-[#0B0F19] block mb-1">Corporate Physical Address</label>
                 <input
                   type="text"
                   value={schemaData.streetAddress}

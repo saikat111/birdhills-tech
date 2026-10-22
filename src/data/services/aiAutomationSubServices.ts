@@ -13,7 +13,7 @@ export const AI_AUTOMATION_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroSubcopy:
       "Transform manual knowledge work into automated execution. We architect and deploy goal-driven autonomous AI agents with access to your databases, APIs, ERPs, and messaging channels to research, reconcile, communicate, and solve operational tasks without human intervention.",
     heroImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1600&q=85",
-    priceNote: "Custom deployment from AED 9,500 / $2,600",
+    priceNote: "From $2,600",
     deliveryTimeline: "2 to 4 Weeks",
     metrics: [
       { value: "85%", label: "Manual Effort Eliminated", desc: "Routine back-office tasks handled automatically" },
@@ -87,7 +87,7 @@ export const AI_AUTOMATION_SUB_SERVICES: Record<string, SubServiceDetail> = {
       },
       {
         q: "Can the AI agent run entirely on our own private infrastructure?",
-        a: "Yes. We can deploy private, self-hosted open-weights models (such as Llama 3 or Mistral) inside your isolated VPC (AWS, Azure, or local Dubai private cloud) with zero third-party telemetry.",
+        a: "Yes. We can deploy private, self-hosted open-weights models (such as Llama 3 or Mistral) inside your isolated VPC (AWS, Azure, or dedicated enterprise private cloud) with zero third-party telemetry.",
       },
     ],
   },
@@ -104,7 +104,7 @@ export const AI_AUTOMATION_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroSubcopy:
       "Replace frustrating keyword-matching bots with contextual conversational assistants grounded exclusively in your company knowledge base, product catalogs, pricing rules, and documentation. Delivers instant, precise, human-toned answers 24/7.",
     heroImage: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1600&q=85",
-    priceNote: "From AED 4,500 / $1,250 setup",
+    priceNote: "From $1,250 setup",
     deliveryTimeline: "7 to 14 Business Days",
     metrics: [
       { value: "0%", label: "Hallucination Rate", desc: "Hard citations and strict retrieval context filtering" },
@@ -137,7 +137,7 @@ export const AI_AUTOMATION_SUB_SERVICES: Record<string, SubServiceDetail> = {
       },
       {
         title: "Native Arabic & Multilingual Fluency",
-        desc: "Engineered specifically for UAE and global audiences with flawless Arabic (MSA & Gulf dialect) and 80+ international languages.",
+        desc: "Engineered specifically for international and multilingual audiences with flawless Arabic, English, and 80+ international languages.",
       },
       {
         title: "Lead Capture & CRM Sync",
@@ -195,7 +195,7 @@ export const AI_AUTOMATION_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroSubcopy:
       "Eliminate repetitive copy-pasting, disconnected spreadsheets, and delayed customer responses. We build enterprise-grade automation pipelines across your CRM, accounting software, email marketing, and ERP systems that trigger instantly and execute reliably.",
     heroImage: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=85",
-    priceNote: "From AED 3,800 / $1,050 per workflow architecture",
+    priceNote: "From $1,050 per workflow architecture",
     deliveryTimeline: "5 to 10 Business Days",
     metrics: [
       { value: "100%", label: "Data Consistency", desc: "Zero manual data re-entry errors across mirrored databases" },
@@ -284,9 +284,9 @@ export const AI_AUTOMATION_SUB_SERVICES: Record<string, SubServiceDetail> = {
     badge: "Official Meta Verified API",
     heroHeadline: "Turn WhatsApp Into Your #1 Revenue Channel With AI-Powered Automation",
     heroSubcopy:
-      "In the UAE and across global markets, WhatsApp is where deals happen. We build official Meta Cloud API integrations, automated broadcast campaigns, interactive catalog browsing, and intelligent bilingual AI sales agents that close deals directly in WhatsApp chats.",
+      "Across modern global markets, WhatsApp is where deals happen. We build official Meta Cloud API integrations, automated broadcast campaigns, interactive catalog browsing, and intelligent bilingual AI sales agents that close deals directly in WhatsApp chats.",
     heroImage: "https://images.unsplash.com/photo-1611746872915-64382b5c76da?auto=format&fit=crop&w=1600&q=85",
-    priceNote: "From AED 4,900 / $1,350 complete setup",
+    priceNote: "From $1,350 complete setup",
     deliveryTimeline: "7 to 14 Business Days",
     metrics: [
       { value: "98%", label: "Open Rate", desc: "Astronomically outperforming traditional email marketing" },
@@ -377,7 +377,7 @@ export const AI_AUTOMATION_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroSubcopy:
       "Stop burning sales rep hours on manual LinkedIn research and generic cold emails that land in spam. We engineer automated outbound engines that scrape high-intent B2B decision-makers, enrich contact data, and send 1-to-1 customized email and LinkedIn messages that generate qualified sales calls.",
     heroImage: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=85",
-    priceNote: "From AED 5,500 / $1,500 monthly management",
+    priceNote: "From $1,500 monthly management",
     deliveryTimeline: "Setup in 10 Days",
     metrics: [
       { value: "40-65%", label: "Average Email Open Rate", desc: "Warm inbox infrastructure and DNS authentication" },
@@ -468,7 +468,7 @@ export const AI_AUTOMATION_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroSubcopy:
       "Transform your support operations from a cost center into a competitive advantage. We build enterprise AI support systems that resolve Tier-1 tickets, process refunds, guide troubleshooting, and manage customer inquiries instantly across email, chat, and helpdesk portals.",
     heroImage: "https://images.unsplash.com/photo-1534536281715-e28d76689b4d?auto=format&fit=crop&w=1600&q=85",
-    priceNote: "From AED 5,200 / $1,400 monthly setup & maintenance",
+    priceNote: "From $1,400 monthly setup & maintenance",
     deliveryTimeline: "10 to 20 Business Days",
     metrics: [
       { value: "< 5s", label: "Initial Response Time", desc: "Zero waiting queues for customers day or night" },
@@ -559,7 +559,7 @@ export const AI_AUTOMATION_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroSubcopy:
       "When a potential buyer fills out your form, every minute of delay reduces conversion odds by 391%. We build real-time conversational qualification engines that immediately engage leads via SMS, WhatsApp, or phone, verify budget and requirements, and lock in qualified meetings on your sales team's calendar.",
     heroImage: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1600&q=85",
-    priceNote: "From AED 4,200 / $1,150 setup",
+    priceNote: "From $1,150 setup",
     deliveryTimeline: "7 to 14 Business Days",
     metrics: [
       { value: "< 60s", label: "Response Time", desc: "Engage prospects while your brand is still fresh in their minds" },
@@ -650,7 +650,7 @@ export const AI_AUTOMATION_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroSubcopy:
       "Maintain a commanding digital presence without hiring a massive in-house editorial team. We engineer automated content pipelines that transform core concepts, podcast episodes, or market research into search-optimized blog articles, social media assets, newsletters, and ad creatives tailored to your brand voice.",
     heroImage: "https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&w=1600&q=85",
-    priceNote: "From AED 3,500 / $950 monthly setup",
+    priceNote: "From $950 monthly setup",
     deliveryTimeline: "7 to 10 Business Days",
     metrics: [
       { value: "10x", label: "Publishing Velocity", desc: "Produce weeks worth of cross-channel content in hours" },
@@ -741,7 +741,7 @@ export const AI_AUTOMATION_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroSubcopy:
       "Bridge the gap between modern cloud services and legacy desktop or on-premise software. We deploy intelligent RPA bots and data-extraction pipelines that automate invoice processing, financial reconciliation, compliance audits, and back-office operations with zero human error.",
     heroImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=85",
-    priceNote: "From AED 8,500 / $2,300 implementation",
+    priceNote: "From $2,300 implementation",
     deliveryTimeline: "2 to 4 Weeks",
     metrics: [
       { value: "99.8%", label: "Data Extraction Accuracy", desc: "Multi-model OCR and vision models for unformatted documents" },
@@ -782,7 +782,7 @@ export const AI_AUTOMATION_SUB_SERVICES: Record<string, SubServiceDetail> = {
       },
       {
         title: "Compliance & VAT Auditing",
-        desc: "Validates UAE Federal Tax Authority (FTA) or international VAT formatting rules automatically on all incoming invoices.",
+        desc: "Validates international VAT, GST, and corporate tax formatting rules automatically on all incoming invoices.",
       },
       {
         title: "Real-Time Exception Queue",
@@ -832,7 +832,7 @@ export const AI_AUTOMATION_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroSubcopy:
       "When your business runs hundreds of thousands of automation tasks monthly, Zapier and Make pricing quickly explodes into thousands of dollars. We build, host, and maintain high-availability, self-hosted n8n infrastructure on your own private cloud—delivering unlimited automations, complete data privacy, and full custom code control.",
     heroImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1600&q=85",
-    priceNote: "From AED 4,500 / $1,250 deployment & migration",
+    priceNote: "From $1,250 deployment & migration",
     deliveryTimeline: "5 to 10 Business Days",
     metrics: [
       { value: "80%+", label: "Cost Savings", desc: "Eliminate per-task billing compared to commercial SaaS platforms" },

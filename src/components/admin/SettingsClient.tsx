@@ -47,7 +47,7 @@ export function SettingsClient({ initialSettings }: SettingsClientProps) {
       "Bird Hills Tech delivers Digital Marketing, AI Business Automation, Web Development, Domain & Hosting Services for smarter, scalable business growth.",
     site_keywords:
       settingsMap["site_keywords"] ||
-      "Web Development Company in Dubai, Digital Marketing Agency in Dubai, AI Business Automation Dubai, Domain and Hosting Services, Local SEO Dubai, Bird Hills Tech",
+      "Web Development Company, Digital Marketing Agency, AI Business Automation, Domain and Hosting Services, Enterprise SEO, Bird Hills Tech",
     google_indexing:
       settingsMap["google_indexing"] || "disabled",
 
@@ -56,13 +56,13 @@ export function SettingsClient({ initialSettings }: SettingsClientProps) {
     tagline: settingsMap["tagline"] || "Technology × Creative × Growth",
     address:
       settingsMap["address"] ||
-      "Deira - Stone Building - 122 7th A Street - Al Baraha - Dubai, UAE",
+      "Global Digital Operations & Worldwide Client Services",
     phone: settingsMap["phone"] || "+971 52 440 5785",
     whatsapp: settingsMap["whatsapp"] || "+971 52 440 5785",
     email: settingsMap["email"] || "contact@birdhillstech.com",
     website: settingsMap["website"] || "https://birdhillstech.com",
     working_hours:
-      settingsMap["working_hours"] || "Monday – Saturday: 9:00 AM – 6:00 PM (GST)",
+      settingsMap["working_hours"] || "Monday – Saturday: 9:00 AM – 6:00 PM (UTC / Global Hours)",
 
     // Social Links
     linkedin_url:
@@ -76,10 +76,10 @@ export function SettingsClient({ initialSettings }: SettingsClientProps) {
     ai_bot_name: settingsMap["ai_bot_name"] || "Bird Hills Assistant",
     ai_welcome_message:
       settingsMap["ai_welcome_message"] ||
-      "Hello! Welcome to Bird Hills Tech. How can we assist your technology or growth objectives in Dubai today?",
+      "Hello! Welcome to Bird Hills Tech. How can we assist your technology or growth objectives today?",
     ai_qualification_notes:
       settingsMap["ai_qualification_notes"] ||
-      "Prioritize inquiring about commercial budget, timeline, and whether client has existing operations in Dubai / GCC.",
+      "Prioritize inquiring about commercial budget, timeline, and client's geographic scope and enterprise operations.",
 
     // Notifications
     lead_notification_email:
@@ -129,7 +129,7 @@ export function SettingsClient({ initialSettings }: SettingsClientProps) {
             System & Site Settings
           </h1>
           <p className="text-xs sm:text-sm text-[#667085] mt-1">
-            Configure global Dubai business coordinates, live contact lines, AI agent behaviors, and social profiles.
+            Configure global business coordinates, live contact lines, AI agent behaviors, and social profiles.
           </p>
         </div>
       </div>
@@ -287,7 +287,7 @@ export function SettingsClient({ initialSettings }: SettingsClientProps) {
                 type="text"
                 value={form.site_keywords}
                 onChange={(e) => handleChange("site_keywords", e.target.value)}
-                placeholder="Web Development Company in Dubai, Digital Marketing Agency in Dubai, ..."
+                placeholder="Web Development Company, Digital Marketing Agency, AI Business Automation, ..."
                 className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#070B14] focus:border-[#C59B27] focus:outline-none"
               />
             </div>
@@ -352,7 +352,7 @@ export function SettingsClient({ initialSettings }: SettingsClientProps) {
         {activeTab === "general" && (
           <div className="space-y-6">
             <h3 className="text-sm font-bold text-[#070B14] uppercase tracking-wider">
-              Dubai Headquarters & Identity
+              Corporate Headquarters & Identity
             </h3>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -383,7 +383,7 @@ export function SettingsClient({ initialSettings }: SettingsClientProps) {
 
             <div>
               <label className="block text-xs font-bold text-slate-700 mb-1">
-                Corporate Address (Dubai, UAE)
+                Corporate Address
               </label>
               <input
                 type="text"
@@ -392,7 +392,7 @@ export function SettingsClient({ initialSettings }: SettingsClientProps) {
                 className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#070B14] focus:border-[#C59B27] focus:outline-none"
               />
               <p className="text-[11px] text-slate-400 mt-1">
-                Standard: Deira - Stone Building - 122 7th A Street - Al Baraha - Dubai, UAE
+                Standard: Global Operations & Technology Headquarters
               </p>
             </div>
 
@@ -449,7 +449,7 @@ export function SettingsClient({ initialSettings }: SettingsClientProps) {
 
               <div>
                 <label className="block text-xs font-bold text-slate-700 mb-1">
-                  Dubai Working Hours
+                  Corporate Working Hours
                 </label>
                 <input
                   type="text"

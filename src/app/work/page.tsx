@@ -9,19 +9,19 @@ import FinalCtaSection from "@/components/home/FinalCtaSection";
 import { Zap, ShieldCheck, TrendingUp, Award, Calendar, MessageCircle, CheckCircle2, Lock, FileCode2 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Selected Work & Case Studies | Bird Hills Tech Dubai",
+  title: "Selected Work & Case Studies | Bird Hills Tech",
   description:
-    "Explore our portfolio of enterprise web platforms, e-commerce stores, brand identities, and AI automation systems built for ambitious businesses in Dubai and the GCC.",
+    "Explore our portfolio of enterprise web platforms, e-commerce stores, brand identities, and AI automation systems built for ambitious businesses worldwide.",
   alternates: {
     canonical: "https://birdhillstech.com/work",
   },
   openGraph: {
-    title: "Selected Work & Case Studies | Bird Hills Tech Dubai",
+    title: "Selected Work & Case Studies | Bird Hills Tech",
     description:
       "Real engineering and measurable commercial impact across technology, creative brand architecture, and performance acquisition.",
     url: "https://birdhillstech.com/work",
     siteName: "Bird Hills Tech",
-    locale: "en_AE",
+    locale: "en_US",
     type: "website",
   },
 };
@@ -30,9 +30,9 @@ export const revalidate = 60;
 
 const WORK_FAQS: FaqItem[] = [
   {
-    question: "Can Bird Hills Tech provide client references and live production demos in the UAE?",
+    question: "Can Bird Hills Tech provide client references and live production demos?",
     answer:
-      "Yes. During our initial discovery briefing, we can showcase live production web platforms, demonstrate headless e-commerce checkouts, and walk through real-time admin analytics for regional clients under non-disclosure agreements.",
+      "Yes. During our initial discovery briefing, we can showcase live production web platforms, demonstrate headless e-commerce checkouts, and walk through real-time admin analytics for enterprise clients under non-disclosure agreements.",
     category: "Portfolio",
   },
   {
@@ -44,7 +44,7 @@ const WORK_FAQS: FaqItem[] = [
   {
     question: "What quantifiable metrics do you track to declare a project successful?",
     answer:
-      "We track technical performance metrics (99+ Lighthouse scores, responsive layouts), commercial conversion metrics (form submissions, WhatsApp click-throughs, lead-to-deal conversion), and search engine indexing benchmarks (Google Maps 3-Pack rank, organic keyword authority).",
+      "We track technical performance metrics (99+ Lighthouse scores, responsive layouts), commercial conversion metrics (form submissions, WhatsApp click-throughs, lead-to-deal conversion), and search engine indexing benchmarks (Google 3-Pack rank, organic keyword authority).",
     category: "Metrics",
   },
   {
@@ -56,7 +56,7 @@ const WORK_FAQS: FaqItem[] = [
   {
     question: "What is your project engagement and payment schedule?",
     answer:
-      "Projects operate on transparent milestone deliverables: typically 40% project kickoff, 30% approved prototype and core engineering demonstration, and 30% final deployment and full project handover. We accept UAE bank transfers and corporate payment cards.",
+      "Projects operate on transparent milestone deliverables: typically 40% project kickoff, 30% approved prototype and core engineering demonstration, and 30% final deployment and full project handover. We accept international bank wires, credit cards, and corporate payment methods.",
     category: "Commercial",
   },
 ];
@@ -73,7 +73,7 @@ export default async function WorkPage() {
   }
 
   const impactStats = [
-    { value: "$25M+", label: "Regional Transaction Volume Powered" },
+    { value: "$25M+", label: "Global Transaction Volume Powered" },
     { value: "99+", label: "Average Performance & Speed Score" },
     { value: "4.2x", label: "Average B2B Campaign Return on Ad Spend" },
     { value: "99.98%", label: "Platform SLA Uptime Across Cloud Deployments" },
@@ -81,12 +81,12 @@ export default async function WorkPage() {
 
   return (
     <div className="flex flex-col min-h-screen pt-24">
-      {/* 1. VISUAL HERO WITH DUBAI CORPORATE SKYLINE */}
+      {/* 1. VISUAL HERO WITH GLOBAL CORPORATE ARCHITECTURE */}
       <section className="relative py-24 md:py-32 bg-[#070B14] text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1526495124232-a04e1849168c?auto=format&fit=crop&w=2000&q=90"
-            alt="DIFC Dubai financial high-rise architecture"
+            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=90"
+            alt="Modern international enterprise architectural towers"
             fill
             priority
             sizes="100vw"
@@ -106,7 +106,7 @@ export default async function WorkPage() {
               <span className="block text-[#D4AF37]">Measurable commercial impact.</span>
             </h1>
             <p className="text-lg sm:text-xl text-slate-300 leading-relaxed font-normal">
-              Explore selected digital experiences and custom platforms engineered across technology, creative brand architecture, and performance acquisition for ambitious GCC enterprises.
+              Explore selected digital experiences and custom platforms engineered across technology, creative brand architecture, and performance acquisition for ambitious global enterprises.
             </p>
           </div>
         </div>
@@ -136,7 +136,7 @@ export default async function WorkPage() {
               CASE STUDY ARCHIVE
             </span>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-[#070B14] mt-1">
-              Featured Middle East Client Deployments
+              Featured Global Client Deployments
             </h2>
           </div>
 

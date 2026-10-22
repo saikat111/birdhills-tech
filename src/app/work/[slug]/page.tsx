@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
+import { Prisma } from "@prisma/client";
 import {
   ChevronRight,
   ArrowRight,
@@ -23,9 +24,18 @@ import {
 } from "lucide-react";
 import FinalCtaSection from "@/components/home/FinalCtaSection";
 
+type ProjectWithImages = Prisma.ProjectGetPayload<{
+  include: { images: true };
+}>;
+
 export async function generateStaticParams() {
-  const projects = await prisma.project.findMany({ select: { slug: true } });
-  return projects.map((p) => ({ slug: p.slug }));
+  try {
+    const projects = await prisma.project.findMany({ select: { slug: true } });
+    return projects.map((p) => ({ slug: p.slug }));
+  } catch (err) {
+    console.warn("Could not pre-render static work params at build time:", err);
+    return [];
+  }
 }
 
 export async function generateMetadata({
@@ -34,24 +44,28 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const project = await prisma.project.findUnique({ where: { slug } });
+  try {
+    const project = await prisma.project.findUnique({ where: { slug } });
 
-  if (!project) {
-    return { title: "Portfolio Project Not Found | Bird Hills Tech" };
+    if (!project) {
+      return { title: "Portfolio Project Not Found | Bird Hills Tech" };
+    }
+
+    return {
+      title: project.seoTitle || `${project.title} | Portfolio Showcase`,
+      description: project.seoDescription || project.shortDesc,
+      alternates: {
+        canonical: `https://birdhillstech.com/work/${project.slug}`,
+      },
+      openGraph: {
+        title: project.title,
+        description: project.shortDesc,
+        images: [{ url: project.coverImage }],
+      },
+    };
+  } catch {
+    return { title: "Portfolio Showcase | Bird Hills Tech" };
   }
-
-  return {
-    title: project.seoTitle || `${project.title} | Portfolio Showcase`,
-    description: project.seoDescription || project.shortDesc,
-    alternates: {
-      canonical: `https://birdhillstech.com/work/${project.slug}`,
-    },
-    openGraph: {
-      title: project.title,
-      description: project.shortDesc,
-      images: [{ url: project.coverImage }],
-    },
-  };
 }
 
 export default async function ProjectDetailPage({
@@ -60,10 +74,16 @@ export default async function ProjectDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const project = await prisma.project.findUnique({
-    where: { slug },
-    include: { images: true },
-  });
+  let project: ProjectWithImages | null = null;
+
+  try {
+    project = await prisma.project.findUnique({
+      where: { slug },
+      include: { images: true },
+    });
+  } catch (err) {
+    console.error("Error fetching project in ProjectDetailPage:", err);
+  }
 
   if (!project) {
     notFound();
@@ -186,7 +206,7 @@ export default async function ProjectDetailPage({
               <div className="text-slate-400 font-bold uppercase tracking-wider text-[10px]">
                 Target Market
               </div>
-              <div className="font-bold text-white text-sm mt-1">Dubai & GCC Enterprises</div>
+              <div className="font-bold text-white text-sm mt-1">Global Enterprises</div>
             </div>
             <div>
               <div className="text-slate-400 font-bold uppercase tracking-wider text-[10px]">
@@ -260,7 +280,7 @@ export default async function ProjectDetailPage({
               </div>
               <div className="text-3xl font-black text-[#C59B27]">99+ Score</div>
               <p className="text-xs text-[#667085] leading-relaxed">
-                Top-tier Lighthouse performance and lightning-fast loading across regional GCC networks.
+                Top-tier Lighthouse performance and lightning-fast loading across modern global networks.
               </p>
             </div>
 

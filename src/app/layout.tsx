@@ -27,11 +27,11 @@ export async function generateMetadata(): Promise<Metadata> {
   const keywordsArray = settings.site_keywords
     ? settings.site_keywords.split(",").map((k) => k.trim()).filter(Boolean)
     : [
-        "Web Development Company in Dubai",
-        "Digital Marketing Agency in Dubai",
-        "AI Business Automation Dubai",
+        "Web Development Company",
+        "Digital Marketing Agency",
+        "AI Business Automation",
         "Domain and Hosting Services",
-        "Local SEO Dubai",
+        "Enterprise SEO",
         "Bird Hills Tech",
       ];
 
@@ -75,7 +75,7 @@ export async function generateMetadata(): Promise<Metadata> {
         },
     openGraph: {
       type: "website",
-      locale: "en_AE",
+      locale: "en_US",
       url: "https://birdhillstech.com",
       siteName: settings.company_name || "Bird Hills Tech",
       title: settings.site_title || "Bird Hills Tech | Digital Marketing & Web Development Agency",
@@ -119,7 +119,7 @@ export default async function RootLayout({
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": ["Organization", "LocalBusiness", "ProfessionalService"],
+    "@type": ["Organization", "ProfessionalService"],
     name: settings.company_name || "Bird Hills Tech",
     url: settings.website || "https://birdhillstech.com",
     logo: "https://birdhillstech.com/images/logo-full.png",
@@ -128,15 +128,9 @@ export default async function RootLayout({
     email: settings.email,
     address: {
       "@type": "PostalAddress",
-      streetAddress: settings.address || "Stone Building, 122 7th A Street, Al Baraha",
-      addressLocality: "Dubai",
-      addressRegion: "Dubai",
-      addressCountry: "AE",
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: "25.2818",
-      longitude: "55.3142",
+      streetAddress: settings.address || "Global Digital Operations & Worldwide Client Services",
+      addressRegion: "Global",
+      addressCountry: "US",
     },
     openingHoursSpecification: [
       {
@@ -161,7 +155,7 @@ export default async function RootLayout({
       settings.facebook_url,
       settings.youtube_url,
     ].filter(Boolean),
-    areaServed: ["United Arab Emirates", "Saudi Arabia", "Qatar", "GCC", "Global"],
+    areaServed: ["Global", "North America", "Europe", "Asia-Pacific", "Worldwide"],
     priceRange: "$$",
     description: settings.site_description,
   };

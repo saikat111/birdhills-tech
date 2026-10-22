@@ -33,18 +33,18 @@ interface MediaClientProps {
 
 const PRESET_ASSETS = [
   {
-    name: "Dubai Skyline & Downtown Financial Center",
-    url: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1600&q=80",
+    name: "Modern Enterprise Architecture & Corporate Towers",
+    url: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80",
     mimeType: "image/jpeg",
   },
   {
-    name: "Sheikh Zayed Road High-Rise Architecture",
-    url: "https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=1600&q=80",
+    name: "Executive Boardroom & Collaborative Workspace",
+    url: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80",
     mimeType: "image/jpeg",
   },
   {
-    name: "Dubai International Financial Centre (DIFC)",
-    url: "https://images.unsplash.com/photo-1526495124232-a04e1849168c?auto=format&fit=crop&w=1600&q=80",
+    name: "Global Technology Innovation & Research Lab",
+    url: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=80",
     mimeType: "image/jpeg",
   },
   {
@@ -246,7 +246,7 @@ export function MediaClient({ initialMedia }: MediaClientProps) {
           <div className="flex items-center justify-between">
             <h3 className="text-xs font-bold text-[#070B14] uppercase tracking-wider flex items-center gap-1.5">
               <Sparkles size={14} className="text-[#C59B27]" />
-              Quick Stock Presets (Dubai High-Res Photography)
+              Quick Stock Presets (High-Res Technology & Architecture Photography)
             </h3>
             <span className="text-[10px] text-slate-400">Click to instantly add to library</span>
           </div>
@@ -447,7 +447,7 @@ export function MediaClient({ initialMedia }: MediaClientProps) {
                     required
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
-                    placeholder="e.g. Dubai Office Tech Workspace"
+                    placeholder="e.g. Modern Office Tech Workspace"
                     className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#070B14] focus:border-[#C59B27] focus:outline-none"
                   />
                 </div>

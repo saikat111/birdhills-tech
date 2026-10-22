@@ -15,7 +15,7 @@ export function Footer({ settings = {} }: FooterProps) {
 
   const phone = settings["phone"] || "+971 52 440 5785";
   const email = settings["email"] || "contact@birdhillstech.com";
-  const address = settings["address"] || "Deira - Stone Building - 122 7th A Street - Al Baraha - Dubai, UAE";
+  const address = settings["address"] || "Global Digital Operations & Worldwide Client Services";
   const whatsapp = settings["whatsapp"] || "+971 52 440 5785";
   const companyName = settings["company_name"] || "Bird Hills Tech";
   const cleanPhone = phone.replace(/[^0-9+]/g, "");
@@ -33,11 +33,11 @@ export function Footer({ settings = {} }: FooterProps) {
           <div className="lg:col-span-4 space-y-4">
             <Logo variant="white" />
             <p className="text-sm text-slate-400 max-w-sm leading-relaxed">
-              Bird Hills Tech combines modern technology, creative strategy and commercial performance marketing to build powerful digital operations and measurable growth for ambitious UAE enterprises.
+              Bird Hills Tech combines modern technology, creative strategy and commercial performance marketing to build powerful digital operations and measurable growth for ambitious global enterprises.
             </p>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-[#0F172A] border border-[#C59B27]/30 text-xs text-slate-300">
               <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse" />
-              <span>Dubai · UAE · Available for Strategic Engagements</span>
+              <span>Global Operations · Worldwide Strategic Engagements</span>
             </div>
           </div>
 
@@ -79,7 +79,7 @@ export function Footer({ settings = {} }: FooterProps) {
               </li>
               <li>
                 <Link href="/domains" className="hover:text-[#D4AF37] transition-colors">
-                  .ae Domain Search
+                  Domain Search &amp; Registration
                 </Link>
               </li>
               <li>
@@ -185,7 +185,7 @@ export function Footer({ settings = {} }: FooterProps) {
           {/* Contact & Location */}
           <div className="lg:col-span-3 space-y-4">
             <h3 className="text-xs font-extrabold tracking-wider text-[#D4AF37] uppercase">
-              Dubai Headquarters
+              Global Operations
             </h3>
             <div className="space-y-3 text-xs sm:text-sm text-slate-400">
               <div className="flex items-start gap-2.5">
@@ -231,7 +231,7 @@ export function Footer({ settings = {} }: FooterProps) {
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <div>
-            © {new Date().getFullYear()} {companyName}. All rights reserved. Registered in Dubai, United Arab Emirates.
+            © {new Date().getFullYear()} {companyName}. All rights reserved. Worldwide Digital Operations.
           </div>
           <div className="flex items-center gap-6">
             <Link href="/privacy-policy" className="hover:text-[#D4AF37] transition-colors">

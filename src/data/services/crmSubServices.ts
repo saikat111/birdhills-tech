@@ -13,7 +13,7 @@ export const CRM_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroSubcopy:
       "A poorly configured CRM becomes an expensive digital Rolodex that reps avoid using. We architect, configure, and deploy enterprise CRM platforms (HubSpot, Salesforce, Zoho, Pipedrive) structured around your actual buyer journey, custom data properties, and automated stage gates.",
     heroImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=85",
-    priceNote: "From AED 6,500 / $1,750 implementation",
+    priceNote: "From $1,750 implementation",
     deliveryTimeline: "2 to 3 Weeks",
     metrics: [
       { value: "100%", label: "Adoption Rate", desc: "Intuitive layouts and streamlined rep data entry workflows" },
@@ -104,7 +104,7 @@ export const CRM_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroSubcopy:
       "A CRM naturally decays by 25-30% every year without dedicated stewardship. We provide managed CRM administration—regularly purging bad data, fixing broken automations, onboarding new sales reps, building custom reports, and ensuring your revenue engine never stalls.",
     heroImage: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1600&q=85",
-    priceNote: "From AED 3,200 / $850 / month retained management",
+    priceNote: "From $850 / month retained management",
     deliveryTimeline: "Ongoing Retained Support",
     metrics: [
       { value: "0%", label: "Duplicate Records", desc: "Automated daily de-duplication rules and merge protocols" },
@@ -195,7 +195,7 @@ export const CRM_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroSubcopy:
       "Leads shouldn't sit unattended in form submission notification emails. We build automated lead ingestion pipelines that capture prospects from websites, social media ads, landing pages, and third-party portals, enrich them with firmographic data, and assign them instantly to your sales team.",
     heroImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=85",
-    priceNote: "From AED 3,800 / $1,050 implementation",
+    priceNote: "From $1,050 implementation",
     deliveryTimeline: "5 to 10 Business Days",
     metrics: [
       { value: "0s", label: "Sync Latency", desc: "Instantaneous webhook push from ads and web forms to CRM" },
@@ -286,7 +286,7 @@ export const CRM_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroSubcopy:
       "Eliminate internal sales disputes and delayed follow-ups. We engineer intelligent routing rules that distribute inbound opportunities dynamically based on territory geography, rep language fluency, deal value thresholds, and real-time rep calendar availability.",
     heroImage: "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1600&q=85",
-    priceNote: "From AED 3,200 / $850 implementation",
+    priceNote: "From $850 implementation",
     deliveryTimeline: "3 to 7 Business Days",
     metrics: [
       { value: "100%", label: "Fair Distribution", desc: "Algorithmic round-robin preventing rep favoritism or lead starvation" },
@@ -377,7 +377,7 @@ export const CRM_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroSubcopy:
       "Most email marketing fails because it consists of generic monthly newsletters blasted to unsegmented lists. We engineer dynamic behavioral email sequences triggered by exact user actions—website visits, content downloads, and deal stages—delivering high-relevance messaging that moves deals forward.",
     heroImage: "https://images.unsplash.com/photo-1596526131083-e8c633c948d2?auto=format&fit=crop&w=1600&q=85",
-    priceNote: "From AED 4,500 / $1,250 sequence package",
+    priceNote: "From $1,250 sequence package",
     deliveryTimeline: "7 to 14 Business Days",
     metrics: [
       { value: "48%", label: "Average Open Rate", desc: "Deliverability-optimized subject lines and clean sender reputations" },
@@ -468,7 +468,7 @@ export const CRM_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroSubcopy:
       "Stop forcing your sales reps to toggle between personal WhatsApp chats and your company CRM. We integrate official WhatsApp messaging directly into your HubSpot, Salesforce, or Zoho contact timelines—enabling automated appointment confirmations, one-click template messaging, and complete conversation logging.",
     heroImage: "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?auto=format&fit=crop&w=1600&q=85",
-    priceNote: "From AED 4,200 / $1,150 setup",
+    priceNote: "From $1,150 setup",
     deliveryTimeline: "5 to 10 Business Days",
     metrics: [
       { value: "100%", label: "Timeline Visibility", desc: "Every WhatsApp message logged automatically to contact records" },
@@ -559,7 +559,7 @@ export const CRM_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroSubcopy:
       "A disorganized sales pipeline causes deals to linger for months and makes accurate revenue forecasting impossible. We engineer structured, stage-gated sales pipelines with mandatory qualification criteria, automated deal-rot warnings, and weighted probability forecasting.",
     heroImage: "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1600&q=85",
-    priceNote: "From AED 3,800 / $1,050 pipeline architecture",
+    priceNote: "From $1,050 pipeline architecture",
     deliveryTimeline: "5 to 10 Business Days",
     metrics: [
       { value: "32%", label: "Faster Sales Cycle", desc: "Clear criteria eliminate ambiguity and keep deals moving forward" },
@@ -650,7 +650,7 @@ export const CRM_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroSubcopy:
       "Every email exchange spent negotiating a meeting time cuts conversion rates in half. We implement frictionless calendar scheduling systems connected directly to your CRM, equipped with round-robin rep distribution, pre-meeting qualifying questionnaires, and multi-channel SMS/WhatsApp reminders that slash no-shows.",
     heroImage: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=1600&q=85",
-    priceNote: "From AED 2,800 / $750 setup",
+    priceNote: "From $750 setup",
     deliveryTimeline: "3 to 5 Business Days",
     metrics: [
       { value: "92%+", label: "Confirmed Show-Up Rate", desc: "Multi-touch SMS, WhatsApp, and email reminder cadence" },
@@ -741,7 +741,7 @@ export const CRM_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroSubcopy:
       "When off-the-shelf connectors don't cut it, data silos develop. We build robust, custom API integrations connecting your CRM to proprietary ERPs, accounting platforms, customer portals, and internal SQL databases—ensuring live, bidirectional data consistency across your entire enterprise.",
     heroImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1600&q=85",
-    priceNote: "From AED 5,500 / $1,500 custom integration",
+    priceNote: "From $1,500 custom integration",
     deliveryTimeline: "7 to 15 Business Days",
     metrics: [
       { value: "100%", label: "Real-Time Sync", desc: "Webhooks ensure instantaneous data updates across systems" },

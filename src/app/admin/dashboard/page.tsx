@@ -104,7 +104,7 @@ export default async function AdminDashboardPage() {
         <div>
           <div className="flex items-center gap-2">
             <span className="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase tracking-wider bg-[#C59B27]/15 text-[#C59B27] border border-[#C59B27]/30">
-              Dubai Management Center
+              Global Management Center
             </span>
             <span className="text-xs text-[#667085]">Welcome back, {session.name}</span>
           </div>
@@ -269,13 +269,13 @@ export default async function AdminDashboardPage() {
         <div className="lg:col-span-5 rounded-3xl bg-[#070B14] p-6 text-white flex flex-col justify-between border border-[#C59B27]/30 shadow-md">
           <div>
             <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-[#C59B27]/20 text-[#D4AF37] border border-[#C59B27]/40 mb-3">
-              DUBAI SEO & AEO STUDIO
+              ENTERPRISE SEO & AEO STUDIO
             </span>
             <h3 className="text-lg font-bold text-white mb-2">
               Optimize for Google Maps & AI Engines
             </h3>
             <p className="text-xs text-slate-300 leading-relaxed">
-              Test metadata pixel width, audit Answer Engine (AEO) citations for Perplexity & ChatGPT, and generate verified Dubai LocalBusiness JSON-LD schema.
+              Test metadata pixel width, audit Answer Engine (AEO) citations for Perplexity & ChatGPT, and generate verified JSON-LD schema.
             </p>
           </div>
           <div className="pt-4 mt-4 border-t border-white/10">
@@ -341,7 +341,7 @@ export default async function AdminDashboardPage() {
             </div>
           </div>
           <div className="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between text-xs text-[#667085]">
-            <span>Bird Hills Tech Dubai CMS</span>
+            <span>Bird Hills Tech Enterprise CMS</span>
             <span className="font-mono text-[11px] text-[#C59B27]">v2.4 Production</span>
           </div>
         </div>

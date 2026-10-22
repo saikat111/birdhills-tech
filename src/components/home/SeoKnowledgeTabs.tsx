@@ -39,7 +39,7 @@ const TABS_DATA: TabContent[] = [
     title: "Enterprise Next.js Architecture & High Performance",
     subtitle: "Eliminating plugin bloat with type-safe engineering built for speed and conversion.",
     description:
-      "Modern enterprises in the UAE require instant responsiveness. In Dubai's competitive market, slow corporate websites lose high-intent prospects quickly. We build with Next.js, TypeScript, and server-side edge rendering to deliver instant page responses, smooth navigation, and frictionless user experiences. Every line of code is clean, modular, and fully handed over to your organization.",
+      "Modern enterprises require instant responsiveness. In competitive global markets, slow corporate websites lose high-intent prospects quickly. We build with Next.js, TypeScript, and server-side edge rendering to deliver instant page responses, smooth navigation, and frictionless user experiences. Every line of code is clean, modular, and fully handed over to your organization.",
     highlights: [
       {
         title: "Optimized Performance & Core Web Vitals",
@@ -66,35 +66,35 @@ const TABS_DATA: TabContent[] = [
   },
   {
     id: "local-seo",
-    label: "Dubai Local SEO",
+    label: "Local & Regional SEO",
     icon: MapPin,
-    title: "Google Maps 3-Pack Dominance Across Dubai & UAE",
-    subtitle: "Capturing high-intent local phone calls and showroom visits the moment clients search.",
+    title: "Google Maps 3-Pack & Regional Search Dominance",
+    subtitle: "Capturing high-intent local phone calls and customer inquiries the moment clients search.",
     description:
-      "When corporate clients, investors, or local consumers search for your services in Dubai, they don't browse page two of Google. They contact the top 3 businesses featured on the Google Maps pack. We resolve complex UAE trade license verification roadblocks, optimize category taxonomies, syndicate verified citations across authoritative UAE directories, and deploy geo-grid review acquisition strategies across Deira, Downtown, Business Bay, and DIFC.",
+      "When corporate clients, investors, or local consumers search for your services, they don't browse page two of Google. They contact the top 3 businesses featured on the Google Maps pack. We resolve complex verification roadblocks, optimize category taxonomies, syndicate verified citations across authoritative business directories, and deploy geo-grid review acquisition strategies across key commercial districts.",
     highlights: [
       {
         title: "GBP Verification & Category Structuring",
-        desc: "Direct assistance overcoming regional verification delays with full Department of Economy & Tourism compliance.",
+        desc: "Direct assistance overcoming verification delays with full search engine compliance.",
       },
       {
         title: "Geo-Grid Ranking Expansion",
-        desc: "Broaden your Google Maps visibility radius across major commercial and financial districts in Dubai.",
+        desc: "Broaden your Google Maps visibility radius across major commercial and financial districts.",
       },
       {
-        title: "Verified UAE Citation Network",
-        desc: "Authoritative business listings synced across regional UAE business databases and commercial indexes.",
+        title: "Verified Citation Network",
+        desc: "Authoritative business listings synced across regional and global commercial directories.",
       },
     ],
     metrics: [
       { value: "+280%", label: "Average Increase in Inbound Calls" },
       { value: "#1 to #3", label: "Target Maps 3-Pack Positions" },
-      { value: "100%", label: "UAE Trade License Alignment" },
+      { value: "100%", label: "Directory Citation Alignment" },
     ],
     ctaText: "Explore Local SEO Services",
     ctaHref: "/services/google-business-profile-local-seo",
-    image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=85",
-    imageAlt: "Dubai skyline and commercial business centers",
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=85",
+    imageAlt: "Global metropolitan commercial business centers and technology hubs",
   },
   {
     id: "b2b-growth",
@@ -103,7 +103,7 @@ const TABS_DATA: TabContent[] = [
     title: "Closed-Loop Commercial Acquisition & Pipeline Attribution",
     subtitle: "Trading vanity impressions for verified contract value and measurable customer acquisition cost.",
     description:
-      "Consumer marketing tactics fail in GCC enterprise sales. High-value commercial decision-makers don't make impulsive clicks. We structure precision B2B search campaigns on Google Ads targeting high-intent commercial keywords, combined with Account-Based Marketing (ABM) on LinkedIn reaching verified C-level executives in Dubai, Abu Dhabi, and Riyadh. Server-side tracking (Meta CAPI, Google Enhanced Conversions) connects every dirham spent directly to CRM pipeline.",
+      "Consumer marketing tactics fail in enterprise sales. High-value commercial decision-makers don't make impulsive clicks. We structure precision B2B search campaigns on Google Ads targeting high-intent commercial keywords, combined with Account-Based Marketing (ABM) on LinkedIn reaching verified C-level executives globally. Server-side tracking (Meta CAPI, Google Enhanced Conversions) connects every dollar spent directly to CRM pipeline.",
     highlights: [
       {
         title: "Zero Budget Waste on Broad Match",
@@ -130,19 +130,19 @@ const TABS_DATA: TabContent[] = [
   },
   {
     id: "cloud-infra",
-    label: "Cloud & .ae Domains",
+    label: "Cloud & Domains",
     icon: Server,
-    title: "Sub-15ms GCC Edge Latency & Accredited .ae Registry",
+    title: "Ultra-Low Latency Global Edge Network & Direct Domain Registry",
     subtitle: "Enterprise NVMe cloud storage, automated daily backups, and bank-grade DNSSEC shielding.",
     description:
-      "Hosting your Middle East business on distant European or US servers introduces 180ms+ network latency that degrades Core Web Vitals and hurts local search rank. Our pure NVMe cloud infrastructure is optimized specifically for Gulf traffic, serving content in under 15ms across the UAE and Saudi Arabia. We provide direct .ae domain registration, free zero-downtime website migrations, and corporate email systems with strict SPF/DKIM/DMARC deliverability.",
+      "Deploying applications on slow or distant legacy servers introduces high latency that degrades Core Web Vitals and hurts organic search rankings. Our pure NVMe global edge cloud infrastructure serves content in under 15ms worldwide. We provide direct top-level domain registration, free zero-downtime website migrations, and corporate email systems with strict SPF/DKIM/DMARC deliverability.",
     highlights: [
       {
         title: "Pure NVMe Enterprise Storage",
         desc: "Up to 10x faster I/O throughput compared to traditional SATA SSD hosting providers.",
       },
       {
-        title: "Accredited UAE .ae Registrar",
+        title: "Accredited Global Domain Registrar",
         desc: "Secure direct domain registration with instant DNS routing and full ownership transfer.",
       },
       {
@@ -151,7 +151,7 @@ const TABS_DATA: TabContent[] = [
       },
     ],
     metrics: [
-      { value: "< 15ms", label: "GCC Regional Edge Latency" },
+      { value: "< 15ms", label: "Global Edge Latency" },
       { value: "99.99%", label: "Guaranteed Network SLA" },
       { value: "0 sec", label: "Downtime During Migration" },
     ],
@@ -171,7 +171,7 @@ const TABS_DATA: TabContent[] = [
     highlights: [
       {
         title: "Sub-5-Second WhatsApp Lead Response",
-        desc: "Engage prospective international buyers immediately, even outside normal UAE office hours.",
+        desc: "Engage prospective international buyers immediately, 24/7 across every time zone.",
       },
       {
         title: "Private Knowledge Retrieval (RAG)",
@@ -194,29 +194,29 @@ const TABS_DATA: TabContent[] = [
   },
   {
     id: "bilingual-ux",
-    label: "Bilingual Arabic UX",
+    label: "Multilingual & RTL UX",
     icon: Globe2,
     title: "Native Bidirectional Design & Cultural Resonance",
-    subtitle: "True RTL layouts engineered to reflect Gulf prestige and command corporate authority.",
+    subtitle: "True RTL and multilingual layouts engineered for global authority and cross-border scale.",
     description:
-      "Bilingual design in the GCC requires far more than auto-translating text strings. A truly prestigious regional web presence demands authentic Right-to-Left (RTL) typography, mirrored UI component hierarchies, and culturally resonant visual aesthetics. We engineer bilingual platforms that seamlessly switch between English and Arabic, supporting regional payment methods including Apple Pay, Stripe, and GCC-preferred installments.",
+      "Global expansion requires far more than auto-translating text strings. A truly prestigious international web presence demands authentic Right-to-Left (RTL) typography, mirrored UI component hierarchies, and localized visual aesthetics. We engineer bilingual and multilingual platforms that seamlessly switch between English, Arabic, and other languages, supporting worldwide payment methods including Apple Pay, Stripe, and global gateways.",
     highlights: [
       {
         title: "True Bidirectional CSS (RTL/LTR)",
-        desc: "Pixel-perfect Arabic layouts that respect natural eye-tracking patterns and modern typography.",
+        desc: "Pixel-perfect Arabic and RTL layouts that respect natural eye-tracking patterns and modern typography.",
       },
       {
-        title: "Regional Payment Gateway Rails",
-        desc: "Frictionless checkout experiences with Apple Pay, Stripe UAE, Tabby, and Tamara.",
+        title: "Global Payment Gateway Rails",
+        desc: "Frictionless checkout experiences with Apple Pay, Stripe, PayPal, and international payment rails.",
       },
       {
-        title: "UAE Regulatory Compliance",
-        desc: "Full alignment with UAE Federal Decree-Law No. 45 on Personal Data Protection (PDPL).",
+        title: "Global Privacy & Regulatory Compliance",
+        desc: "Full alignment with international data privacy standards including GDPR and global data compliance frameworks.",
       },
     ],
     metrics: [
-      { value: "100%", label: "Native Arabic Typography" },
-      { value: "+38%", label: "Higher Regional Conversion" },
+      { value: "100%", label: "Native RTL & Multilingual Support" },
+      { value: "+38%", label: "Higher Global Conversion" },
       { value: "0", label: "Layout Shift on Language Switch" },
     ],
     ctaText: "View Creative & UX Practice",
@@ -248,7 +248,7 @@ export default function SeoKnowledgeTabs() {
             <span className="block text-[#D4AF37] mt-1">Measurable Commercial Dominance</span>
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
-            Explore the technical benchmarks, local UAE search strategies, and enterprise architectures that power our clients ahead of regional competition.
+            Explore the technical benchmarks, global search strategies, and enterprise architectures that power our clients ahead of the competition.
           </p>
         </div>
 
@@ -337,7 +337,7 @@ export default function SeoKnowledgeTabs() {
                   href="/book-a-meeting"
                   className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-xs sm:text-sm font-bold bg-white/5 hover:bg-white/10 text-white border border-white/15 transition-colors"
                 >
-                  <span>Book Dubai Consultation</span>
+                  <span>Book a Consultation</span>
                 </Link>
               </div>
             </div>
@@ -356,10 +356,10 @@ export default function SeoKnowledgeTabs() {
                 <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-[#070B14]/85 backdrop-blur-md border border-white/15">
                   <div className="flex items-center gap-2 text-xs font-bold text-[#D4AF37]">
                     <Zap size={14} />
-                    <span>VERIFIED GCC DEPLOYMENT BENCHMARK</span>
+                    <span>VERIFIED ENTERPRISE DEPLOYMENT BENCHMARK</span>
                   </div>
                   <div className="text-xs text-slate-300 mt-1">
-                    Audited for peak performance, zero technical debt, and maximum UAE conversion rate.
+                    Audited for peak performance, zero technical debt, and maximum conversion rates.
                   </div>
                 </div>
               </div>

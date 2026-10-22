@@ -4,8 +4,8 @@ import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | Bird Hills Tech Dubai",
-  description: "Terms and conditions governing engagements and use of Bird Hills Tech services in Dubai, UAE.",
+  title: "Terms of Service | Bird Hills Tech",
+  description: "Terms and conditions governing engagements and use of Bird Hills Tech services globally.",
   alternates: {
     canonical: "https://birdhillstech.com/terms",
   },
@@ -25,7 +25,7 @@ export default function TermsPage() {
           </div>
           <h1 className="text-3xl sm:text-4xl font-extrabold text-[#070B14]">Terms of Service</h1>
           <p className="text-xs text-slate-500 mt-2">
-            Last Updated: January 2026 · Bird Hills Tech (Dubai, UAE)
+            Last Updated: January 2026 · Bird Hills Tech Global Operations
           </p>
         </div>
       </section>
@@ -37,7 +37,7 @@ export default function TermsPage() {
             <p className="text-sm sm:text-base text-[#667085] leading-relaxed">
               By accessing the website birdhillstech.com or commissioning services from Bird Hills
               Tech (&ldquo;Company&rdquo;), you agree to be bound by these Terms of Service and all
-              applicable laws of the Emirate of Dubai and the United Arab Emirates.
+              applicable international commercial laws and regulations.
             </p>
           </div>
 
@@ -67,9 +67,8 @@ export default function TermsPage() {
             <h2 className="text-xl font-bold text-[#070B14] mb-3">4. Governing Law and Jurisdiction</h2>
             <p className="text-sm sm:text-base text-[#667085] leading-relaxed">
               These Terms and any contractual disputes arising hereunder shall be governed by and
-              construed in accordance with the laws of the Emirate of Dubai and the federal laws of
-              the United Arab Emirates. Any dispute shall be subject to the exclusive jurisdiction of
-              the competent courts of Dubai.
+              construed in accordance with applicable commercial laws. Any dispute shall be subject to
+              binding arbitration or the competent commercial courts of jurisdiction.
             </p>
           </div>
         </div>

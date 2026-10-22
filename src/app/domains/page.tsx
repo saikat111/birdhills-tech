@@ -20,9 +20,9 @@ import FaqAccordion from "@/components/common/FaqAccordion";
 import FinalCtaSection from "@/components/home/FinalCtaSection";
 
 export const metadata: Metadata = {
-  title: "Corporate Domain Registration & .ae UAE Accredited Registry | Bird Hills Tech",
+  title: "Corporate Domain Registration & Global DNS Management | Bird Hills Tech",
   description:
-    "Register official .ae, .com, .ai, and global domain names in Dubai. Instant DNS management, free WHOIS privacy, DNSSEC security, and zero-downtime domain transfers.",
+    "Register official .com, .ai, .io, and global domain names. Instant DNS management, free WHOIS privacy, DNSSEC security, and zero-downtime domain transfers.",
   alternates: {
     canonical: "https://birdhillstech.com/domains",
   },
@@ -32,11 +32,11 @@ export default function DomainsPage() {
   const tldPricing = [
     {
       extension: ".ae",
-      purpose: "Official UAE National Identity for Dubai Enterprises",
+      purpose: "Regional & Strategic Digital Identity",
       price: "$39.99",
       period: "/ year",
       popular: true,
-      badge: "UAE Standard",
+      badge: "Regional",
     },
     {
       extension: ".com",
@@ -117,8 +117,8 @@ export default function DomainsPage() {
 
   const domainFaqs = [
     {
-      q: "Can international companies register an official .ae domain name?",
-      a: "Yes! There are no local presence requirements for standard .ae domain registrations. Any business worldwide can register a .ae domain directly through Bird Hills Tech to establish trusted corporate presence in the UAE and Middle East.",
+      q: "Can international companies register regional and global domain names?",
+      a: "Yes! There are no restrictive presence requirements for standard global and international domain registrations. Any business worldwide can register domains directly through Bird Hills Tech to establish trusted corporate presence.",
     },
     {
       q: "How does domain transfer to Bird Hills Tech work?",
@@ -161,7 +161,7 @@ export default function DomainsPage() {
               Secure Your Corporate Identity with the Perfect Domain.
             </h1>
             <p className="text-lg text-slate-300 leading-relaxed font-normal">
-              Official .ae UAE registration, premium global TLDs, instant DNS propagation, free WHOIS privacy, and zero hidden renewal markups.
+              Premium international TLDs, instant DNS propagation, free WHOIS privacy, and zero hidden renewal markups.
             </p>
           </div>
 
@@ -284,7 +284,7 @@ export default function DomainsPage() {
                 Transfer Your Existing Domains with Zero Interruption.
               </h2>
               <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-                Consolidate your domains and cloud hosting under a single authoritative Dubai technology partner. Every domain transfer includes an automatic 1-year renewal extension and dedicated technical oversight.
+                Consolidate your domains and cloud hosting under a single authoritative technology partner. Every domain transfer includes an automatic 1-year renewal extension and dedicated technical oversight.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
                 <div className="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-[#C59B27]/30 transition-colors">

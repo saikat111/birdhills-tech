@@ -12,7 +12,7 @@ export function FinalCtaSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="max-w-3xl mx-auto text-center space-y-8">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-extrabold tracking-wider uppercase bg-[#C59B27]/20 text-[#D4AF37] border border-[#C59B27]/40">
-            CONNECT WITH BIRD HILLS TECH · DUBAI
+            CONNECT WITH BIRD HILLS TECH · WORLDWIDE
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.15] text-white">
@@ -20,7 +20,7 @@ export function FinalCtaSection() {
           </h2>
 
           <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto">
-            Whether you need a high-speed corporate web platform, an accredited .ae domain, automated AI workflows, or market-dominating local SEO, let&apos;s talk about what&apos;s next.
+            Whether you need a high-speed corporate web platform, custom domain solutions, automated AI workflows, or market-dominating SEO, let&apos;s talk about what&apos;s next.
           </p>
 
           {/* Action Buttons */}

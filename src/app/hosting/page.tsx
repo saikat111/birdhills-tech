@@ -25,9 +25,9 @@ import FinalCtaSection from "@/components/home/FinalCtaSection";
 import FaqAccordion from "@/components/common/FaqAccordion";
 
 export const metadata: Metadata = {
-  title: "Enterprise Cloud Hosting & Managed Infrastructure | Bird Hills Tech Dubai",
+  title: "Enterprise Cloud Hosting & Managed Infrastructure | Bird Hills Tech",
   description:
-    "Ultra-fast NVMe cloud hosting, managed VPS, and dedicated servers in Dubai. Sub-15ms GCC latency, 99.99% uptime guarantee, free SSL, and zero-downtime migration.",
+    "Ultra-fast NVMe cloud hosting, managed VPS, and dedicated servers with global edge network acceleration. Sub-15ms regional latency, 99.99% uptime guarantee, free SSL, and zero-downtime migration.",
   alternates: {
     canonical: "https://birdhillstech.com/hosting",
   },
@@ -68,7 +68,7 @@ export default async function HostingPage() {
           "Unmetered Monthly Bandwidth",
           "Free Automatic Let's Encrypt SSL",
           "10 Corporate Email Accounts",
-          "Standard GCC Edge CDN Caching",
+          "Global Anycast Edge CDN Caching",
           "Weekly Automated Cloud Backups",
           "99.99% Uptime Network SLA",
         ]),
@@ -80,7 +80,7 @@ export default async function HostingPage() {
         category: "cloud",
         priceUsd: "$24.99",
         billingCycle: "/ month",
-        badge: "Most Popular in Dubai",
+        badge: "Most Popular",
         description: "Comprehensive cloud hosting for growing businesses, e-commerce stores, and high-traffic portals.",
         storage: "100 GB NVMe SSD",
         bandwidth: "Unmetered Bandwidth",
@@ -88,10 +88,10 @@ export default async function HostingPage() {
         featuresJson: JSON.stringify([
           "Unlimited Hosted Websites",
           "100 GB Ultra-Fast NVMe SSD Storage",
-          "Free Domain Name (.com / .ae) for 1st Year",
+          "Free Domain Name (.com / .net) for 1st Year",
           "Free Wildcard SSL & Dedicated IP Support",
           "Unlimited Professional Email Inboxes",
-          "Dubai GCC Edge Cloud Node Acceleration",
+          "Global Anycast Edge Cloud Node Acceleration",
           "Daily Automated Off-Site Backups",
           "1-Click Staging & Git Deployment Hub",
           "24/7 Priority Emergency Support",
@@ -139,7 +139,7 @@ export default async function HostingPage() {
           "1 TB Enterprise NVMe Dual Mirror Array",
           "Unmetered 10 Gbps Low-Latency Uplink",
           "Hardware Firewall & Custom IDS/IPS",
-          "DIFC & Regional UAE Data Compliance",
+          "Enterprise Multi-Region Data Compliance",
           "24/7 Proactive Hardware Monitoring",
           "15-Minute Guaranteed Critical SLA Response",
         ]),
@@ -150,7 +150,7 @@ export default async function HostingPage() {
   const hostingFaqs = [
     {
       q: "Where are Bird Hills Tech servers physically located?",
-      a: "Our primary high-concurrency cloud nodes are hosted in state-of-the-art Tier-3 and Tier-4 data centres in Dubai (Equinix DX1 / Datamena) and Frankfurt (Equinix FR5), paired with Cloudflare's regional GCC Edge Network delivering sub-15ms local latency across Dubai, Abu Dhabi, Riyadh, and Doha.",
+      a: "Our primary high-concurrency cloud nodes are hosted in state-of-the-art Tier-3 and Tier-4 data centres across major international hubs (US East, Frankfurt, London, and Singapore), paired with an enterprise Anycast Edge Network delivering low-latency local caching worldwide.",
     },
     {
       q: "How does the Free 0-Downtime Migration work?",
@@ -191,13 +191,13 @@ export default async function HostingPage() {
           <div className="max-w-3xl space-y-6">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-widest text-[#D4AF37] uppercase bg-[#C59B27]/15 border border-[#C59B27]/30 backdrop-blur-md">
               <Server size={14} />
-              <span>GCC CLOUD INFRASTRUCTURE</span>
+              <span>ENTERPRISE CLOUD INFRASTRUCTURE</span>
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.12]">
               Enterprise Cloud Hosting Engineered for Speed & Uptime.
             </h1>
             <p className="text-lg sm:text-xl text-slate-300 leading-relaxed font-normal">
-              High-speed NVMe RAID arrays, sub-15ms GCC latency, free Let&apos;s Encrypt Wildcard SSL, automated off-site backups, and white-glove 0-downtime migration.
+              High-speed NVMe RAID arrays, ultra-low edge latency, free Let&apos;s Encrypt Wildcard SSL, automated off-site backups, and white-glove 0-downtime migration.
             </p>
 
             <div className="flex flex-wrap items-center gap-4 pt-2">
@@ -230,7 +230,7 @@ export default async function HostingPage() {
             </div>
             <div className="p-4 rounded-2xl bg-[#FAF8F5] border border-[#E4E7EC]">
               <div className="text-2xl sm:text-3xl font-black text-[#C59B27]">&lt; 15ms</div>
-              <div className="text-xs text-[#667085] font-semibold uppercase mt-1">Dubai & GCC Latency</div>
+              <div className="text-xs text-[#667085] font-semibold uppercase mt-1">Global Edge Latency</div>
             </div>
             <div className="p-4 rounded-2xl bg-[#FAF8F5] border border-[#E4E7EC]">
               <div className="text-2xl sm:text-3xl font-black text-[#070B14]">Pure NVMe</div>
@@ -255,7 +255,7 @@ export default async function HostingPage() {
               Select Your Cloud Architecture
             </h2>
             <p className="text-sm text-[#667085]">
-              All plans include enterprise DDoS protection, free SSL certificates, and 24/7 Dubai technical assistance.
+              All plans include enterprise DDoS protection, free SSL certificates, and 24/7 technical assistance.
             </p>
           </div>
 
@@ -371,7 +371,7 @@ export default async function HostingPage() {
               The Bird Hills Cloud Architecture
             </h2>
             <p className="text-sm text-[#667085]">
-              Compare our regional Dubai edge stack with slow overseas generic shared hosting.
+              Compare our optimized cloud edge stack with slow generic shared hosting.
             </p>
           </div>
 
@@ -390,9 +390,9 @@ export default async function HostingPage() {
               <div className="w-12 h-12 rounded-2xl bg-[#C59B27]/10 flex items-center justify-center text-[#C59B27]">
                 <Globe size={24} />
               </div>
-              <h3 className="text-lg font-extrabold text-[#070B14]">Sub-15ms GCC Edge Latency</h3>
+              <h3 className="text-lg font-extrabold text-[#070B14]">Sub-15ms Anycast Edge Latency</h3>
               <p className="text-xs text-[#667085] leading-relaxed">
-                Hosting websites in the US or Europe adds 140ms–200ms latency on every request. Our Dubai edge nodes serve your local UAE customers with near-zero network delay.
+                Our distributed global edge nodes cache and serve your web application with near-zero network delay to international users.
               </p>
             </div>
 
@@ -442,7 +442,7 @@ export default async function HostingPage() {
             <div className="bg-white/5 backdrop-blur-md p-8 rounded-3xl border border-white/10 space-y-6">
               <h3 className="text-xl font-bold text-white">Request Free Migration Assistance</h3>
               <p className="text-xs text-slate-300 leading-relaxed">
-                Connect directly with our Dubai cloud engineering desk to schedule your seamless site transfer.
+                Connect directly with our cloud engineering desk to schedule your seamless site transfer.
               </p>
               <div className="space-y-3">
                 <a
@@ -476,7 +476,7 @@ export default async function HostingPage() {
         }))}
         title="Hosting Frequently Asked Questions"
         eyebrow="TECHNICAL CLARITY"
-        description="Everything you need to know about our Dubai Tier-3/4 data center nodes, zero-downtime migration, and automated off-site backups."
+        description="Everything you need to know about our Tier-3/4 data center nodes, zero-downtime migration, and automated off-site backups."
         theme="light"
         includeSchema={true}
       />

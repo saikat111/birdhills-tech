@@ -4,12 +4,22 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { prisma } from "@/lib/prisma";
+import { Prisma } from "@prisma/client";
 import { Clock, ArrowRight, ChevronRight } from "lucide-react";
 import FinalCtaSection from "@/components/home/FinalCtaSection";
 
+type CategoryWithPosts = Prisma.BlogCategoryGetPayload<{
+  include: { posts: true };
+}>;
+
 export async function generateStaticParams() {
-  const categories = await prisma.blogCategory.findMany({ select: { slug: true } });
-  return categories.map((c) => ({ slug: c.slug }));
+  try {
+    const categories = await prisma.blogCategory.findMany({ select: { slug: true } });
+    return categories.map((c) => ({ slug: c.slug }));
+  } catch (err) {
+    console.warn("Could not pre-render static category params at build time:", err);
+    return [];
+  }
 }
 
 export async function generateMetadata({
@@ -18,19 +28,23 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const category = await prisma.blogCategory.findUnique({ where: { slug } });
+  try {
+    const category = await prisma.blogCategory.findUnique({ where: { slug } });
 
-  if (!category) {
-    return { title: "Category Not Found" };
+    if (!category) {
+      return { title: "Category Not Found | Bird Hills Tech" };
+    }
+
+    return {
+      title: `${category.name} Insights | Bird Hills Tech`,
+      description: category.description || `Articles and perspectives in ${category.name}`,
+      alternates: {
+        canonical: `https://birdhillstech.com/category/${category.slug}`,
+      },
+    };
+  } catch {
+    return { title: "Category Insights | Bird Hills Tech" };
   }
-
-  return {
-    title: `${category.name} Insights | Bird Hills Tech Dubai`,
-    description: category.description || `Articles and perspectives in ${category.name}`,
-    alternates: {
-      canonical: `https://birdhillstech.com/category/${category.slug}`,
-    },
-  };
 }
 
 export default async function CategoryPage({
@@ -39,21 +53,28 @@ export default async function CategoryPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const category = await prisma.blogCategory.findUnique({
-    where: { slug },
-    include: {
-      posts: {
-        where: { status: "published" },
-        orderBy: { publishedAt: "desc" },
+  let category: CategoryWithPosts | null = null;
+  let allCategories: Prisma.BlogCategoryGetPayload<{}>[] = [];
+
+  try {
+    category = await prisma.blogCategory.findUnique({
+      where: { slug },
+      include: {
+        posts: {
+          where: { status: "published" },
+          orderBy: { publishedAt: "desc" },
+        },
       },
-    },
-  });
+    });
+
+    allCategories = await prisma.blogCategory.findMany();
+  } catch (err) {
+    console.error("Error fetching category in CategoryPage:", err);
+  }
 
   if (!category) {
     notFound();
   }
-
-  const allCategories = await prisma.blogCategory.findMany();
 
   return (
     <div className="flex flex-col min-h-screen pt-24">

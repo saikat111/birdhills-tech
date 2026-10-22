@@ -1,6 +1,6 @@
 // Master Sub-Services Content & Data Repository
 // Contains detailed, human-written content for all 74 menu sub-services
-// Configured to support both regional Dubai (au.birdhillstech.com) and Global (birdhillstech.com)
+// Configured for Global Enterprise (birdhillstech.com)
 
 export interface SubServiceDetail {
   slug: string;
@@ -471,8 +471,8 @@ export const DOMAINS_SUB_SERVICES: Record<string, SubServiceDetail> = {
         a: "No. Any remaining registration time on your domain is fully preserved, and our transfer adds an additional full year on top of your existing expiration date.",
       },
       {
-        q: "Can I transfer regional domains like .ae as well as .com and .ai?",
-        a: "Yes. We support direct transfers for official UAE .ae domains, global .com/.net/.org extensions, and trending modern tech extensions like .ai and .io.",
+        q: "Can I transfer country-code TLDs as well as .com and .ai?",
+        a: "Yes. We support direct transfers for popular regional extensions, global .com/.net/.org extensions, and modern tech extensions like .ai and .io.",
       },
     ],
   },
@@ -548,7 +548,7 @@ export const DOMAINS_SUB_SERVICES: Record<string, SubServiceDetail> = {
       { step: "01", title: "Zone File Audit", desc: "Extracting and verifying all existing A, MX, CNAME, and TXT verification records." },
       { step: "02", title: "Anycast Provisioning", desc: "Importing records into our global Anycast cluster with optimized TTL timers." },
       { step: "03", title: "DNSSEC Cryptographic Handshake", desc: "Generating public keys and binding DS records with the top-level domain registry." },
-      { step: "04", title: "Global Verification Check", desc: "Validating sub-10ms resolution across global nodes from Tokyo to London and Dubai." },
+      { step: "04", title: "Global Verification Check", desc: "Validating sub-10ms resolution across global nodes from Tokyo to London and New York." },
     ],
     faqs: [
       {

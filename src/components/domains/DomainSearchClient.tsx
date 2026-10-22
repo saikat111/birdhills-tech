@@ -139,7 +139,7 @@ export function DomainSearchClient() {
         <button
           type="button"
           onClick={() => {
-            setSearchTerm("dubaiholding");
+            setSearchTerm("globalventure");
           }}
           className="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-white/20 transition-colors flex items-center gap-1.5"
         >
@@ -219,7 +219,7 @@ export function DomainSearchClient() {
                         </span>
                         {r.popular && (
                           <span className="text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded-full bg-gradient-to-r from-[#D4AF37] via-[#C59B27] to-[#B38728] text-white">
-                            Popular in UAE
+                            Popular TLD
                           </span>
                         )}
                       </div>

@@ -17,9 +17,9 @@ import {
 import FinalCtaSection from "@/components/home/FinalCtaSection";
 
 export const metadata: Metadata = {
-  title: "Blog & Thought Leadership | Bird Hills Tech Dubai",
+  title: "Blog & Thought Leadership | Bird Hills Tech",
   description:
-    "Perspectives on web architecture, software engineering, corporate branding, B2B digital marketing in the UAE, and enterprise AI integrations.",
+    "Perspectives on web architecture, software engineering, corporate branding, B2B digital marketing, and enterprise AI integrations.",
   alternates: {
     canonical: "https://birdhillstech.com/blog",
   },
@@ -28,18 +28,25 @@ export const metadata: Metadata = {
 export const revalidate = 60;
 
 export default async function BlogListingPage() {
-  const posts = await prisma.blogPost.findMany({
-    where: { status: "published" },
-    include: { category: true },
-    orderBy: { publishedAt: "desc" },
-  });
+  let posts: any[] = [];
+  let categories: any[] = [];
 
-  const categories = await prisma.blogCategory.findMany({
-    orderBy: { name: "asc" },
-  });
+  try {
+    posts = await prisma.blogPost.findMany({
+      where: { status: "published" },
+      include: { category: true },
+      orderBy: { publishedAt: "desc" },
+    });
 
-  const featuredPost = posts[0];
-  const regularPosts = posts.slice(1);
+    categories = await prisma.blogCategory.findMany({
+      orderBy: { name: "asc" },
+    });
+  } catch (err) {
+    console.error("Error fetching blog data in BlogListingPage:", err);
+  }
+
+  const featuredPost = posts && posts.length > 0 ? posts[0] : null;
+  const regularPosts = posts && posts.length > 1 ? posts.slice(1) : [];
 
   return (
     <div className="flex flex-col min-h-screen pt-24">
@@ -47,8 +54,8 @@ export default async function BlogListingPage() {
       <section className="relative py-24 md:py-32 bg-[#070B14] text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=2000&q=90"
-            alt="Dubai technology and innovation hub"
+            src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=2000&q=90"
+            alt="Technology and innovation hub"
             fill
             priority
             sizes="100vw"
@@ -65,10 +72,10 @@ export default async function BlogListingPage() {
               EXECUTIVE BRIEFINGS & TECHNICAL INSIGHTS
             </span>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.12]">
-              Knowledge, architecture & digital growth in Dubai.
+              Knowledge, architecture & digital growth.
             </h1>
             <p className="text-lg sm:text-xl text-slate-200 leading-relaxed font-normal drop-shadow-sm">
-              In-depth research on high-performance web architecture, B2B demand generation in the GCC, prestige brand identity, and pragmatic AI execution.
+              In-depth research on high-performance web architecture, B2B demand generation, prestige brand identity, and pragmatic AI execution.
             </p>
           </div>
         </div>
@@ -267,10 +274,10 @@ export default async function BlogListingPage() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#C59B27]/10 via-transparent to-transparent pointer-events-none" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 relative z-10">
           <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-widest text-[#D4AF37] uppercase bg-[#C59B27]/10 border border-[#C59B27]/30">
-            DUBAI TECH BRIEFING
+            EXECUTIVE TECH BRIEFING
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
-            Stay Ahead of the Middle East Digital Curve
+            Stay Ahead of the Global Digital Curve
           </h2>
           <p className="text-sm sm:text-base text-slate-300 max-w-xl mx-auto">
             Get our monthly technical research and executive frameworks delivered directly to your inbox. No fluff, only actionable engineering and growth benchmarks.

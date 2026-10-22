@@ -13,7 +13,7 @@ export const BRANDING_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroSubcopy:
       "A brand is far more than a logo—it is the emotional and intellectual shortcut your customers take when deciding to trust you over competitors. We craft holistic corporate identity systems, brand positioning frameworks, typography hierarchies, and comprehensive style guides that establish market authority.",
     heroImage: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1600&q=85",
-    priceNote: "From AED 7,500 / $2,000 complete identity suite",
+    priceNote: "From $2,000 complete identity suite",
     deliveryTimeline: "2 to 4 Weeks",
     metrics: [
       { value: "3.5x", label: "Perceived Value Lift", desc: "Command premium market rates through cohesive visual prestige" },
@@ -104,7 +104,7 @@ export const BRANDING_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroSubcopy:
       "Avoid generic stock icons and amateur clipart templates. We design distinctive, mathematically balanced logo marks and bespoke typography that reproduce flawlessly everywhere—from a 16-pixel smartphone favicon to a massive skyscraper building wrap.",
     heroImage: "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=1600&q=85",
-    priceNote: "From AED 3,800 / $1,050 bespoke logo package",
+    priceNote: "From $1,050 bespoke logo package",
     deliveryTimeline: "7 to 14 Business Days",
     metrics: [
       { value: "3 Unique", label: "Initial Concepts", desc: "Radically distinct creative directions tailored to your brief" },
@@ -195,7 +195,7 @@ export const BRANDING_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroSubcopy:
       "Great software fails when user experience is confusing or clunky. We design modern, high-fidelity UI/UX interfaces for web applications, mobile apps, and SaaS platforms—combining rigorous user research, wireframing, component-driven design systems, and clickable prototypes.",
     heroImage: "https://images.unsplash.com/photo-1581291518655-9523c932deda?auto=format&fit=crop&w=1600&q=85",
-    priceNote: "From AED 8,500 / $2,300 product design package",
+    priceNote: "From $2,300 product design package",
     deliveryTimeline: "3 to 5 Weeks",
     metrics: [
       { value: "40%", label: "Conversion Lift", desc: "Frictionless user flows optimized for intuitive navigation" },
@@ -286,7 +286,7 @@ export const BRANDING_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroSubcopy:
       "In modern paid advertising, creative is the primary targeting lever. We produce eye-catching static visuals, short-form motion graphics, UGC-style videos, and interactive carousel ads designed to disrupt social feeds, capture immediate attention, and drive low-cost customer conversions across Meta, Google, and TikTok.",
     heroImage: "https://images.unsplash.com/photo-1542744095-291d1f67b221?auto=format&fit=crop&w=1600&q=85",
-    priceNote: "From AED 3,500 / $950 / month creative sprint",
+    priceNote: "From $950 / month creative sprint",
     deliveryTimeline: "3 to 5 Business Days",
     metrics: [
       { value: "2.8x", label: "Click-Through Lift", desc: "Visually arresting hooks designed to stand out in crowded feeds" },
@@ -377,7 +377,7 @@ export const BRANDING_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroSubcopy:
       "Transform your social media channels from an inconsistent patchwork into an immaculate, professional brand showcase. We create modular, customizable social media template systems for LinkedIn, Instagram, X (Twitter), and YouTube—empowering your internal marketing team to produce on-brand content in minutes.",
     heroImage: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=1600&q=85",
-    priceNote: "From AED 3,200 / $850 complete social kit",
+    priceNote: "From $850 complete social kit",
     deliveryTimeline: "5 to 10 Business Days",
     metrics: [
       { value: "50+ Assets", label: "Modular Templates", desc: "Custom designed in Figma or Canva for effortless reuse" },
@@ -468,7 +468,7 @@ export const BRANDING_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroSubcopy:
       "When enterprise contracts or multi-million dollar fundraising rounds are on the line, generic PowerPoint slides and poorly formatted PDF brochures kill credibility. We design investor-grade pitch decks, annual reports, company profiles, and premium print collateral that command authority and close deals.",
     heroImage: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1600&q=85",
-    priceNote: "From AED 4,500 / $1,250 deck / collateral package",
+    priceNote: "From $1,250 deck / collateral package",
     deliveryTimeline: "7 to 14 Business Days",
     metrics: [
       { value: "Investor Grade", label: "Visual Sophistication", desc: "Designed to meet the high standards of VCs and corporate boards" },
@@ -542,7 +542,7 @@ export const BRANDING_SUB_SERVICES: Record<string, SubServiceDetail> = {
       },
       {
         q: "Do you handle the physical printing process as well?",
-        a: "We prepare 100% print-ready prepress files tailored to your printer's exact specifications, and we can directly liaise with your chosen print house (or recommend our vetted luxury print partners in Dubai and globally).",
+        a: "We prepare 100% print-ready prepress files tailored to your printer's exact specifications, and we can directly liaise with your chosen print house (or recommend our vetted vetted luxury print partners globally).",
       },
     ],
   },

@@ -47,7 +47,7 @@ export const MAIN_MENU_SERVICES = [
     name: "Domain & Hosting",
     href: "/hosting",
     icon: Globe,
-    tagline: "Accredited .ae domains, NVMe cloud & business email",
+    tagline: "Global domain registration, NVMe cloud & business email",
     badge: "99.99% Uptime",
     subItems: [
       { title: "Domain Registration", href: "/domains" },
@@ -465,7 +465,7 @@ export function Header() {
                             href="/pricing"
                             className="hover:text-[#C59B27] transition-colors flex items-center gap-1"
                           >
-                            <span>Pricing Packages (AED & USD)</span>
+                            <span>Pricing Packages (USD)</span>
                             <ChevronRight size={12} className="text-[#C59B27]" />
                           </Link>
                         </div>

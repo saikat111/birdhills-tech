@@ -11,7 +11,7 @@ export function BookingForm() {
     phone: "",
     service: "Web Development Consultation",
     date: "",
-    timeSlot: "10:00 AM - 10:45 AM (GST)",
+    timeSlot: "10:00 AM - 10:45 AM",
     meetingType: "Video Call (Google Meet)",
     message: "",
   });
@@ -20,11 +20,11 @@ export function BookingForm() {
   const [feedbackMessage, setFeedbackMessage] = useState("");
 
   const timeSlots = [
-    "10:00 AM - 10:45 AM (GST)",
-    "11:30 AM - 12:15 PM (GST)",
-    "02:00 PM - 02:45 PM (GST)",
-    "03:30 PM - 04:15 PM (GST)",
-    "05:00 PM - 05:45 PM (GST)",
+    "10:00 AM - 10:45 AM",
+    "11:30 AM - 12:15 PM",
+    "02:00 PM - 02:45 PM",
+    "03:30 PM - 04:15 PM",
+    "05:00 PM - 05:45 PM",
   ];
 
   const serviceOptions = [
@@ -66,7 +66,7 @@ export function BookingForm() {
         phone: "",
         service: "Web Development Consultation",
         date: "",
-        timeSlot: "10:00 AM - 10:45 AM (GST)",
+        timeSlot: "10:00 AM - 10:45 AM",
         meetingType: "Video Call (Google Meet)",
         message: "",
       });
@@ -132,7 +132,7 @@ export function BookingForm() {
               </button>
               <button
                 type="button"
-                onClick={() => setFormData({ ...formData, meetingType: "In-Person (Dubai Office)" })}
+                onClick={() => setFormData({ ...formData, meetingType: "In-Person (Headquarters)" })}
                 className={`py-3 px-4 rounded-xl border text-xs font-bold flex items-center justify-center gap-2 transition-all ${
                   formData.meetingType.includes("In-Person")
                     ? "bg-[#C59B27]/15 border-[#C59B27] text-[#B38728] shadow-sm"
@@ -140,7 +140,7 @@ export function BookingForm() {
                 }`}
               >
                 <MapPin size={16} />
-                In-Person (Deira Office)
+                In-Person (Headquarters)
               </button>
             </div>
           </div>
@@ -165,7 +165,7 @@ export function BookingForm() {
             {/* Time Slot */}
             <div className="space-y-1.5">
               <label htmlFor="timeSlot" className="text-xs font-bold text-[#070B14] uppercase tracking-wider">
-                Time Window (Gulf Standard Time) <span className="text-rose-500">*</span>
+                Time Window <span className="text-rose-500">*</span>
               </label>
               <select
                 id="timeSlot"
@@ -207,7 +207,7 @@ export function BookingForm() {
                 type="text"
                 value={formData.company}
                 onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                placeholder="e.g. Apex Holdings DXB"
+                placeholder="e.g. Apex Global Technologies"
                 className="w-full text-sm bg-[#F7F9FC] border border-[#E4E7EC] rounded-xl px-4 py-3 text-[#101828] placeholder-slate-400 focus:outline-none focus:border-[#C59B27] focus:ring-1 focus:ring-[#C59B27] focus:bg-white transition-colors"
               />
             </div>
@@ -239,7 +239,7 @@ export function BookingForm() {
                 required
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                placeholder="+971 52 000 0000"
+                placeholder="+1 555 000 0000"
                 className="w-full text-sm bg-[#F7F9FC] border border-[#E4E7EC] rounded-xl px-4 py-3 text-[#101828] placeholder-slate-400 focus:outline-none focus:border-[#C59B27] focus:ring-1 focus:ring-[#C59B27] focus:bg-white transition-colors"
               />
             </div>

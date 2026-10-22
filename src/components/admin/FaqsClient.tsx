@@ -29,7 +29,7 @@ interface FaqsClientProps {
   initialFaqs: FAQItem[];
 }
 
-const CATEGORIES = ["General", "Services & Engineering", "Pricing & Engagements", "UAE & Delivery", "Technology"];
+const CATEGORIES = ["General", "Services & Engineering", "Pricing & Engagements", "Global Delivery", "Technology"];
 
 export function FaqsClient({ initialFaqs }: FaqsClientProps) {
   const [faqs, setFaqs] = useState<FAQItem[]>(initialFaqs);
@@ -156,7 +156,7 @@ export function FaqsClient({ initialFaqs }: FaqsClientProps) {
             Frequently Asked Questions (FAQs)
           </h1>
           <p className="text-xs sm:text-sm text-[#667085] mt-1">
-            Manage inquiries regarding contracts, Dubai office engagements, tech capabilities, and process.
+            Manage inquiries regarding contracts, client engagements, tech capabilities, and delivery process.
           </p>
         </div>
         <button

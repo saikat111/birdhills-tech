@@ -191,7 +191,7 @@ export const AI_SEO_SUB_SERVICES: Record<string, SubServiceDetail> = {
     badge: "Direct Answer Citations",
     heroHeadline: "Position Your Brand as the Direct Answer on Siri, Google Assistant & Perplexity",
     heroSubcopy:
-      "When users ask conversational questions like 'Who is the best corporate web developer in Dubai?' or 'What is the cost of cloud migration?', search assistants don't return 10 blue links—they speak a single, definitive answer. We architect your content and schema to win those direct answer citations.",
+      "When users ask conversational questions like 'Who is the best corporate web developer?' or 'What is the cost of cloud migration?', search assistants don't return 10 blue links—they speak a single, definitive answer. We architect your content and schema to win those direct answer citations.",
     heroImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1600&q=85",
     priceNote: "From $650 / month Retainer",
     deliveryTimeline: "Ongoing Monthly Sprints",

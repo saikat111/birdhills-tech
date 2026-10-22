@@ -281,7 +281,7 @@ export const LOCAL_SEO_SUB_SERVICES: Record<string, SubServiceDetail> = {
     badge: "Google Maps 3-Pack",
     heroHeadline: "Dominate the Google Maps 3-Pack & Expand Your Geographic Ranking Radius",
     heroSubcopy:
-      "When customers search 'web agency near me' or 'corporate lawyer Dubai', over 70% of clicks go directly to the top 3 results in the Google Maps 3-Pack. We engineer comprehensive local geo-signals, citation networks, and website entity alignments that systematically expand your ranking radius across your entire city.",
+      "When customers search 'web agency near me' or 'corporate lawyer near me', over 70% of clicks go directly to the top 3 results in the Google Maps 3-Pack. We engineer comprehensive local geo-signals, citation networks, and website entity alignments that systematically expand your ranking radius across your entire city.",
     heroImage: "https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1600&q=85",
     priceNote: "From $500 / month Retainer",
     deliveryTimeline: "Ongoing Monthly Sprints",
@@ -316,7 +316,7 @@ export const LOCAL_SEO_SUB_SERVICES: Record<string, SubServiceDetail> = {
       },
       {
         title: "District Landing Page Alignment",
-        desc: "Build dedicated geographic landing pages on your website (e.g. Downtown, Business Bay, DIFC, Marina) tied to local schema.",
+        desc: "Build dedicated geographic landing pages on your website (e.g. Downtown, Financial District, Tech Corridor, Metro Centers) tied to local schema.",
       },
       {
         title: "Localized Review Keyword Seeding",
@@ -390,7 +390,7 @@ export const LOCAL_SEO_SUB_SERVICES: Record<string, SubServiceDetail> = {
     ],
     approachHeadline: "Our Authentic District Landing Page Architecture",
     approachPoints: [
-      "We design bespoke landing pages for each target commercial zone (e.g. Downtown, Business Bay, DIFC, Marina, Deira).",
+      "We design bespoke landing pages for each target commercial zone (e.g. Downtown, Financial District, Tech Corridor, Metro Centers).",
       "Each page includes authentic local context: nearby commercial centers, parking guidance, district client case studies, and tailored testimonials.",
       "Complete JSON-LD LocalBusiness schema with precise geo-coordinates, service area boundaries, and opening hours.",
       "Internal linking architecture connects your primary service pages with your district hubs to funnel link equity effectively.",
@@ -492,7 +492,7 @@ export const LOCAL_SEO_SUB_SERVICES: Record<string, SubServiceDetail> = {
       },
       {
         title: "District & Neighborhood Modifier Matrix",
-        desc: "Cross-reference every core service with key geographic areas (Downtown, Marina, Business Bay, Deira, DIFC) to build comprehensive search coverage.",
+        desc: "Cross-reference every core service with key geographic areas (Downtown, Financial District, Tech Corridor, Metro Centers) to build comprehensive search coverage.",
       },
       {
         title: "Bilingual English & Arabic Keyword Mapping",

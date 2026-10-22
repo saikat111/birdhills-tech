@@ -6,9 +6,9 @@ import BookingForm from "@/components/booking/BookingForm";
 import FaqAccordion from "@/components/common/FaqAccordion";
 
 export const metadata: Metadata = {
-  title: "Book a Strategic Consultation | Bird Hills Tech Dubai",
+  title: "Book a Strategic Consultation | Bird Hills Tech",
   description:
-    "Schedule a 45-minute strategic consultation with Bird Hills Tech. In-person at our Deira Dubai office or via Google Meet.",
+    "Schedule a 45-minute strategic consultation with Bird Hills Tech. In-person at our corporate headquarters or via Google Meet.",
   alternates: {
     canonical: "https://birdhillstech.com/book-a-meeting",
   },
@@ -22,7 +22,7 @@ export default function BookMeetingPage() {
         <div className="absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=2000&q=90"
-            alt="Executive corporate meeting room in Dubai"
+            alt="Executive corporate meeting room"
             fill
             priority
             sizes="100vw"
@@ -41,7 +41,7 @@ export default function BookMeetingPage() {
               Book a Strategic Consultation.
             </h1>
             <p className="text-lg sm:text-xl text-slate-300 leading-relaxed font-normal">
-              Schedule a dedicated 45-minute briefing with our senior technology directors and growth consultants in Dubai. In-person or via secure video conference.
+              Schedule a dedicated 45-minute briefing with our senior technology directors and growth consultants. In-person or via secure video conference.
             </p>
           </div>
         </div>
@@ -90,7 +90,7 @@ export default function BookMeetingPage() {
                 <div className="pt-4 border-t border-slate-200 text-xs text-slate-500 space-y-2">
                   <div className="flex items-center gap-2">
                     <Clock size={14} className="text-[#C59B27]" />
-                    <span>Duration: 45 minutes · Gulf Standard Time (GST)</span>
+                    <span>Duration: 45 minutes · Global Timezone Coordination</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Shield size={14} className="text-emerald-600" />
@@ -102,11 +102,10 @@ export default function BookMeetingPage() {
               {/* Office Callout */}
               <div className="p-8 rounded-3xl bg-[#070B14] border border-[#C59B27]/25 text-white space-y-4 shadow-lg">
                 <div className="text-xs font-bold uppercase tracking-wider text-[#D4AF37]">
-                  In-Person Consultations in Dubai
+                  In-Person Consultations & Executive Briefings
                 </div>
                 <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                  We welcome meetings at our registered office in Deira (Stone Building - 122 7th A
-                  Street, Al Baraha, Dubai) or can arrange an executive briefing at your UAE offices.
+                  We welcome meetings at our corporate offices or can arrange an executive briefing at your enterprise headquarters.
                 </p>
                 <div className="pt-2 flex items-center justify-between">
                   <a
@@ -153,9 +152,9 @@ export default function BookMeetingPage() {
             category: "Attendance",
           },
           {
-            question: "Can we request an in-person meeting at our office in Dubai?",
+            question: "Can we request an in-person meeting at our office?",
             answer:
-              "Certainly. Mention your office location in the notes field, and our partners will confirm travel arrangements across Dubai, Abu Dhabi, or Sharjah.",
+              "Certainly. Mention your office location in the notes field, and our partners will coordinate travel and executive briefing arrangements.",
             category: "In-Person",
           },
         ]}

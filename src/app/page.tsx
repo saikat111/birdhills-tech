@@ -12,7 +12,7 @@ import IndustryVerticalsSection from "@/components/home/IndustryVerticalsSection
 import ProcessSection from "@/components/home/ProcessSection";
 import SelectedWorkSection from "@/components/home/SelectedWorkSection";
 import SeoKnowledgeTabs from "@/components/home/SeoKnowledgeTabs";
-import DubaiSection from "@/components/home/DubaiSection";
+import GlobalPresenceSection from "@/components/home/GlobalPresenceSection";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 import AiCapabilitySection from "@/components/home/AiCapabilitySection";
 import FaqAccordion, { FaqItem } from "@/components/common/FaqAccordion";
@@ -25,10 +25,10 @@ export async function generateMetadata(): Promise<Metadata> {
   const settings = await getSiteSettings();
   const canonicalUrl = "https://birdhillstech.com";
   return {
-    title: settings.site_title || "Bird Hills Tech | Digital Marketing & Web Development Agency Dubai",
+    title: settings.site_title || "Bird Hills Tech | Global Digital Marketing & Web Development Agency",
     description:
       settings.site_description ||
-      "Enterprise web development, custom software, digital marketing, accredited .ae domains, and AI business automation in Dubai, UAE.",
+      "Enterprise web development, custom software, digital marketing, global cloud hosting, and AI business automation for ambitious companies worldwide.",
     alternates: {
       canonical: canonicalUrl,
     },
@@ -37,7 +37,7 @@ export async function generateMetadata(): Promise<Metadata> {
       description: settings.site_description,
       url: canonicalUrl,
       siteName: "Bird Hills Tech",
-      locale: "en_AE",
+      locale: "en_US",
       type: "website",
     },
     twitter: {
@@ -52,25 +52,25 @@ const DEFAULT_HOMEPAGE_FAQS: FaqItem[] = [
   {
     question: "Why should our company invest in custom Next.js web development over WordPress?",
     answer:
-      "Next.js delivers lightning-fast page loads, zero runtime bloat, and enterprise security that traditional templates cannot match. In Dubai's competitive market, a slow website loses high-intent prospects quickly. Furthermore, our builds guarantee full intellectual property and source code ownership with zero dependency on third-party plugin licensing.",
+      "Next.js delivers lightning-fast page loads, zero runtime bloat, and enterprise security that traditional templates cannot match. In competitive global markets, a slow website loses high-intent prospects quickly. Furthermore, our builds guarantee full intellectual property and source code ownership with zero dependency on third-party plugin licensing.",
     category: "Technology",
   },
   {
     question: "How does Bird Hills Tech guarantee industry-leading website performance?",
     answer:
-      "We engineer every page with strict performance budgets using modern server-side rendering (SSR), image optimization, and low-latency GCC edge caching (< 15ms regional latency). We eliminate unoptimized third-party tracking scripts and compile type-safe TypeScript directly into lean, edge-cached bundles.",
+      "We engineer every page with strict performance budgets using modern server-side rendering (SSR), image optimization, and low-latency global edge caching. We eliminate unoptimized third-party tracking scripts and compile type-safe TypeScript directly into lean, edge-cached bundles.",
     category: "Technology",
   },
   {
-    question: "Can you help our business dominate Google Maps 3-Pack and local search in Dubai?",
+    question: "Can you help our business dominate Google Maps 3-Pack and regional search?",
     answer:
-      "Yes. Our local SEO practice manages the entire lifecycle: resolving complex Department of Economy & Tourism (DET) verification roadblocks, geo-grid ranking expansion across key commercial zones (Deira, Downtown, Business Bay, DIFC), local citation syndication, and structured review generation.",
+      "Yes. Our local and regional SEO practice manages the entire lifecycle: resolving category roadblocks, geo-grid ranking expansion across key commercial zones, local citation syndication, and structured review generation.",
     category: "Marketing",
   },
   {
     question: "How do your digital marketing services ensure commercial ROI rather than vanity metrics?",
     answer:
-      "Unlike agencies that report superficial clicks and impressions, our growth practice tracks closed-loop revenue pipeline. We focus on high-intent commercial keywords and decision-makers on Google, LinkedIn, and Meta, tying every dirham directly to verified CRM opportunities and Customer Acquisition Cost (CAC) targets.",
+      "Unlike agencies that report superficial clicks and impressions, our growth practice tracks closed-loop revenue pipeline. We focus on high-intent commercial keywords and decision-makers on Google, LinkedIn, and Meta, tying every dollar directly to verified CRM opportunities and Customer Acquisition Cost (CAC) targets.",
     category: "Marketing",
   },
   {
@@ -80,21 +80,21 @@ const DEFAULT_HOMEPAGE_FAQS: FaqItem[] = [
     category: "General",
   },
   {
-    question: "What is your typical project timeline from kickoff to production launch in Dubai?",
+    question: "What is your typical project timeline from kickoff to production launch?",
     answer:
-      "Standard corporate web platforms are delivered within 2 to 4 weeks through structured discovery, prototyping, and engineering sprints. Custom SaaS portals, multi-language enterprise web applications, and PropTech portals typically require 4 to 8 weeks with dedicated weekly sprint demonstrations.",
+      "Standard corporate web platforms are delivered within 2 to 4 weeks through structured discovery, prototyping, and engineering sprints. Custom SaaS portals, multi-language enterprise web applications, and customer portals typically require 4 to 8 weeks with dedicated weekly sprint demonstrations.",
     category: "General",
   },
   {
-    question: "Where are your servers located, and is our corporate data hosted in the UAE?",
+    question: "Where are your servers located, and how is corporate data secured?",
     answer:
-      "We provide low-latency cloud infrastructure deployed across UAE and GCC edge nodes, guaranteeing sub-15ms local latency and full compliance with UAE Federal Decree-Law No. 45 on Personal Data Protection (PDPL).",
+      "We provide low-latency cloud infrastructure deployed across Tier-3/4 global edge nodes, guaranteeing sub-second global latency, enterprise DDoS protection, and full compliance with international data protection and privacy standards.",
     category: "Infrastructure",
   },
   {
-    question: "Can we schedule an in-person discovery consultation in Dubai?",
+    question: "Can we schedule an introductory strategy consultation?",
     answer:
-      "Yes. You are welcome to visit our offices at Stone Building, Deira, or we can arrange an executive consultation at your Dubai headquarters. You can also book a discovery slot directly through our website scheduler or connect with our partners on WhatsApp.",
+      "Yes. You can book an executive video consultation or discovery session directly through our website scheduler or connect with our leadership team on WhatsApp.",
     category: "General",
   },
 ];
@@ -180,8 +180,8 @@ export default async function HomePage() {
       {/* SECTION 10 — SEO KNOWLEDGE & TECHNICAL PILLARS TAB HUB (NEW) */}
       <SeoKnowledgeTabs />
 
-      {/* SECTION 11 — DUBAI STRATEGIC PRESENCE */}
-      <DubaiSection />
+      {/* SECTION 11 — STRATEGIC GLOBAL PRESENCE */}
+      <GlobalPresenceSection />
 
       {/* SECTION 12 — CLIENT TESTIMONIALS (AUTO-SLIDER) */}
       <TestimonialsSection testimonials={testimonials} />
@@ -194,7 +194,7 @@ export default async function HomePage() {
         items={faqs}
         title="Frequently Asked Questions"
         eyebrow="DIRECT ANSWERS & TRANSPARENCY"
-        description="Clear, authoritative answers to help your leadership team evaluate technical architecture, timelines, commercial agreements, and UAE support."
+        description="Clear, authoritative answers to help your leadership team evaluate technical architecture, timelines, commercial agreements, and global enterprise support."
         theme="light"
         includeSchema={true}
       />

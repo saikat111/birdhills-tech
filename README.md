@@ -3,16 +3,16 @@
 <div align="center">
   <img src="public/images/logo.svg" alt="Bird Hills Tech" width="260" height="auto" />
   <p><strong>Technology × Creative × Growth</strong></p>
-  <p><em>Enterprise Web Engineering, Bespoke Software, Brand Architecture & Digital Growth Partner in Dubai, UAE</em></p>
+  <p><em>Enterprise Web Engineering, Bespoke Software, Brand Architecture & Digital Growth Partner</em></p>
 </div>
 
 ---
 
 ## Executive Overview
 
-**Bird Hills Tech** is a Dubai-based technology, creative, and digital growth company located at Stone Building, 122 7th A Street, Al Baraha, Deira, Dubai, UAE (+971 52 440 5785, contact@birdhillstech.com).
+**Bird Hills Tech** is a global technology, creative, and digital growth company (+971 52 440 5785, contact@birdhillstech.com).
 
-This repository contains the complete, production-ready corporate web platform and integrated administrative CMS. Engineered without generic templates, the platform delivers a fast, responsive, and authoritative digital presence designed to convert regional and international enterprises across the GCC.
+This repository contains the complete, production-ready corporate web platform and integrated administrative CMS. Engineered without generic templates, the platform delivers a fast, responsive, and authoritative digital presence designed to convert enterprise clients and high-growth organizations worldwide.
 
 ### Core Value Pillars
 - **Technology:** Modern Next.js 16 architectures, bespoke web applications, enterprise e-commerce portals, and cloud integrations built for sub-second Core Web Vitals.
@@ -54,9 +54,9 @@ birdhills-tech/
 │   │   ├── work/            # Portfolio showcase & case study deep-dives (/work/[slug])
 │   │   ├── insights/        # Strategic blog & thought leadership (/insights/[slug])
 │   │   ├── category/        # Category-filtered blog archives (/category/[slug])
-│   │   ├── contact/         # Direct contact with interactive form & Dubai map coordinates
+│   │   ├── contact/         # Direct contact with interactive form & global coordinates
 │   │   ├── book-a-meeting/  # Multi-step meeting booking & consultation scheduler
-│   │   ├── privacy-policy/  # UAE & regional regulatory privacy policy
+│   │   ├── privacy-policy/  # Enterprise regulatory privacy policy
 │   │   ├── terms/           # Terms of service
 │   │   ├── sitemap.ts       # Dynamic SEO sitemap generator
 │   │   ├── robots.ts        # Search crawler directive rules
@@ -131,7 +131,7 @@ The administrative control center is located at `/admin`:
 
 - **URL:** [http://localhost:3000/admin/login](http://localhost:3000/admin/login)
 - **Default Email:** `admin@birdhillstech.com`
-- **Default Password:** `DubaiTech2026!`
+- **Default Password:** `GlobalTech2026!`
 
 *(Credentials and secrets can be configured via environment variables in `.env`)*
 
@@ -148,7 +148,7 @@ JWT_SECRET="birdhills-tech-super-secure-production-jwt-key-2026"
 
 # Default Admin Seed
 ADMIN_EMAIL="admin@birdhillstech.com"
-ADMIN_PASSWORD="DubaiTech2026!"
+ADMIN_PASSWORD="GlobalTech2026!"
 
 # Optional AI Providers (System uses built-in heuristic qualifier if omitted)
 GEMINI_API_KEY=""
@@ -179,7 +179,7 @@ The application will serve on port `3000` with cached production builds and zero
 ## Corporate Inquiries & Support
 
 **Bird Hills Tech**  
-Stone Building, 122 7th A Street, Al Baraha, Deira, Dubai, United Arab Emirates  
+Global Digital Operations & Worldwide Client Services  
 - **Phone / WhatsApp:** +971 52 440 5785  
 - **Email:** [contact@birdhillstech.com](mailto:contact@birdhillstech.com)  
 - **Website:** [birdhillstech.com](https://birdhillstech.com)

@@ -76,7 +76,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json(
       {
         success: true,
-        message: "Your project inquiry has been received. Our Dubai team will respond within 2 to 4 business hours.",
+        message: "Your project inquiry has been received. Our team will respond within 2 to 4 business hours.",
         id: contactRecord.id,
       },
       { status: 201 }

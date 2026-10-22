@@ -8,13 +8,13 @@ interface TrustProps {
 
 export function TrustSection({
   headline = "Trusted by ambitious businesses",
-  statement = "Technology · Creative · Growth — Helping ambitious businesses build, launch and grow across the UAE and global markets.",
+  statement = "Technology · Creative · Growth — Helping ambitious businesses build, launch and grow across global markets.",
 }: TrustProps) {
   const pillars = [
     { label: "Enterprise Engineering Standards", icon: Cpu },
     { label: "Bespoke Brand & UI Systems", icon: CheckCircle2 },
     { label: "Tier-4 Edge Infrastructure", icon: Server },
-    { label: "Direct Dubai Accountability", icon: ShieldCheck },
+    { label: "Direct Global Accountability", icon: ShieldCheck },
   ];
 
   return (

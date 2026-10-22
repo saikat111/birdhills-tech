@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
+import { Prisma } from "@prisma/client";
 import {
   Calendar,
   Clock,
@@ -20,12 +21,21 @@ import {
 } from "lucide-react";
 import FinalCtaSection from "@/components/home/FinalCtaSection";
 
+type PostWithCategory = Prisma.BlogPostGetPayload<{
+  include: { category: true };
+}>;
+
 export async function generateStaticParams() {
-  const posts = await prisma.blogPost.findMany({
-    where: { status: "published" },
-    select: { slug: true },
-  });
-  return posts.map((p) => ({ slug: p.slug }));
+  try {
+    const posts = await prisma.blogPost.findMany({
+      where: { status: "published" },
+      select: { slug: true },
+    });
+    return posts.map((p) => ({ slug: p.slug }));
+  } catch (err) {
+    console.warn("Could not pre-render static blog post params at build time:", err);
+    return [];
+  }
 }
 
 export async function generateMetadata({
@@ -34,27 +44,31 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const post = await prisma.blogPost.findUnique({
-    where: { slug },
-    include: { category: true },
-  });
+  try {
+    const post = await prisma.blogPost.findUnique({
+      where: { slug },
+      include: { category: true },
+    });
 
-  if (!post) {
-    return { title: "Article Not Found | Bird Hills Tech" };
+    if (!post) {
+      return { title: "Article Not Found | Bird Hills Tech" };
+    }
+
+    return {
+      title: post.seoTitle || `${post.title} | Bird Hills Tech Blog`,
+      description: post.seoDescription || post.excerpt,
+      alternates: {
+        canonical: `https://birdhillstech.com/blog/${post.slug}`,
+      },
+      openGraph: {
+        title: post.title,
+        description: post.excerpt,
+        images: [{ url: post.coverImage }],
+      },
+    };
+  } catch {
+    return { title: "Blog Insights | Bird Hills Tech" };
   }
-
-  return {
-    title: post.seoTitle || `${post.title} | Bird Hills Tech Blog`,
-    description: post.seoDescription || post.excerpt,
-    alternates: {
-      canonical: `https://birdhillstech.com/blog/${post.slug}`,
-    },
-    openGraph: {
-      title: post.title,
-      description: post.excerpt,
-      images: [{ url: post.coverImage }],
-    },
-  };
 }
 
 export default async function SingleBlogPage({
@@ -63,25 +77,33 @@ export default async function SingleBlogPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const post = await prisma.blogPost.findUnique({
-    where: { slug },
-    include: { category: true },
-  });
+  let post: PostWithCategory | null = null;
+  let relatedPosts: PostWithCategory[] = [];
+
+  try {
+    post = await prisma.blogPost.findUnique({
+      where: { slug },
+      include: { category: true },
+    });
+
+    if (post && post.status === "published") {
+      relatedPosts = await prisma.blogPost.findMany({
+        where: {
+          status: "published",
+          NOT: { id: post.id },
+          ...(post.categoryId ? { categoryId: post.categoryId } : {}),
+        },
+        take: 3,
+        include: { category: true },
+      });
+    }
+  } catch (err) {
+    console.error("Error fetching blog post in SingleBlogPage:", err);
+  }
 
   if (!post || post.status !== "published") {
     notFound();
   }
-
-  // Related posts
-  const relatedPosts = await prisma.blogPost.findMany({
-    where: {
-      status: "published",
-      NOT: { id: post.id },
-      ...(post.categoryId ? { categoryId: post.categoryId } : {}),
-    },
-    take: 3,
-    include: { category: true },
-  });
 
   // Share URLs
   const pageUrl = `https://birdhillstech.com/blog/${post.slug}`;
@@ -90,7 +112,7 @@ export default async function SingleBlogPage({
   const shareTw = `https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(pageUrl)}`;
 
   // Parse paragraphs and headings for structured display
-  const contentParagraphs = post.content.split("\n\n").filter(Boolean);
+  const contentParagraphs: string[] = post.content.split("\n\n").filter(Boolean);
 
   return (
     <div className="flex flex-col min-h-screen pt-24 bg-white">
@@ -326,7 +348,7 @@ export default async function SingleBlogPage({
               </div>
               <h4 className="text-lg font-bold text-[#070B14]">{post.author}</h4>
               <p className="text-xs sm:text-sm text-[#667085] leading-relaxed">
-                Senior Technology & Digital Strategy Specialist at Bird Hills Tech Dubai. Advising enterprise leadership on modern Next.js cloud architecture, high-converting digital branding, and revenue-centric digital transformation across the UAE.
+                Senior Technology & Digital Strategy Specialist at Bird Hills Tech. Advising enterprise leadership on modern Next.js cloud architecture, high-converting digital branding, and revenue-centric digital transformation globally.
               </p>
             </div>
           </div>
@@ -342,7 +364,7 @@ export default async function SingleBlogPage({
                 Ready to implement this architecture in your business?
               </h3>
               <p className="text-xs text-slate-300 max-w-md">
-                Schedule a 30-minute technical session with our Dubai senior architects to review your systems.
+                Schedule a 30-minute technical session with our senior architects to review your systems.
               </p>
             </div>
             <Link

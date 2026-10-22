@@ -4,8 +4,8 @@ import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Bird Hills Tech Dubai",
-  description: "Privacy policy and data governance practices of Bird Hills Tech (Dubai, UAE).",
+  title: "Privacy Policy | Bird Hills Tech",
+  description: "Privacy policy and data governance practices of Bird Hills Tech.",
   alternates: {
     canonical: "https://birdhillstech.com/privacy-policy",
   },
@@ -25,7 +25,7 @@ export default function PrivacyPolicyPage() {
           </div>
           <h1 className="text-3xl sm:text-4xl font-extrabold text-[#070B14]">Privacy Policy</h1>
           <p className="text-xs text-slate-500 mt-2">
-            Last Updated: January 2026 · Bird Hills Tech (Dubai, UAE)
+            Last Updated: January 2026 · Bird Hills Tech Global Operations
           </p>
         </div>
       </section>
@@ -54,12 +54,11 @@ export default function PrivacyPolicyPage() {
           </div>
 
           <div>
-            <h2 className="text-xl font-bold text-[#070B14] mb-3">3. Data Protection and Regional Compliance</h2>
+            <h2 className="text-xl font-bold text-[#070B14] mb-3">3. Data Protection and Global Privacy Standards</h2>
             <p className="text-sm sm:text-base text-[#667085] leading-relaxed">
               We maintain technical, administrative, and physical security measures designed to
               protect personal data against unauthorized access, loss, or alteration. Our operations
-              adhere to the United Arab Emirates Federal Decree-Law No. 45 of 2021 regarding Personal
-              Data Protection (PDPL) as well as international best practices.
+              adhere to modern global data protection principles and international security best practices.
             </p>
           </div>
 
@@ -80,7 +79,7 @@ export default function PrivacyPolicyPage() {
               <br />
               <strong className="text-[#070B14]">Bird Hills Tech</strong>
               <br />
-              Deira - Stone Building - 122 7th A Street - Al Baraha - Dubai, UAE
+              Global Operations & Technology Headquarters
               <br />
               Email: contact@birdhillstech.com · Phone: +971 52 440 5785
             </p>

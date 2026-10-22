@@ -26,7 +26,7 @@ import FinalCtaSection from "@/components/home/FinalCtaSection";
 import FaqAccordion from "@/components/common/FaqAccordion";
 
 export const metadata: Metadata = {
-  title: "Digital Services & Practice Areas | Bird Hills Tech Dubai",
+  title: "Digital Services & Practice Areas | Bird Hills Tech",
   description:
     "Explore Bird Hills Tech's 9 core digital practices: Web Development, Domain & Hosting, Digital Marketing, Google Business Profile & Local SEO, AI SEO & Search, AI Automation, CRM & Marketing Automation, Branding & Creative, and Analytics & CRO.",
   alternates: {
@@ -44,7 +44,7 @@ export default function ServicesHubPage() {
       image:
         "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=85",
       icon: Code2,
-      price: "From AED 4,500 ($1,225)",
+      price: "From $1,225",
       subServices: [
         "Business Websites",
         "WordPress",
@@ -59,11 +59,11 @@ export default function ServicesHubPage() {
       title: "Domain & Hosting",
       slug: "/hosting",
       category: "Infrastructure",
-      desc: "Accredited UAE .ae and global domain registration paired with pure NVMe GCC edge cloud servers and corporate business email.",
+      desc: "Top-level domain registration paired with pure NVMe edge cloud servers and corporate business email.",
       image:
         "https://plus.unsplash.com/premium_photo-1685086785054-d047cdc0e525?auto=format&fit=crop&w=800&q=85",
       icon: Globe,
-      price: "From AED 36/mo ($9.99)",
+      price: "From $9.99/mo",
       subServices: [
         "Domain Registration",
         "Domain Transfer & Management",
@@ -79,11 +79,11 @@ export default function ServicesHubPage() {
       title: "Digital Marketing",
       slug: "/services/digital-marketing",
       category: "Growth",
-      desc: "Data-driven commercial campaigns across Google Ads, Meta, and LinkedIn targeting verified decision-makers across the UAE and GCC.",
+      desc: "Data-driven commercial campaigns across Google Ads, Meta, and LinkedIn targeting verified decision-makers worldwide.",
       image:
         "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=85",
       icon: TrendingUp,
-      price: "From AED 4,500/mo ($1,225)",
+      price: "From $1,225/mo",
       subServices: [
         "SEO",
         "Google Ads",
@@ -99,11 +99,11 @@ export default function ServicesHubPage() {
       title: "Google Business Profile & Local SEO",
       slug: "/services/google-business-profile-local-seo",
       category: "Local Dominance",
-      desc: "Rank in Dubai Google Maps 3-Pack, verify your Google Business Profile, capture high-intent localized calls, and scale customer reviews.",
+      desc: "Rank in Google Maps 3-Pack, verify your Google Business Profile, capture high-intent localized calls, and scale customer reviews.",
       image:
         "https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=800&q=85",
       icon: MapPin,
-      price: "From AED 1,500/mo ($400)",
+      price: "From $400/mo",
       subServices: [
         "GBP Creation",
         "GBP Verification Assistance",
@@ -125,7 +125,7 @@ export default function ServicesHubPage() {
       image:
         "https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&w=800&q=85",
       icon: Sparkles,
-      price: "From AED 2,200/mo ($600)",
+      price: "From $600/mo",
       subServices: [
         "Technical SEO",
         "On-Page SEO",
@@ -146,7 +146,7 @@ export default function ServicesHubPage() {
       image:
         "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=85",
       icon: Bot,
-      price: "From AED 3,500 ($950)",
+      price: "From $950",
       subServices: [
         "AI Agents",
         "AI Chatbots",
@@ -168,7 +168,7 @@ export default function ServicesHubPage() {
       image:
         "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=85",
       icon: Workflow,
-      price: "From AED 2,800 ($760)",
+      price: "From $760",
       subServices: [
         "CRM Setup",
         "Lead Management",
@@ -185,10 +185,10 @@ export default function ServicesHubPage() {
       title: "Branding & Creative",
       slug: "/services/branding-creative",
       category: "Creative",
-      desc: "Prestigious corporate identity design, bilingual English & Arabic typography, interactive UI/UX systems, and high-conversion ad creatives.",
+      desc: "Prestigious corporate identity design, multilingual typography, interactive UI/UX systems, and high-conversion ad creatives.",
       image: "/ima/web5.jpg",
       icon: Palette,
-      price: "From AED 3,200 ($870)",
+      price: "From $870",
       subServices: [
         "Brand Identity",
         "Logo Design",
@@ -206,7 +206,7 @@ export default function ServicesHubPage() {
       image:
         "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=85",
       icon: BarChart3,
-      price: "From AED 1,800/mo ($490)",
+      price: "From $490/mo",
       subServices: [
         "Google Analytics",
         "Google Tag Manager",
@@ -224,7 +224,7 @@ export default function ServicesHubPage() {
     {
       step: "01",
       title: "Technical Audit & Commercial Alignment",
-      desc: "We analyze your UAE market presence, audience intent, technical bottlenecks, and commercial goals to define measurable milestones.",
+      desc: "We analyze your target market presence, audience intent, technical bottlenecks, and commercial goals to define measurable milestones.",
       timeframe: "Week 1",
     },
     {
@@ -236,7 +236,7 @@ export default function ServicesHubPage() {
     {
       step: "03",
       title: "High-Fidelity Prototyping & Design",
-      desc: "Interactive Figma prototypes reflecting Dubai corporate prestige, verified against real users and mobile form factors.",
+      desc: "Interactive Figma prototypes reflecting high-end corporate prestige, verified against real users and mobile form factors.",
       timeframe: "Weeks 2 - 3",
     },
     {
@@ -264,7 +264,7 @@ export default function ServicesHubPage() {
     },
     {
       category: "Cloud, Domain & Hosting",
-      tools: ["Pure NVMe Edge Nodes", "AWS & Cloudflare Enterprise", ".ae UAE Accredited Registry", "Docker Containers", "DIFC Compliance"],
+      tools: ["Pure NVMe Edge Nodes", "AWS & Cloudflare Enterprise", "Global Domain Registry", "Docker Containers", "Enterprise Security Compliance"],
     },
     {
       category: "AI, Automation & CRM",
@@ -279,11 +279,11 @@ export default function ServicesHubPage() {
     },
     {
       q: "How are projects priced and invoiced?",
-      a: "All projects are priced transparently in USD ($) and AED (fixed milestone or monthly retainer). We accept bank wire transfers in the UAE, corporate credit cards, and regional payment arrangements with structured milestone deliverables.",
+      a: "All projects are priced transparently in US Dollars (USD) as fixed milestones or monthly retainers. We accept corporate bank transfers, credit cards, and international payment arrangements with structured milestone deliverables.",
     },
     {
       q: "Can you manage our domain, hosting, email, and website under one roof?",
-      a: "Yes. As a licensed Dubai technology provider, we offer accredited .ae domain registration, pure NVMe cloud hosting, branded corporate email, SSL security, and ongoing technical maintenance as an all-in-one partner.",
+      a: "Yes. As a full-service technology provider, we offer top-level domain registration, pure NVMe cloud hosting, branded corporate email, SSL security, and ongoing technical maintenance as an all-in-one partner.",
     },
     {
       q: "What kind of post-launch warranty and SLA support do you provide?",
@@ -293,13 +293,13 @@ export default function ServicesHubPage() {
 
   return (
     <div className="flex flex-col min-h-screen pt-24">
-      {/* 1. LUXURY DUBAI HERO SECTION */}
+      {/* 1. LUXURY CORPORATE HERO SECTION */}
       <section className="relative py-24 md:py-32 bg-[#070B14] text-white overflow-hidden">
         {/* Full-Bleed Corporate Photography Backdrop */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2000&q=90"
-            alt="Dubai business district and engineering skyline"
+            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=90"
+            alt="Global business district and engineering skyline"
             fill
             priority
             sizes="100vw"
@@ -316,13 +316,13 @@ export default function ServicesHubPage() {
             <div className="lg:col-span-8 space-y-6">
               <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-widest text-[#D4AF37] uppercase bg-[#C59B27]/15 border border-[#C59B27]/30 backdrop-blur-md">
                 <Sparkles size={13} className="text-[#D4AF37]" />
-                9 CORE PRACTICE DISCIPLINES · DUBAI, UAE
+                9 CORE PRACTICE DISCIPLINES · WORLDWIDE
               </span>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.12]">
                 Precision technology, bold creative & verified commercial growth.
               </h1>
               <p className="text-lg sm:text-xl text-slate-200 leading-relaxed font-normal max-w-2xl drop-shadow-sm">
-                From custom software and domain hosting to AI search, automated pipelines, and performance marketing—we build market-dominating operations in Dubai and the GCC.
+                From custom software and domain hosting to AI search, automated pipelines, and performance marketing—we build market-dominating operations for ambitious businesses worldwide.
               </p>
               <div className="flex flex-wrap items-center gap-4 pt-2">
                 <Link
@@ -396,7 +396,7 @@ export default function ServicesHubPage() {
               const Icon = service.icon;
               const waUrl = `https://wa.me/971524405785?text=Hello%20Bird%20Hills%20Tech%2C%20I%20am%20interested%20in%20discussing%20your%20${encodeURIComponent(
                 service.title
-              )}%20services%20in%20Dubai.`;
+              )}%20services.`;
 
               return (
                 <div
@@ -546,7 +546,7 @@ export default function ServicesHubPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-16">
             <span className="text-xs font-extrabold tracking-wider uppercase text-[#C59B27]">
-              DUBAI ENTERPRISE STANDARDS
+              GLOBAL ENTERPRISE STANDARDS
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B0F19] tracking-tight mt-2">
               Technology Stack by Discipline
@@ -612,7 +612,7 @@ export default function ServicesHubPage() {
               </div>
               <h3 className="text-base font-bold text-[#0B0F19]">Zero-Trust Security</h3>
               <p className="text-xs text-[#667085] leading-relaxed">
-                HTTPS, parameterized queries, CSRF defenses, and regional DIFC data sovereignty compliant architecture from day one.
+                HTTPS, parameterized queries, CSRF defenses, and international enterprise data sovereignty compliant architecture from day one.
               </p>
             </div>
 

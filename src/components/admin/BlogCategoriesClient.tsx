@@ -142,7 +142,7 @@ export function BlogCategoriesClient({ initialCategories }: BlogCategoriesClient
             Blog Categories
           </h1>
           <p className="text-xs sm:text-sm text-[#667085] mt-1">
-            Organize articles into strategic topic clusters (Technology, Creative, Growth, Dubai Business).
+            Organize articles into strategic topic clusters (Technology, Creative, Growth, Global Business).
           </p>
         </div>
         <button

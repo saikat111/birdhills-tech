@@ -426,7 +426,7 @@ export function PricingClient({ initialTiers }: PricingClientProps) {
                     type="text"
                     value={form.badge}
                     onChange={(e) => setForm({ ...form, badge: e.target.value })}
-                    placeholder="Most Popular in Dubai"
+                    placeholder="Most Popular"
                     className="w-full px-3 py-2 border border-[#E4E7EC] rounded-xl text-xs text-[#070B14] focus:border-[#C59B27] focus:outline-none"
                   />
                 </div>

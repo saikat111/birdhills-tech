@@ -176,7 +176,7 @@ export function FloatingChatbot({ settings = {} }: FloatingChatbotProps) {
                   Bird Hills AI
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
                 </div>
-                <div className="text-[10px] text-amber-200/80">Dubai Growth & Tech Advisor</div>
+                <div className="text-[10px] text-amber-200/80">Global Growth & Tech Advisor</div>
               </div>
             </div>
             <div className="flex items-center gap-1">
@@ -204,7 +204,7 @@ export function FloatingChatbot({ settings = {} }: FloatingChatbotProps) {
             <div className="bg-emerald-50 border-b border-emerald-100 px-3 py-2 text-xs text-emerald-800 flex items-center justify-between shrink-0">
               <div className="flex items-center gap-1.5 font-medium">
                 <CheckCircle2 size={14} className="text-emerald-600" />
-                Inquiry registered with our Dubai team!
+                Inquiry registered with our team!
               </div>
               <Link
                 href="/book-a-meeting"

@@ -183,7 +183,7 @@ export default function FaqAccordion({
                 Have a specific question about your project?
               </h3>
               <p className={`text-sm ${isDark ? "text-slate-300" : "text-[#667085]"}`}>
-                Speak directly with our senior technical partners in Dubai. No sales pressure, just direct feasibility answers.
+                Speak directly with our senior technical partners. No sales pressure, just direct feasibility answers.
               </p>
             </div>
             <div className="flex items-center gap-3 shrink-0">

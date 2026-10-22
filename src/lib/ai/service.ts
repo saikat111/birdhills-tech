@@ -147,7 +147,7 @@ export class BirdHillsAIService {
 
   /**
    * Built-in intelligent conversational qualifier engine.
-   * Understands Dubai market context, services, and seamlessly captures visitor lead details.
+   * Understands global market context, enterprise services, and seamlessly captures visitor lead details.
    */
   private static generateHeuristicResponse(
     messages: { sender: string; text: string }[],
@@ -189,7 +189,7 @@ export class BirdHillsAIService {
     if (!updatedQual.leadEmail) {
       if (emailMatch) {
         return {
-          reply: `Thank you for sharing your email (${emailMatch[0]}). Could you also provide your name and phone or WhatsApp number so our senior consultant in Dubai can get in touch with you?`,
+          reply: `Thank you for sharing your email (${emailMatch[0]}). Could you also provide your name and phone or WhatsApp number so our senior consultant can get in touch with you?`,
           qualification: updatedQual,
         };
       }
@@ -203,14 +203,14 @@ export class BirdHillsAIService {
 
       if (lower.includes("marketing") || lower.includes("grow") || lower.includes("traffic")) {
         return {
-          reply: `Our growth practice in Dubai focuses on qualified B2B customer acquisition and measurable ROI—not vanity metrics. We run high-intent Google Ads, targeted LinkedIn campaigns, and authority SEO.\n\nCould you share your business email or WhatsApp number so we can review your current digital footprint?`,
+          reply: `Our growth practice focuses on qualified B2B customer acquisition and measurable ROI—not vanity metrics. We run high-intent Google Ads, targeted LinkedIn campaigns, and authority SEO.\n\nCould you share your business email or WhatsApp number so we can review your current digital footprint?`,
           qualification: updatedQual,
         };
       }
 
       if (lower.includes("brand") || lower.includes("design") || lower.includes("ui") || lower.includes("ux")) {
         return {
-          reply: `We craft authoritative corporate identities and digital design systems that build immediate trust in the Dubai and Gulf business landscape.\n\nWhat is your company or project name, and where can our creative team send an introductory brief?`,
+          reply: `We craft authoritative corporate identities and digital design systems that build immediate trust across enterprise and global business landscapes.\n\nWhat is your company or project name, and where can our creative team send an introductory brief?`,
           qualification: updatedQual,
         };
       }
@@ -224,14 +224,14 @@ export class BirdHillsAIService {
 
       if (lower.includes("ai") || lower.includes("automation")) {
         return {
-          reply: `We help UAE enterprises implement practical AI solutions—such as 24/7 intelligent customer qualifiers, automated workflows, and internal knowledge assistants.\n\nCould you share your work email so we can share relevant enterprise case studies?`,
+          reply: `We help modern enterprises implement practical AI solutions—such as 24/7 intelligent customer qualifiers, automated workflows, and internal knowledge assistants.\n\nCould you share your work email so we can share relevant enterprise case studies?`,
           qualification: updatedQual,
         };
       }
 
       // Default prompt
       return {
-        reply: `Thank you for reaching out to Bird Hills Tech. We combine technology, creative strategy, and digital marketing to build powerful digital experiences in Dubai.\n\nWhat kind of digital initiative are you looking to launch, and what is your business email or WhatsApp number?`,
+        reply: `Thank you for reaching out to Bird Hills Tech. We combine technology, creative strategy, and digital marketing to build powerful digital experiences.\n\nWhat kind of digital initiative are you looking to launch, and what is your business email or WhatsApp number?`,
         qualification: updatedQual,
       };
     }
@@ -239,7 +239,7 @@ export class BirdHillsAIService {
     // We have email, need name/phone or requirement confirmation
     if (updatedQual.leadEmail && !updatedQual.leadPhone) {
       return {
-        reply: `Got it! What is the best phone or WhatsApp number for you, and your name? We can arrange an introductory consultation or meeting at our Deira office.`,
+        reply: `Got it! What is the best phone or WhatsApp number for you, and your name? We can arrange an introductory consultation or executive briefing.`,
         qualification: updatedQual,
       };
     }
@@ -247,7 +247,7 @@ export class BirdHillsAIService {
     // Fully qualified
     updatedQual.isQualified = true;
     return {
-      reply: `Thank you! I have recorded your inquiry for our senior team at Bird Hills Tech Dubai. A dedicated growth consultant will review your requirements and follow up within 2 to 4 business hours.\n\nYou can also book a specific calendar time via our 'Book a Meeting' page or reach us immediately on WhatsApp at +971 52 440 5785.`,
+      reply: `Thank you! I have recorded your inquiry for our senior team at Bird Hills Tech. A dedicated growth consultant will review your requirements and follow up within 2 to 4 business hours.\n\nYou can also book a specific calendar time via our 'Book a Meeting' page or reach us immediately on WhatsApp at +971 52 440 5785.`,
       qualification: updatedQual,
     };
   }
@@ -261,7 +261,7 @@ export class BirdHillsAIService {
     apiKey: string
   ): Promise<AIResponse> {
     const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
-    const systemPrompt = `You are the executive AI assistant for Bird Hills Tech, a Dubai-based technology, creative and digital growth company (Deira, Dubai, UAE; phone: +971 52 440 5785). Position: Technology × Creative × Growth. Be professional, concise, corporate, and helpful. Guide the visitor to share their project requirements, name, company, email, and WhatsApp number so our senior team can prepare a proposal.`;
+    const systemPrompt = `You are the executive AI assistant for Bird Hills Tech, a global technology, creative and digital growth company (phone: +971 52 440 5785). Position: Technology × Creative × Growth. Be professional, concise, corporate, and helpful. Guide the visitor to share their project requirements, name, company, email, and WhatsApp number so our senior team can prepare a proposal.`;
 
     const contents = messages.map((m) => ({
       role: m.sender === "user" ? "user" : "model",
@@ -312,7 +312,7 @@ export class BirdHillsAIService {
         messages: [
           {
             role: "system",
-            content: `You are the executive AI assistant for Bird Hills Tech, a Dubai-based technology, creative and digital growth company (Deira, Dubai, UAE; phone: +971 52 440 5785). Position: Technology × Creative × Growth. Be professional, concise, corporate, and helpful. Help qualify the visitor for web development, branding, digital marketing, or AI solutions, and politely collect their name, company, email, and WhatsApp number.`,
+            content: `You are the executive AI assistant for Bird Hills Tech, a global technology, creative and digital growth company (phone: +971 52 440 5785). Position: Technology × Creative × Growth. Be professional, concise, corporate, and helpful. Help qualify the visitor for web development, branding, digital marketing, or AI solutions, and politely collect their name, company, email, and WhatsApp number.`,
           },
           ...messages.map((m) => ({
             role: m.sender === "user" ? "user" : "assistant",

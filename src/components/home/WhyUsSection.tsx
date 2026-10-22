@@ -22,7 +22,7 @@ export function WhyUsSection() {
     {
       icon: Users2,
       title: "One Connected Team",
-      desc: "No communication gap between strategy, design, development and marketing. You get a single, accountable team based here in Dubai.",
+      desc: "No communication gap between strategy, design, development and marketing. You get a single, accountable global team dedicated to your success.",
     },
   ];
 

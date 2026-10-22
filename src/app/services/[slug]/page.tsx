@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { prisma } from "@/lib/prisma";
+import { Prisma } from "@prisma/client";
 import {
   CheckCircle2,
   ArrowRight,
@@ -38,14 +39,14 @@ const serviceDetails: Record<
 > = {
   "web-development": {
     problem:
-      "Most corporate websites in the UAE suffer from slow page loads, bloated WordPress plugins, and poor mobile responsiveness. In Dubai's high-velocity market, a slow website loses high-intent prospects within 3 seconds and undermines corporate credibility.",
+      "Most corporate websites suffer from slow page loads, bloated WordPress plugins, and poor mobile responsiveness. In today's fast-paced digital marketplace, a slow website loses high-intent prospects within 3 seconds and undermines corporate credibility.",
     approach:
       "Bird Hills Tech architects bespoke corporate web platforms using Next.js 16, TypeScript, and modern headless architectures. We engineer every page with strict performance standards, accessible design, and clean, modular code that your team fully owns.",
     tools: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS v4", "Prisma ORM", "PostgreSQL", "Vercel / AWS"],
     subServiceDescriptions: {
-      "Business Websites": "Prestigious corporate web presences tailored for Dubai holding groups, firms, and enterprises.",
+      "Business Websites": "Prestigious corporate web presences tailored for global holding groups, firms, and modern enterprises.",
       "WordPress": "Hardened, edge-cached headless or custom-themed WordPress builds with zero plugin bloat.",
-      "eCommerce": "High-conversion online storefronts integrated with UAE payment gateways (Stripe, Tabby, Tamara).",
+      "eCommerce": "High-conversion online storefronts integrated with global payment gateways (Stripe, Apple Pay, PayPal).",
       "Landing Pages": "High-converting PPC landing experiences engineered for maximum lead capture and high ad quality scores.",
       "Custom Development": "Bespoke SaaS platforms, client portals, and secure internal software tailored to your workflow.",
       "Website Redesign": "Complete modernization of legacy websites to boost speed, mobile UX, and organic conversions.",
@@ -62,20 +63,20 @@ const serviceDetails: Record<
       },
       {
         q: "Do you support bilingual English and Arabic websites?",
-        a: "Yes. All our web platforms support true RTL (Right-to-Left) typography, localized UI layouts, and seamless bilingual content switching tailored for the UAE and GCC markets.",
+        a: "Yes. All our web platforms support true RTL (Right-to-Left) typography, localized UI layouts, and seamless bilingual and multilingual content switching tailored for global markets.",
       },
     ],
   },
   "domain-hosting": {
     problem:
-      "Businesses in the Middle East often suffer from slow offshore hosting with high server latency (200ms+), unreliable email deliverability, and cumbersome domain management across multiple disconnected registrars.",
+      "Businesses often suffer from slow legacy hosting with high server latency (200ms+), unreliable email deliverability, and cumbersome domain management across multiple disconnected registrars.",
     approach:
-      "We provide low-latency GCC edge cloud hosting powered by pure NVMe enterprise SSDs, direct UAE .ae accredited domain registration, bank-grade DNSSEC security, and high-deliverability corporate business email with 99.99% uptime guarantees.",
+      "We provide ultra-low-latency global edge cloud hosting powered by pure NVMe enterprise SSDs, direct domain registration, bank-grade DNSSEC security, and high-deliverability corporate business email with 99.99% uptime guarantees.",
     tools: ["Pure NVMe SSD Arrays", "cPanel & CloudLinux", "LiteSpeed Web Server", "SpamAssassin", "Cloudflare DNS", "SSL / TLS 1.3"],
     subServiceDescriptions: {
-      "Domain Registration": "Direct registration of .ae, .com, .ai, .io, and 400+ extensions with instant DNS propagation.",
+      "Domain Registration": "Direct registration of .com, .net, .ai, .io, and 400+ extensions with instant DNS propagation.",
       "Domain Transfer & Management": "Zero-downtime transfers with free 1-year renewal and centralized DNS dashboard control.",
-      "Web Hosting": "GCC edge-cached cloud hosting with sub-15ms regional latency and automated daily backups.",
+      "Web Hosting": "Global edge-cached cloud hosting with sub-15ms regional latency and automated daily backups.",
       "Business Email": "Branded corporate inboxes with DKIM/SPF/DMARC authentication and anti-spam protection.",
       "SSL & Website Security": "Bank-grade Let's Encrypt Wildcard and Commercial EV SSL certificates with DDoS shielding.",
       "DNS Management": "Global Anycast DNS routing for millisecond query resolution and zero latency bottlenecks.",
@@ -84,12 +85,12 @@ const serviceDetails: Record<
     },
     faqs: [
       {
-        q: "What are the requirements for registering a .ae domain in the UAE?",
-        a: ".ae domains can be registered by any local or international business or individual. No physical UAE trade license is mandatory for standard .ae registrations, making it fast and frictionless.",
+        q: "What domain extensions and registration services do you support?",
+        a: "We support direct registration for .com, .net, .org, .ai, .io, and over 400+ top-level domain extensions worldwide with instant DNS propagation and automated renewal protection.",
       },
       {
         q: "Where are your web hosting servers located?",
-        a: "We deploy edge infrastructure directly optimized for UAE and GCC traffic, ensuring sub-15ms regional latency across Dubai, Abu Dhabi, Riyadh, and Doha.",
+        a: "We deploy edge infrastructure directly optimized for worldwide traffic, ensuring sub-15ms latency across global edge nodes.",
       },
       {
         q: "Do you assist with migrating our existing website and email accounts?",
@@ -99,15 +100,15 @@ const serviceDetails: Record<
   },
   "digital-marketing": {
     problem:
-      "Companies burn tens of thousands of dirhams on generic agency retainers that report vanity impressions and clicks without generating actual qualified sales pipeline or measurable customer acquisition.",
+      "Companies waste significant capital on generic agency retainers that report vanity impressions and clicks without generating actual qualified sales pipeline or measurable customer acquisition.",
     approach:
       "Our growth methodology targets high-intent commercial buyers on Google Search, LinkedIn B2B, and Meta. Every campaign is monitored through closed-loop server-side analytics tied directly to Cost Per Qualified Lead (CPQL) and revenue pipeline.",
     tools: ["Google Ads Search & PMax", "LinkedIn Campaign Manager", "Meta Ads Manager", "TikTok Ads Manager", "Google Analytics 4", "Looker Studio", "Klaviyo"],
     subServiceDescriptions: {
-      "SEO": "Organic ranking strategies targeting high-value commercial purchase queries in Dubai and the GCC.",
+      "SEO": "Organic ranking strategies targeting high-value commercial purchase queries globally.",
       "Google Ads": "High-intent Google Search and Performance Max campaigns driving ready-to-buy inquiries.",
       "Meta Ads": "Precision Instagram and Facebook ad funnels capturing qualified consumer and business demand.",
-      "TikTok Ads": "High-engagement short-form video advertising campaigns engineered for rapid GCC brand scaling and direct-response customer acquisition.",
+      "TikTok Ads": "High-engagement short-form video advertising campaigns engineered for rapid brand scaling and direct-response customer acquisition.",
       "Social Media Marketing": "Executive brand positioning, content distribution, and targeted B2B community engagement.",
       "Content Marketing": "Authoritative thought leadership, industry whitepapers, and technical case studies.",
       "Email Marketing": "Automated nurture sequences, high-converting drip funnels, and executive client newsletters.",
@@ -120,33 +121,33 @@ const serviceDetails: Record<
         a: "We measure success exclusively by qualified commercial inquiries, scheduled meetings, and customer acquisition cost (CAC)—not vanity impressions or clicks.",
       },
       {
-        q: "Which ad platform works best for Dubai businesses?",
+        q: "Which ad platform works best for our business?",
         a: "For immediate high-intent inquiries, Google Search Ads is unmatched. For B2B enterprise outreach, LinkedIn Ads delivers decision-makers. For visual lifestyle and retail brands, Instagram & Meta excel.",
       },
     ],
   },
   "google-business-profile-local-seo": {
     problem:
-      "Over 75% of local commercial searches in Dubai happen on Google Maps. Unverified or poorly optimized profiles lose valuable phone calls, walk-ins, and high-ticket inquiries to competitors in the 3-Pack.",
+      "Over 75% of local commercial searches happen on Google Maps. Unverified or poorly optimized profiles lose valuable phone calls, walk-ins, and high-ticket inquiries to competitors in the 3-Pack.",
     approach:
-      "We implement an end-to-end Google Business Profile optimization protocol: resolving verification roadblocks, embedding geo-tagged Dubai authority signals, building local citations, and automating 5-star review acquisition.",
+      "We implement an end-to-end Google Business Profile optimization protocol: resolving verification roadblocks, embedding geo-tagged authority signals, building local citations, and automating 5-star review acquisition.",
     tools: ["Google Business Profile API", "Local Falcon", "BrightLocal", "Geo-Coordinates Exif", "Review Gateways", "Schema LocalBusiness"],
     subServiceDescriptions: {
       "GBP Creation": "Complete initial setup with correct primary category classification and business details.",
       "GBP Verification Assistance": "Overcoming Google verification delays, video verification audits, and address reinstatement.",
       "GBP Profile Optimization": "Complete service menu architecture, high-res photography, and keyword-rich descriptions.",
-      "Google Maps Optimization": "Geo-targeted radius expansion to dominate Google Maps search results across Dubai districts.",
-      "Local SEO": "City-wide and district-specific landing page optimization (Deira, Downtown, Business Bay, Marina).",
-      "Local Keyword Optimization": "Targeting hyper-local Arabic and English search intent queries with high buying velocity.",
+      "Google Maps Optimization": "Geo-targeted radius expansion to dominate Google Maps search results across target districts.",
+      "Local SEO": "City-wide and district-specific landing page optimization tailored to high-density commercial locations.",
+      "Local Keyword Optimization": "Targeting hyper-local search intent queries with high buying velocity.",
       "Review Management Strategy": "Automated customer review request flows and professional public review reply protocols.",
-      "Local Citations": "High-authority Dubai business directory listings ensuring 100% NAP (Name, Address, Phone) consistency.",
+      "Local Citations": "High-authority business directory listings ensuring 100% NAP (Name, Address, Phone) consistency.",
       "GBP Posts & Content": "Weekly promotional updates, product highlights, and seasonal offers keeping signals active.",
-      "Multi-Location Management": "Unified governance for brands with multiple branches across Dubai, Abu Dhabi, and Sharjah.",
+      "Multi-Location Management": "Unified governance for brands with multiple branches across regions and international locations.",
     },
     faqs: [
       {
-        q: "How fast can our business appear in the Dubai Google Maps 3-Pack?",
-        a: "Initial optimizations and citation syncing typically produce noticeable ranking improvements within 14 to 30 days. Full 3-pack dominance across targeted Dubai areas is typically established within 60 to 90 days.",
+        q: "How fast can our business appear in the Google Maps 3-Pack?",
+        a: "Initial optimizations and citation syncing typically produce noticeable ranking improvements within 14 to 30 days. Full 3-pack dominance across targeted areas is typically established within 60 to 90 days.",
       },
       {
         q: "Can you help if our Google Business Profile was suspended or pending verification?",
@@ -202,7 +203,7 @@ const serviceDetails: Record<
     },
     faqs: [
       {
-        q: "How does WhatsApp automation work for our Dubai business?",
+        q: "How does WhatsApp automation work for our business?",
         a: "We connect directly to the official Meta WhatsApp Cloud API. When a prospect messages your business number, an intelligent AI bot greets them in English or Arabic, answers FAQs, qualifies their budget, and schedules a meeting on your calendar instantly.",
       },
       {
@@ -241,7 +242,7 @@ const serviceDetails: Record<
   },
   "branding-creative": {
     problem:
-      "In Dubai's hyper-competitive luxury and enterprise marketplace, companies with generic or outdated branding struggle to command premium pricing and find it difficult to gain instant trust with high-net-worth clients.",
+      "In today's hyper-competitive global luxury and enterprise marketplace, companies with generic or outdated branding struggle to command premium pricing and find it difficult to gain instant trust with high-net-worth clients.",
     approach:
       "We craft authoritative corporate visual identities, bilingual English & Arabic typography hierarchies, design systems, and digital marketing creatives engineered to position your firm as an undeniable industry leader.",
     tools: ["Figma Enterprise", "Adobe Illustrator", "Brand Identity Systems", "Design Tokens", "Typography Hierarchy", "Social Ad Kits"],
@@ -260,7 +261,7 @@ const serviceDetails: Record<
       },
       {
         q: "Do you create bilingual English and Arabic branding?",
-        a: "Yes. We specialize in culturally resonant bilingual typography pairings and layout aesthetics tailored for the UAE, Saudi Arabia, and GCC markets.",
+        a: "Yes. We specialize in culturally resonant bilingual typography pairings and layout aesthetics tailored for Middle Eastern, European, and global international markets.",
       },
     ],
   },
@@ -313,54 +314,61 @@ const serviceImagery: Record<
 > = {
   "web-development": {
     image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=2000&q=90",
-    priceUsd: "AED 4,500 ($1,225)",
+    priceUsd: "$1,225",
     timeline: "2-4 Weeks",
   },
   "domain-hosting": {
     image: "https://plus.unsplash.com/premium_photo-1685086785054-d047cdc0e525?auto=format&fit=crop&w=2000&q=90",
-    priceUsd: "AED 36/mo ($9.99)",
+    priceUsd: "$9.99/mo",
     timeline: "Instant Setup",
   },
   "digital-marketing": {
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=2000&q=90",
-    priceUsd: "AED 4,500/mo ($1,225)",
+    priceUsd: "$1,225/mo",
     timeline: "Monthly Sprint",
   },
   "google-business-profile-local-seo": {
     image: "https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=2000&q=90",
-    priceUsd: "AED 1,500/mo ($400)",
+    priceUsd: "$400/mo",
     timeline: "Ongoing Sprint",
   },
   "ai-seo-search": {
     image: "https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&w=2000&q=90",
-    priceUsd: "AED 2,200/mo ($600)",
+    priceUsd: "$600/mo",
     timeline: "Monthly Sprint",
   },
   "ai-automation": {
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=2000&q=90",
-    priceUsd: "AED 3,500 ($950)",
+    priceUsd: "$950",
     timeline: "2-4 Weeks",
   },
   "crm-marketing-automation": {
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=2000&q=90",
-    priceUsd: "AED 2,800 ($760)",
+    priceUsd: "$760",
     timeline: "2-3 Weeks",
   },
   "branding-creative": {
     image: "/ima/web5.jpg",
-    priceUsd: "AED 3,200 ($870)",
+    priceUsd: "$870",
     timeline: "2-3 Weeks",
   },
   "analytics-cro": {
     image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=2000&q=90",
-    priceUsd: "AED 1,800/mo ($490)",
+    priceUsd: "$490/mo",
     timeline: "Monthly Sprint",
   },
 };
 
+type ServiceWithData = Prisma.ServiceGetPayload<{}>;
+
 export async function generateStaticParams() {
-  const services = await prisma.service.findMany({ select: { slug: true } });
-  return services.map((s) => ({ slug: s.slug }));
+  try {
+    const services = await prisma.service.findMany({ select: { slug: true } });
+    return services.map((s) => ({ slug: s.slug }));
+  } catch (err) {
+    console.warn("Could not pre-render static service params at build time:", err);
+    return [];
+  }
 }
 
 export async function generateMetadata({
@@ -370,21 +378,27 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const targetSlug = slugAliases[slug] || slug;
-  const service = await prisma.service.findUnique({ where: { slug: targetSlug } });
+  try {
+    const service = await prisma.service.findUnique({ where: { slug: targetSlug } });
 
-  if (!service) {
+    if (!service) {
+      return {
+        title: "Service | Bird Hills Tech",
+      };
+    }
+
     return {
-      title: "Service Not Found | Bird Hills Tech",
+      title: service.seoTitle || `${service.title} | Bird Hills Tech`,
+      description: service.seoDescription || service.shortDesc,
+      alternates: {
+        canonical: `https://birdhillstech.com/services/${service.slug}`,
+      },
+    };
+  } catch {
+    return {
+      title: "Service | Bird Hills Tech",
     };
   }
-
-  return {
-    title: service.seoTitle || `${service.title} in Dubai | Bird Hills Tech`,
-    description: service.seoDescription || service.shortDesc,
-    alternates: {
-      canonical: `https://birdhillstech.com/services/${service.slug}`,
-    },
-  };
 }
 
 export default async function ServiceDetailPage({
@@ -395,15 +409,29 @@ export default async function ServiceDetailPage({
   const { slug } = await params;
   const targetSlug = slugAliases[slug] || slug;
 
-  let service = await prisma.service.findUnique({
-    where: { slug: targetSlug },
-  });
+  let service: ServiceWithData | null = null;
+  let relatedProjects: Prisma.ProjectGetPayload<{}>[] = [];
 
-  // Fallback to first service if slug not directly found
-  if (!service) {
-    service = await prisma.service.findFirst({
-      where: { slug: "web-development" },
+  try {
+    service = await prisma.service.findUnique({
+      where: { slug: targetSlug },
     });
+
+    // Fallback to first service if slug not directly found
+    if (!service) {
+      service = await prisma.service.findFirst({
+        where: { slug: "web-development" },
+      });
+    }
+
+    if (service) {
+      relatedProjects = await prisma.project.findMany({
+        where: { status: "published" },
+        take: 2,
+      });
+    }
+  } catch (err) {
+    console.error("Error fetching service in ServiceDetailPage:", err);
   }
 
   if (!service) {
@@ -436,25 +464,19 @@ export default async function ServiceDetailPage({
     benefits = ["Rapid time-to-market", "Measurable commercial ROI", "Zero platform lock-in"];
   }
 
-  // Fetch 2 related projects
-  const relatedProjects = await prisma.project.findMany({
-    where: { status: "published" },
-    take: 2,
-  });
-
   const waUrl = `https://wa.me/971524405785?text=Hello%20Bird%20Hills%20Tech%2C%20I%20am%20interested%20in%20discussing%20your%20${encodeURIComponent(
     service.title
   )}%20services%20(Starting%20${encodeURIComponent(imagery.priceUsd)}).`;
 
   return (
     <div className="flex flex-col min-h-screen pt-24">
-      {/* 1. LUXURY DUBAI HERO SECTION */}
+      {/* 1. LUXURY CORPORATE HERO SECTION */}
       <section className="relative py-20 md:py-32 bg-[#070B14] text-white border-b border-white/10 overflow-hidden">
         {/* Full-Bleed High-Res Service Background */}
         <div className="absolute inset-0 z-0">
           <Image
             src={imagery.image}
-            alt={`${service.title} engineering in Dubai`}
+            alt={`${service.title} engineering and digital solutions`}
             fill
             priority
             sizes="100vw"
@@ -609,7 +631,7 @@ export default async function ServiceDetailPage({
             {features.map((feat) => {
               const subDesc =
                 detail.subServiceDescriptions?.[feat] ||
-                `High-impact ${feat.toLowerCase()} engineering optimized for Dubai and the GCC market.`;
+                `High-impact ${feat.toLowerCase()} engineering optimized for modern enterprise performance.`;
 
               return (
                 <div
@@ -684,7 +706,7 @@ export default async function ServiceDetailPage({
                 },
                 {
                   title: "Responsive Cross-Platform Development",
-                  desc: "Pixel-perfect mobile, tablet, and desktop rendering tested across real-world UAE networks.",
+                  desc: "Pixel-perfect mobile, tablet, and desktop rendering tested across real-world modern networks.",
                   image: "/ima/web1.jpg",
                   tag: "Frontend",
                 },
@@ -696,7 +718,7 @@ export default async function ServiceDetailPage({
                 },
                 {
                   title: "Prestige Brand Visual Authority",
-                  desc: "Bespoke digital design tailored to command respect in the Dubai and GCC luxury markets.",
+                  desc: "Bespoke digital design tailored to command respect in global luxury and enterprise markets.",
                   image: "/ima/web6.jpg",
                   tag: "Prestige Brand",
                 },

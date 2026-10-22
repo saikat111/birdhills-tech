@@ -24,18 +24,18 @@ export function ServicesSection() {
       href: "/services/web-development",
       icon: Code2,
       tag: "Technology",
-      startingPrice: "From AED 4,500",
+      startingPrice: "From $1,225",
       subItems: ["Business Websites", "WordPress", "eCommerce", "Custom Dev"],
     },
     {
       num: "02",
       title: "Domain & Hosting",
-      desc: "Accredited UAE .ae domain registry, NVMe cloud edge servers, and high-deliverability business email.",
+      desc: "Global domain registration, NVMe cloud edge servers, and high-deliverability business email.",
       href: "/hosting",
       icon: Globe,
       tag: "Infrastructure",
       startingPrice: "From $9.99/mo",
-      subItems: [".ae Domains", "Cloud Hosting", "Business Email", "SSL & Security"],
+      subItems: ["Domain Search", "Cloud Hosting", "Business Email", "SSL & Security"],
     },
     {
       num: "03",
@@ -44,17 +44,17 @@ export function ServicesSection() {
       href: "/services/digital-marketing",
       icon: TrendingUp,
       tag: "Growth",
-      startingPrice: "From AED 2,800/mo",
+      startingPrice: "From $760/mo",
       subItems: ["Google Ads", "Meta Ads", "Social Media", "Lead Gen"],
     },
     {
       num: "04",
       title: "Google Business Profile & Local SEO",
-      desc: "Dominate Dubai Google Maps 3-Pack, resolve GBP verification roadblocks, and capture local calls.",
+      desc: "Dominate Google Maps 3-Pack, resolve GBP verification roadblocks, and capture high-intent customer calls.",
       href: "/services/google-business-profile-local-seo",
       icon: MapPin,
       tag: "Local SEO",
-      startingPrice: "From AED 1,500/mo",
+      startingPrice: "From $400/mo",
       subItems: ["GBP Verification", "Maps Ranking", "Review Strategy", "Local Citations"],
     },
     {
@@ -64,7 +64,7 @@ export function ServicesSection() {
       href: "/services/ai-seo-search",
       icon: Sparkles,
       tag: "AEO & GEO",
-      startingPrice: "From AED 2,200/mo",
+      startingPrice: "From $600/mo",
       subItems: ["AEO & GEO", "Technical SEO", "Semantic Search", "Schema Markup"],
     },
     {
@@ -74,7 +74,7 @@ export function ServicesSection() {
       href: "/services/ai-automation",
       icon: Bot,
       tag: "Automation",
-      startingPrice: "From AED 3,500",
+      startingPrice: "From $950",
       subItems: ["AI Agents", "WhatsApp Bots", "Workflow Automation", "n8n Pipelines"],
     },
     {
@@ -84,17 +84,17 @@ export function ServicesSection() {
       href: "/services/crm-marketing-automation",
       icon: Workflow,
       tag: "Operations",
-      startingPrice: "From AED 3,200",
+      startingPrice: "From $870",
       subItems: ["CRM Setup", "Lead Routing", "WhatsApp Automation", "Sales Pipeline"],
     },
     {
       num: "08",
       title: "Branding & Creative",
-      desc: "Authoritative corporate identity, bilingual English & Arabic typography, UI/UX systems, and ad creatives.",
+      desc: "Authoritative corporate identity, global typography, UI/UX systems, and high-converting ad creatives.",
       href: "/services/branding-creative",
       icon: Palette,
       tag: "Creative",
-      startingPrice: "From AED 3,800",
+      startingPrice: "From $1,050",
       subItems: ["Brand Identity", "Logo Design", "UI/UX Design", "Ad Creatives"],
     },
     {
@@ -104,7 +104,7 @@ export function ServicesSection() {
       href: "/services/analytics-cro",
       icon: BarChart3,
       tag: "Data & CRO",
-      startingPrice: "From AED 2,500/mo",
+      startingPrice: "From $680/mo",
       subItems: ["GA4 & GTM", "Meta CAPI", "Conversion Audits", "Marketing Dashboards"],
     },
   ];
@@ -120,10 +120,10 @@ export function ServicesSection() {
               <span>9 CORE PRACTICE DISCIPLINES</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0B0F19] tracking-tight leading-tight mb-4">
-              Technology, Creative & Commercial Growth.
+              Technology, Creative &amp; Commercial Growth.
             </h2>
             <p className="text-base sm:text-lg text-[#667085] leading-relaxed">
-              From bespoke web engineering and domain hosting to AI search, autonomous automation, and performance marketing—we power Dubai&apos;s leading digital operations.
+              From bespoke web engineering and domain hosting to AI search, autonomous automation, and performance marketing—we power the world&apos;s leading digital operations.
             </p>
           </div>
 

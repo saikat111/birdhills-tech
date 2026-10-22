@@ -23,66 +23,40 @@ interface Props {
 }
 
 export default function PricingCardsClient({ tiers }: Props) {
-  const [currency, setCurrency] = useState<"AED" | "USD">("AED");
-
   const retainers = [
     {
       title: "Technical SLA & DevOps Maintenance",
-      priceAed: "AED 1,500 / month",
-      priceUsd: "$400 / month",
-      desc: "24/7 cloud uptime monitoring, sub-15ms GCC latency optimization, daily backups, security patching, and dedicated developer bug fixes.",
+      price: "$400 / month",
+      desc: "24/7 cloud uptime monitoring, sub-15ms edge latency optimization, daily backups, security patching, and dedicated developer bug fixes.",
     },
     {
-      title: "Performance SEO & Local Dominance",
-      priceAed: "AED 2,200 / month",
-      priceUsd: "$600 / month",
-      desc: "Dubai Google Maps #1 rank sprints, local citation syndication, high-intent commercial keywords, and Google AI Overviews optimization.",
+      title: "Performance SEO & Search Dominance",
+      price: "$600 / month",
+      desc: "Google search #1 rank sprints, authoritative backlink syndication, high-intent commercial keywords, and Google AI Overviews optimization.",
     },
     {
       title: "Dedicated Growth & Ads Management",
-      priceAed: "AED 2,800 / month",
-      priceUsd: "$760 / month",
+      price: "$760 / month",
       desc: "High-intent Google Ads search management, Meta B2B ad creatives, conversion rate optimization (CRO), and closed-loop revenue reporting.",
     },
   ];
 
   return (
     <div>
-      {/* Currency Switcher & Market Value Banner */}
+      {/* Billing Currency & Market Value Banner */}
       <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-12 p-4 sm:p-5 rounded-2xl bg-[#FAF8F5] border border-[#E4E7EC]">
         <div className="flex items-center gap-3">
           <span className="text-xs font-bold uppercase tracking-wider text-slate-500">
-            Select Currency:
+            Billing Currency:
           </span>
-          <div className="inline-flex items-center p-1 rounded-xl bg-white border border-slate-200 shadow-xs">
-            <button
-              type="button"
-              onClick={() => setCurrency("AED")}
-              className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all ${
-                currency === "AED"
-                  ? "bg-[#070B14] text-white shadow-xs"
-                  : "text-slate-600 hover:text-[#070B14]"
-              }`}
-            >
-              AED (د.إ)
-            </button>
-            <button
-              type="button"
-              onClick={() => setCurrency("USD")}
-              className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all ${
-                currency === "USD"
-                  ? "bg-[#070B14] text-white shadow-xs"
-                  : "text-slate-600 hover:text-[#070B14]"
-              }`}
-            >
-              USD ($)
-            </button>
+          <div className="inline-flex items-center px-3.5 py-1.5 rounded-xl bg-white border border-slate-200 shadow-xs text-xs font-bold text-[#070B14]">
+            <span>USD ($) · Worldwide Direct Billing</span>
           </div>
         </div>
 
         <div className="inline-flex items-center gap-2 text-xs font-semibold text-[#0B0F19]">
           <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-          <span>Calibrated ~35%–50% below standard Dubai agency retainers</span>
+          <span>Calibrated ~35%–50% below standard enterprise agency retainers</span>
         </div>
       </div>
 
@@ -96,7 +70,7 @@ export default function PricingCardsClient({ tiers }: Props) {
             features = [];
           }
 
-          const displayPrice = currency === "AED" ? tier.priceAed : (tier.priceUsd || tier.priceAed);
+          const displayPrice = tier.priceUsd || tier.priceAed;
           const waUrl = `https://wa.me/971524405785?text=Hello%20Bird%20Hills%20Tech%2C%20I%20am%20interested%20in%20the%20${encodeURIComponent(
             tier.name
           )}%20package%20(${encodeURIComponent(displayPrice)}).`;
@@ -112,7 +86,7 @@ export default function PricingCardsClient({ tiers }: Props) {
             >
               {tier.popular && (
                 <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-[#D4AF37] via-[#C59B27] to-[#B38728] text-white text-[11px] font-extrabold uppercase tracking-wider shadow-md shadow-[#C59B27]/25">
-                  {tier.badge || "Most Popular in Dubai"}
+                  {tier.badge || "Most Popular"}
                 </div>
               )}
 
@@ -198,7 +172,7 @@ export default function PricingCardsClient({ tiers }: Props) {
             Monthly Technical & Growth Retainers
           </h3>
           <p className="text-xs sm:text-sm text-[#667085]">
-            Dedicated monthly engineering and acquisition capacity for scaling enterprises in Dubai.
+            Dedicated monthly engineering and acquisition capacity for scaling global enterprises.
           </p>
         </div>
 
@@ -211,7 +185,7 @@ export default function PricingCardsClient({ tiers }: Props) {
               <div className="space-y-2">
                 <h4 className="text-base font-bold text-[#070B14]">{r.title}</h4>
                 <div className="text-xl font-extrabold text-[#C59B27]">
-                  {currency === "AED" ? r.priceAed : r.priceUsd}
+                  {r.price}
                 </div>
                 <p className="text-xs text-[#667085] leading-relaxed">{r.desc}</p>
               </div>

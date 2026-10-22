@@ -58,7 +58,7 @@ export const WEB_DEV_SUB_SERVICES: Record<string, SubServiceDetail> = {
       },
       {
         title: "Enterprise Security & Compliance",
-        desc: "Zero-database exposure at the edge, automated SSL, CSRF protection, and GDPR/UAE data regulation compliance built into every build.",
+        desc: "Zero-database exposure at the edge, automated SSL, CSRF protection, and GDPR and international data compliance built into every build.",
       },
     ],
     deliverables: [
@@ -261,8 +261,8 @@ export const WEB_DEV_SUB_SERVICES: Record<string, SubServiceDetail> = {
         a: "For pure ease of catalog management, Shopify or Headless Shopify is fantastic. For complete data ownership and zero monthly transaction commissions, custom Next.js with Stripe or WooCommerce is superior. We evaluate your product volume and recommend the ideal fit.",
       },
       {
-        q: "Can you integrate local Middle East payment methods like Tabby and Tamara?",
-        a: "Yes. We have deep experience integrating regional UAE and GCC gateways, including Tabby, Tamara, Network International, Telr, and Stripe.",
+        q: "Can you integrate international and regional payment methods like Tabby, Tamara, and Stripe?",
+        a: "Yes. We have deep experience integrating regional and global payment gateways, including Stripe, PayPal, Tabby, Tamara, and regional merchant services.",
       },
       {
         q: "How do we manage product stock and fulfill orders?",

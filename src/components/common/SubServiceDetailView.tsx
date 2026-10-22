@@ -45,7 +45,7 @@ export default function SubServiceDetailView({ data }: SubServiceDetailViewProps
       "@type": "Offer",
       priceSpecification: {
         "@type": "PriceSpecification",
-        priceCurrency: "AED",
+        priceCurrency: "USD",
         price: data.priceNote,
       },
     },

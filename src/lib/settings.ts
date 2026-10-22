@@ -31,16 +31,16 @@ export const defaultSettings: SiteSettings = {
   site_description:
     "Bird Hills Tech delivers Digital Marketing, AI Business Automation, Web Development, Domain & Hosting Services for smarter, scalable business growth.",
   site_keywords:
-    "Web Development Company in Dubai, Digital Marketing Agency in Dubai, AI Business Automation Dubai, Domain and Hosting Services, Local SEO Dubai, Bird Hills Tech",
+    "Web Development Company, Digital Marketing Agency, AI Business Automation, Domain and Hosting Services, Enterprise SEO, Bird Hills Tech",
   google_indexing: "enabled", // enabled for search engine crawling
   company_name: "Bird Hills Tech",
   tagline: "Technology × Creative × Growth",
-  address: "Deira - Stone Building - 122 7th A Street - Al Baraha - Dubai, UAE",
+  address: "Global Digital Operations & Worldwide Client Services",
   phone: "+971 52 440 5785",
   whatsapp: "+971 52 440 5785",
   email: "contact@birdhillstech.com",
   website: "https://birdhillstech.com",
-  working_hours: "Monday – Saturday: 9:00 AM – 6:00 PM (GST)",
+  working_hours: "Monday – Saturday: 9:00 AM – 6:00 PM (UTC / Global Hours)",
   linkedin_url: "https://linkedin.com/company/birdhillstech",
   twitter_url: "https://twitter.com/birdhillstech",
   instagram_url: "https://instagram.com/birdhillstech",
@@ -50,7 +50,7 @@ export const defaultSettings: SiteSettings = {
   ai_bot_name: "Bird Hills AI",
   ai_welcome_message: "Tell us what you're trying to build. I'll help you find the right direction.",
   ai_qualification_notes:
-    "Prioritize commercial budget, timeline, and whether client has existing operations in Dubai / GCC.",
+    "Prioritize commercial budget, timeline, and client's geographic scope and enterprise operations.",
   lead_notification_email: "birdhillstech@gmail.com",
 };
 

@@ -25,10 +25,10 @@ interface HeroProps {
 const HERO_SLIDES = [
   {
     image:
-      "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2400&q=95",
-    alt: "Dubai futuristic architectural skyline and Burj Khalifa business district at dusk",
-    tag: "DUBAI HEADQUARTERS · GCC",
-    location: "Enterprise Web Engineering & GCC Digital Operations",
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2400&q=95",
+    alt: "Futuristic corporate skyscraper architectural district and global tech headquarters",
+    tag: "GLOBAL HEADQUARTERS · WORLDWIDE",
+    location: "Enterprise Web Engineering & Global Digital Operations",
     highlight: "Custom Digital Platforms · Bespoke UI/UX Design · Full Project Delivery",
   },
   {
@@ -44,7 +44,7 @@ const HERO_SLIDES = [
     alt: "Illuminated high-speed cloud datacenter with glowing server racks and fiber optic connectivity",
     tag: "FEATURED SERVICE · 02",
     location: "Domain & NVMe Cloud Hosting",
-    highlight: "Accredited .ae Registry · Pure NVMe SSD Edge Nodes · 99.99% Uptime SLA",
+    highlight: "Global Domain Registry · Pure NVMe SSD Edge Nodes · 99.99% Uptime SLA",
   },
   {
     image:
@@ -66,16 +66,16 @@ const HERO_SLIDES = [
     image:
       "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=2400&q=95",
     alt: "Collaborative software engineering team working together on enterprise digital platforms in modern tech studio",
-    tag: "TECHNICAL SQUAD · DUBAI",
+    tag: "GLOBAL TECHNICAL SQUAD",
     location: "Full-Stack Software Engineers & Solution Architects",
-    highlight: "Senior Technical Leadership · Type-Safe Engineering · Direct UAE Accountability",
+    highlight: "Senior Technical Leadership · Type-Safe Engineering · Direct Global Delivery",
   },
 ];
 
 export function HeroSection({
   eyebrow = "TECHNOLOGY × CREATIVE × GROWTH",
-  headline = "Your Digital Growth Partner in Dubai",
-  subcopy = "We combine high-performance web development, prestigious creative design, and commercial digital marketing to build powerful digital operations and measurable business growth in the UAE.",
+  headline = "Your Global Digital Growth Partner",
+  subcopy = "We combine high-performance web development, prestigious creative design, and commercial digital marketing to build powerful digital operations and measurable business growth worldwide.",
 }: HeroProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -154,11 +154,17 @@ export function HeroSection({
 
             {/* Main Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.12] drop-shadow-md">
-              {headline.split("Dubai")[0]}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F3E7C4] via-[#D4AF37] to-[#C59B27] relative inline-block drop-shadow-sm">
-                Dubai
-              </span>
-              {headline.split("Dubai")[1] || ""}
+              {headline.includes("Global") ? (
+                <>
+                  {headline.split("Global")[0]}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F3E7C4] via-[#D4AF37] to-[#C59B27] relative inline-block drop-shadow-sm">
+                    Global
+                  </span>
+                  {headline.split("Global")[1] || ""}
+                </>
+              ) : (
+                headline
+              )}
             </h1>
 
             {/* Supporting Copy */}
@@ -217,7 +223,7 @@ export function HeroSection({
                   <Sparkles size={13} className="text-[#D4AF37]" />
                   Growth
                 </div>
-                <div className="text-xs text-slate-300 mt-0.5">Measurable GCC Revenue ROI</div>
+                <div className="text-xs text-slate-300 mt-0.5">Measurable Global Revenue ROI</div>
               </div>
             </div>
           </div>
