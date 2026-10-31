@@ -361,14 +361,69 @@ const serviceImagery: Record<
 
 type ServiceWithData = Prisma.ServiceGetPayload<{}>;
 
+function getFallbackService(slug: string): ServiceWithData {
+  const detail = serviceDetails[slug] || serviceDetails["web-development"];
+  const subKeys = Object.keys(detail.subServiceDescriptions || {});
+  
+  const titles: Record<string, string> = {
+    "web-development": "Web Development",
+    "domain-hosting": "Domain & Hosting",
+    "digital-marketing": "Digital Marketing",
+    "google-business-profile-local-seo": "Local SEO & Google Business Profile",
+    "ai-seo-search": "AI SEO & Generative Search",
+    "ai-automation": "AI & Workflow Automation",
+    "crm-marketing-automation": "CRM & Marketing Automation",
+    "branding-creative": "Branding & Creative Design",
+    "analytics-cro": "Analytics & Conversion Rate Optimization",
+  };
+
+  const categories: Record<string, string> = {
+    "web-development": "Technology",
+    "domain-hosting": "Infrastructure",
+    "digital-marketing": "Growth",
+    "google-business-profile-local-seo": "Local Visibility",
+    "ai-seo-search": "Search Intelligence",
+    "ai-automation": "Automation",
+    "crm-marketing-automation": "Revenue Operations",
+    "branding-creative": "Creative",
+    "analytics-cro": "Data & CRO",
+  };
+
+  return {
+    id: `fallback-${slug}`,
+    title: titles[slug] || "Digital Engineering Service",
+    slug,
+    category: categories[slug] || "Enterprise",
+    shortDesc: detail.problem.slice(0, 160) + "...",
+    fullDesc: detail.approach,
+    icon: "Sparkles",
+    featuresJson: JSON.stringify(subKeys),
+    benefitsJson: JSON.stringify(["Enterprise Engineering Standards", "Zero Technical Debt", "100% Client Source Code Ownership"]),
+    processJson: JSON.stringify([
+      { step: "01", title: "Discovery & Architecture", desc: "Technical scope modeling and interactive wireframing." },
+      { step: "02", title: "Design & Prototyping", desc: "Tokenized design systems and high-fidelity clickable flows." },
+      { step: "03", title: "Type-Safe Engineering", desc: "Type-safe implementation, peak performance optimization, and security audits." },
+      { step: "04", title: "Deployment & Growth", desc: "Zero-downtime launch, 90-day SLA warranty, and closed-loop scaling." },
+    ]),
+    seoTitle: `${titles[slug] || "Service"} | Bird Hills Tech`,
+    seoDescription: detail.approach.slice(0, 160),
+    published: true,
+    sortOrder: 1,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  };
+}
+
 export async function generateStaticParams() {
   try {
     const services = await prisma.service.findMany({ select: { slug: true } });
-    return services.map((s) => ({ slug: s.slug }));
+    if (services.length > 0) {
+      return services.map((s) => ({ slug: s.slug }));
+    }
   } catch (err) {
-    console.warn("Could not pre-render static service params at build time:", err);
-    return [];
+    // fallback to static list
   }
+  return Object.keys(serviceDetails).map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
@@ -381,24 +436,27 @@ export async function generateMetadata({
   try {
     const service = await prisma.service.findUnique({ where: { slug: targetSlug } });
 
-    if (!service) {
+    if (service) {
       return {
-        title: "Service | Bird Hills Tech",
+        title: service.seoTitle || `${service.title} | Bird Hills Tech`,
+        description: service.seoDescription || service.shortDesc,
+        alternates: {
+          canonical: `https://birdhillstech.com/services/${service.slug}`,
+        },
       };
     }
-
-    return {
-      title: service.seoTitle || `${service.title} | Bird Hills Tech`,
-      description: service.seoDescription || service.shortDesc,
-      alternates: {
-        canonical: `https://birdhillstech.com/services/${service.slug}`,
-      },
-    };
   } catch {
-    return {
-      title: "Service | Bird Hills Tech",
-    };
+    // fallback
   }
+
+  const fallback = getFallbackService(targetSlug);
+  return {
+    title: fallback.seoTitle || `${fallback.title} | Bird Hills Tech`,
+    description: fallback.seoDescription || fallback.shortDesc,
+    alternates: {
+      canonical: `https://birdhillstech.com/services/${targetSlug}`,
+    },
+  };
 }
 
 export default async function ServiceDetailPage({
@@ -435,7 +493,7 @@ export default async function ServiceDetailPage({
   }
 
   if (!service) {
-    notFound();
+    service = getFallbackService(targetSlug);
   }
 
   const imagery = serviceImagery[targetSlug] || serviceImagery["web-development"];
