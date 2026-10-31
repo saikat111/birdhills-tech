@@ -33,7 +33,6 @@ export async function generateStaticParams() {
     });
     return posts.map((p) => ({ slug: p.slug }));
   } catch (err) {
-    console.warn("Could not pre-render static blog post params at build time:", err);
     return [];
   }
 }
@@ -50,25 +49,25 @@ export async function generateMetadata({
       include: { category: true },
     });
 
-    if (!post) {
-      return { title: "Article Not Found | Bird Hills Tech" };
+    if (post) {
+      return {
+        title: post.seoTitle || `${post.title} | Bird Hills Tech Blog`,
+        description: post.seoDescription || post.excerpt,
+        alternates: {
+          canonical: `https://birdhillstech.com/blog/${post.slug}`,
+        },
+        openGraph: {
+          title: post.title,
+          description: post.excerpt,
+          images: post.coverImage ? [{ url: post.coverImage }] : [],
+        },
+      };
     }
-
-    return {
-      title: post.seoTitle || `${post.title} | Bird Hills Tech Blog`,
-      description: post.seoDescription || post.excerpt,
-      alternates: {
-        canonical: `https://birdhillstech.com/blog/${post.slug}`,
-      },
-      openGraph: {
-        title: post.title,
-        description: post.excerpt,
-        images: [{ url: post.coverImage }],
-      },
-    };
-  } catch {
-    return { title: "Blog Insights | Bird Hills Tech" };
+  } catch (err) {
+    // fallback
   }
+
+  return { title: "Article | Bird Hills Tech Blog" };
 }
 
 export default async function SingleBlogPage({
@@ -77,8 +76,9 @@ export default async function SingleBlogPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  let post: PostWithCategory | null = null;
-  let relatedPosts: PostWithCategory[] = [];
+
+  let post: any = null;
+  let relatedPosts: any[] = [];
 
   try {
     post = await prisma.blogPost.findUnique({
@@ -98,7 +98,7 @@ export default async function SingleBlogPage({
       });
     }
   } catch (err) {
-    console.error("Error fetching blog post in SingleBlogPage:", err);
+    console.warn("Database unavailable in SingleBlogPage:", err);
   }
 
   if (!post || post.status !== "published") {
@@ -258,7 +258,7 @@ export default async function SingleBlogPage({
 
           {/* Formatted Article Content */}
           <div className="prose prose-slate max-w-none space-y-6 text-[#344054] text-base leading-relaxed">
-            {contentParagraphs.map((para, i) => {
+            {contentParagraphs.map((para: string, i: number) => {
               // Check if paragraph is an image: ![alt](url)
               if (para.includes("![") && para.includes("](")) {
                 const imgMatch = para.match(/^!\[(.*?)\]\((.*?)\)(?:\s*\n\s*\*?(.*?)\*?)?$/);
@@ -319,7 +319,7 @@ export default async function SingleBlogPage({
                 const items = para.split("\n").filter(Boolean);
                 return (
                   <ul key={i} className="space-y-2 my-4 list-none pl-0">
-                    {items.map((item, idx) => (
+                    {items.map((item: string, idx: number) => (
                       <li key={idx} className="flex items-start gap-2.5 text-sm sm:text-base">
                         <CheckCircle2 size={16} className="text-[#C59B27] shrink-0 mt-1" />
                         <span>{item.replace(/^[-*]\s+/, "")}</span>
