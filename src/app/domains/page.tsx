@@ -272,6 +272,55 @@ export default function DomainsPage() {
         </div>
       </section>
 
+            {/* 3.5 GLOBAL ANYCAST DNS & CYBER SHIELDING INFRASTRUCTURE */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-6 relative aspect-[16/10] rounded-2xl overflow-hidden border border-[#E4E7EC] shadow-2xl bg-slate-900">
+              <Image
+                src="/images/generated/page_domains_network.jpg"
+                alt="Global Anycast DNS Mesh and Sovereign Domain Infrastructure"
+                fill
+                sizes="(max-width: 1024px) 100vw, 600px"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#070B14]/80 via-transparent to-transparent" />
+              <div className="absolute bottom-4 left-4 right-4 bg-[#070B14]/90 backdrop-blur-md p-4 rounded-xl border border-white/10">
+                <div className="text-xs font-bold text-[#D4AF37] uppercase tracking-wider">
+                  ANYCAST DNS PROPAGATION MESH
+                </div>
+                <div className="text-xs text-slate-300">
+                  Distributed root nameservers across Europe, North America, Middle East, and Asia Pacific.
+                </div>
+              </div>
+            </div>
+
+            <div className="lg:col-span-6 space-y-6">
+              <span className="text-xs font-bold tracking-widest uppercase text-[#C59B27]">
+                EDGE RESOLUTION PERFORMANCE
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#070B14] tracking-tight">
+                Sub-Millisecond Query Resolution Standard
+              </h2>
+              <p className="text-sm sm:text-base text-[#667085] leading-relaxed">
+                Slow DNS query lookups degrade user experience before a single byte of your website loads. We route your domain queries through redundant Tier-1 Anycast nameservers to guarantee instant resolution worldwide.
+              </p>
+
+              <div className="grid grid-cols-2 gap-4 pt-2">
+                <div className="p-4 rounded-xl bg-[#FAF8F5] border border-[#E4E7EC]">
+                  <div className="text-xl font-black text-[#070B14]">&lt; 10ms</div>
+                  <div className="text-xs text-[#667085] mt-1 font-medium">Global DNS Lookup Latency</div>
+                </div>
+                <div className="p-4 rounded-xl bg-[#FAF8F5] border border-[#E4E7EC]">
+                  <div className="text-xl font-black text-[#070B14]">100%</div>
+                  <div className="text-xs text-[#667085] mt-1 font-medium">Anycast DNS Uptime Guarantee</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 4. DOMAIN TRANSFER & CONSOLIDATION SECTION */}
       <section className="py-20 bg-gradient-to-br from-[#070B14] via-[#0F1420] to-[#070B14] border-t border-[#C59B27]/25 text-white" id="transfer">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

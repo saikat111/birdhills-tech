@@ -15,6 +15,12 @@ import {
   Check,
   XCircle,
   TrendingUp,
+  Cpu,
+  Monitor,
+  CheckCheck,
+  Lock,
+  Workflow,
+  ExternalLink,
 } from "lucide-react";
 import { SubServiceDetail } from "@/data/subServicesData";
 import FinalCtaSection from "@/components/home/FinalCtaSection";
@@ -24,11 +30,239 @@ interface SubServiceDetailViewProps {
   data: SubServiceDetail;
 }
 
-export default function SubServiceDetailView({ data }: SubServiceDetailViewProps) {
+const categoryVisuals: Record<
+  string,
+  {
+    secondary: string;
+    secondaryTitle: string;
+    secondaryDesc: string;
+    deliverable: string;
+    deliverableTitle: string;
+    deliverableDesc: string;
+  }
+> = {
+  "web-development": {
+    secondary: "/images/generated/arch_web_dev.jpg",
+    secondaryTitle: "Enterprise Web Architecture & Microservices Flow",
+    secondaryDesc:
+      "High-throughput Next.js 16 server components, edge API caching, and automated CI/CD pipeline architecture.",
+    deliverable: "/images/generated/preview_web_dev.jpg",
+    deliverableTitle: "Production SaaS Portal & Responsive Interface Deliverable",
+    deliverableDesc:
+      "Pixel-perfect mobile, tablet, and ultra-wide desktop builds tested for sub-1-second Core Web Vitals.",
+  },
+  "domain-hosting": {
+    secondary: "/images/generated/arch_hosting.jpg",
+    secondaryTitle: "High-Availability Edge Cluster & DNS Anycast Topology",
+    secondaryDesc:
+      "Enterprise NVMe SSD arrays with multi-region failover and distributed edge node caching.",
+    deliverable: "/images/generated/preview_hosting.jpg",
+    deliverableTitle: "Cloud Infrastructure Health & Real-Time Telemetry Console",
+    deliverableDesc:
+      "24/7 monitoring console tracking server load, DDoS traffic mitigation, and automated daily backup snapshots.",
+  },
+  hosting: {
+    secondary: "/images/generated/arch_hosting.jpg",
+    secondaryTitle: "High-Availability Edge Cluster & DNS Anycast Topology",
+    secondaryDesc:
+      "Enterprise NVMe SSD arrays with multi-region failover and distributed edge node caching.",
+    deliverable: "/images/generated/preview_hosting.jpg",
+    deliverableTitle: "Cloud Infrastructure Health & Real-Time Telemetry Console",
+    deliverableDesc:
+      "24/7 monitoring console tracking server load, DDoS traffic mitigation, and automated daily backup snapshots.",
+  },
+  domains: {
+    secondary: "/images/generated/page_domains_network.jpg",
+    secondaryTitle: "Global DNSSEC & Anycast Routing Architecture",
+    secondaryDesc:
+      "Sub-millisecond root DNS resolution with cryptographic domain ownership validation and registrar locking.",
+    deliverable: "/images/generated/preview_hosting.jpg",
+    deliverableTitle: "Domain Portfolio & DNS Management Console",
+    deliverableDesc:
+      "Centralized DNS dashboard with 1-click MX, SPF, DKIM, and SSL certificate provisioning.",
+  },
+  "digital-marketing": {
+    secondary: "/images/generated/arch_marketing.jpg",
+    secondaryTitle: "Multi-Channel Growth Engine & Cross-Funnel Telemetry",
+    secondaryDesc:
+      "Full-funnel paid and organic acquisition pipelines connected to real-time revenue attribution engines.",
+    deliverable: "/images/generated/preview_marketing.jpg",
+    deliverableTitle: "Executive Revenue Attribution & Closed-Loop ROAS Dashboard",
+    deliverableDesc:
+      "Looker Studio executive dashboard unifying ad spend, qualified leads, and customer acquisition cost (CAC).",
+  },
+  "google-business-profile-local-seo": {
+    secondary: "/images/generated/arch_localseo.jpg",
+    secondaryTitle: "Geo-Targeted Grid Radius & Local Citation Map Architecture",
+    secondaryDesc:
+      "Hyper-local geo-coordinate ranking mesh targeting commercial proximity searches across key territories.",
+    deliverable: "/images/generated/preview_localseo.jpg",
+    deliverableTitle: "Google Business Profile 3-Pack Rank Radar & Reputation Hub",
+    deliverableDesc:
+      "Real-time rank tracker for local search, review velocity monitor, and automated GBP post scheduler.",
+  },
+  "local-seo": {
+    secondary: "/images/generated/arch_localseo.jpg",
+    secondaryTitle: "Geo-Targeted Grid Radius & Local Citation Map Architecture",
+    secondaryDesc:
+      "Hyper-local geo-coordinate ranking mesh targeting commercial proximity searches across key territories.",
+    deliverable: "/images/generated/preview_localseo.jpg",
+    deliverableTitle: "Google Business Profile 3-Pack Rank Radar & Reputation Hub",
+    deliverableDesc:
+      "Real-time rank tracker for local search, review velocity monitor, and automated GBP post scheduler.",
+  },
+  "ai-seo-search": {
+    secondary: "/images/generated/arch_aiseo.jpg",
+    secondaryTitle: "Generative Search Knowledge Graph & Vector Entity Clusters",
+    secondaryDesc:
+      "Semantic topic modeling, schema markup graph injection, and LLM training data visibility optimization.",
+    deliverable: "/images/generated/preview_aiseo.jpg",
+    deliverableTitle: "Answer Engine (AEO/GEO) Citation & LLM Visibility Monitor",
+    deliverableDesc:
+      "Multi-model benchmarking tracking your brand citations across ChatGPT, Perplexity, and Google Gemini Search.",
+  },
+  "ai-seo": {
+    secondary: "/images/generated/arch_aiseo.jpg",
+    secondaryTitle: "Generative Search Knowledge Graph & Vector Entity Clusters",
+    secondaryDesc:
+      "Semantic topic modeling, schema markup graph injection, and LLM training data visibility optimization.",
+    deliverable: "/images/generated/preview_aiseo.jpg",
+    deliverableTitle: "Answer Engine (AEO/GEO) Citation & LLM Visibility Monitor",
+    deliverableDesc:
+      "Multi-model benchmarking tracking your brand citations across ChatGPT, Perplexity, and Google Gemini Search.",
+  },
+  "ai-automation": {
+    secondary: "/images/generated/arch_aiauto.jpg",
+    secondaryTitle: "Autonomous Multi-Agent Workflow & Webhook Pipeline Blueprint",
+    secondaryDesc:
+      "Event-driven automation architecture connecting LLM reasoning engines with enterprise databases and APIs.",
+    deliverable: "/images/generated/preview_aiauto.jpg",
+    deliverableTitle: "Live Conversational AI & Autonomous Task Orchestration Console",
+    deliverableDesc:
+      "Operational admin portal for reviewing agent executions, WhatsApp dialogue logs, and automated lead handoffs.",
+  },
+  "crm-marketing-automation": {
+    secondary: "/images/generated/arch_crm.jpg",
+    secondaryTitle: "Automated Lead Routing & Lifecycle Pipeline Blueprint",
+    secondaryDesc:
+      "Multi-stage pipeline architecture with instant lead enrichment, calendar scheduling, and automated nurture drips.",
+    deliverable: "/images/generated/preview_crm.jpg",
+    deliverableTitle: "Omnichannel CRM Deal Pipeline & Customer Telemetry Portal",
+    deliverableDesc:
+      "Customized CRM views with automated deal scoring, contact activity timelines, and executive revenue forecasts.",
+  },
+  crm: {
+    secondary: "/images/generated/arch_crm.jpg",
+    secondaryTitle: "Automated Lead Routing & Lifecycle Pipeline Blueprint",
+    secondaryDesc:
+      "Multi-stage pipeline architecture with instant lead enrichment, calendar scheduling, and automated nurture drips.",
+    deliverable: "/images/generated/preview_crm.jpg",
+    deliverableTitle: "Omnichannel CRM Deal Pipeline & Customer Telemetry Portal",
+    deliverableDesc:
+      "Customized CRM views with automated deal scoring, contact activity timelines, and executive revenue forecasts.",
+  },
+  "branding-creative": {
+    secondary: "/images/generated/arch_branding.jpg",
+    secondaryTitle: "Design System Architecture & Visual Identity Token Matrix",
+    secondaryDesc:
+      "Modular design tokens, bilingual English/Arabic typography hierarchy, and enterprise brand style governance.",
+    deliverable: "/images/generated/preview_branding.jpg",
+    deliverableTitle: "Executive Brand Guidelines, Component Kit & Creative Assets",
+    deliverableDesc:
+      "Full Figma master library, vector asset packages, digital brand book, and omnichannel ad creative templates.",
+  },
+  branding: {
+    secondary: "/images/generated/arch_branding.jpg",
+    secondaryTitle: "Design System Architecture & Visual Identity Token Matrix",
+    secondaryDesc:
+      "Modular design tokens, bilingual English/Arabic typography hierarchy, and enterprise brand style governance.",
+    deliverable: "/images/generated/preview_branding.jpg",
+    deliverableTitle: "Executive Brand Guidelines, Component Kit & Creative Assets",
+    deliverableDesc:
+      "Full Figma master library, vector asset packages, digital brand book, and omnichannel ad creative templates.",
+  },
+  "analytics-cro": {
+    secondary: "/images/generated/arch_analytics.jpg",
+    secondaryTitle: "Server-Side CAPI Data Pipeline & Multi-Touch Attribution Model",
+    secondaryDesc:
+      "Server-to-server event dispatching bypassing ad blockers, connected to GA4, Meta CAPI, and Google Cloud BigQuery.",
+    deliverable: "/images/generated/preview_analytics.jpg",
+    deliverableTitle: "Executive Conversion Intelligence & BI Telemetry Dashboard",
+    deliverableDesc:
+      "Live conversion funnel reporting, user interaction heatmaps, and statistical A/B test confidence analysis.",
+  },
+  analytics: {
+    secondary: "/images/generated/arch_analytics.jpg",
+    secondaryTitle: "Server-Side CAPI Data Pipeline & Multi-Touch Attribution Model",
+    secondaryDesc:
+      "Server-to-server event dispatching bypassing ad blockers, connected to GA4, Meta CAPI, and Google Cloud BigQuery.",
+    deliverable: "/images/generated/preview_analytics.jpg",
+    deliverableTitle: "Executive Conversion Intelligence & BI Telemetry Dashboard",
+    deliverableDesc:
+      "Live conversion funnel reporting, user interaction heatmaps, and statistical A/B test confidence analysis.",
+  },
+};
+
+function getVisuals(data: SubServiceDetail) {
+  const cat =
+    categoryVisuals[data.parentSlug] || categoryVisuals["web-development"];
+  let secondary = cat.secondary;
+  let secondaryTitle = cat.secondaryTitle;
+  let deliverable = cat.deliverable;
+  let deliverableTitle = cat.deliverableTitle;
+
+  const slug = (data.slug || "").toLowerCase();
+  if (slug.includes("ecommerce")) {
+    secondary = "/images/generated/showcase_ecommerce.jpg";
+    secondaryTitle = "High-Conversion Checkout & Headless Storefront Pipeline";
+  } else if (slug.includes("security") || slug.includes("ssl")) {
+    secondary = "/images/generated/showcase_security.jpg";
+    secondaryTitle = "Multi-Layer DDoS Shielding & Cryptographic TLS Matrix";
+  } else if (slug.includes("citation")) {
+    secondary = "/images/generated/showcase_citations.jpg";
+    secondaryTitle = "Global Directory Syndication & Citation Consistency Mesh";
+  } else if (slug.includes("whatsapp")) {
+    secondary = "/images/generated/showcase_whatsapp.jpg";
+    secondaryTitle = "WhatsApp Business Cloud API & Webhook Telemetry Flow";
+  } else if (slug.includes("n8n")) {
+    secondary = "/images/generated/showcase_n8n.jpg";
+    secondaryTitle = "Event-Driven n8n Orchestration & Self-Hosted Webhook Nodes";
+  } else if (slug.includes("semantic")) {
+    secondary = "/images/generated/showcase_semantic.jpg";
+    secondaryTitle = "Vector Embeddings & Semantic Entity Topic Clustering";
+  } else if (slug.includes("creative") || slug.includes("adcreative")) {
+    secondary = "/images/generated/showcase_creative.jpg";
+    secondaryTitle = "High-Converting Creative Matrix & Dynamic Asset Variations";
+  } else if (slug.includes("cro") || slug.includes("conversion")) {
+    secondary = "/images/generated/showcase_cro.jpg";
+    secondaryTitle = "Multivariate A/B Testing & Micro-Conversion Funnel Telemetry";
+  } else if (slug.includes("code") || slug.includes("custom")) {
+    secondary = "/images/generated/visual_code_editor.jpg";
+    secondaryTitle = "Type-Safe Full-Stack Codebase & Automated Linting Pipeline";
+  } else if (slug.includes("landing") || slug.includes("mobile")) {
+    secondary = "/images/generated/visual_mobile_ux.jpg";
+    secondaryTitle = "Adaptive Mobile-First Layout & Touch Interaction Flow";
+  }
+
+  return {
+    secondary,
+    secondaryTitle,
+    secondaryDesc: cat.secondaryDesc,
+    deliverable,
+    deliverableTitle,
+    deliverableDesc: cat.deliverableDesc,
+  };
+}
+
+export default function SubServiceDetailView({
+  data,
+}: SubServiceDetailViewProps) {
   const faqItems = data.faqs.map((f) => ({
     question: f.q,
     answer: f.a,
   }));
+
+  const visuals = getVisuals(data);
 
   // JSON-LD Schema for Service & FAQ
   const serviceSchema = {
@@ -78,7 +312,10 @@ export default function SubServiceDetailView({ data }: SubServiceDetailViewProps
                 <ChevronRight className="w-3.5 h-3.5 text-[#64748B]" />
               </li>
               <li>
-                <Link href={data.parentHref} className="hover:text-white transition-colors">
+                <Link
+                  href={data.parentHref}
+                  className="hover:text-white transition-colors"
+                >
                   {data.parentName}
                 </Link>
               </li>
@@ -120,14 +357,18 @@ export default function SubServiceDetailView({ data }: SubServiceDetailViewProps
                     <TrendingUp className="w-3.5 h-3.5 text-[#C59B27]" />
                     <span>Commercial Terms</span>
                   </div>
-                  <div className="text-sm font-bold text-white">{data.priceNote}</div>
+                  <div className="text-sm font-bold text-white">
+                    {data.priceNote}
+                  </div>
                 </div>
                 <div className="bg-[#0D1526] p-3.5 rounded-xl border border-white/10">
                   <div className="flex items-center gap-2 text-xs text-[#94A3B8] mb-1">
                     <Clock className="w-3.5 h-3.5 text-emerald-400" />
                     <span>Delivery SLA</span>
                   </div>
-                  <div className="text-sm font-bold text-white">{data.deliveryTimeline}</div>
+                  <div className="text-sm font-bold text-white">
+                    {data.deliveryTimeline}
+                  </div>
                 </div>
               </div>
 
@@ -166,7 +407,8 @@ export default function SubServiceDetailView({ data }: SubServiceDetailViewProps
                     Enterprise SLA Guarantee
                   </div>
                   <div className="text-xs text-slate-300">
-                    Engineered with zero technical debt, strict data privacy, and full client source code ownership.
+                    Engineered with zero technical debt, strict data privacy,
+                    and full client source code ownership.
                   </div>
                 </div>
               </div>
@@ -201,9 +443,9 @@ export default function SubServiceDetailView({ data }: SubServiceDetailViewProps
         </section>
       )}
 
-      {/* 3. CHALLENGE VS APPROACH (TWO-COLUMN ARCHITECTURE) */}
+      {/* 3. CHALLENGE VS APPROACH & SYSTEM BLUEPRINT */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
             {/* The Challenge Card */}
             <div className="bg-[#FFF8F8] p-8 sm:p-10 rounded-2xl border border-red-200/80 space-y-6">
@@ -220,7 +462,9 @@ export default function SubServiceDetailView({ data }: SubServiceDetailViewProps
                     <span className="w-5 h-5 rounded-full bg-red-100 text-red-600 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">
                       ✕
                     </span>
-                    <span className="text-sm text-[#475467] leading-relaxed">{point}</span>
+                    <span className="text-sm text-[#475467] leading-relaxed">
+                      {point}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -247,6 +491,91 @@ export default function SubServiceDetailView({ data }: SubServiceDetailViewProps
               </ul>
             </div>
           </div>
+
+          {/* SECONDARY VISUAL: TECHNICAL ARCHITECTURE BLUEPRINT SHOWCASE */}
+          <div className="rounded-3xl bg-[#070B14] border border-[#1E293B] overflow-hidden shadow-2xl">
+            <div className="p-6 sm:p-8 border-b border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div>
+                <span className="inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-widest text-[#D4AF37]">
+                  <Cpu className="w-4 h-4 text-[#C59B27]" />
+                  TECHNICAL BLUEPRINT & SYSTEM ARCHITECTURE
+                </span>
+                <h3 className="text-xl sm:text-2xl font-bold text-white mt-1">
+                  {visuals.secondaryTitle}
+                </h3>
+              </div>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-bold border border-emerald-500/20 shrink-0">
+                <CheckCheck className="w-4 h-4" />
+                PRODUCTION CERTIFIED
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 items-center">
+              <div className="lg:col-span-7 relative aspect-[16/10] sm:aspect-[16/9] bg-slate-950 overflow-hidden">
+                <Image
+                  src={visuals.secondary}
+                  alt={visuals.secondaryTitle}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 700px"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#070B14]/80 hidden lg:block" />
+              </div>
+
+              <div className="lg:col-span-5 p-6 sm:p-10 space-y-6 text-white">
+                <p className="text-sm text-slate-300 leading-relaxed">
+                  {visuals.secondaryDesc}
+                </p>
+
+                <div className="space-y-4 pt-2">
+                  <div className="flex items-start gap-3">
+                    <div className="w-6 h-6 rounded-lg bg-[#C59B27]/20 text-[#D4AF37] flex items-center justify-center shrink-0 mt-0.5">
+                      <Lock className="w-3.5 h-3.5" />
+                    </div>
+                    <div>
+                      <div className="text-xs font-bold text-white">
+                        Zero-Trust Security Hardening
+                      </div>
+                      <div className="text-xs text-slate-400">
+                        Isolated runtime environments, TLS 1.3 encryption, and
+                        strict OWASP compliance.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <div className="w-6 h-6 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center shrink-0 mt-0.5">
+                      <Workflow className="w-3.5 h-3.5" />
+                    </div>
+                    <div>
+                      <div className="text-xs font-bold text-white">
+                        Automated CI/CD Verification
+                      </div>
+                      <div className="text-xs text-slate-400">
+                        Type-safe unit tests, integration validation, and zero
+                        downtime rolling deploys.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <div className="w-6 h-6 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
+                      <ShieldCheck className="w-3.5 h-3.5" />
+                    </div>
+                    <div>
+                      <div className="text-xs font-bold text-white">
+                        Full IP & Codebase Handover
+                      </div>
+                      <div className="text-xs text-slate-400">
+                        100% intellectual property rights, Git repositories, and
+                        architecture docs transferred.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -261,7 +590,8 @@ export default function SubServiceDetailView({ data }: SubServiceDetailViewProps
               Everything Included in This Capability
             </h2>
             <p className="text-base text-[#667085] mt-3">
-              Engineered without shortcuts. Every implementation is documented, security-hardened, and transferred with full commercial rights.
+              Engineered without shortcuts. Every implementation is documented,
+              security-hardened, and transferred with full commercial rights.
             </p>
           </div>
 
@@ -297,7 +627,8 @@ export default function SubServiceDetailView({ data }: SubServiceDetailViewProps
               How We Deliver From Start to Finish
             </h2>
             <p className="text-base text-[#667085] mt-2">
-              Our 4-phase delivery framework eliminates guesswork, delays, and scope creep.
+              Our 4-phase delivery framework eliminates guesswork, delays, and
+              scope creep.
             </p>
           </div>
 
@@ -310,7 +641,9 @@ export default function SubServiceDetailView({ data }: SubServiceDetailViewProps
                 <div className="text-xs font-bold uppercase tracking-wider text-[#C59B27] font-mono">
                   {step.step}
                 </div>
-                <h3 className="text-base font-bold text-[#0B0F19]">{step.title}</h3>
+                <h3 className="text-base font-bold text-[#0B0F19]">
+                  {step.title}
+                </h3>
                 <p className="text-xs text-[#667085] leading-relaxed">
                   {step.desc}
                 </p>
@@ -320,20 +653,88 @@ export default function SubServiceDetailView({ data }: SubServiceDetailViewProps
         </div>
       </section>
 
-      {/* 6. DELIVERABLES CHECKLIST & TECH STACK */}
-      <section className="py-16 bg-[#FAF8F5] border-y border-[#E4E7EC]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-            {/* Deliverables Checklist */}
-            <div className="lg:col-span-7 space-y-6">
-              <div>
-                <span className="text-xs font-extrabold tracking-widest text-[#C59B27] uppercase">
-                  TANGIBLE OUTPUTS
+      {/* 6. DELIVERABLES CHECKLIST, LIVE WORKSPACE PREVIEW & TECH STACK */}
+      <section className="py-20 bg-[#FAF8F5] border-y border-[#E4E7EC]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          <div>
+            <span className="text-xs font-extrabold tracking-widest text-[#C59B27] uppercase">
+              TANGIBLE OUTPUTS & PRODUCTION VERIFICATION
+            </span>
+            <h3 className="text-2xl sm:text-3xl font-extrabold text-[#0B0F19] mt-1">
+              Live Workspace Output & Guaranteed Deliverables
+            </h3>
+            <p className="text-xs sm:text-sm text-[#667085] mt-1 max-w-2xl">
+              Inspect the tangible artifacts delivered to your leadership team.
+              Every line of code and asset is production-ready from Day 1.
+            </p>
+          </div>
+
+          {/* TERTIARY VISUAL: PRODUCTION WORKSPACE PREVIEW IN BROWSER MOCKUP */}
+          <div className="rounded-2xl border border-[#E4E7EC] bg-white shadow-xl overflow-hidden">
+            {/* Browser Header Bar */}
+            <div className="bg-[#0B0F19] px-4 py-3 flex items-center justify-between border-b border-white/10">
+              <div className="flex items-center gap-2">
+                <span className="w-3 h-3 rounded-full bg-rose-500 inline-block" />
+                <span className="w-3 h-3 rounded-full bg-amber-500 inline-block" />
+                <span className="w-3 h-3 rounded-full bg-emerald-500 inline-block" />
+                <span className="ml-3 px-3 py-1 rounded-md bg-white/10 text-[11px] font-mono text-slate-300 hidden sm:inline-block">
+                  https://console.birdhillstech.com/deployments/{data.slug}
                 </span>
-                <h3 className="text-2xl font-extrabold text-[#0B0F19] mt-1">
-                  Guaranteed Handover Deliverables
-                </h3>
               </div>
+              <div className="flex items-center gap-2 text-[11px] font-bold text-[#D4AF37]">
+                <Monitor className="w-3.5 h-3.5" />
+                <span className="hidden sm:inline">LIVE CONSOLE PREVIEW</span>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 items-center">
+              <div className="lg:col-span-7 relative aspect-[16/10] bg-slate-900 overflow-hidden">
+                <Image
+                  src={visuals.deliverable}
+                  alt={visuals.deliverableTitle}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 700px"
+                  className="object-cover"
+                />
+              </div>
+
+              <div className="lg:col-span-5 p-6 sm:p-8 space-y-5 bg-white">
+                <div>
+                  <span className="text-[10px] font-extrabold text-[#C59B27] uppercase tracking-wider">
+                    PRODUCTION READINESS
+                  </span>
+                  <h4 className="text-lg font-bold text-[#0B0F19] mt-0.5">
+                    {visuals.deliverableTitle}
+                  </h4>
+                  <p className="text-xs text-[#667085] mt-1.5 leading-relaxed">
+                    {visuals.deliverableDesc}
+                  </p>
+                </div>
+
+                <div className="space-y-2.5 pt-1">
+                  <div className="flex items-center gap-2 text-xs font-semibold text-[#1D2939]">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                    <span>Automated Continuous Integration & Smoke Tests</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-xs font-semibold text-[#1D2939]">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                    <span>Executive Walkthrough Video & Architecture Runbook</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-xs font-semibold text-[#1D2939]">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                    <span>90-Day Post-Launch SLA Warranty & Monitoring</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start pt-4">
+            {/* Deliverables Checklist */}
+            <div className="lg:col-span-7 space-y-4">
+              <h4 className="text-base font-bold text-[#0B0F19]">
+                Handover Deliverables Checklist
+              </h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 {data.deliverables.map((item, idx) => (
                   <div
@@ -359,7 +760,8 @@ export default function SubServiceDetailView({ data }: SubServiceDetailViewProps
                 Enterprise Tooling Stack
               </h4>
               <p className="text-xs text-[#667085] leading-relaxed">
-                We build with industry-standard, fully supported enterprise tooling—never deprecated libraries or fragile hacks.
+                We build with industry-standard, fully supported enterprise
+                tooling—never deprecated libraries or fragile hacks.
               </p>
               <div className="flex flex-wrap gap-2 pt-2">
                 {data.techStack.map((tech) => (

@@ -668,181 +668,179 @@ export default async function ServiceDetailPage({
         </div>
       </section>
 
-      {/* 3.5 VISUAL ENGINEERING ARCHITECTURE SHOWCASE */}
-      {service.slug === "web-development" && (
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl mb-12">
-              <span className="text-xs font-extrabold tracking-widest text-[#C59B27] uppercase">
-                ENGINEERING ARCHITECTURE SHOWCASE
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B0F19] tracking-tight mt-1">
-                Visualizing High-Performance Web Engineering
-              </h2>
-              <p className="text-xs sm:text-sm text-[#667085] mt-2">
-                From component design systems to type-safe Next.js full-stack architectures, our platforms are engineered for extreme speed and enterprise reliability.
-              </p>
-            </div>
+            {/* 3.5 VISUAL ENGINEERING ARCHITECTURE SHOWCASE */}
+      {(() => {
+        const showcases: Record<string, { eyebrow: string; title: string; description: string; items: { title: string; desc: string; image: string; tag: string }[] }> = {
+          "web-development": {
+            eyebrow: "ENGINEERING ARCHITECTURE SHOWCASE",
+            title: "Visualizing High-Performance Web Engineering",
+            description: "From component design systems to type-safe Next.js full-stack architectures, our platforms are engineered for extreme speed and enterprise reliability.",
+            items: [
+              { title: "Full-Stack Web Architecture & Cloud APIs", desc: "Modern headless frontend connected to cloud databases, microservices, and secure APIs.", image: "/images/generated/sub_webdev_custom.jpg", tag: "Architecture" },
+              { title: "Enterprise IDE & Precision Engineering", desc: "Type-safe TypeScript, Next.js 16 Server Components, and automated CI/CD pipelines.", image: "/images/generated/sub_webdev_support.jpg", tag: "Engineering" },
+              { title: "Human-Centered UI/UX Design Systems", desc: "Interactive Figma design tokens, accessible components, and seamless responsive flows.", image: "/images/generated/sub_branding_uiux.jpg", tag: "UI/UX Systems" },
+              { title: "Responsive Cross-Platform Development", desc: "Pixel-perfect mobile, tablet, and desktop rendering tested across real-world modern networks.", image: "/images/generated/sub_webdev_business.jpg", tag: "Frontend" },
+              { title: "High-Conversion E-Commerce Infrastructure", desc: "Global payment gateways, edge caching, and seamless checkout optimization.", image: "/images/generated/showcase_ecommerce.jpg", tag: "E-Commerce" },
+              { title: "Modular Frontend Standards & Multi-Device UI", desc: "Clean semantic HTML5, CSS architecture, and modern JavaScript engines built for maximum speed.", image: "/images/generated/sub_webdev_landing.jpg", tag: "Standards" }
+            ]
+          },
+          "domain-hosting": {
+            eyebrow: "INFRASTRUCTURE ARCHITECTURE SHOWCASE",
+            title: "Tier-4 Cloud Infrastructure & Sovereign Edge",
+            description: "Pure NVMe SSD arrays, sub-15ms latency, bank-grade DNSSEC, and enterprise DDoS shielding.",
+            items: [
+              { title: "High-Density NVMe Server Racks", desc: "Enterprise cloud hardware with dual mirrored arrays and automated daily snapshot backups.", image: "/images/generated/hero_hosting_cloud.jpg", tag: "Cloud Nodes" },
+              { title: "Global Low-Latency Anycast Routing", desc: "Edge-cached DNS propagation and Anycast network delivering sub-15ms regional speed.", image: "/images/generated/sub_domain_dns.jpg", tag: "Global DNS" },
+              { title: "Modern Optical Datacenter Infrastructure", desc: "Sub-millisecond internal routing, fiber-optic uplinks, and redundant power backups.", image: "/images/generated/service_domain_hosting.jpg", tag: "Tier-4 Center" },
+              { title: "Automated Backup & Disaster Recovery", desc: "Multi-region off-site snapshots with 1-click snapshot restore guarantees.", image: "/images/generated/sub_hosting_maintenance.jpg", tag: "Disaster Recovery" },
+              { title: "Multi-Layer DDoS Shielding & SSL Encryption", desc: "Bank-grade TLS 1.3 encryption, rate limiting, and real-time threat mitigation.", image: "/images/generated/showcase_security.jpg", tag: "Security" },
+              { title: "Centralized DNS & Domain Management", desc: "White-glove migration, DNS record provisioning, and authenticated corporate mailboxes.", image: "/images/generated/preview_hosting.jpg", tag: "Management" }
+            ]
+          },
+          "digital-marketing": {
+            eyebrow: "PERFORMANCE MARKETING TELEMETRY",
+            title: "Data-Driven Acquisition & Multi-Channel Scaling",
+            description: "Closed-loop tracking, high-intent audience targeting, and real-time ROAS optimization across paid and organic channels.",
+            items: [
+              { title: "Google Search & Performance Max Campaigns", desc: "Precision keyword bidding capturing high-intent commercial buyers actively seeking your services.", image: "/images/generated/sub_mktg_google_ads.jpg", tag: "Paid Search" },
+              { title: "Meta & Instagram Direct Response Funnels", desc: "Dynamic creative testing and custom lookalike audiences driving qualified enterprise inquiries.", image: "/images/generated/sub_mktg_meta_ads.jpg", tag: "Paid Social" },
+              { title: "Closed-Loop Revenue Attribution Dashboard", desc: "Looker Studio executive reports unifying ad spend, pipeline revenue, and Customer Acquisition Cost.", image: "/images/generated/preview_marketing.jpg", tag: "Telemetry" },
+              { title: "TikTok Ads & Short-Form Video Scaling", desc: "Engaging commercial video ads driving rapid viral reach and high-volume customer conversion.", image: "/images/generated/sub_mktg_tiktok_ads.jpg", tag: "Short-Form" },
+              { title: "B2B LinkedIn & Omnichannel Retargeting", desc: "Multi-touch retargeting ensuring no high-value prospect slips away without booking a meeting.", image: "/images/generated/sub_mktg_remarketing.jpg", tag: "Retargeting" },
+              { title: "High-Converting Inbound Lead Funnels", desc: "Full-funnel landing pages engineered for maximum qualification and instant CRM synchronization.", image: "/images/generated/sub_mktg_leadgen.jpg", tag: "Lead Gen" }
+            ]
+          },
+          "google-business-profile-local-seo": {
+            eyebrow: "LOCAL VISIBILITY RADAR",
+            title: "Dominating Local Search & Google Maps 3-Pack",
+            description: "Geo-targeted local rankings, verified Google Business Profile authority, and automated reputation growth.",
+            items: [
+              { title: "Google Maps 3-Pack Rank Radar", desc: "Proximity grid monitoring tracking exact top rankings across surrounding neighborhoods and cities.", image: "/images/generated/preview_localseo.jpg", tag: "Rank Radar" },
+              { title: "Verified GBP Optimization & Setup", desc: "Flawless category mapping, keyword-optimized descriptions, and verified primary attributes.", image: "/images/generated/sub_localseo_creation.jpg", tag: "Optimization" },
+              { title: "Local NAP Citation Syndication", desc: "Consistent Name, Address, and Phone citations syndicated across 50+ tier-1 business directories.", image: "/images/generated/showcase_citations.jpg", tag: "Citations" },
+              { title: "Automated 5-Star Review Generation", desc: "QR code and SMS review workflows turning satisfied customers into glowing public testimonials.", image: "/images/generated/sub_localseo_reviews.jpg", tag: "Reputation" },
+              { title: "Multi-Location Enterprise Grid Management", desc: "Centralized multi-branch local presence management for retail chains and franchise networks.", image: "/images/generated/sub_localseo_multilocation.jpg", tag: "Multi-Location" },
+              { title: "Geo-Targeted Content & Local Signal Mesh", desc: "Localized landing pages creating undeniable relevance for regional search queries.", image: "/images/generated/arch_localseo.jpg", tag: "Geo Mesh" }
+            ]
+          },
+          "ai-seo-search": {
+            eyebrow: "NEXT-GENERATION SEARCH OPTIMIZATION",
+            title: "Dominating AI Overviews, Perplexity & Google Search",
+            description: "Answer Engine Optimization (AEO), Generative Engine Optimization (GEO), and semantic knowledge graphs.",
+            items: [
+              { title: "LLM Citation & Answer Engine Optimization (AEO)", desc: "Engineering structured brand data to become the cited source in ChatGPT, Claude, and Perplexity answers.", image: "/images/generated/preview_aiseo.jpg", tag: "AEO / GEO" },
+              { title: "Semantic Entity & Knowledge Graph Architecture", desc: "Injecting JSON-LD schema networks that establish your brand as a recognized semantic authority.", image: "/images/generated/showcase_semantic.jpg", tag: "Schema Graph" },
+              { title: "Deep Technical SEO & Core Web Vitals", desc: "Sub-second load times, flawless indexability, and clean URL routing favored by search algorithms.", image: "/images/generated/sub_aiseo_technical.jpg", tag: "Technical SEO" },
+              { title: "High-Impact Commercial Topic Clusters", desc: "Comprehensive pillar page content targeting executive decision-makers with ready-to-buy intent.", image: "/images/generated/sub_aiseo_strategy.jpg", tag: "Topic Clusters" },
+              { title: "Generative Search Engine Vector Optimization", desc: "Embedding high-relevance semantic vectors to dominate Google Gemini search summaries.", image: "/images/generated/arch_aiseo.jpg", tag: "AI Vectors" },
+              { title: "Programmatic SEO & Scalable Content Hubs", desc: "Automated, quality-verified content architecture generating hundreds of high-ranking landing pages.", image: "/images/generated/sub_aiseo_programmatic.jpg", tag: "Programmatic" }
+            ]
+          },
+          "ai-automation": {
+            eyebrow: "AUTONOMOUS ENTERPRISE WORKFLOWS",
+            title: "AI Agents, Custom Integrations & Instant Execution",
+            description: "Automating repetitive commercial tasks with private LLM agents, WhatsApp conversational bots, and n8n webhook pipelines.",
+            items: [
+              { title: "Autonomous Multi-Agent Workflow Pipelines", desc: "Coordinated AI agents researching leads, drafting proposals, and synchronizing data between systems.", image: "/images/generated/arch_aiauto.jpg", tag: "AI Agents" },
+              { title: "Live Conversational WhatsApp & Web Chatbots", desc: "24/7 bilingual AI assistants answering client questions, qualifying budgets, and scheduling meetings.", image: "/images/generated/preview_aiauto.jpg", tag: "Chatbots" },
+              { title: "Event-Driven n8n & API Webhook Orchestration", desc: "Connecting your CRM, email, ERP, and payment platforms into self-healing, automated workflows.", image: "/images/generated/showcase_n8n.jpg", tag: "Pipelines" },
+              { title: "Automated Sales Lead Qualification & Scoring", desc: "Instant inbound prospect assessment routing high-value enterprise accounts directly to senior leadership.", image: "/images/generated/sub_aiauto_sales.jpg", tag: "Lead Scoring" },
+              { title: "AI Content Generation & Formatting Engines", desc: "Scalable generative pipelines creating consistent, on-brand documentation and marketing collateral.", image: "/images/generated/sub_aiauto_content.jpg", tag: "Generative Content" },
+              { title: "Enterprise AI Security & Private Deployments", desc: "Zero-retention data privacy ensuring your corporate intellectual property is never used for model training.", image: "/images/generated/sub_aiauto_support.jpg", tag: "Data Privacy" }
+            ]
+          },
+          "crm-marketing-automation": {
+            eyebrow: "REVENUE PIPELINE ARCHITECTURE",
+            title: "End-to-End CRM, Automated Routing & Deal Velocity",
+            description: "Eliminating lead leakage with automated deal stages, calendar scheduling, and instant multi-channel alerts.",
+            items: [
+              { title: "Interactive Deal Pipeline & Kanban Management", desc: "Visual stage tracking providing leadership instant transparency over sales velocity and conversion bottlenecks.", image: "/images/generated/preview_crm.jpg", tag: "Pipeline" },
+              { title: "Instant Multi-Channel Lead Routing", desc: "Routing inquiries from website forms, WhatsApp, and social ads to the right sales executive in under 60 seconds.", image: "/images/generated/arch_crm.jpg", tag: "Routing" },
+              { title: "Omnichannel WhatsApp & SMS Client Alerts", desc: "Automated appointment reminders, quote delivery, and follow-ups with 98% open rates.", image: "/images/generated/showcase_whatsapp.jpg", tag: "WhatsApp CRM" },
+              { title: "Automated Email Nurture Sequences", desc: "Dynamic drip campaigns warming cold prospects into sales-qualified opportunities on autopilot.", image: "/images/generated/sub_crm_email.jpg", tag: "Email Drips" },
+              { title: "Frictionless Meeting Scheduling Systems", desc: "Direct calendar booking widgets eliminating back-and-forth emails and boosting appointment show-up rates.", image: "/images/generated/sub_crm_appointments.jpg", tag: "Scheduling" },
+              { title: "Bidirectional Enterprise Tooling Integrations", desc: "Seamless synchronization between HubSpot, Zoho, Salesforce, Stripe, and internal ERP systems.", image: "/images/generated/sub_crm_integrations.jpg", tag: "Integrations" }
+            ]
+          },
+          "branding-creative": {
+            eyebrow: "PRESTIGE CORPORATE IDENTITY",
+            title: "Design Systems, Visual Authority & Brand Recognition",
+            description: "Crafting distinctive corporate visual identities, bilingual typography hierarchies, and modular Figma design systems.",
+            items: [
+              { title: "Modular Design Systems & Figma Component Kits", desc: "Reusable UI components, accessible color palettes, and standardized tokens accelerating development velocity.", image: "/images/generated/arch_branding.jpg", tag: "Design Systems" },
+              { title: "Distinctive Corporate Logo & Monogram Systems", desc: "Timeless vector identity marks, bilingual English/Arabic lockups, and luxury brand assets.", image: "/images/generated/preview_branding.jpg", tag: "Identity" },
+              { title: "High-Converting Commercial Ad Creatives", desc: "Striking visual campaigns engineered to grab attention in crowded social feeds and drive direct responses.", image: "/images/generated/showcase_creative.jpg", tag: "Ad Creative" },
+              { title: "Human-Centered UI/UX Clickable Prototypes", desc: "Interactive user journey wireframes validated with real users before writing a single line of production code.", image: "/images/generated/sub_branding_uiux.jpg", tag: "UI/UX" },
+              { title: "Corporate Pitch Decks & Marketing Collateral", desc: "High-stakes presentation decks, executive brochures, and print collateral commanding investment respect.", image: "/images/generated/sub_branding_graphics.jpg", tag: "Collateral" },
+              { title: "Executive Social Media Brand Kits", desc: "Cohesive visual frameworks for LinkedIn, Instagram, and corporate communications.", image: "/images/generated/sub_branding_social.jpg", tag: "Social Assets" }
+            ]
+          },
+          "analytics-cro": {
+            eyebrow: "CONVERSION TELEMETRY & DATA INTELLIGENCE",
+            title: "Server-Side Tracking, GA4 & A/B Testing Optimization",
+            description: "Restoring conversion data accuracy with Meta CAPI, Server-Side GTM, and executive revenue dashboards.",
+            items: [
+              { title: "Server-Side Meta Conversions API (CAPI) & GTM", desc: "Direct server-to-server event dispatching bypassing ad-blockers and iOS privacy tracking restrictions.", image: "/images/generated/arch_analytics.jpg", tag: "Server-Side" },
+              { title: "Executive Real-Time Looker Studio Dashboards", desc: "Unifying multi-channel ad spend, conversion rates, and revenue pipeline into one live executive view.", image: "/images/generated/preview_analytics.jpg", tag: "BI Dashboards" },
+              { title: "Multivariate A/B Testing & Heatmap Analysis", desc: "Pinpointing user friction points with scroll heatmaps, click recording, and statistical tests.", image: "/images/generated/showcase_cro.jpg", tag: "CRO & Testing" },
+              { title: "Google Analytics 4 (GA4) Enterprise Setup", desc: "Custom event definitions, cross-domain user journeys, and clean data layer architecture.", image: "/images/generated/sub_analytics_ga4.jpg", tag: "GA4 Audit" },
+              { title: "Multi-Touch First & Last-Click Attribution Models", desc: "Revealing exactly which campaigns, ads, and touchpoints generated actual qualified business revenue.", image: "/images/generated/sub_analytics_attribution.jpg", tag: "Attribution" },
+              { title: "Continuous CRO Sprints & Performance Audits", desc: "Ongoing monthly optimization testing hypothesis-backed improvements to maximize conversion rates.", image: "/images/generated/sub_analytics_cro.jpg", tag: "Growth Sprints" }
+            ]
+          }
+        };
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[
-                {
-                  title: "Full-Stack Web Architecture & Cloud APIs",
-                  desc: "Modern headless frontend connected to cloud databases, microservices, and secure APIs.",
-                  image: "/images/generated/sub_webdev_custom.jpg",
-                  tag: "Architecture",
-                },
-                {
-                  title: "Enterprise IDE & Precision Engineering",
-                  desc: "Type-safe TypeScript, Next.js 16 Server Components, and automated CI/CD pipelines.",
-                  image: "/images/generated/sub_webdev_support.jpg",
-                  tag: "Engineering",
-                },
-                {
-                  title: "Human-Centered UI/UX Design Systems",
-                  desc: "Interactive Figma design tokens, accessible components, and seamless responsive flows.",
-                  image: "/images/generated/sub_branding_uiux.jpg",
-                  tag: "UI/UX Systems",
-                },
-                {
-                  title: "Responsive Cross-Platform Development",
-                  desc: "Pixel-perfect mobile, tablet, and desktop rendering tested across real-world modern networks.",
-                  image: "/images/generated/sub_webdev_business.jpg",
-                  tag: "Frontend",
-                },
-                {
-                  title: "System Architecture & Quality Testing",
-                  desc: "Comprehensive testing, security hardening, and performance audits prior to launch.",
-                  image: "/images/generated/section_why_us.jpg",
-                  tag: "QA & Testing",
-                },
-                {
-                  title: "Prestige Brand Visual Authority",
-                  desc: "Bespoke digital design tailored to command respect in global luxury and enterprise markets.",
-                  image: "/images/generated/sub_branding_identity.jpg",
-                  tag: "Prestige Brand",
-                },
-                {
-                  title: "Cloud Computing & Intelligent Systems",
-                  desc: "High-throughput cloud architecture, AI workflows, and distributed microservices for enterprise agility.",
-                  image: "/images/generated/sub_aiauto_workflow.jpg",
-                  tag: "Cloud & AI",
-                },
-                {
-                  title: "Comprehensive Software Engineering Taxonomy",
-                  desc: "Holistic development lifecycle from data modeling and security hardening to automated deployment.",
-                  image: "/images/generated/hero_software_squad.jpg",
-                  tag: "Software Engineering",
-                },
-                {
-                  title: "Modular Frontend Standards & Multi-Device UI",
-                  desc: "Clean semantic HTML5, CSS architecture, and modern JavaScript engines built for maximum cross-device speed.",
-                  image: "/images/generated/sub_webdev_landing.jpg",
-                  tag: "Frontend Standards",
-                },
-              ].map((item) => (
-                <div
-                  key={item.title}
-                  className="group rounded-3xl overflow-hidden border border-[#E4E7EC] bg-[#FAF8F5] hover:border-[#C59B27]/40 hover:shadow-xl transition-all duration-300 flex flex-col"
-                >
-                  <div className="relative aspect-[16/10] overflow-hidden bg-slate-900">
-                    <Image
-                      src={item.image}
-                      alt={item.title}
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#070B14]/80 via-transparent to-transparent" />
-                    <span className="absolute top-4 left-4 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#070B14]/90 text-[#D4AF37] border border-[#C59B27]/40 backdrop-blur-md">
-                      {item.tag}
-                    </span>
-                  </div>
-                  <div className="p-6 flex flex-col justify-between flex-1 space-y-2">
-                    <h3 className="text-base font-bold text-[#0B0F19] group-hover:text-[#C59B27] transition-colors">
-                      {item.title}
-                    </h3>
-                    <p className="text-xs text-[#667085] leading-relaxed">
-                      {item.desc}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
+        const sc = showcases[service.slug] || showcases[targetSlug] || showcases["web-development"];
 
-      {service.slug === "domain-hosting" && (
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl mb-12">
-              <span className="text-xs font-extrabold tracking-widest text-[#C59B27] uppercase">
-                INFRASTRUCTURE ARCHITECTURE SHOWCASE
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B0F19] tracking-tight mt-1">
-                Tier-4 Cloud Infrastructure & Sovereign Edge
-              </h2>
-              <p className="text-xs sm:text-sm text-[#667085] mt-2">
-                Pure NVMe SSD arrays, sub-15ms GCC latency, bank-grade DNSSEC, and enterprise DDoS shielding.
-              </p>
-            </div>
+        return (
+          <section className="py-20 bg-white">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="max-w-3xl mb-12">
+                <span className="text-xs font-extrabold tracking-widest text-[#C59B27] uppercase">
+                  {sc.eyebrow}
+                </span>
+                <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B0F19] tracking-tight mt-1">
+                  {sc.title}
+                </h2>
+                <p className="text-xs sm:text-sm text-[#667085] mt-2">
+                  {sc.description}
+                </p>
+              </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[
-                {
-                  title: "Illuminated High-Density NVMe Server Racks",
-                  desc: "Enterprise cloud hardware with dual mirrored arrays and automated daily snapshot backups.",
-                  image:
-                    "/images/generated/hero_hosting_cloud.jpg",
-                  tag: "Cloud Nodes",
-                },
-                {
-                  title: "Global Low-Latency Anycast Routing",
-                  desc: "Edge-cached DNS propagation and Anycast network delivering sub-15ms regional speed.",
-                  image:
-                    "/images/generated/sub_domain_dns.jpg",
-                  tag: "Global DNS",
-                },
-                {
-                  title: "Modern Optical Datacenter Infrastructure",
-                  desc: "Sub-millisecond internal routing, fiber-optic uplinks, and redundant power backups.",
-                  image:
-                    "/images/generated/service_domain_hosting.jpg",
-                  tag: "Tier-4 Center",
-                },
-              ].map((item) => (
-                <div
-                  key={item.title}
-                  className="group rounded-3xl overflow-hidden border border-[#E4E7EC] bg-[#FAF8F5] hover:border-[#C59B27]/40 hover:shadow-xl transition-all duration-300 flex flex-col"
-                >
-                  <div className="relative aspect-[16/10] overflow-hidden bg-slate-900">
-                    <Image
-                      src={item.image}
-                      alt={item.title}
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#070B14]/80 via-transparent to-transparent" />
-                    <span className="absolute top-4 left-4 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#070B14]/90 text-[#D4AF37] border border-[#C59B27]/40 backdrop-blur-md">
-                      {item.tag}
-                    </span>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {sc.items.map((item) => (
+                  <div
+                    key={item.title}
+                    className="group rounded-3xl overflow-hidden border border-[#E4E7EC] bg-[#FAF8F5] hover:border-[#C59B27]/40 hover:shadow-xl transition-all duration-300 flex flex-col"
+                  >
+                    <div className="relative aspect-[16/10] overflow-hidden bg-slate-900">
+                      <Image
+                        src={item.image}
+                        alt={item.title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#070B14]/80 via-transparent to-transparent" />
+                      <span className="absolute top-4 left-4 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#070B14]/90 text-[#D4AF37] border border-[#C59B27]/40 backdrop-blur-md">
+                        {item.tag}
+                      </span>
+                    </div>
+                    <div className="p-6 flex flex-col justify-between flex-1 space-y-2">
+                      <h3 className="text-base font-bold text-[#0B0F19] group-hover:text-[#C59B27] transition-colors">
+                        {item.title}
+                      </h3>
+                      <p className="text-xs text-[#667085] leading-relaxed">
+                        {item.desc}
+                      </p>
+                    </div>
                   </div>
-                  <div className="p-6 flex flex-col justify-between flex-1 space-y-2">
-                    <h3 className="text-base font-bold text-[#0B0F19] group-hover:text-[#C59B27] transition-colors">
-                      {item.title}
-                    </h3>
-                    <p className="text-xs text-[#667085] leading-relaxed">
-                      {item.desc}
-                    </p>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
-      )}
+          </section>
+        );
+      })()}
 
       {/* 4. EXECUTION ROADMAP */}
       {processSteps.length > 0 && (

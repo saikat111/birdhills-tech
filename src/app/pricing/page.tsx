@@ -226,6 +226,58 @@ export default async function PricingPage() {
         </div>
       </section>
 
+            {/* 4. COMMERCIAL ASSURANCE & ENTERPRISE GUARANTEE */}
+      <section className="py-20 bg-[#070B14] text-white border-y border-[#1E293B]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-6 relative aspect-[16/10] rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+              <Image
+                src="/images/generated/page_pricing_guarantee.jpg"
+                alt="Enterprise Commercial Guarantee and Milestone Agreement"
+                fill
+                sizes="(max-width: 1024px) 100vw, 600px"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#070B14] via-transparent to-transparent opacity-60" />
+            </div>
+
+            <div className="lg:col-span-6 space-y-6">
+              <span className="text-xs font-bold tracking-widest uppercase text-[#D4AF37]">
+                ENTERPRISE COMMERCIAL ASSURANCE
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                Milestone-Backed Invoicing & Zero Risk Delivery
+              </h2>
+              <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+                We eliminate the uncertainty of typical digital agency billing. Every project is broken into verifiable stage deliverables tied directly to milestone approvals before any final payment is released.
+              </p>
+
+              <div className="space-y-4 pt-2">
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-lg bg-[#C59B27]/20 text-[#D4AF37] flex items-center justify-center shrink-0 mt-0.5">
+                    <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold text-white">Full Source Code & IP Handover</div>
+                    <div className="text-xs text-slate-400">100% intellectual property rights, Git repositories, and documentation transferred to your organization upon project completion.</div>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-lg bg-[#C59B27]/20 text-[#D4AF37] flex items-center justify-center shrink-0 mt-0.5">
+                    <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold text-white">90-Day Post-Launch SLA Warranty</div>
+                    <div className="text-xs text-slate-400">Every build includes 90 days of complimentary bug fixing, security patching, and director-level oversight.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 5. PRICING FAQS ACCORDION WITH SCHEMA MARKUP */}
       <FaqAccordion
         items={pricingFaqs.map((f) => ({

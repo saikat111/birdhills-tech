@@ -238,6 +238,54 @@ export default async function ContactPage() {
         </div>
       </section>
 
+            {/* 3.5 24/7 NETWORK OPERATIONS & CLIENT RESPONSE */}
+      <section className="py-20 bg-[#FAF8F5] border-t border-[#E4E7EC]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            <div className="lg:col-span-6 relative aspect-[16/10] rounded-2xl overflow-hidden border border-[#E4E7EC] shadow-xl bg-slate-900">
+              <Image
+                src="/images/generated/page_contact_support.jpg"
+                alt="24/7 Global Client Support & Network Operations Center"
+                fill
+                sizes="(max-width: 1024px) 100vw, 600px"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#070B14]/80 via-transparent to-transparent" />
+              <div className="absolute bottom-4 left-4 right-4 bg-[#070B14]/90 backdrop-blur-md p-4 rounded-xl border border-white/10">
+                <div className="text-xs font-bold text-[#D4AF37] uppercase tracking-wider">
+                  24/7 GLOBAL CLIENT DESK
+                </div>
+                <div className="text-xs text-slate-300">
+                  Direct WhatsApp (+971 52 440 5785) & emergency technical escalation channel.
+                </div>
+              </div>
+            </div>
+
+            <div className="lg:col-span-6 space-y-5">
+              <span className="text-xs font-bold tracking-widest uppercase text-[#C59B27]">
+                CONTINUOUS AVAILABILITY
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#070B14] tracking-tight">
+                Rapid Technical Triage & Director Escalation
+              </h2>
+              <p className="text-xs sm:text-sm text-[#667085] leading-relaxed">
+                Whether you are launching an urgent multi-region product campaign or require emergency incident response, our senior engineering leads respond in under 4 business hours with actionable next steps.
+              </p>
+              <div className="grid grid-cols-2 gap-4 pt-1">
+                <div className="p-4 rounded-xl bg-white border border-[#E4E7EC]">
+                  <div className="text-lg font-bold text-[#070B14]">&lt; 4 Hours</div>
+                  <div className="text-xs text-[#667085] mt-0.5">Standard Response SLA</div>
+                </div>
+                <div className="p-4 rounded-xl bg-white border border-[#E4E7EC]">
+                  <div className="text-lg font-bold text-[#070B14]">Direct Director</div>
+                  <div className="text-xs text-[#667085] mt-0.5">Solution Architect Assigned</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 4. CONTACT & CONSULTATION INTAKE FAQ ACCORDION WITH SCHEMA MARKUP */}
       <FaqAccordion
         items={[

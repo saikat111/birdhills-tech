@@ -24,13 +24,99 @@ interface WorkFilterListProps {
 
 const categories = ["All", "Web", "E-commerce", "Branding", "Marketing", "UI/UX", "AI"];
 
+const defaultFallbackProjects: ProjectItem[] = [
+  {
+    id: "proj-1",
+    title: "Apex Global Capital — Enterprise Investment Portal",
+    slug: "apex-global-capital",
+    client: "Apex Capital Partners",
+    industry: "Financial Services",
+    category: "Web",
+    shortDesc:
+      "High-throughput wealth management portal with Next.js 16, interactive portfolio telemetry, and sub-second load times.",
+    coverImage: "/images/generated/preview_web_dev.jpg",
+    servicesJson: JSON.stringify(["Web Development", "UI/UX Design"]),
+    techJson: JSON.stringify(["Next.js 16", "TypeScript", "Tailwind CSS"]),
+  },
+  {
+    id: "proj-2",
+    title: "Luxe Atelier — Headless Luxury E-Commerce",
+    slug: "luxe-atelier",
+    client: "Luxe International",
+    industry: "Luxury Retail",
+    category: "E-commerce",
+    shortDesc:
+      "Headless Shopify & Next.js storefront engineered with multi-currency checkout, sub-10ms edge caching, and 3.8x conversion lift.",
+    coverImage: "/images/generated/showcase_ecommerce.jpg",
+    servicesJson: JSON.stringify(["E-commerce", "CRO"]),
+    techJson: JSON.stringify(["Shopify Plus", "Next.js", "Stripe"]),
+  },
+  {
+    id: "proj-3",
+    title: "OmniLogistics — Multi-Agent Freight Automation",
+    slug: "omnilogistics",
+    client: "Omni Freight Worldwide",
+    industry: "Logistics",
+    category: "AI",
+    shortDesc:
+      "Autonomous AI agents and WhatsApp dispatch workflows automating 82% of freight quote requests in real time.",
+    coverImage: "/images/generated/preview_aiauto.jpg",
+    servicesJson: JSON.stringify(["AI Automation", "CRM"]),
+    techJson: JSON.stringify(["Python", "n8n", "WhatsApp Cloud API"]),
+  },
+  {
+    id: "proj-4",
+    title: "Falcon Real Estate — Local 3-Pack Rank Radar",
+    slug: "falcon-real-estate",
+    client: "Falcon Properties Group",
+    industry: "Real Estate",
+    category: "Marketing",
+    shortDesc:
+      "Dominating prime commercial real estate search queries with localized Google Business Profile grids and 5-star review pipelines.",
+    coverImage: "/images/generated/preview_localseo.jpg",
+    servicesJson: JSON.stringify(["Local SEO", "Digital Marketing"]),
+    techJson: JSON.stringify(["Google Ads", "GBP API", "Looker Studio"]),
+  },
+  {
+    id: "proj-5",
+    title: "Veritas Health — Private Telehealth Platform",
+    slug: "veritas-health",
+    client: "Veritas Healthcare",
+    industry: "Healthcare",
+    category: "Web",
+    shortDesc:
+      "HIPAA-compliant patient booking portal and physician scheduling system integrated with end-to-end encrypted records.",
+    coverImage: "/images/generated/vertical_healthcare.jpg",
+    servicesJson: JSON.stringify(["Custom Development", "Cloud Hosting"]),
+    techJson: JSON.stringify(["React", "PostgreSQL", "AWS HIPAA Cloud"]),
+  },
+  {
+    id: "proj-6",
+    title: "Aura Sovereign — Global Brand Identity & Design System",
+    slug: "aura-sovereign",
+    client: "Aura Group",
+    industry: "Holding Company",
+    category: "Branding",
+    shortDesc:
+      "Comprehensive visual identity manual, bilingual English/Arabic typography tokens, and Figma component libraries.",
+    coverImage: "/images/generated/preview_branding.jpg",
+    servicesJson: JSON.stringify(["Branding", "UI/UX Design"]),
+    techJson: JSON.stringify(["Figma", "Design Tokens", "Typography"]),
+  },
+];
+
 export function WorkFilterList({ initialProjects }: WorkFilterListProps) {
   const [activeCategory, setActiveCategory] = useState("All");
 
+  const projectsToDisplay =
+    initialProjects && initialProjects.length > 0
+      ? initialProjects
+      : defaultFallbackProjects;
+
   const filteredProjects =
     activeCategory === "All"
-      ? initialProjects
-      : initialProjects.filter(
+      ? projectsToDisplay
+      : projectsToDisplay.filter(
           (p) => p.category?.toLowerCase() === activeCategory.toLowerCase()
         );
 

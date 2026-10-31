@@ -164,8 +164,8 @@ export default function AboutPage() {
 
   const studioImages = [
     {
-      title: "Architecture & Engineering Planning",
-      image: "/images/generated/sub_webdev_support.jpg",
+      title: "Global Headquarters & Engineering Studio",
+      image: "/images/generated/page_about_office.jpg",
     },
     {
       title: "Creative Design & UI/UX Systems",
@@ -173,12 +173,11 @@ export default function AboutPage() {
     },
     {
       title: "Cloud Infrastructure & Sovereign Edge",
-      image:
-        "/images/generated/service_domain_hosting.jpg",
+      image: "/images/generated/service_domain_hosting.jpg",
     },
     {
-      title: "Full-Stack Development & Architecture",
-      image: "/images/generated/section_why_us.jpg",
+      title: "Executive Strategic Growth & Telemetry",
+      image: "/images/generated/visual_executive_growth.jpg",
     },
   ];
 
