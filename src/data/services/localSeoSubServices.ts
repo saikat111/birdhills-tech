@@ -12,7 +12,7 @@ export const LOCAL_SEO_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Claim, Establish & Architect Your Google Business Profile the Right Way",
     heroSubcopy:
       "A poorly created Google Business Profile with incorrect primary categories or conflicting NAP (Name, Address, Phone) details permanently limits your local search visibility. We establish, categorize, and configure your official Google presence according to strict algorithmic guidelines from day one.",
-    heroImage: "https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_localseo_multilocation.jpg",
     priceNote: "From $350 One-Time Setup",
     deliveryTimeline: "3 - 5 Business Days",
     metrics: [
@@ -102,7 +102,7 @@ export const LOCAL_SEO_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Overcome Video Verification Delays & Reclaim Suspended Google Profiles",
     heroSubcopy:
       "Stuck in a Google video verification loop, suffering an unexplained profile suspension, or waiting weeks for verification? We prepare comprehensive physical proof audits, liaise directly with Google product specialists, and guide your team through flawless live video verifications to get your profile active and ranking.",
-    heroImage: "https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_localseo_verification.jpg",
     priceNote: "From $450 / Case Resolution",
     deliveryTimeline: "5 - 10 Business Days",
     metrics: [
@@ -192,7 +192,7 @@ export const LOCAL_SEO_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Optimize Every Pixel of Your Google Business Profile to Convert Searchers",
     heroSubcopy:
       "A verified profile that is only 50% complete will never outrank competitors who have optimized every attribute. We execute an exhaustive, 50-point full-stack optimization protocol across your business description, custom attributes, high-resolution visual portfolio, and keyword-rich services.",
-    heroImage: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_localseo_optimization.jpg",
     priceNote: "From $400 / month Retainer",
     deliveryTimeline: "Initial Optimization in 5 Days",
     metrics: [
@@ -282,7 +282,7 @@ export const LOCAL_SEO_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Dominate the Google Maps 3-Pack & Expand Your Geographic Ranking Radius",
     heroSubcopy:
       "When customers search 'web agency near me' or 'corporate lawyer near me', over 70% of clicks go directly to the top 3 results in the Google Maps 3-Pack. We engineer comprehensive local geo-signals, citation networks, and website entity alignments that systematically expand your ranking radius across your entire city.",
-    heroImage: "https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_localseo_maps.jpg",
     priceNote: "From $500 / month Retainer",
     deliveryTimeline: "Ongoing Monthly Sprints",
     metrics: [
@@ -372,7 +372,7 @@ export const LOCAL_SEO_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Dominate Local Organic Searches Across Key City Districts & Neighborhoods",
     heroSubcopy:
       "Capturing customers in high-value commercial districts requires more than just a map pin. We architect localized website landing pages engineered around specific district search intent, localized schema entity graphs, and hyper-local commercial keywords that rank in both traditional organic search and Google Maps.",
-    heroImage: "https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_localseo_local.jpg",
     priceNote: "From $600 / month Retainer",
     deliveryTimeline: "Ongoing Monthly Sprints",
     metrics: [
@@ -462,7 +462,7 @@ export const LOCAL_SEO_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Uncover the High-Value Local Keywords That Ready-to-Buy Clients Are Searching",
     heroSubcopy:
       "Targeting the wrong keywords wastes months of SEO investment. We conduct exhaustive local keyword research uncovering high-intent transactional search queries, neighborhood-specific modifiers, and multi-language search terms that corporate buyers use when they need to hire a firm immediately.",
-    heroImage: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_localseo_keywords.jpg",
     priceNote: "From $400 / Research Package",
     deliveryTimeline: "3 - 5 Business Days",
     metrics: [
@@ -552,7 +552,7 @@ export const LOCAL_SEO_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Accelerate Genuine 5-Star Reviews & Dominate Local Search Prominence",
     heroSubcopy:
       "Customer reviews are Google's #1 prominence ranking factor and the decisive factor in whether a prospect calls you or your competitor. We engineer automated review acquisition systems, QR code cards, and proactive response protocols that turn happy clients into powerful 5-star ranking signals.",
-    heroImage: "https://images.unsplash.com/photo-1522204523234-8729aa6e3d5f?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_localseo_reviews.jpg",
     priceNote: "From $350 / month Retainer",
     deliveryTimeline: "System Setup in 3 Days",
     metrics: [
@@ -642,7 +642,7 @@ export const LOCAL_SEO_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Build Unshakeable Local Authority With Clean, Consistent Citation Networks",
     heroSubcopy:
       "Search engines verify your physical existence by cross-referencing your Name, Address, and Phone number (NAP) across hundreds of authoritative business registries. We audit, clean up, and build manual, high-authority local citations that establish undeniable trust in Google's algorithm.",
-    heroImage: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_localseo_citations.jpg",
     priceNote: "From $350 One-Time Package",
     deliveryTimeline: "7 - 10 Business Days",
     metrics: [
@@ -732,7 +732,7 @@ export const LOCAL_SEO_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Engage Local Searchers & Signal Active Authority With Weekly Google Posts",
     heroSubcopy:
       "An abandoned Google Business Profile signals to both Google and prospective customers that your company may be inactive. We curate, design, and publish weekly Google Business Profile posts, special event announcements, and product offers that drive direct calls, website visits, and fresh ranking signals.",
-    heroImage: "https://images.unsplash.com/photo-1557838923-2985c318be48?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_localseo_posts.jpg",
     priceNote: "From $300 / month Management",
     deliveryTimeline: "Weekly Scheduled Publishing",
     metrics: [
@@ -822,7 +822,7 @@ export const LOCAL_SEO_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Scale Local 3-Pack Dominance Across Multiple Branches, Clinics & Offices",
     heroSubcopy:
       "Managing local SEO across 5, 20, or 50+ locations quickly turns into a logistical nightmare of duplicate listings, rogue pin edits, and fragmented reviews. We architect centralized multi-location management frameworks that ensure 100% brand consistency, prevent profile suspensions, and dominate local search across all your branches.",
-    heroImage: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_localseo_multilocation.jpg",
     priceNote: "From $150 / location / month",
     deliveryTimeline: "Onboarding in 1 - 2 Weeks",
     metrics: [

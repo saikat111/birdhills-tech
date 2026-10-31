@@ -12,7 +12,7 @@ export const ANALYTICS_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Fix Broken Analytics With Precision Google Analytics 4 Architecture",
     heroSubcopy:
       "Most GA4 accounts are broken—burdened with missing conversion events, skewed session metrics, and zero cross-domain tracking. We architect enterprise GA4 implementations with structured custom event schemas, clean data streams, enhanced e-commerce funnels, and BigQuery data export pipelines.",
-    heroImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_analytics_reporting.jpg",
     priceNote: "From $1,050 setup & audit",
     deliveryTimeline: "5 to 10 Business Days",
     metrics: [
@@ -103,7 +103,7 @@ export const ANALYTICS_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Accelerate Page Speed and Secure Data With Server-Side Google Tag Manager",
     heroSubcopy:
       "Client-side marketing pixels slow down your website, get blocked by ad blockers and Apple iOS privacy updates, and expose user data to third parties. We architect advanced Server-Side and Web Google Tag Manager containers that speed up your site, protect customer privacy, and recover lost conversion data.",
-    heroImage: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_analytics_gtm.jpg",
     priceNote: "From $1,250 server-side architecture",
     deliveryTimeline: "7 to 14 Business Days",
     metrics: [
@@ -194,7 +194,7 @@ export const ANALYTICS_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Track Every Step of the Buyer Journey With Bulletproof Conversion Telemetry",
     heroSubcopy:
       "When ad networks don't receive accurate conversion signals, smart bidding algorithms fail and ad spend is wasted. We build robust, error-free conversion tracking frameworks and standardized e-commerce dataLayers—capturing exact revenue, lead values, micro-actions, and offline sales.",
-    heroImage: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_analytics_tracking.jpg",
     priceNote: "From $950 complete setup",
     deliveryTimeline: "5 to 10 Business Days",
     metrics: [
@@ -285,7 +285,7 @@ export const ANALYTICS_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Bypass Browser Ad Blockers With Server-to-Server Conversions API (CAPI)",
     heroSubcopy:
       "Client-side tracking pixels now miss up to 30% of conversions due to Apple iOS privacy settings, Brave browser shields, and ad blockers. We engineer server-to-server Conversions API (CAPI) integrations for Meta, TikTok, and Google—delivering 100% conversion capture, higher Event Quality scores, and lower customer acquisition costs.",
-    heroImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_analytics_capi.jpg",
     priceNote: "From $1,150 setup",
     deliveryTimeline: "5 to 10 Business Days",
     metrics: [
@@ -376,7 +376,7 @@ export const ANALYTICS_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Turn More of Your Existing Website Traffic Into Paying Customers",
     heroSubcopy:
       "Doubling your conversion rate doubles your revenue without spending an extra dollar on advertising. We conduct rigorous user behavior analysis, qualitative user testing, heatmaps, and statistical A/B split-testing to eliminate checkout friction and maximize landing page revenue.",
-    heroImage: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_analytics_cro.jpg",
     priceNote: "From $1,750 / month CRO sprint",
     deliveryTimeline: "Ongoing Monthly Testing",
     metrics: [
@@ -467,7 +467,7 @@ export const ANALYTICS_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Uncover Which Marketing Channels Actually Drive Real Revenue",
     heroSubcopy:
       "When every ad platform takes credit for the same sale, marketing leaders make bad budget decisions. We implement multi-touch attribution models and marketing mix incrementality frameworks—revealing the true customer path to purchase across Google, Meta, LinkedIn, organic search, and offline touches.",
-    heroImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_analytics_attribution.jpg",
     priceNote: "From $1,500 attribution architecture",
     deliveryTimeline: "10 to 15 Business Days",
     metrics: [
@@ -558,7 +558,7 @@ export const ANALYTICS_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Replace Manual Spreadsheets With Automated Real-Time Executive Dashboards",
     heroSubcopy:
       "Stop wasting days copying numbers between Facebook Ads, Google Ads, Stripe, and your CRM. We engineer automated, visually compelling executive dashboards in Looker Studio and Power BI that give founders, CMOs, and boards real-time clarity on revenue, ROAS, CAC, and operational velocity.",
-    heroImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_analytics_dashboards.jpg",
     priceNote: "From $1,050 custom dashboard",
     deliveryTimeline: "5 to 10 Business Days",
     metrics: [
@@ -649,7 +649,7 @@ export const ANALYTICS_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Never Miss a Performance Drop With Automated Anomaly Detection & Reporting",
     heroSubcopy:
       "Campaign tracking breaks silently, conversion tracking drops out, and ad budgets overspend without warning. We engineer automated reporting pipelines and 24/7 real-time anomaly detection alerts that instantly notify your team via Slack or WhatsApp whenever conversions, spend, or traffic deviate from normal baselines.",
-    heroImage: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_analytics_reporting.jpg",
     priceNote: "From $850 implementation",
     deliveryTimeline: "3 to 7 Business Days",
     metrics: [

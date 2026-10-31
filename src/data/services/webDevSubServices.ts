@@ -12,7 +12,7 @@ export const WEB_DEV_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Prestigious Corporate Websites Engineered for Speed, Authority & Conversion",
     heroSubcopy:
       "Your corporate website is the digital headquarters of your enterprise. We engineer custom, high-performance web platforms using Next.js 16 and modern headless architectures. Delivering sub-second load times, flawless mobile responsiveness, and custom CMS workflows tailored to your brand.",
-    heroImage: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_webdev_support.jpg",
     priceNote: "From $1,250 / Project",
     deliveryTimeline: "2 - 3 Weeks",
     metrics: [
@@ -102,7 +102,7 @@ export const WEB_DEV_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Enterprise WordPress Architecture Engineered for Maximum Velocity & Security",
     heroSubcopy:
       "Tired of sluggish WordPress sites bogged down by 50+ plugins, constant security alerts, and fragile updates? We build custom, bloat-free WordPress websites and decoupled Headless WordPress solutions that pair WordPress's beloved editorial interface with the blazing speed and security of a Next.js frontend.",
-    heroImage: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_webdev_wordpress.jpg",
     priceNote: "From $1,200 / Project",
     deliveryTimeline: "2 - 4 Weeks",
     metrics: [
@@ -192,7 +192,7 @@ export const WEB_DEV_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Turn Browsers Into High-Ticket Buyers With Frictionless Digital Commerce",
     heroSubcopy:
       "A slow or confusing checkout flow destroys your return on ad spend. We engineer enterprise eCommerce storefronts built on custom Next.js architectures, headless Shopify, and hardened WooCommerce. Featuring instant cart calculations, localized payment gateways, and conversion-optimized checkout funnels.",
-    heroImage: "https://images.unsplash.com/photo-1556742049-0a67c5574f73?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_webdev_ecommerce.jpg",
     priceNote: "From $1,800 / Storefront",
     deliveryTimeline: "3 - 5 Weeks",
     metrics: [
@@ -282,7 +282,7 @@ export const WEB_DEV_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Convert Paid Ad Clicks Into Qualified Leads With High-Velocity Landing Pages",
     heroSubcopy:
       "Sending expensive Google Ads or Meta traffic to your generic homepage burns advertising budget. We architect dedicated, high-intent landing pages engineered around psychological persuasion, sub-second load times, and distraction-free conversion paths.",
-    heroImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_webdev_landing.jpg",
     priceNote: "From $650 / Landing Page",
     deliveryTimeline: "5 - 7 Days",
     metrics: [
@@ -372,7 +372,7 @@ export const WEB_DEV_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Scalable Web Applications, Customer Portals & SaaS Systems Built to Last",
     heroSubcopy:
       "When off-the-shelf software can't support your unique business operations, you need tailored software. We engineer full-stack web applications, interactive client portals, and multi-tenant SaaS platforms using Next.js, Node.js, and relational databases designed for enterprise scale.",
-    heroImage: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_webdev_custom.jpg",
     priceNote: "From $2,800 / Application",
     deliveryTimeline: "4 - 8 Weeks",
     metrics: [
@@ -462,7 +462,7 @@ export const WEB_DEV_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Modernize Your Outdated Website Without Losing Your Hard-Earned Google Rankings",
     heroSubcopy:
       "Is your current website embarrassing your brand, loading like a dinosaur, or failing to convert modern mobile traffic? We execute complete corporate redesigns and structural rebuilds, transforming outdated sites into modern, high-speed digital assets while strictly preserving your SEO traffic and URL equity.",
-    heroImage: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_webdev_redesign.jpg",
     priceNote: "From $1,350 / Redesign",
     deliveryTimeline: "3 - 4 Weeks",
     metrics: [
@@ -552,7 +552,7 @@ export const WEB_DEV_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Proactive Website Maintenance, Security Monitoring & Engineering Sprints",
     heroSubcopy:
       "A website is never 'done'—it requires continuous security patching, performance audits, and rapid engineering support. Partner directly with our senior developers for ongoing feature enhancements, uptime guarantees, and instant bug fixes without the overhead of hiring an in-house developer.",
-    heroImage: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_webdev_support.jpg",
     priceNote: "From $400 / month Retainer",
     deliveryTimeline: "Continuous Monthly Partnership",
     metrics: [

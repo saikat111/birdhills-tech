@@ -10,24 +10,15 @@ import {
 import { getAllServiceSubSlugs, ALL_SERVICE_SUB_SERVICES } from "@/data/services";
 
 const SERVICE_IMAGES: Record<string, string> = {
-  "web-development":
-    "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=2000&q=90",
-  "domain-hosting":
-    "https://plus.unsplash.com/premium_photo-1685086785054-d047cdc0e525?auto=format&fit=crop&w=2000&q=90",
-  "digital-marketing":
-    "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=2000&q=90",
-  "google-business-profile-local-seo":
-    "https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=2000&q=90",
-  "ai-seo-search":
-    "https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&w=2000&q=90",
-  "ai-automation":
-    "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=2000&q=90",
-  "crm-marketing-automation":
-    "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=2000&q=90",
-  "branding-creative":
-    "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=2000&q=90",
-  "analytics-cro":
-    "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=2000&q=90",
+  "web-development": "/images/generated/service_web_development.jpg",
+  "domain-hosting": "/images/generated/service_domain_hosting.jpg",
+  "digital-marketing": "/images/generated/service_digital_marketing.jpg",
+  "google-business-profile-local-seo": "/images/generated/service_local_seo.jpg",
+  "ai-seo-search": "/images/generated/service_ai_seo.jpg",
+  "ai-automation": "/images/generated/service_ai_automation.jpg",
+  "crm-marketing-automation": "/images/generated/service_crm_marketing.jpg",
+  "branding-creative": "/images/generated/service_branding_creative.jpg",
+  "analytics-cro": "/images/generated/service_analytics_cro.jpg",
 };
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -48,7 +39,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "daily",
       priority: 1.0,
       images: [
-        "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2400&q=95",
+        "/images/generated/hero_dubai_tech.jpg",
       ],
     },
     {
@@ -63,7 +54,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "weekly",
       priority: 0.9,
       images: [
-        "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=2000&q=90",
+        "/images/generated/hero_hosting_cloud.jpg",
       ],
     },
     {
@@ -72,7 +63,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "weekly",
       priority: 0.9,
       images: [
-        "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2000&q=90",
+        "/images/generated/section_global_presence.jpg",
       ],
     },
     {
@@ -81,7 +72,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "weekly",
       priority: 0.9,
       images: [
-        "https://images.unsplash.com/photo-1526495124232-a04e1849168c?auto=format&fit=crop&w=2000&q=90",
+        "/images/generated/page_work_hero.jpg",
       ],
     },
     {
@@ -96,7 +87,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "daily",
       priority: 0.85,
       images: [
-        "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2000&q=90",
+        "${baseUrl}/images/generated/hero_dubai_tech.jpg",
       ],
     },
     {
@@ -105,7 +96,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly",
       priority: 0.8,
       images: [
-        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=90",
+        "${baseUrl}/images/generated/page_about_hero.jpg",
       ],
     },
     {
@@ -114,7 +105,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly",
       priority: 0.85,
       images: [
-        "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2000&q=90",
+        "${baseUrl}/images/generated/hero_dubai_tech.jpg",
       ],
     },
     {

@@ -39,7 +39,7 @@ export const HOSTING_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Enterprise Business Email With Guaranteed Deliverability & Zero Spam",
     heroSubcopy:
       "Stop your mission-critical client communications from landing in spam folders. We deploy enterprise-grade business email infrastructure featuring dedicated IP reputations, full SPF/DKIM/DMARC cryptographic validation, and multi-layer antivirus shielding.",
-    heroImage: "https://images.unsplash.com/photo-1557838923-2985c318be48?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_domain_dns.jpg",
     priceNote: "From $3.50 / mailbox / month",
     deliveryTimeline: "Same-Day Setup",
     metrics: [
@@ -128,7 +128,7 @@ export const HOSTING_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Fortify Your Web Assets With Multi-Layer SSL & Active Threat Shielding",
     heroSubcopy:
       "Protect your customer data, defend against automated bot assaults, and eliminate 'Not Secure' browser warnings. We engineer comprehensive web application firewalls (WAF), automated Wildcard TLS 1.3 certificates, and real-time vulnerability monitoring.",
-    heroImage: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_hosting_security.jpg",
     priceNote: "Free with managed hosting / Custom enterprise plans available",
     deliveryTimeline: "Instant Implementation",
     metrics: [
@@ -217,7 +217,7 @@ export const HOSTING_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Seamless Website & Database Migration Handled By Senior DevOps Engineers",
     heroSubcopy:
       "Tired of sluggish hosting, frequent server crashes, and subpar agency support? We migrate your corporate websites, complex eCommerce stores, MySQL/PostgreSQL databases, and business emails with zero data loss and guaranteed zero downtime.",
-    heroImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_hosting_migration.jpg",
     priceNote: "Free migration included with all hosting packages",
     deliveryTimeline: "24 - 48 Hours",
     metrics: [
@@ -306,7 +306,7 @@ export const HOSTING_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Proactive Cloud Maintenance, Automated Off-Site Backups & 24/7 Monitoring",
     heroSubcopy:
       "Your website is your primary business storefront. Don't wait for a hardware crash, corrupted database update, or security incident to realize you need professional DevOps support. We maintain, back up, and optimize your systems around the clock.",
-    heroImage: "https://plus.unsplash.com/premium_photo-1685086785054-d047cdc0e525?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_hosting_maintenance.jpg",
     priceNote: "From $50 / month / server",
     deliveryTimeline: "Continuous Monthly Retainer",
     metrics: [
@@ -398,7 +398,7 @@ export const DOMAINS_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Consolidate, Protect & Accelerate Your Corporate Domain Portfolio",
     heroSubcopy:
       "Tired of inflated renewal fees, unresponsive registrars, and fragmented domain accounts? Transfer your corporate domain names (.com, .ae, .ai, .io, and 400+ extensions) to Bird Hills Tech with zero downtime, a free 1-year renewal extension, and centralized portfolio DNS control.",
-    heroImage: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_domain_transfer.jpg",
     priceNote: "Standard registry transfer fee includes free 1-year renewal",
     deliveryTimeline: "Instant to 5 Days (TLD dependent)",
     metrics: [
@@ -487,7 +487,7 @@ export const DOMAINS_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Global Anycast DNS Routing With Instant Propagation & DNSSEC Shielding",
     heroSubcopy:
       "Every single visitor, email, and API connection begins with a DNS lookup. Slow DNS adds hundreds of milliseconds of lag to your website. We engineer multi-region Anycast DNS infrastructure that resolves queries in under 10 milliseconds, propagates records in seconds, and protects against spoofing with cryptographic DNSSEC.",
-    heroImage: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_domain_dns.jpg",
     priceNote: "Included free with all Bird Hills Tech domains and hosting",
     deliveryTimeline: "Instant Activation",
     metrics: [

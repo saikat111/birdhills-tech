@@ -165,20 +165,20 @@ export default function AboutPage() {
   const studioImages = [
     {
       title: "Architecture & Engineering Planning",
-      image: "/ima/web8.jpg",
+      image: "/images/generated/sub_webdev_support.jpg",
     },
     {
       title: "Creative Design & UI/UX Systems",
-      image: "/ima/web5.jpg",
+      image: "/images/generated/sub_branding_uiux.jpg",
     },
     {
       title: "Cloud Infrastructure & Sovereign Edge",
       image:
-        "https://plus.unsplash.com/premium_photo-1685086785054-d047cdc0e525?auto=format&fit=crop&w=800&q=80",
+        "/images/generated/service_domain_hosting.jpg",
     },
     {
       title: "Full-Stack Development & Architecture",
-      image: "/ima/web4.jpg",
+      image: "/images/generated/section_why_us.jpg",
     },
   ];
 
@@ -188,7 +188,7 @@ export default function AboutPage() {
       <section className="relative py-24 md:py-32 bg-[#070B14] text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=90"
+            src="/images/generated/page_about_hero.jpg"
             alt="Global corporate business district and modern architecture"
             fill
             priority
@@ -236,7 +236,7 @@ export default function AboutPage() {
             <div className="lg:col-span-6">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3] bg-slate-900 border border-slate-200">
                 <Image
-                  src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=85"
+                  src="/images/generated/hero_software_squad.jpg"
                   alt="Bird Hills Tech engineering and creative leadership team collaborating on enterprise digital platforms"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"

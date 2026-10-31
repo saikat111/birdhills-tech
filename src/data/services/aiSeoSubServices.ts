@@ -12,7 +12,7 @@ export const AI_SEO_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Eliminate Invisible Technical Bottlenecks & Accelerate Search Crawl Budget",
     heroSubcopy:
       "Even the most brilliant content cannot rank if search engine bots are trapped in redirect loops, blocked by rogue robots.txt directives, or slowed down by bloated JavaScript. We conduct deep-level technical SEO audits and code-level remediation to ensure flawless crawlability, indexation, and sub-second Core Web Vitals.",
-    heroImage: "https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_aiseo_automation.jpg",
     priceNote: "From $850 One-Time Audit / Sprint",
     deliveryTimeline: "Audit in 5 Days / Dev Sprint in 2 Weeks",
     metrics: [
@@ -102,7 +102,7 @@ export const AI_SEO_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Engineer Flawless On-Page Content Hierarchies That Search Engines Love",
     heroSubcopy:
       "Modern search algorithms don't just count keyword frequency—they analyze entity relationships, topical depth, and structured semantic context. We overhaul your on-page elements, heading hierarchies, semantic schema markup, and internal linking to turn every webpage into an undeniable authority signal.",
-    heroImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_aiseo_onpage.jpg",
     priceNote: "From $500 / month Sprints",
     deliveryTimeline: "Ongoing Monthly Sprints",
     metrics: [
@@ -192,7 +192,7 @@ export const AI_SEO_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Position Your Brand as the Direct Answer on Siri, Google Assistant & Perplexity",
     heroSubcopy:
       "When users ask conversational questions like 'Who is the best corporate web developer?' or 'What is the cost of cloud migration?', search assistants don't return 10 blue links—they speak a single, definitive answer. We architect your content and schema to win those direct answer citations.",
-    heroImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_aiseo_aeo.jpg",
     priceNote: "From $650 / month Retainer",
     deliveryTimeline: "Ongoing Monthly Sprints",
     metrics: [
@@ -282,7 +282,7 @@ export const AI_SEO_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Ensure ChatGPT, Perplexity & Claude Recommend Your Brand to Enterprise Buyers",
     heroSubcopy:
       "Enterprise decision-makers are no longer just searching Google—they are prompting ChatGPT, Perplexity AI, and Claude to recommend the top software firms, marketing agencies, and cloud partners. We optimize your digital footprint for Large Language Models (LLMs), ensuring your company is cited and recommended in AI-synthesized responses.",
-    heroImage: "https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_aiseo_geo.jpg",
     priceNote: "From $750 / month Retainer",
     deliveryTimeline: "Ongoing Monthly Sprints",
     metrics: [
@@ -372,7 +372,7 @@ export const AI_SEO_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Future-Proof Your Inbound Pipeline for the Era of AI-Driven Search",
     heroSubcopy:
       "Search is experiencing its biggest transformation in 25 years. With Google AI Overviews, Perplexity AI, and generative search engines answering queries directly, websites built on old SEO tactics are losing visibility. We architect your digital presence specifically for AI search algorithms, ensuring sustained market leadership.",
-    heroImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_aiseo_search.jpg",
     priceNote: "From $750 / month Retainer",
     deliveryTimeline: "Ongoing Monthly Sprints",
     metrics: [
@@ -462,7 +462,7 @@ export const AI_SEO_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Build Unbreakable Topical Authority With Semantic Topic Clusters",
     heroSubcopy:
       "Ranking for competitive keywords today requires proving exhaustive topical authority across your entire domain. We architect semantic topic clusters, pillar pages, and knowledge graph embeddings that prove to search engines that your company is the definitive subject matter authority in your space.",
-    heroImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_aiseo_semantic.jpg",
     priceNote: "From $850 / month Retainer",
     deliveryTimeline: "Ongoing Monthly Sprints",
     metrics: [
@@ -552,7 +552,7 @@ export const AI_SEO_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Generate Thousands of High-Quality Landing Pages to Capture Long-Tail Search",
     heroSubcopy:
       "Writing thousands of localized or industry-specific landing pages by hand is cost-prohibitive. We engineer programmatic SEO architectures that generate hundreds or thousands of unique, high-value, data-driven landing pages based on structured databases—capturing massive long-tail search volume with zero duplicate content penalties.",
-    heroImage: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_aiseo_programmatic.jpg",
     priceNote: "From $1,800 / Architecture Build",
     deliveryTimeline: "3 - 5 Weeks",
     metrics: [
@@ -642,7 +642,7 @@ export const AI_SEO_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Data-Driven Content Strategies That Align Brand Narrative With Search Demand",
     heroSubcopy:
       "Writing content without an editorial strategy is throwing money into the dark. We engineer comprehensive 6-to-12-month content blueprints combining commercial search volume data, competitor vulnerability audits, and customer buying stages to guarantee that every piece of content published generates measurable pipeline.",
-    heroImage: "https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_aiseo_strategy.jpg",
     priceNote: "From $650 / Strategy Blueprint",
     deliveryTimeline: "2 Weeks",
     metrics: [
@@ -732,7 +732,7 @@ export const AI_SEO_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Automate Repetitive SEO Workflows & Detect Ranking Drops in Real Time",
     heroSubcopy:
       "Manual SEO reporting, broken link checks, and daily rank checking waste hours of valuable executive time. We build autonomous SEO workflow automations using n8n, webhooks, and AI pipelines that monitor rankings daily, alert your developers to indexation anomalies instantly, and automate schema generation.",
-    heroImage: "https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_aiseo_automation.jpg",
     priceNote: "From $500 / month Retainer",
     deliveryTimeline: "Workflow Setup in 1 - 2 Weeks",
     metrics: [

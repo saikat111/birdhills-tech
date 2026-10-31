@@ -12,7 +12,7 @@ export const MARKETING_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Dominate High-Intent Search Queries & Capture Sustainable Commercial Revenue",
     heroSubcopy:
       "Stop wasting time on low-intent vanity keywords that generate impressions but zero sales. We engineer full-funnel search engine optimization strategies focused exclusively on high-commercial intent queries, technical Core Web Vitals perfection, and authoritative industry backlinks.",
-    heroImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_mktg_leadgen.jpg",
     priceNote: "From $850 / month Retainer",
     deliveryTimeline: "Ongoing Monthly Sprints",
     metrics: [
@@ -102,7 +102,7 @@ export const MARKETING_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Capture High-Intent Inquiries Right When Buyers Are Searching For You",
     heroSubcopy:
       "Stop wasting advertising budget on broad match keywords, click-fraud bots, and irrelevant search traffic. We manage performance Google Ads campaigns across Search, Performance Max, and YouTube, engineered for maximum Return on Ad Spend (ROAS) and lowest Cost Per Qualified Acquisition.",
-    heroImage: "https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_mktg_google_ads.jpg",
     priceNote: "From $750 / month Management Fee",
     deliveryTimeline: "Campaign Launch in 5 - 7 Days",
     metrics: [
@@ -192,7 +192,7 @@ export const MARKETING_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Scale Inquiries & High-Ticket Customers Across Instagram & Facebook",
     heroSubcopy:
       "Meta's advertising engine remains the world's most powerful demand-generation platform when paired with thumb-stopping creative and server-side tracking. We build full-funnel Meta advertising campaigns that educate, nurture, and convert cold prospects into qualified inbound buyers.",
-    heroImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_mktg_meta_ads.jpg",
     priceNote: "From $750 / month Management Fee",
     deliveryTimeline: "Campaign Launch in 5 - 7 Days",
     metrics: [
@@ -282,7 +282,7 @@ export const MARKETING_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Scale Inquiries & Commercial Growth on TikTok With Native Video Creative",
     heroSubcopy:
       "TikTok has evolved into a massive commercial discovery engine. We design native, direct-response video ad campaigns that look like organic content while driving qualified customer inquiries, app installs, and eCommerce sales at lower CPMs than traditional platforms.",
-    heroImage: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_mktg_tiktok_ads.jpg",
     priceNote: "From $750 / month Management Fee",
     deliveryTimeline: "Campaign Launch in 7 Days",
     metrics: [
@@ -372,7 +372,7 @@ export const MARKETING_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Build Industry Authority & Win High-Value Enterprise Clients on Social Media",
     heroSubcopy:
       "Social media for enterprise companies isn't about generic motivational quotes or dancing videos. We manage executive social positioning across LinkedIn, Instagram, and X, turning your company and executive leadership into respected, go-to authorities that attract lucrative commercial deals.",
-    heroImage: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_mktg_social.jpg",
     priceNote: "From $650 / month Management",
     deliveryTimeline: "Continuous Monthly Retainer",
     metrics: [
@@ -462,7 +462,7 @@ export const MARKETING_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "High-Authority Content That Educates Buyers & Dominates Industry Search",
     heroSubcopy:
       "Fluff blog posts written for word count don't close enterprise deals. We produce authoritative industry whitepapers, comprehensive technical guides, and strategic case studies designed to satisfy Google's strict E-E-A-T guidelines, earn high-quality backlinks, and convince skeptical buyers.",
-    heroImage: "https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_mktg_content.jpg",
     priceNote: "From $800 / month Retainer",
     deliveryTimeline: "Continuous Monthly Sprints",
     metrics: [
@@ -552,7 +552,7 @@ export const MARKETING_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Convert Leads Into Paying Customers on Autopilot With Lifecycle Email Marketing",
     heroSubcopy:
       "Email marketing delivers the highest ROI of any digital channel when done right. We architect automated customer onboarding sequences, abandoned inquiry re-engagement funnels, and executive weekly briefings that nurture cold prospects into ready-to-buy commercial clients.",
-    heroImage: "https://images.unsplash.com/photo-1579389083078-4e7018379f7e?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_mktg_email.jpg",
     priceNote: "From $550 / month Management",
     deliveryTimeline: "Funnel Setup in 1 - 2 Weeks",
     metrics: [
@@ -642,7 +642,7 @@ export const MARKETING_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Re-Engage High-Value Prospects Who Visited Your Website But Didn't Inquire",
     heroSubcopy:
       "Over 95% of first-time website visitors leave without submitting an inquiry. Don't let those expensive visits evaporate. We engineer multi-touch cross-platform remarketing campaigns across Google Display, YouTube, LinkedIn, and Meta that keep your brand top-of-mind until prospects are ready to buy.",
-    heroImage: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_mktg_remarketing.jpg",
     priceNote: "From $500 / month Management",
     deliveryTimeline: "Setup in 5 - 7 Days",
     metrics: [
@@ -732,7 +732,7 @@ export const MARKETING_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Build a Predictable Pipeline of Qualified B2B Decision-Makers",
     heroSubcopy:
       "Tired of relying on unpredictable word-of-mouth referrals or cold calling? We engineer end-to-end B2B lead generation engines combining precision paid search, high-converting interactive funnels, and automated CRM qualification that fill your sales calendar with qualified decision-makers.",
-    heroImage: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_mktg_leadgen.jpg",
     priceNote: "From $1,250 / month Management Retainer",
     deliveryTimeline: "Engine Setup in 2 Weeks",
     metrics: [

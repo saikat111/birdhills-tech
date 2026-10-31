@@ -42,7 +42,7 @@ export default function ServicesHubPage() {
       category: "Technology",
       desc: "Bespoke corporate websites and mission-critical web applications built on modern Next.js architecture engineered for maximum performance.",
       image:
-        "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=85",
+        "/images/generated/service_web_development.jpg",
       icon: Code2,
       price: "From $1,225",
       subServices: [
@@ -61,7 +61,7 @@ export default function ServicesHubPage() {
       category: "Infrastructure",
       desc: "Top-level domain registration paired with pure NVMe edge cloud servers and corporate business email.",
       image:
-        "https://plus.unsplash.com/premium_photo-1685086785054-d047cdc0e525?auto=format&fit=crop&w=800&q=85",
+        "/images/generated/service_domain_hosting.jpg",
       icon: Globe,
       price: "From $9.99/mo",
       subServices: [
@@ -81,7 +81,7 @@ export default function ServicesHubPage() {
       category: "Growth",
       desc: "Data-driven commercial campaigns across Google Ads, Meta, and LinkedIn targeting verified decision-makers worldwide.",
       image:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=85",
+        "/images/generated/service_digital_marketing.jpg",
       icon: TrendingUp,
       price: "From $1,225/mo",
       subServices: [
@@ -101,7 +101,7 @@ export default function ServicesHubPage() {
       category: "Local Dominance",
       desc: "Rank in Google Maps 3-Pack, verify your Google Business Profile, capture high-intent localized calls, and scale customer reviews.",
       image:
-        "https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=800&q=85",
+        "/images/generated/service_local_seo.jpg",
       icon: MapPin,
       price: "From $400/mo",
       subServices: [
@@ -123,7 +123,7 @@ export default function ServicesHubPage() {
       category: "Future Search",
       desc: "AEO and GEO optimization engineered so Perplexity AI, ChatGPT Search, and Google AI Overviews cite and recommend your brand.",
       image:
-        "https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&w=800&q=85",
+        "/images/generated/service_ai_seo.jpg",
       icon: Sparkles,
       price: "From $600/mo",
       subServices: [
@@ -144,7 +144,7 @@ export default function ServicesHubPage() {
       category: "Automation",
       desc: "Deploy autonomous conversational agents, 24/7 WhatsApp customer service bots, and n8n workflow pipelines that eradicate manual tasks.",
       image:
-        "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=85",
+        "/images/generated/service_ai_automation.jpg",
       icon: Bot,
       price: "From $950",
       subServices: [
@@ -166,7 +166,7 @@ export default function ServicesHubPage() {
       category: "Operations",
       desc: "Centralize your sales pipeline with HubSpot, Zoho, automated lead routing, instant WhatsApp lead follow-ups, and calendar bookings.",
       image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=85",
+        "/images/generated/service_crm_marketing.jpg",
       icon: Workflow,
       price: "From $760",
       subServices: [
@@ -186,7 +186,7 @@ export default function ServicesHubPage() {
       slug: "/services/branding-creative",
       category: "Creative",
       desc: "Prestigious corporate identity design, multilingual typography, interactive UI/UX systems, and high-conversion ad creatives.",
-      image: "/ima/web5.jpg",
+      image: "/images/generated/service_branding_creative.jpg",
       icon: Palette,
       price: "From $870",
       subServices: [
@@ -204,7 +204,7 @@ export default function ServicesHubPage() {
       category: "Data & Insights",
       desc: "Fix tracking blindspots with server-side GTM, Meta CAPI, GA4 ecommerce tracking, executive Looker dashboards, and conversion funnels.",
       image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=85",
+        "/images/generated/service_crm_marketing.jpg",
       icon: BarChart3,
       price: "From $490/mo",
       subServices: [
@@ -298,7 +298,7 @@ export default function ServicesHubPage() {
         {/* Full-Bleed Corporate Photography Backdrop */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=90"
+            src="/images/generated/hero_dubai_tech.jpg"
             alt="Global business district and engineering skyline"
             fill
             priority

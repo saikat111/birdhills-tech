@@ -24,47 +24,42 @@ interface HeroProps {
 
 const HERO_SLIDES = [
   {
-    image:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2400&q=95",
+    image: "/images/generated/hero_dubai_tech.jpg",
     alt: "Futuristic corporate skyscraper architectural district and global tech headquarters",
     tag: "GLOBAL HEADQUARTERS · WORLDWIDE",
     location: "Enterprise Web Engineering & Global Digital Operations",
     highlight: "Custom Digital Platforms · Bespoke UI/UX Design · Full Project Delivery",
   },
   {
-    image: "/ima/web8.jpg",
+    image: "/images/generated/hero_web_dev.jpg",
     alt: "High-performance enterprise software and web development IDE workspace with code analytics",
     tag: "FEATURED SERVICE · 01",
     location: "Next.js Web Applications & Custom Portals",
     highlight: "Enterprise Architecture · High-Converting UI/UX · Scalable Cloud Tech Stack",
   },
   {
-    image:
-      "https://plus.unsplash.com/premium_photo-1685086785054-d047cdc0e525?auto=format&fit=crop&w=2400&q=95",
+    image: "/images/generated/hero_hosting_cloud.jpg",
     alt: "Illuminated high-speed cloud datacenter with glowing server racks and fiber optic connectivity",
     tag: "FEATURED SERVICE · 02",
     location: "Domain & NVMe Cloud Hosting",
     highlight: "Global Domain Registry · Pure NVMe SSD Edge Nodes · 99.99% Uptime SLA",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=2400&q=95",
+    image: "/images/generated/hero_marketing_telemetry.jpg",
     alt: "Executive commercial digital analytics and multi-channel revenue growth dashboard",
     tag: "FEATURED SERVICE · 03",
     location: "Digital Marketing & Performance Ads",
     highlight: "High-Intent Google Ads · LinkedIn B2B Targeting · Closed-Loop Revenue Attribution",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=2400&q=95",
+    image: "/images/generated/hero_ai_automation.jpg",
     alt: "Autonomous artificial intelligence agents and smart conversational business workflow automation",
     tag: "FEATURED SERVICE · 04",
     location: "AI Automation & WhatsApp Bots",
     highlight: "Autonomous 24/7 AI Agents · Conversational WhatsApp Bots · Automated Workflow Pipelines",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=2400&q=95",
+    image: "/images/generated/hero_software_squad.jpg",
     alt: "Collaborative software engineering team working together on enterprise digital platforms in modern tech studio",
     tag: "GLOBAL TECHNICAL SQUAD",
     location: "Full-Stack Software Engineers & Solution Architects",

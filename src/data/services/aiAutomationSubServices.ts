@@ -12,7 +12,7 @@ export const AI_AUTOMATION_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Deploy Custom AI Agents That Execute Complex Multi-Step Business Operations",
     heroSubcopy:
       "Transform manual knowledge work into automated execution. We architect and deploy goal-driven autonomous AI agents with access to your databases, APIs, ERPs, and messaging channels to research, reconcile, communicate, and solve operational tasks without human intervention.",
-    heroImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_aiauto_n8n.jpg",
     priceNote: "From $2,600",
     deliveryTimeline: "2 to 4 Weeks",
     metrics: [
@@ -103,7 +103,7 @@ export const AI_AUTOMATION_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Convert Inbound Inquiries Into Booked Sales With Smart RAG Chatbots",
     heroSubcopy:
       "Replace frustrating keyword-matching bots with contextual conversational assistants grounded exclusively in your company knowledge base, product catalogs, pricing rules, and documentation. Delivers instant, precise, human-toned answers 24/7.",
-    heroImage: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_aiauto_chatbots.jpg",
     priceNote: "From $1,250 setup",
     deliveryTimeline: "7 to 14 Business Days",
     metrics: [
@@ -194,7 +194,7 @@ export const AI_AUTOMATION_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Connect Your Tech Stack & Automate High-Volume Manual Workflows",
     heroSubcopy:
       "Eliminate repetitive copy-pasting, disconnected spreadsheets, and delayed customer responses. We build enterprise-grade automation pipelines across your CRM, accounting software, email marketing, and ERP systems that trigger instantly and execute reliably.",
-    heroImage: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_aiauto_workflow.jpg",
     priceNote: "From $1,050 per workflow architecture",
     deliveryTimeline: "5 to 10 Business Days",
     metrics: [
@@ -285,7 +285,7 @@ export const AI_AUTOMATION_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Turn WhatsApp Into Your #1 Revenue Channel With AI-Powered Automation",
     heroSubcopy:
       "Across modern global markets, WhatsApp is where deals happen. We build official Meta Cloud API integrations, automated broadcast campaigns, interactive catalog browsing, and intelligent bilingual AI sales agents that close deals directly in WhatsApp chats.",
-    heroImage: "https://images.unsplash.com/photo-1611746872915-64382b5c76da?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_aiauto_whatsapp.jpg",
     priceNote: "From $1,350 complete setup",
     deliveryTimeline: "7 to 14 Business Days",
     metrics: [
@@ -376,7 +376,7 @@ export const AI_AUTOMATION_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Scale Outbound Lead Generation With AI Prospecting & Hyper-Personalized Sequences",
     heroSubcopy:
       "Stop burning sales rep hours on manual LinkedIn research and generic cold emails that land in spam. We engineer automated outbound engines that scrape high-intent B2B decision-makers, enrich contact data, and send 1-to-1 customized email and LinkedIn messages that generate qualified sales calls.",
-    heroImage: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_aiauto_sales.jpg",
     priceNote: "From $1,500 monthly management",
     deliveryTimeline: "Setup in 10 Days",
     metrics: [
@@ -467,7 +467,7 @@ export const AI_AUTOMATION_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Deliver Instant, 24/7 Customer Support Without Ballooning Support Team Costs",
     heroSubcopy:
       "Transform your support operations from a cost center into a competitive advantage. We build enterprise AI support systems that resolve Tier-1 tickets, process refunds, guide troubleshooting, and manage customer inquiries instantly across email, chat, and helpdesk portals.",
-    heroImage: "https://images.unsplash.com/photo-1534536281715-e28d76689b4d?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_webdev_support.jpg",
     priceNote: "From $1,400 monthly setup & maintenance",
     deliveryTimeline: "10 to 20 Business Days",
     metrics: [
@@ -558,7 +558,7 @@ export const AI_AUTOMATION_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Qualify Inbound Leads Instantly & Book High-Value Meetings Directly on Your Calendar",
     heroSubcopy:
       "When a potential buyer fills out your form, every minute of delay reduces conversion odds by 391%. We build real-time conversational qualification engines that immediately engage leads via SMS, WhatsApp, or phone, verify budget and requirements, and lock in qualified meetings on your sales team's calendar.",
-    heroImage: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_aiauto_qualification.jpg",
     priceNote: "From $1,150 setup",
     deliveryTimeline: "7 to 14 Business Days",
     metrics: [
@@ -649,7 +649,7 @@ export const AI_AUTOMATION_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Scale High-Performing Marketing Content With Automated AI Creative Workflows",
     heroSubcopy:
       "Maintain a commanding digital presence without hiring a massive in-house editorial team. We engineer automated content pipelines that transform core concepts, podcast episodes, or market research into search-optimized blog articles, social media assets, newsletters, and ad creatives tailored to your brand voice.",
-    heroImage: "https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_aiauto_content.jpg",
     priceNote: "From $950 monthly setup",
     deliveryTimeline: "7 to 10 Business Days",
     metrics: [
@@ -740,7 +740,7 @@ export const AI_AUTOMATION_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Modernize Legacy Operations With Intelligent Robotic Process Automation",
     heroSubcopy:
       "Bridge the gap between modern cloud services and legacy desktop or on-premise software. We deploy intelligent RPA bots and data-extraction pipelines that automate invoice processing, financial reconciliation, compliance audits, and back-office operations with zero human error.",
-    heroImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_aiauto_business.jpg",
     priceNote: "From $2,300 implementation",
     deliveryTimeline: "2 to 4 Weeks",
     metrics: [
@@ -831,7 +831,7 @@ export const AI_AUTOMATION_SUB_SERVICES: Record<string, SubServiceDetail> = {
     heroHeadline: "Break Free From Sky-High Zapier Bills With Self-Hosted n8n Architecture",
     heroSubcopy:
       "When your business runs hundreds of thousands of automation tasks monthly, Zapier and Make pricing quickly explodes into thousands of dollars. We build, host, and maintain high-availability, self-hosted n8n infrastructure on your own private cloud—delivering unlimited automations, complete data privacy, and full custom code control.",
-    heroImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1600&q=85",
+    heroImage: "/images/generated/sub_aiauto_n8n.jpg",
     priceNote: "From $1,250 deployment & migration",
     deliveryTimeline: "5 to 10 Business Days",
     metrics: [

@@ -61,7 +61,7 @@ const TABS_DATA: TabContent[] = [
     ],
     ctaText: "Explore Web Engineering",
     ctaHref: "/services/web-development",
-    image: "/ima/web3.jpeg",
+    image: "/images/generated/service_web_development.jpg",
     imageAlt: "Type-safe Next.js enterprise web development architecture with cloud database and APIs",
   },
   {
@@ -93,7 +93,7 @@ const TABS_DATA: TabContent[] = [
     ],
     ctaText: "Explore Local SEO Services",
     ctaHref: "/services/google-business-profile-local-seo",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=85",
+    image: "/images/generated/service_local_seo.jpg",
     imageAlt: "Global metropolitan commercial business centers and technology hubs",
   },
   {
@@ -125,7 +125,7 @@ const TABS_DATA: TabContent[] = [
     ],
     ctaText: "Explore Digital Marketing",
     ctaHref: "/services/digital-marketing",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=85",
+    image: "/images/generated/service_digital_marketing.jpg",
     imageAlt: "Executive marketing dashboard and commercial revenue analytics",
   },
   {
@@ -157,7 +157,7 @@ const TABS_DATA: TabContent[] = [
     ],
     ctaText: "View Hosting Solutions",
     ctaHref: "/hosting",
-    image: "https://plus.unsplash.com/premium_photo-1685086785054-d047cdc0e525?auto=format&fit=crop&w=1200&q=85",
+    image: "/images/generated/service_domain_hosting.jpg",
     imageAlt: "High-speed enterprise cloud datacenter with illuminated optical network racks",
   },
   {
@@ -189,7 +189,7 @@ const TABS_DATA: TabContent[] = [
     ],
     ctaText: "Explore AI Automation",
     ctaHref: "/services/ai-automation",
-    image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=85",
+    image: "/images/generated/service_ai_automation.jpg",
     imageAlt: "AI technology workflow and enterprise automation workspace",
   },
   {
@@ -221,7 +221,7 @@ const TABS_DATA: TabContent[] = [
     ],
     ctaText: "View Creative & UX Practice",
     ctaHref: "/services/branding-creative",
-    image: "/ima/web6.jpg",
+    image: "/images/generated/service_branding_creative.jpg",
     imageAlt: "Prestigious 3D gold embossed brand and web design architecture",
   },
 ];

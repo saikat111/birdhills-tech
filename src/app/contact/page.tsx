@@ -40,7 +40,7 @@ export default async function ContactPage() {
       <section className="relative py-24 md:py-32 bg-[#070B14] text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=90"
+            src="/images/generated/page_contact_hero.jpg"
             alt="Global business center and technology skyline"
             fill
             priority
@@ -214,7 +214,7 @@ export default async function ContactPage() {
             <div className="lg:col-span-6">
               <div className="relative rounded-3xl overflow-hidden aspect-[16/10] bg-slate-900 border border-slate-200 shadow-lg">
                 <Image
-                  src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80"
+                  src="/images/generated/hero_dubai_tech.jpg"
                   alt="Bird Hills Tech global headquarters and executive conference room"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"

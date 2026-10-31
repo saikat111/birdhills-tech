@@ -313,47 +313,47 @@ const serviceImagery: Record<
   }
 > = {
   "web-development": {
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=2000&q=90",
+    image: "/images/generated/service_web_development.jpg",
     priceUsd: "$1,225",
     timeline: "2-4 Weeks",
   },
   "domain-hosting": {
-    image: "https://plus.unsplash.com/premium_photo-1685086785054-d047cdc0e525?auto=format&fit=crop&w=2000&q=90",
+    image: "/images/generated/service_domain_hosting.jpg",
     priceUsd: "$9.99/mo",
     timeline: "Instant Setup",
   },
   "digital-marketing": {
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=2000&q=90",
+    image: "/images/generated/service_digital_marketing.jpg",
     priceUsd: "$1,225/mo",
     timeline: "Monthly Sprint",
   },
   "google-business-profile-local-seo": {
-    image: "https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=2000&q=90",
+    image: "/images/generated/service_local_seo.jpg",
     priceUsd: "$400/mo",
     timeline: "Ongoing Sprint",
   },
   "ai-seo-search": {
-    image: "https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&w=2000&q=90",
+    image: "/images/generated/service_ai_seo.jpg",
     priceUsd: "$600/mo",
     timeline: "Monthly Sprint",
   },
   "ai-automation": {
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=2000&q=90",
+    image: "/images/generated/service_ai_automation.jpg",
     priceUsd: "$950",
     timeline: "2-4 Weeks",
   },
   "crm-marketing-automation": {
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=2000&q=90",
+    image: "/images/generated/service_crm_marketing.jpg",
     priceUsd: "$760",
     timeline: "2-3 Weeks",
   },
   "branding-creative": {
-    image: "/ima/web5.jpg",
+    image: "/images/generated/service_branding_creative.jpg",
     priceUsd: "$870",
     timeline: "2-3 Weeks",
   },
   "analytics-cro": {
-    image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=2000&q=90",
+    image: "/images/generated/service_analytics_cro.jpg",
     priceUsd: "$490/mo",
     timeline: "Monthly Sprint",
   },
@@ -689,55 +689,55 @@ export default async function ServiceDetailPage({
                 {
                   title: "Full-Stack Web Architecture & Cloud APIs",
                   desc: "Modern headless frontend connected to cloud databases, microservices, and secure APIs.",
-                  image: "/ima/web3.jpeg",
+                  image: "/images/generated/sub_webdev_custom.jpg",
                   tag: "Architecture",
                 },
                 {
                   title: "Enterprise IDE & Precision Engineering",
                   desc: "Type-safe TypeScript, Next.js 16 Server Components, and automated CI/CD pipelines.",
-                  image: "/ima/web8.jpg",
+                  image: "/images/generated/sub_webdev_support.jpg",
                   tag: "Engineering",
                 },
                 {
                   title: "Human-Centered UI/UX Design Systems",
                   desc: "Interactive Figma design tokens, accessible components, and seamless responsive flows.",
-                  image: "/ima/web5.jpg",
+                  image: "/images/generated/sub_branding_uiux.jpg",
                   tag: "UI/UX Systems",
                 },
                 {
                   title: "Responsive Cross-Platform Development",
                   desc: "Pixel-perfect mobile, tablet, and desktop rendering tested across real-world modern networks.",
-                  image: "/ima/web1.jpg",
+                  image: "/images/generated/sub_webdev_business.jpg",
                   tag: "Frontend",
                 },
                 {
                   title: "System Architecture & Quality Testing",
                   desc: "Comprehensive testing, security hardening, and performance audits prior to launch.",
-                  image: "/ima/web4.jpg",
+                  image: "/images/generated/section_why_us.jpg",
                   tag: "QA & Testing",
                 },
                 {
                   title: "Prestige Brand Visual Authority",
                   desc: "Bespoke digital design tailored to command respect in global luxury and enterprise markets.",
-                  image: "/ima/web6.jpg",
+                  image: "/images/generated/sub_branding_identity.jpg",
                   tag: "Prestige Brand",
                 },
                 {
                   title: "Cloud Computing & Intelligent Systems",
                   desc: "High-throughput cloud architecture, AI workflows, and distributed microservices for enterprise agility.",
-                  image: "/ima/web2.jpg",
+                  image: "/images/generated/sub_aiauto_workflow.jpg",
                   tag: "Cloud & AI",
                 },
                 {
                   title: "Comprehensive Software Engineering Taxonomy",
                   desc: "Holistic development lifecycle from data modeling and security hardening to automated deployment.",
-                  image: "/ima/web7.jpg",
+                  image: "/images/generated/hero_software_squad.jpg",
                   tag: "Software Engineering",
                 },
                 {
                   title: "Modular Frontend Standards & Multi-Device UI",
                   desc: "Clean semantic HTML5, CSS architecture, and modern JavaScript engines built for maximum cross-device speed.",
-                  image: "/ima/web9.jpg",
+                  image: "/images/generated/sub_webdev_landing.jpg",
                   tag: "Frontend Standards",
                 },
               ].map((item) => (
@@ -794,21 +794,21 @@ export default async function ServiceDetailPage({
                   title: "Illuminated High-Density NVMe Server Racks",
                   desc: "Enterprise cloud hardware with dual mirrored arrays and automated daily snapshot backups.",
                   image:
-                    "https://plus.unsplash.com/premium_photo-1685086785054-d047cdc0e525?auto=format&fit=crop&w=1200&q=85",
+                    "/images/generated/hero_hosting_cloud.jpg",
                   tag: "Cloud Nodes",
                 },
                 {
                   title: "Global Low-Latency Anycast Routing",
                   desc: "Edge-cached DNS propagation and Anycast network delivering sub-15ms regional speed.",
                   image:
-                    "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=85",
+                    "/images/generated/sub_domain_dns.jpg",
                   tag: "Global DNS",
                 },
                 {
                   title: "Modern Optical Datacenter Infrastructure",
                   desc: "Sub-millisecond internal routing, fiber-optic uplinks, and redundant power backups.",
                   image:
-                    "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&q=85",
+                    "/images/generated/service_domain_hosting.jpg",
                   tag: "Tier-4 Center",
                 },
               ].map((item) => (

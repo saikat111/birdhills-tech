@@ -21,7 +21,7 @@ export default function BookMeetingPage() {
       <section className="relative py-24 md:py-32 bg-[#070B14] text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=2000&q=90"
+            src="/images/generated/page_contact_hero.jpg"
             alt="Executive corporate meeting room"
             fill
             priority

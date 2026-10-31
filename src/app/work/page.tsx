@@ -85,7 +85,7 @@ export default async function WorkPage() {
       <section className="relative py-24 md:py-32 bg-[#070B14] text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=90"
+            src="/images/generated/page_work_hero.jpg"
             alt="Modern international enterprise architectural towers"
             fill
             priority

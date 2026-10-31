@@ -140,7 +140,7 @@ export default function DomainsPage() {
       <section className="relative py-24 md:py-32 bg-[#070B14] text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2000&q=90"
+            src="/images/generated/sub_domain_dns.jpg"
             alt="Global telecommunications and digital domain network"
             fill
             priority
