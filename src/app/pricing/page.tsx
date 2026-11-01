@@ -14,9 +14,9 @@ import FaqAccordion from "@/components/common/FaqAccordion";
 import FinalCtaSection from "@/components/home/FinalCtaSection";
 
 export const metadata: Metadata = {
-  title: "Transparent Pricing Architecture | Bird Hills Tech",
+  title: "Transparent Corporate Pricing in UAE Dirhams (AED) | Bird Hills Tech Dubai",
   description:
-    "Explore transparent corporate pricing packages for web development, custom software, and digital growth in US Dollars (USD). Clear investment tiers calibrated 35%-50% below standard enterprise agency rates.",
+    "Explore transparent corporate pricing packages in UAE Dirhams (AED) for enterprise web development, custom software, and digital growth in Dubai & the GCC. Clear investment tiers calibrated 35%-50% below standard agency rates.",
   alternates: {
     canonical: "https://birdhillstech.com/pricing",
   },
@@ -46,7 +46,7 @@ export default async function PricingPage() {
         badge: "SMEs & Fast Launch",
         description:
           "Custom high-speed corporate web platform built on Next.js with CMS integration, SEO readiness, and conversion architecture.",
-        priceAed: "$1,250",
+        priceAed: "AED 4,500",
         priceUsd: "$1,250",
         billingType: "one-time",
         deliveryTime: "2-3 Weeks Delivery",
@@ -69,7 +69,7 @@ export default async function PricingPage() {
         badge: "Most Popular Worldwide",
         description:
           "Enterprise web application or custom digital portal with advanced database modeling, role-based workflows, and global integrations.",
-        priceAed: "$2,600",
+        priceAed: "AED 9,500",
         priceUsd: "$2,600",
         billingType: "one-time",
         deliveryTime: "4-6 Weeks Delivery",
@@ -92,7 +92,7 @@ export default async function PricingPage() {
         badge: "Global Enterprises & FinTech",
         description:
           "Tailored multi-platform digital ecosystem designed for global enterprises, financial institutions, and high-security operations.",
-        priceAed: "From $5,000",
+        priceAed: "From AED 18,500",
         priceUsd: "From $5,000",
         billingType: "one-time",
         deliveryTime: "8-12 Weeks Delivery",
@@ -114,7 +114,7 @@ export default async function PricingPage() {
   const pricingFaqs = [
     {
       q: "What payment currencies and methods do you accept?",
-      a: "All pricing is transparently quoted in US Dollars (USD). We accept corporate bank transfers (SWIFT / ACH / Wire), major credit cards, and Stripe invoices with zero hidden processing markups.",
+      a: "All pricing is transparently quoted in UAE Dirhams (AED) and US Dollars (USD). We accept UAE corporate bank transfers, credit cards, Apple Pay, and Stripe invoices with zero hidden processing markups.",
     },
     {
       q: "How are project payment milestones structured?",
@@ -140,7 +140,7 @@ export default async function PricingPage() {
       <section className="relative py-24 md:py-32 bg-[#070B14] text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/generated/page_about_hero.jpg"
+            src="/images/generated/visual_executive_growth.jpg"
             alt="Global corporate financial district skyline"
             fill
             priority
@@ -287,7 +287,7 @@ export default async function PricingPage() {
         }))}
         title="Frequently Asked Pricing Questions"
         eyebrow="COMMERCIAL TRANSPARENCY"
-        description="Direct answers on currency payment options (USD), milestone invoicing, IP ownership transfer, and custom project scopes."
+        description="Direct answers on currency payment options (AED / USD), milestone invoicing, IP ownership transfer, and custom project scopes."
         theme="light"
         includeSchema={true}
       />

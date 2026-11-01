@@ -26,17 +26,17 @@ export default function PricingCardsClient({ tiers }: Props) {
   const retainers = [
     {
       title: "Technical SLA & DevOps Maintenance",
-      price: "$400 / month",
+      price: "AED 1,500 / month",
       desc: "24/7 cloud uptime monitoring, sub-15ms edge latency optimization, daily backups, security patching, and dedicated developer bug fixes.",
     },
     {
       title: "Performance SEO & Search Dominance",
-      price: "$600 / month",
+      price: "AED 2,200 / month",
       desc: "Google search #1 rank sprints, authoritative backlink syndication, high-intent commercial keywords, and Google AI Overviews optimization.",
     },
     {
       title: "Dedicated Growth & Ads Management",
-      price: "$760 / month",
+      price: "AED 2,800 / month",
       desc: "High-intent Google Ads search management, Meta B2B ad creatives, conversion rate optimization (CRO), and closed-loop revenue reporting.",
     },
   ];
@@ -50,7 +50,7 @@ export default function PricingCardsClient({ tiers }: Props) {
             Billing Currency:
           </span>
           <div className="inline-flex items-center px-3.5 py-1.5 rounded-xl bg-white border border-slate-200 shadow-xs text-xs font-bold text-[#070B14]">
-            <span>USD ($) · Worldwide Direct Billing</span>
+            <span>AED (د.إ) · UAE Corporate Invoicing & VAT Compliant</span>
           </div>
         </div>
 
@@ -70,10 +70,10 @@ export default function PricingCardsClient({ tiers }: Props) {
             features = [];
           }
 
-          const displayPrice = tier.priceUsd || tier.priceAed;
+          const displayPrice = tier.priceAed || tier.priceUsd;
           const waUrl = `https://wa.me/971524405785?text=Hello%20Bird%20Hills%20Tech%2C%20I%20am%20interested%20in%20the%20${encodeURIComponent(
             tier.name
-          )}%20package%20(${encodeURIComponent(displayPrice)}).`;
+          )}%20package%20(${encodeURIComponent(displayPrice || "")}).`;
 
           return (
             <div

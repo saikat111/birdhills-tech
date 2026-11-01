@@ -1,3 +1,4 @@
+import "dotenv/config";
 import { PrismaClient } from "@prisma/client";
 import bcrypt from "bcryptjs";
 
@@ -998,7 +999,7 @@ By integrating **server-side tracking (Meta CAPI, Google Enhanced Conversions)**
       slug: "growth-launchpad",
       badge: "SMEs & Fast Launch",
       description: "Custom high-speed corporate web platform built on Next.js with CMS integration, SEO readiness, and conversion architecture.",
-      priceAed: "$1,250",
+      priceAed: "AED 4,500",
       priceUsd: "$1,250",
       billingType: "one-time",
       deliveryTime: "2-3 Weeks Delivery",

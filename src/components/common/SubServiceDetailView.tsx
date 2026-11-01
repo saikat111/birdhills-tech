@@ -254,6 +254,16 @@ function getVisuals(data: SubServiceDetail) {
   };
 }
 
+function formatPriceAed(priceStr?: string | null): string {
+  if (!priceStr) return "AED 4,500 / Project";
+  if (priceStr.includes("AED")) return priceStr;
+  return priceStr.replace(/\$([0-9,]+)/g, (match, numStr) => {
+    const num = parseInt(numStr.replace(/,/g, ""), 10);
+    const aed = Math.round((num * 3.67) / 100) * 100;
+    return `AED ${aed.toLocaleString()}`;
+  });
+}
+
 export default function SubServiceDetailView({
   data,
 }: SubServiceDetailViewProps) {
@@ -279,7 +289,7 @@ export default function SubServiceDetailView({
       "@type": "Offer",
       priceSpecification: {
         "@type": "PriceSpecification",
-        priceCurrency: "USD",
+        priceCurrency: "AED",
         price: data.priceNote,
       },
     },
@@ -358,7 +368,7 @@ export default function SubServiceDetailView({
                     <span>Commercial Terms</span>
                   </div>
                   <div className="text-sm font-bold text-white">
-                    {data.priceNote}
+                    {formatPriceAed(data.priceNote)}
                   </div>
                 </div>
                 <div className="bg-[#0D1526] p-3.5 rounded-xl border border-white/10">

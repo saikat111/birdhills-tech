@@ -41,22 +41,22 @@ export function DomainSearchClient() {
       const sampleResults: TldResult[] = [
         {
           tld: ".ae",
-          price: "$39.99",
-          renewal: "$39.99/yr",
+          price: "AED 179",
+          renewal: "AED 179/yr",
           status: isTaken ? "taken" : "available",
           popular: true,
         },
         {
           tld: ".com",
-          price: "$12.99",
-          renewal: "$14.99/yr",
+          price: "AED 65",
+          renewal: "AED 75/yr",
           status: cleanTerm.length <= 6 ? "taken" : "available",
           popular: true,
         },
         {
           tld: ".ai",
-          price: "$69.99",
-          renewal: "$69.99/yr",
+          price: "AED 310",
+          renewal: "AED 310/yr",
           status: "available",
           popular: true,
         },

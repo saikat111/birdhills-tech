@@ -55,6 +55,7 @@ export default async function HostingPage() {
         name: "Starter Cloud Hosting",
         slug: "cloud-starter",
         category: "cloud",
+        priceAed: "AED 120",
         priceUsd: "$9.99",
         billingCycle: "/ month",
         badge: "Fast SME Launch",
@@ -78,6 +79,7 @@ export default async function HostingPage() {
         name: "Business Pro Cloud",
         slug: "cloud-business",
         category: "cloud",
+        priceAed: "AED 280",
         priceUsd: "$24.99",
         billingCycle: "/ month",
         badge: "Most Popular",
@@ -102,6 +104,7 @@ export default async function HostingPage() {
         name: "Managed Cloud VPS",
         slug: "managed-vps",
         category: "vps",
+        priceAed: "AED 590",
         priceUsd: "$59.99",
         billingCycle: "/ month",
         badge: "Dedicated Resources",
@@ -126,6 +129,7 @@ export default async function HostingPage() {
         name: "Enterprise Dedicated Server",
         slug: "enterprise-dedicated",
         category: "dedicated",
+        priceAed: "AED 1,250",
         priceUsd: "$149.99",
         billingCycle: "/ month",
         badge: "Maximum Bare-Metal Power",
@@ -176,7 +180,7 @@ export default async function HostingPage() {
       <section className="relative py-24 md:py-32 bg-[#070B14] text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://plus.unsplash.com/premium_photo-1685086785054-d047cdc0e525?auto=format&fit=crop&w=2400&q=95"
+            src="/images/generated/hero_hosting_cloud.jpg"
             alt="Enterprise cloud hosting datacenter with glowing optical server racks and low-latency infrastructure"
             fill
             priority
@@ -270,7 +274,7 @@ export default async function HostingPage() {
 
               const waUrl = `https://wa.me/971524405785?text=Hello%20Bird%20Hills%20Tech%2C%20I%20want%20to%20order%20the%20${encodeURIComponent(
                 plan.name
-              )}%20hosting%20plan%20(${encodeURIComponent(plan.priceUsd + plan.billingCycle)}).`;
+              )}%20hosting%20plan%20(${encodeURIComponent((plan.priceAed || plan.priceUsd) + plan.billingCycle)}).`;
 
               return (
                 <div
@@ -303,7 +307,7 @@ export default async function HostingPage() {
                     <div className="p-4 rounded-2xl bg-[#FAF8F5] border border-slate-200/80 mb-6">
                       <div className="flex items-baseline gap-1">
                         <span className="text-3xl font-black text-[#070B14] tracking-tight">
-                          {plan.priceUsd}
+                          {plan.priceAed || plan.priceUsd}
                         </span>
                         <span className="text-xs text-slate-500 font-medium">{plan.billingCycle}</span>
                       </div>

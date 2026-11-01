@@ -308,52 +308,62 @@ const serviceImagery: Record<
   string,
   {
     image: string;
+    priceAed?: string;
     priceUsd: string;
     timeline: string;
   }
 > = {
   "web-development": {
     image: "/images/generated/service_web_development.jpg",
+    priceAed: "AED 4,500",
     priceUsd: "$1,225",
     timeline: "2-4 Weeks",
   },
   "domain-hosting": {
     image: "/images/generated/service_domain_hosting.jpg",
+    priceAed: "AED 120/mo",
     priceUsd: "$9.99/mo",
     timeline: "Instant Setup",
   },
   "digital-marketing": {
     image: "/images/generated/service_digital_marketing.jpg",
+    priceAed: "AED 2,800/mo",
     priceUsd: "$1,225/mo",
     timeline: "Monthly Sprint",
   },
   "google-business-profile-local-seo": {
     image: "/images/generated/service_local_seo.jpg",
+    priceAed: "AED 1,500/mo",
     priceUsd: "$400/mo",
     timeline: "Ongoing Sprint",
   },
   "ai-seo-search": {
     image: "/images/generated/service_ai_seo.jpg",
+    priceAed: "AED 2,200/mo",
     priceUsd: "$600/mo",
     timeline: "Monthly Sprint",
   },
   "ai-automation": {
     image: "/images/generated/service_ai_automation.jpg",
+    priceAed: "AED 3,500",
     priceUsd: "$950",
     timeline: "2-4 Weeks",
   },
   "crm-marketing-automation": {
     image: "/images/generated/service_crm_marketing.jpg",
+    priceAed: "AED 3,200",
     priceUsd: "$760",
     timeline: "2-3 Weeks",
   },
   "branding-creative": {
     image: "/images/generated/service_branding_creative.jpg",
+    priceAed: "AED 3,800",
     priceUsd: "$870",
     timeline: "2-3 Weeks",
   },
   "analytics-cro": {
     image: "/images/generated/service_analytics_cro.jpg",
+    priceAed: "AED 1,800/mo",
     priceUsd: "$490/mo",
     timeline: "Monthly Sprint",
   },
@@ -524,7 +534,7 @@ export default async function ServiceDetailPage({
 
   const waUrl = `https://wa.me/971524405785?text=Hello%20Bird%20Hills%20Tech%2C%20I%20am%20interested%20in%20discussing%20your%20${encodeURIComponent(
     service.title
-  )}%20services%20(Starting%20${encodeURIComponent(imagery.priceUsd)}).`;
+  )}%20services%20(Starting%20${encodeURIComponent(imagery.priceAed || imagery.priceUsd)}).`;
 
   return (
     <div className="flex flex-col min-h-screen pt-24">
@@ -567,7 +577,7 @@ export default async function ServiceDetailPage({
                   {service.category} DISCIPLINE
                 </span>
                 <span className="px-3.5 py-1 rounded-full text-xs font-extrabold bg-[#070B14] text-[#D4AF37] border border-[#C59B27]/40">
-                  {imagery.priceUsd}
+                  {imagery.priceAed || imagery.priceUsd}
                 </span>
                 <span className="px-3.5 py-1 rounded-full text-xs font-semibold text-slate-300 bg-white/10 border border-white/15">
                   Timeline: {imagery.timeline}
@@ -613,7 +623,7 @@ export default async function ServiceDetailPage({
               <div className="space-y-3 text-xs">
                 <div className="flex items-center justify-between pb-2 border-b border-white/10">
                   <span className="text-slate-300">Commercial Investment</span>
-                  <span className="font-bold text-[#D4AF37] text-sm">{imagery.priceUsd}</span>
+                  <span className="font-bold text-[#D4AF37] text-sm">{imagery.priceAed || imagery.priceUsd}</span>
                 </div>
                 <div className="flex items-center justify-between pb-2 border-b border-white/10">
                   <span className="text-slate-300">Delivery Velocity</span>
