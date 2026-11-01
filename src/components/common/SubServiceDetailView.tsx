@@ -7,6 +7,9 @@ import {
   Sparkles,
   ChevronRight,
   ShieldCheck,
+  Building2,
+  FileText,
+  Globe,
   Clock,
   Layers,
   Zap,
@@ -341,15 +344,21 @@ export default function SubServiceDetailView({
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6">
-              <div className="flex flex-wrap items-center gap-3">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#C59B27]/20 text-[#D4AF37] border border-[#C59B27]/40">
-                  <Sparkles className="w-3.5 h-3.5" />
-                  {data.eyebrow}
-                </span>
+              <div className="space-y-3">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-[#C59B27]/15 text-[#D4AF37] border border-[#C59B27]/35 shadow-xs">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  <span>Dubai & UAE Enterprise Delivery · Deira Studio & On-Site DIFC / Business Bay</span>
+                </div>
+                <div className="flex flex-wrap items-center gap-3">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#C59B27]/20 text-[#D4AF37] border border-[#C59B27]/40">
+                    <Sparkles className="w-3.5 h-3.5" />
+                    {data.eyebrow}
+                  </span>
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-white/10 text-slate-200 border border-white/10">
                   <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
                   {data.badge}
                 </span>
+              </div>
               </div>
 
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.15]">
@@ -413,12 +422,17 @@ export default function SubServiceDetailView({
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#070B14] via-transparent to-transparent opacity-60" />
                 <div className="absolute bottom-4 left-4 right-4 bg-[#070B14]/85 backdrop-blur-md p-4 rounded-xl border border-white/15">
-                  <div className="text-xs font-bold text-[#D4AF37] uppercase tracking-wider mb-0.5">
-                    Enterprise SLA Guarantee
+                  <div className="flex items-center justify-between gap-2 mb-1">
+                    <span className="text-xs font-bold text-[#D4AF37] uppercase tracking-wider">
+                      Dubai Enterprise SLA Guarantee
+                    </span>
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+                      Sub-15ms GCC Edge
+                    </span>
                   </div>
                   <div className="text-xs text-slate-300">
-                    Engineered with zero technical debt, strict data privacy,
-                    and full client source code ownership.
+                    Engineered with zero technical debt, strict UAE PDPL data compliance,
+                    and 100% intellectual property source code handover.
                   </div>
                 </div>
               </div>
@@ -626,6 +640,124 @@ export default function SubServiceDetailView({
         </div>
       </section>
 
+      {/* 4.5 HIGH-FIDELITY PRODUCTION VISUAL ARTIFACTS GALLERY */}
+      <section className="py-20 bg-[#070B14] text-white border-y border-[#1E293B]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div className="max-w-3xl">
+              <span className="inline-flex items-center gap-1.5 text-xs font-extrabold tracking-widest text-[#D4AF37] uppercase">
+                <Sparkles className="w-4 h-4 text-[#C59B27]" />
+                PRODUCTION ARTIFACTS & SYSTEM TOPOLOGY
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-2">
+                Tangible Production Deliverables & System Visuals
+              </h2>
+              <p className="text-base text-[#94A3B8] mt-2">
+                Every project produces fully documented, auditable production deliverables—never ephemeral prototypes or black-box code.
+              </p>
+            </div>
+            <div className="flex items-center gap-3 shrink-0">
+              <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-bold border border-emerald-500/20">
+                <ShieldCheck className="w-4 h-4" />
+                VERIFIED GCC EDGE PRODUCTION
+              </span>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Visual Card 1: Architectural Blueprint */}
+            <div className="bg-[#0B0F19] rounded-2xl border border-white/10 overflow-hidden flex flex-col group hover:border-[#C59B27]/50 transition-all duration-300 shadow-xl">
+              <div className="relative aspect-[16/10] bg-slate-950 overflow-hidden">
+                <Image
+                  src={visuals.secondary}
+                  alt={visuals.secondaryTitle}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 400px"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute top-3 left-3 bg-[#070B14]/85 backdrop-blur-md px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider text-[#D4AF37] border border-white/10">
+                  SYSTEM BLUEPRINT
+                </div>
+              </div>
+              <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
+                <div>
+                  <h3 className="text-base font-bold text-white group-hover:text-[#D4AF37] transition-colors">
+                    {visuals.secondaryTitle}
+                  </h3>
+                  <p className="text-xs text-[#94A3B8] mt-2 leading-relaxed">
+                    {visuals.secondaryDesc}
+                  </p>
+                </div>
+                <div className="pt-3 border-t border-white/10 flex items-center justify-between text-[11px] text-[#64748B]">
+                  <span>Next.js 16 Edge Architecture</span>
+                  <span className="text-emerald-400 font-semibold">Zero-Trust Security</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Visual Card 2: Live Deliverable / SaaS Interface */}
+            <div className="bg-[#0B0F19] rounded-2xl border border-white/10 overflow-hidden flex flex-col group hover:border-[#C59B27]/50 transition-all duration-300 shadow-xl">
+              <div className="relative aspect-[16/10] bg-slate-950 overflow-hidden">
+                <Image
+                  src={visuals.deliverable}
+                  alt={visuals.deliverableTitle}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 400px"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute top-3 left-3 bg-[#070B14]/85 backdrop-blur-md px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider text-emerald-400 border border-white/10">
+                  LIVE DELIVERABLE INTERFACE
+                </div>
+              </div>
+              <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
+                <div>
+                  <h3 className="text-base font-bold text-white group-hover:text-[#D4AF37] transition-colors">
+                    {visuals.deliverableTitle}
+                  </h3>
+                  <p className="text-xs text-[#94A3B8] mt-2 leading-relaxed">
+                    {visuals.deliverableDesc}
+                  </p>
+                </div>
+                <div className="pt-3 border-t border-white/10 flex items-center justify-between text-[11px] text-[#64748B]">
+                  <span>Sub-0.8s Core Web Vitals</span>
+                  <span className="text-emerald-400 font-semibold">100% Responsive UI</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Visual Card 3: Executive Growth & Telemetry Engine */}
+            <div className="bg-[#0B0F19] rounded-2xl border border-white/10 overflow-hidden flex flex-col group hover:border-[#C59B27]/50 transition-all duration-300 shadow-xl">
+              <div className="relative aspect-[16/10] bg-slate-950 overflow-hidden">
+                <Image
+                  src="/images/generated/visual_executive_growth.jpg"
+                  alt="Executive Telemetry & Real-Time Performance Engine"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 400px"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute top-3 left-3 bg-[#070B14]/85 backdrop-blur-md px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider text-blue-400 border border-white/10">
+                  TELEMETRY ENGINE
+                </div>
+              </div>
+              <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
+                <div>
+                  <h3 className="text-base font-bold text-white group-hover:text-[#D4AF37] transition-colors">
+                    Executive Performance & Conversion Telemetry Radar
+                  </h3>
+                  <p className="text-xs text-[#94A3B8] mt-2 leading-relaxed">
+                    Closed-loop real-time telemetry monitoring server health, sub-millisecond query response times, and conversion funnel velocity.
+                  </p>
+                </div>
+                <div className="pt-3 border-t border-white/10 flex items-center justify-between text-[11px] text-[#64748B]">
+                  <span>Etisalat & du GCC Peering</span>
+                  <span className="text-emerald-400 font-semibold">99.99% Uptime SLA</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 5. PROCESS ROADMAP */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -783,6 +915,74 @@ export default function SubServiceDetailView({
                   </span>
                 ))}
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 6.5 DUBAI & UAE ENTERPRISE ASSURANCE */}
+      <section className="py-20 bg-[#FAF8F5] border-t border-[#E4E7EC]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          <div className="max-w-3xl">
+            <span className="inline-flex items-center gap-1.5 text-xs font-extrabold tracking-widest text-[#C59B27] uppercase">
+              <Building2 className="w-4 h-4 text-[#C59B27]" />
+              DUBAI & GCC REGIONAL ADVANTAGE
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B0F19] tracking-tight mt-1">
+              Why Dubai & UAE Enterprises Partner With Bird Hills Tech
+            </h2>
+            <p className="text-base text-[#667085] mt-2">
+              Combining world-class engineering rigor with deep on-the-ground presence in Dubai, UAE corporate tax compliance, and sub-15ms GCC regional latency.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-white p-6 rounded-2xl border border-[#E4E7EC] hover:border-[#C59B27]/40 shadow-xs transition-all space-y-3">
+              <div className="w-10 h-10 rounded-xl bg-[#FAF8F5] border border-[#E4E7EC] flex items-center justify-center text-[#C59B27]">
+                <ShieldCheck className="w-5 h-5" />
+              </div>
+              <h3 className="text-base font-bold text-[#0B0F19]">
+                UAE PDPL Compliance
+              </h3>
+              <p className="text-xs text-[#667085] leading-relaxed">
+                Full compliance with UAE Federal Decree-Law No. 45 of 2021 regarding Personal Data Protection. Secure localized data sovereignty standards.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-2xl border border-[#E4E7EC] hover:border-[#C59B27]/40 shadow-xs transition-all space-y-3">
+              <div className="w-10 h-10 rounded-xl bg-[#FAF8F5] border border-[#E4E7EC] flex items-center justify-center text-[#C59B27]">
+                <Building2 className="w-5 h-5" />
+              </div>
+              <h3 className="text-base font-bold text-[#0B0F19]">
+                Deira Studio & In-Person Briefings
+              </h3>
+              <p className="text-xs text-[#667085] leading-relaxed">
+                In-person technical strategy workshops at our Deira commercial studio or on-site at your offices in DIFC, Downtown Dubai, Dubai Marina, or Business Bay.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-2xl border border-[#E4E7EC] hover:border-[#C59B27]/40 shadow-xs transition-all space-y-3">
+              <div className="w-10 h-10 rounded-xl bg-[#FAF8F5] border border-[#E4E7EC] flex items-center justify-center text-[#C59B27]">
+                <Zap className="w-5 h-5" />
+              </div>
+              <h3 className="text-base font-bold text-[#0B0F19]">
+                Sub-15ms GCC Cloud Edge
+              </h3>
+              <p className="text-xs text-[#667085] leading-relaxed">
+                Dedicated regional edge nodes peering directly with Etisalat (e&) and du internet backbones for ultra-fast response across Dubai, Abu Dhabi, and the GCC.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-2xl border border-[#E4E7EC] hover:border-[#C59B27]/40 shadow-xs transition-all space-y-3">
+              <div className="w-10 h-10 rounded-xl bg-[#FAF8F5] border border-[#E4E7EC] flex items-center justify-center text-[#C59B27]">
+                <FileText className="w-5 h-5" />
+              </div>
+              <h3 className="text-base font-bold text-[#0B0F19]">
+                UAE VAT & Corporate Invoicing
+              </h3>
+              <p className="text-xs text-[#667085] leading-relaxed">
+                Official commercial agency invoicing in UAE Dirhams (AED) with Federal Tax Authority TRN compliance for seamless corporate tax deductions.
+              </p>
             </div>
           </div>
         </div>

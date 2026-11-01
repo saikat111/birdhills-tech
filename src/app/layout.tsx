@@ -38,8 +38,8 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "https://birdhillstech.com"),
     title: {
-      default: settings.site_title || "Bird Hills Tech | Digital Marketing & Web Development Agency",
-      template: "%s | Bird Hills Tech",
+      default: settings.site_title || "Bird Hills Tech Dubai | Enterprise Web Engineering, Branding & Digital Growth in UAE",
+      template: "%s | Bird Hills Tech Dubai",
     },
     description:
       settings.site_description ||
@@ -155,8 +155,8 @@ export default async function RootLayout({
       settings.facebook_url,
       settings.youtube_url,
     ].filter(Boolean),
-    areaServed: ["Global", "North America", "Europe", "Asia-Pacific", "Worldwide"],
-    priceRange: "$$",
+    areaServed: ["Dubai", "Abu Dhabi", "Sharjah", "United Arab Emirates", "GCC"],
+    priceRange: "AED",
     description: settings.site_description,
   };
 

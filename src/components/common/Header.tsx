@@ -465,7 +465,7 @@ export function Header() {
                             href="/pricing"
                             className="hover:text-[#C59B27] transition-colors flex items-center gap-1"
                           >
-                            <span>Pricing Packages (USD)</span>
+                            <span>Pricing Packages (AED)</span>
                             <ChevronRight size={12} className="text-[#C59B27]" />
                           </Link>
                         </div>
